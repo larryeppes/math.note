@@ -1,0 +1,88 @@
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{tcolorbox}
+\usepackage[a4paper,hmargin={1cm,1cm},vmargin={2.5cm,2.5cm}]{geometry}
+\usepackage{hyperref}
+\usepackage{fontenc}
+\usepackage{CJKutf8}
+
+\hypersetup{unicode,backref,colorlinks=true}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% from tcolorbox.pdf
+\tcbuselibrary{theorems, breakable, skins, raster, listings, minted, xparse, listingsutf8, documentation}
+\newtcbtheorem[number within=section]{question}{问题}%
+  {colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{q}
+\newtcbtheorem[number within=section]{definition}{定义}%
+  {colback=blue!5,colframe=gray!50!black,fonttitle=\bfseries}{def}
+\newtcbtheorem[number within=section]{lemma}{引理}%
+  {colback=purple!5,colframe=purple!75!black,fonttitle=\bfseries}{lm}
+\newtcbtheorem[number within=section]{theorem}{定理}%
+  {colback=purple!5,colframe=purple!75!black,fonttitle=\bfseries}{th}
+  \newtcbtheorem[number within=section]{corrolary}{推论}%
+  {colback=yellow!5,colframe=yellow!75!black,fonttitle=\bfseries}{co}
+\newtcbtheorem[number within=section]{undone}{未知}%
+  {colback=red!5,colframe=red!75!black,fonttitle=\bfseries}{un}
+% from amsthdoc.pdf
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+    \pushQED{\qed}%
+    \normalfont \topsep6\p@\@plus6\p@\relax
+    \trivlist
+    \item\relax
+    {\itshape
+    #1\@addpunct{.}}\hspace\labelsep\ignorespaces
+  }{%
+    \popQED\endtrivlist\@endpefalse
+  }
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\degree{^\circ}
+\def\bq{\begin{question}}
+\def\eq{\end{question}}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bd{\begin{definition}}
+\def\ed{\end{definition}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\bu{\begin{undone}}
+\def\eu{\end{undone}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Integers}{\mathbb{Z}}
+\newcommand{\Naturals}{\mathbb{N}}

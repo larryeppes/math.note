@@ -1,0 +1,21 @@
+\newpage
+\bq{}{}
+求不定方程
+\bee
+(a^2-b)(a+b^2)=(a+b)^2
+\eee
+的所有正整数解.
+\eq
+
+\newpage
+\bq{}{}
+设$a,b,c,d$为正整数, $ab=cd$.
+证明: $a^4+b^4+c^4+d^4$不是素数.
+\eq
+\ba
+由$ab=cd$, 不妨设$a=us, b=vt, c=vs, d=ut$, 则
+\bee
+a^4+b^4+c^4+d^4=(u^4+v^4)(s^4+t^4)
+\eee
+不是素数.
+\ea

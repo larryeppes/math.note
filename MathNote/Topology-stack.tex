@@ -1,0 +1,96 @@
+\newpage
+\bq{Newton法}{}
+$f$是定义在$[a,b]$上的二次连续可微的实值函数, $\hat{x}\in(a,b)$, 使得$f(\hat{x})=0$, $f'(\hat{x})\ne0$. 
+求证存在$\hat{x}$的邻域$U(\hat{x})$, 使得$\forall x_0\in U(\hat{x})$迭代序列
+\bee
+x_{n+1}=x_{n}-\frac{f(x_n)}{f'(x_n)}\quad (n\in\mathbb{N})
+\eee
+是收敛的, 并且$\lim_{n\to\infty}x_{n}=\hat{x}$.
+\eq
+
+\newpage
+\bq{}{}
+试找出$T^n$是压缩映射, 但$T$不是压缩映射的反例.
+\eq
+
+\newpage
+\bq{}{}
+设$M$是$\mathbb{R}^n$中的有界闭集, 映射$T:M\to M$满足
+\bee
+\rho(Tx, Ty)<\rho(x,y)\quad (\forall x, y\in M, x\ne y).
+\eee
+求证$T$在$M$中存在唯一不动点. 并举反例说明$M$的有界闭不能省去.
+\eq
+
+\newpage
+\bq{}{}
+对于积分方程$x(t)-\lambda\int_0^1\ue^{t-s}\ud s=y(t)$为一给定函数, $\lambda$为常数, $|\lambda|<1$, 求证存在唯一解$x(t)\in[0,1]$.
+\eq
+
+\newpage
+\bq{}{}
+设$S$为一切复数列$x=(\xi_1,\xi_2, \cdots, \xi_n,\cdots)$组成的集合, 在$S$中定义距离为
+\bee
+\rho(x,y)=\sum_{k=1}^{\infty}\frac{1}{2^k}\frac{|\xi_k-\eta_k|}{1+|\xi_k-\eta_k|},
+\eee
+其中$x=(\xi_1, \xi_2, \cdots)$, $y=(\eta_1, \eta_2,\cdots)$. 求证: $S$为一个完备的距离空间.
+\eq
+
+\newpage
+\bq{}{}
+记$F$是只有有限项不为零的实数列全体, 在$F$上引进距离
+\bee
+\rho(x,y)=\sup_{k\ge1}|\xi_k-\eta_k|,
+\eee
+其中$x=\{\xi_k\}$, $y=\{\eta_k\}\in F$. 求证$(F, \rho)$不完备, 并指出它的完备化空间.
+\eq
+
+\newpage
+\bq{}{}
+设$M$是$C[a,b]$中的有界集, 求证集合
+\bee
+\widetilde{M}=\left\{F(x)=\int_a^xf(t)\ud t\vert f\in M\right\}
+\eee
+是列紧集.
+\eq
+
+\newpage
+\bq{}{}
+求证$\{\sin nt\}_{n=1}^{\infty}$在$C[0,\pi]$中不是列紧的.
+\eq
+
+\newpage
+\bq{}{}
+空间$S$中集合$A$的列紧性条件. $A$在$S$中是列紧的, 当且仅当对于任何$n\in\mathbb{N}$, $\exists C_n>0$, 
+使得对于任意的$\xi=(\xi_1, \xi_2, \cdots, \xi_n, \cdots)\in A$的点的第$n$个坐标的数集是有界的, 即$|\xi_n|\le C_n$($n\in\mathbb{N}_{+}$).
+\eq
+
+\newpage
+\bq{}{}
+设$(X, \rho)$是距离空间, $M$是$X$中的列紧集, 若映射$T:X\to M$满足
+\bee
+\rho(Tx, Ty)<\rho(x,y)\quad (\forall x,y\in X, x\ne y),
+\eee
+求证$T$在$X$上存在唯一的不动点. 
+\eq
+
+\newpage
+\bq{}{}
+设$(M,\rho)$是一个紧距离空间, 又$E\subset C(M)$, $E$中函数一致有界并满足:
+\bee
+|x(t_1)-x(t_2)|\le c\rho(t_1, t_2)^{\alpha}
+\eee
+其中$x\in E$, $t_1, t_2\in M$, 其中$0<\alpha\le 1$, $c>0$, 求证$E$在$C(M)$中是列紧集.
+\eq
+
+\newpage
+\bq{}{}
+在$C^1[a,b]$中令
+\bee
+\|x\|_1=\left(\int_a^b(|x(t)|^2+|x'(t)|^2)\ud t\right)^\frac{1}{2}\quad \forall x\in C^1[a,b]
+\eee
+\begin{enumerate}[(1)]
+ \item 求证$\|\cdot\|_1$是$C^1[a,b]$上的范数;
+ \item $(C^1[a,b], \|\cdot\|_1)$是否完备?
+\end{enumerate}
+\eq

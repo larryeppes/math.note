@@ -1,0 +1,52 @@
+\DeclareTotalTCBox{\cmd}{ s v }
+{verbatim,colupper=white,colback=black!75!white,colframe=black}
+{\IfBooleanTF{#1}{\textcolor{green}{\ttfamily\bfseries \$ }}{}%
+\lstinline[language=sh,keywordstyle=\color{blue!35!white}\bfseries]^#2^}
+    
+\newtcbinputlisting{\inputcode}[2][]{%
+  listing engine=minted,minted language=#1,minted style=friendly,%manni, igor, lovelace, xcode, vim, autumn, vs, rrt, 
+  %native,perldoc,borland, tango, monokai, paraiso-dark, murphy, bw, pastie, algol_nu, paraiso-light, trac, default, algol, 
+  %fruity, emacs, colorful, friendly
+  minted options={fontsize=\small, linenos, autogobble, breaklines, numbersep=3mm, escapeinside=||},
+  listing file={#2}, title={\hspace{-8mm} #2}, 
+  colback=gray!10, colframe=gray!75!black,
+  listing only,breakable,
+  left=9mm, enhanced,
+  overlay={\begin{tcbclipinterior}\fill[darkgray!20!white] (frame.south west)
+    rectangle ([xshift=8mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcblisting{C}{listing engine=minted,minted style=fruity,
+  minted language=C,minted options={fontsize=\small, linenos, autogobble, breaklines, numbersep=3mm, escapeinside=||},
+  colback=black!70,colframe=gray!75!black,listing only,breakable,
+  left=9mm,enhanced,
+  overlay={\begin{tcbclipinterior}\fill[darkgray!20!white] (frame.south west)
+    rectangle ([xshift=8mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcblisting{java}{listing engine=minted,minted style=fruity,
+  minted language=java,minted options={fontsize=\small, linenos, autogobble, breaklines, numbersep=3mm, escapeinside=||},
+  colback=black!70,colframe=gray!75!black,listing only,breakable,
+  left=9mm,enhanced,
+  overlay={\begin{tcbclipinterior}\fill[darkgray!20!white] (frame.south west)
+    rectangle ([xshift=8mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcblisting{shell}{listing engine=minted,minted style=emacs,
+  minted language=sh,minted options={fontsize=\small, autogobble, breaklines, escapeinside=||},
+  colback=red!60!green!50,colframe=gray!75!black,listing only,breakable,
+  left=5mm,enhanced}
+    
+\newtcblisting{cpp}{listing engine=minted,minted style=fruity,
+  minted language=c++,minted options={fontsize=\small, linenos, autogobble, breaklines, numbersep=3mm, escapeinside=||},
+  colback=black!70,colframe=gray!75!black,listing only,breakable,
+  left=9mm,enhanced,
+  overlay={\begin{tcbclipinterior}\fill[darkgray!20!white] (frame.south west)
+    rectangle ([xshift=8mm]frame.north west);\end{tcbclipinterior}}}
+    
+\newtcblisting{python}{listing engine=minted,minted style=fruity,
+  minted language=python,minted options={fontsize=\small, linenos, autogobble, breaklines, numbersep=3mm, escapeinside=||},
+  colback=black!70,colframe=gray!75!black,listing only,breakable,
+  left=9mm,enhanced,
+  overlay={\begin{tcbclipinterior}\fill[darkgray!20!white] (frame.south west)
+    rectangle ([xshift=8mm]frame.north west);\end{tcbclipinterior}}}
+
+\tcbset{listing engine=minted}
+\newenvironment{mlatex}[]{\begin{dispExample*}{sidebyside}}{\end{dispExample*}}

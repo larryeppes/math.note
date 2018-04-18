@@ -1,0 +1,340 @@
+\chapter{AOPS}
+\section{2003}
+\subsection{02}
+
+\bq{USAMO 1996, Problem 5}{}
+Let $ABC$ be a triangle, and $M$ an interior point such that $\angle MAB=10^\circ$, $\angle MBA=20^\circ$, $\angle MAC=40^\circ$ and $\angle MCA=30^\circ$. Prove that the triangle is isosceles.
+\eq
+
+\bq{Russian olympiad}{}
+Let $A$ and $B$ be two sets such that $A \cup B = \{1,2,..,2n\}$ and $|A|=|B|=n$. Let $A = \{a_1,a_2,\ldots,a_n\}$ and $B=\{b_1,b_2,\ldots,b_n\}$ with $a_1<a_2<\cdots <a_n$ and $b_1>b_2>\cdots>b_n$. Prove that $|a_1-b_1| + |a_2-b_2| + \cdots + |a_n-b_n|=n^2$.
+\eq
+
+\newpage
+\subsection{03}
+\bq{Indian olympiad 2003}{}
+consider triangle acute angled $ABC$ . let $BE$ and $CF$ be cevians with $E$ and $F$ on
+$AC$ and $AB$ resp intersecting in $P$. join $EF$ and $AP$. denote the intersection of $AP$ and $EF$ by $D$. draw perpendicular on $CB$ from $D$ and denote the intersction of the perpendicular by $K$. Prove that $KD$ bisects $\angle EKF$.
+\eq
+
+\bq{IMO Shortlist 1997, Q7}{}
+The lengths of the sides of a convex hexagon $ ABCDEF$ satisfy $ AB = BC$, $ CD = DE$, $ EF = FA$. Prove that:
+\[ \frac {BC}{BE} + \frac {DE}{DA} + \frac {FA}{FC} \geq \frac {3}{2}. \]
+\eq
+
+\bq{Iran 1999}{}
+Let $ABC$ be a triangle, and let $w$ be a circle passing through $A$ and $C$. Sides $AB$ and $BC$ meet $w$ again at $D$ and $E$, respectively. Let $q$ be the incircle of the circular triangle $EBD$, i. e. the circle which touches the segments $BD$ and $BE$ and internally touches the circle $w$. Suppose the circle $q$ touches the arc $DE$ at $M$. Prove that the line $MI$ is the angle bisector of the angle $AMC$, where $I$ is the incenter of triangle $ABC$.
+\eq
+
+\newpage
+\subsection{05}
+
+\newpage
+\subsection{06}
+\bq{NZ IMO 2003 Team}{}
+Show that given a directed graph with $n$ nodes, where $n$ is even, such that:
+vertex 1 is joined to vertex 2, vertex 2 is joined to vertex 3 and vertex 4, vertex 3 is joined to vertex 5 and vertex 6, ..., vertex $(n/2)$ joined to vertex $n-1$ and vertex $n$, vertex $(n/2) +1$ joined again to vertex $1$ and vertex $2$, ..., vertex $n$ joined to vertex $n-1$
+[for each $k$ with $1 \leq k \leq n$, the vertex $k$ is joined to the vertices $2k$ and $2k-1 \bmod n$]
+we can always find an Euler tour of the graph going along the edges in the right direction.
+\eq
+
+\newpage
+\subsection{07}
+\bq{}{}
+We are given $n$ vertices (unjoined). How many trees can we form by joining them? A tree is a graph without cycles.
+\eq
+
+\bq{}{}
+Let $ABC$ be a triangle. Prove that:
+$R \sqrt{2pabc} \leq abc$.
+\eq
+
+\bq{IMO ShortList 2003, combinatorics problem 1}{}
+Let $A$ be a $101$-element subset of the set $S=\{1,2,\ldots,1000000\}$. Prove that there exist numbers $t_1$, $t_2, \ldots, t_{100}$ in $S$ such that the sets \[ A_j=\{x+t_j\mid x\in A\},\qquad j=1,2,\ldots,100 \] are pairwise disjoint.
+\eq
+
+\bq{IMO ShortList 2003, number theory problem 3}{}
+Determine all pairs of positive integers $(a,b)$ such that \[ \dfrac{a^2}{2ab^2-b^3+1} \] is a positive integer.
+\eq
+
+\bq{IMO ShortList 2003, geometry problem 6}{}
+Each pair of opposite sides of a convex hexagon has the following property: the distance between their midpoints is equal to $\dfrac{\sqrt{3}}{2}$ times the sum of their lengths. Prove that all the angles of the hexagon are equal.
+\eq
+
+\bq{IMO ShortList 2003, geometry problem 1}{}
+Let $ABCD$ be a cyclic quadrilateral. Let $P$, $Q$, $R$ be the feet of the perpendiculars from $D$ to the lines $BC$, $CA$, $AB$, respectively. Show that $PQ=QR$ if and only if the bisectors of $\angle ABC$ and $\angle ADC$ are concurrent with $AC$.
+\eq
+
+\bq{IMO ShortList 2003, algebra problem 4}{}
+Let $n$ be a positive integer and let $x_1\le x_2\le\cdots\le x_n$ be real numbers.
+Prove that
+
+\[ \left(\sum_{i,j=1}^{n}|x_i-x_j|\right)^2\le\frac{2(n^2-1)}{3}\sum_{i,j=1}^{n}(x_i-x_j)^2. \]
+Show that the equality holds if and only if $x_1, \ldots, x_n$ is an arithmetic sequence.
+\eq
+
+\bq{IMO ShortList 2003, number theory problem 6}{}
+Let $p$ be a prime number. Prove that there exists a prime number $q$ such that for every integer $n$, the number $n^p-p$ is not divisible by $q$.
+\eq
+
+\bq{}{}
+Prove that in every triangle $ABC$ with sides $a,b,c$ we have
+\[a^2+b^2+c^2 \ge 4S\sqrt3\max\left\{\frac{m_a}{h_a}, \frac{m_b}{h_b}, \frac{m_c}{h_c} \right\}\]
+where $S$ is the area of $\triangle ABC$ and $m_a, m_b, m_c$ and $h_a, h_b, h_c$ are the medians and altitudes of the triangle corresponding to the sides $a,b,c$ respectively.
+\eq
+
+\bq{}{}
+Please mail names of greatest mathematical geniuses whose performance are sensational at IMOs.
+\eq
+
+\bq{Japan MO 1997, problem \#2}{}
+Prove that
+
+$ \frac{\left(b+c-a\right)^{2}}{\left(b+c\right)^{2}+a^{2}}+\frac{\left(c+a-b\right)^{2}}{\left(c+a\right)^{2}+b^{2}}+\frac{\left(a+b-c\right)^{2}}{\left(a+b\right)^{2}+c^{2}}\geq\frac35$
+
+for any positive real numbers $ a$, $ b$, $ c$.
+\eq
+
+\bq{}{}
+Let $N$ be a point on the longest side $AC$ of a triangle $ABC$. The perpendicular bisectors of $AN$ and $NC$ intersect $AB$ and $BC$ respectively in $K$ and $M$. Prove that the circumcenter $O$ of $\triangle ABC$ lies on the circumcircle of triangle $KBM$.
+\eq
+
+\bq{IMO Shortlist 1997, Q4}{}
+An $ n \times n$ matrix whose entries come from the set $ S = \{1, 2, \ldots , 2n - 1\}$ is called a silver matrix if, for each $ i = 1, 2, \ldots , n$, the $ i$-th row and the $ i$-th column together contain all elements of $ S$. Show that:
+
+(a) there is no silver matrix for $ n = 1997$;
+
+(b) silver matrices exist for infinitely many values of $ n$.
+\eq
+
+\newpage
+\subsection{08}
+\bq{IMO Shortlist 2001, C1}{}
+What is the largest number of subsequences of the form $n, n+1, n+2$ that a sequence of 2001 positive integers can have? For example, the sequence {1, 2, 2, 3, 3} of 5 terms has 4 such subsequences.
+\eq
+
+\bq{}{}
+$a$ and $b$ are positive coprime integers. A subset $S$ of the non-negative integers is called admissible if $0$ belongs to $S$ and whenever $k$ belongs to $S$, so do $k + a$ and $k + b$. Find $f(a, b)$, the number of admissible sets.
+\eq
+
+\bq{IMO Shortlist 1999, C3}{}
+A chameleon repeatedly rests and then catches a fly. The first rest is for a period of 1 minute. The rest before catching the fly $2n$ is the same as the rest before catching fly $n$. The rest before catching fly $2n+1$ is 1 minute more than the rest before catching fly $2n$.
+
+How many flies does the chameleon catch before his first rest of 9 minutes?
+How many minutes (in total) does the chameleon rest before catching fly 98?
+How many flies has the chameleon caught after 1999 total minutes of rest?
+\eq
+
+\bq{IMO Shortlist 1999, C6}{}
+Every integer is colored red, blue, green or yellow. $m$ and $n$ are distinct odd integers such that $m + n$ is not zero. Show that we can find two integers $a$ and $b$ with the same color such that $a - b = m$, $n$, $m + n$, or $m - n$.
+\eq
+
+\bq{IMO Shortlist 1994, C6}{}
+Two players play alternatively on an infinite square grid. The first player puts a X in an empty cell and the second player puts a O in an empty cell. The first player wins if he gets 11 adjacent Xs in a line, horizontally, vertically or diagonally. Show that the second player can always prevent the first player from winning.
+\eq
+
+\bq{}{}
+Lagrangia posted this problem a day or two ago and asked for some ideas :
+
+A (2k+1) x (2k+1) chessboard in coloured in white and black in the usual way such that the four corners are black. For which k is it possible to cover some squares on the table with trominoes (L-shaped figures made up from 3 squares) such that all the black squares are covered ? For these values of k , what is the minimal number of trominoes ?
+
+I have a solution but I will post it tonight because I don't have time now.Anybody else solved it?
+\eq
+
+\bq{CMO (Canada MO) 1999, problem 5}{}
+Let $ x$, $ y$, and $ z$ be non-negative real numbers satisfying $ x + y + z = 1$. Show that
+\[ x^2 y + y^2 z + z^2 x \leq \frac {4}{27} \]
+and find when equality occurs.
+\eq
+
+\bq{}{}
+Prove that in any choice of $n+1$ numbers from $\{1,2,..,2n\}$, there exist 2, $a$ and $b$, so that $a \mid b$.
+\eq
+
+\bq{}{}
+Let E be a finite set of point(in the plane), no 3
+of them colinear, no 4 of them concyclic. An unordered
+pair of points {A,B} is called a good pair iff there exists
+a disk which contains only A and B but no other point.
+Let f(E) be the number of good pair in E.
+->Prove that if E has 1003 points, then
+2003<= f(E) <=3003
+\eq
+
+\bq{Romanian selection test 2002}{}
+Let $n\geq 4$ be an integer, and let $a_1,a_2,\ldots,a_n$ be positive real numbers such that \[ a_1^2+a_2^2+\cdots +a_n^2=1 . \] Prove that the following inequality takes place \[ \frac{a_1}{a_2^2+1}+\cdots +\frac{a_n}{a_1^2+1} \geq \frac{4}{5}\left( a_1 \sqrt{a_1}+\cdots +a_n \sqrt{a_n} \right)^2 . \]
+\eq
+
+\bq{IMO Shortlist 2000, Problem G1}{}
+In the plane we are given two circles intersecting at $ X$ and $ Y$. Prove that there exist four points with the following property:
+
+(P) For every circle touching the two given circles at $ A$ and $ B$, and meeting the line $ XY$ at $ C$ and $ D$, each of the lines $ AC$, $ AD$, $ BC$, $ BD$ passes through one of these points.
+\eq
+
+\bq{}{}
+Let $A = \{1, 2, 3, \ldots, 6003\}$. Let $B$ be a subset of $A$ such that $|B| = 4002$. Prove that $B$ has a subset $C$ which satisfies:
+(i) $|C| = 2001$;
+(ii) If you arrange the 2001 elements of $C$ in increasing order, then you get 2001 numbers which are even and odd in turn, i.e., even, odd, even, odd, ... or odd, even, odd, even, ...
+\eq
+
+\bq{}{}
+Consider a circle with a radius of 16 cm. 650 points inside this circle are given.
+A ring is the part of the plane that's included between two concentric circles of radius 2 cm and 3 cm respectively.
+Show that a ring can be placed such that at least 10 of the 650 given points are covered by this ring.
+\eq
+
+\bq{}{}
+Does there exist a function $f:\mathbb N\to\mathbb N$ such that
+\[f(f(n-1)) = f(n+1) -f(n) \] for all $n \geq 2$?
+\eq
+
+\bq{IMO 1994, Problem 5, IMO Shortlist 1994, A3}{}
+Let $ S$ be the set of all real numbers strictly greater than −1. Find all functions $ f: S \to S$ satisfying the two conditions:
+
+(a) $ f(x + f(y) + xf(y)) = y + f(x) + yf(x)$ for all $ x, y$ in $ S$;
+
+(b) $ \frac {f(x)}{x}$ is strictly increasing on each of the two intervals $ - 1 < x < 0$ and $ 0 < x$.
+\eq
+
+\bq{}{}
+Each vertex of a regular $1997$-gon is labeled with an integer, such that the sum of the integers is $1$. Starting at some vertex, we write down the labels of the vertices reading counterclockwise around the polygon.
+Can we always choose the starting vertex so that the sum of the first $k$ integers written down is positive for $k =1,...,1997$ ?
+\eq
+
+\newpage
+\subsection{09}
+\bq{}{}
+An infinite arithmetic progression whose terms are positive integers contains the square of an integer and the cube of an integer. Show that it contains the sixth power of an integer.
+\eq
+
+\bq{}{}
+Let S = {1, 2, 3, ..., 1982}.
+Determine the maximum number of elements of a set A such that :
+(1) A is a subset of S ;
+(2) There do not exist numbers x, y, z in A such that xy = z.
+\eq
+
+\bq{IMO Shortlist 1997, Q22}{}
+Does there exist functions $ f,g: \mathbb{R}\to\mathbb{R}$ such that $ f(g(x)) = x^2$ and $ g(f(x)) = x^k$ for all real numbers $ x$
+
+a) if $ k = 3$?
+
+b) if $ k = 4$?
+\eq
+
+\bq{}{}
+On a blackboard we have the numbers $1, 2, 3, \ldots, 2001$. An operation is this: we erase $a$ and $b$ and we replace them with one number, $\frac{ab}{a+b+1}$. After 2000 operations, we are left with one number $k$. What is $k$?
+\eq
+
+\bq{}{}
+(by positive i mean zero or more)
+
+consider the equation a*x+b*y=c with a,b,c positive and a and b coprime
+
+it can easily be proven that if c>a*b-a-b , positive solutions x and y can be found for the equation
+
+but for some reason i can't seem to prove this fact :
+
+exactly half of the integers :1,2,3,4,......a*b-a-b has positive solutions
+
+some experiment suggest that k has positive solutions iff (a*b-a-b)-k has none
+
+but how to prove that problem? anyone?
+plz help me?
+\eq
+
+\bq{}{}
+A recurrence relation is defined like that:
+\begin{enumerate}[(1)]
+ \item $a_1=1$;
+ \item $a_n+1 = 1/16 \times (1 + 4a_n + \sqrt (1 + 24a_n))$, 
+and $n \in N$
+\end{enumerate}
+
+Determine the explicit formula and prove that it is correct !
+\eq
+
+\bq{}{}
+Let $n \in N$ and $M_n = {1, 2, 3, \ldots, n}$. $A$ subset $T$ of $M_n$ is called 'cool' if no element of $T$ is smaller than the number of elements of $T$. The number of cool subsets of $M_n$ is denoted by $f(n)$.
+
+Determine a formula for $f(n)$. In particular calculate $f(32)$ !
+\eq
+
+\bq{}{}
+The two mathematicians Lagrangia and Galois :D play the following game:
+They select and take from the set {0,1,2,3,...,1024} 512, 256, 128, 64, 32, 16, 8, 4, 2, 1 numbers away alternately. Lagrangia starts and takes 512 numbers away, then Galois 256 numbers etc. Finally there are two remaining numbers a,b (a<b). Galois pays Lagrangia the following amount of money: abs(b-a).
+Lagrangia wants to obtain as much money as possible. And vice versa Galois wants to loose at least money as possible.
+
+Exlain how much money Lagrangia can earn at most ! Assume that they all try their best.
+\eq
+
+\bq{}{}
+Feuerbach's theorem:
+Prove that in any triangle, the inscribed circle and the 3 exinscribed circles are tangent to Euler's circle.
+\eq
+
+\bq{Bundeswettbewerb Mathematik 1988, stage 2, problem 4}{}
+Provided the equation $xyz = p^n(x + y + z)$ where $p \geq 3$ is a prime and $n \in \mathbb{N}$. Prove that the equation has at least $3n + 3$ different solutions $(x,y,z)$ with natural numbers $x,y,z$ and $x < y < z$. Prove the same for $p > 3$ being an odd integer.
+\eq
+
+\bq{}{}
+Prove that: \[ \left(\sum_{k=0}^{n} 2^k \binom{2n}{2k}\right)^2 - 2 \left(\sum_{k=0}^{n-1} 2^k \binom{2n}{2k+1}\right)^2=1 \]
+
+$\binom{a}{b}$ denotes the binomial coefficient, $\frac{a!}{b!(a-b)!}$
+\eq
+
+\bq{IMO Shortlist 2000, Problem N2}{}
+For a positive integer $n$, let $d(n)$ be the number of all positive divisors of $n$. Find all positive integers $n$ such that $d(n)^3=4n$.
+\eq
+
+\bq{}{}
+Let $a, b, c$ be positive real numbers with $abc = 1$. Prove that
+\[\sum_{cyc} (a+ bc) \leq 3 + \frac{a}c+\frac{b}a+\frac{c}b\]
+\eq
+
+\bq{}{}
+Suppose that each of the n guests at a party acquaited with exactly 8 other guests. Furthermore, suppose that each pair of guests who are acquainted with each other have four acquaintances in common at the party, and each pair of guests who are not acquainted have only two acquaintances in common. What are the possible values of n ?
+\eq
+
+\bq{USAMO 1997/5; also: ineq E2.37 in Book: Inegalitati; Authors:L.Panaitopol,V. Bandila,M.Lascu}{}
+Prove that, for all positive real numbers $ a$, $ b$, $ c$, the inequality
+\[ \frac {1}{a^3 + b^3 + abc} + \frac {1}{b^3 + c^3 + abc} + \frac {1}{c^3 + a^3 + abc} \leq \frac {1}{abc} \]
+holds.
+\eq
+
+\bq{IMO 1996 Shortlist}{}
+Suppose that $a, b, c > 0$ such that $abc = 1$. Prove that \[ \frac{ab}{ab + a^5 + b^5} + \frac{bc}{bc + b^5 + c^5} + \frac{ca}{ca + c^5 + a^5} \leq 1. \]
+\eq
+
+\bq{}{}
+A nice one :
+Let n be a positive integer. Ann writes down n different positive integers. Then Ivo deletes some numbers (possibly none, but not all). He puts + or - signs in front of each of the remaining numbers and sums them up. If the result is divisible by 2003, Ivo wins. Otherwise Ann wins. For which values of n Ivo has a winning strategy ? For which values of n Ann has a winning strategy ?
+\eq
+
+\bq{}{}
+The sequence {u_n} with n being a positive integer is given by the recurrence
+
+(1) u_{0} = 0
+(2) U_{2n} = u_{n}
+(3) u_{2n+1} = 1 - u_{n}
+
+a.) Determine u_{2002} and
+b.) and u_{m} with m = (2^p-1)^2 and p a natural number !
+\eq
+
+\bq{JBMO 2002, Problem 4}{}
+
+\eq
+
+\bq{}{}
+Show that
+\[\frac{1+a^2}{1+b+c^2}+\frac{1+b^2}{1+c+a^2} +\frac{1+c^2}{1+a+b^2} \geq 2\]
+for reals $a,b,c \geq -1$.
+\eq
+
+\bq{}{}
+There are n girls and n boys at the party. Participants who belong to the same sex do not know each other. Moreover, there cannot be found two girls who know the same two boys. At most how many acquaintances can be among the participants of the party ?
+
+a.) n = 5
+b.) n = 7
+\eq

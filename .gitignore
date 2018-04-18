@@ -1,0 +1,14 @@
+CV/
+tmp/
+EnglishBook/
+EnglishReadingStack/
+.dvi
+.backup
+.pygstyle
+.pygtex
+.gz
+.aux
+.log
+.out
+.mintedcmd
+_minted-MathNote

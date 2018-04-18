@@ -1,0 +1,194 @@
+\chapter{实变函数}
+\bq{}{}
+设$\{f_n(x)\}_{n=1}^{\infty}$是$E=[a,b]$上实函数列, 满足: $f_1(x)\le f_2(x)\le\cdots\le f_n(x)\le\cdots$, 且$\lim_{n\to\infty}f_{n}(x)=f(x)$, $\forall x\in E$.
+求证: 对任意$c\in\mathbb{R}$,
+\begin{enumerate}[(I)]
+ \item $E(f(x)>c)=\bigcup_{n=1}^{\infty}E(f_n(x)>c)$.
+ \item $E(f(x)\le c)=\bigcap_{n=1}^{\infty}E(f_n(x)\le c)$.
+\end{enumerate}
+\eq
+\ba
+(I). 对于任意的$x_0\in E(f(x)>c)$, 有$f(x_0)>c$且$x_0\in E$, 因为$\lim_{n\to\infty}f_n(x_0)=f(x_0)$, 所以存在$n_0$, 使得$f_{n_0}(x_0)>c$, 
+故$x_0\in E(f_{n_0}(x_0)<c)$, 于是$x_0\in\bigcup_{n=1}^{\infty}E(f_{n}(x)>c)$. 反之, 若$x_0\in\bigcup_{n=1}^{\infty}E(f_n(x)>c)$, 则存在$n_0$,
+使得$f_{n_0}(x_0)>c$且$x_0\in E$, 由单调性, $f(x_0)\ge f_{n_0}(x_0)>c$. 故$x_0\in E(f(x)>c)$, 得证.
+
+(II). 对(I)式取基本集$E=[a,b]$上的补集.
+\ea
+
+\bq{}{}
+设$A_1, A_2, \cdots, A_n, \cdots$为一列集合, 定义
+\begin{align*}
+ \limsup_{n\to\infty}A_n & :=\{x:x\textrm{属于}A_n(n\ge1)\textrm{中的无穷多个}\};\\
+ \liminf_{n\to\infty}A_n & :=\{x:x\textrm{至多不属于}A_n(n\ge1)\textrm{中的有限个}\};\\
+\end{align*}
+试证:
+\begin{enumerate}[(I)]
+ \item $\limsup_{n\to\infty}A_n=\bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty}A_k$.
+ \item $\liminf_{n\to\infty}A_{n}=\bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty}A_k$.
+\end{enumerate}
+\eq
+\ba
+(I). 由定义
+\begin{align*}
+ x\in\limsup_{n\to\infty}A_n & \Longleftrightarrow x\textrm{属于}A_n(n\ge1)\textrm{中的无穷多个}\\
+ & \Longleftrightarrow \forall n\ge 1, \textrm{总有}k_n\ge n\textrm{使}x\in A_k\\
+ & \Longleftrightarrow \forall n\ge 1, \textrm{有}x\in\bigcup_{k=n}^{\infty}A_k\\
+ & \Longleftrightarrow x\in\bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty}A_k.
+\end{align*}
+
+(II). 
+\begin{align*}
+ x\in\liminf_{n\to\infty}A_n & \Longleftrightarrow \exists n_0\textrm{使}x\in A_k(k\ge n)\\
+ & \Longleftrightarrow \exists n_0\textrm{使}x\in\bigcap_{k=n_0}^{\infty}A_k\\
+ & \Longleftrightarrow x\in\bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty}A_k.
+\end{align*}
+\ea
+
+\bq{}{}
+\begin{enumerate}[(I)]
+ \item 若$A_1\subset A_2\subset \cdots\subset A_n\subset\cdots$, 则$\lim_{n\to\infty}A_n=\bigcup_{n=1}^{\infty}A_n$.
+ \item 若$A_1\supset A_2\supset \cdots\supset A_n\supset\cdots$, 则$\lim_{n\to\infty}A_n=\bigcap_{n=1}^{\infty}A_n$.
+\end{enumerate}
+\eq
+\ba
+(I) 由条件, $\{A_{n}\}_{n=1}^{\infty}$单调上升, 有$\bigcap_{k=n}^{\infty}A_{k}=A_n$($\forall n\ge 1$), 
+于是$\bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty}A_k=\bigcup_{n=1}^{\infty}A_n\supset\bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty}A_k$.
+即$\bigcup_{n=1}^{\infty}A_n=\liminf_{n\to\infty}A_n\supset\limsup_{n\to\infty}A_n\supset\liminf_{n\to\infty}A_n$.
+
+(II). 用对偶律.
+\ea
+
+\bq{}{20170404004}
+设$A\subset\mathbb{R}$且被开区间集$G=\{I_{\lambda}:\lambda\in\Lambda\}$所覆盖, 证明存在$G$的可列子集$G^{*}$覆盖$A$.
+\eq
+\ba
+对于任意的$x\in A$, 由条件存在$I_x\in G$, $x\in I_x$, 因为$x$为$I_x$的内点, 则有$x$的邻域$V_{\delta}(x)\subset I_x$且$V_{\delta}(x)$的端点均为有理数.
+于是$\{V_{\delta}(x):x\in A\}$覆盖$A$且至多可列. 不妨设$\{V_{\delta}(x):x\in A\}=\{V_1, V_2,\cdots,V_n,\cdots\}$, 而由$V_n$的构造可在$G$中找到对应的$I_n$.
+于是$G^{*}=\{I_1, I_2,\cdots, I_n,\cdots\}$即为所求.
+\ea
+
+\bq{}{}
+$E_n$是$\mathbb{R}$上单调降的可测集列, 对于任意的$n\in\mathbb{N}$, 均有$E_{n+1}\supset E_n$, 且$m(E_1)<+\infty$, 
+则$m\left(\bigcap_{k=1}^{\infty}E_k\right)=\lim_{n\to\infty}m(E_n)$.
+\eq
+\ba
+让$E=\bigcap_{k=1}^{\infty}E_k$, $F_k=E_k-E_{k+1}$, 则$E_1-E=\bigcup_{k=1}^{\infty}F_k$, 且$F_k$两两不交, 则
+\bee
+m(E_1)-m(E)=m(E_1-E)=\sum_{k=1}^{\infty}m(E_k-E_{k+1})=\lim_{n\to\infty}\sum_{k=1}^n(mE_k-mE_{k+1})=mE_1-\lim_{n\to\infty}mE_n.
+\eee
+所以$\lim_{n\to\infty}mE_n=m(E)$. 其中$m(E_1)<+\infty$不能省, 如取$E_n=(-n, n)^c$.
+\ea
+
+\bq{等测覆盖定理}{20170404016}
+证明: 对任意集合$A\subset \mathbb{R}$恒有$G_{\delta}$型集$G$, 使$G\supset A$且$mG=m^*A$
+\eq
+\ba
+任取$\varepsilon_n=\frac1n$, 由外测度定义及下确界定义知, 必有开区间集列$\{I_k^{(n)}: k=1,2,\cdots\}$满足
+\bee
+A\subset\bigcup_{k=1}^{\infty}I_k^{(n)}\textrm{且}\sum_{k=1}^{\infty}m(I_{k}^{(n)})<m^*A+\frac1n.
+\eee
+令$G_n=\bigcup_{k=1}^{\infty}I_k^{(n)}$, $G=\bigcap_{n=1}^{\infty}G_n$, 则由外测度次可列可加性, 
+$m(G_n)\le\sum_{k=1}^{\infty}m(I_k^{(n)})<m^*(A)+\frac1n$. 显然$G_n$为开集. $G$为$G_{\delta}$型集, 且$A\subset G\subset G_{n}$,
+($n=1,2,\cdots$). 故有
+\bee
+m^*(A)\le m^*G\le m^*G_n< m^*(A)+\frac1n.
+\eee
+于是$mG=m^*G=m^*A$.
+\ea
+
+\bq{等测核心定理}{20170404017}
+证明: 若$A$为有界(有界可去掉)可测集, 必有$F_{\sigma}$型集$F$, 使$F\subset A$且$mF=mA$.
+\eq
+\ba
+存在$E=[\alpha, \beta]\supset A$, 设$S=E-A$, 由\ref{q:20170404016}, 存在$G_{\delta}$型集$G$使$G\supset S$, $m^*S=mG$,
+$G=\bigcap_{n=1}^{\infty}G_n$, $G_n$开, 令$F_n=E-G_n$, 则$F_n$闭, 令$F=E\cap G^c=\bigcup_{n=1}^{\infty}(E\cap G_n^c)=\bigcup_{n=1}^{\infty}F_n$,
+故$F$为$F_{\sigma}$型集, 且$F=E\cap G^c=E-G\subset E-S\subset A$, 及
+\bee
+mF=m(E\cap G^c)=m(E-G)\ge mE-mG=mE-m^*S=mE-m^*(E-A)=m_*A=mA, F\subset A\Rightarrow mF\le mA.
+\eee
+所以$mF=mA$.
+\ea
+
+\bq{}{}
+设$E$可测, $mE<+\infty$, 证明: $\forall \varepsilon>0$, 有闭集$F$使$F\subset E$且$m(E-F)<\varepsilon$.
+\eq
+\ba
+由等测核心定理, 存在$F\in F_{\sigma}$型集, 使$F\subset E$且$mE=mF$, 设$F=\bigcup_{k=1}^{\infty}F_k$, $F_k$闭, 
+记$S_n=\bigcup_{k=1}^{n}F_k$, 则$S_n$闭且$S_n\subset E$, 由$S_n$单调且$F=\bigcup_{n=1}^{\infty}S_n=\lim_{n\to\infty}S_n$, 
+所以$\forall\varepsilon>0$, $\exists N$使得当$n>N$时, 有$mE-mS_n<\varepsilon$, 而$S_n\subset E$, $mS_n<+\infty$得证.
+\ea
+
+\bq{}{}
+设$\{f_n(x)\}_{n=1}^{\infty}$是可测集$E$上定义的可测函数列, 证明$\sup_{n}f_n(x)$与$\inf_{n}f_{n}(x)$都是$E$上可测函数.
+\eq
+\ba
+其实$E(\sup_nf_n(x)>c)=\bigcup_{n=1}^{\infty}E(f_n(x)>c)$, 只证$LHS\subset RHS$.
+若$x_0\in LHS$, 则$\sup_nf_n(x_0)>c$, 记$\varepsilon=\sup_nf_n(x_0)-c$, 则对于任意的$\delta\in(0,\varepsilon)$, 
+存在$N$使得$f_N(x_0)>\sup_nf_n(x_0)-\delta>c$, 所以$x_0\in\bigcup_{n=1}^{\infty}E(f_n(x)>c)$.
+\ea
+
+\bq{}{}
+设$mE\ne0$, $f$在$E$上可积, 若对任何有界可测函数$\varphi(x)$, 都有$\int_{E}f\varphi\ud x=0$, 则$f=0, a.e. E$.
+\eq
+\ba
+取$\varphi(x)=(\chi_{E(f\ge0)}-\chi_{E(f<0)})(x)$, 则$0=\int_Ef\varphi\ud x=\int_E|f|\ud x$, 即得.
+\ea
+
+\bq{}{}
+设$mE<+\infty$, $f(x)$在$E$上可积, $E_n$单调上升可测, $E=\bigcup_{n=1}^{\infty}E_n$, 证明:
+\bee
+\lim_{n\to\infty}\int_{E_n}f\ud x=\int_Ef\ud x.
+\eee
+\eq
+\ba
+因$E_n$可测, 所以$E$可测, 令$F_1=E_1$, $F_2=E_2-E_1, \cdots, F_n=E_n-E_{n-1}, \cdots$, 则$E=\bigcup_{n=1}^{\infty}F_n$, 
+且对任意$i\ne j$, $F_i\cap F_j=\emptyset$. 于是
+\bee
+\int_Ef(x)\ud x=\int_{\cup F_n}f\ud x=\sum_{n=1}^{\infty}\int_{F_n}f\ud x=\lim_{n\to\infty}\sum_{k=1}^{\infty}\int_{F_k}f\ud x
+  =\lim_{n\to\infty}\int_{\cup_{k=1}^{n}F_k}f\ud x=\lim_{n\to\infty}\int_{E_n}f\ud x.
+\eee
+\ea
+
+\bq{}{}
+证明:
+\bee
+(L)\int_0^1\frac{x^p}{1-x}\ln\frac1x\ud x=\sum_{k=1}^{\infty}\frac1{(p+k)^2}, \quad (p>-1).
+\eee
+\eq
+\ba
+让$f(x)=\frac{x^p}{1-x}\ln\frac1x=\sum_{n=1}^{\infty}x^{p+n-1}\ln\frac1x$, 用Levi定理, $(L)\int_0^1f\ud x=\sum_{n=1}^{\infty}(L)\int_0^1x^{p+n-1}\ln\frac1x\ud x$.
+\ea
+
+\bq{}{20170405023}
+试证, 当$f$在$(a,+infty)$上有界, 非负, $(R)$可积时, 则$f$在$(a, +\infty)$上$(L)$可积, 且
+\bee
+(L)\int_{(0,+\infty)}f\ud x=(R)\int_a^{\infty}f\ud x.
+\eee
+\eq
+\ba
+由$f$有界$(R)$可积, 对任一有限区间$(a, A)$有$(L)\int_{(a,A)}f\ud x=(R)\int_a^Af(x)\ud x$. 于是
+\bee
+(L)\int_{(a,+\infty)}f\ud x=\lim_{A\to\infty}(L)\int_{(a,A)}f(x)\ud x=\lim_{A\to\infty}(R)\int_a^Af\ud x=(R)\int_a^{\infty}f\ud x<+\infty,
+\eee
+即得.
+\ea
+
+\bq{}{}
+$f, |f|$在$(a,+\infty)$上有界, $(R)$可积, 则$f$在$(a, +\infty)$上$(L)$可积, 且
+\bee
+(L)\int_{(a, +\infty)}f\ud x=(R)\int_a^{\infty}f\ud x.
+\eee
+\eq
+\ba
+由\ref{q:20170405023}知, $|f|$在$(a, +\infty)$上$(R)$可积, 有$|f|$在$(a, +\infty)$上$(L)$可积, 且积分值相等, 于是(取$E=(a,+\infty)$)
+\bee
+(L)\int_Ef^+\ud x\le (L)\int_E|f|\ud x=(R)\int_E|f|\ud x<+\infty.
+\eee
+同理$(L)\int_Ef^-\ud x<+\infty$. 则$f^+, f^-$的$(L)$积分和$(R)$积分相等. 从而$f$的$(L)$积分和$(R)$积分相等.
+
+反例, $|f|$在$E$上$(R)$可积不可省, 否则考虑$\frac{\sin x}{x}$在$(0,+\infty)$上$(R)$可积, 但
+\bee
+(L)\int_{(0,+\infty)}\left|\frac{\sin x}{x}\right|\ud x=(R)\int_0^{+\infty}\left|\frac{\sin x}{x}\right|\ud x=+\infty.
+\eee
+从而$\frac{\sin x}{x}$在$(0,+\infty)$上必$(L)$不可积.
+\ea

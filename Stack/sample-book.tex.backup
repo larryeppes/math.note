@@ -1,0 +1,91 @@
+\chapter{tex笔记}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{使用频率较低的符号列表}
+
+\tcbset{skin=enhanced, fonttitle=\bfseries, boxrule=1mm, drop fuzzy shadow}
+\begin{tcblisting}{title=特殊符号表}
+ \begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $\hbar$ & $\imath$ & $\jmath$ & $\ell$ & $\Im$\\
+    \hline
+    $\wp$ & $\mho$ & $\prime$ & $\Box$ & $\Diamond$\\
+    \hline
+    $\bot$ & $\top$ & $\surd$ & $\diamondsuit$ & $\heartsuit$\\
+    \hline
+    $\clubsuit$ & $\spadesuit$ & $\neg$ & $\lnot$ & $\flat$\\
+    \hline
+    $\natural$ & $\sharp$ & \dag & \ddag & \S\\
+    \hline
+    \P & \copyright & \pounds & \textregistered & \\
+    \hline
+  \end{tabular}
+\end{center}
+\end{tcblisting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{itemize enumerate}
+\begin{tcblisting}{title=列表}
+  \begin{enumerate}
+  \item This is an example of \ldots
+  \item \ldots the usual enumeration.
+  \begin{enumerate}[a)]
+    \item And this is a \ldots
+    \item \ldots couple of \ldots
+  \end{enumerate}
+    \item 
+    \begin{enumerate}[-- i --]
+    \item \ldots examples of \ldots
+    \item \ldots custom-tailored \ldots
+    \item \ldots enumerations.
+    \newcounter{enumii_saved}
+    \setcounter{enumii_saved}{\value{enumii}}
+    \end{enumerate}
+    Some general comments
+    \begin{enumerate}[-- i --]
+    \setcounter{enumii}{\value{enumii_saved}}
+    % 如果要换另一个条列式项目, 但编号接续, 使用\newcounter{enumii_saved}来操作
+    \item My next point.
+    \setcounter{enumii}{7}
+    % 使用setcounter{enumii}{数字}来指定编号号码
+    \item My eighth point.
+    \end{enumerate}
+  \end{enumerate}
+\end{tcblisting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{tikz}
+\begin{tcblisting}{title=画图}
+  \begin{tikzpicture}
+   \draw[gray, thick] (-1,2) -- (1,-2);
+   \draw[gray, thick] (-1,-1) -- (2,2);
+   \filldraw[black] (0,0) circle (2pt) node[anchor=west] {Intersection point};
+  \end{tikzpicture}
+  \begin{tikzpicture}
+    \draw (-2,0) -- (2,0);
+    \filldraw [gray] (0,0) circle (2pt);
+    \draw (-2,-2) .. controls (0,0) .. (2,-2);
+    \draw (-2,2) .. controls (-1,0) and (1,0) .. (2,2);
+  \end{tikzpicture}
+  \begin{tikzpicture}
+    \filldraw[color=red!60, fill=red!5, very thick](-1,0) circle (1.5);
+    \fill[blue!50] (2.5,0) ellipse (1.5 and 0.5);
+    \draw[ultra thick, ->] (6.5,0) arc (0:220:1);
+  \end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title=画图}
+  \begin{tikzpicture}
+    \filldraw[color=red!60, fill=red!50, very thick](1,1) rectangle (0.5,1.5);
+    \draw[blue, very thick] (0,0)rectangle (3,2);
+    \draw[orange, ultra thick] (4,0) -- (6,0) -- (5.7,2) -- cycle;
+  \end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title=字体}
+  $\mathscr{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$\\
+  $\mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$\\
+  $\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$\\
+  $\mathds{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$
+\end{tcblisting}

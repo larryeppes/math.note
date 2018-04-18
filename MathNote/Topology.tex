@@ -1,0 +1,314 @@
+\chapter{拓扑}
+\bq{}{}
+证明: $A'$为闭集.
+\eq
+\ba
+$(A')'\subset A'$, 从而$A'$为闭集.
+\ea
+
+\bq{}{}
+设$A\subset\mathbb{R}$, 求证:
+\begin{enumerate}[(I)]
+ \item $A^{\circ}$是$A$的最大开子集.
+ \item $A^{-}$是含$A$的最小闭集.
+\end{enumerate}
+\eq
+\ba
+(I). $\bigcup\{G:G\textrm{开且}G\subset A\}=E$, 因$A^{\circ}$开且$A^{\circ}\subset A$, 所以$A^{\circ}\subset E$,
+若$x\in E$, 则有$G$开, $x\in G\subset A$. 所以存在$x$的开邻域$U(x)\subset G\subset A$, 所以$x\in A^{\circ}$, 
+所以$E\subset A^{\circ}$, 于是$E=A^{\circ}$.
+
+(II). $\bigcap\{F: F\textrm{闭且}F\supset A\}=E$. 因$A^{-}$闭且$A^{-}\supset A$, 所以$A^{-}\supset E$. 另外若$F$闭且$F\supset A$, 
+则$F=F^{-}\supset A^{-}$, 所以$A^{-}\subset E$, 于是$A^{-}=E$.
+\ea
+
+\bq{}{}
+$G$是$\mathbb{R}$中开集, $G\cap A=\emptyset$, 求证: $G\cap A^{-}=\emptyset$.
+\eq
+\ba
+$G^c$闭且$A\subset G^c$, 所以$A^{-}\subset G^c$, 从而$G\cap A^{-}=\emptyset$.
+\ea
+
+\bq{}{}
+求证:
+\begin{enumerate}[(I)]
+ \item $\mathbb{R}$中闭集必为可列开集的交.
+ \item $\mathbb{R}$中开集闭为可列闭集的并.
+\end{enumerate}
+\eq
+\ba
+(I). 设$A$闭于$\mathbb{R}$. $A_{n}=\bigcup_{x\in A}V_{\frac{1}{n}}(x)$, ($n=1,2,\cdots$), 则$A\subset\bigcap_{n=1}^{\infty}A_n$.
+用反证法证$A\supset\bigcap_{n=1}^{\infty}A_n$, 取$x_0\in\bigcap_{n=1}^{\infty}A_n$, $x_0\notin A$. 由$A$闭. 存在$n_0$使得$V_{\frac{1}{n_0}}(x_0)\cap A=\emptyset$.
+所以$x_0\notin A_{n_0}$, 矛盾.
+
+(II). 由(I), $G$开于$\mathbb{R}$, 则$G^c$闭于$\mathbb{R}$...
+\ea
+
+\bq{}{}
+$A\subset \mathbb{R}$, 求证: $A-A'$至多可列.
+\eq
+\ba
+(好像有问题)由聚点定理, $x\in A-A'$等价于存在$\varepsilon_x>0$使得$A\cap(V_{\varepsilon_x}(x)-\{x\})=\emptyset$, 且{\color{red}{当$x,y\in A-A'$, 
+$x\ne y$时, 应有$V_{\varepsilon_x}(x)\cap V_{\varepsilon_y}(y)=\emptyset$.}} 反之亦是. 记
+\bee
+G=\{V_{\varepsilon_x}(x): x\in A-A'\},
+\eee
+则$G\sim A-A'$且$G$至多可列.
+\ea
+
+\bq{}{}
+设开集族$\mathscr{F}=\{G: G\textrm{为}\mathbb{R}\textrm{中开集}\}$, 证明: 存在$\{G_{\lambda}\}_{\lambda=1}^{\infty}\subset\mathscr{F}$且有
+\bee
+\cup\{G\in\mathscr{F}\}=\cup\{G_{\lambda}: \lambda\in\mathbb{N}_{+}\}
+\eee
+\eq
+\ba
+证明同\ref{q:20170404004}.
+\ea
+
+\bq{}{}
+证明:
+\begin{enumerate}[(1)]
+ \item $\mathbb{R}$上闭区间$[a,b]$不能表成两不相交非空闭集的并集.
+ \item $\mathbb{R}$上开区间$(a,b)$不能表成两不相交非空开集的并集.
+\end{enumerate}
+\eq
+\ba
+(1). 反证. $[a,b]=F_1\cup F_2$, $F_1\cap F_2=\emptyset$, $F_1, F_2$非空, 则$\exists x_1\in F_1$, $x_2\in F_2$, 
+使得$|x_1-x_2|=d(F_1, F_2)>0$, 取$x=\frac{1}{2}(x_1+x_2)\in [a,b]$, 不妨$x\in F_1$, 则$d(F_1, F_2)\le |x-x_2|=\frac12d(F_1, F_2)$,
+矛盾.
+
+(2). 反证. $(a,b)=G_1\cup G_2$, $G_1, G_2$非空开, $G_1\cap G_2=\emptyset$, 取$a_1\in G_1$, $b_1\in G_2$, $a_1<b_1$,
+作$F_{1}=[a_1, b_1]-G_1$, $F_2=[a_1,b_1]-G_2$, 则$F_1, F_2$非空闭, 且$F_1\cup F_2=[a_1, b_1]$, $F_1\cap F_2=\emptyset$,
+与(1)矛盾.
+\ea
+
+\bq{}{}
+设$(X, \rho)$是度量空间, 映射$T:X\to X$满足$\rho(Tx, Ty)<\rho(x,y)$($\forall x\ne y$)并已知$T$有不动点. 
+求证不动点唯一.
+\eq
+
+\bq{}{}
+设$T$是度量空间上的压缩映射, 求证$T$是连续的.
+\eq
+
+\bq{}{}
+$X=[0,1)\subset\mathbb{R}$, $\mathscr{T}=\{\emptyset\}\cup\{[0,\alpha): 0<\alpha\le 1\}$, 求证: $(X, \mathscr{T})$是拓扑空间.
+\eq
+
+\bq{}{}
+设$\mathscr{C}$是$X$的一个子集类, 记
+\bee
+\chi_c=\cap\{\chi: \mathscr{C}\subset\chi, \chi\textrm{是}X\textrm{的拓扑}\}.
+\eee
+求证: $\chi_c$是$X$的拓扑, 且它是使$\mathscr{C}$中成员都成为开集的$X$的最弱拓扑.
+\eq
+
+\bq{}{}
+设$A\subset(X, \chi)$, 求证: $A^{\circ}$是开集, 且是包含于$A$的最大开集; $A^-$是闭集且是包含$A$的最小闭集.
+\eq
+
+\bq{}{}
+$A, B\subset(X,\chi)$, 求证: $\overline{A\cup B}=\overline{A}\cup\overline{B}$.
+\eq
+\ba
+用$A\subset B$得$\overline{A}\subset\overline{B}$, 证$\overline{A\cup B}\supset\overline{A}\cup\overline{B}$, 另一方面, $\overline{A}, \overline{B}$均是闭集,
+$\overline{A}\cup\overline{B}$闭, 所以$A\cup B\subset\overline{A}\cup\overline{B}$, 从而$\overline{A\cup B}\subset\overline{\overline{A}\cup\overline{B}}$.
+\ea
+\ba
+用$(A\cup B)'=A'\cup B'$.
+\ea
+
+\bq{}{20170405029}
+求证: Hausdorff空间中任一单点集闭.
+\eq
+\ba
+$(X, \mathscr{X})$是Hausdorff空间, $x_0\in X$, $\forall x(\in X)\ne x_0$, $G_x$为$x$的不含$x_0$的开邻域, 则$\{x_0\}^c=\cup_{x\ne x_0}G_x$.
+\ea
+\ba
+由分离性, $\forall x(\in X)\ne x_0$, $x\notin\{x_0\}'$, 所以$\overline{\{x_0\}}=\{x_0\}$.
+\ea
+
+\bq{}{}
+求证: $(X, \mathscr{X})$是Hausdorff空间的充要条件是$X$的任一单点集$\{x\}$是$x$的全体邻域的交.
+\eq
+\ba
+必要性用\ref{q:20170405029}, 由$\bigcap_{G\in\mathscr{X}}G\subset\bigcap_{G\in\mathscr{X}}\overline{G}$, 所以$\forall x\in X$, $x$的一切闭邻域的交也是$\{x\}$, 
+$\forall y(\ne x)\in X$, 有$x$的闭邻域$V(x)$, $y\notin V(x)$, 即$y\in V^c(x)$, 于是有$x$的邻域$V(x)$及$y$的邻域$V^c(x)$使$V(x)\cap V^c(x)=\emptyset$, 
+从而$(X, \mathscr{X})$是Hausdorff空间.
+\ea
+
+\bq{}{}
+求证: Hausdorff空间中的子集$A$的导集$A'$必是闭集.
+\eq
+\ba
+若$x_0\in(A')'$, 则$x_0$的任何开邻域$V(x_0)$有$y\in A'\cap(V(x_0)-\{x_0\})\ne\emptyset$. 由分离性及$V(x_0)$开, 存在$y$的邻域$G_y$使$y\in G_y\subset V(x_0)-\{x_0\}$,
+而$\emptyset\ne A\cap(G_y-\{y\})\subset A\cap(V(x_0)-\{x_0\})$, 即$x_0\in A'$.
+\ea
+\ba
+若$x_0\notin A'$, 则有$x_0$开邻域$V(x_0)$使$A\cap(V(x_0)-\{x_0\})=\emptyset$. 由$\{x_0\}$闭和空间分离性\ref{q:20170405029}, 知$V(x_0)-\{x_0\}$开,
+从而$\forall x\in V(x_0)-\{x_0\}$, $x\notin A'$, 所以$V(x_0)\cap A'=\emptyset$, 从而$A'^c$开.
+\ea
+
+\bq{}{}
+$X, Y$都是拓扑空间, $F: X\to Y$, 求证: $F$连续的充要条件是$\forall A\subset X$有$F(\overline{A})\subset\overline{F(A)}$.
+\eq
+\ba
+必要性: 用$A\subset F^{-1}(F(A))\subset F^{-1}(\overline{F(A)})$闭.
+
+充分性: $B$在$Y$中闭, 由$F(F^{-1}(B))\subset B$, 所以
+\bee
+F(\overline{F^{-1}(B)})\subset \overline{F(F^{-1}(B))}\subset B\Longrightarrow \overline{F^{-1}(B)}\subset F^{-1}(B)\textrm{闭}.
+\eee
+即得.
+\ea
+
+\bq{}{}
+$X, Y$都是拓扑空间, $F: X\to Y$, 求证: $F$连续的充要条件是$\forall B\subset Y$有$\overline{F^{-1}(B)}\subset F^{-1}(\overline{B})$.
+\eq
+\ba
+只证充分性, $Y$中闭集$B$, 有$\overline{F^{-1}(B)}\subset F^{-1}(B)$, 即闭集原像闭, 故$F$连续.
+\ea
+
+\bq{}{}
+$\mathscr{X}, \mathscr{Y}$是$X$上两个拓扑, 且$\mathscr{X}\subset\mathscr{Y}$, 求证: 若$A$在$(X, \mathscr{X})$中闭, 则$A$在$(X, \mathscr{Y})$中闭,
+即弱闭集必为强闭集.
+\eq
+
+\bq{}{}
+设 $\mathscr{X}, \mathscr{Y}$ 为 $X$ 上的两个拓扑, 求证: $\mathscr{Y}\subset\mathscr{X}$ 的充要条件是恒等映射 $I: (X,\mathscr{X})\to(X,\mathscr{Y})$连续.
+\eq
+
+\bq{}{}
+若 $\mathscr{X}, \mathscr{Y}$ 是 $X$ 上两个拓扑, 且 $\mathscr{X}\subset\mathscr{Y}$, 求证: 若 $A$ 为 $(X,\mathscr{Y})$ 中紧集, 则 $A$ 必为 $(X,\mathscr{X})$ 中紧集,
+即强紧集必为紧集.
+\eq
+
+\bq{}{}
+设 $X=A\cup B$ 且 $A,B$ 闭于 $(X,\mathscr{X})$, 若 $f:A\to(Y,\mathscr{Y})$ 与 $g: B\to(Y,\mathscr{Y})$ 都连续, 且 $f\vert_{A\cap B}=g\vert_{A\cap B}$, 
+求证 $f,g$ 是同一连续映射 $h:(X,\mathscr{X})\to(Y,\mathscr{Y})$ 在 $A,B$ 上的限制.
+\eq
+\ba
+令 $h:X\to Y$, 
+\bee
+h(x)=
+\begin{dcases}
+ f(x), \quad x\in A\\
+ g(x), \quad x\in A^c
+\end{dcases}
+\eee
+所以只需证 $h$ 连续, 即证 $\forall D\subset X$ 有 $h(\overline{D})\subset\overline{h(D)}$. 因
+\begin{align*}
+h(\overline{D}) & =h(\overline{(D\cap A)\cup(D\cap B)}) = h((\overline{D\cap A})\cup(\overline{D\cap B}))\\
+  & \subset f(\overline{D\cap A})\cup g(\overline{D\cap B})\subset\overline{f(D\cap A)}\cup\overline{g(D\cap B)}\\
+  & =\overline{f(D\cap A)\cup g(D\cap B)}=\overline{h(D\cap A)\cup h(D\cap B)}\\
+  & =\overline{h((D\cap A)\cup(D\cap B))}=\overline{h(D)}
+\end{align*}
+即得.
+
+同样, 把 $A,B$ 改成都为 $X$ 中开集, 命题仍成立. 反之, 若 $A, B$ 都不是闭(或开)集, 有如下反例 $X=Y=\mathbb{R}$且赋予普通拓扑. 
+设$A=\mathbb{Q}$, $B=\mathbb{R}-\mathbb{Q}$, $f(x)=0, \forall x\in A$, $g(x)=1, \forall x\in B$.
+\ea
+
+\bq{}{}
+定义 $F:(X,\mathscr{X})\to(Y,\mathscr{Y})$, 若$\forall G\in\mathscr{X}$, $F(G)\in\mathscr{Y}$, 称 $F$ 为开映射. 求证:
+\begin{enumerate}[(1)]
+ \item $F:(X,\mathscr{X})\to(Y,\mathscr{Y})$为开映射的充要条件是$\forall x\in X$对任一$x$的邻域$V(x)$都有$F(V(x))$为$F(x)$的邻域.
+ \item 可逆映射$F$是同胚映射的充要条件是$F$是连续开映射.
+\end{enumerate}
+\eq
+\ba
+只证(1)的充分性. $\forall x\in G$, 则$F(G)$为$F(x)$的邻域, 因而有开集$V_x\in\mathscr{Y}$, 使$F(x)\in V_x\subset F(G)$. 
+于是$F(G)=\bigcup_{x\in G}V_x$开于$Y$.
+\ea
+
+\bq{}{}
+设$(X,\mathscr{X})$, $(Y,\mathscr{Y})$都是Hausdorff空间, $F:X\to Y$是可逆开映射, 求证:
+\begin{enumerate}[(1)]
+ \item 若$(y_n)\subset Y$且$\lim_{n\to\infty}y_n=y\in Y$, 则$\lim_{n\to\infty} F^{-1}(y_n)=F^{-1}(y)$.
+ \item $B$在$(Y,\mathscr{Y})$中紧, 则$F^{-1}(B)$在$(X,\mathscr{X})$中紧.
+\end{enumerate}
+\eq
+
+\bq{}{}
+设 $(X,\mathscr{X})$是Hausdorff空间, $A$ 在 $X$ 中紧, 求证:
+\begin{enumerate}[(1)]
+ \item $A$ 在 $X$ 中闭.
+ \item $A$ 的闭子集 $B$ 紧.
+ \item 一族紧集的交仍紧.
+ \item 有限紧集的并仍紧.
+\end{enumerate}
+\eq
+\ba
+(1). $\forall x\notin A$, 由分离性, $\forall y\in A$, 有$x\in V_y(x)$, $y\in V_y$ 使 $V_y\cap V_y(x)=\emptyset$. $A\subset\bigcup_{y\in A}V_y$ 有有限子覆盖 $\mathscr{F}$,
+$A\subset\bigcup_{y\in\mathscr{F}}V_y$, 从而$\bigcup_{y\in\mathscr{F}}V_y(x)$是$X$在$A^c$中的开邻域.
+
+(2). 由(1)知$A$闭, 所以$B$闭于$X$, $B^c$和$B$的开覆盖组成$A$的开覆盖.
+
+(3). 紧集在Hausdorff空间中闭, 然后用(2).
+
+(4). 同(3), 有限紧集的并是闭集.
+\ea
+
+\bq{}{20170417007}
+求证: 紧空间 $(X,\mathscr{X})$ 中任一无限子集 $A$ 必有聚点, 即 $A$ 无限必 $A'\ne\emptyset$.
+\eq
+\ba
+反证 $A'=\emptyset$, $\forall x\in X$, 有 $V(x)$ 使 $A\cap(V(x)=\{x\})=\emptyset$. 
+$\{V(x): x\in X\}$ 是 $X$ 的开覆盖, 有有限子覆盖 $\mathscr{F}$ 使 $\bigcup_{x\in\mathscr{F}}V(x)\supset X$.
+而 $\bigcup_{x\in\mathscr{F}}(V(x)-\{x\})\cap A=\emptyset$, 所以 $A$ 有限.
+\ea
+
+\bq{}{}
+若紧空间 $(X,\mathscr{X})$ 中点列 $\{x_n\}$ 只有唯一聚点 $x$, 且对于任意的$i\ne j$, $x_i\ne x_j$, 求证: $\{x_n\}$必收敛于 $x$.
+\eq
+\ba
+只需证 $(A\cap V(x))_A^c$是有限集, 其中$A=\{x_n\}$, 由问题\ref{q:20170417007}及反证法.
+$(A\cap V(x))_A^c$无限必有异于 $x$ 的聚点, 故矛盾.
+\ea
+
+\bq{}{}
+设 $\mathscr{B}$ 是 $X$ 的一族子集, $\widetilde{\mathscr{B}}$是由$\emptyset$及$\mathscr{B}$的成员可能作出的一切并集组成的子集类, 求证:
+$\widetilde{\mathscr{B}}$为$X$的拓扑的充要条件是$\mathscr{B}$满足:
+\begin{enumerate}[(1)]
+ \item $X=\bigcup\limits_{B\in\mathscr{B}}B$.
+ \item $\forall B_1, B_2\in \mathscr{B}$及$\forall x\in B_1\cap B_2$, 必有$B_3\in\mathscr{B}$使得$x\in B_3\subset B_1\cap B_2$.
+\end{enumerate}
+\eq
+
+\bq{}{}
+设$\mathscr{B}$为$(X,\mathscr{X})$中一个子集类, $\mathscr{B}$是$X$的一族子集, $\widetilde{\mathscr{B}}$是$\emptyset$及$\mathscr{B}$的成员可能做出的一切并组成的集类,
+求证: $\widetilde{\mathscr{B}}=\mathscr{X}$的充分必要条件是$\mathscr{B}$满足
+\begin{enumerate}[(1)]
+ \item $\forall A\in\mathscr{X}$及$\forall a\in A$, $\exists B\in\mathscr{B}$, 使得 $a\in B\subset A$.
+ \item $\forall B\in\mathscr{B}$及$\forall b\in B$, $\exists A\in\mathscr{X}$, 使得 $b\in A\subset B$.
+\end{enumerate}
+\eq
+\ba
+必要性: (1)等价于$\mathscr{X}\subset\widetilde{\mathscr{B}}$, (2)等价于$\widetilde{\mathscr{B}}\subset\mathscr{X}$.
+\ea
+
+\bq{}{}
+设$f:\mathbb{R}\to\mathbb{R}$连续, 令$d(x,y)=|f(x)-f(y)|$, $x,y\in\mathbb{R}$. 求证: $d$是$\mathbb{R}$上的度量的充要条件是$f$严格单调.
+\eq
+
+\bq{}{}
+设$f:\mathbb{R}\to\mathbb{R}$是单射, 则$d(x,y)=|f(x)-f(y)|$, $x,y\in\mathbb{R}$为$\mathbb{R}$上度量, 反之亦然.
+\eq
+
+\bq{}{}
+设$d(x,y)=\sum_{n=1}^{\infty}\mu_n|\xi_n-\eta_n|$, $x=\{\xi_n\}$, $y=\{\eta_n\}\in l^{\infty}$且$\mu_n>0$, $\sum_{n=1}^{\infty}\mu_n$收敛.
+求证: $d$也是$l^{\infty}$上的度量.
+\eq
+\ba
+先证$d:l^{\infty}\times l^{\infty}\to\mathbb{R}$.
+\ea
+
+\bq{}{}
+设$(X,d)$为度量空间, 令$\rho(x,y)=\frac{d(x,y)}{1+d(x,y)}$, 求证: $(X,\rho)$也是度量空间.
+\eq
+
+\bq{}{}
+设$f:[0,+\infty)\to[0,+\infty)$严格增, 且$f(0)=0$, $f(u+v)\le f(u)+f(v)$, ($u,v\in[0,+\infty)$). 求证:
+当$(X,d)$为度量空间时, $\rho(x,y)=f(d(x,y))$也是$X$上的度量.
+\eq

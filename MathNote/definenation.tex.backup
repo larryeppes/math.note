@@ -1,0 +1,43 @@
+\chapter{定义集}
+
+\section{初等数论}
+\bd{模$p$同余}{}
+若两多项式$f(x)$与$g(x)$同次幂系数均关于模$p$同余, 则称$f(x)$和$g(x)$对模$p$同余或模$p$恒等.
+\bee
+f(x)\equiv g(x)\pmod{p}.
+\eee
+\ed
+
+\bd{}{}
+若$f(x)$的系数不全被$p$整除, 其中系数不被$p$整除的最高幂次称为$f(x)$模$p$的次数.
+\ed
+
+\bd{容度}{}
+设$f(x)=a_nx^n+\cdots+a_1x+a_0\in\Bbb Z[x]$, 且$f(x)\ne0$, 将$a_0,a_1,\cdots,a_n$的最大公约数$(a_0,a_1,\cdots,a_n)$, 
+\ed
+
+\section{泛函分析}
+\bd{紧算子}{}
+设 $X$ 是 Banach 空间, 若线性算子 $T$ 把每一有界集映成列紧集, 则称线性算子 $T$ 为紧算子.
+\ed
+
+\bd{Banach空间中的凸集}{}
+设 $X$ 是 Banach 空间, 集合 $K\subset X$称为是凸的, 若 $(1-t)K+tK\subset K$, ($0\le t\le 1$).
+\ed
+
+\bd{拟半范数, 半范数}{}
+设$\mathbb{K}$是$\mathbb{R}$或$\mathbb{C}$, $\mathcal{X}$是域$\mathbb{K}$上的向量空间.
+\begin{enumerate}[A.]
+ \item 映射$q: \mathcal{X}\to\mathbb{R}$称为拟半范数, 如果
+ \begin{enumerate}[(i)]
+  \item $q(x+y)\le q(x)+q(y)$, 对于任意$x,y\in\mathcal{X}$.
+  \item $q(tx)=tq(x)$, 对任意的$x\in\mathcal{X}$和$t\in\mathbb{R}$, $t\ge0$.
+ \end{enumerate}
+  \item 映射$q:\mathcal{X}\to\mathbb{R}$称为是半范数, 如果上面的两个条件中(ii)改为
+  \begin{itemize}
+   \item[(ii')] $q(\lambda x)=|\lambda|q(x)$, 对任意$x\in\mathcal{X}$和$\lambda\in\mathbb{K}$.
+  \end{itemize}
+\end{enumerate}
+注: 若$q:\mathcal{X}\to\mathbb{R}$是半范数, 则对于任意的$x\in\mathcal{X}$, $q(x\ge0)$. 
+(因$2q(x)=q(x)+q(-x)\ge q(0)=0$).
+\ed

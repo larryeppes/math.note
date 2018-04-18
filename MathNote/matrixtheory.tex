@@ -1,0 +1,89 @@
+\chapter{矩阵论}
+\section{矩阵迭代法}
+研究对象: $Ax=b$, 求$x$. 设$A=B-C$, 其中$B$非奇异, 则$Ax=b\Longleftrightarrow Bx=b+Cx$. 其迭代形式为
+\bee
+Bx^{(k+1)}=Cx^{(k)}+b,\quad k=0,1,2,\cdots
+\eee
+若$Ax=b$有解, 则其解也满足$Bx=Cx+b$, 从而
+\bee
+B(x^{(k+1)}-x)=C(x^{(k)}-x)
+\eee
+即$x^{(k+1)}-x=L(x^{(k)}-x)$, $L=B^{-1}C$, 从而$(x^{(k)}-x)=L^k(x^{(0)}-x)$, 所以要使迭代式收敛, 则需要
+\bee
+\lim_{k\to\infty}x^{(k)}-x=0,
+\eee
+即$\lim_{k\to\infty}L^k=0$.
+
+设$L$的特征根为$l_1, l_2, \cdots, l_n$且有可逆阵$T$使$L=T \cdot \diag(l_1, l_2, \cdots, l_n) \cdot T^{-1}$. 所以
+\bee
+L^{(k)}\to 0, k\to\infty \Longleftrightarrow |l_i|<1, i=1,2,\cdots, n \Longleftrightarrow \|L\|<1, \|L\|=\max_i\{|l_i|\}
+\eee
+
+设
+\bee
+{\tiny{
+A =
+\begin{pmatrix}
+  a_{11} & a_{12} & \cdots & a_{1n} \\
+  a_{21} & a_{22} & \cdots & a_{2n} \\
+  \vdots  & \vdots  & \ddots & \vdots  \\
+  a_{n1} & a_{n2} & \cdots & a_{nn} 
+\end{pmatrix},
+D=
+\begin{pmatrix}
+ a_{11} & & & \\
+  & a_{22} & & \\
+  & & \ddots & \\
+  & & & a_{nn}
+\end{pmatrix},
+E=
+\begin{pmatrix}
+  0 & 0 & \cdots & 0\\
+  -a_{21} & 0 & \cdots & 0\\
+  \vdots & \vdots & \ddots & \vdots \\
+  -a_{n1} & -a_{n2} & \cdots & 0
+\end{pmatrix},
+F=
+\begin{pmatrix}
+ 0 & -a_{12} & \cdots & -a_{1n}\\
+ 0 & 0 & \cdots & -a_{2n}\\
+ \vdots & \vdots & \ddots & \vdots \\
+ 0 & 0 & \cdots & 0
+\end{pmatrix}
+}}
+\eee
+则$A=D-E-F$.
+
+\bt{Gauss-Seidel迭代}{}
+\bee
+\begin{dcases}
+ B=D-E\\
+ C=F
+\end{dcases}
+\Longrightarrow (D-E)x^{(k+1)}=Fx^{(k)}+b 
+\Longrightarrow x^{(k+1)}=D^{-1}\left[Ex^{(k+1)}+Fx^{(k)}+b\right].
+\eee
+\et
+
+\bt{Jacobi迭代}{}
+\bee
+\begin{dcases}
+ B=D\\
+ C=E+F
+\end{dcases}
+\Longrightarrow x^{(k+1)}=B^{-1}(Cx^{(k)}+b)=D^{-1}\left[(E+F)x^{(k)}+b\right].
+\eee
+\et
+
+\bt{Newton-Ralphson迭代}{}
+函数$f(z)=0$的根可以根据迭代$z_{k+1}=z_{k}-\frac{f(z_k)}{f'(z_k)}$, $k=0, 1, 2, \cdots$.
+\et
+设$f(z)=a-z^{-1}$有根$a^{-1}$, $f'=z^{-2}$, 则$z_{k+1}=z_k(2-az_k)$且可以期望$\lim_{k\to\infty}z_k=a^{-1}$.
+对于线性方程$Ax=b$, 可以考虑用此方法解得``$A^{-1}$", 尽管$A$可能不是方阵.
+给定初始矩阵$x_0$, 则有迭代$x_{k+1}=x_k(2I-Ax_k)$, $k=0, 1, 2, \cdots$, 并期望$\lim_{k\to\infty}x_k=A^{-1}$.
+定义``误差"矩阵$E_k=I-A x_k$, 则
+\bee
+E_{k+1}=I-Ax_{k+1}=I-Ax_k(2I-Ax_k)=I-(I-E_k)(2I-(I-E_k))=E_k^2
+\eee
+若$E_0$的所有特征根的模均小于$1$, 则必有$\lim_{k\to\infty}E_0^k=0$.
+最后$x_kb$逼近方程$Ax=b$的解.
