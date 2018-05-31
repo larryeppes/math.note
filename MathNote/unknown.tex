@@ -1,5 +1,53 @@
 \chapter{未知的问题与解答}
 
+\bu{}{}
+设数列$\{x_n\}$满足条件
+\bee
+0\le x_{m+n}\le x_m+x_n\quad(m,n\in\pNaturals),
+\eee
+证明: $\lim_{n\to\infty}\frac{x_n}{n}$存在.
+\eu
+
+\bu{}{}
+设$x_n\ge0$且$y_n\ge0$, ($n\in\pNaturals$), 证明: (在以下各极限均存在的情况下)
+\bee
+\liminf_{n\to\infty}x_n\cdot\liminf_{n\to\infty}y_n
+\le\liminf_{n\to\infty}(x_ny_n)
+\le\liminf_{n\to\infty}x_n\cdot\limsup_{n\to\infty}y_n
+\le\limsup_{n\to\infty}(x_ny_n)
+\le\limsup_{n\to\infty}x_n\cdot\limsup_{n\to\infty}y_n
+\eee
+\eu
+
+\bu{}{}
+已知$x,y,z\in \Reals$, 且$x+y+z=0$.
+\begin{enumerate}
+ \item 求证:
+ \bee
+ 6(x^3+y^3+z^3)^2\le(x^2+y^2+z^2)^3.
+ \eee
+ \item 求最佳常数$\l,\m$, 使得:
+ \bee
+ \l(x^6+y^6+z^6)\le(x^2+y^2+z^2)^3\le\m(x^6+y^6+z^6).
+ \eee
+\end{enumerate}
+
+\eu
+
+\bu{}{}
+证明对于任意的$x>-1$, 有$\ue^x-\ln(x+1)-2x>0$
+\eu
+\ba
+先证$1+\frac{x}{1-\frac{x}{2}+\frac{x^2}{12}}-\ln(1+x)-2x>0$.
+\ea
+\ba
+用 Taylor 公式.
+\ea
+
+\bu{}{}
+证明: $\nabla\times\nabla\times A=\nabla(\nabla \cdot A)-\nabla^2A$.
+\eu
+
 \bu{印度, 巴斯卡拉}{}
 当$x\in \left[0,\frac{\pi}{2}\right]$时, 有$\sin x\approx\frac{16x(\pi-x)}{5\pi^2-4x(\pi-x)}$.
 \eu

@@ -1,6 +1,54 @@
 \chapter{未知的问题与解答}
 
 \bu{}{}
+已知$x,y,z\in \Reals$, 且$x+y+z=0$.
+\begin{enumerate}
+ \item 求证:
+ \bee
+ 6(x^3+y^3+z^3)^2\le(x^2+y^2+z^2)^3.
+ \eee
+ \item 求最佳常数$\l,\m$, 使得:
+ \bee
+ \l(x^6+y^6+z^6)\le(x^2+y^2+z^2)^3\le\m(x^6+y^6+z^6).
+ \eee
+\end{enumerate}
+
+\eu
+
+\bu{}{}
+证明对于任意的$x>-1$, 有$\ue^x-\ln(x+1)-2x>0$
+\eu
+\ba
+先证$1+\frac{x}{1-\frac{x}{2}+\frac{x^2}{12}}-\ln(1+x)-2x>0$.
+\ea
+\ba
+用 Taylor 公式.
+\ea
+
+\bu{}{}
+证明: $\nabla\times\nabla\times A=\nabla(\nabla \cdot A)-\nabla^2A$.
+\eu
+
+\bu{印度, 巴斯卡拉}{}
+当$x\in \left[0,\frac{\pi}{2}\right]$时, 有$\sin x\approx\frac{16x(\pi-x)}{5\pi^2-4x(\pi-x)}$.
+\eu
+
+\bu{柏拉图体, 正多面体}{}
+
+\eu
+
+\bu{阿基米德体, 半正多面体}{}
+
+\eu
+
+\bu{}{}
+置换$P(\nu)$的循环结构为$(\nu)=(1^{\nu_1}2^{\nu_2}\cdots m^{\nu_m})$, 在$S_n$群中属于与$P(\nu)$共轭的置换数目为
+\bee
+N(P)=\frac{n!}{\prod_i(i^{\nu_i}\nu_i!)}
+\eee
+\eu
+
+\bu{}{}
 正整数列$(v_i)$满足$\sum_iiv_i=n$, 则$\prod_ii^{v_i}v_i!\mid n!$
 \eu
 

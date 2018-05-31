@@ -1,5 +1,25 @@
 \chapter{神奇的反例}
 
+\bq{}{}
+举例说明: $\lim_{x\to a}\phi(x)=A$, $\lim_{x\to A}\psi(x)=B$, 但$\lim_{x\to a}\psi(\phi(x))\ne B$.
+\eq
+\ba
+\bee
+\phi(x)=\left\{
+\begin{array}{ll}
+ \frac1q, & x=\frac{p}{q}, (p,q\in\Integers, (p,q)=1)\\
+ 0, & x\not\in\Rationals.
+\end{array}
+\right.\quad
+\psi(x)=\left\{
+\begin{array}{ll}
+ 1, & x\ne0,\\
+ 0, & x=0.
+\end{array}
+\right.\quad a=0.
+\eee
+\ea
+
 \bq{http://math.stackexchange.com/questions/2190498}{}
 给出如下论断的反例.
 

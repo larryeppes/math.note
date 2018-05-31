@@ -1,15 +1,247 @@
 \chapter{数学分析}
-\section{级数}
+
+\bq{}{}
+证明:
+\bee
+\lim_{n\to\infty}\left(\frac12\cdot\frac34\cdots\frac{2n-1}{2n}\right)=0.
+\eee
+\eq
+\ba
+用$\frac12\cdot\frac34\cdots\frac{2n-1}{2n}<\frac1{\sqrt{2n+1}}$.
+\ea
+
+\bq{}{}
+证明:
+\bee
+0<\ue-\left(1+\frac1n\right)^n<\frac{3}{n}.
+\eee
+\eq
+\ba
+先证: $x_n=\left(1+\frac1n\right)^n$单调上升且有界. ($1\cdot x_n\le\left(\frac{1+n(1+1/n)}{n+1}\right)^{n+1}=x_{n+1}$), 则
+\begin{align*}
+ x_n & = \sum_{k=0}^{n}\binom{n}{k}\frac1{n^k}=1+1+\binom{n}{2}\frac1{n^2}+\cdots\\
+ &= 2+\frac1{2!}\left(1-\frac1n\right)+\frac1{3!}\left(1-\frac1n\right)\left(1-\frac2n\right)+\cdots+\frac1{n!}\left(1-\frac1n\right)\cdots\left(1-\frac{n-1}{n}\right)\\
+ &< 2+\frac1{2\cdot 1}+\frac1{3\cdot 2}+\cdots+\frac1{n(n-1)}=3.
+\end{align*}
+再证$y_n=\left(1+\frac1n\right)^{n+1}$单调下降且有界. (用$(1+x)^n>1+nx$, $x>-1$证单调性).
+
+由$\ue=\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n$, $x_n<\ue<y_n$, (这可以证得{\color{red}{$\frac1{n+1}<\ln\left(1+\frac1n\right)<\frac1n$}}).
+
+故$\ue-x_n<y_n-x_n=\frac{x_n}{n}<\frac3n$.
+\ea
+
+\bq{}{}
+证明不等式
+\bee
+\left(\frac{n}{\ue}\right)^n<n!<\ue\left(\frac{n}{2}\right)^n.
+\eee
+\eq
+\ba
+用$2<\left(1+\frac1n\right)^n<\ue$及归纳法.
+\ea
+
+\bq{}{}
+设$a^{[n]}=a(a-h)\cdots[a-(n-1)h]$及$a^{[0]}=1$, 证明:
+\bee
+(a+b)^{[n]}=\sum_{m=0}^{n}\binom{n}{m}a^{[n-m]}b^{[m]}.
+\eee
+并由此推出牛顿二项式公式.
+\eq
+
+\bq{}{}
+证明不等式
+\bee
+n!<\left(\frac{n+1}{2}\right)^n\quad (n>1).
+\eee
+\eq
+\ba
+用均值不等式.
+\ea
+\ba
+用伯努利不等式证$\left(\frac{n+2}{n+1}\right)^{n+1}=\left(1+\frac1{n+1}\right)^{n+1}>2$, ($n\in\pNaturals$).
+\ea
+
+\bq{}{}
+设$p_n$($n\in\pNaturals$)为趋于正无穷的任意数列, 而$q_n$($n\in\pNaturals$)为趋于负无穷的任意数列($p_n, q_n\not\in[-1,0]$), 求证:
+\bee
+\lim_{n\to\infty}\left(1+\frac1{p_n}\right)^{p_n}=\lim_{n\to\infty}\left(1+\frac1{q_n}\right)^{q_{n}}=\ue.
+\eee
+\eq
+\ba
+用$[x]\le x<[x]+1$证明.
+\ea
+
+\bq{}{201805317}
+已知$\lim_{n\to\infty}\left(1+\frac1n\right)^n=\ue$, 求证:
+\bee
+\lim_{n\to\infty}\left(1+1+\frac{1}{2!}+\frac{1}{3!}+\cdots+\frac{1}{n!}\right)=\ue.
+\eee
+并推出
+\bee
+\ue=1+1+\frac{1}{2!}+\frac{1}{3!}+\cdots+\frac{1}{n!}+\frac{\t_n}{n!n},
+\eee
+其中$0<\t_n<1$.
+\eq
+
+\bq{}{}
+证明: $\ue$是无理数.
+\eq
+\ba
+用反证法及\ref{q:201805317}有, 对于任意的$n$, $n!n\cdot\ue$不是整数.
+\ea
+
+\bq{}{}
+证明不等式:
+\begin{enumerate}[(a)]
+ \item $\frac{1}{n+1}<\ln\left(1+\frac1n\right)<\frac1n$, ($n\in\pNaturals$);
+ \item $1+\a<\ue^{\a}$, ($\a\ne0, \a\in\Reals$).
+\end{enumerate}
+\eq
+\ba
+\begin{enumerate}[(a)]
+ \item 原式等价于$\left(1+\frac1n\right)^n<\ue<\left(1+\frac1n\right)^{n+1}$;
+ \item $\a>-1$时, 用伯努利不等式, $\ue^{\a}>\left(1+\frac1n\right)^{\a n}>1+\a$.
+\end{enumerate}
+\ea
+
+\bq{}{2018053110}
+证明: (在以下各极限军存在的情况下)
+\begin{enumerate}[(a)]
+ \item $\liminf_{n\to\infty}x_n+\liminf_{n\to\infty}y_n\le\liminf_{n\to\infty}(x_n+y_n)\le\liminf_{n\to\infty}x_n+\limsup_{n\to\infty}y_n$;
+ \item $\liminf_{n\to\infty}x_n+\limsup_{n\to\infty}y_n\le\limsup_{n\to\infty}(x_n+y_n)\le\limsup_{n\to\infty}x_n+\limsup_{n\to\infty}y_n$.
+\end{enumerate}
+\eq
+\ba
+用$\liminf_{n\to\infty}x_n=-\limsup_{n\to\infty}(-x_n)$.
+\ea
+
+\bq{}{}
+证明: 若$\lim_{n\to\infty}x_n$存在, 则对于任何数列$y_n$($n\in\pNaturals$), $\limsup_{n\to\infty}y_n$有限且有:
+\begin{enumerate}[(a)]
+ \item $\limsup_{n\to\infty}(x_n+y_n)=\lim_{n\to\infty}x_n+\limsup_{n\to\infty}y_n$;
+ \item $\limsup_{n\to\infty}x_ny_n=\lim_{n\to\infty}x_n\cdot\limsup_{n\to\infty}y_n$, ($x_n\ge0$).
+\end{enumerate}
+\eq
+\ba
+用\ref{q:2018053110}.
+\ea
+
+\bq{}{}
+证明: 若对于某数列$x_n$($n\in\pNaturals$), 无论数列$y_n$($n\in\pNaturals$)如何选取, 以下两个等式中都至少有一个成立:
+\begin{enumerate}[(a)]
+ \item $\limsup_{n\to\infty}(x_n+y_n)=\limsup_{n\to\infty}x_n+\limsup_{n\to\infty}y_n$.
+ \item $\limsup_{n\to\infty}(x_ny_n)=\limsup_{n\to\infty}x_n\cdot\limsup_{n\to\infty}y_n$, ($x_n\ge0$).
+\end{enumerate}
+则数列$x_n$收敛或发散于正无穷.
+\eq
+
+\bq{}{}
+证明: 若$x_n>0$($n\in\pNaturals$)及
+\bee
+\limsup_{n\to\infty}x_n\cdot\limsup_{n\to\infty}\frac1{x_n}=1.
+\eee
+则数列$x_n$是收敛的.
+\eq
+
+\bq{}{}
+证明: 若数列$x_n$($n\in\pNaturals$)有界, 且
+\bee
+\lim_{n\to\infty}(x_{n+1}-x_n)=0.
+\eee
+则此数列的子列极限充满于下极限和上极限
+\bee
+l=\liminf_{n\to\infty}x_n\  \textrm{和}\ L=\limsup_{n\to\infty}x_n
+\eee
+之间.
+\eq
+
+\bq{}{2018053117}
+证明: 若$x_n>0$($n\in\pNaturals$)且$\lim_{n\to\infty}\frac{x_{n+1}}{x_n}$存在, 则
+\bee
+\lim_{n\to\infty}\sqrt[n]{x_n}=\lim_{n\to\infty}\frac{x_{n+1}}{x_n}.
+\eee
+\eq
+\ba
+用结论: 若$\{x_n\}\to x$, $x_n>0$, 则$\lim_{n\to\infty}\sqrt[n]{x_1x_2\cdots x_n}=\lim_{n\to\infty}x_n=x$.
+\ea
+
+\bq{}{}
+证明: $\lim_{n\to\infty}\frac{n}{\sqrt[n]{n!}}=\ue$.
+\eq
+\ba
+用\ref{q:2018053117}.
+\ea
+
+\bq{数$a$和$b$的算术几何平均值}{}
+证明: 由下列各式
+\bee
+x_1=a,\quad y_1=b,\quad x_{n+1}=\sqrt{x_ny_n},\quad y_{n+1}=\frac{x_n+y_n}{2},
+\eee
+确定的数列$x_n$和$y_n$($n\in\pNaturals$)有共同的极限.
+\bee
+\m(a,b)=\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n.
+\eee
+\eq
+\ba
+用幂平均不等式, $\sqrt{x_{n+1}+y_{n+1}}=\frac{\sqrt{x_n}+\sqrt{y_{n}}}{\sqrt{2}}\le\sqrt{x_n+y_n}$.
+即$\{y_n\}$单调有界, 从而有极限, 从而$x_n=2y_{n+1}-y_n$有相同的极限.
+\ea
+
+\bq{}{}
+设
+\bee
+f\left(x+\frac1x\right)=x^2+\frac1{x^2}\quad(\abs{x}\ge2),
+\eee
+求$f(x)$.
+\eq
+\ba
+$x^2-2$, ($\abs{x}\ge\frac52$).
+\ea
+
+\bq{}{}
+证明: 若
+\begin{enumerate}[(1)]
+ \item 函数$f(x)$定义于区域$x>a$;
+ \item $f(x)$在每一个有限区间$a<x<b$内是有界的;
+ \item 对于某一个整数$n$, 存在有限的或无穷的极限
+ \bee
+ \lim_{x\to+\infty}\frac{f(x+1)-f(x)}{x^n}=l,
+ \eee
+\end{enumerate}
+则
+\bee
+\lim_{x\to+\infty}\frac{f(x)}{x^{n+1}}=\frac{l}{n+1}.
+\eee
+\eq
+{\color{red}{\bf{能否用Cauchy定理\ref{th:cauchy-theorem}证明它.}}}
+
+\bq{}{}
+$x_n$满足$x_n^n+x_n-1=0$, $0<x_n<1$, 求$\lim_{n\to\infty}x_n$.
+\eq
+\ba
+$y=x^n+x-1$则有$y'>0$, $y\vert_{x=0}=-1<0$, $y\vert_{x=1}=1>0$.
+
+$x_n$是$x^n+x-1$的唯一零点. 由于
+\bee
+x_{n}^{n+1}+x_n-1=(x_n-1)(1-x_n)<0
+\eee
+及$y$的单调性, 知$x_{n+1}$在$x_n$与$1$之间, 故$\{x_n\}$单调有界.
+反证$\{x_n\}$的极限$A=1$, 否则$0\le A<1$矛盾.
+\ea
+\ba
+$y^x+y-1=0$是隐函数, 确定$y=f(x)$, $x_n=f(n)$, 求导
+\bee
+y'=-y^x\cdot\frac{\ln y}{\left(1+\frac{x}{y}\cdot y^x\right)}
+\eee
+当$x\ge1$时, $y'>0$, $y$单调增加, 以下同上.
+\ea
 
 \bq{}{}
 若级数$\sum_{n=1}^{\infty}a_n^2$, $\sum_{n=1}^{\infty}b_n^2$都收敛, 则以下不成立的是?
 
-\it A. $\sum_{n=1}^{\infty}(a_n+b_n)^2$收敛;\qquad\qquad B.$\sum_{n=1}^{\infty}\frac{|a_n|}{n}$收敛;\\
+A. $\sum_{n=1}^{\infty}(a_n+b_n)^2$收敛;\qquad\qquad B.$\sum_{n=1}^{\infty}\frac{|a_n|}{n}$收敛;\\
 C. $\sum_{n=1}^{\infty}a_nb_n$收敛;\qquad\qquad\qquad D. $\sum_{n=1}^{\infty}a_nb_n$发散.
-\rm
 \eq
-
-\section{}
 
 \bq{}{}
 设$f(x,y)$与$\varphi(x,y)$均为可微函数, 且$\varphi'_y(x,y)\ne0$. 已知$(x_0,y_0)$是$f(x,y)$在约束条件$\varphi(x,y)=0$下的一个极值点,
@@ -440,6 +672,376 @@ $\frac{f(\gamma)-f(\alpha)}{\gamma-\alpha}=\frac{f(\beta)-f(\gamma)}{\beta-\gamm
 \ea
 
 \newpage
+\bq{}{}
+设函数$f(x)$在$\mathbb{R}$上无限可微, 且:
+\begin{enumerate}[a)]
+ \item 存在$L>0$, 使得对于任意的$x\in\mathbb{R}$及$n\in\mathbb{N}$有$|f^{(n)}(x)|\le L$.
+ \item $f\left(\frac1n\right)=0$, 对所有$n=1,2,3\cdots$.
+\end{enumerate}
+求证: $f(x)\equiv 0$.
+\eq
+\ba
+由$f$在$\mathbb{R}$上无限次可微, 且由a)知$f$有在$x=0$处的Taylor展开
+\bee
+f(x)=f(0)+\frac{f'(0)}{1!}x+\frac{f''(0)}{2!}x^2+\cdots.
+\eee
+设$N$是使$f^{(N)}(0)\ne0$的最小者, 取正整数$M>1$使$|f^{(N)}(0)|>\frac{L}{M-1}$.
+则
+\begin{align*}
+ 0=\left|f\left(\frac{1}{M}\right)\right| &= \left|f^{(N)}(0)\frac{x^N}{N!}+f^{(N+1)}(0)\frac{x^{N+1}}{(N+1)!}+\cdots\right|\\
+    &\ge |f^{(N)}(0)|\frac{1}{N!M^N}-L\left(\frac{1}{(N+1)!M^{N+1}}+\frac{1}{(N+2)!M^{N+2}}+\cdots\right)\\
+    &\ge |f^{(N)}(0)|\frac{1}{N!M^N}-L\left(\frac{1}{N!M^{N+1}}+\frac{1}{N!M^{N+2}}+\cdots\right)\\
+    &= |f^{(N)}(0)|\frac{1}{N!M^N}-\frac{L}{N!}\frac{1}{M^{N+1}}\frac{1}{1-\frac1M}\\
+    &= \left(|f^{(N)}(0)|-\frac{L}{M-1}\right)\frac{1}{N!M^N}>0.
+\end{align*}
+这导致矛盾, 即所有$f^{(n)}(0)=0$, $f(x)\equiv0$.
+\ea
+
+\bq{}{20170404012}
+设$\{f_n(x)\}_{n=1}^{\infty}\subset C_{[a,b]}$, 且$f_n(x)$在$[a,b]$上一致收敛于$f(x)$, 则$\lim_{n\to\infty}\int_{a}^{b}f_n(x)\ud x=\int_a^bf(x)\ud x$.
+\eq
+\ba
+因$f_n(x)\rightrightarrows f(x)$, $x\in[a,b]$, 所以$f\in C_{[a,b]}$且$\forall \varepsilon>0$, $\exists N$, 当$n>N$时, $\forall x\in[a,b]$均有$|f_n(x)-f(x)|<\varepsilon$.
+$f(x), f_n(x)$连续必可积, 有
+\bee
+\left|\int_a^b f_{n}(x)\ud x-\int_a^bf(x)\ud x\right| < (b-a)\varepsilon.
+\eee
+其实当$a\le x\le b$时, 有$\left|\int_a^xf_n(t)\ud t-\int_a^xf(t)\ud t\right|<(b-a)\varepsilon$对$x$一致成立, 
+所以$\int_a^xf_n(x)\ud t\rightrightarrows\int_a^xf(t)\ud t$.
+\ea
+
+\bq{}{}
+$f_n(x)$在$[a,b]$上都有连续导数, 且$f_n(x)\to f(x)$, $f'_n(x)\rightrightarrows g(x)$, 则$f'(x)=g(x)$, 
+即$\frac{\ud}{\ud x}\left(\lim_{n\to\infty}f_n(x)\right)=\lim_{n\to\infty}\frac{\ud}{\ud x}f_n(x)$.
+\eq
+\ba
+因$f'_n\rightrightarrows g$, 所以$g$连续, 可积, 由\ref{q:20170404012}, $\int_a^xg(t)\ud t=\lim_{n\to\infty}\int_a^xf'_n(t)\ud t=f(x)-f(a)$,
+所以$f'(x)=g(x)$. 其实$f_n(x)=f_n(a)+\int_a^xf'_n(t)\ud t$在$[a,b]$上也一致收敛.
+
+若\ref{q:20170404012}和本问题中的$f_n(x)$视为函数项级数$\sum_{k=1}^{\infty}u_k(x)$的前$n$项部分和, 就有函数项级数的相应命题.
+\begin{enumerate}[(1). ]
+ \item 若$[a,b]$上$\sum_{k=1}^{\infty}u_k(x)$中每项$u_k$均连续, 且$\sum_{k=1}^{\infty} u_k(x)\rightrightarrows f(x)$, 则$f(x)\in C_{[a,b]}$且
+ \bee
+ \sum_{k=1}^{\infty}\int_a^bu_k(x)\ud x=\int_a^bf(x)\ud x.
+ \eee
+ \item 若$[a,b]$上, $\sum_{k=1}^{\infty}u_k(x)$的每项都有连续导数$u'_k(x)$且$\sum_{k=1}^{\infty}u'_k(x)\rightrightarrows g(x)$, 
+ 而$\sum_{k=1}^{\infty}u_k(x)\to f(x)$. 则
+ \bee
+ \frac{\ud}{\ud x}\left(\sum_{k=1}^{\infty}u_k(x)\right)=\sum_{k=1}^{\infty}u'_k(x).
+ \eee
+\end{enumerate}
+\ea
+
+\bq{}{}
+举反例:
+\begin{enumerate}[(1)]
+ \item 积分的极限不等于极限的积分的函数列.
+ \item 导数的极限不等于极限的导数的函数列.
+\end{enumerate}
+\eq
+\ba
+(1). 在$[0,1]$上极限函数为0, 但$f_n$在$\left[0,\frac1n\right]$上面积为1的脉冲函数.
+
+(2). $f_n(x)=\frac{x}{1+n^2x^2}$, $x\in[-1,1]$.
+\ea
+
+\bq{http://math.stackexchange.com/questions/2143014}{}
+证明: 对于任意的$\alpha\in\mathbb{Q}\setminus\mathbb{Z}$, $\sum_{n=1}^{\infty}\ln\left|\frac{\alpha-n}{\alpha+n}\right|$发散.
+\eq
+
+\bq{http://math.stackexchange.com/questions/472007}{}
+判断$\sum_{n=10}^{\infty}\frac{\sin n}{n+10\sin n}$的敛散性.
+\eq
+\ba
+其实, 若$f(n)$是有界函数, 且级数$\sum_{n=1}^{n}\frac{f(n)}{n}$收敛, $a$是使任意的$n$都有$n+af(n)\ne 0$, 则$\sum_{n=1}^{\infty}\frac{f(n)}{n+af(n)}$.
+
+这是因为
+\bee
+\sum_{n=1}^{m}\frac{f(n)}{n+af(n)}
+  = \sum_{n=1}^{m}\frac{f(n)}{n}+\sum_{n=1}^{m}\frac{-af^2(n)}{n(n+af(n))}
+\eee
+后一个和式用比较判别法.
+\ea
+
+\bq{http://math.stackexchange.com/questions/273559}{}
+判断$\sum_{n=1}^{\infty}\frac{\sin^2(n)}{n}$的敛散性.
+\eq
+\ba
+比较判别法, $[k\pi+\frac{\pi}{6}, (k+1)\pi-\frac{\pi}{6}]$中总有至少一个整数.
+
+或用$\sum\frac{\sin^2(n)}{n}=\sum\frac{1}{2n}-\sum\frac{\cos(2n)}{2n}$, 前者发散, 后者用Dirichlet判别法.
+\ea
+
+\bq{http://math.stackexchange.com/questions/991652}{}
+证明$\int_0^1\left|\frac{1}{x}\sin\frac{1}{x}\right|\ud x$发散.
+\eq
+\ba
+变量替换, 积分化为$\int_1^{\infty}\frac{|\sin x|}{x}\ud x$, 然后在子区间$(k\pi, (k+1)\pi)$上求下界. 
+\ea
+
+\bq{http://math.stackexchange.com/questions/620449}{}
+证明: 求$p\in\mathbb{R}$, 使积分$\int_0^{\infty}\frac{x^p}{1+x^p}\ud x$发散.
+\eq
+\ba
+$p\ge-1$.
+\ea
+
+\bq{http://math.stackexchange.com/questions/596511}{}
+计算
+\bee
+\int_0^{\infty}\frac{\ue^{-x}-\ue^{-2x}}{x}\ud x
+\eee
+\eq
+\ba
+用Frullani积分. 结果为$\log 2$. 或用重积分: $\ue^{-x}-\ue^{-2x}=x\int_1^2\ue^{-xt}\ud t$. 这里给出Frullani积分证明过程的做法.
+\begin{align*}
+ \int_a^b\frac{\ue^{-x}-\ue^{-2x}}{x}\ud x
+  & =\int_a^b\frac{\ue^{-x}}{x}\ud x - \int_{2a}^{2b}\frac{\ue^{-x}}{x}\ud x\\
+  & =\left(\int_a^b-\int_{2a}^{2b}\right)\frac{\ue^{-x}}{x}\ud x\\
+  & = \left(\int_a^{2a}-\int_{b}^{2b}\right)\frac{\ue^{-x}}{x}\ud x\to\log(2)-0, \quad a\to0, b\to\infty
+\end{align*}
+上式最后一步用$\ue^{-2c}\log(2)\le\int_c^{2c}\frac{\ue^{-x}}{x}\ud x\le\ue^{-c}\log(2)$.
+\ea
+
+\bq{http://math.stackexchange.com/questions/590774}{}
+已知$a>b>0$, 求$\lim_{t\to0^+}(a^{-t}-b^{-t})\Gamma(t)$.
+\eq
+\ba
+注意到$\Gamma(t)=a^t\int_0^{\infty}\frac{\ue^{-as}}{s^{1-t}}\ud s$, 所以
+\bee
+\lim_{t\to0^+}(a^{-t}-b^{-t})\Gamma(t)
+  = \int_0^{\infty}\frac{\ue^{-ax}-\ue^{-bx}}{x}\ud x
+\eee
+然后用Frullani积分算得$\log\frac{a}{b}$.
+\ea
+
+\bq{http://math.stackexchange.com/questions/590774}{20170626001}
+已知$a>b>0$, 求$\int_0^{\infty}\frac{\ue^{-ax}-\ue^{-bx}}{x}\ud x$.
+\eq
+\ba
+可以用Frullani积分. 这里用含参积分求导的方法, 定义$I(t)=\int_0^{\infty}\frac{\ue^{-x}-\ue^{-tx}}{x}\ud x$, 被积函数记为$f(x,t)$, 
+由$f(x,t)$和$f_t(x,t)$在定义域均连续, $I(t)$关于$t$收敛且$\int_0^{\infty}f_t(x,t)\ud x$关于$t$一致收敛, 则满足积分号下求导条件, 
+所以$\frac{\ud I}{\ud t}=-\frac{1}{a}$, $I=-\log t$.
+\ea
+\ba
+\begin{align*}
+\int_{0}^{\infty}\frac{\exp(-ax) - \exp(-bx)}{x}dx &= \lim_{\epsilon\to 0}\int_{\epsilon}^{\infty}\frac{\exp(-ax) - \exp(-bx)}{x}dx\\
+&=\lim_{\epsilon\to 0}\left[\int_{\epsilon}^{\infty}\frac{\exp(-ax)}{x}dx - \int_{\epsilon}^{\infty}\frac{\exp(-bx)}{x}dx\right]\\
+&=\lim_{\epsilon\to 0}\left[\int_{a\epsilon}^{\infty}\frac{\exp(-t)}{t}dt - \int_{b\epsilon}^{\infty}\frac{\exp(-t)}{t}dt\right]\\
+&=\lim_{\epsilon\to 0}\int_{a\epsilon}^{b\epsilon}\frac{\exp(-t)}{t}dt=\lim_{\epsilon\to 0}\int_{a}^{b}\frac{\exp(-\epsilon u)}{u}du
+\end{align*}
+最后的被积函数一致收敛到$\frac{1}{u}$.
+\ea
+\ba
+用Laplace变换, $F(s)=\int_0^{\infty}f(x)\ue^{-sx}\ud x$, 则
+\bee
+F(s) = \int_{0}^{\infty} \frac{e^{-bx}-e^{-ax}}{x} e^{-sx} dx \implies  F'(s) = -\int_{0}^{\infty} ({e^{-bx}-e^{-ax}}) e^{-sx} dx.
+\eee
+计算最后一个积分, 然后求积分并令$s\to0$, 其中积分出来的积分常数用极限$\lim_{s\to\infty}F(s)=0$计算.
+\ea
+
+\bq{http://math.stackexchange.com/questions/164400}{}
+求$\int_{0}^{\infty}\frac{\ue^{-x}-\ue^{-xt}}{x}\ud x=\log t$, 其中$t>0$.
+\eq
+\ba
+让$u=\ue^{-x}$, 得
+\bee
+\int_{0}^{1}\frac{u^{t-1}-1}{\log u}\ud u = \int_{0}^{1}\int_{1}^{t}u^{s-1}\ud s\ud u
+  =\int_{1}^{t}\int_{0}^{1}u^{s-1}\ud u\ud s=\log t.
+\eee
+\ea
+\ba
+同\ref{q:20170626001}的解法一.
+\ea
+\ba
+用重积分求解, $I(t)=\int_{0}^{\infty}\frac{\ue^{-x}-\ue^{-xt}}{x}\ud x=\int_{0}^{\infty}\int_{1}^{t}\ue^{-xs}\ud s\ud x$.
+这里验证积分次序可交换, 则
+\bee
+LHS=\int_{1}^{t}\int_{0}^{\infty}\ue^{-xs}\ud x\ud s=\ln t.
+\eee
+\ea
+\ba
+用Laplace变换, $g(s)=L[f(x)]=L\left[\frac{\ue^{-ax}-\ue^{-bx}}{x}\right]$, 则$-g'(s)=L[xf(x)]=\frac{1}{s+a}-\frac{1}{s+b}$.
+所以$g(s)=\log\frac{s+b}{s+a}+c$, 由于$g(\infty)=0$, 所以$c=0$. 从而
+\bee
+\int_{0}^{\infty}\frac{\ue^{-ax}-\ue^{-bx}}{x}\ue^{-sx}\ud x=\log\frac{s+b}{s+a}.
+\eee
+令$s=0$即可.
+\ea
+\ba
+用Laplace变换, $L[1]=\int_{0}^{\infty}\ue^{-st}\ud t=\frac1s$, 则
+\bee
+LHS = \int_{0}^{\infty}\int_{0}^{\infty}(\ue^{-x}-\ue^{-xt})\ue^{-xs}\ud s\ud x
+  = \int_{0}^{\infty}\left(\frac{1}{s+1}-\frac{1}{s+t}\right)
+  = \ln\frac{s+1}{s+t}\Big\vert_{0}^{\infty}
+  = \ln t
+\eee
+\ea
+
+\bq{http://tieba.baidu.com/p/2686576086}{}
+设$f(x)$在实轴$\mathbb{R}$上有二阶导数, 且满足方程
+\bee
+2f(x)+f''(x)=-xf'(x).
+\eee
+求证$f(x)$和$f'(x)$都在$\mathbb{R}$上有界.
+\eq
+\ba
+构造$L=f^2+\frac12f'^2$, 研究$L'$. 方程可改成$f''(x)+\frac{x}{2}f'(x)+f(x)=0$.
+\ea
+
+\bq{http://tieba.baidu.com/p/3846349760}{}
+证明: $\sum_{n=1}^{\infty}\frac{1}{n}$发散.
+\eq
+\ba
+由于$\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n=\ue$, 且$\left(1+\frac{1}{n}\right)^n$单调增加, 则$\left(1+\frac{1}{n}\right)^n<\ue$, 
+于是$\ln\left(1+\frac{1}{n}\right)<\frac{1}{n}$, 从而$1+\frac12+\frac13+\cdots+\frac1n>\ln2+\ln\frac32+\cdots+\ln\left(1+\frac{1}{n}\right)=\ln(n+1)>\ln n$, 
+即得.
+\ea
+
+\bq{http://tieba.baidu.com/p/4931607145}{}
+设$f(x)$在$[a,b]$上可导, $f'(x)$在$[a,b]$上可积. 令
+\bee
+A_{n}=\sum_{i=1}^{n}f\left(a+i\cdot \frac{b-a}{n}\right)-\int_{a}^{b}f(x)\ud x.
+\eee
+试证
+\bee
+\lim_{n\to\infty}nA_n=\frac{b-a}{2}[f(b)-f(a)].
+\eee
+\eq
+\ba
+令$x_i=a+i\cdot\frac{b-a}{n}$, 则
+\begin{align*}
+nA_n & = n\left[\sum_{i=1}^{n}f(x_i)\cdot\frac{b-a}{n}-\sum_{i=1}^{n}\int_{x_{i-1}}^{x_{i}}f(x)\ud x\right]\\
+  & = n\sum_{i=1}^{n}\int_{x_{i-1}}^{x_{i}}[f(x_i)-f(x)]\ud x\\
+  & = n\sum_{i=1}^{n}\int_{x_{i-1}}^{x_{i}}\frac{f(x_{i})-f(x)}{x_{i}-x}(x_i-x)\ud x.
+\end{align*}
+在$[x_{i-1}, x_{i}]$上, $(x_i-x)$保号, 而$g(x)=\frac{f(x_i)-f(x)}{x_i-x}$连续(补充定义$g(x_i)=f'(x_i)$). 由积分第一中值定理知, 
+存在$\eta_{i}\in(x_{i-1},x_i)$, 使得
+\bee
+\int_{x_{i-1}}^{x_{i}}\frac{f(x_{i})-f(x)}{x_i-x}(x_i-x)\ud x = g(\eta_i)\int_{x_{i-1}}^{x_i}(x_i-x)\ud x.
+\eee
+再由Lagrange中值定理, 以上$g(\eta_i)=\frac{f(x_{i})-f(\eta_i)}{\eta_{i}-x}=f'(\xi_{i})$, ($\xi_i\in(\eta_i, x_i)\subset(x_{i-1},x_i)$). 
+于是
+\begin{align*}
+nA_n & = n\sum_{i=1}^{n}f'(\xi_{i})\int_{x_{i-1}}^{x_i}(x_i-x)\ud x = \frac{n}{2}\sum_{i=1}^{n}f'(\xi_i)(x_i-x_{i-1})^2\\
+  & = \frac{n}{2}\cdot\frac{b-a}{n}\sum_{i=1}^{n}f'(\xi_i)(x_i-x_{i-1})=\frac{b-a}{2}\sum_{i=1}^{n}f'(\xi_i)(x_i-x_{i-1})\\
+  & \to \frac{b-a}{2}\int_a^bf'(x)\ud x = \frac{b-a}{2}(f(b)-f(a)), \textrm{当}n\to\infty.
+\end{align*}
+\ea
+
+\bq{}{}
+$\int_0^1\frac{\sqrt[4]{x(1-x)^3}}{(1+x)^3}\ud x = \frac{3}{64}\sqrt[4]{2}\pi$.
+\eq
+
+\bq{}{}
+求证:
+\bee
+\int_0^{\infty}\frac{\sin^3x}{x^3}\ud x=\frac{3\pi}{8}
+\eee
+\eq
+\ba
+让$f(y)=\int_{0}^{\infty}\frac{\sin^3yx}{x^3}\ud x$, 判断积分号下可求导, 有
+\bee
+f''(y)=\frac{3}{4}\int_{0}^{\infty}\frac{-\sin yx+3\sin 3yx}{x}\ud x=\frac{3\pi}{4}\mathrm{sign} y.
+\eee
+\ea
+\ba
+用$\sum_{k=1}^{\infty}\frac{\sin k x}{k}=\frac{\pi-x}{2}$, 由
+\bee
+\frac{\ud^2}{\ud x^2}\frac{\sin^3(kx)}{k^3}=\frac{9\sin(3kx)-3\sin(kx)}{4k}.
+\eee
+则
+\bee
+\sum_{k=1}^{\infty}\frac{9\sin(3kx)-3\sin(kx)}{4k}=\frac{3\pi}{4}-3x.
+\eee
+积分后得:
+\bee
+\sum_{k=1}^{\infty}\frac{\sin^3(kx)}{k^3}=\frac{3\pi}{8}x^2-\frac{1}{2}x^3.
+\eee
+取$x=\frac{1}{n}$后两边同乘$n^2$得
+\bee
+\sum_{k=1}^{\infty}\frac{\sin^3\frac{k}{n}}{(k/n)^3}\frac{1}{n}=\frac{3\pi}{8}-\frac{1}{2n}.
+\eee
+而广义 Riemann 和显示
+\bee
+\lim_{n\to\infty}\sum_{k=1}^{\infty}\frac{\sin^3\frac{k}{n}}{(k/n)^3}\frac{1}{n}=\int_{0}^{\infty}\frac{\sin^3x}{x^3}\ud x.
+\eee
+广义 Riemann 和成立的条件是 $\sum_{k=0}^{\infty}\sup_{x\in[k,k+1]}|f'(x)|<\infty$? 这不等式蕴含 
+$\int_{0}^{\infty}|f'|\ud x<+\infty$, $f'\in L^1(0,\infty)$.
+\ea
+\ba
+用 Parseval 定理
+\bee
+\int_{-\infty}^{\infty}f(x)g(x)\ud x=\frac{1}{2\pi}\int_{-\infty}^{\infty}F(s)G(s)\ud s,
+\eee
+其中$F(s)=\mathcal{F}[f]$, $G(s)=\mathcal{F}[g]$, $\mathcal{F}[f]=\int_{\mathbb{R}}f(x)\ue^{\ui sx}\ud x$.
+若$f(x)=\frac{\sin x}{x}$, 则
+\bee
+F(s)=
+\begin{dcases}
+ \pi, \quad |s|\le 1\\
+ 0, \quad |s|>1,
+\end{dcases}
+\eee
+若$g(x)=\frac{\sin^2x}{x^2}$, 则
+\bee
+G(s)=
+\begin{dcases}
+ \pi\left(1-\frac{|s|}{2}\right), |s|\le 2\\
+ 0, |s|>2,
+\end{dcases}
+\eee
+所以$\int_{\mathbb{R}}\frac{\sin^3x}{x^3}\ud x=\frac{1}{2\pi}\int_{-1}^{1}\pi^2\left(1-\frac{|s|}{2}\right)\ud s=\frac{3\pi}{4}$.
+即$\int_{0}^{\infty}\frac{\sin^3x}{x^3}\ud x=\frac{3\pi}{8}$.
+\ea
+\ba
+用 Laplace 变换 $F(s)=\mathcal{L}[f]=\int_{0}^{\infty}f(x)\ue^{-sx}\ud x$, 对于$f(x)=\frac{\sin^3x}{x^3}$有
+\bee
+F(s)=\frac{\pi s^2}{8}+\frac{3\pi}{8}-\frac{3(s^2-1)}{8}\arctan s+\frac{s^2-9}{8}\arctan\frac{s}{3}+\frac{3s}{8}\ln\frac{s^2+1}{s^2+9}.
+\eee
+\ea
+\ba
+用 Laplace 恒等式
+\bee
+\int_{0}^{\infty}F(u)g(u)\ud u=\int_{0}^{\infty}f(u)G(u)\ud u, F(s)=\mathcal{L}[f(t)], G(s)=\mathcal{L}[g(t)].
+\eee
+让 $G(u)=\frac{1}{u^3}$ 得 $g(u)=\frac{u^2}{2}$, 让 $f(u)=\sin^3 u$ 得 $F(u)=\frac{6}{(u^2+1)(u^2+9)}$, 则
+\bee
+\int_{0}^{\infty}\frac{\sin^3 x}{x^3}\ud x=\frac{6}{2}\int_{0}^{\infty}\frac{u^2}{(u^2+1)(u^2+9)}\ud u = \frac{3\pi}{8}.
+\eee
+\ea
+\ba
+留数定理, 由 $\sin^3 x=\frac{3\sin x-\sin(3x)}{4}$ 得 $\int_{\mathbb{R}}\left(\frac{\sin x}{x}\right)^3\ud x=\int_{\mathbb{R}}\frac{3\sin x-\sin(3x)}{4x^3}\ud x$.
+围道 $\gamma=\gamma_1\cup\gamma_2\cup\gamma_3\cup\gamma_4$, $\gamma_1=[r,R]$, $\gamma_2$ 是以 $(0,0)$ 为心 $R$ 为径的上半圆,
+$\gamma_3=[-R,-r]$, $\gamma_4$ 为以 $(0,0)$ 为心 $r$ 为径的上半圆, $\gamma$ 取逆时针方向为正方向. 取 $f(z)=\frac{3\ue^{\ui z}-\ue^{3\ui z}}{z^3}$, 
+则 $f$ 在 $\gamma$ 内解析, 由 Cauchy-Goursat 公式 
+\be
+\oint_{\gamma}f(z)=0\label{Cauchy}, 
+\ee
+并用 Laurent 展开或留数定理得
+\bee
+\int_{\gamma_4}f(z)\ud z=-\frac{3\pi\ui}{4}, 
+\lim_{R\to\infty}\int_{\gamma_2}f(z)\ud z=0, 
+\lim_{{r\to0}\atop{R\to\infty}}\int_{\gamma_1\cup\gamma_3}f(z)\ud z=2\ui\int_{0}^{\infty}\left(\frac{\sin x}{x}\right)^3\ud x.
+\eee
+代入\ref{Cauchy}即得.
+\ea
+
+\bq{}{}
+设函数$f:(a,b)\to\mathbb{R}$连续可微, 又设对于任意的$x,y\in(a,b)$, 存在唯一的$z\in(a,b)$使得$\frac{f(y)-f(x)}{y-x}=f'(z)$.
+证明: $f(x)$严格凸或严格凹.
+\eq
+\ba
+反证法, 构造$\lambda$的函数
+\bee
+\Lambda(\lambda)=f(\lambda\alpha+(1-\lambda)\beta)-\lambda f(\alpha)-(1-\lambda)f(\beta), \quad \lambda\in(0,1)
+\eee
+若结论不真, 则存在$\alpha, \beta\in(a,b)$使$\Lambda(\lambda)$在$(0,1)$的某两点异号, 由于$f$连续, 所以存在$\lambda_0\in(0,1)$使$\Lambda(\lambda_0)=0$. 
+
+设$\gamma=\lambda_0\alpha+(1-\lambda_0)\beta$, 则$\gamma\in(\alpha,\beta)\subset(a,b)$且
+$\frac{f(\gamma)-f(\alpha)}{\gamma-\alpha}=\frac{f(\beta)-f(\gamma)}{\beta-\gamma}$. 再由拉格朗日中值定理得出矛盾.
+\ea
+
 \bq{}{}
 设函数$f(x)$在$\mathbb{R}$上无限可微, 且:
 \begin{enumerate}[a)]

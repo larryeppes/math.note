@@ -22,10 +22,14 @@
   {colback=purple!5,colframe=purple!75!black,fonttitle=\bfseries}{lm}
 \newtcbtheorem[number within=section]{theorem}{定理}%
   {colback=purple!5,colframe=purple!75!black,fonttitle=\bfseries}{th}
-  \newtcbtheorem[number within=section]{corrolary}{推论}%
+\newtcbtheorem[number within=section]{corrolary}{推论}%
   {colback=yellow!5,colframe=yellow!75!black,fonttitle=\bfseries}{co}
 \newtcbtheorem[number within=section]{undone}{未知}%
   {colback=red!5,colframe=red!75!black,fonttitle=\bfseries}{un}
+\newtcbtheorem[number within=section]{comments}{评论}%
+  {colback=gray!5,colframe=gray!75!black,fonttitle=\bfseries}{cm}
+\newtcbtheorem[number within=section]{answer}{解答}%
+  {colback=gray!5,colframe=gray!75!black,fonttitle=\bfseries}{ans}
 % from amsthdoc.pdf
 \makeatletter
 \renewenvironment{proof}[1][\proofname]{\par
@@ -47,6 +51,8 @@
 \def\degree{^\circ}
 \def\bq{\begin{question}}
 \def\eq{\end{question}}
+\def\bqq{\begin{question*}}
+\def\eqq{\end{question*}}
 \def\bt{\begin{theorem}}
 \def\et{\end{theorem}}
 \def\bl{\begin{lemma}}
@@ -55,10 +61,14 @@
 \def\ed{\end{definition}}
 \def\bc{\begin{corrolary}}
 \def\ec{\end{corrolary}}
+\def\bm{\begin{comments*}{}{}}
+\def\em{\end{comments*}}
 \def\bu{\begin{undone}}
 \def\eu{\end{undone}}
 \def\ba{\begin{proof}[解]}
 \def\ea{\end{proof}}
+\def\bs{\begin{answer*}{}{}}
+\def\es{\end{answer*}}
 \def\ue{\mathrm{e}}
 \def\ud{\,\mathrm{d}}
 \def\ui{\mathrm{i}}
@@ -72,6 +82,13 @@
 \def\eee{\end{equation*}}
 \def\sumcyc{\sum\limits_{cyc}}
 \def\prodcyc{\prod\limits_{cyc}}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -85,3 +102,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\Integers}{\mathbb{Z}}
+\newcommand{\Naturals}{\mathbb{N}}
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\pNaturals}{\mathbb{N}_{+}}

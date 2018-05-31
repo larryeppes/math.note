@@ -1,4 +1,259 @@
 \chapter{数学分析}
+
+\bq{}{}
+证明:
+\bee
+\lim_{n\to\infty}\left(\frac12\cdot\frac34\cdots\frac{2n-1}{2n}\right)=0.
+\eee
+\eq
+\ba
+用$\frac12\cdot\frac34\cdots\frac{2n-1}{2n}<\frac1{\sqrt{2n+1}}$.
+\ea
+
+\bq{}{}
+证明:
+\bee
+0<\ue-\left(1+\frac1n\right)^n<\frac{3}{n}.
+\eee
+\eq
+\ba
+先证: $x_n=\left(1+\frac1n\right)^n$单调上升且有界. ($1\cdot x_n\le\left(\frac{1+n(1+1/n)}{n+1}\right)^{n+1}=x_{n+1}$), 则
+\begin{align*}
+ x_n & = \sum_{k=0}^{n}\binom{n}{k}\frac1{n^k}=1+1+\binom{n}{2}\frac1{n^2}+\cdots\\
+ &= 2+\frac1{2!}\left(1-\frac1n\right)+\frac1{3!}\left(1-\frac1n\right)\left(1-\frac2n\right)+\cdots+\frac1{n!}\left(1-\frac1n\right)\cdots\left(1-\frac{n-1}{n}\right)\\
+ &< 2+\frac1{2\cdot 1}+\frac1{3\cdot 2}+\cdots+\frac1{n(n-1)}=3.
+\end{align*}
+再证$y_n=\left(1+\frac1n\right)^{n+1}$单调下降且有界. (用$(1+x)^n>1+nx$, $x>-1$证单调性).
+
+由$\ue=\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n$, $x_n<\ue<y_n$, (这可以证得{\color{red}{$\frac1{n+1}<\ln\left(1+\frac1n\right)<\frac1n$}}).
+
+故$\ue-x_n<y_n-x_n=\frac{x_n}{n}<\frac3n$.
+\ea
+
+\bq{}{}
+证明不等式
+\bee
+\left(\frac{n}{\ue}\right)^n<n!<\ue\left(\frac{n}{2}\right)^n.
+\eee
+\eq
+\ba
+用$2<\left(1+\frac1n\right)^n<\ue$及归纳法.
+\ea
+
+\bq{}{}
+设$a^{[n]}=a(a-h)\cdots[a-(n-1)h]$及$a^{[0]}=1$, 证明:
+\bee
+(a+b)^{[n]}=\sum_{m=0}^{n}\binom{n}{m}a^{[n-m]}b^{[m]}.
+\eee
+并由此推出牛顿二项式公式.
+\eq
+
+\bq{}{}
+证明不等式
+\bee
+n!<\left(\frac{n+1}{2}\right)^n\quad (n>1).
+\eee
+\eq
+\ba
+用均值不等式.
+\ea
+\ba
+用伯努利不等式证$\left(\frac{n+2}{n+1}\right)^{n+1}=\left(1+\frac1{n+1}\right)^{n+1}>2$, ($n\in\pNaturals$).
+\ea
+
+\bq{}{}
+设$p_n$($n\in\pNaturals$)为趋于正无穷的任意数列, 而$q_n$($n\in\pNaturals$)为趋于负无穷的任意数列($p_n, q_n\not\in[-1,0]$), 求证:
+\bee
+\lim_{n\to\infty}\left(1+\frac1{p_n}\right)^{p_n}=\lim_{n\to\infty}\left(1+\frac1{q_n}\right)^{q_{n}}=\ue.
+\eee
+\eq
+\ba
+用$[x]\le x<[x]+1$证明.
+\ea
+
+\bq{}{201805317}
+已知$\lim_{n\to\infty}\left(1+\frac1n\right)^n=\ue$, 求证:
+\bee
+\lim_{n\to\infty}\left(1+1+\frac{1}{2!}+\frac{1}{3!}+\cdots+\frac{1}{n!}\right)=\ue.
+\eee
+并推出
+\bee
+\ue=1+1+\frac{1}{2!}+\frac{1}{3!}+\cdots+\frac{1}{n!}+\frac{\t_n}{n!n},
+\eee
+其中$0<\t_n<1$.
+\eq
+
+\bq{}{}
+证明: $\ue$是无理数.
+\eq
+\ba
+用反证法及\ref{q:201805317}有, 对于任意的$n$, $n!n\cdot\ue$不是整数.
+\ea
+
+\bq{}{}
+证明不等式:
+\begin{enumerate}[(a)]
+ \item $\frac{1}{n+1}<\ln\left(1+\frac1n\right)<\frac1n$, ($n\in\pNaturals$);
+ \item $1+\a<\ue^{\a}$, ($\a\ne0, \a\in\Reals$).
+\end{enumerate}
+\eq
+\ba
+\begin{enumerate}[(a)]
+ \item 原式等价于$\left(1+\frac1n\right)^n<\ue<\left(1+\frac1n\right)^{n+1}$;
+ \item $\a>-1$时, 用伯努利不等式, $\ue^{\a}>\left(1+\frac1n\right)^{\a n}>1+\a$.
+\end{enumerate}
+\ea
+
+\bq{}{2018053110}
+证明: (在以下各极限军存在的情况下)
+\begin{enumerate}[(a)]
+ \item $\liminf_{n\to\infty}x_n+\liminf_{n\to\infty}y_n\le\liminf_{n\to\infty}(x_n+y_n)\le\liminf_{n\to\infty}x_n+\limsup_{n\to\infty}y_n$;
+ \item $\liminf_{n\to\infty}x_n+\limsup_{n\to\infty}y_n\le\limsup_{n\to\infty}(x_n+y_n)\le\limsup_{n\to\infty}x_n+\limsup_{n\to\infty}y_n$.
+\end{enumerate}
+\eq
+\ba
+用$\liminf_{n\to\infty}x_n=-\limsup_{n\to\infty}(-x_n)$.
+\ea
+
+\bq{}{}
+证明: 若$\lim_{n\to\infty}x_n$存在, 则对于任何数列$y_n$($n\in\pNaturals$), $\limsup_{n\to\infty}y_n$有限且有:
+\begin{enumerate}[(a)]
+ \item $\limsup_{n\to\infty}(x_n+y_n)=\lim_{n\to\infty}x_n+\limsup_{n\to\infty}y_n$;
+ \item $\limsup_{n\to\infty}x_ny_n=\lim_{n\to\infty}x_n\cdot\limsup_{n\to\infty}y_n$, ($x_n\ge0$).
+\end{enumerate}
+\eq
+\ba
+用\ref{q:2018053110}.
+\ea
+
+\bq{}{}
+证明: 若对于某数列$x_n$($n\in\pNaturals$), 无论数列$y_n$($n\in\pNaturals$)如何选取, 以下两个等式中都至少有一个成立:
+\begin{enumerate}[(a)]
+ \item $\limsup_{n\to\infty}(x_n+y_n)=\limsup_{n\to\infty}x_n+\limsup_{n\to\infty}y_n$.
+ \item $\limsup_{n\to\infty}(x_ny_n)=\limsup_{n\to\infty}x_n\cdot\limsup_{n\to\infty}y_n$, ($x_n\ge0$).
+\end{enumerate}
+则数列$x_n$收敛或发散于正无穷.
+\eq
+
+\bq{}{}
+证明: 若$x_n>0$($n\in\pNaturals$)及
+\bee
+\limsup_{n\to\infty}x_n\cdot\limsup_{n\to\infty}\frac1{x_n}=1.
+\eee
+则数列$x_n$是收敛的.
+\eq
+
+\bq{}{}
+证明: 若数列$x_n$($n\in\pNaturals$)有界, 且
+\bee
+\lim_{n\to\infty}(x_{n+1}-x_n)=0.
+\eee
+则此数列的子列极限充满于下极限和上极限
+\bee
+l=\liminf_{n\to\infty}x_n\  \textrm{和}\ L=\limsup_{n\to\infty}x_n
+\eee
+之间.
+\eq
+
+\bq{}{2018053117}
+证明: 若$x_n>0$($n\in\pNaturals$)且$\lim_{n\to\infty}\frac{x_{n+1}}{x_n}$存在, 则
+\bee
+\lim_{n\to\infty}\sqrt[n]{x_n}=\lim_{n\to\infty}\frac{x_{n+1}}{x_n}.
+\eee
+\eq
+\ba
+用结论: 若$\{x_n\}\to x$, $x_n>0$, 则$\lim_{n\to\infty}\sqrt[n]{x_1x_2\cdots x_n}=\lim_{n\to\infty}x_n=x$.
+\ea
+
+\bq{}{}
+证明: $\lim_{n\to\infty}\frac{n}{\sqrt[n]{n!}}=\ue$.
+\eq
+\ba
+用\ref{q:2018053117}.
+\ea
+
+\bq{数$a$和$b$的算术几何平均值}{}
+证明: 由下列各式
+\bee
+x_1=a,\quad y_1=b,\quad x_{n+1}=\sqrt{x_ny_n},\quad y_{n+1}=\frac{x_n+y_n}{2},
+\eee
+确定的数列$x_n$和$y_n$($n\in\pNaturals$)有共同的极限.
+\bee
+\m(a,b)=\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n.
+\eee
+\eq
+\ba
+用幂平均不等式, $\sqrt{x_{n+1}+y_{n+1}}=\frac{\sqrt{x_n}+\sqrt{y_{n}}}{\sqrt{2}}\le\sqrt{x_n+y_n}$.
+即$\{y_n\}$单调有界, 从而有极限, 从而$x_n=2y_{n+1}-y_n$有相同的极限.
+\ea
+
+\bq{}{}
+设
+\bee
+f\left(x+\frac1x\right)=x^2+\frac1{x^2}\quad(\abs{x}\ge2),
+\eee
+求$f(x)$.
+\eq
+\ba
+$x^2-2$, ($\abs{x}\ge\frac52$).
+\ea
+
+\bq{}{}
+证明: 若
+\begin{enumerate}[(1)]
+ \item 函数$f(x)$定义于区域$x>a$;
+ \item $f(x)$在每一个有限区间$a<x<b$内是有界的;
+ \item 对于某一个整数$n$, 存在有限的或无穷的极限
+ \bee
+ \lim_{x\to+\infty}\frac{f(x+1)-f(x)}{x^n}=l,
+ \eee
+\end{enumerate}
+则
+\bee
+\lim_{x\to+\infty}\frac{f(x)}{x^{n+1}}=\frac{l}{n+1}.
+\eee
+\eq
+{\color{red}{\bf{能否用Cauchy定理\ref{th:cauchy-theorem}证明它.}}}
+
+\bq{}{}
+利用定理
+\bt{}{}
+设
+\bee
+\lim_{x\to 0}\frac{\phi(x)}{\psi(x)}=1,
+\eee
+其中$\psi(x)>0$, 再设当$n\to\infty$时$\a_{mn}\rightrightarrows0$($m=1,2,\cdots,n$), 
+换言之, 对于任意$\varepsilon>0$, 存在正整数$N(\varepsilon)$, 当$m=1,2,\cdots,n$且$n>N(\varepsilon)$时, 
+$0<\abs{\a_{mn}}<\varepsilon$. 证明:
+\bee
+\lim_{n\to\infty}[\phi(\a_{1n})+\phi(\a_{2n})+\cdots+\phi(\a_{mn})]
+=\lim_{n\to\infty}[\psi(\a_{1n})+\psi(\a_{2n})+\cdots+\psi(\a_{mn})],
+\eee
+此处同时还要假设上式右端的极限存在.
+\et
+求:
+\begin{enumerate}[(1)]
+ \item $\lim_{n\to\infty}\sum_{k=1}^{n}\left(\sqrt[n]{1+\frac{k}{n^2}}-1\right)$;
+ \item $\lim_{n\to\infty}\sum_{k=1}^{n}\left(\sin\frac{ka}{n^2}\right)$;
+ \item $\lim_{n\to\infty}\sum_{k=1}^{n}\left(a^{\frac{k}{n^2}}-1\right)$, ($a>0$);
+ \item $\lim_{n\to\infty}\prod_{k=1}^{n}\left(1+\frac{k}{n^2}\right)$;
+ \item $\lim_{n\to\infty}\prod_{k=1}^{n}\cos\frac{ka}{n\sqrt{n}}$.
+\end{enumerate}
+\eq
+
+\bq{}{}
+设函数$f(x)$在区间$(x_0,+\infty)$上连续并有界. 证明: 对于任何数$T$, 可求得数列$x_n\to+\i$, 
+使
+\bee
+\lim_{n\to\infty}[f(x_n+T)-f(x_n)]=0.
+\eee
+\eq
+
+\bq{}{}
+证明: 在有限区间$(a,b)$上有定义且连续的函数$f(x)$, 可用连续的方法延拓到闭区间$[a,b]$上, 
+其充分必要条件是函数$f(x)$在区间$(a,b)$上一致连续.
+\eq
+
 \bq{}{}
 $x_n$满足$x_n^n+x_n-1=0$, $0<x_n<1$, 求$\lim_{n\to\infty}x_n$.
 \eq
@@ -23,9 +278,8 @@ y'=-y^x\cdot\frac{\ln y}{\left(1+\frac{x}{y}\cdot y^x\right)}
 \bq{}{}
 若级数$\sum_{n=1}^{\infty}a_n^2$, $\sum_{n=1}^{\infty}b_n^2$都收敛, 则以下不成立的是?
 
-\it A. $\sum_{n=1}^{\infty}(a_n+b_n)^2$收敛;\qquad\qquad B.$\sum_{n=1}^{\infty}\frac{|a_n|}{n}$收敛;\\
+A. $\sum_{n=1}^{\infty}(a_n+b_n)^2$收敛;\qquad\qquad B.$\sum_{n=1}^{\infty}\frac{|a_n|}{n}$收敛;\\
 C. $\sum_{n=1}^{\infty}a_nb_n$收敛;\qquad\qquad\qquad D. $\sum_{n=1}^{\infty}a_nb_n$发散.
-\rm
 \eq
 
 \bq{}{}

@@ -383,7 +383,7 @@ $(3,2,1,0)$, $(3,0,1,2)$.
 \begin{array}{l}
  x_1+x_2+\cdots+x_n=n,\\
  x_1^2+x_2^2+\cdots+x_n^2=n,\\
- \cdots,\\
+ \ddots,\\
  x_1^n+x_2^n+\cdots+x_n^n=n.
 \end{array}
 \right.
@@ -411,39 +411,4 @@ $S_n=w^n+x^n+y^n+z^n$, ($n\in\pNaturals$),
 
 若$\sigma_3=0$, 则$x,y,z,w$是$t^4+\sigma_2t^2+\sigma_4=0$的四个实根,
 $w$比为$x,y,z$之一的相反数, 故$f=0$.
-\ea
-
-\bq{}{}
-求方程组
-\bee
-\left\{
-\begin{array}{l}
- x+y+z=0,\\
- x^3+y^3+z^3=-18.
-\end{array}
-\right.
-\eee
-的整数解$(x,y,z)$.
-\eq
-\ba
-由牛顿等幂公式得$xyz=-6$. 
-故$(x,y,z)=(1,2,-3)$, $(2,1,-3)$,
-$(1,-3,2)$, $(2,-3,1)$, $(-3,1,2)$,
-$(-3,2,1)$.
-\ea
-
-\bq{第9届美国数学奥林匹克}{}
-定义
-\bee
-f_n=x^n\sin nA+y^n\sin nB+z^n\sin nC\quad (n\in\pNaturals),
-\eee
-其中$\angle A, \angle B, \angle C\in \Reals$, 且$\angle A+\angle B+\angle C=k\pi$,
-($k\in\Integers$), 如果$f_1=f_2=0$, 求证$f_n=0$对于一切$n\in\pNaturals$成立.
-\eq
-\ba
-令$(\alpha, \beta, \gamma)=(x\ue^{\ui A}, y\ue^{\ui B}, z\ue^{\ui C})$,
-$S_n=\alpha^n+\beta^n+\gamma^n$, ($n\in \Naturals$),
-则$\Im(S_n)=f_n$. 补充定义$S_0=3$, 
-由于$(\sigma_1, \sigma_2,\sigma_3)=(\alpha+\beta+\gamma,\alpha\beta+\beta\gamma+\gamma\alpha,\alpha\beta\gamma)\in\Reals^3$,
-所以$S_1,S_2\in\Reals$. 由牛顿等幂公式得$S_n\in\Reals$, 即得.
 \ea
