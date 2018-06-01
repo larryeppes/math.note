@@ -2,6 +2,10 @@
 \section{Elementary Inequality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bq{}{}
+设$f(x)=x^n+a_1x^{n-1}+\cdots+a_{n-1}x+1$有$n$个实根, 且系数$a_1,\cdots,a_{n-1}$都是非负的. 证明$f(2)\ge3^n$.
+\eq
+
 \bq{Ho Joo Lee}{}
 $a,b,c$是三个正实数, 证明:
 \bee
@@ -181,6 +185,24 @@ LHS-3=\left(\frac{a}{b}+\frac{b}{a}-2\right)+\left(\frac{b}{c}+\frac{c}{a}-\frac
 \bee
 \frac{n}{\sum a_i}-1=\frac{\sum(1-a_i)}{\sum a_i}\ge\frac{1}{\sum a_i}\left(\frac{n^2}{2\sum a_i}-n\right).
 \eee
+\ea
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Combinatorics}
+\bq{}{}
+证明
+\bee
+\paren{\binom{m}{m}a_m+\binom{m+1}{m}a_{m+1}+\cdots+\binom{n}{m}a_n}^2
+\ge\paren{\binom{m-1}{n-1}a_{m-1}+\binom{m}{m-1}a_m+\binom{m+1}{m-1}a_{m+1}+\cdots+\binom{n}{m-1}a_n}\cdot\paren{\binom{m+1}{m+1}a_{m+1}+\binom{m+2}{m+1}a_{m+2}+\cdots+\binom{n}{m+1}a_n},
+\eee
+其中$a_i>0$, $i=1,2,\cdots,n$, 且
+\bee
+a_1\le a_2\le\cdots\le a_n, \quad 0<m<n, \quad m,n\in\pNaturals.
+\eee
+\eq
+\ba
+若$\{\}$
 \ea
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

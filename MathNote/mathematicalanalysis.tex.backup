@@ -1,4 +1,35 @@
 \chapter{数学分析}
+\section{极限}
+
+\section{积分}
+
+\bq{}{}
+求$\int_0^{2\pi}\frac{\ud \t}{3-\sin 2\t}$.
+\eq
+\ba
+$\int_0^{2\pi}\frac{\ud \t}{3-\sin 2\t}
+=\int_0^{2\pi}\frac{\ud \t}{2+2\sin^2\left(\t-\frac{\pi}{4}\right)}
+=\frac12\int_0^{2\pi}\frac{\ud \t}{1+\sin^2\t}
+=2\int_{0}^{2\pi}\frac{\ud \t}{1+\sin^2\t}
+=2\int_0^{+\i}\frac{\ud t}{1+2t^2}=\frac{\sqrt{2}}{2}\pi$.
+\ea
+\ba
+\begin{align*}
+ \int_0^{2\pi}\frac{\ud \t}{3-\sin 2\t}
+ &= \frac12\int_0^{4\pi}\frac{\ud t}{3-\sin t}\\
+ &= \int_0^{2\pi}\frac{\ud t}{3-\sin t}\\
+ &= \int_0^{\pi}\frac{\ud t}{3-\sin t}+\int_{0}^{\pi}\frac{\ud t}{3+\sin t}\\
+ &= 2\int_{0}^{\pi/2}\frac{\ud x}{3-\sin x}+2\int_{0}^{\pi/2}\frac{\ud x}{3+\sin x}\\
+ &= 12\int_{0}^{\pi/2}\frac{\ud x}{9-\sin^2x}\\
+ &= 12\int_0^{\pi/2}\frac{\ud\tan x}{8\tan^2x+9}\\
+ &= \frac{12}{6\sqrt{2}}\arctan\left(\frac{2\sqrt{2}}{3}\tan x\right)\big\vert_0^{\pi/2}
+ =\frac{\sqrt{2}}{2}\pi.
+\end{align*}
+\ea
+
+\section{级数}
+
+\section{其他}
 
 \bq{}{}
 证明:
@@ -214,6 +245,45 @@ $x^2-2$, ($\abs{x}\ge\frac52$).
 \eee
 \eq
 {\color{red}{\bf{能否用Cauchy定理\ref{th:cauchy-theorem}证明它.}}}
+
+\bq{}{}
+利用定理
+\bt{}{}
+设
+\bee
+\lim_{x\to 0}\frac{\phi(x)}{\psi(x)}=1,
+\eee
+其中$\psi(x)>0$, 再设当$n\to\infty$时$\a_{mn}\rightrightarrows0$($m=1,2,\cdots,n$), 
+换言之, 对于任意$\varepsilon>0$, 存在正整数$N(\varepsilon)$, 当$m=1,2,\cdots,n$且$n>N(\varepsilon)$时, 
+$0<\abs{\a_{mn}}<\varepsilon$. 证明:
+\bee
+\lim_{n\to\infty}[\phi(\a_{1n})+\phi(\a_{2n})+\cdots+\phi(\a_{mn})]
+=\lim_{n\to\infty}[\psi(\a_{1n})+\psi(\a_{2n})+\cdots+\psi(\a_{mn})],
+\eee
+此处同时还要假设上式右端的极限存在.
+\et
+求:
+\begin{enumerate}[(1)]
+ \item $\lim_{n\to\infty}\sum_{k=1}^{n}\left(\sqrt[n]{1+\frac{k}{n^2}}-1\right)$;
+ \item $\lim_{n\to\infty}\sum_{k=1}^{n}\left(\sin\frac{ka}{n^2}\right)$;
+ \item $\lim_{n\to\infty}\sum_{k=1}^{n}\left(a^{\frac{k}{n^2}}-1\right)$, ($a>0$);
+ \item $\lim_{n\to\infty}\prod_{k=1}^{n}\left(1+\frac{k}{n^2}\right)$;
+ \item $\lim_{n\to\infty}\prod_{k=1}^{n}\cos\frac{ka}{n\sqrt{n}}$.
+\end{enumerate}
+\eq
+
+\bq{}{}
+设函数$f(x)$在区间$(x_0,+\infty)$上连续并有界. 证明: 对于任何数$T$, 可求得数列$x_n\to+\i$, 
+使
+\bee
+\lim_{n\to\infty}[f(x_n+T)-f(x_n)]=0.
+\eee
+\eq
+
+\bq{}{}
+证明: 在有限区间$(a,b)$上有定义且连续的函数$f(x)$, 可用连续的方法延拓到闭区间$[a,b]$上, 
+其充分必要条件是函数$f(x)$在区间$(a,b)$上一致连续.
+\eq
 
 \bq{}{}
 $x_n$满足$x_n^n+x_n-1=0$, $0<x_n<1$, 求$\lim_{n\to\infty}x_n$.

@@ -295,6 +295,21 @@ abc\ge \frac{a+b+c}{\frac1{a^2}+\frac1{b^2}+\frac1{c^2}}\ge(a+b-c)(b+c-a)(c+a-b)
 
 \section{数学竞赛}
 \bq{}{}
+求
+\bee
+(x+1)^x+(x+2)^x=(x+3)^x
+\eee
+的实解.
+\eq
+\ba
+只能$x>-1$, 令$f(x)=\paren{1-\frac2{x+3}}^x+\paren{1-\frac1{x+3}}^x-1$,
+\bee
+f'(x)=\cdots(\textrm{用}\ln(1-x)<-x)<-\frac2{(x+1)(x+3)}\paren{1-\frac2{x+3}}^x-\frac2{(x+2)(x+3)}\paren{1-\frac1{x+3}}^x<0,
+\eee
+在$x>-1$时, $f(x)$单调递减, 而$f(2)=0$, 所以$x$只有实解$x=2$.
+\ea
+
+\bq{}{}
 求满足如下恒等式的所有实函数$f(x):\Bbb R\to\Bbb R$,
 \be\label{20170703}
 f(f(x))f(y)-xy=f(x)+f(f(y))-1.
