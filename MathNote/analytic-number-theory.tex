@@ -1,0 +1,51 @@
+\chapter{解析数论}
+
+\section{山东大学2014年博士研究生入学考试解析数论基础试题}
+\bq{20\%}{}
+设$\zeta(s)$为Riemann-zeta函数, 证明函数方程:
+\bee
+\pi^{-\frac{s}{2}}\Gamma\paren{\frac{s}{2}}\zeta(s)
+  = \pi^{-\frac{1-s}{2}}\Gamma\paren{\frac{1-s}{2}}\zeta(1-s).
+\eee
+\eq
+
+\bq{20\%}{}
+设$\psi(x)=\sum_{n\le x}\Lambda(n)$.
+\begin{enumerate}[(1)]
+ \item 证明: 对于充分大的$x>0$, 成立渐近公式
+ \bee
+ \psi(x)=x+O\paren{x\ue^{-c\paren{\frac{\log x}{\log\log x}}^{\frac35}}},
+ \eee
+ 其中$c>0$为绝对常数.
+ \item 证明: 在Riemann假设下, 上述余项能够改进到$x^{\frac12}\log^2x$.
+\end{enumerate}
+\eq
+
+\bq{20\%}{}
+设$(l,k)=l$, $1\le l\le k$. 定义
+\bee
+\psi(x;k,l)=\sum_{{n\le x}\atop{n\equiv l\pmod{k}}}\Lambda(n),\quad 
+\pi(x;k,l)=\sum_{{p\le x}\atop{p\equiv l\pmod{k}}}1.
+\eee
+证明Siegel-Walfisz定理: 对于任意的$A\ge1$以及$k\le\log^Ax$, 成立
+\begin{align*}
+ \psi(x;k,l) &= \frac{x}{\varphi(k)}+O\paren{x\ue^{-c\sqrt{\log x}}},\\
+ \pi(x;k,l) &= \frac1{\varphi(k)}\int_2^x\frac{\ud u}{\log u}+O\paren{x\ue^{-\frac{c}{2}\sqrt{\log x}}},
+\end{align*}
+其中$c=c(A)>0$为绝对常数.
+\eq
+
+\bq{20\%}{}
+设$\a\in(0,1)$. 又设
+\bee
+\a=\frac{a}{q}+\frac{\t}{q^2}, \quad (a,q)=1,\quad \abs{\t}\le1.
+\eee
+证明:
+\bee
+\sum_{n\le N}\Lambda(n)e(\a n)\ll\paren{Nq^{-\frac12}+N^{\frac45}+N^{\frac12}q^{\frac12}}\log^4N.
+\eee
+\eq
+
+\bq{20\%}{}
+证明: 三素数定理. (即: 存在常数$N_0$, 使得对任意的奇数$N>N_0$都能表示成三个素数之和.)
+\eq

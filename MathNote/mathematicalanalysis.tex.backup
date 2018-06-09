@@ -1,6 +1,28 @@
 \chapter{数学分析}
 \section{极限}
 
+\section{导数}
+
+\bq{}{}
+函数$f(x)\in C[0,1]$, 在$(0,1)$上可微, 对于任意的$x\in(0,1)$, $\abs{xf'(x)-f(x)+f(x)}<Mx^2$, 问$f'(0)$的存在性.
+\eq
+\ba
+不妨设$f(0)=0$, 定义$h(x)=\frac{f(x)}{x}$($0<x<1$), 即证$\lim_{x\to0}h(x)$存在, 则$\abs{x^2h'(x)}<Mx^2$,
+所以$\abs{h'(x)}<M$, 所以若$\{x_n\}\to0$, 则有
+\bee
+\abs{h(x_m)-h(x_n)}=\abs{h'{\xi}(x_m-x_n)}<M\abs{x_m-x_n}<\varepsilon.
+\eee
+所以$\{h(x_n)\}$是Cauchy列, 从而$\lim_{x\to0}h(x)$存在.
+\ea
+
+\bq{}{}
+构造有界单调函数$f(x)$使得对于任意的$x\in\Reals$, $f'(x)$存在, 且$\lim_{x\to\pm\i}f'(x)\ne0$.
+\eq
+\ba
+取$a_n=1-2^{-n}$, ($n\in\Naturals$), $f(n)=a_n$, $f\paren{n+\frac12}=\frac12\paren{a_n+a_{n+1}}$, 
+且$f'(n)=0$, $f'\paren{n+\frac12}=1$, 将其它点处可微连接$f(n)$这些离散点, 知$\lim_{x\to\pm\i}f'(x)$不存在, 从而不为0.
+\ea
+
 \section{积分}
 
 \bq{}{}
@@ -26,8 +48,49 @@ $\int_0^{2\pi}\frac{\ud \t}{3-\sin 2\t}
  =\frac{\sqrt{2}}{2}\pi.
 \end{align*}
 \ea
+\ba
+\begin{align*}
+ \int_0^{2\pi}\frac{\ud \t}{3-\sin2\t}
+ &=\frac12\int_0^{4\pi}\frac{\ud \t}{3\sin\t}\\
+ &=\int_0^{2\pi}\frac{\ud \t}{3-\sin\t}\\
+ &=\oint_{\abs{z}=1}\frac{\ud z}{\ui z\left(3-\frac{z-z^{-1}}{2i}\right)}\\
+ &=2\oint_{\abs{z}=1}\frac{\ud z}{z^2+6\ui z-1}\\
+ &=2\oint_{\abs{z}=1}\frac{\ud z}{(z-(-3+2\sqrt{2})\ui)(z-(-3-2\sqrt{2})\ui)}\\
+ &=2\cdot2\pi\ui\Res(f(z))\big\vert_{z=(-3+2\sqrt{2})\ui}
+ =\frac{\sqrt{2}}{2}\pi.
+\end{align*}
+\ea
+\ba
+\begin{align*}
+ \int_0^{2\pi}\frac{\ud \t}{3-\sin 2\t}
+ &=\int_0^{2\pi}\frac{\ud \tan\t}{3\tan^2\t-2\tan\t+3}\\
+ &=\int_0^{\pi/2}+\int_{\pi/2}^{\pi}+\int_{\pi}^{3\pi/2}+\int_{3\pi/2}^{2\pi}=\cdots
+\end{align*}
+于是
+\bee
+\int_0^{\pi/2}
+=\int_{0}^{\i}\frac{\ud\t}{3t^2-2t+3}
+=\frac13\int_0^{+\i}\frac{\ud\left(t-\frac13\right)}{\left(t-\frac13\right)^2+\frac89}
+=\frac13\cdot\frac3{\sqrt{8}}\arctan\left(\frac{3\left(t-\frac13\right)}{\sqrt{8}}\right)\big\vert_{0}^{+\i}
+=\frac{\sqrt{2}}{4}\left(\frac{\pi}{2}+\arctan\frac{\sqrt{2}}{4}\right).
+\eee
+其它三个同理. 所以$\sum=\frac{\sqrt{2}}{4}\left(\frac{\pi}{2}\cdot4\right)=\frac{\sqrt{2}}{2}\pi$.
+\ea
 
 \section{级数}
+
+
+
+\bq{}{}
+证明
+\bee
+1+x+\frac{x^2}{2!}+\cdots+\frac{x^{2n}}{(2n)!}=0
+\eee
+无实根.
+\eq
+\ba
+设$-y<0$, 则$y>0$, 所以$1-y+\frac{y^2}{2!}-\frac{y^3}{3!}+\cdots+\frac{y^{2n}}{(2n)!}>\ue^{-y}>0$.
+\ea
 
 \section{其他}
 
@@ -99,7 +162,7 @@ n!<\left(\frac{n+1}{2}\right)^n\quad (n>1).
 \eee
 \eq
 \ba
-用$[x]\le x<[x]+1$证明.
+注意$[x]\le x<[x]+1$.
 \ea
 
 \bq{}{201805317}

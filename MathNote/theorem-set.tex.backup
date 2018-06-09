@@ -17,6 +17,29 @@
 (6) $\lim\limits_{x\to\square}f(x)=\infty$, 则$f(x)$在$\square$的空心邻域内无界. $\square$可为$x_0, x_0^-, x_0^+$, $\infty, \pm\infty$.
 \et
 
+\bt{Stolz定理}{}
+证明: 若
+\begin{enumerate}[(a)]
+ \item $y_{n+1}>y_n$($n\in\pNaturals$);
+ \item $\lim_{n\to\infty}y_n=+\infty$;
+ \item $\lim_{n\to\infty}\frac{x_{n+1}-x_n}{y_{n+1}-y_n}$存在.
+\end{enumerate}
+则
+\bee
+\lim_{n\to\infty}\frac{x_n}{y_n}=\lim_{n\to\infty}\frac{x_{n+1}-x_n}{y_{n+1}-y_n}.
+\eee
+\et
+
+\bt{Cauchy定理}{cauchy-theorem}
+若函数$f(x)$定义于区间$(a,+\infty)$, 并且在每一个有限区间$(a,b)$内是有界的, 则
+\begin{enumerate}[(a)]
+ \item $\lim_{x\to+\infty}\frac{f(x)}{x}=\lim_{x\to+\infty}[f(x+1)-f(x)]$;
+ \item $\lim_{x\to+\infty}[f(x)]^{1/x}=\lim_{x\to+\infty}\frac{f(x+1)}{f(x)}$, ($f(x)\ge C>0$),
+\end{enumerate}
+假定等是右端的极限都存在且可为$\pm\infty$.
+\et
+{\color{red}{\bf{问题: 对于上下极限是否仍有类似结论?}}}.
+
 \bt{}{20170702001}
 假设$f_n: [a,b]\to\Bbb R$, 每个在$[a,b]$上均可积, 且$f_n(x)\rightrightarrows f(x)$, $n\to\infty$.
 则$f(x)$可积, 且
@@ -92,11 +115,12 @@ $f'_n(x)\rightrightarrows\varphi(x)$, $x\in[a,b]$, 则$f$可微且$f'(x)=\varphi
 \newpage
 \section{微分方程}
 \bt{伯努力方程}{}
-$\frac{\ud y}{ud x}=p(x)y+q(x)y^n$, 其中$p(x)$, $q(x)$是所考虑区域上的连续函数, $n$($\ne0,1$)是常数.
+$\frac{\ud y}{\ud x}=p(x)y+q(x)y^n$, 其中$p(x)$, $q(x)$是所考虑区域上的连续函数, $n$($\ne0,1$)是常数.
 \et
 \ba
 \begin{enumerate}[(1)]
- \item 当$n>0$时, $y=0$是方程的及
+ \item 当$n>0$时, $y=0$是方程的解.
+ \item 当$y\ne 0$时, 两边同除以$y^n$, 令$z=y^{1-n}$, 即得一阶线性方程.
 \end{enumerate}
 
 \ea

@@ -18,6 +18,37 @@ f(x)\equiv g(x)\pmod{p}.
 容度为1的多项式称为本原多项式.
 \ed
 
+\section{数学分析}
+
+
+\section{微分方程}
+\bd{标准形式下的边值问题}{}
+二阶线性微分方程: $y''+P(x)y'+Q(x)y=\phi(x)$, $P(x), Q(x), \phi(x)\in C[a,b]$在满足边界条件:
+\bee
+\left\{
+\begin{array}{ll}
+ \a_1y(a)+\b_1y'(a)=\g_1, & \a_1,\a_2,\b_1,\b_2,\g_1,\g_2\in\Reals,\\
+ \a_2y(b)+\b_2y'(b)=\g_2, & \a_1^2+\b_1^2\ne0, \a_2^2+\b_2^2\ne0.
+\end{array}
+\right.
+\eee
+的问题称为标准形式下的边值问题. 边值问题是{\color{red}{齐次的}}, 若$\phi(x)\equiv0$, $\g_1=\g_2=0$. 
+否则称为非齐次的.
+\ed
+
+\bd{更一般的齐次边值问题}{}
+更一般的齐次边值问题是有如下形式的问题
+\bee
+\left\{
+\begin{array}{l}
+ y''+P(x,\l)y'+Q(x,\l)y=0;\\
+ \a_1y(a)+\b_1y'(a)=0;\\
+ \a_2y(b)+\b_2y'(b)=0
+\end{array}
+\right.
+\eee
+\ed
+
 \section{泛函分析}
 \bd{紧算子}{}
 设 $X$ 是 Banach 空间, 若线性算子 $T$ 把每一有界集映成列紧集, 则称线性算子 $T$ 为紧算子.

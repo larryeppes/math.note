@@ -92,14 +92,14 @@ $\|Kx-Ky\|_C=\max_{t\in[a,b]}\left|\int_{a}^{t}(x(\tau)-y(\tau))\ud \tau\right|\
 \ea
 
 \bq{}{}
-设$E_1, E_2$是赋范空间$X$的子集, $E_1$紧, $E_2$闭, $E_1\cap E_2=\emptyset$, 证存在$r>0$使得$(E_1+U(0,r))\cap E_2=\emptyset$, 
+设$E_1, E_2$是赋范空间$X$的子集, $E_1$紧, $E_2$闭, $E_1\cap E_2=\emptyset$, 证存在$r>0$使得$(E_1+U(0,4))\cap E_2=\emptyset$, 
 $U(0,r)=\{x\in X: \norm{x}<r\}$.
 \eq
 \ba
-令$g(x)=d(x,E_2)$, ($x\in X$). 因$E_1$紧, 则$E_1$上存在$x_1\in E_1$使得$g(x_1)\le g(x)$, ($x\in E_1$). 则$x_1\not\in E_2$.
+$g(x)=d(x,E_2)$, ($x\in X$), $E_1$上存在$x_1\in E_1$使得$g(x_1)\le g(x)$, $x\in E_1$, 则$x_1\not\in E_2$.
 
 由$E_2$闭, 所以$d(x_1, E_2)>0$, 所以$g(x_1)>0$, 设$0<r<g(x_1)$, $x\in (E_1+U(0,r))\cap E_2$, 于是$x\in E_2$且$x=y+z$,
-$y\in E_1$, $z\in U(0,r)$, 所以$g(y)=d(y,E_2)\le d(y,x)=\norm{x-y}=\norm{z}<r<g(x_1)$, 而$y\in E_1$与$g(x_1)\le g(y)$矛盾.
+$y\in E_1$, $z\in U(0,1)$, 所以$g(y)=d(y,E_2)\le d(y,x)=\norm{x-y}=\norm{z}<r<g(x_1)$, 而$y\in E_1$与$g(x_1)\le g(y)$矛盾.
 \ea
 
 \bq{}{}
@@ -107,16 +107,7 @@ $\mathrm{BV}[a,b]$是$[a,b]$上所有有界变差函数的集合, $x\in \mathrm{
 则$\norm{\cdot}$是$\mathrm{BV}[a,b]$上的范数.
 \eq
 \ba
-$x\in\mathrm{BV}[a,b]$, $k\in K$, $K$是$\mathrm{BV}[a,b]$所在的数域, 若$P=(t_0, \cdots, t_n)$是$[a,b]$的任一划分,
-\bee
-S(kx,P)=\sum\abs{kx(t_i)-kx(t_{i+1})}=\abs{k}\cdot S(x,P)\le\abs{k}\cdot V(x).
-\eee
-所以$V(kx)\le\abs{k}V(x)$, 即$\norm{kx}\le \abs{k}\norm{x}$.
 
-当$k\ne0$时, $\norm{x}=\norm{\frac1k\cdot kx}\le\abs{\frac1k}\cdot\norm{kx}\le\abs{\frac1k}\cdot\abs{k}\cdot\norm{x}=\norm{x}$, 
-故$\norm{kx}=\abs{k}\cdot\norm{x}$.
-
-$k=0$时, 显然.
 \ea
 
 \bq{}{}

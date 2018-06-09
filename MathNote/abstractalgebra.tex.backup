@@ -18,7 +18,7 @@ $C_i'$与$C_i$同阶, 所以$Q(v)=P(v)$.
 \ba
 先证$x^n$是幂等的, $(x^n)^2=x^n$.
 
-再证, 若$ab=0$, 则$ba=(ba)^{\tilde{n}+1}=b(ab)^{\tilde{n}}a=0$.
+再证, 若$ab=0$, 则$ba=(ba)^{n+1}=b(ab)^{n}a=0$.
 
 再证, $x=x^{n+1}$, 则$yx^n=yx^{2n}$, 所以$(y-yx^n)x^n=0$, 所以$x^n(y-yx^n)=0$, 即$x^ny=x^nyx^n$.
 
@@ -71,18 +71,4 @@ a,b,c d\in\GF(p)
 \right\}\le\GF(p),
 \eee
 这里的$R$不可交换.
-\ea
-
-\bq{}{}
-$R$是含幺环, 若对于任意的$x,y\in R$, 存在$m,n\in \Naturals$, 使得$x^{m+1}y^{n+1}=x^myxy^n$, 则$R$是交换环.
-\eq
-\ba
-$x^m(xy-yx)y^n=0$, $x^l(xy-yx)(y+1)^k=0$, 定义$r=\max\{m,l\}$, 则
-\bee
-{\color{red}{x^r(xy-yx)y^n=0}},\ x^r(xy-yx)(y+1)^k=0, \ (y,y+1)=1\Longrightarrow (y^n, (y+1)^k)=1.
-\eee
-所以$(y^{2n-1}, (y+1)^ky^{n-1})=y^{n-1}$, 所以存在$A(y),B(y)$使得$Ay^{2n-1}+B(y+1)^ky^{n-1}=y^{n-1}$, 
-所以{\color{red}{$x^r(xy-yx)y^{n-1}=0$}}, 注意到红色部分的$y^{n}$得到了降次, 所以存在$s$满足$x^s(xy-yx)=0$.
-
-再设$(x+1)^t(xy-yx)=0$, 同样辗转相除得到$xy-yx=0$, 即$R$可交换.
 \ea

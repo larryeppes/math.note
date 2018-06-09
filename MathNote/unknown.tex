@@ -1,5 +1,145 @@
 \chapter{未知的问题与解答}
 
+\bu{2014-05-25}{}
+\bee
+\sum_{k=1}^{n}\paren{\frac{\sum_{i=1}^{k}x_i}{k}}^2\le(1+\sqrt{2})^2\sum_{i=1}^nx_i^2.
+\eee
+\eu
+\ba
+\bee
+A=\begin{pmatrix}
+   1 & & & & \\
+   \frac12 & \frac12 & & & \\
+   \frac13 & \frac13 & \frac13 & & \\
+   \vdots & \vdots & \vdots & \ddots & \\
+   \frac1n & \frac1n & \frac1n & \cdots & \frac1n
+  \end{pmatrix}
+\eee
+证明$\norm{A}_2\le\sqrt{2}+1$.
+\ea
+
+\bu{2014-05-24}{}
+设$p_n$是第$n$个素数; $a_n=\sum_{i=1}^{n}p_i$. 
+则$[a_n, a_{n+1}]$中至少有一个平方数.
+\eu
+
+\bu{2015-05-23}{}
+对于任意的拓扑空间$X$, $\Reals$与$X\times X$不同胚.
+\eu
+
+\bu{2015-05-23}{}
+平方和因子定理.
+
+$(a,b)=1$, 则素数$p=4k+3\nmid(a^2+b^2)$.
+\eu
+
+\bu{2014-05-23}{}
+\bee
+\left\{
+\begin{array}{l}
+ a,b\not\in\Integers;\\
+ \Re(c+d-a-b)>1.
+\end{array}
+\right.\Longrightarrow
+\sum_{n=-\i}^{\i}\frac{\Gamma(a+n)\Gamma(b+n)}{\Gamma(c+n)\Gamma(d+n)}=\frac{\pi^2}{\sin(\pi a)\sin(\pi b)}\cdot
+  \frac{\Gamma(c+d-a-b-1)}{\Gamma(c-a)\Gamma(d-a)\Gamma(c-b)\Gamma(d-b)}.
+\eee
+\eu
+
+\bu{Enestrom-Kakeya定理}{}
+\bee
+\left.
+\begin{array}{l}
+ a_0\ge a_1\ge\cdots\ge a_n>0,\\
+ p(z):=a_nz^n+a_{n-1}z^{n-1}+\cdots+a_0
+\end{array}
+\right\}\Longrightarrow
+p=0\textrm{的根在开单位圆外.}
+\eee
+\eu
+\ba
+对$(1-z)p(z)$用反证法/直接证明.
+\ea
+
+\bu{2014-05-21}{}
+\bee
+\left.
+\begin{array}{l}
+ a_n>0\\
+ b_n>0
+\end{array}
+\right\}\Longrightarrow
+\sqrt[n]{\prod_{i=1}^n(a_i+b_i)}\ge\sqrt[n]{\prod_{i=1}^na_i}+\sqrt[n]{\prod_{i=1}^nb_i}.
+\eee
+\eu
+
+\bu{2014-05-21}{}
+\bee
+\begin{array}{l}
+ \lim_{\b\to\i}F\paren{1,\b,1;\frac{z}{\b}}=\ue^z;\\
+ \lim_{\a\to\i}F\paren{\a,\a,\frac12;\frac{z^2}{4\a^2}};\\
+ F\paren{\frac{n}{2},-\frac{n}{2},\frac12;\sin^2x}=\cos nx.
+\end{array}
+\eee
+\eu
+
+\bu{2014-05-21}{}
+\bee
+\left.
+\begin{array}{l}
+ x_0\in(a,b).\\
+ \textrm{迭代公式}f_1(x_n)=f_2(x_{n-1})\\
+ f_1(\xi)=f_2(\xi)\\
+ \abs{\frac{f'_2(y)}{f'_1(x)}}\le q<1, (a<x,y<b)
+\end{array}
+\right\}\Longrightarrow
+x_n\to\xi, n\to\i.
+\eee
+\eu
+
+\bu{2014-05-20}{}
+$\forall n$, $a_n>0$,$\sum_{i=1}^{n}a_i\ge\sqrt{n}$,
+则$\forall n$, 
+\bee
+\sum_{i=1}^{n}a_i^2>\frac14\sum_{j=1}^n\frac1j.
+\eee
+\eu
+
+\bu{2014-05-20}{}
+关于$x$的方程$x^2-2\arcsin(\cos x)+a^2=0$有唯一解, 求$a$.
+\eu
+
+\bu{2014-05-19}{}
+\bee
+\left.
+\begin{array}{l}
+ f\textrm{定义域:} \Reals\\
+ f^2(x)\le 2x^2f\paren{\frac{x}{2}}\\
+ A=\{a\mid f(a)>a^2\}\ne\emptyset
+\end{array}
+\right\}\Longrightarrow
+A\textrm{是无限集.}
+\eee
+\eu
+
+\bu{2014-05-18}{}
+\bee
+\left.
+\begin{array}{l}
+ M_1=\{x^2+Ax+B\mid x\in\Integers\}\\
+ M_2=\{2x^2+2x+C\mid x\in\Integers\}
+\end{array}
+\right\}\Longrightarrow
+\forall A,B\in\Integers, \ \exists C\in\Integers\ni M_1\cap M_2=\emptyset.
+\eee
+\eu
+
+\bu{2014-05-18}{}
+\bee
+(0,1)\nsubseteq\bigcup_{\frac{p}{q}\in(0,1)\cap\Rationals}\paren{\frac{p}{q}-\frac{1}{4q^2}, \frac{p}{q}+\frac{1}{4q^2}}.
+\eee
+\eu
+
 \bu{}{}
 设数列$\{x_n\}$满足条件
 \bee

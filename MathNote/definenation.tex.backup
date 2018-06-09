@@ -8,12 +8,14 @@ f(x)\equiv g(x)\pmod{p}.
 \eee
 \ed
 
-\bd{}{}
+\bd{多项式模$p$的次数}{}
 若$f(x)$的系数不全被$p$整除, 其中系数不被$p$整除的最高幂次称为$f(x)$模$p$的次数.
 \ed
 
-\bd{容度}{}
-设$f(x)=a_nx^n+\cdots+a_1x+a_0\in\Bbb Z[x]$, 且$f(x)\ne0$, 将$a_0,a_1,\cdots,a_n$的最大公约数$(a_0,a_1,\cdots,a_n)$, 
+\bd{容度, 本原多项式}{}
+设$f(x)=a_nx^n+\cdots+a_1x+a_0\in\Bbb Z[x]$, 且$f(x)\ne0$, 将$a_0,a_1,\cdots,a_n$的最大公约数$(a_0,a_1,\cdots,a_n)$, 称为$f(x)$的容度.
+
+容度为1的多项式称为本原多项式.
 \ed
 
 \section{泛函分析}
