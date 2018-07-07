@@ -417,5 +417,622 @@ $a_{n}=\frac{1}{n+1}+\frac{1}{n+2}+\cdots+\frac{1}{2n}$递增, $x$的取值范�
 若$x,y,z$为实数, $0<x<y<z<\frac{\pi}{2}$, 证明: $\frac{\pi}{2}+2\sin x\cos y+2\sin y\cos z>\sin 2x+\sin 2y+\sin 2z$.
 \eq
 \ba
-原不等式等价于证明$\frac{\pi}{4}>\sin x(\cos x-\cos y)+\sin y(\cos y-\cos z)+\sin z\cos z$.
+原不等式等价于证明$\frac{\pi}{4}>\sin x(\cos x-\cos y)+\sin y(\cos y-\cos z)+\sin z\cos z$. 如图所示
+\begin{center}
+ \begin{tikzpicture}[scale=3]
+  \draw[->,very thick] (-.1,0) -- (1.5,0) coordinate (x axis);
+  \draw[->,very thick] (0,-0.1) -- (0,1.5) coordinate (y axis);
+  \draw (1,0) arc [start angle=0,end angle=90,x radius=1cm,y radius=1cm];
+  let x=30;
+  let y=45;
+  let z=60;
+  \filldraw[fill=green!20, draw=green!50!black] (0,0) -- (0.5,0) -- (0.5,0.866) -- (0,0.866) -- cycle;
+  \filldraw[fill=blue!20, draw=blue!50!black] (0.5,0) -- (0.707,0) -- (0.707,0.707) -- (0.5,0.707) -- cycle;
+  \filldraw[fill=red!20, draw=red!50!black] (0.707,0) -- (0.866,0) -- (0.866,0.5) -- (0.707,0.5) -- cycle;
+  \draw (0,0) -- (0.866,0.5) node [anchor=south west] {$x$};
+  \draw (0,0) -- (0.707,0.707) node [anchor=south west] {$y$};
+  \draw (0,0) -- (0.5,0.866) node [anchor=south west] {$z$};
+  \draw (1,1pt) -- (1,-1pt) node [anchor=north] {$1$};
+  \draw (1pt,1) -- (-1pt,1) node [anchor=east] {$1$};
+  \end{tikzpicture}
+\end{center}
+\ea
+
+\bq{1987年第21届全苏MO}{}
+正数$a,b,c,A,B,C$满足条件$a+A=b+B=c+C=k$, 求证: $aB+bC+cA<k^2$.
+\eq
+\ba
+主试委员会给出的解答是$k^3=(a+A)(b+B)(c+C)$, 利用放缩的技巧给出证明, 北京四中的袁峰同学给出了如下构造性证明.
+
+如图: $S_{\triangle LRM}+S_{\triangle PNM}+S_{\triangle QLN}<S_{\triangle PQR}$, 化简即得.
+\begin{center}
+ \begin{tikzpicture}[scale=3]
+  \coordinate [label=left:$Q$] (Q) at (0,0);
+  \coordinate [label=above:$P$] (P) at (0.5,0.866);
+  \coordinate [label=right:$R$] (R) at (1,0);
+  \draw (P) -- (Q) -- (R) -- cycle;
+  \coordinate [label=below:$L$] (L) at ($ (R) !0.7! (Q) $);
+  \coordinate [label=right:$M$] (M) at ($ (P) !0.4! (R)$);
+  \coordinate [label=left:$N$] (N) at ($ (P) !0.5! (Q)$);
+  \draw (L) -- (M) -- (N) -- cycle;
+  \node (A) [label=below:$A$] at ($ (Q) !0.5! (L) $) {};
+  \node (a) [label=below:$a$] at ($ (R) !0.5! (L) $) {};
+  \node (B) [label=right:$B$] at ($ (M) !0.5! (R) $) {};
+  \node (b) [label=right:$b$] at ($ (P) !0.5! (M) $) {};
+  \node (C) [label=left:$C$] at ($ (P) !0.5! (N) $) {};
+  \node (c) [label=left:$c$] at ($ (N) !0.5! (Q) $) {};
+  
+  \foreach \point in {P,Q,R,L,M,N}
+    \fill [blue,opacity=.75] (\point) circle (1pt);
+ \end{tikzpicture}
+
+\end{center}
+
+\ea
+\ba
+如图:
+\begin{center}
+ \begin{tikzpicture}[scale=3]
+  \coordinate[label=225:$P$] (P) at (0,0);
+  \coordinate[label=315:$Q$] (Q) at (1,0);
+  \coordinate[label=45:$R$] (R) at (1,1);
+  \coordinate[label=135:$S$] (S) at (0,1);
+  
+  \draw (P) -- (Q) -- (R) -- (S) -- cycle;
+  \filldraw[fill=yellow!80!black,opacity=0.5] (P) rectangle (0.6,0.4);
+  \filldraw[fill=red!80!black,opacity=0.5] (0.6,0) rectangle (1,0.7);
+  \filldraw[fill=blue!80!black,opacity=0.5] (1,0.7) rectangle (0.3,1);
+  
+  \node [label=below:$B$] at ( $ (P) !0.5! (0.6,0) $) {};
+  \node [label=below:$b$] at ( $ (Q) !0.5! (0.6,0) $) {};
+  \node [label=right:$C$] at ( $ (Q) !0.5! (1,0.7) $) {};
+  \node [label=right:$c$] at ( $ (R) !0.5! (1,0.7) $) {};
+  \node [label=above:$A$] at ( $ (R) !0.5! (0.3,1) $) {};
+  \node [label=left:$a$] at ( $ (P) !0.5! (0,0.4) $) {};
+  
+  \foreach \point in {P,Q,R,S}
+    \fill [blue,opacity=.75] (\point) circle (1pt);
+ \end{tikzpicture}
+
+\end{center}
+
+\ea
+
+\bq{第31届IMO预选题}{}
+设集合$\{a_1,a_2,\cdots,a_n\}=\{1,2,\cdots,n\}$, 求证:
+\bee
+\frac12+\frac23+\cdots+\frac{n-1}{n}\le\frac{a_1}{a_2}+\frac{a_2}{a_3}+\cdots+\frac{a_{n-1}}{a_n}.
+\eee
+\eq
+\ba
+设$b_1,b_2,\cdots,b_{n-1}$是$a_1,a_2,\cdots,a_{n-1}$的一个排列, 且$b_1<b_2<\cdots<b_{n-1}$, 
+$c_1,c_2,\cdots,c_{n-1}$是$a_2,a_3,\cdots,a_{n}$的一个排列, 且$c_1<c_2<\cdots<c_{n-1}$, 则
+\bee
+\frac1{c_1}>\frac1{c_2}>\cdots>\frac1{c_{n-1}}.
+\eee
+且$b_1\ge1$, $b_2\ge2$, $\cdots,b_{n-1}\ge n-1$, $c_1\le 2,c_2\le3,\cdots,c_{n-1}\le n$,
+由排序不等式得:
+\bee
+\frac{a_1}{a_2}+\frac{a_2}{a_3}+\cdots+\frac{a_{n-1}}{a_n}
+  \ge \frac{b_1}{c_1}+\frac{b_2}{c_2}+\cdots+\frac{b_{n-1}}{c_{n-1}}
+  \ge \frac12+\frac23+\cdots+\frac{n-1}{n}.
+\eee
+这是南斯拉夫提给第31届IMO的一道试题, 原证法是利用加强命题的手法, 用数学归纳法给出证明.
+一则加强命题很难想到, 二则归纳法证明要对足标进行讨论, 比较麻烦. 在当年国家集训队里姚建钢同学(第35届IMO金牌得主)的证法,
+更是干脆, 漂亮, 出人意料.
+\ea
+\ba
+易证
+\bee
+\prod_{k=1}^{n-1}(a_k+1)\ge\prod_{k=1}^na_k,
+\eee
+故
+\begin{align*}
+ \sum_{k=1}^{n-1}\frac{a_k}{a_{k+1}}+\paren{\sum_{k=1}^n\frac1k}
+  &=\frac{1}{a_1}+\sum_{k=1}^{n-1}\frac{a_k+1}{a_{k+1}}\\
+  &\ge n \sqrt[n]{\frac{\prod_{k=1}^{n-1}(a_k+1)}{\prod_{k=1}^na_k}}\ge n\\
+  &=\sum_{k=1}^{n}\frac{1}{k}+\sum_{k=1}^{n-1}\frac{k}{k+1}
+\end{align*}
+
+\ea
+
+\bq{第24届IMO}{}
+设$a,b,c$分别为一个三角形的三边之长, 求证:
+\bee
+a^2b(a-b)+b^2c(b-c)+c^2a(c-a)\ge0.
+\eee
+并指出等号成立的条件.
+\eq
+\ba
+原联邦德国选手伯恩哈德$\cdot$里普只用了一个等式:
+\bee
+a^2b(a-b)+b^2c(b-c)+c^2a(c-a)
+  = a(b-c)^2(b+c-a)+b(a-b)(a-c)(a+b-c)
+\eee
+由轮换对称性, 不妨设$a\ge b, c$, 即得欲证不等式成立, 而且显然等号成立的充要条件是$a=b=c$.
+
+里普的证法新颖, 巧妙, 简洁, 与主试委员会提供的参考答案不同, 他因此获得了该届的特别奖.
+\ea
+
+\bq{1980年芬兰, 英国, 匈牙利, 瑞典四国联赛}{}
+设数列$a_0,a_1,\cdots,a_n$满足$a_0=\frac12$及$a_{k+1}=a_k+\frac1na_k^2$($k=0,1,2,\cdots,n-1$),
+其中$n$是一个给定的正整数, 试证:
+\bee
+1-\frac1n<a_n<1.
+\eee
+\eq
+\ba
+该题是该次竞赛得分率最低的一道试题, 主试委员会所给出的解法也相当繁琐, 前后共用了四次归纳法, 译成中文后有4000多字,
+中国科技大学白志东先生对此题采用了大胆的处理方法, 加强命题, 出奇制胜给出一个简洁的证明.
+
+由于$a_1=a_0+\frac1na_0^2=\frac12+\frac1{4n}=\frac{2n+1}{4n}$, 所以
+\bee
+\frac{n+1}{2n+1}<a_1<\frac{n}{2n-1}.
+\eee
+我们来用归纳法证: 对于一切$1\le k\le n$, 都有
+\be\label{20180704001}
+\frac{n+1}{2n-k+2}<a_k<\frac{n}{2n-k}.
+\ee
+假设(\ref{20180704001})对于$k<n$成立, 则
+\bee
+a_{k+1}=a_k\paren{1+\frac1na_k}
+  <\frac{n}{2n-k}\paren{1+\frac1{2n-k}}
+  =\frac{n(2n-k+1)}{(2n-k)^2}
+  <\frac{n}{2n-(k+1)}.
+\eee
+所以
+\begin{align*}
+ a_{k+1} & = a_k+\frac1na_k^2>\frac{n+1}{2n-k+2}+\frac{(n+1)^2}{n(2n-k+2)^2}\\
+  &>\frac{n+1}{2n-(k+1)+2}
+\end{align*}
+于是(\ref{20180704001})式对于一切$1\le k\le n$均成立, 特别在$k=n$时,
+\bee
+1-\frac1n<\frac{n+1}{n+2}<a_n<\frac{n}{n}=1.
+\eee
+
+{\bf{说明}} 这里所证的不等式(\ref{20180704001})式比题目所要证明的不等式强, 却收到了事半功倍之效,
+下面给出一种直接了当的证明.
+\ea
+\ba
+由已知, 
+\bee
+\frac1{a_{k-1}}-\frac1{a_k}=\frac1{n+a_{k-1}},
+\eee
+从而$a_n>a_{n-1}>\cdots>a_1>a_0=\frac12$. 所以
+\bee
+\frac1{a_{k-1}}-\frac1{a_k}<\frac1n,\quad k=1,2,\cdots,n.
+\eee
+累加得$\frac1{a_0}-\frac1{a_n}>\frac{n}{n+1}$, 所以$\frac{1}{a_n}<2-\frac{n}{n+1}=\frac{n+2}{n+1}$.
+\ea
+
+\bq{}{}
+已知函数$f(x)$的定义域为$\Reals$, 对于任意实数$m,n$均有$f(m+n)=f(m)+f(n)-1$, 且$f\paren{\frac12}=2$, 
+当$x>-\frac12$时, 恒有$f(x)>0$, 求证: $f(x)$单调递增.
+\eq
+\ba
+证明: 令$x_1>x_2$, 所以
+\bee
+f(x_1)-f(x_2)=f(x_1-x_2)-1
+  =f\paren{\paren{x_1-x_2-\frac12}+\frac12}-1
+  =f\paren{x_1-x_2-\frac12}+f\paren{\frac12}-1-1
+  =f\paren{x_1-x_2-\frac12}
+\eee
+因为$x_1-x_2-\frac12>-\frac12$, 所以$f\paren{x_1-x_2-\frac12}>0$, 
+所以$f(x_1)>f(x_2)$, 得证.
+\ea
+
+\bq{}{}
+已知: 正数$x,y,z$均小于$1$且$x+y+z=2$, $w=xy+yz+zx$, 求$w$的取值范围.
+\eq
+\ba
+易得$w\le\frac43$, 令$x(1-x)=a^2$, $y(1-y)=b^2$, $z(1-z)=c^2$, 因为
+\bee
+w=xy+z(2-z)=xz+y(2-y)=yz+x(2-x)
+\eee
+所以
+\bee
+3w=w+2\times2-x^2-y^2-z^2=w+4+a^2+b^2+c^2-2
+\eee
+所以$2w=2+a^2+b^2+c^2\ge2$, 即$w\ge1$.
+仅当$a,b,c=0$时取$w=1$, 但$a,b,c\ne0$, 所以$w>1$.
+\ea
+
+\bq{}{}
+已知$\frac{a^2+b^2}{4}+c^2=1$, 求$a+b+c$的最大值.
+\eq
+\ba
+\begin{align*}
+ (a+b+c)^2 = & a^2+b^2+c^2+2bc+2ab+2ac\\
+  \le & a^2+b^2+c^2+(a^2+b^2)+\paren{\frac{b^2}{4}+4c^2}+\paren{\frac{a^2}{4}+4c^2}\\
+  = & 9\paren{\frac{a^2+b^2}{4}}=9.
+\end{align*}
+\ea
+
+\bq{}{}
+已知$a,b>0$, $a+b=1$, 证明: $\frac32<\frac1{a^2+1}+\frac1{b^2+1}\le\frac85$.
+\eq
+\ba
+原式等价于证明:
+\begin{align*}
+ 15(a^2+1)(b^2+1)<10(a^2+b^2+2)\le16(a^2+1)(b^2+1)
+  & \Longleftrightarrow 15a^2b^2+5a^2+5b^2-5<0\le16a^2b^2+6a^2+6b^2-4\\
+  & \Longleftrightarrow 3a^2b^2+a^2+b^2-1<0\le8a^2b^2+3a^2+3b^2-2.
+\end{align*}
+因$a+b=1$, 所以$a^2+b^2-1=-2ab$. 所以上式等价于
+\bee
+3a^2b^2-2ab<0\le8a^2b^2-6ab+1.
+\eee
+又由$a^2+b^2+2ab=1\ge4ab$, 所以$0<ab\le\frac14$, 所以上式成立.
+\ea
+\ba
+令$a=\sin^2\theta, b=\cos^2\theta$, $\paren{0<\theta<\frac{\pi}{2}}$, 所以
+\begin{align*}
+\frac1{a^2+1}+\frac1{b^2+1}
+  &=\frac1{1+\sin^4\theta}+\frac1{1+\cos^4\theta}\\
+  &=\frac4{5-2\cos2\theta+\cos^22\theta}+\frac4{5+2\cos2\theta+\cos^22\theta}\\
+  &=\frac{16(11+\cos4\theta)}{(11+\cos4\theta)^2-8(11+\cos4\theta)+80}\\
+  &=\frac{16y}{y^2-8y+80}=\frac{16}{y+\frac{80}{y}-8}
+\end{align*}
+因$0<\theta<\frac{\pi}{2}$, 所以$0<4\theta<2\pi$. 所以$10<y\le12$, 并有$\frac32<\frac{16}{y+\frac{80}{y}-8}\le\frac85$.
+\ea
+
+\bq{}{}
+已知数列$\{a_n\}$, $\{b_n\}$, $\{c_n\}$满足: $b_n=a_n-a_{n+2}$, $c_n=a_n+2a_{n+1}+3a_{n+2}$, ($n=1,2,3,\cdots$),
+若$\{c_n\}$为等差数列且$b_n\le b_{n+1}$, 证明: $b_n=b_{n+1}$.
+\eq
+\ba
+由于$a_n-a_{n+2}=b_{n}\le b_{n+1}\le b_{n+2}=a_{n+2}-a_{n+4}$, 所以$2a_{n+2}\ge a_n+a_{n+4}$.
+因为$2c_{n+1}=c_n+c_{n+2}$, 所以$4a_{n+3}=a_{n}+3a_{n+4}\le 2a_{n+2}+2a_{n+4}$, 
+所以$2a_{n+3}\le a_{n+2}+a_{n+4}$. 所以$a_{n+3}-a_{n+2}\le a_{n+4}-a_{n+3}\le a_{n+5}-a_{n+4}$, 
+所以$a_{n+3}-a_{n+5}\le a_{n+2}-a_{n+4}$, 所以$b_{n+3}\le b_{n+2}\le b_{n+3}$,
+所以$b_{n+3}=b_{n+2}$, ($n\ge1$). 所以$b_3=b_4=b_5=\cdots=-2d=a_3-a_5=a_4-a_6=a_5-a_7$, 
+所以
+\begin{align*}
+ 4a_5-3a_6=a_2\le a_3-a_5+a_4
+ &\Longrightarrow 5a_5\le a_3+a_4+3a_6\\
+ &\Longrightarrow 5(a_3+2d)\le a_3+a_4+3(a_4+2d)\\
+ &\Longrightarrow 2a_3\le2a_4-2d=2a_4+a_3-a_5\\
+ &\Longrightarrow a_3+a_5\le 2a_4.
+\end{align*}
+因$a_3+a_5\ge2a_4$, 所以$a_2=a_3-a_5+a_4$, 同理$a_1=a_2-a_4+a_3$,
+即$b_1=b_2=b_3=\cdots$.
+
+两个正数$a,b$的和一定时, 它们的积
+\be
+ab=\frac14\paren{(a+b)^2-(a-b)^2}
+\ee
+随着差$\abs{a-b}$的增大而减小;
+其平方和
+\be
+a^2+b^2=\frac12\paren{(a+b)^2+(a-b)^2}
+\ee
+随着差$\abs{a-b}$的增大而增大.
+\ea
+
+\bq{}{}
+已知$\triangle ABC$的三边, $a, b,c$成等比数列, 则$\sin B+\cos B$的取值范围为\underline{$\qquad$}.
+\eq
+\ba
+命题等价于$a+b>c$, $a+c>b$, $b+c>a$, $b^2=ac$,
+\bee
+b^2=ac=a^2+c^2-2ac\cos B\ge2ac-2ac\cos B,
+\eee
+所以$\cos B\ge\frac12$, $0<B\le60^{\circ}$, 由$\frac12\le\cos B<1$及$0<\sin B\le\frac{\sqrt{3}}{2}$,
+所以
+\be\label{20180705001}
+\frac12<\cos B+\sin B<\frac{\sqrt{3}}{2}+1,
+\ee
+另一方面, $\sin B+\cos B=\sqrt{2}\sin(B+45^{\circ})$, 而$45^{\circ}<B+45^{\circ}<105^{\circ}$,
+故
+\be\label{20180705002}
+1<\sin B+\cos B\le \sqrt{2}.
+\ee
+综合(\ref{20180705001}), (\ref{20180705002})有$1<\sin B+\cos B\le\sqrt{2}$.
+\ea
+
+\bq{}{}
+设$a,b,c$是直角$\triangle ABC$的三边长, $c$为斜边, 求使不等式
+\bee
+a^2(b+c)+b^2(c+a)+c^2(a+b)\ge kabc
+\eee
+恒成立的$k$的最大值.
+\eq
+\ba
+$a>0, b>0, c>0$, $c^2=a^2+b^2$, 所以
+\begin{align*}
+ LHS&=(a^2+b^2)c+a\paren{b^2+\frac{c^2}{2}}+b\paren{\frac{c^2}{2}+a^2}+\frac{c}{2}\cdot c(a+b)\\
+  &\ge 2abc+\sqrt{2}abc+\sqrt{2}abc+\frac{c}{2}\sqrt{a^2+b^2}\cdot2\sqrt{ab}\\
+  &\ge (2+2\sqrt{2})abc+c\cdot\sqrt{2ab}\cdot\sqrt{ab}=(2+3\sqrt{2})abc,
+\end{align*}
+仅当$a=b$时上式取等号.
+\bee
+(a+b+c)\paren{\frac1a+\frac1b+\frac1c}\ge5+3\sqrt{2}.
+\eee
+\ea
+
+\bq{}{}
+设$x_1$是方程$\sqrt{3}\sin x-3\cos x=2a-1$的最大负根, $x_2$是方程$2\cos^2 x-2\sin^2x=a$的最小正根,
+求使不等式$\abs{x_1}\le x_2$成立的实数$a$的取值范围.
+\eq
+\ba
+方程$\sqrt{3}\sin x-3\cos x=2a-1$等价于$\sin\paren{x-\frac{\pi}{3}}=\frac{2a-1}{2\sqrt{3}}$, 
+从而得到$-1\le \frac{2a-1}{2\sqrt{3}}\le 1$. 解得$\frac12-\sqrt{3}\le a\le \frac12+\sqrt{3}$, 而且
+\bee
+x_1=\left\{
+\begin{array}{ll}
+ \frac{\pi}{3}+\arcsin\frac{2a-1}{2\sqrt{3}}, & \paren{\frac12-\sqrt{3}\le a<-1}\\
+ -\frac{2\pi}{3}-\arcsin\frac{2a-1}{2\sqrt{3}}, & \paren{-1\le a\le\frac12+\sqrt{3}}
+\end{array}
+\right.
+\eee
+其图像如图, 位于$a$轴下方, 方程$2\cos^2x-2\sin^2x=a$等价于$\cos 2x=\frac{a}{2}$,
+其中$-1\le\frac{a}{2}\le 1$, 所以$-2\le a\le 2$, 解得
+\bee
+x_2=\left\{
+\begin{array}{ll}
+ \frac12\arccos\frac{a}{2}, & (-2<a\le 2)\\
+ \pi, & (a=2).
+\end{array}
+\right.
+\eee
+其图像如图, 它位于$a$轴上方, 比较两个函数的图像, 不难看出$|x_1|\le x_2$的充要条件是$\frac12-\sqrt{3}\le a\le -1$或$a=2$.
+\begin{center}
+ \begin{tikzpicture}
+  \begin{axis}[
+    axis equal,
+    axis lines=middle,
+    axis line style={->},
+    xlabel={$a$},
+    ylabel={$x$},
+    ]
+   \addplot[blue,thick] gnuplot [domain=-1.232:-1,samples=120] {pi/3+asin((2*x-1)/(2*sqrt(3)))};
+   \addplot[blue,thick] gnuplot [domain=-1:2.232,samples=120] {-2*pi/3-asin((2*x-1)/(2*sqrt(3)))};
+   \addplot[blue,thick] gnuplot [domain=-2:2,unbounded coords=jump,samples=120] {0.5*acos(x/2)};
+   \addplot[
+    scatter,
+    only marks,
+    nodes near coords,
+    point meta=explicit symbolic,
+    scatter/classes={
+      o={mark=*,fill=white},
+      c={mark=*,blue}},
+   ] table[meta=label] {
+      x		y	label
+      2	3.14	c
+      2	0	o
+      -2	1.57	c
+      -1	0	o
+      -1.232	-0.52	c
+      -1	-1.04	c
+      2.232	-3.66	c
+    };
+    \addplot [name path=border,color=blue, ultra thick, dashed] coordinates {(2,0) (2,3.14) (0,3.14)};
+    \addplot [name path=border,color=blue, ultra thick, dashed] coordinates {(-2,0) (-2,1.57) (0,1.57)};
+    \addplot [name path=border,color=blue, ultra thick, dashed] coordinates {(-1.232,0) (-1.232,-0.52) (0,-0.52)};
+    \addplot [name path=border,color=blue, ultra thick, dashed] coordinates {(-1,0) (-1,-1.04) (0,-1.04)};
+    \addplot [name path=border,color=blue, ultra thick, dashed] coordinates {(2.232,0) (2.232,-3.66) (0,-3.66)};
+    \addplot+[only marks,nodes near coords,blue,point meta=explicit symbolic] coordinates {
+      (-2,1.57) [$(-2,\frac{\pi}{2})$]
+      (2,3.14) [$(2,\pi)$]
+    };
+  \end{axis}
+ \end{tikzpicture}
+\end{center}
+\ea
+
+\bq{}{}
+函数$y=\sqrt{8x-x^2}-\sqrt{14x-x^2-48}$的最大值为\underline{$2\sqrt{3}$}, 最小值为\underline{0}.
+\eq
+\ba
+$x$的定义域为$6\le x \le 8$, 而
+\bee
+f(x)=\frac{6\sqrt{8-x}}{\sqrt{x}+\sqrt{x-6}}
+\eee
+在$[6,8]$上递减.
+\ea
+
+\bq{}{}
+已知$a,b,c,d\in\Reals$, 满足$a+b+c+d=3$, $a^2+2b^2+3c^2+6d^2=5$, 
+则$a$的最小值与最大值的和是\underline{3}.
+\eq
+\ba
+\bee
+5-a^2=2b^2+3c^2+6d^2=\frac16(3+2+1)(2b^2+3c^2+6d^2)\ge(b+c+d)^2=(3-a)^2.
+\eee
+\ea
+
+\bq{}{}
+用$\delta(S)$表示非零整数集$S$中所有元素的和, 设$A=\{a_1,a_2,\cdots,a_{11}\}$是正整数集,
+且$a_1<a_2<\cdots<a_{11}$, 若对每个正整数$n\le1500$, 存在$A$的子集$S$, 使得$\delta(S)=n$,
+求满足上述要求的$a_{10}$的最小值.
+\eq
+\ba
+令$S_k=a_1+a_2+\cdots+a_k$, ($1\le k\le 11$), 若$a_k>S_{k-1}+1$,
+则不存在$S\subset A$, 使$\delta(S)=S_{k-1}+1$, 所以$S_k=S_{k-1}+a_k\le2S_{k-1}+1$.
+又由题设得$S_1=a_1=1$, 于是由归纳法易得$S_k\le2^k-1$, ($1\le k\le m$).
+若$S_{10}<750$, 则$a_{11}\le750$, (否则$750$无法用$\delta(S)$表出),
+$S_{11}=S_{10}+a_{11}<1500$, 所以$S_{10}\ge750$.
+又$S_{8}\le2^8-1=255$, 所以$2a_{10}\ge a_{9}+a_{10}=S_{10}-S_8\ge495$,
+$a_{10}\ge248$, 另一方面, 令$A=\{1,2,4,8,16,32,64,128,247,248,750\}$合题意.
+\ea
+
+\bq{}{}
+$a,b,c>0$, $l^2=a^2+b^2+c^2$, 证明: $(l^4-a^4)(l^4-b^4)(l^4-c^4)\ge512a^4b^4c^4$.
+\eq
+\ba
+\begin{align*}
+ LHS & = (l^2+a^2)(l^2+b^2)(l^2+c^2)(l^2-a^2)(l^2-b^2)(l^2-c^2)\\
+  &=(2a^2+b^2+c^2)(a^2+2b^2+c^2)(a^2+b^2+2c^2)(b^2+c^2)(c^2+a^2)(a^2+b^2)\\
+  &\ge 4\sqrt[4]{a^4b^2c^2}\cdot4\sqrt[4]{a^2b^4c^2}\cdot4\sqrt[4]{a^2b^2c^4}\cdot2\sqrt{b^2c^2}\cdot2\sqrt{c^2a^2}\cdot2\sqrt{a^2b^2}\\
+  &=RHS.
+\end{align*}
+\ea
+\ba
+问题等价于证明
+\bee
+\paren{\frac{l^4}{a^4}-1}\paren{\frac{l^4}{b^4}-1}\paren{\frac{l^4}{c^4}-1}\ge512
+\eee
+设$x=\frac{a^2}{l^2}$, $y=\frac{b^2}{l^2}$, $z=\frac{c^2}{l^2}$, 则$x+y+z=1$, 所以上式等价于证明
+\bee
+\paren{\frac1{x^2}-1}\paren{\frac1{y^2}-1}\paren{\frac1{z^2}-1}\ge512.
+\eee
+因
+\bee
+\frac{1}{x^2}-1=\frac{(1-x)(1+x)}{x^2}=\frac{(y+z)(x+y+z+x)}{x^2}
+  \ge\frac{2\sqrt{yz}(2x+2\sqrt{yz})}{x^2}
+  \ge\frac{2\sqrt{yz}\cdot4\sqrt{x\sqrt{yz}}}{x^2}
+  =\frac{8\sqrt[4]{x^2y^3z^3}}{x^2}.
+\eee
+等号当且仅当$x=y=z$时取得, 同理$\frac1{y^2}-1\ge8\frac{\sqrt[4]{x^3y^2z^3}}{y^2}$, 
+$\frac{1}{z^2}-1\ge8\frac{\sqrt[4]{x^3y^3z^2}}{z^2}$, 以上三式相乘即得.
+\ea
+
+\bq{}{}
+在锐角$\triangle ABC$中, $a<b<c$, 记$P=\frac{a+b+c}{2}$, $Q=a\cos C+b\cos B+c\cos A$, 则$P,Q$的关系是?
+\eq
+\ba
+\begin{align*}
+ P-Q &= \frac{a+b+c}{2}-b-b\cos B\\
+  &=\frac{a+b+c}{2}-b\paren{1+\frac{a^2+c^2-b^2}{2ac}}\\
+  &=\frac{a+b+c}{2}-b\cdot\frac{(a+c-b)(a+c-b)}{2ac}\\
+  &=\frac12(a+b+c)\paren{1-\frac{b(a+c-b)}{2ac}}\\
+  &=\frac12(a+b+c)\paren{\frac{b^2-ab-bc+ac}{ac}}\\
+  &=\frac{1}{2ac}(a+b+c)(b-c)(b-a)<0
+\end{align*}
+另外$a<b<c$有$\cos C<\cos B<\cos A$, 根据排序不等式, 
+\begin{align*}
+a\cos C+b\cos B+c\cos A&>a\cos B+b\cos C+c\cos A\\
+a\cos C+b\cos B+c\cos A&>a\cos C+b\cos A+c\cos B.
+\end{align*}
+相加得$2(a\cos C+b\cos B+c\cos A)>a+b+c$.
+\ea
+
+\bq{}{}
+设$x,y\in\Reals^+$, $x+y=3952$, 则(\qquad).
+
+\begin{enumerate}[A.]
+ \item $x^{1949}\cdot y^{2003}\ge1949^{1949}\cdot2003^{2003}$.
+ \item $x^{1949}\cdoty^{2003}\le1949^{1949}\cdot2003^{2003}$.
+ \item $y^{1949}\cdotx^{2003}\ge1949^{1949}\cdot2003^{2003}$.
+ \item 以上都不对.
+\end{enumerate}
+\eq
+\ba
+由于$x+y=3952$, 所以
+\bee
+1949+2003=\sum_{i=1}^{1949}\frac{x}{1949}+\sum_{i=1}^{2003}\frac{y}{2003}
+  \ge(1949+2003)\sqrt[3952]{\paren{\frac{x}{1949}}^{1949}\cdot\paren{\frac{y}{2003}}^{2003}}
+\eee
+所以$\sqrt[3952]{\paren{\frac{x}{1949}}^{1949}\cdot\paren{\frac{y}{2003}}^{2003}}\le1$.
+\ea
+
+\bq{}{}
+设$x,y$是不相等的正数, $n,m$是正整数, 且$n>m$, 令$a=\sqrt[m]{x^m+y^m}$, $b=\sqrt[n]{x^n+y^n}$, 
+则$a$与$b$的大小关系为\underline{$a>b$}.
+\eq
+\ba
+\begin{align*}
+ a>b&\Longleftrightarrow (x^m+y^m)^{m+1}>(x^{m+1}+y^{m+1})^m\\
+  &\Longleftrightarrow (x^m+y^m)^m>\frac{(x^{m+1}+y^{m+1})^{m}}{x^m+y^m}=\paren{\frac{x^{m+1}}{\sqrt[m]{x^m+y^m}}+\frac{y^{m+1}}{\sqrt[m]{x^m+y^m}}}^m\\
+  &\Longleftrightarrow x^m+y^m>\frac{x^{m+1}}{\sqrt[m]{x^m+y^m}}+\frac{y^{m+1}}{\sqrt[m]{x^m+y^m}}
+\end{align*}
+因$x^m=\frac{x^{m+1}}{\sqrt[m]{x^m}}>\frac{x^{m+1}}{\sqrt[m]{x^m+y^m}}$, 
+同理$y^m=\frac{y^{m+1}}{\sqrt[m]{y^m}}>\frac{y^{m+1}}{\sqrt[m]{x^m+y^m}}$,
+所以不等式成立, 由幂平均不等式可知$2b>a$.
+\ea
+
+\bq{}{}
+已知$0<\alpha<\frac{\pi}{2}$, $0<\beta<\frac{\pi}{2}$, 且$\sin\frac{\alpha}{2}=a\cos \beta$, 
+当$0<\alpha+\beta<\frac{\pi}{2}$时, 求$a$的取值范围.
+\eq
+\ba
+显然$a=\frac{\sin\frac{\alpha}{2}}{\cos\b}>0$, 因为$-\frac{\b}{2}<\frac12\alpha<\frac{\pi}{4}-\frac{\b}{2}$,
+所以$\sin\frac{\a}{2}<\sin\paren{\frac{\pi}{4}-\frac{\b}{2}}=\frac{\sqrt{2}}{2}\paren{\cos\frac{\b}{2}-\sin\frac{\b}{2}}$.
+所以
+\bee
+a<\frac{\frac{\sqrt{2}}{2}\paren{\cos\frac{\b}{2}-\sin\frac{\b}{2}}}{\paren{\cos\frac{\b}{2}+\sin\frac{\b}{2}}\paren{\cos\frac{\b}{2}-\sin\frac{\b}{2}}}
+  =\frac{\sqrt{2}}{2\paren{\cos\frac{\b}{2}+\sin\frac{\b}{2}}}
+  \ge\frac12,
+\eee
+其中等号取不到, 所以$a\le\frac12$.
+\ea
+
+\bq{}{}
+设$b_1,b_2,\cdots,b_n$是正数$a_1,a_2,\cdots,a_n$的一个排列, 证明$\sum_{k=1}^{n}\frac{a_k}{b_k}\ge n$.
+\eq
+\ba
+不妨设$a_1\ge a_2\ge\cdots\ge a_n$, 因$a_k\in\Reals^+$, 所以$\frac1{a_1}\le\frac1{a_2}\le\cdots\le\frac1{a_n}$,
+又$\frac1{b_1},\frac1{b_2},\cdots,\frac1{b_n}$是$\frac1{a_1},\frac1{a_2},\cdots,\frac1{a_n}$的一个排列,
+于是$n= \sum_{k=1}^{n}a_k\cdot\frac1{a_k}\le\sum_{k=1}^{n}a_k\cdot\frac1{b_k}$, 另外
+\bee
+\sum_{k=1}^n\frac{a_k}{b_k}\ge n\sqrt[n]{\frac{a_1a_2\cdots a_n}{b_1b_2\cdots b_n}}=n.
+\eee
+\ea
+
+\bq{}{}
+若$x,y,z,w>0$, 且$x+y+z+w=70$, 
+求函数$\mu=\sqrt[4]{2(x+1)}+\sqrt[4]{16(y+2)}+\sqrt[4]{54(z+3)}+\sqrt[4]{128(w+4)}$的最大值.
+\eq
+\ba
+\bee
+ \mu\le\frac14\paren{\paren{\frac{x+1}{4}+2+2+2}+\paren{\frac{y+2}{4}+4+4+4}+\paren{\frac{z+3}{4}+6+6+6}+\paren{\frac{w+4}{4}+8+8+8}}=20
+\eee
+所以
+\bee
+\paren{\frac{\mu}{\sqrt[4]{2}}}^2=\paren{\sum\sqrt[4]{i^3(x_i+i)}}^2
+  \le\paren{\sum\sqrt{i^2}}\paren{\sum\sqrt{i(x_i+i)}}
+  =10\sum\sqrt{i(x_i+i)}
+  \le10\sqrt{\sum i\sum(x_i+i)}
+  =400\cdot\frac1{\sqrt{2}}
+\eee
+所以$\mu\le 20$.
+\ea
+
+\bq{}{}
+若$A=a\sin^2x+b\cos^2x$, $B=a\cos^2x+b\sin^2x$, ($a,b\in\Reals$), 
+证明$m=AB, n=ab$, $P=A^2+B^2$, $Q=a^2+b^2$满足$m+Q\ge P+n$.
+\eq
+\ba
+$AB=ab+\sin^2x\cos^2x(a-b)^2$, 所以$AB-ab=(a-b)^2\sin^2x\cos^2x\ge0$, 
+而$(A+B)^2=(a+b)^2$, 所以$A^2+B^2\le a^2+b^2$, 又因为$m\ge n$, $P\le Q$, 
+所以$P+n\le m+Q$.
+\ea
+
+\bq{}{}
+已知$x,y,z\in\Reals^+$, 且满足$xyz(x+y+z)=1$, 求$t=(x+y)(x+z)$的最小值.
+\eq
+\ba
+$x^2+xy+xz=\frac{1}{yz}$, 所以$t=yz+\frac1{yz}\ge2$, 当$y=z=1$, $x=\sqrt{2}-1$时取等号.
+\ea
+
+\bq{}{}
+如果$a_{n}=\sum_{k=1}^n\frac1k$, ($n\in\Naturals$), 证明: 对于任意的$n\ge2$, 
+都有$a_n^2>2\paren{\frac{a_2}{2}+\frac{a_3}{3}+\cdots+\frac{a_n}{n}}$.
+\eq
+\ba
+用数学归纳法, 简证
+\bee
+a_{n+1}^2=\paren{a_n+\frac1{n+1}}^2
+  =a_n^2+\frac{2a_n}{n+1}+\frac1{(n+1)^2}
+  >a_n^2+\frac{2a_{n+1}}{n+1}-\frac1{(n+1)^2}
+  >2\sum_{k=2}^{n+1}\frac{a_k}{k}-\frac1{(n+1)^2}.
+\eee
+由此应给结论加强为$a_n^2>2\paren{\frac{a_2}{2}+\frac{a_3}{3}+\cdots+\frac{a_n}{n}}+\frac1n$. 所以
+\bee
+a_{n+1}^2=a_{n}^2+\frac{2a_{n+1}}{n+1}-\frac1{(n+1)^2}
+  > 2\sum_{k=2}^{n+1}\frac{a_k}{k}+\frac1n-\frac1{(n+1)^2}
+  =2\sum_{k=2}^{n+1}\frac{a_k}{k}+\frac{n^2+n+1}{n(n+1)^2}
+  >2\sum\frac{a_k}{k}+\frac{n^2+n}{n(n+1)^2}=RHS
+\eee
+成立.
+\ea
+\ba
+裂项, 放缩法
+\bee
+a_n^2=\sum_{k=2}^{n}(a_k^2-a_{k-1}^2)+a_1^2
+  = \sum_{k=2}^n\frac{2a_k-\frac1k}{k}+1
+  =2\sum\frac{a_k}{k}+1-\sum_{k=2}^{n}\frac1{k^2}
+  >2\sum\frac{a_k}{k}+1-\sum_{k=2}^n\paren{\frac{1}{k-1}-\frac1k}
+  =2\sum\frac{a_k}{k}+\frac1n.
+\eee
 \ea

@@ -1,5 +1,24 @@
 \chapter{数学分析}
 \section{极限}
+\bq{}{}
+设函数$\varphi(x)$可导, 且满足$\varphi(0)=0$, 又设$\varphi'(x)$单调减少. 
+\begin{enumerate}
+\item 证明: 对$x\in(0,1)$, 有$\varphi(1)x<\varphi(x)<\varphi'(0)x$.
+\item 若$\varphi(1)\ge0$, $\varphi'(0)\le1$, 任取$x_{0}\in(0,1)$, 令$x_{n}=\varphi(x_{n-1})$,
+($n=1,2,\cdots$). 证明: $\lim_{n\to\infty}x_{n}$ 存在, 并求该极限值.
+\end{enumerate}
+\eq
+\ba
+对于任意的$x\in[0,1],$在$[0,x]$上用拉格朗日定理,
+\bee
+\varphi(x)-\varphi(0)=\varphi'(\xi_{1})x<\varphi'(0)x
+\eee
+在$[x,1]$上用拉格朗日定理
+\bee
+\varphi(1)-\varphi(x)=\varphi'(\xi_{2})(1-x)<\varphi'(\xi_{1})(1-x)=\varphi'(\xi_{1})-\varphi(x)
+\eee
+所以$\varphi(1)x<\varphi'(\xi_{1})x=\varphi(x)$.
+\ea
 
 \section{导数}
 
@@ -24,6 +43,77 @@
 \ea
 
 \section{积分}
+
+\bq{}{}
+设函数$f(x)$在$[a,b]$上有连续的导数, 且$f(a)=0$, 证明
+\bee
+\int_{a}^{b}f^{2}(x)\mathrm{d}x\le\frac{(b-a)^{2}}{2}\int_{a}^{b}[f'(x)]^{2}\mathrm{d}x.
+\eee
+\eq
+\ba
+令$F(b)=RHS-LHS,$证$F'(b)\ge0$即可.
+\ea
+
+\bq{}{}
+设函数$f(x)$在$[0,1]$上有二阶连续的导数, 证明:
+\begin{enumerate}
+\item 对任意$\xi\in\paren{0,\frac{1}{4}}$和$\eta\in\paren{\frac{3}{4},1}$有
+\[
+\abs{f'(x)}<2\abs{f(\xi)-f(\eta)}+\int_{0}^{1}\abs{f''(x)}\mathrm{d}x\quad x\in[0,1]
+\]
+\item 当$f(0)=f(1)=0$及$f(x)\ne0$, ($x\in(0,1)$)时有
+\[
+\int_{0}^{1}\abs{\frac{f''(x)}{f(x)}}\mathrm{d}x\ge4.
+\]
+\end{enumerate}
+\eq
+\ba
+用中值定理, 
+\begin{align*}
+\abs{f'(x)}-2\abs{f(\xi)-f(\eta)} & =\abs{f'(x)}-2\abs{f'(\theta)}(-\xi+\eta)\\
+ & \le\abs{f'(x)}-\abs{f'(\theta)}\\
+ & \le\abs{f'(x)-f'(\theta)}=\abs{\int_{\theta}^{x}f''(t)\mathrm{d}t}\\
+ & \le\int_{0}^{1}\abs{f''(t)}\mathrm{d}t
+\end{align*}
+最后取$f(x_{0})=\max_{x\in[0,1]}f(x)$, 则
+\bee
+f(x_0)=f'(\xi_1)x_0=f'(\xi_2)(x_0-1),
+\eee
+所以
+\begin{align*}
+\int_0^1\abs{\frac{f''}{f}}\ud x & \ge\frac1{\abs{f(x_0)}}\ud x\\
+ & \ge \frac1{\abs{f(x_0)}}\abs{\int_{\xi_1}^{\xi_2}f''\ud x}\\
+ & = \frac{1}{\abs{f(x_0)}}\abs{f'(\xi_2)-f'(\xi_1)}\\
+ & = \frac1{x_0}+\frac1{1-x_0}\ge4.
+\end{align*}
+\ea
+
+\bq{}{}
+设函数$f(x)$在$\left[-\frac1a,a\right]$上连续(其中$a>0$), 且$f(x)\ge0$, $\int_{-\frac1a}^{a}xf(x)\ud x=0$, 求证: $\int_{-\frac1a}^ax^2f(x)\ud x\le\int_{-\frac1a}^af(x)\ud x$.
+\eq
+\ba
+因$(a-x)\paren{x+\frac1a}\ge0$, 对$(a-x)\paren{x+\frac1a}f(x)\ge0$两边同时积分.
+\ea
+
+\bq{}{}
+设函数$f(x)$在$[0,1]$上连续, $\int_0^1f(x)\ud x=0$, $\int_0^1xf(x)\ud x=1$. 求证: 
+\begin{enumerate}[1.]
+ \item 存在$\xi\in[0,1]$, 使得$|f(\xi)|\ge4$;
+ \item 存在$\eta\in[0,1]$, 使得$\abs{f(\eta)}=4$.
+\end{enumerate}
+\eq
+\ba
+用反证法, 
+\bee
+1=\abs{\int_0^1\paren{x-\frac12}f(x)\ud x}
+  \le \int_0^1\abs{x-\frac12}\cdot\abs{f}\ud x
+  \le 1.
+\eee
+等号取不到, 否则, 
+\bee
+\int_0^1\paren{4-\abs{f}}\abs{x-\frac12}\ud x=0.
+\eee
+\ea
 
 \bq{}{}
 求$\int_0^{2\pi}\frac{\ud \t}{3-\sin 2\t}$.

@@ -1,5 +1,24 @@
 \chapter{数学分析}
 \section{极限}
+\bq{}{}
+设函数$\varphi(x)$可导, 且满足$\varphi(0)=0$, 又设$\varphi'(x)$单调减少. 
+\begin{enumerate}
+\item 证明: 对$x\in(0,1)$, 有$\varphi(1)x<\varphi(x)<\varphi'(0)x$.
+\item 若$\varphi(1)\ge0$, $\varphi'(0)\le1$, 任取$x_{0}\in(0,1)$, 令$x_{n}=\varphi(x_{n-1})$,
+($n=1,2,\cdots$). 证明: $\lim_{n\to\infty}x_{n}$ 存在, 并求该极限值.
+\end{enumerate}
+\eq
+\ba
+对于任意的$x\in[0,1],$在$[0,x]$上用拉格朗日定理,
+\bee
+\varphi(x)-\varphi(0)=\varphi'(\xi_{1})x<\varphi'(0)x
+\eee
+在$[x,1]$上用拉格朗日定理
+\bee
+\varphi(1)-\varphi(x)=\varphi'(\xi_{2})(1-x)<\varphi'(\xi_{1})(1-x)=\varphi'(\xi_{1})-\varphi(x)
+\eee
+所以$\varphi(1)x<\varphi'(\xi_{1})x=\varphi(x)$.
+\ea
 
 \section{导数}
 
@@ -24,6 +43,50 @@
 \ea
 
 \section{积分}
+
+\bq{}{}
+设函数$f(x)$在$[a,b]$上有连续的导数, 且$f(a)=0$, 证明
+\bee
+\int_{a}^{b}f^{2}(x)\mathrm{d}x\le\frac{(b-a)^{2}}{2}\int_{a}^{b}[f'(x)]^{2}\mathrm{d}x.
+\eee
+\eq
+\ba
+令$F(b)=RHS-LHS,$证$F'(b)\ge0$即可.
+\ea
+
+\bq{}{}
+设函数$f(x)$在$[0,1]$上有二阶连续的导数, 证明:
+\begin{enumerate}
+\item 对任意$\xi\in\paren{0,\frac{1}{4}}$和$\eta\in\paren{\frac{3}{4},1}$有
+\[
+\abs{f'(x)}<2\abs{f(\xi)-f(\eta)}+\int_{0}^{1}\abs{f''(x)}\mathrm{d}x\quad x\in[0,1]
+\]
+\item 当$f(0)=f(1)=0$及$f(x)\ne0$, ($x\in(0,1)$)时有
+\[
+\int_{0}^{1}\abs{\frac{f''(x)}{f(x)}}\mathrm{d}x\ge4.
+\]
+\end{enumerate}
+\eq
+\ba
+用中值定理, 
+\begin{align*}
+\abs{f'(x)}-2\abs{f(\xi)-f(\eta)} & =\abs{f'(x)}-2\abs{f'(\theta)}(-\xi+\eta)\\
+ & \le\abs{f'(x)}-\abs{f'(\theta)}\\
+ & \le\abs{f'(x)-f'(\theta)}=\abs{\int_{\theta}^{x}f''(t)\mathrm{d}t}\\
+ & \le\int_{0}^{1}\abs{f''(t)}\mathrm{d}t
+\end{align*}
+最后取$f(x_{0})=\max_{x\in[0,1]}f(x)$, 则
+\bee
+f(x_0)=f'(\xi_1)x_0=f'(\xi_2)(x_0-1),
+\eee
+所以
+\begin{align*}
+\int_0^1\abs{\frac{f''}{f}}\ud x & \ge\frac1{\abs{f(x_0)}}\ud x\\
+ & \ge \frac1{\abs{f(x_0)}}\abs{\int_{\xi_1}^{\xi_2}f''\ud x}\\
+ & = \frac{1}{\abs{f(x_0)}}\abs{f'(\xi_2)-f'(\xi_1)}\\
+ & = \frac1{x_0}+\frac1{1-x_0}\ge4.
+\end{align*}
+\ea
 
 \bq{}{}
 求$\int_0^{2\pi}\frac{\ud \t}{3-\sin 2\t}$.
@@ -77,6 +140,25 @@ $\int_0^{2\pi}\frac{\ud \t}{3-\sin 2\t}
 其它三个同理. 所以$\sum=\frac{\sqrt{2}}{4}\left(\frac{\pi}{2}\cdot4\right)=\frac{\sqrt{2}}{2}\pi$.
 \ea
 
+\bq{}{}
+求
+\bee
+\int_0^{\pi/4}\frac{(\cot x-1)^{p-1}}{\sin^2x}\ln\tan x\ud x=-\frac{\pi}{p}\csc p\pi, \ (-1<p<0).
+\eee
+\eq
+\ba
+令$u=\cot x-1$, 原式等价于
+\bee
+\int_{0}^{+\i}u^{p-1}\ln(u+1)\ud u=\frac{\pi}{p}\csc p\pi,
+\eee
+而
+\bee
+\int_{0}^{\i}u^{p-1}\ln(u+1)\ud u
+=\int_{0}^{\i}u^{p-1}\int_{1}^{1+u}\frac1y\ud y\ud u
+\eee
+交换积分次序, 用Beta函数
+\ea
+
 \section{级数}
 
 
@@ -90,6 +172,41 @@ $\int_0^{2\pi}\frac{\ud \t}{3-\sin 2\t}
 \eq
 \ba
 设$-y<0$, 则$y>0$, 所以$1-y+\frac{y^2}{2!}-\frac{y^3}{3!}+\cdots+\frac{y^{2n}}{(2n)!}>\ue^{-y}>0$.
+\ea
+
+\bq{F.F.Abi=Khuzam and A.B.Boghossian, Some recent geometric inequalities, AMM Vol 96(1989), No. 7:576-589}{}
+函数$f(x)=\cot x-\frac1x$, 则$f^{(k)}(x)<0$, $0<x<\pi$, $k\in\Naturals$.
+\eq
+\ba
+\bee
+\cot x=\frac1x+\sum_{k=1}^{\i}\paren{\frac1{k\pi+x}-\frac1{k\pi-x}}, \quad x\in(0,\pi).
+\eee
+将真分式展开有
+\bee
+f(x)=-2x\sum_{k=0}^{\i}c_kx^{2k}, \  x\in(0,\pi), \quad c_k=\sum_{n=1}^{\i}\frac1{(n\pi)^{2k+2}},\ (k\in\Naturals).
+\eee
+\ea
+
+\bq{}{}
+对$n\in\pNaturals$, 确定$(0,1)$的子集, 使在此子集上$\paren{\frac{\ud}{\ud x}}^n\paren{\ln x\ln(1-x)}<0$.
+\eq
+\ba
+\bee
+f'(x)=(\ln x\ln(1-x))'=\sum_{m=1}^{\i}\frac{(1-x)^{m-1}-x^{m-1}}{m},
+\eee
+当$n$是偶数时, 所有项都是负的, 当$n$是奇数时, 仅当$1-x<x$即$x>\frac12$时, $f^{(n)}(x)$时负的.
+\ea
+
+\bq{}{}
+已知$S_n=\frac{n+1}{2^{n+1}}\sum_{i=1}^{n}\frac{2^i}{i}$, 证明$\lim_{n\to\i}S_n$存在并求其值.
+\eq
+\ba
+因$S_{n+1}=\frac{n+2}{2(n+1)}(S_n+1)$, 所以
+\bee
+S_{n+2}-S_{n+1}=\frac{(n+2)^2(S_{n+1}-S_{n})-S_{n+1}-1}{2(n+1)(n+2)},
+\eee
+$S_4-S_3=0$, 当$n\ge3$时, $S_n$不增, 所以$S=\lim_{n\to\i}S_{n}$存在, 所以$S=\lim_{n\to\i}\frac{n+2}{2(n+1)}(S+1)$, 
+得$S=1$.
 \ea
 
 \section{其他}

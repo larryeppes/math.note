@@ -18,6 +18,88 @@ f(x)\equiv g(x)\pmod{p}.
 容度为1的多项式称为本原多项式.
 \ed
 
+\section{数学分析}
+\bd{}{}
+\begin{itemize}
+ \item 实数
+ \begin{itemize}
+  \item 数学归纳法
+  \item 分割$\rightarrow$实数
+  \item 绝对值(模)$\rightarrow$三角不等式, 开区间, 半开区间, 闭区间
+  \item 上, 下确界的定义
+  \item 绝对误差, 相对误差$\rightarrow$精确数字
+ \end{itemize}
+ \item 数列理论
+ \begin{itemize}
+  \item 数列极限的概念
+  \item 收敛, 发散, 无穷小量, 无穷极限
+  \item 极限存在的判别法
+  \begin{itemize}
+   \item 夹逼定理
+   \item 单调有界
+   \item Cauchy准则
+  \end{itemize}
+  \item 数列极限的基本定理
+  \begin{itemize}
+   \item 保序性
+   \item 唯一性
+   \item 保加, 减, 乘, 除(分母不为$0$)运算
+   \item Stolz公式
+  \end{itemize}
+  \item 极限点, 上下极限, 运算和不等式
+  \item 重要极限
+  \begin{itemize}
+   \item $\ue=\lim_{n\to\i}\paren{1+\frac1n}^n$
+   \item $\g=\lim_{n\to\i}(H_n-\log n)$
+  \end{itemize}
+ \end{itemize}
+ \item 函数的概念
+ \begin{itemize}
+  \item 函数的定义, 定义域, 至于
+ \end{itemize}
+
+ \item 反函数
+ \begin{itemize}
+  \item 反函数的存在性和连续性
+  \item 单值连续分支
+  \item 参数形式表示的函数的连续性
+ \end{itemize}
+ \item 函数的一致连续性
+ \begin{itemize}
+  \item 一致连续性的定义
+  \item Cantor定理
+ \end{itemize}
+\end{itemize}
+\ed
+
+\section{微分方程}
+\bd{标准形式下的边值问题}{}
+二阶线性微分方程: $y''+P(x)y'+Q(x)y=\phi(x)$, $P(x), Q(x), \phi(x)\in C[a,b]$在满足边界条件:
+\bee
+\left\{
+\begin{array}{ll}
+ \a_1y(a)+\b_1y'(a)=\g_1, & \a_1,\a_2,\b_1,\b_2,\g_1,\g_2\in\Reals,\\
+ \a_2y(b)+\b_2y'(b)=\g_2, & \a_1^2+\b_1^2\ne0, \a_2^2+\b_2^2\ne0.
+\end{array}
+\right.
+\eee
+的问题称为标准形式下的边值问题. 边值问题是{\color{red}{齐次的}}, 若$\phi(x)\equiv0$, $\g_1=\g_2=0$. 
+否则称为非齐次的.
+\ed
+
+\bd{更一般的齐次边值问题}{}
+更一般的齐次边值问题是有如下形式的问题
+\bee
+\left\{
+\begin{array}{l}
+ y''+P(x,\l)y'+Q(x,\l)y=0;\\
+ \a_1y(a)+\b_1y'(a)=0;\\
+ \a_2y(b)+\b_2y'(b)=0
+\end{array}
+\right.
+\eee
+\ed
+
 \section{泛函分析}
 \bd{紧算子}{}
 设 $X$ 是 Banach 空间, 若线性算子 $T$ 把每一有界集映成列紧集, 则称线性算子 $T$ 为紧算子.
