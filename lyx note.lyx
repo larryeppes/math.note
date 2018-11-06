@@ -1,0 +1,6340 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\sumsym{\sum\limits_{sym}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\ddx{\frac{\ud}{\ud x}}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Integers}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\Rationals}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\pNaturals}{\mathbb{N}_{+}}
+\newcommand{\FF}{\mathbb{F}}
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+theorems-sec
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref section
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+数学笔记
+\end_layout
+
+\begin_layout Author
+Larry Eppes
+\end_layout
+
+\begin_layout Abstract
+本笔记大部分资料来源于网络, 包括但不限于: 数学博士论坛, MSE, Crux Mathematicorum杂志, 中等数学杂志.
+ 为了节约时间, 只对个人认为的所有疑难问题给出解答或提供原本的简要解答, 并且解答尽可能精炼, 以达到可以作出更多的笔记, 并看到更多不同的解题方法和解题思想.
+ 同时, 在编辑过程中用到的不常见的定理, 或有趣的小定理都单独列在其中一章, 另外在做笔记时个人的一些进一步猜想和推导导出了一些自编问题也单独放在一个章节,
+ 但可能不会放答案.
+ 因个人能力所限, 对于一些高手来说不免有出现类似``这么简单的问题, 你为什么解答的这么详细...
+\begin_inset Quotes erd
+\end_inset
+
+或``这个问题还有别的方法...
+\begin_inset Quotes erd
+\end_inset
+
+等问题.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+考研试题集
+\end_layout
+
+\begin_layout Section
+1999年浙江大学研究生数学分析试题及必要的简答
+\end_layout
+
+\begin_layout Problem
+求极限
+\begin_inset Formula $\lim_{n\to\infty}\frac{n\left(\sqrt[n]{n}-1\right)}{\ln n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+1.
+\end_layout
+
+\begin_layout Problem
+在
+\begin_inset Formula $xy$
+\end_inset
+
+平面上求一点, 使它到三条直线
+\begin_inset Formula $x=0$
+\end_inset
+
+, 
+\begin_inset Formula $y=0$
+\end_inset
+
+及
+\begin_inset Formula $x+2y-16=0$
+\end_inset
+
+的距离平方和最小.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\frac{128}{5}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+计算二重积分
+\begin_inset Formula $\iint_{D}xy\ud x\ud y$
+\end_inset
+
+, 其中
+\begin_inset Formula $D$
+\end_inset
+
+由曲线
+\begin_inset Formula $x^{2}+y^{2}=x+y$
+\end_inset
+
+所围成的区域.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\frac{\pi}{8}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $f(x)$
+\end_inset
+
+在
+\begin_inset Formula $x>0$
+\end_inset
+
+时连续, 
+\begin_inset Formula $f(1)=3$
+\end_inset
+
+, 并且
+\begin_inset Formula 
+\[
+\int_{1}^{xy}f(t)\ud t=x\int_{1}^{y}f(t)\ud t+y\int_{1}^{x}f(t)\ud t,\qquad(x>0,y>0),
+\]
+
+\end_inset
+
+试求函数
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $f(x)=3(1+\ln x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设函数
+\begin_inset Formula $f(t)$
+\end_inset
+
+在
+\begin_inset Formula $(a,b)$
+\end_inset
+
+连续, 若有数列
+\begin_inset Formula $x_{n}\to a$
+\end_inset
+
+, 
+\begin_inset Formula $y_{n}\to a$
+\end_inset
+
+(
+\begin_inset Formula $x_{n},y_{n}\in(a,b)$
+\end_inset
+
+)使
+\begin_inset Formula $\lim_{n\to\infty}f(x_{n})=A$
+\end_inset
+
+及
+\begin_inset Formula $\lim_{n\to\infty}f(y_{n})=B$
+\end_inset
+
+, 则对
+\begin_inset Formula $A,B$
+\end_inset
+
+之间的任意数
+\begin_inset Formula $\mu$
+\end_inset
+
+, 可找到数列
+\begin_inset Formula $x_{n}\to a$
+\end_inset
+
+, 使得
+\begin_inset Formula $\lim_{n\to\infty}f(z_{n})=\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $0\le a_{k}<1$
+\end_inset
+
+, 
+\begin_inset Formula $k=1,2,\cdots,n$
+\end_inset
+
+, 令
+\begin_inset Formula $s_{n}=\sum_{k=1}^{n}a_{k}$
+\end_inset
+
+, 证明不等式
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}\frac{a_{k}}{1-a_{k}}\ge\frac{ns_{n}}{n-s_{n}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+一种方法是用琴生不等式.
+ 另一种方法将
+\begin_inset Formula $\frac{1}{1-a_{k}}$
+\end_inset
+
+展开成幂级数, 有绝对收敛性交换求和次序, 并对内层有限和用幂平均不等式.
+\end_layout
+
+\begin_layout Problem
+设函数
+\begin_inset Formula $f$
+\end_inset
+
+在
+\begin_inset Formula $[a,b]$
+\end_inset
+
+上连续, 且
+\begin_inset Formula $f>0$
+\end_inset
+
+, 记
+\begin_inset Formula $f_{\nu n}=f(a+\nu\delta_{n})$
+\end_inset
+
+, 
+\begin_inset Formula $\delta_{n}=\frac{b-a}{n}$
+\end_inset
+
+, 试证明:
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\sqrt[n]{f_{1n}f_{2n}\cdots f_{nn}}=\exp\left\{ \frac{1}{b-a}\int_{a}^{b}\ln f(x)\ud x\right\} 
+\]
+
+\end_inset
+
+并利用上述等式证明下式
+\begin_inset Formula 
+\[
+\frac{1}{2\pi}\int_{0}^{2\pi}\ln(1-2r\cos x+r^{2})\ud x=2\ln r,\quad(r>1).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+注意
+\begin_inset Formula $\left|1-r\ue^{\ui\frac{2k\pi}{n}}\right|^{2}=1-2r\cos x+r^{2}$
+\end_inset
+
+, 再用
+\begin_inset Formula 
+\[
+\left|x^{n}-r^{n}\right|=\prod_{1\le k\le n}\left|x-r\ue^{\ui\frac{2k\pi}{n}}\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+从调和级数
+\begin_inset Formula $1+\frac{1}{2}+\cdots+\frac{1}{n}+\cdots$
+\end_inset
+
+中去掉所有分母的十进表示中含数码9的项, 证明由此所得余下的级数必定是收敛的.
+\end_layout
+
+\begin_layout Solution*
+估计所有分母中不含9且位数为
+\begin_inset Formula $m$
+\end_inset
+
+的倒数和的上限为
+\begin_inset Formula $\left(\frac{9}{10}\right)^{m-1}H_{8}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Remark*
+
+\series bold
+据说这个收敛级数收敛的值是可以求出来的.
+\end_layout
+
+\begin_layout Section
+1999年复旦大学常微分方程考研试题
+\end_layout
+
+\begin_layout Problem
+求微分方程
+\begin_inset Formula 
+\[
+\frac{d^{2}x}{dt^{2}}-2\frac{dx}{dt}+x=\ue^{t}
+\]
+
+\end_inset
+
+的通解.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $(c_{1}t+c_{2})\ue^{t}+\frac{t^{2}}{2}\ue^{t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+\phi_{1}(t)\\
+\phi_{2}(t)
+\end{array}\right)\quad\text{和}\quad\left(\begin{array}{c}
+\psi_{1}(t)\\
+\psi_{2}(t)
+\end{array}\right)
+\]
+
+\end_inset
+
+是方程组
+\begin_inset Formula 
+\[
+\frac{d}{dt}\left(\begin{array}{c}
+x\\
+y
+\end{array}\right)=\left(\begin{array}{cc}
+p_{11}(t) & p_{12}(t)\\
+p_{21}(t) & p_{22}(t)
+\end{array}\right)\left(\begin{array}{c}
+x\\
+y
+\end{array}\right)
+\]
+
+\end_inset
+
+的两个解, 其中
+\begin_inset Formula $p_{11}(t)$
+\end_inset
+
+, 
+\begin_inset Formula $p_{12}(t)$
+\end_inset
+
+, 
+\begin_inset Formula $p_{21}(t)$
+\end_inset
+
+, 
+\begin_inset Formula $p_{22}(t)$
+\end_inset
+
+是定义在实数轴
+\begin_inset Formula $\RR$
+\end_inset
+
+上的连续函数, 用
+\begin_inset Formula $W(t)$
+\end_inset
+
+表示下列行列式:
+\begin_inset Formula 
+\[
+W(t):=\left|\begin{array}{cc}
+\phi_{1}(t) & \psi_{1}(t)\\
+\phi_{2}(t) & \psi_{2}(t)
+\end{array}\right|.
+\]
+
+\end_inset
+
+试证明Liouville公式, 即证明下列等式
+\begin_inset Formula 
+\[
+W(t)=W(0)\exp\left(\int_{0}^{t}(p_{11}(s)+p_{22}(s))\ud s\right)
+\]
+
+\end_inset
+
+对任何
+\begin_inset Formula $t\in\RR$
+\end_inset
+
+成立.
+\end_layout
+
+\begin_layout Solution*
+证明用
+\begin_inset Formula $W'(t)=(p_{11}+p_{22})W(t)$
+\end_inset
+
+, 及一阶常微分方程初值问题解的存在唯一性定理.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $u(t)$
+\end_inset
+
+和
+\begin_inset Formula $v(t)$
+\end_inset
+
+是区间
+\begin_inset Formula $[a,b]$
+\end_inset
+
+上的连续函数, 且当
+\begin_inset Formula $t\in[a,b]$
+\end_inset
+
+时, 
+\begin_inset Formula 
+\[
+v(t)\ge0,\quad u(t)\le u_{0}+\int_{a}^{t}u(s)v(s)\ud s.
+\]
+
+\end_inset
+
+试利用逐次逼近法证明不等式
+\begin_inset Formula 
+\[
+u(t)\le u_{0}\exp\left(\int_{a}^{t}v(s)\ud s\right)
+\]
+
+\end_inset
+
+对任何
+\begin_inset Formula $t\in[a,b]$
+\end_inset
+
+成立.
+\end_layout
+
+\begin_layout Solution*
+设
+\begin_inset Formula $V(t)=\int_{a}^{t}v(s)\ud s$
+\end_inset
+
+, 用分布积分法迭代, 
+\begin_inset Formula $u_{0}(t)\equiv u_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $u_{n}(t)\le u_{0}\left(1+V(t)+\frac{V^{2}(t)}{2!}+\cdots+\frac{V^{n}(t)}{n!}\right)$
+\end_inset
+
+, 用归纳法证明:
+\begin_inset Formula 
+\[
+\begin{aligned}u_{n+1}(t) & \le u_{0}+\int_{a}^{t}u(s)v(s)\ud s\\
+ & =u_{0}+\int_{a}^{t}u_{0}\left(1+V(s)+\frac{V^{2}(s)}{2!}+\cdots+\frac{V^{n}(s)}{n!}\right)\ud V(s)\\
+ & =u_{0}\left(1+V(t)+\frac{V^{2}(t)}{2!}+\cdots+\frac{V^{n+1}(t)}{(n+1)!}\right)
+\end{aligned}
+\]
+
+\end_inset
+
+最后令
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $\phi(t,p)$
+\end_inset
+
+为初值问题
+\begin_inset Formula 
+\[
+\frac{dx}{dt}=F(x),\qquad x(0)=p
+\]
+
+\end_inset
+
+的解, 其中
+\begin_inset Formula $F:\RR^{n}\to\RR^{n}$
+\end_inset
+
+是连续可微的.
+ 假定对任何
+\begin_inset Formula $p\in\RR^{n}$
+\end_inset
+
+, 解
+\begin_inset Formula $\phi(t,p)$
+\end_inset
+
+关于
+\begin_inset Formula $t$
+\end_inset
+
+的存在区间均为
+\begin_inset Formula $(-\infty,+\infty)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+证明下列等式
+\begin_inset Formula 
+\[
+\phi(t+s,p)=\phi(t,\phi(s,p))
+\]
+
+\end_inset
+
+对任何
+\begin_inset Formula $s,t\in\RR$
+\end_inset
+
+, 
+\begin_inset Formula $p\in\RR^{n}$
+\end_inset
+
+成立.
+\end_layout
+
+\begin_layout Enumerate
+讨论解
+\begin_inset Formula $\phi(t,p)$
+\end_inset
+
+关于
+\begin_inset Formula $(t,p)$
+\end_inset
+
+的连续性.
+\end_layout
+
+\begin_layout Solution*
+若对于给定的
+\begin_inset Formula $p_{0}\in\RR^{n}$
+\end_inset
+
+成立着
+\begin_inset Formula 
+\[
+\left\Vert \phi(k,p_{0})-p_{0}\right\Vert <1,\quad(k=1,2,3,\cdots),
+\]
+
+\end_inset
+
+证明
+\begin_inset Formula $\phi(t,p_{0})$
+\end_inset
+
+作为
+\begin_inset Formula $t$
+\end_inset
+
+的函数在
+\begin_inset Formula $t\in[0,+\infty)$
+\end_inset
+
+上是有界的.
+\end_layout
+
+\begin_layout Standard
+第一问, 一阶线性微分方程组的解的存在唯一性定理的条件是在
+\begin_inset Formula $f$
+\end_inset
+
+满足Lipschitz条件, 对于开区域
+\begin_inset Formula $\RR\times\RR^{n}$
+\end_inset
+
+上需要考虑闭立方体
+\begin_inset Formula $\Gamma=[-T,T]\times[-R,R]^{n}$
+\end_inset
+
+, 则由
+\begin_inset Formula $f$
+\end_inset
+
+的连续可微条件保证了
+\begin_inset Formula $f$
+\end_inset
+
+对
+\begin_inset Formula $x$
+\end_inset
+
+满足Lipschitz条件(中值定理).
+ 固定
+\begin_inset Formula $p$
+\end_inset
+
+和
+\begin_inset Formula $s$
+\end_inset
+
+, 证明
+\begin_inset Formula $\phi(t+s,p)$
+\end_inset
+
+和
+\begin_inset Formula $\phi(t,\phi(s,p))$
+\end_inset
+
+都是初值问题
+\begin_inset Formula 
+\[
+\frac{dx}{dt}=F(x),\qquad x(0)=\phi(s,p)
+\]
+
+\end_inset
+
+的解, 所以微分方程在
+\begin_inset Formula $\Gamma$
+\end_inset
+
+的某个子区域
+\begin_inset Formula $G$
+\end_inset
+
+上存在唯一解.
+ 最后因为解可以延拓到任意给定的
+\begin_inset Formula $s,t,p$
+\end_inset
+
+处(这里延拓可能出现的问题在于
+\begin_inset Formula $t$
+\end_inset
+
+无法延拓到无穷远, 但这可以通过反证法否定, 因为如果
+\begin_inset Formula $t$
+\end_inset
+
+只能延拓到某个
+\begin_inset Formula $t_{0}$
+\end_inset
+
+, 则
+\begin_inset Formula $f$
+\end_inset
+
+必然在某个有限位置
+\begin_inset Formula $p_{0}$
+\end_inset
+
+附近趋向于无穷, 然而这与
+\begin_inset Formula $f$
+\end_inset
+
+在
+\begin_inset Formula $p_{0}$
+\end_inset
+
+闭邻域内有界矛盾), 所以命题在整个区域上成立.
+\end_layout
+
+\begin_layout Standard
+第二问参考张芷芬的微分方程定性理论中的定理1.4.
+\end_layout
+
+\begin_layout Standard
+第三问使用第一问的结论, 
+\begin_inset Formula 
+\[
+\begin{aligned}\left\Vert \phi(t,p_{0})\right\Vert  & \le\left\Vert \phi(t,p_{0})-\phi([t],p_{0})\right\Vert +\left\Vert \phi([t],p_{0})-p_{0}\right\Vert +\left\Vert p_{0}\right\Vert \\
+ & \le\left\Vert \phi([t],\phi(\{t\},p_{0}))-\phi(\{t\},p_{0})+\phi(\{t\},p_{0})\right\Vert +\left\Vert \phi([t],p_{0})-p_{0}+p_{0}\right\Vert +1+\left\Vert p_{0}\right\Vert \\
+ & \le1+\left\Vert \phi(\{t\},p_{0})\right\Vert +1+\left\Vert p_{0}\right\Vert +1+\left\Vert p_{0}\right\Vert \\
+ & \le M
+\end{aligned}
+\]
+
+\end_inset
+
+最后一步利用第二问
+\begin_inset Formula $\phi(t,p_{0})$
+\end_inset
+
+在
+\begin_inset Formula $t\in[0,1]$
+\end_inset
+
+上的连续性, 因为Cantor定理保证了
+\begin_inset Formula $\phi(t,p_{0})$
+\end_inset
+
+在
+\begin_inset Formula $t\in[0,1]$
+\end_inset
+
+上的一致连续性, 从而是有界的.
+\end_layout
+
+\begin_layout Problem
+考虑方程
+\begin_inset Formula 
+\[
+\frac{d^{2}x}{dt^{2}}+x^{2}=f(t).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+考虑Fourier变换或Laplace变换, 及其适用条件.
+\end_layout
+
+\begin_layout Section
+2010年南京大学数学分析考研试题简答
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $a_{1}=1$
+\end_inset
+
+, 
+\begin_inset Formula $a_{n+1}=\sqrt{1+a_{n}}$
+\end_inset
+
+说明
+\begin_inset Formula $\{a_{n}\}$
+\end_inset
+
+的收敛性, 并求极限.
+\end_layout
+
+\begin_layout Solution*
+一种方法是证明
+\begin_inset Formula $\left|a_{n+1}-a_{n}\right|\le\frac{1}{2}\left|a_{n}-a_{n-1}\right|$
+\end_inset
+
+, 然后用压缩映射原理的思想证明收敛; 另一种方法是证明
+\begin_inset Formula $\{a_{n}\}$
+\end_inset
+
+是单调增加有上界
+\begin_inset Formula $2$
+\end_inset
+
+.
+ 极限为
+\begin_inset Formula $\frac{1+\sqrt{5}}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+确定
+\begin_inset Formula $a,b$
+\end_inset
+
+的值, 使
+\begin_inset Formula 
+\[
+\left(1+\frac{1}{n}\right)^{n}=e+\frac{a}{n}+\frac{b}{n^{2}}+O\left(\frac{1}{n^{3}}\right),\quad n\to+\infty.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+用
+\begin_inset Formula $\ln(1+x)=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\frac{x^{4}}{4}+o(x^{4})$
+\end_inset
+
+.
+ 换底数为
+\begin_inset Formula $\ue$
+\end_inset
+
+用幂级数展开, 
+\begin_inset Formula $a=-\frac{\ue}{2}$
+\end_inset
+
+, 
+\begin_inset Formula $b=\frac{11\ue}{24}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+计算积分
+\begin_inset Formula 
+\[
+\int_{0}^{\pi/2}\frac{x^{2}}{\sin^{2}x}\ud x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+使用分布积分法, 将积分转化为
+\begin_inset Formula 
+\[
+\int_{0}^{\pi/2}\ln\sin x\ud x=-\frac{\pi}{2}\ln2.
+\]
+
+\end_inset
+
+上面的积分是用变量替换
+\begin_inset Formula $x\to\pi/2-x$
+\end_inset
+
+求解.
+\end_layout
+
+\begin_layout Problem
+计算
+\begin_inset Formula 
+\[
+\iint_{\Sigma}\frac{x}{r^{3}}\ud y\ud z+\frac{y}{r^{3}}\ud z\ud x+\frac{z}{r^{3}}\ud x\ud y,
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $\Sigma=\{(x,y,z):|x|+|y|+|z|=1\}$
+\end_inset
+
+, 
+\begin_inset Formula $r=\sqrt{x^{2}+y^{2}+z^{2}}$
+\end_inset
+
+, 方向向外.
+\end_layout
+
+\begin_layout Solution*
+使用散度定理(又称空间Green定理, Gauss公式), 定理的条件在原点
+\begin_inset Formula $(0,0,0)$
+\end_inset
+
+不满足, 所以考虑挖去原点为心
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+为半径的球
+\begin_inset Formula $\Omega_{\varepsilon}=\{(x,y,z):x^{2}+y^{2}+z^{2}\le\varepsilon^{2}\}$
+\end_inset
+
+, 则
+\begin_inset Formula $\Sigma$
+\end_inset
+
+内
+\begin_inset Formula $\partial\Omega_{\varepsilon}$
+\end_inset
+
+外的部分总有
+\begin_inset Formula $\sumcyc\partial_{x}\frac{x}{r^{3}}=0$
+\end_inset
+
+恒成立, 所以
+\begin_inset Formula 
+\[
+\iint_{\Sigma}=\iint_{\Sigma-\partial\Omega_{\varepsilon}}+\iint_{\partial\Omega_{\varepsilon}}=\iiint_{\Sigma^{\circ}-\Omega_{\varepsilon}}0\ud x\ud y\ud z+\frac{1}{\varepsilon^{3}}\iint_{\partial\Omega_{\varepsilon}}x\ud y\ud z+y\ud z\ud x+z\ud x\ud y.
+\]
+
+\end_inset
+
+而上式对上式右边重积分再用一次散度定理, 便有
+\begin_inset Formula 
+\[
+\iint_{\partial\Omega_{\varepsilon}}=\iiint_{\Omega_{\varepsilon}}3\ud x\ud y\ud z=4\pi\varepsilon^{3},
+\]
+
+\end_inset
+
+所以最后的结果为
+\begin_inset Formula $4\pi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设正项级数
+\begin_inset Formula $\sum_{n=1}^{\infty}a_{n}$
+\end_inset
+
+收敛, 证明级数
+\begin_inset Formula 
+\[
+\sum_{n=1}^{\infty}\sqrt[n]{a_{n}a_{n+1}\cdots a_{2n-1}}
+\]
+
+\end_inset
+
+收敛.
+\end_layout
+
+\begin_layout Solution*
+用均值不等式
+\begin_inset Formula 
+\[
+\begin{aligned}\sum_{n=1}^{\infty}\sqrt[n]{a_{n}a_{n+1}\cdots a_{2n-1}} & \le\sum_{n}\frac{a_{n}+\cdots+a_{2n-1}}{n}\\
+ & =\sum_{n}\frac{1}{n}\sum_{n\le j\le2n-1}a_{j}\\
+ & \le\sum_{j}\sum_{\frac{j+1}{2}\le n\le j}\frac{a_{j}}{n}\\
+ & \le M\sum_{j}a_{j}
+\end{aligned}
+\]
+
+\end_inset
+
+其中最后一步是因为
+\begin_inset Formula $\sum_{n\in\left[(j+1)/2,j\right]}\frac{1}{n}$
+\end_inset
+
+一致有界, 这个一致有界性可以用积分不等式得到.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $f(x)$
+\end_inset
+
+在
+\begin_inset Formula $[0,\pi]$
+\end_inset
+
+上连续, 且在
+\begin_inset Formula $x=0$
+\end_inset
+
+处可导, 证明
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\int_{0}^{\pi}f(x)\left(\frac{1}{2}+\cos x+\cos2x+\cdots+\cos nx\right)\ud x=\frac{\pi}{2}f(0).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+使用Riemann引理, 
+\begin_inset Formula 
+\[
+\int_{0}^{\pi}f(x)\left(\cdot\right)\ud x=\int_{0}^{\pi}\frac{f(x)-f(0)}{2\sin\frac{x}{2}}\sin\left(n+\frac{1}{2}\right)x\ud x+\int_{0}^{\pi}f(0)\frac{\sin\left(n+\frac{1}{2}\right)x}{2\sin\frac{x}{2}}\ud x
+\]
+
+\end_inset
+
+上式左端
+\begin_inset Formula $\frac{f(x)-f(0)}{2\sin\frac{x}{2}}\in L[0,\pi]$
+\end_inset
+
+符合Riemann引理的条件, 后者为
+\begin_inset Formula $\frac{\pi}{2}f(0)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+映射
+\begin_inset Formula $f:\RR^{n}\to\RR$
+\end_inset
+
+二阶连续可微, 且
+\begin_inset Formula $\mathrm{Hesse}(f)\ge I_{n}$
+\end_inset
+
+, 
+\begin_inset Formula $I_{n}$
+\end_inset
+
+为
+\begin_inset Formula $n$
+\end_inset
+
+阶单位方阵, 证明: 
+\begin_inset Formula $\nabla f:\RR^{n}\to\RR^{n}$
+\end_inset
+
+可逆, 且逆映射光滑, 其中
+\begin_inset Formula $\nabla f=\left(\frac{\partial f}{\partial x_{1}},\frac{\partial f}{\partial x_{2}},\cdots,\frac{\partial f}{\partial x_{n}}\right)$
+\end_inset
+
+为
+\begin_inset Formula $f$
+\end_inset
+
+的梯度.
+\end_layout
+
+\begin_layout Solution*
+设
+\begin_inset Formula $F=\nabla f$
+\end_inset
+
+, 因为
+\begin_inset Formula $f\in C^{2}\left(\RR^{n}\right)$
+\end_inset
+
+, 所以
+\begin_inset Formula $F\in C^{1}\left(\RR^{n}\right)$
+\end_inset
+
+, 所以
+\begin_inset Formula $JF=Hesse(f)$
+\end_inset
+
+, 由
+\begin_inset Formula $JF\ge I_{n}$
+\end_inset
+
+, 所以对于任意的
+\begin_inset Formula $x\in\RR^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $x^{T}JFx\ge x^{T}x$
+\end_inset
+
+, 所以
+\begin_inset Formula $JF$
+\end_inset
+
+是正定矩阵, 从而可逆, 有反函数定理, 
+\begin_inset Formula $F:\RR^{n}\to\RR^{n}$
+\end_inset
+
+是可逆映射, 且可逆映射也是连续可微的.
+\end_layout
+
+\begin_layout Problem
+设函数
+\begin_inset Formula $f(x)$
+\end_inset
+
+在
+\begin_inset Formula $[a,b]$
+\end_inset
+
+上连续, 在一个可数集之外可导, 且导数非负, 证明
+\begin_inset Formula $f(a)\le f(b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+类似实变函数里的证明.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $f(x)$
+\end_inset
+
+在
+\begin_inset Formula $[a,b]$
+\end_inset
+
+上二阶可导, 
+\begin_inset Formula $f(a)=f(b)=0$
+\end_inset
+
+, 证明: 存在
+\begin_inset Formula $\xi\in(a,b)$
+\end_inset
+
+, 使得
+\begin_inset Formula 
+\[
+\int_{a}^{b}f(x)\ud x=\frac{f''(\xi)}{12}(a-b)^{3}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+
+\series bold
+方法一: 
+\series default
+这里使用像证明``带有积分余项的Taylor公式
+\begin_inset Quotes erd
+\end_inset
+
+那样的方式产生
+\begin_inset Formula $f$
+\end_inset
+
+的二阶导数, 也就是用积分和分部积分法产生导数.
+ 可以得到
+\begin_inset Formula 
+\[
+\begin{aligned}\int_{a}^{b}f(x)\ud x & =-\frac{(b-a)^{2}}{2}f'(b)+\int_{a}^{b}f''(x)\frac{(x-a)^{2}}{2}\ud(x-a)\\
+ & =\frac{(b-a)^{2}}{2}f'(a)-\int_{a}^{b}f''(x)\frac{(b-x)^{2}}{2}\ud(b-x)\\
+ & =\frac{(b-a)^{2}}{2}\cdot\frac{f'(a)-f'(b)}{2}+\int_{a}^{b}f''(x)\left(\frac{(x-a)^{2}}{4}+\frac{(b-x)^{2}}{4}\right)\ud x\\
+ & =-\frac{(b-a)^{2}}{4}\cdot\int_{a}^{b}f''(x)\ud x+\int_{a}^{b}f''(x)\left(\frac{(x-a)^{2}}{4}+\frac{(b-x)^{2}}{4}\right)\ud x
+\end{aligned}
+\]
+
+\end_inset
+
+所以要证的等式相当于证明
+\begin_inset Formula 
+\[
+\frac{f''(\xi)}{6}(a-b)^{3}=\int_{a}^{b}f''(x)(x-a)(x-b)\ud x,
+\]
+
+\end_inset
+
+最后用达布定理有
+\begin_inset Formula $\xi\in(a,b)$
+\end_inset
+
+使得
+\begin_inset Formula $\inf f''(x)<f''(\xi)<\sup f''(x)$
+\end_inset
+
+, 并注意
+\begin_inset Formula 
+\[
+\frac{(a-b)^{3}}{6}=\int_{a}^{b}(x-a)(x-b)\ud x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+方法二: 
+\series default
+先证一个引理: 设
+\begin_inset Formula $f(x)$
+\end_inset
+
+在
+\begin_inset Formula $[a,b]$
+\end_inset
+
+三阶可导, 则存在
+\begin_inset Formula $\xi\in(a,b)$
+\end_inset
+
+, 使得
+\begin_inset Formula 
+\[
+f(b)=f(a)+\frac{1}{2}(b-a)[f'(a)+f'(b)]-\frac{1}{12}(b-a)^{3}f'''(\xi).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+证明对
+\begin_inset Formula $F(x)=f(x)-f(a)-\frac{1}{2}(x-a)[f'(x)+f'(a)]$
+\end_inset
+
+, 
+\begin_inset Formula $G(x)=-\frac{1}{2}(x-a)^{3}$
+\end_inset
+
+使用Cauchy中值定理.
+\end_layout
+
+\begin_layout Standard
+利用这个引理对
+\begin_inset Formula $F(x)=\int_{a}^{x}f(t)\ud t$
+\end_inset
+
+使用引理及可证得.
+\end_layout
+
+\begin_layout Section
+2010年华中师范大学高等代数考研试题
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $\FF$
+\end_inset
+
+是任意数域, 
+\begin_inset Formula $p(x)\in\FF[x]$
+\end_inset
+
+.
+ 证明: 
+\begin_inset Formula $p(x)$
+\end_inset
+
+是不可约多项式当且仅当
+\begin_inset Formula $p(x)$
+\end_inset
+
+是素多项式.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(1) 设
+\begin_inset Formula $A$
+\end_inset
+
+是
+\begin_inset Formula $n$
+\end_inset
+
+阶方阵, 
+\begin_inset Formula $E$
+\end_inset
+
+是单位矩阵, 
+\begin_inset Formula $k\ne0$
+\end_inset
+
+.
+ 证明: 
+\begin_inset Formula $A^{2}=kA$
+\end_inset
+
+当且仅当
+\begin_inset Formula $\mathrm{rank}(A)+\mathrm{rank}(A-kE)=n.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(2) 证明: 任意方阵可以表示为满秩矩阵和幂等矩阵的乘积.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $\RR$
+\end_inset
+
+表示实数域, 
+\begin_inset Formula $V=M_{3}(\RR)$
+\end_inset
+
+表示所有
+\begin_inset Formula $3\times3$
+\end_inset
+
+实矩阵构成的向量空间.
+ 对给定的
+\begin_inset Formula $A\in M_{3}(\RR)$
+\end_inset
+
+, 定义
+\begin_inset Formula $V$
+\end_inset
+
+上的线性变换
+\begin_inset Formula $T_{A}:V\to V$
+\end_inset
+
+为
+\begin_inset Formula 
+\[
+T_{A}(B)=AB-BA,\ \text{对任意的}B\in M_{3}(\RR).
+\]
+
+\end_inset
+
+设
+\begin_inset Formula $A=\left(\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
+\end{array}\right)$
+\end_inset
+
+, 求
+\begin_inset Formula $T_{A}$
+\end_inset
+
+的特征值和相应的特征子空间, 并求此时
+\begin_inset Formula $T_{A}$
+\end_inset
+
+的极小多项式.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+设有三元实二次型
+\begin_inset Formula 
+\[
+f(x,y,z)=x^{2}+3y^{2}+z^{2}+4xz.
+\]
+
+\end_inset
+
+并设
+\begin_inset Formula $x,y,z$
+\end_inset
+
+满足
+\begin_inset Formula $x^{2}+y^{2}+z^{2}=1$
+\end_inset
+
+.
+ 试求
+\begin_inset Formula $f$
+\end_inset
+
+的最大值和最小值, 并求当
+\begin_inset Formula $x,y,z$
+\end_inset
+
+取什么值时, 
+\begin_inset Formula $f$
+\end_inset
+
+分别达到最大值和最小值.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $\RR$
+\end_inset
+
+是实数域, 
+\begin_inset Formula $V=\mathcal{C}^{1}([0,1])$
+\end_inset
+
+是闭区间
+\begin_inset Formula $[0,1]$
+\end_inset
+
+上的实连续可微函数的集合.
+ 
+\begin_inset Formula $V$
+\end_inset
+
+在函数的加法和数乘函数的运算下是一个向量空间.
+\end_layout
+
+\begin_layout Problem
+(1) 证明函数
+\begin_inset Formula $f(x)=\cos x$
+\end_inset
+
+, 
+\begin_inset Formula $g(x)=2x$
+\end_inset
+
+, 
+\begin_inset Formula $h(x)=\ue^{x}$
+\end_inset
+
+在
+\begin_inset Formula $V$
+\end_inset
+
+中线性无关.
+\end_layout
+
+\begin_layout Problem
+(2) 任意给定
+\begin_inset Formula $n>0$
+\end_inset
+
+, 在
+\begin_inset Formula $V$
+\end_inset
+
+中找出
+\begin_inset Formula $n+1$
+\end_inset
+
+个线性无关的元素, 并证明你的结论.
+\end_layout
+
+\begin_layout Problem
+(3) 对某个
+\begin_inset Formula $m$
+\end_inset
+
+, 是否有
+\begin_inset Formula $V$
+\end_inset
+
+和
+\begin_inset Formula $\RR^{m}$
+\end_inset
+
+同构, 如果是, 给出证明; 如果不是, 说明理由.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(1) 设
+\begin_inset Formula $A$
+\end_inset
+
+和
+\begin_inset Formula $B$
+\end_inset
+
+均为
+\begin_inset Formula $n$
+\end_inset
+
+阶复方阵, 证明: 
+\begin_inset Formula $A$
+\end_inset
+
+与
+\begin_inset Formula $B$
+\end_inset
+
+相似当且仅当作为
+\begin_inset Formula $\lambda$
+\end_inset
+
+-矩阵, 有
+\begin_inset Formula $\lambda E-A$
+\end_inset
+
+等价于
+\begin_inset Formula $\lambda E-B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+(2) 设
+\begin_inset Formula $A,B$
+\end_inset
+
+都是
+\begin_inset Formula $3$
+\end_inset
+
+阶幂零矩阵, 证明: 
+\begin_inset Formula $A$
+\end_inset
+
+相似于
+\begin_inset Formula $B$
+\end_inset
+
+当且仅当
+\begin_inset Formula $A$
+\end_inset
+
+与
+\begin_inset Formula $B$
+\end_inset
+
+有相同的极小多项式.
+\end_layout
+
+\begin_layout Problem
+(3) 试说明上述结论(2)对
+\begin_inset Formula $4$
+\end_inset
+
+阶幂零矩阵是否成立, 为什么?
+\end_layout
+
+\begin_layout Chapter
+小定理
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Formula $n\times n$
+\end_inset
+
+的矩阵
+\begin_inset Formula $M$
+\end_inset
+
+, 其中的元素都是正实数, 则
+\begin_inset Formula $M$
+\end_inset
+
+必有正特征根.
+\end_layout
+
+\begin_layout Proof
+定义
+\begin_inset Formula $S=\{x\in\RR^{n}:\left\Vert x\right\Vert =1\}$
+\end_inset
+
+, 映射
+\begin_inset Formula $f:S\to S,\boldsymbol{v}\mapsto\frac{M\boldsymbol{v}}{\left|M\boldsymbol{v}\right|}$
+\end_inset
+
+, 则
+\begin_inset Formula $f$
+\end_inset
+
+是良定义的, 即
+\begin_inset Formula $f$
+\end_inset
+
+的像确实在
+\begin_inset Formula $S$
+\end_inset
+
+中, 这时应为
+\begin_inset Formula $M$
+\end_inset
+
+将正坐标仍映为正坐标.
+ 因为
+\begin_inset Formula $S$
+\end_inset
+
+是闭的连通集, 由Brouwer不动点定理, 
+\begin_inset Formula $f$
+\end_inset
+
+在
+\begin_inset Formula $S$
+\end_inset
+
+上存在不动点
+\begin_inset Formula $\boldsymbol{v}\in S$
+\end_inset
+
+使得
+\begin_inset Formula $f(\boldsymbol{v})=\boldsymbol{v}$
+\end_inset
+
+, 另外取
+\begin_inset Formula $\lambda=\left|M\boldsymbol{v}\right|>0$
+\end_inset
+
+, 即可证得.
+\end_layout
+
+\begin_layout Proposition
+对于任意的
+\begin_inset Formula $x,y,z\in\RR$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\left|x+y\right|+\left|y+z\right|+\left|z+x\right|\le\left|x+y+z\right|+\left|x\right|+\left|y\right|+\left|z\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+
+\series bold
+这是Hlawka不等式在实数范围内的结论.
+\end_layout
+
+\begin_layout Proof
+设
+\begin_inset Formula $a=x+y$
+\end_inset
+
+, 
+\begin_inset Formula $b=x+z$
+\end_inset
+
+, 
+\begin_inset Formula $c=y+z$
+\end_inset
+
+.
+ 则不等式等价于
+\begin_inset Formula 
+\[
+2\left(\left|a\right|+\left|b\right|+\left|c\right|\right)\le\left|a+b+c\right|+\left|a+b-c\right|+\left|a-b+c\right|+\left|-a+b+c\right|.
+\]
+
+\end_inset
+
+令
+\begin_inset Formula $f(a,b,c)=\left|a+b+c\right|+\left|a+b-c\right|+\left|a-b+c\right|+\left|-a+b+c\right|$
+\end_inset
+
+.
+ 则容易验证
+\begin_inset Formula $f$
+\end_inset
+
+对于每一个变量都是偶函数, 所以
+\begin_inset Formula $f(a,b,c)=f(\left|a\right|,\left|b\right|,\left|c\right|)$
+\end_inset
+
+.
+ 故可以假设
+\begin_inset Formula $a,b,c$
+\end_inset
+
+在上述不等式中均是非负的, 于是只需证明
+\begin_inset Formula 
+\[
+2\left(a+b+c\right)\le\left|a+b+c\right|+\left|a+b-c\right|+\left|a-b+c\right|+\left|-a+b+c\right|
+\]
+
+\end_inset
+
+这由三角不等式所保证.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+(
+\series bold
+证明适用于复数和内积空间
+\series default
+)两边同时平方得
+\begin_inset Formula 
+\[
+\sumcyc\left(\left|x\left(x+y+z\right)\right|+\left|yz\right|\right)\ge\sumcyc\left|\left(x+y\right)\left(x+z\right)\right|,
+\]
+
+\end_inset
+
+然后使用三角不等式
+\begin_inset Formula 
+\[
+\left|x\left(x+y+z\right)\right|+\left|yz\right|\ge\left|x\left(x+y+z\right)+yz\right|=\left|\left(x+y\right)\left(x+z\right)\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+使用Popoviciu不等式, 对于凸函数
+\begin_inset Formula $f$
+\end_inset
+
+有
+\begin_inset Formula 
+\[
+f(x)+f(y)+f(z)+3f\left(\frac{x+y+z}{3}\right)\ge2\left(f\left(\frac{x+y}{2}\right)+f\left(\frac{x+z}{2}\right)+f\left(\frac{y+z}{2}\right)\right).
+\]
+
+\end_inset
+
+并注意
+\begin_inset Formula $f(x)=\left|x\right|$
+\end_inset
+
+是凸函数.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+注意恒等式
+\begin_inset Formula 
+\[
+\begin{array}{c}
+\left(\left|a\right|+\left|b\right|+\left|c\right|-\left|b+c\right|-\left|a+c\right|-\left|a+b\right|+\left|a+b+c\right|\right)\left(\left|a\right|+\left|b\right|+\left|c\right|+\left|a+b+c\right|\right)\\
+\quad=\left(\left|b\right|+\left|c\right|-\left|b+c\right|\right)\left(\left|a\right|-\left|b+c\right|+\left|a+b+c\right|\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\begin{aligned}\left(\left|a\right|+\left|b\right|+\left|c\right|-\left|b+c\right|-\left|a+c\right|-\left|a+b\right|+\left|a+b+c\right|\right)\left(\left|a\right|+\left|b\right|+\left|c\right|+\left|a+b+c\right|\right)\\
+\quad=\left(\left|b\right|+\left|c\right|-\left|b+c\right|\right)\left(\left|a\right|-\left|b+c\right|+\left|a+b+c\right|\right)\\
+\qquad+\left(\left|c\right|+\left|a\right|-\left|c+a\right|\right)\left(\left|b\right|-\left|c+a\right|+\left|a+b+c\right|\right)\\
+\qquad+\left(\left|a\right|+\left|b\right|-\left|a+b\right|\right)\left(\left|c\right|-\left|a+b\right|+\left|a+b+c\right|\right)
+\end{aligned}
+.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset CommandInset href
+LatexCommand href
+name "几何证明."
+target "https://www.cut-the-knot.org/m/Geometry/GeometricHlawka.shtml"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+自编题
+\end_layout
+
+\begin_layout Problem
+如果
+\begin_inset Formula 
+\[
+x^{k}+\binom{n}{1}x^{k-1}+\binom{n}{2}x^{k-2}+\cdots+\binom{n}{k}=0
+\]
+
+\end_inset
+
+的所有根
+\begin_inset Formula $a_{1},a_{2},\cdots,a_{k}$
+\end_inset
+
+满足
+\begin_inset Formula 
+\[
+\begin{aligned}a_{1}+\cdots+a_{k} & =n\\
+a_{1}^{2}+\cdots+a_{k}^{2} & =n\\
+\cdots & \cdots\\
+a_{1}^{k}+\cdots+a_{k}^{k} & =n.
+\end{aligned}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+\begin_inset CommandInset label
+LatexCommand label
+name "prob:20181020002"
+
+\end_inset
+
+在三角形
+\begin_inset Formula $ABC$
+\end_inset
+
+中有
+\begin_inset Formula 
+\[
+\sqrt[3]{\frac{\prodcyc a^{2}}{\prodcyc(a+b-c)}}\ge\frac{\sumcyc a}{3},
+\]
+
+\end_inset
+
+并且
+\begin_inset Formula 
+\[
+\sqrt[3]{\prodcyc\cos\frac{A}{2}}\ge\frac{\sumcyc\sin A}{3}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+对(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prob:20181020001"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)做轮换
+\begin_inset Formula $\frac{b+c}{2}\to a$
+\end_inset
+
+.
+ 然后用正弦定理证明第二式.
+ 另外用琴生不等式有
+\begin_inset Formula 
+\[
+\prodcyc\cos\frac{A}{2}\le\frac{3\sqrt{3}}{8},\quad\sumcyc\sin A\le\frac{3\sqrt{3}}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+阅读记录
+\end_layout
+
+\begin_layout Section
+论文
+\end_layout
+
+\begin_layout Subsection
+MIA
+\end_layout
+
+\begin_layout Subsubsection
+An Inequality in the Complex Domain, Catalin Tigaeru
+\end_layout
+
+\begin_layout Theorem
+对于任意复数
+\begin_inset Formula $z_{1},z_{2}$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\left|1+z_{1}\right|+\left|1+z_{2}\right|+\left|1+z_{1}z_{2}\right|\ge\left|z_{1}\right|+\left|z_{2}\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+证明上面定理时, 论文中使用了下面几个引理:
+\end_layout
+
+\begin_layout Lemma
+设
+\begin_inset Formula $\alpha,\beta\in[0,2\pi)$
+\end_inset
+
+且
+\begin_inset Formula $\cos\alpha\cdot\cos\beta\le0$
+\end_inset
+
+.
+ 则
+\begin_inset Formula 
+\[
+\cos\alpha+\cos\beta+\left|\sin(\alpha+\beta)\right|\ge0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+设复数
+\begin_inset Formula $z_{1}=a(\cos\alpha+\ui\sin\alpha)$
+\end_inset
+
+, 
+\begin_inset Formula $z_{2}=b(\cos\beta+\ui\sin\beta)$
+\end_inset
+
+满足条件
+\begin_inset Formula $1+2b\cos\beta<0$
+\end_inset
+
+.
+ 如果
+\begin_inset Formula $a\le1+(1-ab)^{2}$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\left|1+z_{1}\right|+\left|1+z_{2}\right|+\left|1+z_{1}z_{2}\right|\ge\left|z_{1}\right|+\left|z_{2}\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+设复数
+\begin_inset Formula $z_{1}=a(\cos\alpha+\ui\sin\alpha)$
+\end_inset
+
+, 
+\begin_inset Formula $z_{2}=b(\cos\beta+\ui\sin\beta)$
+\end_inset
+
+满足条件
+\begin_inset Formula 
+\[
+ab<1,a\ge1,1\ge b>\frac{1}{2},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\alpha,\beta\in\left[\frac{\pi}{2},\pi\right],
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+1+2b\cos\beta<0,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\cos\alpha<-\frac{1+(1-ab)^{2}}{a}.
+\]
+
+\end_inset
+
+则
+\begin_inset Formula 
+\[
+\left|1+z_{1}z_{2}\right|\ge\sqrt{2+3(1-ab)^{2}}\ge\sqrt{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+设
+\begin_inset Formula $z$
+\end_inset
+
+是任意复数, 则
+\begin_inset Formula 
+\[
+\left|1+z^{2}\right|\ge2\left(\left|z\right|-\left|1+z\right|\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+设
+\begin_inset Formula $z_{1},z_{2},\cdots,z_{n}$
+\end_inset
+
+是
+\begin_inset Formula $n$
+\end_inset
+
+个任意复数, 则
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}\left|1+z_{k}\right|+\frac{1}{n-1}\sum_{1\le i<j\le n}\left|1+z_{i}z_{j}\right|\ge\sum_{k=1}^{n}\left|z_{k}\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+MSE网站相关问题: 
+\begin_inset CommandInset href
+LatexCommand href
+name "Q1975274"
+target "./Stack/Q1975274"
+type "file:"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+书籍
+\end_layout
+
+\begin_layout Subsection
+Analytic Inequalities, D.
+ S.
+ Mitrinovic, Springer-Verlag, 1970.
+\end_layout
+
+\begin_layout Subsection
+高等代数, 扬子胥.
+\end_layout
+
+\begin_layout Subsubsection
+欧式空间
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+上的普通内积空间.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $C[a,b]$
+\end_inset
+
+上全体连续函数做成的
+\begin_inset Formula $\RR$
+\end_inset
+
+上的线性空间, 内积定义为
+\begin_inset Formula 
+\[
+\left(f\left(x\right),g\left(x\right)\right)=\int_{a}^{b}f\left(x\right)g\left(x\right)\ud x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+上定义的内积
+\begin_inset Formula 
+\[
+(\alpha,\beta)=\alpha A\beta'
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $A$
+\end_inset
+
+是
+\begin_inset Formula $n$
+\end_inset
+
+阶正定矩阵.
+ 事实上, 如果上面的公式满足
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+上的内积定义时, 便可以证明
+\begin_inset Formula $A$
+\end_inset
+
+必定是正定的.
+\end_layout
+
+\begin_layout Enumerate
+泛函分析中的
+\begin_inset Formula $\ell^{2}$
+\end_inset
+
+构成的Hilbert空间.
+\end_layout
+
+\begin_layout Section
+小技巧
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset href
+LatexCommand href
+name "连续使用分部积分的便于记忆的又不会出错的方法."
+target "https://glsr.wordpress.com/2010/09/24/integration-by-parts-2/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+cut the knot
+\end_layout
+
+\begin_layout Problem
+对于任意的
+\begin_inset Formula $a,b,c>0$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\sqrt{a^{2}-ab+b^{2}}+\sqrt{b^{2}-bc+c^{2}}+\sqrt{c^{2}-ca+a^{2}}\le a+b+c+\sqrt{a^{2}+b^{2}+c^{2}-ab-bc-ca}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+设
+\begin_inset Formula $\omega=-\frac{1}{2}+\ui\frac{\sqrt{3}}{2}$
+\end_inset
+
+, 记
+\begin_inset Formula $x=a$
+\end_inset
+
+, 
+\begin_inset Formula $y=b\omega$
+\end_inset
+
+, 
+\begin_inset Formula $z=c\omega^{2}$
+\end_inset
+
+.
+ 则由Hlawka不等式有
+\begin_inset Formula 
+\[
+\left|x+y\right|+\left|y+z\right|+\left|z+x\right|\le\left|x\right|+\left|y\right|+\left|z\right|+\left|x+y+z\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+MSE
+\end_layout
+
+\begin_layout Problem
+求
+\begin_inset Formula 
+\[
+\int_{-\pi}^{\pi}x^{2}\cos nx\ud x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula 
+\[
+\int_{-\pi}^{\pi}x^{2}\cos nx\,dx=\frac{d}{dn}\int_{-\pi}^{\pi}x\sin nx\,dx=\frac{d^{2}}{dn^{2}}\left(-\int_{-\pi}^{\pi}\cos nx\,dx\right)=\frac{2\pi^{2}\sin(\pi n)}{n}-\frac{4\sin(\pi n)}{n^{3}}+\frac{4\pi\cos(\pi n)}{n^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+\begin_inset CommandInset href
+LatexCommand href
+name "根据Riemann和计算Cauchy留数公式的问题."
+target "https://math.stackexchange.com/questions/165090/riemann-sum-estimate-of-cauchy-residue-formula"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Legendre Polynomials
+\end_layout
+
+\begin_layout Standard
+Legendre多项式满足微分方程
+\begin_inset Formula 
+\[
+\ddx\left\{ \left(1-x^{2}\right)\ddx P_{n}(x)\right\} +n(n+1)P_{n}(x)=0.
+\]
+
+\end_inset
+
+而且
+\begin_inset Formula $P_{n}(1)=1$
+\end_inset
+
+, 
+\begin_inset Formula $\deg P_{n}=n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Rodrigue公式:
+\begin_inset Formula 
+\[
+P_{n}(x)=\frac{1}{2^{n}n!}\frac{\ud^{n}}{\ud x^{n}}\left(x^{2}-1\right)^{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+生成函数:
+\begin_inset Formula 
+\[
+\frac{1}{\sqrt{1-2xt+t^{2}}}=\sum_{n=0}^{\infty}P_{n}(x)t^{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+递推公式:
+\begin_inset Formula 
+\[
+\left(n+1\right)P_{n+1}(x)=\left(2n+1\right)xP_{n}(x)-nP_{n-1}(x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+正交性:
+\begin_inset Formula 
+\[
+\int_{-1}^{1}P_{m}(x)P_{n}(x)\ud x=\frac{2}{2n+1}\delta_{mn}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Associated Legendre多项式:
+\begin_inset Formula 
+\[
+P_{\ell}^{m}\left(x\right)=(-1)^{m}(1-x^{2})^{m/2}P_{\ell}^{(m)}(x),
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $f^{(m)}$
+\end_inset
+
+是函数
+\begin_inset Formula $f$
+\end_inset
+
+的
+\begin_inset Formula $m$
+\end_inset
+
+次导数.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Example:Integration of Associated Legendre Polynomial"
+target "https://math.stackexchange.com/questions/1611556/integration-of-associated-legendre-polynomial"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Legendre多项式在零点处的和"
+target "https://math.stackexchange.com/questions/323911/legendre-polynomial-sum"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Crux Mathematicorum
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $a,b,c$
+\end_inset
+
+是三角形角
+\begin_inset Formula $A,B,C$
+\end_inset
+
+的对边长.
+ 证明对于任意的
+\begin_inset Formula $k\le1$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\sumcyc\frac{a^{k}}{A}\ge\frac{3}{\pi}\sumcyc a^{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+
+\series bold
+证法一: 
+\series default
+当
+\begin_inset Formula $0<k\le1$
+\end_inset
+
+时, 
+\begin_inset Formula $\frac{\sin^{k}x}{x}$
+\end_inset
+
+是不增函数, 用Tchebyshev不等式
+\begin_inset Formula 
+\[
+\left(\frac{\sin^{k}A}{A}+\frac{\sin^{k}B}{B}+\frac{\sin^{k}C}{C}\right)\left(A+B+C\right)\ge3\left(\sin^{k}A+\sin^{k}B+\sin^{k}C\right).
+\]
+
+\end_inset
+
+当
+\begin_inset Formula $k\le0$
+\end_inset
+
+时, 
+\begin_inset Formula $A\le B\le C$
+\end_inset
+
+有
+\begin_inset Formula 
+\[
+\frac{a^{k}}{A}\ge\frac{b^{k}}{B}\ge\frac{c^{k}}{C},
+\]
+
+\end_inset
+
+再用一次Tchebyshev不等式即可.
+\end_layout
+
+\begin_layout Solution*
+
+\series bold
+证法二: 
+\series default
+不妨设
+\begin_inset Formula $a\ge b\ge c$
+\end_inset
+
+, 则
+\begin_inset Formula $A\ge B\ge C$
+\end_inset
+
+, 令
+\begin_inset Formula 
+\[
+f(k)=\frac{a^{k}/A+b^{k}/B+c^{k}/C}{a^{k}+b^{k}+c^{k}},
+\]
+
+\end_inset
+
+则
+\begin_inset Formula 
+\[
+f'(k)=-\sum\frac{a^{k}b^{k}(A-B)(\log a-\log b)}{AB}\left(\sum a^{k}\right)^{-2}\le0,
+\]
+
+\end_inset
+
+并利用
+\begin_inset Formula $f(1)\ge3/\pi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+问题的一个推广
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+: 设
+\begin_inset Formula $k$
+\end_inset
+
+和
+\begin_inset Formula $l$
+\end_inset
+
+均为实数, 则
+\end_layout
+
+\begin_layout Solution*
+1.
+\begin_inset Formula 
+\[
+\sum\frac{a^{k}}{A^{l}}\ge\left(\frac{3}{\pi}\right)^{l}\sum a^{k},
+\]
+
+\end_inset
+
+对于如下情况都成立
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $0\le k\le l\le1$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k\le0\le l$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k\ge0$
+\end_inset
+
+且
+\begin_inset Formula $l\le-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+2.
+\begin_inset Formula 
+\[
+\sum\frac{a^{k}}{A^{l}}\le\left(\frac{3}{\pi}\right)^{l}\sum a^{k},
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $k\le0$
+\end_inset
+
+且
+\begin_inset Formula $-1\le l\le0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+三角形
+\begin_inset Formula $ABC$
+\end_inset
+
+的内心是
+\begin_inset Formula $I$
+\end_inset
+
+.
+ 设
+\begin_inset Formula $P,Q$
+\end_inset
+
+分别是
+\begin_inset Formula $A$
+\end_inset
+
+在
+\begin_inset Formula $BI$
+\end_inset
+
+, 
+\begin_inset Formula $CI$
+\end_inset
+
+上的垂足.
+ 证明:
+\begin_inset Formula 
+\[
+\frac{AP}{BI}+\frac{AQ}{CI}=\cot\frac{A}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+三角形
+\begin_inset Formula $ABC$
+\end_inset
+
+, 
+\begin_inset Formula $CB$
+\end_inset
+
+延长线上有一点
+\begin_inset Formula $D$
+\end_inset
+
+满足
+\begin_inset Formula $BD=AB$
+\end_inset
+
+, 
+\begin_inset Formula $M$
+\end_inset
+
+为
+\begin_inset Formula $AC$
+\end_inset
+
+的中点, 
+\begin_inset Formula $\angle ABC$
+\end_inset
+
+的角平分线交
+\begin_inset Formula $DM$
+\end_inset
+
+于点
+\begin_inset Formula $P$
+\end_inset
+
+, 证明
+\begin_inset Formula $\angle BAP=\angle ACB$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+\begin_inset Graphics
+	filename pic4lyx/Screenshot from 2018-10-20 18-32-13.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+过
+\begin_inset Formula $P$
+\end_inset
+
+做
+\begin_inset Formula $AC$
+\end_inset
+
+的平行线, 则
+\begin_inset Formula $P$
+\end_inset
+
+是
+\begin_inset Formula $XY$
+\end_inset
+
+的中点, 
+\begin_inset Formula $B$
+\end_inset
+
+是
+\begin_inset Formula $XD$
+\end_inset
+
+的中点, 
+\begin_inset Formula $XB=AB$
+\end_inset
+
+, 
+\begin_inset Formula $\triangle ABP\cong\triangle XBP$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+数字
+\begin_inset Formula $111$
+\end_inset
+
+能用多少种方法表示成三个等比数列的和.
+\end_layout
+
+\begin_layout Solution*
+分类讨论, 如果公比可以为零, 则有
+\begin_inset Formula $17$
+\end_inset
+
+个, 但如果公比不能取零则有
+\begin_inset Formula $16$
+\end_inset
+
+个.
+\end_layout
+
+\begin_layout Problem
+求所有的
+\begin_inset Formula $\lambda$
+\end_inset
+
+使
+\begin_inset Formula 
+\[
+2(x^{3}+y^{3}+z^{3})+3(1+3\lambda)xyz\ge(1+\lambda)(x+y+z)(yz+zx+xy)
+\]
+
+\end_inset
+
+对所有正实数
+\begin_inset Formula $x,y,z$
+\end_inset
+
+恒成立.
+\end_layout
+
+\begin_layout Solution*
+取
+\begin_inset Formula $x=y=z$
+\end_inset
+
+, 
+\begin_inset Formula $z=0$
+\end_inset
+
+, 得
+\begin_inset Formula $\lambda\le1$
+\end_inset
+
+.
+ (对于正实数
+\begin_inset Formula $x,y,z$
+\end_inset
+
+, 可考虑
+\begin_inset Formula $z\to0^{+}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Solution*
+当取
+\begin_inset Formula $\lambda=1$
+\end_inset
+
+时, 便是Schur不等式
+\begin_inset Formula 
+\[
+\sumcyc x^{n}(x-y)(x-z)\ge0
+\]
+
+\end_inset
+
+在
+\begin_inset Formula $n=1$
+\end_inset
+
+时的情形.
+ 最后, 证
+\begin_inset Formula 
+\[
+(1+\lambda)(x+y+z)(yz+zx+xy)-3(1+3\lambda)xyz
+\]
+
+\end_inset
+
+关于
+\begin_inset Formula $\lambda$
+\end_inset
+
+是单调的, 在
+\begin_inset Formula $\lambda=1$
+\end_inset
+
+时取到最大.
+\end_layout
+
+\begin_layout Problem
+一个四边形的边长顺次为
+\begin_inset Formula $a,b,c,d$
+\end_inset
+
+且面积为
+\begin_inset Formula $F$
+\end_inset
+
+, 证明
+\begin_inset Formula 
+\[
+2a^{2}+5b^{2}+8c^{2}-d^{2}\ge4F.
+\]
+
+\end_inset
+
+并且等号何时成立?
+\end_layout
+
+\begin_layout Solution*
+对于固定的边长
+\begin_inset Formula $a,b,c,d$
+\end_inset
+
+凸四边形有更大的面积, 所以只考虑凸的情况.
+ 不妨设
+\begin_inset Formula $AC=1$
+\end_inset
+
+, 
+\begin_inset Formula $A(0,0)$
+\end_inset
+
+, 
+\begin_inset Formula $B(p,q)$
+\end_inset
+
+, 
+\begin_inset Formula $C(1,0)$
+\end_inset
+
+, 
+\begin_inset Formula $D(r,s)$
+\end_inset
+
+, 
+\begin_inset Formula $AB=a$
+\end_inset
+
+, 
+\begin_inset Formula $BC=b$
+\end_inset
+
+, 
+\begin_inset Formula $CD=c$
+\end_inset
+
+, 
+\begin_inset Formula $DA=d$
+\end_inset
+
+, 
+\begin_inset Formula $q<0$
+\end_inset
+
+, 
+\begin_inset Formula $s>0$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+2a^{2}+5b^{2}\ge7q^{2}+10/7,
+\]
+
+\end_inset
+
+等号在
+\begin_inset Formula $p=5/7$
+\end_inset
+
+时取得, 
+\begin_inset Formula 
+\[
+8c^{2}-d^{2}\ge7s^{2}-8/7,
+\]
+
+\end_inset
+
+等号在
+\begin_inset Formula $r=8/7$
+\end_inset
+
+时取得, 故原不等式左边
+\begin_inset Formula $LHS\ge2(|q|+|s|)$
+\end_inset
+
+等号在
+\begin_inset Formula $|q|=|s|=1/7$
+\end_inset
+
+时取得, 而
+\begin_inset Formula $2(|q|+|s|)=4F$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+不等腰三角形
+\begin_inset Formula $ABC$
+\end_inset
+
+三边长
+\begin_inset Formula $a,b,c$
+\end_inset
+
+.
+ 
+\begin_inset Formula $D_{1},E_{1}$
+\end_inset
+
+分别在
+\begin_inset Formula $AB$
+\end_inset
+
+, 
+\begin_inset Formula $CA$
+\end_inset
+
+上且满足
+\begin_inset Formula $BD_{1}=CE_{1}=a$
+\end_inset
+
+.
+ 
+\begin_inset Formula $D_{2},E_{2}$
+\end_inset
+
+分别在
+\begin_inset Formula $CB$
+\end_inset
+
+, 
+\begin_inset Formula $AB$
+\end_inset
+
+上且
+\begin_inset Formula $CD_{2}=AE_{2}=b$
+\end_inset
+
+.
+ 证明: 
+\begin_inset Formula $D_{1}E_{1}\parallel D_{2}E_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+连接
+\begin_inset Formula $D_{2}E_{1}$
+\end_inset
+
+交
+\begin_inset Formula $AB$
+\end_inset
+
+于
+\begin_inset Formula $S$
+\end_inset
+
+, 则
+\begin_inset Formula $\triangle SBC\cong\triangle SE_{1}C$
+\end_inset
+
+, 故
+\begin_inset Formula $CS$
+\end_inset
+
+是
+\begin_inset Formula $\angle C$
+\end_inset
+
+平分线,
+\begin_inset Formula 
+\[
+\frac{D_{1}S}{SE_{2}}=\frac{BD_{1}-BS}{AE_{2}-AS}=\frac{a-BS}{b-AS}=\frac{a}{b},
+\]
+
+\end_inset
+
+这是因为
+\begin_inset Formula $BS/AS=a/b$
+\end_inset
+
+.
+ 又因
+\begin_inset Formula 
+\[
+\frac{E_{1}S}{SD_{2}}=\frac{CE_{1}}{CD_{2}}=\frac{a}{b}=\frac{D_{1}S}{SE_{2}},
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $D_{1}E_{1}\parallel D_{2}E_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+\begin_inset CommandInset label
+LatexCommand label
+name "prob:20181020001"
+
+\end_inset
+
+证明
+\begin_inset Formula 
+\[
+\frac{a+b+c}{3}\le\frac{1}{4}\sqrt[3]{\frac{(b+c)^{2}(c+a)^{2}(a+b)^{2}}{abc}},
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $a,b,c>0$
+\end_inset
+
+.
+ 等号当且仅当
+\begin_inset Formula $a=b=c$
+\end_inset
+
+时成立.
+\end_layout
+
+\begin_layout Solution*
+由均值不等式
+\begin_inset Formula $\sumsym a^{2}b\ge6abc$
+\end_inset
+
+, 故
+\begin_inset Formula $9\sumsym a^{2}b+18abc\ge8\sumsym a^{2}b+24abc$
+\end_inset
+
+, 即
+\begin_inset Formula 
+\[
+9\prodcyc(a+b)\ge8\sumcyc a\sumcyc ab=4\sumcyc a\sumcyc a(b+c),
+\]
+
+\end_inset
+
+再用均值不等式, 有
+\begin_inset Formula 
+\[
+\frac{3}{4}\prodcyc(a+b)\ge\sumcyc a\frac{\sumcyc a(b+c)}{3}\ge\sumcyc a\sqrt[3]{\prodcyc a(b+c)}
+\]
+
+\end_inset
+
+即得.
+ 在(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prob:20181020002"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)中有部分推广.
+\end_layout
+
+\begin_layout Problem
+已知不等边三角形
+\begin_inset Formula $ABC$
+\end_inset
+
+和通过其中两顶点的圆
+\begin_inset Formula $\Gamma$
+\end_inset
+
+, 这个圆还经过
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+的内心, 试用不带刻度得直尺找出三角形的内心.
+\end_layout
+
+\begin_layout Solution*
+如图, 
+\begin_inset Formula $AB$
+\end_inset
+
+, 
+\begin_inset Formula $AC$
+\end_inset
+
+交
+\begin_inset Formula $\Gamma$
+\end_inset
+
+于
+\begin_inset Formula $B',C'$
+\end_inset
+
+, 
+\begin_inset Formula $B'C'$
+\end_inset
+
+交
+\begin_inset Formula $BC$
+\end_inset
+
+于
+\begin_inset Formula $M$
+\end_inset
+
+, 
+\begin_inset Formula $AM$
+\end_inset
+
+与
+\begin_inset Formula $\Gamma$
+\end_inset
+
+交于
+\begin_inset Formula $X$
+\end_inset
+
+即为三角形的内心.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Graphics
+	filename pic4lyx/Screenshot from 2018-10-20 19-23-14.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+证明: 做
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+的外接圆, 若
+\begin_inset Formula $X$
+\end_inset
+
+为内心, 则
+\begin_inset Formula $AX$
+\end_inset
+
+交外接圆于
+\begin_inset Formula $S$
+\end_inset
+
+有
+\begin_inset Formula $SB=SX=SC$
+\end_inset
+
+, 
+\begin_inset Formula $S$
+\end_inset
+
+为
+\begin_inset Formula $\Gamma$
+\end_inset
+
+的圆心.
+ 故当
+\begin_inset Formula $B,C$
+\end_inset
+
+两点做
+\begin_inset Formula $AS$
+\end_inset
+
+的镜像得到
+\begin_inset Formula $B'C'$
+\end_inset
+
+, 必有
+\begin_inset Formula $B'C'$
+\end_inset
+
+交
+\begin_inset Formula $BC$
+\end_inset
+
+于
+\begin_inset Formula $\angle A$
+\end_inset
+
+的平分线上.
+\end_layout
+
+\begin_layout Problem
+是否存在满足如下三条的函数
+\begin_inset Formula $f:\NN\to\NN$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Problem
+(1) 
+\begin_inset Formula $f(1996)=1$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Problem
+(2) 对于任意的素数
+\begin_inset Formula $p$
+\end_inset
+
+, 每一个素数都在序列
+\begin_inset Formula 
+\[
+f(p),f(2p),\cdots,f(kp),\cdots
+\]
+
+\end_inset
+
+中出现无穷多次;
+\end_layout
+
+\begin_layout Problem
+(3) 对于任意的
+\begin_inset Formula $n\in\NN$
+\end_inset
+
+, 
+\begin_inset Formula $f(f(n))=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+
+\series bold
+解一: 
+\series default
+函数存在:
+\begin_inset Formula 
+\[
+f(x)=\begin{cases}
+p_{i} & \text{如果条件*成立,}\\
+1 & \text{其它,}
+\end{cases}
+\]
+
+\end_inset
+
+其中*是指: 如果
+\begin_inset Formula $x$
+\end_inset
+
+的素因子分解
+\begin_inset Formula $x=\prod p_{i}^{e_{i}}$
+\end_inset
+
+存在某个幂
+\begin_inset Formula $e_{i}>2$
+\end_inset
+
+, 且对于任何
+\begin_inset Formula $j\ne i$
+\end_inset
+
+都有
+\begin_inset Formula $e_{i}>e_{j}$
+\end_inset
+
+, 则
+\begin_inset Formula $f(x)=p_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+
+\series bold
+解二: 
+\series default
+函数
+\begin_inset Formula 
+\[
+f(x)=\begin{cases}
+q_{b(n)} & \text{如果}m=p^{n},\text{其中}p\text{是素数且}n\ge2,\\
+1 & \text{其它情况.}
+\end{cases}
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $b(n)$
+\end_inset
+
+表示数字
+\begin_inset Formula $n$
+\end_inset
+
+的二进表示中数字
+\begin_inset Formula $1$
+\end_inset
+
+出现的次数, 
+\begin_inset Formula $q_{n}$
+\end_inset
+
+为第
+\begin_inset Formula $n$
+\end_inset
+
+个素数.
+\end_layout
+
+\begin_layout Problem
+找一个十进制四位数
+\begin_inset Formula $\overline{abcd}$
+\end_inset
+
+, (
+\begin_inset Formula $a\ne0$
+\end_inset
+
+), 使
+\begin_inset Formula 
+\[
+\overline{abcd}=a^{a}+b^{b}+c^{c}+d^{d}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+分类讨论, 结果为
+\begin_inset Formula $3435$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+一个推广方向是将四位数推广到任意位数的情况.
+\end_layout
+
+\begin_layout Chapter
+中等数学竞赛
+\end_layout
+
+\begin_layout Section
+数学竞赛吧
+\end_layout
+
+\begin_layout Problem
+已知
+\begin_inset Formula $a,b,c\in\RR^{+}$
+\end_inset
+
+, 
+\begin_inset Formula $abc=1$
+\end_inset
+
+, 求证:
+\begin_inset Formula 
+\[
+\sumcyc\frac{1}{a^{2}+bc}\le\frac{3}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+中国国家队选拔考试
+\end_layout
+
+\begin_layout Subsection
+1993年第8届IMO中国国家队选拔考试
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+设有空间中若干个点, 其中任何四点都不共面, 某些点对间有线段相连, 这样构成一个图.
+ 如果最少要用
+\begin_inset Formula $n$
+\end_inset
+
+种颜色给这些点染色, 使每点都染上种颜色之一, 才能使得任何两个同色点之间都没有线段相连, 则称这个图是
+\begin_inset Formula $n$
+\end_inset
+
+色图.
+ 求证: 对于任意的
+\begin_inset Formula $n\in\NN$
+\end_inset
+
+, 都存在一个不含三角形的色图.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+在坐标平面上给定点集
+\begin_inset Formula 
+\[
+S=\{(x,y)\mid x=1,2,\cdots,1993,\ y=1,2,3,4\},
+\]
+
+\end_inset
+
+已知
+\begin_inset Formula $T\subset S$
+\end_inset
+
+且
+\begin_inset Formula $T$
+\end_inset
+
+中任何
+\begin_inset Formula $4$
+\end_inset
+
+点都不是某个正方形的
+\begin_inset Formula $4$
+\end_inset
+
+个顶点, 求
+\begin_inset Formula $\left|T\right|$
+\end_inset
+
+的最大值.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+对素数
+\begin_inset Formula $p\ge3$
+\end_inset
+
+, 定义
+\begin_inset Formula 
+\[
+F(p)=\sum_{k=1}^{(p-1)/2}k^{120},\quad f\left(p\right)=\frac{1}{2}-\left\{ \frac{F\left(p\right)}{p}\right\} ,
+\]
+
+\end_inset
+
+求
+\begin_inset Formula $f\left(p\right)$
+\end_inset
+
+的值.
+ 这里
+\begin_inset Formula $\left\{ x\right\} =x-\left[x\right]$
+\end_inset
+
+表示
+\begin_inset Formula $x$
+\end_inset
+
+的小数部分.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+试求方程
+\begin_inset Formula 
+\[
+2x^{4}+1=y^{2}
+\]
+
+\end_inset
+
+的一切整数解.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+的
+\begin_inset Formula $\angle A$
+\end_inset
+
+的平分线交外接圆于点
+\begin_inset Formula $D$
+\end_inset
+
+, 内心为
+\begin_inset Formula $I$
+\end_inset
+
+, 边
+\begin_inset Formula $BC$
+\end_inset
+
+的中点为
+\begin_inset Formula $M$
+\end_inset
+
+, 
+\begin_inset Formula $P$
+\end_inset
+
+是点
+\begin_inset Formula $I$
+\end_inset
+
+关于点
+\begin_inset Formula $M$
+\end_inset
+
+的对称点(设点
+\begin_inset Formula $P$
+\end_inset
+
+在圆内), 延长
+\begin_inset Formula $DP$
+\end_inset
+
+交外接圆于点
+\begin_inset Formula $N$
+\end_inset
+
+.
+ 求证: 在
+\begin_inset Formula $AN$
+\end_inset
+
+, 
+\begin_inset Formula $BN$
+\end_inset
+
+, 
+\begin_inset Formula $CN$
+\end_inset
+
+这三条线段中, 必有一条线段的长等于另两条线段的长度之和.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+已给大于
+\begin_inset Formula $1$
+\end_inset
+
+的自然数
+\begin_inset Formula $n$
+\end_inset
+
+, 设
+\begin_inset Formula $a,b,c,d$
+\end_inset
+
+是自然数且满足
+\begin_inset Formula $\frac{a}{b}+\frac{c}{d}<1$
+\end_inset
+
+, 
+\begin_inset Formula $a+c\le n$
+\end_inset
+
+, 求
+\begin_inset Formula $\frac{a}{b}+\frac{c}{d}$
+\end_inset
+
+的最大值.
+\end_layout
+
+\begin_layout Section
+Balkan数学竞赛
+\end_layout
+
+\begin_layout Subsection
+1993年第10届巴尔干(Balkan)数学奥林匹克竞赛
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $a,b,c,d,e,f$
+\end_inset
+
+是实数, 并且满足
+\begin_inset Formula 
+\[
+a+b+c+d+e+f=10,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left(a-1\right)^{2}+\left(b-1\right)^{2}+\left(c-1\right)^{2}+\left(d-1\right)^{2}+\left(e-1\right)^{2}+\left(f-1\right)^{2}=6.
+\]
+
+\end_inset
+
+求
+\begin_inset Formula $f$
+\end_inset
+
+的最大可能值.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+一个自然数的十进制表示
+\begin_inset Formula $\overline{a_{N}a_{N-1}\cdots a_{1}a_{0}}$
+\end_inset
+
+称为是单调的, 如果
+\begin_inset Formula $a_{N}\le a_{N-1}\le\cdots\le a_{0}$
+\end_inset
+
+.
+ 求不超过
+\begin_inset Formula $1993$
+\end_inset
+
+位数字的单调数的总数.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+圆
+\begin_inset Formula $C_{1},C_{2}$
+\end_inset
+
+的圆心分别为
+\begin_inset Formula $O_{1},O_{2}$
+\end_inset
+
+, 且外切于点
+\begin_inset Formula $\Gamma$
+\end_inset
+
+.
+ 圆
+\begin_inset Formula $C$
+\end_inset
+
+与
+\begin_inset Formula $C_{1}$
+\end_inset
+
+切于点
+\begin_inset Formula $A$
+\end_inset
+
+, 与
+\begin_inset Formula $C_{2}$
+\end_inset
+
+切于点
+\begin_inset Formula $B$
+\end_inset
+
+, 且
+\begin_inset Formula $O_{1},O_{2}$
+\end_inset
+
+位于圆
+\begin_inset Formula $C$
+\end_inset
+
+内.
+ 过
+\begin_inset Formula $\Gamma$
+\end_inset
+
+的
+\begin_inset Formula $C_{1},C_{2}$
+\end_inset
+
+的共切线交圆
+\begin_inset Formula $C$
+\end_inset
+
+于点
+\begin_inset Formula $K$
+\end_inset
+
+和
+\begin_inset Formula $L$
+\end_inset
+
+.
+ 若
+\begin_inset Formula $D$
+\end_inset
+
+是线段
+\begin_inset Formula $KL$
+\end_inset
+
+的中点, 证明: 
+\begin_inset Formula $\angle O_{1}OO_{2}=\angle ADB$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $p$
+\end_inset
+
+是素数, 
+\begin_inset Formula $m\ge2$
+\end_inset
+
+是一个整数.
+ 证明方程
+\begin_inset Formula 
+\[
+\frac{x^{p}+y^{p}}{2}=\left(\frac{x+y}{2}\right)^{m}
+\]
+
+\end_inset
+
+有正整数解
+\begin_inset Formula $\left(x,y\right)\ne\left(1,1\right)$
+\end_inset
+
+当且仅当
+\begin_inset Formula $m=p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+1999年第16届巴尔干(Balkan)数学奥林匹克竞赛
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $D$
+\end_inset
+
+是锐角三角形
+\begin_inset Formula $ABC$
+\end_inset
+
+外接圆的劣弧
+\begin_inset Formula $BC$
+\end_inset
+
+上的中点.
+ 点
+\begin_inset Formula $D$
+\end_inset
+
+关于线段
+\begin_inset Formula $BC$
+\end_inset
+
+和外接圆圆心的对称点分别为
+\begin_inset Formula $E$
+\end_inset
+
+和
+\begin_inset Formula $F$
+\end_inset
+
+.
+ 
+\begin_inset Formula $K$
+\end_inset
+
+为
+\begin_inset Formula $EA$
+\end_inset
+
+的中点.
+\end_layout
+
+\begin_layout Enumerate
+证明过三角形
+\begin_inset Formula $ABC$
+\end_inset
+
+三边中点的圆通过点
+\begin_inset Formula $K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+证明点
+\begin_inset Formula $K$
+\end_inset
+
+和
+\begin_inset Formula $BC$
+\end_inset
+
+中点的连线与
+\begin_inset Formula $AF$
+\end_inset
+
+垂直.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Graphics
+	filename pic4lyx/Screenshot from 2018-10-02 13-57-19.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $p>2$
+\end_inset
+
+为素数, 且
+\begin_inset Formula $3\mid p-2$
+\end_inset
+
+.
+ 考虑集合
+\begin_inset Formula 
+\[
+S=\{y^{2}-x^{3}-1\mid x,y\in\Integers,0\le x,y\le p-1\}.
+\]
+
+\end_inset
+
+证明
+\begin_inset Formula $S$
+\end_inset
+
+中最多有
+\begin_inset Formula $p-1$
+\end_inset
+
+个元素能被
+\begin_inset Formula $p$
+\end_inset
+
+整除.
+\end_layout
+
+\begin_layout Solution*
+
+\series bold
+引理1.
+ 
+\series default
+设素数
+\begin_inset Formula $p$
+\end_inset
+
+满足
+\begin_inset Formula $3\mid p-2$
+\end_inset
+
+, 则
+\begin_inset Formula $x^{3}+1\equiv0\pmod p$
+\end_inset
+
+只有一个解
+\begin_inset Formula $x\equiv-1\pmod p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+因为
+\begin_inset Formula $3\mid p-2$
+\end_inset
+
+, 所以
+\begin_inset Formula $p$
+\end_inset
+
+具有
+\begin_inset Formula $6m+5$
+\end_inset
+
+的形式.
+ 将方程分解因式, 有
+\begin_inset Formula $(x+1)(x^{2}+(p-1)x+1)\equiv0\pmod p$
+\end_inset
+
+, 当
+\begin_inset Formula $x\not\equiv-1\pmod p$
+\end_inset
+
+时, 只需说明
+\begin_inset Formula $x^{2}+(p-1)x+1\equiv0\pmod p$
+\end_inset
+
+无解即可, 即
+\begin_inset Formula $\left(x+\frac{p-1}{2}\right)^{2}\equiv\frac{p-3}{2}\cdot\frac{p+1}{2}\pmod p$
+\end_inset
+
+无解, 用勒让得符号及二次互反律
+\begin_inset Formula 
+\[
+\left(\frac{\frac{p-3}{2}\cdot\frac{p+1}{2}}{p}\right)=\left(\frac{-3}{p}\right)=(-1)^{\frac{p-1}{2}}\left(\frac{p}{3}\right)(-1)^{\frac{p-1}{2}\frac{3-1}{2}}=\left(\frac{6m+5}{3}\right)=\left(\frac{2}{3}\right)=-1.
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula $\left(x+\frac{p-1}{2}\right)^{2}\equiv\frac{p-3}{2}\frac{p+1}{2}\pmod p$
+\end_inset
+
+无解.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+引理2.
+ 
+\series default
+设素数
+\begin_inset Formula $p$
+\end_inset
+
+满足
+\begin_inset Formula $3\mid p-2$
+\end_inset
+
+, 则
+\begin_inset Formula $\varphi:\Integers_{p}\to\Integers_{p}$
+\end_inset
+
+, 
+\begin_inset Formula $x\mapsto x^{3}+1$
+\end_inset
+
+是双射.
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $\Integers_{p}$
+\end_inset
+
+的原根为
+\begin_inset Formula $a$
+\end_inset
+
+, 由Euler公式
+\begin_inset Formula $a^{p-1}\equiv1\pmod p$
+\end_inset
+
+, 所以
+\begin_inset Formula $\left(a^{-\frac{p-2}{3}}\right)^{3}\equiv a\pmod p$
+\end_inset
+
+, 这说明方程
+\begin_inset Formula $x^{3}\equiv a\pmod p$
+\end_inset
+
+有解, 记
+\begin_inset Formula $x_{0}=a^{-\frac{p-2}{3}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+任取
+\begin_inset Formula $b\in\Integers_{p}$
+\end_inset
+
+, 当
+\begin_inset Formula $b\ne0$
+\end_inset
+
+时, 有自然数
+\begin_inset Formula $n\in\NN$
+\end_inset
+
+使得
+\begin_inset Formula $b=a^{n}=(x^{n})^{3}$
+\end_inset
+
+; 当
+\begin_inset Formula $b=0$
+\end_inset
+
+时, 显然
+\begin_inset Formula $0^{3}\equiv0\pmod p$
+\end_inset
+
+.
+ 由
+\begin_inset Formula $b$
+\end_inset
+
+的任意性, 这说明映射
+\begin_inset Formula $f:\Integers_{p}\to\Integers_{p}$
+\end_inset
+
+, 
+\begin_inset Formula $x\mapsto x^{3}$
+\end_inset
+
+是映上的满射.
+ 再取双射
+\begin_inset Formula $g:\Integers_{p}\to\Integers_{p}$
+\end_inset
+
+, 
+\begin_inset Formula $x\mapsto x+1$
+\end_inset
+
+, 则
+\begin_inset Formula $\varphi=g\circ f$
+\end_inset
+
+即为所求的双射.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+问题的证明.
+ 
+\series default
+在集合
+\begin_inset Formula $S$
+\end_inset
+
+中考虑那些能被
+\begin_inset Formula $p$
+\end_inset
+
+整除的数, 当
+\begin_inset Formula $y=0$
+\end_inset
+
+时, 由引理1知
+\begin_inset Formula $p\mid x^{3}+1$
+\end_inset
+
+在
+\begin_inset Formula $0\le x\le p-1$
+\end_inset
+
+中只有一个解
+\begin_inset Formula $x=p-1$
+\end_inset
+
+; 反之当
+\begin_inset Formula $x=p-1$
+\end_inset
+
+时, 使
+\begin_inset Formula $y^{2}-x^{3}-1\equiv0\pmod p$
+\end_inset
+
+的解也只有
+\begin_inset Formula $y=0$
+\end_inset
+
+.
+ 所以除了
+\begin_inset Formula $(x,y)=(p-1,0)$
+\end_inset
+
+外只需考虑
+\begin_inset Formula $0\le x\le p-2$
+\end_inset
+
+, 
+\begin_inset Formula $1\le y\le p-1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+由引理2知映射
+\begin_inset Formula $\varphi$
+\end_inset
+
+只是
+\begin_inset Formula $\Integers_{p}$
+\end_inset
+
+的一个置换, 置换不改变二次剩余的数量, 而且
+\begin_inset Formula $\varphi(p-1)=0$
+\end_inset
+
+, 所以
+\begin_inset Formula 
+\[
+\{0^{3}+1,1^{3}+1,\cdots,(p-2)^{3}+1\}=\Integers_{p}^{*}.
+\]
+
+\end_inset
+
+其中有
+\begin_inset Formula $\frac{p-1}{2}$
+\end_inset
+
+个二次剩余, 
+\begin_inset Formula $\frac{p-1}{2}$
+\end_inset
+
+个二次非剩余.
+ 要使
+\begin_inset Formula $p\mid y^{2}-x^{3}-1$
+\end_inset
+
+, 则必须有
+\begin_inset Formula $y^{2}\equiv x^{3}+1\pmod p$
+\end_inset
+
+, 满足
+\begin_inset Formula $y^{2}\equiv x^{3}+1\pmod p$
+\end_inset
+
+的二元组
+\begin_inset Formula $(x_{0},y_{0})$
+\end_inset
+
+使
+\begin_inset Formula $\varphi(x_{0})=x_{0}^{3}+1$
+\end_inset
+
+是模
+\begin_inset Formula $p$
+\end_inset
+
+的二次剩余.
+ 而且对于固定的
+\begin_inset Formula $x$
+\end_inset
+
+, 满足
+\begin_inset Formula $y^{2}\equiv x^{3}+1\pmod p$
+\end_inset
+
+的
+\begin_inset Formula $y$
+\end_inset
+
+最多有两个, 且成对出现(如果
+\begin_inset Formula $y_{0}$
+\end_inset
+
+满足
+\begin_inset Formula $y^{2}\equiv x^{3}+1$
+\end_inset
+
+, 则
+\begin_inset Formula $p-y_{0}$
+\end_inset
+
+也满足).
+ 所以此时
+\begin_inset Formula $S$
+\end_inset
+
+中符合条件的二元组
+\begin_inset Formula $(x,y)$
+\end_inset
+
+个数不超过模
+\begin_inset Formula $p$
+\end_inset
+
+的二次剩余数的两倍, 即
+\begin_inset Formula $2\cdot\frac{p-1}{2}=p-1$
+\end_inset
+
+个.
+ 最后注意到丢番图方程
+\begin_inset Formula $y^{2}=x^{3}+1$
+\end_inset
+
+有两个非负平凡解
+\begin_inset Formula $(x,y)=(1,0),(2,3)$
+\end_inset
+
+, 而这两个平凡解都满足本段条件
+\begin_inset Formula $0\le x\le p-2$
+\end_inset
+
+, 
+\begin_inset Formula $1\le y\le p-1$
+\end_inset
+
+, 所以能被
+\begin_inset Formula $p$
+\end_inset
+
+整除的不同的
+\begin_inset Formula $y^{2}-x^{3}-1$
+\end_inset
+
+最多有
+\begin_inset Formula $p-2$
+\end_inset
+
+个.
+\end_layout
+
+\begin_layout Standard
+所以
+\begin_inset Formula $S$
+\end_inset
+
+中最多有
+\begin_inset Formula $1+p-2=p-1$
+\end_inset
+
+个元素能被
+\begin_inset Formula $p$
+\end_inset
+
+整除.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $M,N,P$
+\end_inset
+
+为锐角三角形
+\begin_inset Formula $ABC$
+\end_inset
+
+的重心
+\begin_inset Formula $G$
+\end_inset
+
+分别在边
+\begin_inset Formula $AB,BC,CA$
+\end_inset
+
+上的正交投影.
+ 证明:
+\begin_inset Formula 
+\[
+\frac{4}{27}<\frac{S_{MNP}}{S_{ABC}}\le\frac{1}{4}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+如图所示, 证明将不加说明的使用如下公式,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+GM=\frac{1}{3}h_{a},GN=\frac{1}{3}h_{b},GP=\frac{1}{3}h_{c};
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{MNP}=\frac{1}{18}\left(h_{a}h_{b}\sin C+h_{b}h_{c}\sin A+h_{c}h_{a}\sin B\right);
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+S_{ABC}=\frac{1}{2}ah_{a}=\frac{1}{2}bh_{b}=\frac{1}{2}ch_{c}=\frac{1}{6}\sumcyc ab\sin C;
+\]
+
+\end_inset
+
+于是
+\begin_inset Formula 
+\[
+\begin{aligned}S_{MNP} & =\frac{1}{18}\sumcyc h_{a}h_{b}\sin C=\frac{1}{18}\sumcyc\frac{2S_{ABC}}{a}\frac{2S_{ABC}}{b}\sin C\\
+ & =\frac{2S_{ABC}}{9}S_{ABC}\sumcyc\frac{\sin C}{ab}\\
+ & =\frac{2S_{ABC}}{9}\frac{1}{6}\left(\sumcyc ab\sin C\right)\left(\sumcyc\frac{\sin C}{ab}\right)\\
+ & \ge\frac{S_{ABC}}{27}\left(\sumcyc\sin C\right)^{2}>\frac{4S_{ABC}}{27}.
+\end{aligned}
+\]
+
+\end_inset
+
+最后一个不等式用逐步调整法证明.
+ 另一方面
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{aligned}S_{MNP} & =\frac{2S_{ABC}}{9}S_{ABC}\sumcyc\frac{\sin C}{ab}=\frac{2S_{ABC}}{9}\sumcyc\frac{S_{ABC}\sin C}{ab}\\
+ & =\frac{2S_{ABC}}{9}\sumcyc\frac{\sin^{2}C}{2}\\
+ & =\frac{S_{ABC}}{9}\left(2+2\cos A\cos B\cos C\right)\\
+ & \le\frac{S_{ABC}}{9}\left(2+\frac{1}{4}\right)=\frac{S_{ABC}}{4}.
+\end{aligned}
+\]
+
+\end_inset
+
+最后一步对
+\begin_inset Formula $f(x)=\ln\cos x$
+\end_inset
+
+用琴生不等式有
+\begin_inset Formula 
+\[
+\prodcyc\cos A\le\frac{1}{8}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+设非负整数
+\begin_inset Formula $0\le x_{0}\le x_{1}\le x_{2}\le\cdots$
+\end_inset
+
+, 对于任意的
+\begin_inset Formula $k\ge0$
+\end_inset
+
+, 序列中不超过
+\begin_inset Formula $k$
+\end_inset
+
+的项的个数有限并记为
+\begin_inset Formula $y_{k}$
+\end_inset
+
+.
+ 证明对于任意的正整数
+\begin_inset Formula $m,n$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\sum_{i=0}^{n}x_{i}+\sum_{j=0}^{m}y_{j}\ge(n+1)(m+1).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+当有某个
+\begin_inset Formula $x_{i}>m$
+\end_inset
+
+时, 则有
+\begin_inset Formula $\sum_{j=0}^{m}y_{j}<n+1$
+\end_inset
+
+.
+ 这时有
+\begin_inset Formula 
+\[
+\sum_{i=0}^{n}x_{i}\ge0\cdot y_{0}+1\cdot(y_{1}-y_{0})+\cdots+m(y_{m}-y_{m-1})+(n+1-y_{m})(m+1)
+\]
+
+\end_inset
+
+所以有
+\begin_inset Formula 
+\[
+\sum_{i=0}^{n}x_{i}+\sum_{j=0}^{m}y_{i}\ge\sum_{k=1}^{m}k(y_{k}-y_{k-1})+(n+1)(m+1)-(m+1)y_{m}+\sum_{j=0}^{m}y_{j}=(n+1)(m+1).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+当所有的
+\begin_inset Formula $x_{i}\le m$
+\end_inset
+
+时, 根据前面的情况, 在要考虑的数列
+\begin_inset Formula $x_{1},x_{2},\cdots,x_{n}$
+\end_inset
+
+后面补充添加
+\begin_inset Formula $x'_{n+1}$
+\end_inset
+
+, 且
+\begin_inset Formula $x'_{n+1}=m+1$
+\end_inset
+
+, 并在之后的计算中视
+\begin_inset Formula $x_{n+1}$
+\end_inset
+
+就是
+\begin_inset Formula $x'_{n+1}$
+\end_inset
+
+.
+ 于是二元组
+\begin_inset Formula $(n+1,m)$
+\end_inset
+
+刚好符合前面一段的情况, 即存在
+\begin_inset Formula $x_{n+1}>m$
+\end_inset
+
+, 所以有同样的结论
+\begin_inset Formula 
+\[
+\sum_{i=0}^{n+1}x_{i}+\sum_{j=0}^{m}y_{j}\ge(n+2)(m+1)
+\]
+
+\end_inset
+
+分别计算人为添加的项和原有的项, 则有
+\begin_inset Formula 
+\[
+\sum_{i=0}^{n}x_{i}+\sum_{j=0}^{m}y_{j}+(m+1)\ge(n+2)(m+1)
+\]
+
+\end_inset
+
+化简即得所要证的不等式.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+说明1: 
+\series default
+此不等式类似积分不等式中证明Young-不等式的面积法, 只是条件稍有不适用, 所以不能使用R-S积分证明此不等式.
+ 设
+\begin_inset Formula $y=\varphi(x)$
+\end_inset
+
+是
+\begin_inset Formula $[0,a]$
+\end_inset
+
+上严格递增的连续函数, 则比较面积有
+\begin_inset Formula 
+\[
+ab\le\int_{0}^{a}\varphi(x)\ud x+\int_{0}^{b}\varphi^{-1}(y)\ud y,\qquad a,b\ge0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+说明2: 
+\series default
+既然此不等式类似于Young-不等式, 所以应当有类似反函数的结论: 
+\begin_inset Formula $x_{y_{i}}\ge i+1$
+\end_inset
+
+, 
+\begin_inset Formula $y_{x_{i}}\ge i+1$
+\end_inset
+
+, 但用这一性质证明定理比较麻烦.
+\end_layout
+
+\begin_layout Section
+Irish数学竞赛
+\end_layout
+
+\begin_layout Subsection
+1993年第六届Irish MO, Paper 1
+\end_layout
+
+\begin_layout Problem
+实数
+\begin_inset Formula $\alpha,\beta$
+\end_inset
+
+满足方程
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{gathered}\alpha^{3}-3\alpha^{2}+5\alpha-17=0,\\
+\beta^{3}-3\beta^{2}+5\beta+11=0.
+\end{gathered}
+\]
+
+\end_inset
+
+求
+\begin_inset Formula $\alpha+\beta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+将问题转化为
+\begin_inset Formula $x^{3}+px$
+\end_inset
+
+的形式, 也就是通过平移消去平方项, 得到
+\begin_inset Formula 
+\[
+(\alpha+\beta-2)\left[(\alpha-1)^{2}+(\alpha-1)(\beta-1)+(\beta-1)^{2}+2\right]=0.
+\]
+
+\end_inset
+
+第二项是正值.
+\end_layout
+
+\begin_layout Problem
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+称自然数
+\begin_inset Formula $n$
+\end_inset
+
+是``好的
+\begin_inset Quotes erd
+\end_inset
+
+, 如果对于某个
+\begin_inset Formula $k\ge2$
+\end_inset
+
+和自然数
+\begin_inset Formula $a_{1},a_{2},\cdots,a_{k}$
+\end_inset
+
+使得
+\begin_inset Formula $n$
+\end_inset
+
+能表示成
+\begin_inset Formula $a_{1}+a_{2}+\cdots+a_{k}$
+\end_inset
+
+和
+\begin_inset Formula $a_{1}a_{2}\cdots a_{k}$
+\end_inset
+
+, 而且这样的表示对于
+\begin_inset Formula $n$
+\end_inset
+
+是唯一的.
+ 例如, 
+\begin_inset Formula $10$
+\end_inset
+
+是``好的
+\begin_inset Quotes erd
+\end_inset
+
+, 因为
+\begin_inset Formula $10=5+2+1+1+1=5\times2\times1\times1\times1$
+\end_inset
+
+且只有这一种表示.
+ 用素数表示无哦有``好的
+\begin_inset Quotes erd
+\end_inset
+
+自然数.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+直线
+\begin_inset Formula $l$
+\end_inset
+
+与圆
+\begin_inset Formula $S$
+\end_inset
+
+相切于
+\begin_inset Formula $A$
+\end_inset
+
+点, 点
+\begin_inset Formula $B$
+\end_inset
+
+和
+\begin_inset Formula $C$
+\end_inset
+
+在
+\begin_inset Formula $l$
+\end_inset
+
+上且分布在
+\begin_inset Formula $A$
+\end_inset
+
+点的两侧, 
+\begin_inset Formula $B,C$
+\end_inset
+
+向
+\begin_inset Formula $S$
+\end_inset
+
+做切线, 交于点
+\begin_inset Formula $P$
+\end_inset
+
+.
+ 如果
+\begin_inset Formula $B,C$
+\end_inset
+
+在
+\begin_inset Formula $l$
+\end_inset
+
+上移动时保持
+\begin_inset Formula $\left|AB\right|\cdot\left|AC\right|$
+\end_inset
+
+不变, 求点
+\begin_inset Formula $P$
+\end_inset
+
+的轨迹.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pic4lyx/Screenshot from 2018-10-18 11-56-07.png
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+如图
+\begin_inset Formula $\left|AB\right|=p$
+\end_inset
+
+, 
+\begin_inset Formula $\left|AC\right|=q$
+\end_inset
+
+, 
+\begin_inset Formula $pq=k^{2}$
+\end_inset
+
+为一个常数.
+ 计算
+\begin_inset Formula $\angle EIP=\frac{1}{2}(\beta+\gamma)$
+\end_inset
+
+.
+ 所以
+\begin_inset Formula $t=\frac{(p+q)r^{2}}{pq-r^{2}}$
+\end_inset
+
+.
+ 所以
+\begin_inset Formula 
+\[
+S_{\triangle BCP}=r(p+q+t)=r\frac{k^{2}(p+q)}{k^{2}-r^{2}}=\frac{1}{2}(p+q)PH,
+\]
+
+\end_inset
+
+即
+\begin_inset Formula $PH=\frac{2k^{2}r}{k^{2}-r}$
+\end_inset
+
+是常数, 所以
+\begin_inset Formula $P$
+\end_inset
+
+的轨迹是平行于
+\begin_inset Formula $BC$
+\end_inset
+
+的直线.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $a_{0},a_{1},\cdots,a_{n-1}$
+\end_inset
+
+为实数, 其中
+\begin_inset Formula $n\ge1$
+\end_inset
+
+, 设
+\begin_inset Formula $f(x)=x^{n}+a_{n-1}x^{n-1}+\cdots+a_{0}$
+\end_inset
+
+满足
+\begin_inset Formula $\left|f(0)\right|=f(1)$
+\end_inset
+
+且函数
+\begin_inset Formula $f$
+\end_inset
+
+的每一个根
+\begin_inset Formula $\alpha$
+\end_inset
+
+均是实数且满足
+\begin_inset Formula $0<\alpha<1$
+\end_inset
+
+.
+ 证明
+\begin_inset Formula $f$
+\end_inset
+
+的所有根的积不超过
+\begin_inset Formula $1/2^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+设
+\begin_inset Formula $f(x)=(x-\alpha_{1})\cdots(x-\alpha_{n})$
+\end_inset
+
+, 则
+\begin_inset Formula $\prod(1-\alpha_{i})=\prod\alpha_{i}$
+\end_inset
+
+, 用均值不等式
+\begin_inset Formula 
+\[
+\left(\prod\alpha_{i}\right)^{2}=\prod\alpha_{i}(1-\alpha_{i})\le\prod\left(\frac{\alpha_{i}+(1-\alpha_{i})}{2}\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+设非零复数
+\begin_inset Formula $z_{1},z_{2},z_{3},z_{4},z_{5},\alpha$
+\end_inset
+
+满足
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $z_{1},z_{2},z_{3},z_{4},z_{5}$
+\end_inset
+
+为包含原点
+\begin_inset Formula $0$
+\end_inset
+
+的凸无边形
+\begin_inset Formula $\boldsymbol{Q}$
+\end_inset
+
+的顶点, 且
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\alpha z_{1},\alpha z_{2},\alpha z_{3},\alpha z_{4},\alpha z_{5}$
+\end_inset
+
+均在
+\begin_inset Formula $\boldsymbol{Q}$
+\end_inset
+
+内.
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset Formula $\alpha=p+\ui q$
+\end_inset
+
+, 
+\begin_inset Formula $p,q\in\RR$
+\end_inset
+
+, 证明
+\begin_inset Formula $p^{2}+q^{2}\le1$
+\end_inset
+
+且
+\begin_inset Formula 
+\[
+p+q\tan(\pi/5)\le1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+1993年第六届Irish MO, Paper 2
+\end_layout
+
+\begin_layout Problem
+给定五个格点
+\begin_inset Formula $P_{1},P_{2},P_{3},P_{4},P_{5}$
+\end_inset
+
+中必有两个格点连成的线段内有另一个格点.
+\end_layout
+
+\begin_layout Solution*
+根据格点每一个坐标的奇偶性, 可分为
+\begin_inset Formula $4$
+\end_inset
+
+类, 现有
+\begin_inset Formula $5$
+\end_inset
+
+个点, 必有两个点对应坐标的奇偶性相同.
+\end_layout
+
+\begin_layout Problem
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+设
+\begin_inset Formula $a_{1},a_{2},\cdots,a_{n},b_{1},b_{2},\cdots,b_{n}$
+\end_inset
+
+为
+\begin_inset Formula $2n$
+\end_inset
+
+个实数, 其中
+\begin_inset Formula $a_{1},a_{2},\cdots,a_{n}$
+\end_inset
+
+两两不同, 如果
+\begin_inset Formula $\alpha\in\RR$
+\end_inset
+
+使得
+\begin_inset Formula 
+\[
+\prod_{j}(a_{i}+b_{j})=\alpha,\quad\forall i=1,2,\cdots,n.
+\]
+
+\end_inset
+
+证明存在实数
+\begin_inset Formula $\beta$
+\end_inset
+
+使得
+\begin_inset Formula 
+\[
+\prod_{i}(a_{i}+b_{j})=\beta,\quad\forall j=1,2,\cdots,n.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $0<x<\pi$
+\end_inset
+
+, 证明对于任何自然数
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\sin x+\frac{\sin3x}{3}+\frac{\sin5x}{5}+\cdots+\frac{\sin(2n-1)x}{2n-1}>0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+用数学归纳法, 
+\begin_inset Formula $S_{n}(x)=LHS$
+\end_inset
+
+, 
+\begin_inset Formula $n=1$
+\end_inset
+
+时容易验证, 
+\begin_inset Formula $S_{n}^{\prime}(x)=\frac{\sin2nx}{2\sin x}=0$
+\end_inset
+
+的根在集合
+\begin_inset Formula 
+\[
+\left\{ \frac{\pi}{2n},\frac{2\pi}{2n},\cdots,\frac{(2n-1)\pi}{2n}\right\} 
+\]
+
+\end_inset
+
+中, 而且每一个都使
+\begin_inset Formula $S_{n}(x)$
+\end_inset
+
+大于零.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+国内数学竞赛
+\end_layout
+
+\begin_layout Subsection
+1999年河南省高中数学竞赛(高二)-简版
+\end_layout
+
+\begin_layout Problem
+化简
+\begin_inset Formula $\frac{\sqrt{1-2\sin20^{\circ}\cos20^{\circ}}}{\cos20^{\circ}-\sqrt{1-\cos^{2}160^{\circ}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $P_{1}P_{2}$
+\end_inset
+
+是抛物线
+\begin_inset Formula $x^{2}=y$
+\end_inset
+
+的一条弦, 如果
+\begin_inset Formula $P_{1}P_{2}$
+\end_inset
+
+的垂直平分线的方程是
+\begin_inset Formula $y=-x+3$
+\end_inset
+
+, 求弦
+\begin_inset Formula $P_{1}P_{2}$
+\end_inset
+
+所在的直线方程.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $y=x+2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+四面体
+\begin_inset Formula $S-ABC$
+\end_inset
+
+中, 三组对棱分别相等, 依次为
+\begin_inset Formula $\sqrt{34}$
+\end_inset
+
+, 
+\begin_inset Formula $\sqrt{41}$
+\end_inset
+
+, 
+\begin_inset Formula $5$
+\end_inset
+
+, 求此四面体的体积.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $20$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+已知复数
+\begin_inset Formula $z$
+\end_inset
+
+满足
+\begin_inset Formula $z^{3}=27$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $z^{5}+3z^{4}+2242$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $1999$
+\end_inset
+
+或
+\begin_inset Formula $2728$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $S_{n}$
+\end_inset
+
+为等差数列
+\begin_inset Formula $\{a_{n}\}$
+\end_inset
+
+的前
+\begin_inset Formula $n$
+\end_inset
+
+项和, 
+\begin_inset Formula $S_{9}=18$
+\end_inset
+
+, 
+\begin_inset Formula $a_{n-4}=30$
+\end_inset
+
+(
+\begin_inset Formula $n>9$
+\end_inset
+
+), 
+\begin_inset Formula $S_{n}=336$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $n$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $n=21$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $0<x<\pi$
+\end_inset
+
+, 求函数
+\begin_inset Formula $y=\frac{2-\cos x}{\sin x}$
+\end_inset
+
+的最小值.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\sqrt{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+已知
+\begin_inset Formula $\sin\frac{\alpha}{2}-2\cos\frac{\alpha}{2}=1$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $\frac{1+\sin\alpha+\cos\alpha}{1+\sin\alpha-\cos\alpha}$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\frac{3}{4}$
+\end_inset
+
+或
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+求函数
+\begin_inset Formula $y=\frac{1}{(x-1)(2x-1)}$
+\end_inset
+
+的值域.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\{y\mid y\le8\text{或}y>0\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+已知数列
+\begin_inset Formula $\{a_{n}\}$
+\end_inset
+
+中, 
+\begin_inset Formula $a_{1}=1$
+\end_inset
+
+, 
+\begin_inset Formula $a_{2}=2$
+\end_inset
+
+, 
+\begin_inset Formula $a_{n}a_{n+1}a_{n+2}=a_{n}+a_{n+1}+a_{n+2}$
+\end_inset
+
+, 且
+\begin_inset Formula $a_{n+1}a_{n+2}\ne1$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $S_{1999}=\sum_{n=1}^{1999}a_{n}$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $3997$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+已知复数
+\begin_inset Formula $z\ne0$
+\end_inset
+
+.
+ 给出命题:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $z+\overline{z}=0$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $z^{2}=-a^{2}$
+\end_inset
+
+(
+\begin_inset Formula $a\in\RR$
+\end_inset
+
+, 
+\begin_inset Formula $a\ne0$
+\end_inset
+
+);
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $z^{2}=\overline{z}^{2}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $|a+z|=|z-a|$
+\end_inset
+
+(
+\begin_inset Formula $a\in\RR,a\ne0$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+以上命题中为
+\begin_inset Formula $z$
+\end_inset
+
+是纯虚数的充分必要条件的是?
+\end_layout
+
+\begin_layout Solution*
+2.
+ (此处怀疑中等数学2000年第1期中的答案有误, 1中
+\begin_inset Formula $z$
+\end_inset
+
+可能为
+\begin_inset Formula $0$
+\end_inset
+
+, 4中
+\begin_inset Formula $z$
+\end_inset
+
+也可能为
+\begin_inset Formula $0$
+\end_inset
+
+, 从而都不是纯虚数)
+\end_layout
+
+\begin_layout Problem
+已知
+\begin_inset Formula $[x]$
+\end_inset
+
+表示不超过
+\begin_inset Formula $x$
+\end_inset
+
+的最大整数.
+ 求方程
+\begin_inset Formula 
+\[
+3^{2x}-[10\times3^{x+1}]+\sqrt{3^{2x}-[10\times3^{x+1}]+82}=-80
+\]
+
+\end_inset
+
+的解的个数.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $x_{1},x_{2},y_{1},y_{2}\in\RR^{+}$
+\end_inset
+
+, 
+\begin_inset Formula $a=\sqrt{x_{1}x_{2}}+\sqrt{y_{1}y_{2}}$
+\end_inset
+
+, 
+\begin_inset Formula $b=\sqrt{(x_{1}+y_{1})(x_{2}+y_{2})}$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $a,b$
+\end_inset
+
+的大小关系.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $a\le b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+求证:
+\begin_inset Formula 
+\[
+\tan70^{\circ}=\tan20^{\circ}+2\tan40^{\circ}+4\tan10^{\circ}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+直线
+\begin_inset Formula $y=kx+m$
+\end_inset
+
+与双曲线
+\begin_inset Formula $\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1$
+\end_inset
+
+及其渐近线交于
+\begin_inset Formula $A,B,C,D$
+\end_inset
+
+四点.
+ 求证: 
+\begin_inset Formula $|AC|=|BD|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+提示: 证明
+\begin_inset Formula $AB$
+\end_inset
+
+的中点横坐标等于
+\begin_inset Formula $CD$
+\end_inset
+
+的中点横坐标.
+\end_layout
+
+\begin_layout Problem
+设常数
+\begin_inset Formula $a>1>b>0$
+\end_inset
+
+.
+ 则当
+\begin_inset Formula $a,b$
+\end_inset
+
+满足什么关系时, 
+\begin_inset Formula $\lg(a^{x}-b^{x})>0$
+\end_inset
+
+的解集为
+\begin_inset Formula $(1,+\infty)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $a=b+1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+整数列
+\begin_inset Formula $\{a_{n}\}$
+\end_inset
+
+(
+\begin_inset Formula $n\in\NN$
+\end_inset
+
+)满足: 
+\begin_inset Formula $a_{1}=2$
+\end_inset
+
+, 
+\begin_inset Formula $a_{2}=7$
+\end_inset
+
+, 且有
+\begin_inset Formula 
+\[
+-\frac{1}{2}<a_{n+1}-\frac{a_{n}^{2}}{a_{n-1}}\le\frac{1}{2}.
+\]
+
+\end_inset
+
+求证: 当
+\begin_inset Formula $n\ge2$
+\end_inset
+
+时, 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+为奇数.
+\end_layout
+
+\begin_layout Solution*
+提示: 证明
+\begin_inset Formula $a_{n+1}=3a_{n}+2a_{n-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+1999年全国高中数学联赛广西赛区初赛(高三)
+\end_layout
+
+\begin_layout Problem
+在等比数列
+\begin_inset Formula $\{a_{n}\}$
+\end_inset
+
+中, 记
+\begin_inset Formula $S_{n}=a_{1}+a_{2}+\cdots+a_{n}$
+\end_inset
+
+, 已知
+\begin_inset Formula $a_{5}=2S_{4}+3$
+\end_inset
+
+, 
+\begin_inset Formula $a_{6}=2S_{5}+3$
+\end_inset
+
+.
+ 求此数列的公比
+\begin_inset Formula $q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $q=3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设四棱锥
+\begin_inset Formula $P-ABCD$
+\end_inset
+
+的底面不是平行四边形.
+ 现用某平面去截此四棱锥, 得到截面四边形
+\begin_inset Formula $A_{1}B_{1}C_{1}D_{1}$
+\end_inset
+
+, 设集合
+\begin_inset Formula $S=\{\text{四边形}A_{1}B_{1}C_{1}D_{1}\text{是平行四边形}\}$
+\end_inset
+
+.
+ 证明
+\begin_inset Formula $S$
+\end_inset
+
+是无穷集合.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+圆柱底面的直径为
+\begin_inset Formula $4R$
+\end_inset
+
+, 高为
+\begin_inset Formula $42R$
+\end_inset
+
+.
+ 它能装半径为
+\begin_inset Formula $R$
+\end_inset
+
+的球的个数最多为多少?
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $58$
+\end_inset
+
+.
+ 注意圆柱的底层恰能放两个球, 然后装法为左右两个一层, 前后两个一层, 交叉向上依次放置.
+\end_layout
+
+\begin_layout Problem
+如图, 已知函数
+\begin_inset Formula $y=2x^{2}$
+\end_inset
+
+在
+\begin_inset Formula $[a,b]$
+\end_inset
+
+(
+\begin_inset Formula $a<b$
+\end_inset
+
+)上的值域为
+\begin_inset Formula $[0,2]$
+\end_inset
+
+.
+ 则点
+\begin_inset Formula $(a,b)$
+\end_inset
+
+的轨迹为图中的?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pic4lyx/Screenshot from 2018-10-02 12-37-47.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+线段
+\begin_inset Formula $AB$
+\end_inset
+
+和
+\begin_inset Formula $BC$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+已知集合
+\begin_inset Formula $A_{n}=\{x\mid2^{n}<x<2^{n+1},\text{且}x=7m+1,n,m\in\NN\}$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $A_{6}$
+\end_inset
+
+中各元素的和.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $891$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $(5\sqrt{2}+7)^{2n+1}$
+\end_inset
+
+(
+\begin_inset Formula $n\in\NN$
+\end_inset
+
+)的整数部分和小数部分分别是
+\begin_inset Formula $I$
+\end_inset
+
+和
+\begin_inset Formula $F$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $F(I+F)$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $[\tan x]$
+\end_inset
+
+表示不超过实数
+\begin_inset Formula $\tan x$
+\end_inset
+
+的最大整数, 求方程
+\begin_inset Formula $[\tan x]=2\cos^{2}x$
+\end_inset
+
+的解.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $x=k\pi+\frac{\pi}{4}$
+\end_inset
+
+, 
+\begin_inset Formula $k\in\Integers$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+已知
+\begin_inset Formula $ax^{2}-1999x+b>0$
+\end_inset
+
+的解集是
+\begin_inset Formula $\{x\mid-3<x<-1\}$
+\end_inset
+
+.
+ 求不等式
+\begin_inset Formula $ax^{2}+1999x+b>0$
+\end_inset
+
+的解集.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\{x\mid1<x<3\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+已知一平面与一正立方体的
+\begin_inset Formula $12$
+\end_inset
+
+条棱的夹角均是
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $\cos\theta$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\frac{\sqrt{6}}{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $f(x)=\log_{2}\frac{1+2^{x}+3^{x}a}{3}$
+\end_inset
+
+, 其中
+\begin_inset Formula $a\in\RR$
+\end_inset
+
+.
+ 如果当
+\begin_inset Formula $x\in(-\infty,1]$
+\end_inset
+
+时
+\begin_inset Formula $f(x)$
+\end_inset
+
+有意义, 求
+\begin_inset Formula $a$
+\end_inset
+
+的取值范围.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $a>-\frac{3}{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+已知复数列
+\begin_inset Formula $z_{0},z_{1},\cdots,z_{n},\cdots$
+\end_inset
+
+满足
+\begin_inset Formula $z_{0}=0$
+\end_inset
+
+, 
+\begin_inset Formula $z_{1}=1$
+\end_inset
+
+, 
+\begin_inset Formula $z_{n+1}-z_{n}=\alpha(z_{n}-a_{n-1})$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha=1+\sqrt{3}\ui$
+\end_inset
+
+, 
+\begin_inset Formula $n=1,2,\cdots$
+\end_inset
+
+.
+ 求在圆
+\begin_inset Formula $|z|=10$
+\end_inset
+
+的内部所含有的
+\begin_inset Formula $z_{n}$
+\end_inset
+
+的个数.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+设集合
+\begin_inset Formula $A=\{0,1,2,\cdots,9\}$
+\end_inset
+
+, 
+\begin_inset Formula $\{B_{1},B_{2},\cdots,B_{k}\}$
+\end_inset
+
+是
+\begin_inset Formula $A$
+\end_inset
+
+的一族非空子集构成的集合, 且当
+\begin_inset Formula $i\ne j$
+\end_inset
+
+时, 
+\begin_inset Formula $B_{i}\cap B_{j}$
+\end_inset
+
+至多有两个元素.
+ 求
+\begin_inset Formula $k$
+\end_inset
+
+的最大值.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $175$
+\end_inset
+
+.
+ 用逐步调整法, 所有集合可以替换为最多三个元素的集合.
+ 而
+\begin_inset Formula $\binom{10}{1}+\binom{10}{2}+\binom{10}{3}=175$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+对每一实数对
+\begin_inset Formula $x,y$
+\end_inset
+
+, 函数
+\begin_inset Formula $f(t)$
+\end_inset
+
+满足
+\begin_inset Formula $f(x+y)=f(x)+f(y)+xy+1$
+\end_inset
+
+.
+ 若
+\begin_inset Formula $f(-2)=-2$
+\end_inset
+
+, 试求满足
+\begin_inset Formula $f(a)=a$
+\end_inset
+
+的整数
+\begin_inset Formula $a$
+\end_inset
+
+的个数.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $2$
+\end_inset
+
+个.
+\end_layout
+
+\begin_layout Problem
+在
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+中是否存在一点
+\begin_inset Formula $P$
+\end_inset
+
+, 使得过点
+\begin_inset Formula $P$
+\end_inset
+
+的任意直线都将
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+分成面积相等的两部分? 为什么?
+\end_layout
+
+\begin_layout Solution*
+不存在.
+\end_layout
+
+\begin_layout Problem
+某县位于沙漠地带, 人与自然长期进行顽强的斗争, 到1998年底全县的绿化率已达到
+\begin_inset Formula $30\%$
+\end_inset
+
+.
+ 从1999年开始, 每年将出现这样的局面, 即原有沙漠面积的
+\begin_inset Formula $16\%$
+\end_inset
+
+将被绿化, 与此同时, 由于各种原因, 原有绿化面积的
+\begin_inset Formula $4\%$
+\end_inset
+
+又被沙化.
+\end_layout
+
+\begin_layout Enumerate
+设全县面积为
+\begin_inset Formula $1$
+\end_inset
+
+, 1998年底绿化总面积为
+\begin_inset Formula $a_{1}=\frac{3}{10}$
+\end_inset
+
+, 经过
+\begin_inset Formula $n$
+\end_inset
+
+年后绿化总面积为
+\begin_inset Formula $a_{n+1}$
+\end_inset
+
+.
+ 求证: 
+\begin_inset Formula $a_{n+1}=\frac{4}{5}a_{n}+\frac{4}{25}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+至少需要多少年的努力, 才能使全县的绿化率超过
+\begin_inset Formula $60\%$
+\end_inset
+
+? (年取整数, 
+\begin_inset Formula $\lg2=0.3010$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Solution*
+2.至少
+\begin_inset Formula $5$
+\end_inset
+
+年.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+ 中等数学杂志.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Crux mathematicorum.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+数学博士论坛.
+\end_layout
+
+\end_body
+\end_document

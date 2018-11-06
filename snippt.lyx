@@ -1,0 +1,3881 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{pgfplots}
+\usepackage{pgf,tikz,pgfplots}
+% \pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows,intersections}
+\usepackage{tkz-euclide}
+\usetkzobj{all} 
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+\newcommand{\Integers}{\mathbb{Z}}
+\newcommand{\Naturals}{\mathbb{N}}
+\newcommand{\Rationals}{\mathbb{Q}}
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\Complexes}{\mathbb{C}}
+\newcommand{\pNaturals}{\mathbb{N}_{+}}
+
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\end_preamble
+\options UTF8
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package none
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The below text refers to if we add 
+\begin_inset Quotes eld
+\end_inset
+
+adobefonts
+\begin_inset Quotes erd
+\end_inset
+
+ to the custom class options.
+ The text is outdated and will be updated to reflect this change soon.
+ The change was made because we no longer need proprietary fonts to compile
+ this document.
+ For example, it can be compiled with out-of-the-box TeX Live 2015.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+这是一份文章模板，如果要使用书籍或报告，请设置文档类为
+\family sans
+book (C\SpecialChar TeX
+)
+\family default
+或者
+\family sans
+report (C\SpecialChar TeX
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+上海市高中数学竞赛试题
+\end_layout
+
+\begin_layout Author
+Larry Eppes
+\end_layout
+
+\begin_layout Section
+1980年上海市高中数学竞赛试题
+\end_layout
+
+\begin_layout Subsection
+一试
+\end_layout
+
+\begin_layout Paragraph
+1.
+ 
+\end_layout
+
+\begin_layout Standard
+已知
+\begin_inset Formula $a>1$
+\end_inset
+
+, 
+\begin_inset Formula $b>1$
+\end_inset
+
+, 求证
+\begin_inset Formula $\log_{a}ab+\log_{b}ab\ge4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+这题比较简单, 首先想到恒等式
+\begin_inset Formula $\log_{x}y=\frac{\log y}{\log x}$
+\end_inset
+
+对于所有正实数
+\begin_inset Formula $x,y$
+\end_inset
+
+都成立, 所以
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+LHS=\frac{\log ab}{\log a}+\frac{\log ab}{\log b}=\log ab\paren{\frac{1}{\log a}+\frac{1}{\log b}}
+\]
+
+\end_inset
+
+另外恒等式
+\begin_inset Formula $\log ab=\log a+\log b$
+\end_inset
+
+对于所有的正实数
+\begin_inset Formula $a,b$
+\end_inset
+
+都成立.
+ 另外, 因为
+\begin_inset Formula $x>1$
+\end_inset
+
+时
+\begin_inset Formula $\log x>0$
+\end_inset
+
+.
+ 所以如果用均值不等式, 则有
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\log ab}{\log a}+\frac{\log ab}{\log b}=1+\frac{\log b}{\log a}+\frac{\log a}{\log b}+1\ge1+2\sqrt{\frac{\log b}{\log a}\cdot\frac{\log a}{\log b}}+1=4
+\]
+
+\end_inset
+
+如果考虑使用Cauchy不等式, 则有
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\log ab\paren{\frac{1}{\log a}+\frac{1}{\log b}}=\paren{\log a+\log b}\paren{\frac{1}{\log a}+\frac{1}{\log b}}\ge\paren{1+1}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+2.
+ 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $x_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+是方程
+\begin_inset Formula $x^{2}-x+1=0$
+\end_inset
+
+的两个根, 求
+\begin_inset Formula $x_{1}^{1980}+\paren{\frac{1}{x_{2}}}^{1980}$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Standard
+次数真高, 但是因为有个倒数, 而且韦达定理说两根的积
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}x_{2}=1
+\]
+
+\end_inset
+
+这样可以求出来
+\begin_inset Formula $\frac{1}{x_{2}}=x_{1}$
+\end_inset
+
+, 但代入最后的式子里还是次数太高, 变成了
+\begin_inset Formula $2x_{1}^{1980}$
+\end_inset
+
+.
+ 但是这一不是不可求解的, 因为
+\begin_inset Formula $x_{1}$
+\end_inset
+
+是方程
+\begin_inset Formula $x^{2}-x+1=0$
+\end_inset
+
+的根, 所以
+\begin_inset Formula $x_{1}^{2}=x_{1}-1$
+\end_inset
+
+, 这样两边乘以
+\begin_inset Formula $x_{1}^{n}$
+\end_inset
+
+, 并记
+\begin_inset Formula $X_{n}=x_{1}^{n}$
+\end_inset
+
+就会出现
+\begin_inset Formula $X_{n+2}=X_{n+1}-X_{n}$
+\end_inset
+
+这刚好是一个递推公式, 而且可以计算出
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X_{0}=1,X_{1}=2x_{1},X_{2}=2x_{1}-1,X_{3}=-1,X_{4}=-2x_{1},X_{5}=-2x_{1}+1,X_{6}=1,X_{7}=2x_{1}
+\]
+
+\end_inset
+
+这样一直算下来形成了一个周期, 也是太巧了, 可以看出
+\begin_inset Formula $X_{k+6}=X_{k}$
+\end_inset
+
+, 但是证明的话还是要用归纳法或者自然数的良序性.
+ 所以只需要知道
+\begin_inset Formula $1980=6\times330$
+\end_inset
+
+便知
+\begin_inset Formula $X_{1980}=X_{0}=1$
+\end_inset
+
+, 注意
+\begin_inset Formula $X_{n}=x_{1}^{n}$
+\end_inset
+
+而要求的结果是
+\begin_inset Formula $2x_{1}^{1980}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+3.
+ 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $D$
+\end_inset
+
+为
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+的边
+\begin_inset Formula $BC$
+\end_inset
+
+上的点, 连接
+\begin_inset Formula $AD$
+\end_inset
+
+得
+\begin_inset Formula $\triangle ABD$
+\end_inset
+
+和
+\begin_inset Formula $\triangle ACD$
+\end_inset
+
+如果这三个三角形相似, 问
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+是怎样的三角形? 为什么?
+\end_layout
+
+\begin_layout Standard
+图形比较简单的问题, 可以入手的方向会比较简单, 考虑角度
+\begin_inset Formula $\angle ADB$
+\end_inset
+
+和
+\begin_inset Formula $\angle ADC$
+\end_inset
+
+, 它们是一对邻补角, 所以它们之中必然有一个至少是
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset Formula $\angle ADB=\angle ADC=90^{\circ}$
+\end_inset
+
+, 那么按相似的点的顺序
+\begin_inset Formula $A,B,D$
+\end_inset
+
+对应
+\begin_inset Formula $A,C,D$
+\end_inset
+
+或者
+\begin_inset Formula $C,A,D$
+\end_inset
+
+, 而前面的相似三角形对应关系中有公共边
+\begin_inset Formula $AD$
+\end_inset
+
+, 可以考虑
+\begin_inset Formula $AAS$
+\end_inset
+
+或
+\begin_inset Formula $ASA$
+\end_inset
+
+证明出
+\begin_inset Formula $\triangle ABD\cong\triangle ACD$
+\end_inset
+
+, 这说明
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+是等腰三角形; 而后面的三角形的对应关系说明
+\begin_inset Formula $90^{\circ}=\angle BAD+\angle ABD=\angle BAD+\angle CAD$
+\end_inset
+
+, 这说明
+\begin_inset Formula $\angle A$
+\end_inset
+
+是
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+的直角顶点.
+ 
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset Formula $\angle ADB$
+\end_inset
+
+和
+\begin_inset Formula $\angle ADC$
+\end_inset
+
+之一大于
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+, 则另一个小于
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+.
+ 比如
+\begin_inset Formula $\angle ADB>90^{\circ}$
+\end_inset
+
+, 
+\begin_inset Formula $\angle ADC<90^{\circ}$
+\end_inset
+
+.
+ 因为
+\begin_inset Formula $\angle ADB$
+\end_inset
+
+作为
+\begin_inset Formula $\triangle ACD$
+\end_inset
+
+的外角, 所以所以
+\begin_inset Formula $\angle ADB$
+\end_inset
+
+比
+\begin_inset Formula $\triangle ACD$
+\end_inset
+
+的任何内角都大, 这时候的
+\begin_inset Formula $\triangle ADB$
+\end_inset
+
+和
+\begin_inset Formula $\triangle ADC$
+\end_inset
+
+不可能相似.
+\end_layout
+
+\begin_layout Paragraph
+4.
+ 
+\end_layout
+
+\begin_layout Standard
+已知
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+的边
+\begin_inset Formula $BC$
+\end_inset
+
+上有两点
+\begin_inset Formula $D,E$
+\end_inset
+
+, 且
+\begin_inset Formula $BD=CE$
+\end_inset
+
+.
+ 求证: 
+\begin_inset Formula $AB+AC>AD+AE$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+条件
+\begin_inset Formula $BD=CE$
+\end_inset
+
+并不能确定
+\begin_inset Formula $B,C,D,E$
+\end_inset
+
+四个点的位置顺序是
+\begin_inset Formula $B,D,E,C$
+\end_inset
+
+还是
+\begin_inset Formula $B,E,D,C$
+\end_inset
+
+, 但是如果
+\begin_inset Formula $D=E$
+\end_inset
+
+, 问题就变成了
+\begin_inset Formula $AB+AC>2AD=2AE$
+\end_inset
+
+.
+ 这暗示我们直接延长
+\begin_inset Formula $AD$
+\end_inset
+
+构造一个平行四边形就能证明了.
+ 如果
+\begin_inset Formula $D\ne E$
+\end_inset
+
+, 也可以构造平行四边形, 如下图所示的那样.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.3] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=90:$A$] (A) at(10,6);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=180:$B$](B) at(0,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=0:$C$](C) at(15,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=135:$D$](D) at(3,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=45:$E$](E) at(12,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=135:$D'$](Dp) at(7.5,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=270:$A'$](Ap) at(5,-6);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [very thin] (A) -- (B) -- (C) -- (A);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [very thin] (D) -- (A) -- (E);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [dash pattern=on 2pt off 3pt on 4pt off 4pt] (A) -- (Ap) -- (B);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [dash pattern=on 2pt off 3pt on 4pt off 4pt] (C) -- (Ap) -- (D);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [dash pattern=on 2pt off 3pt on 4pt off 4pt] (E) -- (Ap);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (A) circle (5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (B) circle (5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (C) circle (5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=red] (Ap) circle (5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (D) circle (5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (E) circle (5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=red] (Dp) circle (5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+其中
+\begin_inset Formula $D'$
+\end_inset
+
+是
+\begin_inset Formula $BC$
+\end_inset
+
+的中点, 延长
+\begin_inset Formula $AD'$
+\end_inset
+
+到
+\begin_inset Formula $A'$
+\end_inset
+
+使得
+\begin_inset Formula $AD'=A'D'$
+\end_inset
+
+, 连接其它几条边.
+ 这样
+\begin_inset Formula $AE=A'D$
+\end_inset
+
+, 
+\begin_inset Formula $AC=A'B$
+\end_inset
+
+, 问题转化为
+\begin_inset Formula $AB+BA'>AD+DA'$
+\end_inset
+
+, 当
+\begin_inset Formula $ABA'D$
+\end_inset
+
+是一个凹四边形时, 便成为一个较旧的问题:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+凹四边形
+\begin_inset Formula $ABCD$
+\end_inset
+
+, 如果角
+\begin_inset Formula $\angle D$
+\end_inset
+
+大于
+\begin_inset Formula $180^{\circ}$
+\end_inset
+
+, 则
+\begin_inset Formula $AB+AC>DB+DC$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+所以可以照搬问题的证明, 延长
+\begin_inset Formula $AD$
+\end_inset
+
+交
+\begin_inset Formula $BA'$
+\end_inset
+
+于一点
+\begin_inset Formula $F$
+\end_inset
+
+, 根据三角不等式就有
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+AB+BA'=AB+BF+FA'\ge AF+FA'=AD+DF+FA'\ge AD+DA'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+另外对于不等式来说, 它刚好是两个三角形的两边之和, 
+\begin_inset Formula $AB+AC$
+\end_inset
+
+是三角形
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+的两边的和, 
+\begin_inset Formula $AD+AE$
+\end_inset
+
+是三角形
+\begin_inset Formula $\triangle ADE$
+\end_inset
+
+的两边的和.
+ 也有考虑通过添项使不等式仍然成立, 比如
+\begin_inset Formula $BD+AB+AC>AD+AE+CE$
+\end_inset
+
+, 由三角不等式
+\begin_inset Formula $BD+AB>AD$
+\end_inset
+
+, 但是
+\begin_inset Formula $AC<AE+CE$
+\end_inset
+
+还是不能给出证明.
+ 也有分类讨论来证明的, 分类依据是: 过
+\begin_inset Formula $A$
+\end_inset
+
+做
+\begin_inset Formula $BC$
+\end_inset
+
+的垂线
+\begin_inset Formula $AH$
+\end_inset
+
+, 如果
+\begin_inset Formula $D,E$
+\end_inset
+
+在点
+\begin_inset Formula $H$
+\end_inset
+
+的两侧, 问题是容易证明的, 如果
+\begin_inset Formula $D,E$
+\end_inset
+
+在
+\begin_inset Formula $H$
+\end_inset
+
+的同一侧, 可以考虑点
+\begin_inset Formula $E$
+\end_inset
+
+关于
+\begin_inset Formula $H$
+\end_inset
+
+的对称点
+\begin_inset Formula $E'$
+\end_inset
+
+, 这样
+\begin_inset Formula $AE=AE'$
+\end_inset
+
+, 但是如果
+\begin_inset Formula $E'$
+\end_inset
+
+在
+\begin_inset Formula $H$
+\end_inset
+
+和
+\begin_inset Formula $C$
+\end_inset
+
+之间, 问题可以同前面一样证明, 但如果
+\begin_inset Formula $E'$
+\end_inset
+
+在
+\begin_inset Formula $BC$
+\end_inset
+
+的延长线上, 证明将不会通过! 所以这些方法都是行不通的.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.3] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=90:$A$] (A) at(10,10);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=180:$B$](B) at(0,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=0:$C$](C) at(15,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=135:$D$](D) at(3,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=45:$E$](E) at(12,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=135:$H$](H) at(10,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [very thin] (A) -- (B) -- (C) -- (A); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [very thin] (A)-- (D); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [very thin] (A)-- (E);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [dashed] (A) -- (H);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (A) circle (2.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (B) circle (2.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (C) circle (2.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (H) circle (2.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (D) circle (2.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (E) circle (2.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=90:$A$] (A2) at(30,10);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=180:$B$](B2) at(20,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=0:$C$](C2) at(35,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=135:$D$](D2) at(27,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=45:$E$](E2) at(28,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=45:$H$](H2) at(30,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=45:$E'$](Ep) at (32,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [very thin] (A2) -- (B2) -- (C2) -- (A2); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [very thin] (A2)-- (D2); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [very thin] (A2)-- (E2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [dashed] (Ep)--(A2) -- (H2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (A2) circle (2.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (B2) circle (2.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (C2) circle (2.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (H2) circle (2.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (D2) circle (2.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=blue] (E2) circle (2.5pt); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+5.
+ 
+\end_layout
+
+\begin_layout Standard
+非零实数
+\begin_inset Formula $a,b,c,x,y,z$
+\end_inset
+
+满足条件
+\begin_inset Formula $a^{2}+b^{2}+c^{2}=x^{2}+y^{2}+z^{2}=ax+by+cz$
+\end_inset
+
+, 求证: 
+\begin_inset Formula $\frac{x}{a}=\frac{y}{b}=\frac{z}{c}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+看到这个条件就想到了配平方, 计算
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+0=a^{2}+b^{2}+c^{2}+x^{2}+y^{2}+z^{2}-2ax-2by-2cz=(a-x)^{2}+(b-y)^{2}+(c-z)^{2}
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula $a=x$
+\end_inset
+
+, 
+\begin_inset Formula $b=y$
+\end_inset
+
+, 
+\begin_inset Formula $c=z$
+\end_inset
+
+, 而在
+\begin_inset Formula $a,b,c,x,y,z$
+\end_inset
+
+是非零实数的时候
+\begin_inset Formula $a,b,c$
+\end_inset
+
+可以做分母.
+\end_layout
+
+\begin_layout Paragraph
+6.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+中最大角
+\begin_inset Formula $A$
+\end_inset
+
+是最小角
+\begin_inset Formula $C$
+\end_inset
+
+的
+\begin_inset Formula $2$
+\end_inset
+
+倍, 夹角
+\begin_inset Formula $A$
+\end_inset
+
+的两边
+\begin_inset Formula $b=5$
+\end_inset
+
+, 
+\begin_inset Formula $c=4$
+\end_inset
+
+.
+ 求第三边
+\begin_inset Formula $a$
+\end_inset
+
+和
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+的面积.
+\end_layout
+
+\begin_layout Standard
+这题的条件是
+\begin_inset Formula $\angle A=2\angle C$
+\end_inset
+
+, 所以
+\begin_inset Formula $\sin A=\sin2C=2\sin C\cos C$
+\end_inset
+
+, 而
+\begin_inset Formula $\cos C=\frac{a^{2}+b^{2}-c^{2}}{2ab}$
+\end_inset
+
+, 正弦定理表明
+\begin_inset Formula $\frac{\sin A}{\sin C}=\frac{a}{c}$
+\end_inset
+
+.
+ 代入
+\begin_inset Formula $b=5$
+\end_inset
+
+, 
+\begin_inset Formula $c=4$
+\end_inset
+
+就会有
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a=2c\frac{a^{2}+b^{2}-c^{2}}{2ab}=4\cdot\frac{a^{2}+9}{5a}
+\]
+
+\end_inset
+
+也就是
+\begin_inset Formula $a^{2}=36$
+\end_inset
+
+, 
+\begin_inset Formula $a=6$
+\end_inset
+
+.
+ 再用海伦公式
+\begin_inset Formula $S=\sqrt{p(p-a)(p-b)(p-c)}$
+\end_inset
+
+即可.
+\end_layout
+
+\begin_layout Standard
+也可以建立角度的恒等式, 因为
+\begin_inset Formula $b:c=5:4$
+\end_inset
+
+, 由正弦定理有
+\begin_inset Formula $\sin B:\sin C=5:4$
+\end_inset
+
+, 而已知
+\begin_inset Formula $\angle A=2\angle C$
+\end_inset
+
+, 建立
+\begin_inset Formula $\angle B,\angle C$
+\end_inset
+
+的方程, 则
+\begin_inset Formula $\pi=\angle B+3\angle C$
+\end_inset
+
+, 所以
+\begin_inset Formula $\sin B=\sin3C$
+\end_inset
+
+, 所以
+\begin_inset Formula $\sin3C:\sin C=5:4$
+\end_inset
+
+, 再考虑三倍角公式有
+\begin_inset Formula $\sin3C=3\sin C-4\sin^{3}C$
+\end_inset
+
+, 所以
+\begin_inset Formula $7/16=\sin^{2}C$
+\end_inset
+
+, 再解出
+\begin_inset Formula $\cos C$
+\end_inset
+
+, 根据倍角公式
+\begin_inset Formula $\sin2C=2\sin C\cos C$
+\end_inset
+
+算出
+\begin_inset Formula $\sin A$
+\end_inset
+
+, 最后用面积公式
+\begin_inset Formula $S=\frac{1}{2}bc\sin A$
+\end_inset
+
+算出结果.
+\end_layout
+
+\begin_layout Paragraph
+7.
+ 
+\end_layout
+
+\begin_layout Standard
+已知平面的斜线在此平面上的射影与该平面内过此斜线足的两直线构成等角, 求证: 斜线本身与上述两直线也构成等角.
+\end_layout
+
+\begin_layout Standard
+可以用空间余弦定理
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos\alpha=\frac{\cos\delta-\cos\beta\cos\gamma}{\sin\beta\sin\gamma}
+\]
+
+\end_inset
+
+来证明.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate (A) at (0,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (A) -- ++(15:4cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[dashed] (A) -- ++(50:4cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (A) -- ++(80:4cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (A) +(15:1cm) arc [start angle=15,end angle=50,radius=1cm];
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (A) +(50:1.2cm) arc [start angle=50,end angle=80,radius=1.2cm];
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (A) +(15:1.5cm) arc [start angle=15,end angle=80,radius=1.5cm];
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (A) +(50:3cm) arc[start angle=50,end angle=65,radius=1cm];
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (A) +(50:3cm) arc[start angle=50,end angle=35,radius=1cm];
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+path (A) +(32.5:0.7cm) node {$
+\backslash
+gamma$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+path (A) +(65:0.9cm) node {$
+\backslash
+beta$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+path (A) +(47.5:1.8cm) node {$
+\backslash
+delta$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+path (A) +(48:3.2cm) node {$
+\backslash
+alpha$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+8.
+ 
+\end_layout
+
+\begin_layout Standard
+已知函数
+\begin_inset Formula $y=\sin^{2}x+\cos x+\frac{1}{4}$
+\end_inset
+
+, 问
+\begin_inset Formula $x$
+\end_inset
+
+取何值时, 函数
+\begin_inset Formula $y$
+\end_inset
+
+有极值.
+\end_layout
+
+\begin_layout Standard
+看到
+\begin_inset Formula $\cos x$
+\end_inset
+
+是一次的, 
+\begin_inset Formula $\sin^{2}x=1-\cos^{2}x$
+\end_inset
+
+, 所以
+\begin_inset Formula $y=-\cos^{2}x+\cos x+\frac{5}{4}$
+\end_inset
+
+, 而这与二次方程
+\begin_inset Formula $y=-t^{2}+t+\frac{5}{4}$
+\end_inset
+
+在
+\begin_inset Formula $-1\le t\le1$
+\end_inset
+
+时的极值问题相同, 注意
+\begin_inset Formula $t$
+\end_inset
+
+的范围.
+\end_layout
+
+\begin_layout Paragraph
+9.
+ 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $P$
+\end_inset
+
+点在双曲线
+\begin_inset Formula $x^{2}-y^{2}=1$
+\end_inset
+
+上运动, 
+\begin_inset Formula $P$
+\end_inset
+
+处切线与圆
+\begin_inset Formula $x^{2}+y^{2}=1$
+\end_inset
+
+交于
+\begin_inset Formula $A$
+\end_inset
+
+和
+\begin_inset Formula $B$
+\end_inset
+
+, 求弦
+\begin_inset Formula $AB$
+\end_inset
+
+中点
+\begin_inset Formula $Q$
+\end_inset
+
+的轨迹方程.
+\end_layout
+
+\begin_layout Standard
+直接解析法求解, 设
+\begin_inset Formula $P$
+\end_inset
+
+的坐标为
+\begin_inset Formula $(x_{P},y_{P})$
+\end_inset
+
+, 那么经过
+\begin_inset Formula $P$
+\end_inset
+
+的切线的方程是
+\begin_inset Formula $x_{P}x-y_{P}y=1$
+\end_inset
+
+.
+ 解出
+\begin_inset Formula $x_{P}x$
+\end_inset
+
+并对方程
+\begin_inset Formula $x^{2}+y^{2}=1$
+\end_inset
+
+两边同时乘以
+\begin_inset Formula $x_{P}^{2}$
+\end_inset
+
+, 得到
+\begin_inset Formula $(x_{P}^{2}+y_{P}^{2})y^{2}+2y_{P}y+1-x_{P}^{2}=0$
+\end_inset
+
+, 用韦达定理算出
+\begin_inset Formula $Q$
+\end_inset
+
+的纵坐标
+\begin_inset Formula $y_{Q}=-\frac{y_{P}}{x_{P}^{2}+y_{P}^{2}}$
+\end_inset
+
+, 再代入
+\begin_inset Formula $x_{P}x-y_{P}y=1$
+\end_inset
+
+解出
+\begin_inset Formula $x_{Q}=\frac{x_{P}}{x_{P}^{2}+y_{P}^{2}}$
+\end_inset
+
+, 为了得到轨迹方程, 先计算
+\begin_inset Formula $x_{Q}^{2}+y_{Q}^{2}$
+\end_inset
+
+, 再计算
+\begin_inset Formula $x_{Q}^{2}-y_{Q}^{2}$
+\end_inset
+
+, 便得到轨迹方程
+\begin_inset Formula $x^{2}-y^{2}=(x^{2}+y^{2})^{2}$
+\end_inset
+
+, 但是
+\series bold
+注意
+\series default
+在点
+\begin_inset Formula $P$
+\end_inset
+
+连续变化时
+\begin_inset Formula $Q$
+\end_inset
+
+的位置不能取到原点, 所以轨迹方程中应当去掉原点.
+\end_layout
+
+\begin_layout Standard
+另一方法是用圆的性质, 垂直于弦的直径平分弦, 因为过
+\begin_inset Formula $P$
+\end_inset
+
+的切线
+\begin_inset Formula $x_{P}x-y_{P}y=1$
+\end_inset
+
+与圆
+\begin_inset Formula $x^{2}+y^{2}=1$
+\end_inset
+
+交于两点
+\begin_inset Formula $A,B$
+\end_inset
+
+, 而过
+\begin_inset Formula $O$
+\end_inset
+
+垂直于
+\begin_inset Formula $AB$
+\end_inset
+
+的直线过
+\begin_inset Formula $AB$
+\end_inset
+
+的中点
+\begin_inset Formula $Q$
+\end_inset
+
+, 这个直线的方程是
+\begin_inset Formula $y_{P}x+x_{P}y=0$
+\end_inset
+
+, 联立方程求解.
+\end_layout
+
+\begin_layout Subsection
+二试
+\end_layout
+
+\begin_layout Paragraph
+1.
+ 
+\end_layout
+
+\begin_layout Standard
+已知
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+中, 
+\begin_inset Formula $\log\tan A+\log\tan C=2\log\tan B$
+\end_inset
+
+, 求角
+\begin_inset Formula $B$
+\end_inset
+
+的范围.
+\end_layout
+
+\begin_layout Standard
+首先根据定义域, 
+\begin_inset Formula $\tan A>0$
+\end_inset
+
+, 
+\begin_inset Formula $\tan C>0$
+\end_inset
+
+, 
+\begin_inset Formula $\tan B>0$
+\end_inset
+
+, 所以
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+是锐角三角形.
+ 但只这么说明还是不够因为广义的来说无穷大等于无穷大, 当等式两边有一个是无穷大, 则必有一个角是
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+, 而另两个角就只能是锐角, 不符合等式.
+\end_layout
+
+\begin_layout Standard
+然后
+\begin_inset Formula $\tan^{2}B=\tan A\tan C$
+\end_inset
+
+, 如果考虑消元法, 
+\begin_inset Formula $\tan C=-\tan(A+B)=-\frac{\tan A+\tan B}{1-\tan A\tan B}$
+\end_inset
+
+, 所以
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tan^{2}A+(1-\tan^{2}B)\tan B\tan A+\tan^{2}B=0
+\]
+
+\end_inset
+
+方程看成
+\begin_inset Formula $\tan A$
+\end_inset
+
+的二次函数恒有正根, 这一点通过两根的积是正的说明, 两个根同号, 并根据
+\begin_inset Formula $\tan A=0$
+\end_inset
+
+时上式左边是正的, 也就是对应的二次函数与
+\begin_inset Formula $y$
+\end_inset
+
+轴交于正半轴, 所以需要保证二次函数的对称轴是正的, 应该考虑为什么对称轴不能是
+\begin_inset Formula $y$
+\end_inset
+
+轴.
+ 所以
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tan B(1-\tan^{2}B)<0
+\]
+
+\end_inset
+
+这说明
+\begin_inset Formula $B>\frac{\pi}{4}$
+\end_inset
+
+.
+ 但这还没完, 因为对称轴为正不能保证二次函数有零点, 所以还要求判别式非负, 而这将说明
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tan^{2}B(1-\tan^{2}B)^{2}-4\tan^{2}B\ge0
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula $\tan B\ge\sqrt{3}$
+\end_inset
+
+, 也就是
+\begin_inset Formula $B\ge\frac{\pi}{3}$
+\end_inset
+
+.
+ 最后还要说明
+\begin_inset Formula $\frac{\pi}{3}\le B<\frac{\pi}{2}$
+\end_inset
+
+中的任何角
+\begin_inset Formula $B$
+\end_inset
+
+都是合情合理的, 对于
+\begin_inset Formula $\frac{\pi}{3}$
+\end_inset
+
+可以考虑正三角形, 而另一边在
+\begin_inset Formula $B$
+\end_inset
+
+的任何值都将导致前面的二次方程有个正解, 同时
+\begin_inset Formula $\tan A$
+\end_inset
+
+是方程的一个解, 而另一个解可以根据韦达定理
+\begin_inset Formula $\tan A\cdot x_{2}=\tan^{2}B=\tan A\tan C$
+\end_inset
+
+而求得, 也就是
+\begin_inset Formula $\tan A$
+\end_inset
+
+, 
+\begin_inset Formula $\tan C$
+\end_inset
+
+都是前面那个二次方程的根, 根据对乘轴的位置和判别式的正负性就可知道
+\begin_inset Formula $\tan A$
+\end_inset
+
+, 
+\begin_inset Formula $\tan C$
+\end_inset
+
+是由
+\begin_inset Formula $\tan B$
+\end_inset
+
+决定的两个正值.
+\end_layout
+
+\begin_layout Paragraph
+2.
+ 
+\end_layout
+
+\begin_layout Standard
+在单位正方体
+\begin_inset Formula $ABCD-A'B'C'D'$
+\end_inset
+
+中, 在一个面的对角线
+\begin_inset Formula $AB'$
+\end_inset
+
+上取
+\begin_inset Formula $M$
+\end_inset
+
+点使
+\begin_inset Formula $AB'=3AM$
+\end_inset
+
+, 在另一个面的对角线
+\begin_inset Formula $BD$
+\end_inset
+
+上取
+\begin_inset Formula $N$
+\end_inset
+
+点使
+\begin_inset Formula $BD=3BN$
+\end_inset
+
+.
+ 求证: 
+\begin_inset Formula $MN$
+\end_inset
+
+是
+\begin_inset Formula $AB'$
+\end_inset
+
+和
+\begin_inset Formula $BD$
+\end_inset
+
+的公垂线, 并求
+\begin_inset Formula $MN$
+\end_inset
+
+的长.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+foreach 
+\backslash
+n/
+\backslash
+x/
+\backslash
+l/
+\backslash
+p in{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+1/{( 0  , 0)}/{$A'$}/below, 
+\end_layout
+
+\begin_layout Plain Layout
+
+2/{( 4, 0)}/{$B'$}/below, 
+\end_layout
+
+\begin_layout Plain Layout
+
+3/{( .8, 1)}/{$D'$}/below, 
+\end_layout
+
+\begin_layout Plain Layout
+
+4/{( 4.8, 1)}/{$C'$}/right, 
+\end_layout
+
+\begin_layout Plain Layout
+
+5/{( 0, 4)}/{$A$}/left, 
+\end_layout
+
+\begin_layout Plain Layout
+
+6/{( 4, 4)}/{$B$}/south west, 
+\end_layout
+
+\begin_layout Plain Layout
+
+7/{( 0.8, 4.8)}/{$D$}/above, 
+\end_layout
+
+\begin_layout Plain Layout
+
+8/{( 4.8, 4.8)}/{$C$}/above,
+\end_layout
+
+\begin_layout Plain Layout
+
+9/{( 4/3,8/3)}/{$M$}/below,
+\end_layout
+
+\begin_layout Plain Layout
+
+10/{(8.8/3,12.8/3)}/{$N$}/above right
+\end_layout
+
+\begin_layout Plain Layout
+
+} { 
+\end_layout
+
+\begin_layout Plain Layout
+
+       
+\backslash
+node[inner sep=1pt,circle,draw,fill,label={
+\backslash
+p:
+\backslash
+l}] (
+\backslash
+n) at 
+\backslash
+x {};    
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (1) -- (2) -- (6) -- (5) -- (1); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (5) -- (6) -- (8) -- (7) -- (5); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (2) -- (4) -- (8) -- (6) -- (2); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[dashed] (1) -- (3) -- (4); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[dashed] (3) -- (7); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (10) -- (5) -- (2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (9) -- (6) -- (7);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[dashed] (9) -- (10);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[dashed] (7) -- (9);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[dashed] (10) -- (2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在立体几何中有个方便的结论是
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+如果
+\begin_inset Formula $AB\perp CD$
+\end_inset
+
+, 则
+\begin_inset Formula $P_{ACBD}=AC^{2}-CB^{2}+BD^{2}-DA^{2}=0$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+此结论被称为勾股差, 在张景中院士的新概念几何里有更详细的说明, 而且这一结论在平面几何和立体几何中都是成立的.
+ 用这个结论可以轻易解决本问题.
+\end_layout
+
+\begin_layout Standard
+坐标法也是常见的方法, 计算过程比较机械.
+\end_layout
+
+\begin_layout Paragraph
+3.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "par:3.1980.2.3"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+抛物线与
+\begin_inset Formula $Oy$
+\end_inset
+
+轴相切于原点, 直线
+\begin_inset Formula $x+y+1=0$
+\end_inset
+
+是抛物线在顶点的切线, 求此抛物线的方程.
+\end_layout
+
+\begin_layout Standard
+用坐标旋转公式, 坐标旋转公式的证明可以使用复数, 设原坐标为
+\begin_inset Formula $(x,y)$
+\end_inset
+
+, 新坐标为
+\begin_inset Formula $(X,Y)$
+\end_inset
+
+, 如果新坐标需要通过旧坐标绕原点
+\begin_inset Formula $O$
+\end_inset
+
+逆时针旋转
+\begin_inset Formula $\theta$
+\end_inset
+
+角来得到, 则有关系
+\begin_inset Formula $X+Y\ui=(x+y\ui)\ue^{\ui\theta}$
+\end_inset
+
+, 利用欧拉公式就有
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+X=x\cos\theta-y\sin\theta\\
+Y=x\sin\theta+y\cos\theta
+\end{cases}
+\]
+
+\end_inset
+
+所以先将要求的抛物线顺时针旋转
+\begin_inset Formula $45^{\circ}$
+\end_inset
+
+, 旋转后的抛物线将与
+\begin_inset Formula $X=\frac{\sqrt{2}}{2}$
+\end_inset
+
+相切, 这个值通过将
+\begin_inset Formula $\theta=-\frac{\pi}{4}$
+\end_inset
+
+代入上式便可得到.
+ 所以这个抛物线的方程可以设为
+\begin_inset Formula $X=a\paren{Y-b}^{2}+\frac{\sqrt{2}}{2}$
+\end_inset
+
+.
+ 因为旋转是绕原点进行, 原抛物线过原点, 所以旋转后仍然过原点, 所以
+\begin_inset Formula $ab^{2}+\frac{\sqrt{2}}{2}=0$
+\end_inset
+
+.
+ 另外
+\begin_inset Formula $Oy$
+\end_inset
+
+轴绕原点顺时针旋转
+\begin_inset Formula $45^{\circ}$
+\end_inset
+
+得到直线
+\begin_inset Formula $y=x$
+\end_inset
+
+, 它与新抛物线相切, 代入抛物线方程也就是
+\begin_inset Formula $a\paren{Y-b}^{2}-(X-b)-b+\frac{\sqrt{2}}{2}=a\paren{Y-b}^{2}-(Y-b)-b+\frac{\sqrt{2}}{2}=0$
+\end_inset
+
+有重根, 所以
+\begin_inset Formula $\Delta=1-4a\paren{-b+\frac{\sqrt{2}}{2}}=0$
+\end_inset
+
+, 这样去解
+\begin_inset Formula $a,b$
+\end_inset
+
+, 再将抛物线旋转回去就好了.
+\end_layout
+
+\begin_layout Paragraph
+4.
+ 
+\end_layout
+
+\begin_layout Standard
+证明: 
+\begin_inset Formula 
+\[
+F=\sqrt{2}+\sqrt{2-\sqrt{2}}+\sqrt{2-\sqrt{2+\sqrt{2}}}+\cdots+\sqrt{2-\sqrt{2+\sqrt{2+\cdots+\sqrt{2}}}}<\pi
+\]
+
+\end_inset
+
+其中最后一个根号的数量有
+\begin_inset Formula $n$
+\end_inset
+
+个.
+\end_layout
+
+\begin_layout Standard
+不等式跟根号和圆周率
+\begin_inset Formula $\pi$
+\end_inset
+
+有关的只有三角函数最容易想到, 所以试验,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos\frac{\pi}{4}=\frac{\sqrt{2}}{2},\cos\frac{\pi}{8}=\sqrt{\frac{\cos\pi/4+1}{2}}=\sqrt{\frac{2+\sqrt{2}}{4}},\cos\frac{\pi}{16}=\sqrt{\frac{\cos\pi/8+1}{2}}=\sqrt{\frac{2+\sqrt{2+\sqrt{2}}}{4}}
+\]
+
+\end_inset
+
+一直如此下去,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos\frac{\pi}{2^{n}}=\frac{\sqrt{2+\sqrt{2+\cdots+\sqrt{2}}}}{2}
+\]
+
+\end_inset
+
+其中分子中共出现了
+\begin_inset Formula $n-1$
+\end_inset
+
+个
+\begin_inset Formula $2$
+\end_inset
+
+, 而这可以通过归纳法来给出一个证明.
+ 所以
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F=\sqrt{2-2\cos\frac{\pi}{2}}+\sqrt{2-2\cos\frac{\pi}{4}}+\sqrt{2-2\cos\frac{\pi}{8}}+\cdots\sqrt{2-2\cos\frac{\pi}{2^{n}}}
+\]
+
+\end_inset
+
+而
+\begin_inset Formula $2-2\cos\frac{\pi}{2^{n}}=4\sin^{2}\frac{\pi}{2^{n+1}}$
+\end_inset
+
+, 所以
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F=2\sin\frac{\pi}{2^{2}}+2\sin\frac{\pi}{2^{3}}+\cdots+2\sin\frac{\pi}{2^{n+1}}<2\paren{\frac{\pi}{2^{2}}+\frac{\pi}{2^{3}}+\cdots+\frac{\pi}{2^{n+1}}}<\pi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+5
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $z_{k}$
+\end_inset
+
+(
+\begin_inset Formula $k=1,2,\cdots,n$
+\end_inset
+
+)是满足
+\begin_inset Formula $\abs{z_{k}}\le1$
+\end_inset
+
+及
+\begin_inset Formula $\sum_{k=1}^{n}z_{k}=0$
+\end_inset
+
+的
+\begin_inset Formula $n$
+\end_inset
+
+(
+\begin_inset Formula $n\ge2$
+\end_inset
+
+)个复数, 求证这
+\begin_inset Formula $n$
+\end_inset
+
+个复数中至少有两个复数
+\begin_inset Formula $z_{s},z_{t}$
+\end_inset
+
+满足
+\begin_inset Formula $\abs{z_{s}+z_{t}}\le1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+一般没有什么思路的问题, 可以通过建立符合条件的例子, 通过具体例子看能不能找到什么方法解决问题, 通过大量的例子的解决方案的交集应该就是问题的证明方法.
+ 当
+\begin_inset Formula $n=2$
+\end_inset
+
+时, 因为就两个复数
+\begin_inset Formula $z_{1},z_{2}$
+\end_inset
+
+, 而且它们的和等于
+\begin_inset Formula $0$
+\end_inset
+
+, 所以直接取这两个复数为
+\begin_inset Formula $z_{s},z_{t}$
+\end_inset
+
+就可以了.
+ 
+\end_layout
+
+\begin_layout Standard
+当
+\begin_inset Formula $n=3$
+\end_inset
+
+时, 有三个复数
+\begin_inset Formula $z_{1},z_{2},z_{3}$
+\end_inset
+
+, 它们的和为
+\begin_inset Formula $0$
+\end_inset
+
+, 但仍然有
+\begin_inset Formula $\abs{z_{1}+z_{2}}=\abs{z_{3}}\le1$
+\end_inset
+
+, 其和已经不一定是
+\begin_inset Formula $0$
+\end_inset
+
+了.
+\end_layout
+
+\begin_layout Standard
+当
+\begin_inset Formula $n=4$
+\end_inset
+
+时, 这样的四个复数的具体例子的构造有点麻烦, 如果有点在第一象限, 这总是可以做到的, 不然的话将这些点绕着原点旋转下, 每个点仍然满足题意的条件,
+ 这样可以把一些点旋转到
+\begin_inset Formula $x$
+\end_inset
+
+轴上的
+\begin_inset Formula $z_{1}$
+\end_inset
+
+的位置.
+ 因为如果有点
+\begin_inset Formula $z_{s}$
+\end_inset
+
+落在区域III中, 则必然有
+\begin_inset Formula $\abs{z_{s}+z_{1}}\le1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+所以需要考虑反面的I, II和正实部的区域, 因为
+\begin_inset Formula $\sum_{k=1}^{n}z_{k}=0$
+\end_inset
+
+, 所以不可能所有的复数都有正实部, 因此必然有一个点
+\begin_inset Formula $z_{t}$
+\end_inset
+
+落在区域I或者区域II, 不妨设它落在I中, 如果有点落在
+\begin_inset Formula $-z_{t}$
+\end_inset
+
+为圆心的单位圆内, 不妨设为
+\begin_inset Formula $z_{s}$
+\end_inset
+
+, 则
+\begin_inset Formula $\abs{z_{s}+z_{t}}\le1$
+\end_inset
+
+, 如果所有的点都不在以
+\begin_inset Formula $-z_{1},-z_{t}$
+\end_inset
+
+为圆心的单位圆内, 则这些点必然在直线
+\begin_inset Formula $y=-x$
+\end_inset
+
+的上方, 包括
+\begin_inset Formula $z_{1}$
+\end_inset
+
+和
+\begin_inset Formula $z_{t}$
+\end_inset
+
+, 而如果将这所有的点在顺时针旋转
+\begin_inset Formula $90^{\circ}$
+\end_inset
+
+, 所有的点仍然在单位圆
+\begin_inset Formula $O$
+\end_inset
+
+内但均具有正实部, 这将与
+\begin_inset Formula $\sum_{k=1}^{n}z_{k}=0$
+\end_inset
+
+相矛盾.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=0.3,fill=blue!30]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzDefPoint[label=below:$O$](0,0){O};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzDefPoint[label=below:$z_1$](4,0){z1};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzDefPoint[label=below:$-z_1$](-4,0){mz1};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzDefPoint[label=$I$](-0.8,3.6){i};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzDefPoint[label=$II$](-0.8,-5.2){ii};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzDefPoint[label=$III$](-2,-1){iii};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=above:$z_t$](zt) at (-1,6);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzDefPoint(-0.8,4.5){rzt};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+coordinate[label=below:$-z_t$](mzt) at (1,-6);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzDefPoint(0.8,-4.5){mrzt};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzClipCircle[R](mz1,5 cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzFillCircle[color=yellow,opacity=0.2,R](O,5);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{scope}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzDrawCircle[R](O,5 cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzDrawCircle[R](mz1,5 cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzDrawCircle[dashed,R](mrzt,5 cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tkzDrawPoints[size=8,color=red](O,z1,mz1,mrzt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->] (-6,0)--(6,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->] (0,-6)--(0,6);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->] (zt)--(-0.8,5);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[->] (mzt)--(0.85,-4.8);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[dashed] (-6,6)--(7,-7);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+1981年上海市高中数学竞赛试题
+\end_layout
+
+\begin_layout Subsection
+一试
+\end_layout
+
+\begin_layout Paragraph
+1.
+\end_layout
+
+\begin_layout Standard
+已知
+\begin_inset Formula $f(x)=1+\log_{x}5$
+\end_inset
+
+, 
+\begin_inset Formula $g(x)=\log_{x^{2}}9+\log_{x^{3}}8$
+\end_inset
+
+.
+ 试比较
+\begin_inset Formula $f(x)$
+\end_inset
+
+和
+\begin_inset Formula $g(x)$
+\end_inset
+
+的值的大小.
+\end_layout
+
+\begin_layout Standard
+用公式
+\begin_inset Formula $\log_{a}b=\frac{\log b}{\log a}$
+\end_inset
+
+, 则
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g(x)=\frac{\log9}{\log x^{2}}+\frac{\log8}{\log x^{3}}=\frac{\log3}{\log x}+\frac{\log2}{\log x}=\frac{\log6}{\log x}
+\]
+
+\end_inset
+
+所以
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+f(x) & \gtreqless & g(x)\\
+1+\frac{\log5}{\log x} & \gtreqless & \frac{\log6}{\log x}\\
+1 & \gtreqless & \frac{\log6/5}{\log x}
+\end{array}
+\]
+
+\end_inset
+
+这里不能随便乘以
+\begin_inset Formula $\log x$
+\end_inset
+
+, 因为不知道符号.
+\end_layout
+
+\begin_layout Paragraph
+2.
+\end_layout
+
+\begin_layout Standard
+在
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+中, 
+\begin_inset Formula $\angle C$
+\end_inset
+
+为钝角, 
+\begin_inset Formula $AB$
+\end_inset
+
+边上的高为
+\begin_inset Formula $h$
+\end_inset
+
+, 求证: 
+\begin_inset Formula $AB>2h$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+考虑
+\begin_inset Formula $AB$
+\end_inset
+
+的中点
+\begin_inset Formula $D$
+\end_inset
+
+, 显然
+\begin_inset Formula $CD\ge h$
+\end_inset
+
+, 如果
+\begin_inset Formula $CD\ge AD=BD$
+\end_inset
+
+, 则利用大角对大边.
+ 
+\begin_inset Formula $\angle CAD\ge\angle ACD$
+\end_inset
+
+, 
+\begin_inset Formula $\angle CBD\ge\angle BCD$
+\end_inset
+
+, 所以
+\begin_inset Formula $\angle CAD+\angle CBD\ge\angle ACD+\angle BCD$
+\end_inset
+
+, 也就是
+\begin_inset Formula $\pi-\angle C\ge\angle C$
+\end_inset
+
+, 这与
+\begin_inset Formula $\angle C$
+\end_inset
+
+是钝角矛盾, 所以
+\begin_inset Formula $AD=BD>CD\ge h$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+3.
+ 
+\end_layout
+
+\begin_layout Standard
+已知正四棱锥
+\begin_inset Formula $P-ABCD$
+\end_inset
+
+的侧面与底面的夹角为
+\begin_inset Formula $\alpha$
+\end_inset
+
+, 相邻两侧的夹角为
+\begin_inset Formula $\beta$
+\end_inset
+
+, 求证: 
+\begin_inset Formula $\cos\beta=-\cos^{2}\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+用空间余弦定理.
+\end_layout
+
+\begin_layout Paragraph
+4.
+ 
+\end_layout
+
+\begin_layout Standard
+设
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{m=1}^{n}\sum_{j=1}^{m}\paren{\frac{2}{j}\sum_{k=1}^{j}k}=275,
+\]
+
+\end_inset
+
+求正整数
+\begin_inset Formula $n$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Standard
+解方程
+\begin_inset Formula $n(n+1)(n+5)=10\times11\times15$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+5.
+ 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $n$
+\end_inset
+
+为偶数, 试证:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{1!(n-1)!}+\frac{1}{3!(n-3)!}+\frac{1}{5!(n-5)!}+\cdots+\frac{1}{(n-1)!1!}=\frac{2^{n-1}}{n!}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+忽然想到一个不利用母函数的方法, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\binom{n}{1}+\binom{n}{3}+\binom{n}{5}+\cdots+\binom{n}{n-1}=\binom{n-1}{0}+\binom{n-1}{1}+\binom{n-1}{2}+\binom{n-1}{3}+\cdots+\binom{n-1}{n-1}=2^{n-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+6.
+\end_layout
+
+\begin_layout Standard
+设抛物线的对称轴是
+\begin_inset Formula $2x+y-1=0$
+\end_inset
+
+, 准线是
+\begin_inset Formula $x-2y-5=0$
+\end_inset
+
+, 且与直线
+\begin_inset Formula $2y+3=0$
+\end_inset
+
+相切, 求此抛物线方程.
+\end_layout
+
+\begin_layout Standard
+抛物线的对称轴和准线互相垂直, 对称轴的法向量为
+\begin_inset Formula $(2,1)$
+\end_inset
+
+, 准线的法向量为
+\begin_inset Formula $(1,-2)$
+\end_inset
+
+, 可以验证它们的确互相垂直.
+ 利用1980年问题(3, 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "par:3.1980.2.3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)的方法将坐标系进行旋转来简化求解抛物线的方程.
+\end_layout
+
+\begin_layout Paragraph
+7.
+\end_layout
+
+\begin_layout Standard
+已知
+\begin_inset Formula $x^{3}+x^{2}\sin\theta+x\sin2\theta+\sin3\theta\equiv(x-\alpha)(x-\beta)(x-\gamma)$
+\end_inset
+
+, 且
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\begin{array}{ccc}
+\alpha & \beta & \gamma\\
+\gamma & \alpha & \beta\\
+\beta & \gamma & \alpha
+\end{array}\right|>0,
+\]
+
+\end_inset
+
+求
+\begin_inset Formula $\theta$
+\end_inset
+
+的取值范围.
+\end_layout
+
+\begin_layout Standard
+因为上面的行列式大于
+\begin_inset Formula $0$
+\end_inset
+
+, 所以
+\begin_inset Formula $\alpha^{3}+\beta^{2}+\gamma^{2}-3\alpha\beta\gamma>0$
+\end_inset
+
+, 利用恒等式
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha^{3}+\beta^{3}+\gamma^{3}-3\alpha\beta\gamma=(\alpha+\beta+\gamma)(\alpha^{2}+\beta^{2}+\gamma^{2}-\alpha\beta-\beta\gamma-\gamma\alpha)
+\]
+
+\end_inset
+
+以及韦达公式有
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-\sin\theta(\sin^{2}\theta-3\sin2\theta)>0.
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula $\sin^{2}\theta(\sin\theta-6\cos\theta)<0$
+\end_inset
+
+, 可以解出
+\begin_inset Formula $2k\pi-\frac{\pi}{2}<\theta<\arctan6+2k\pi$
+\end_inset
+
+或
+\begin_inset Formula $2k\pi-\pi+\arctan6<\theta<2k\pi-\frac{\pi}{2}$
+\end_inset
+
+, 但
+\begin_inset Formula $x\ne2k\pi$
+\end_inset
+
+.
+ 这里不必考虑三次方程必须有三个实根的条件, 因为即便
+\begin_inset Formula $\alpha,\beta,\gamma$
+\end_inset
+
+中有复数, 韦达公式仍然成立.
+ 但如果问题考虑实数根的存在, 则需要判断三次方程的判别式非负.
+ 
+\end_layout
+
+\begin_layout Paragraph
+8.
+ 
+\end_layout
+
+\begin_layout Standard
+已知复数
+\begin_inset Formula $z_{1},z_{2},z_{3}$
+\end_inset
+
+, 
+\begin_inset Formula $|z_{1}|=1$
+\end_inset
+
+, 
+\begin_inset Formula $|z_{2}|=k$
+\end_inset
+
+, 
+\begin_inset Formula $|z_{3}|=2-k$
+\end_inset
+
+, 
+\begin_inset Formula $\arg z_{1}=\alpha$
+\end_inset
+
+, 
+\begin_inset Formula $\arg z_{2}=\beta$
+\end_inset
+
+, 
+\begin_inset Formula $\arg z_{3}=\gamma$
+\end_inset
+
+, 且
+\begin_inset Formula $z_{1}+z_{2}+z_{3}=0$
+\end_inset
+
+, 问
+\begin_inset Formula $k$
+\end_inset
+
+为何值时, 
+\begin_inset Formula $\sin^{2}(\beta-\gamma)$
+\end_inset
+
+的值最大?
+\end_layout
+
+\begin_layout Standard
+根据
+\begin_inset Formula $z_{1}=\ue^{\ui\alpha}$
+\end_inset
+
+, 
+\begin_inset Formula $z_{2}=k\ue^{\ui\beta}$
+\end_inset
+
+, 
+\begin_inset Formula $z_{3}=(2-k)\ue^{\ui\gamma}$
+\end_inset
+
+, 以及恒等式
+\begin_inset Formula $z_{1}+z_{2}+z_{3}=0$
+\end_inset
+
+和Euler公式有
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\cos\alpha+k\cos\beta+(2-k)\cos\gamma=0\\
+\sin\alpha+k\sin\beta+(2-k)\sin\gamma=0
+\end{cases}
+\]
+
+\end_inset
+
+因为要求的
+\begin_inset Formula $\sin^{2}(\beta-\gamma)$
+\end_inset
+
+中不存在
+\begin_inset Formula $\alpha$
+\end_inset
+
+项, 所以消去
+\begin_inset Formula $\alpha$
+\end_inset
+
+的方法可以通过使用恒等式
+\begin_inset Formula $\sin^{2}\alpha+\cos^{2}\alpha$
+\end_inset
+
+来完成, 也就是将上式的
+\begin_inset Formula $\sin\alpha$
+\end_inset
+
+, 
+\begin_inset Formula $\cos\alpha$
+\end_inset
+
+的值移到等式右边然后求平方和就得到了
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k^{2}+(2-k)^{2}+2k(2-k)\cos(\beta-\gamma)=0
+\]
+
+\end_inset
+
+这里要求
+\begin_inset Formula $k$
+\end_inset
+
+的范围, 因为
+\begin_inset Formula $k=\abs{z_{2}}\ge0$
+\end_inset
+
+, 
+\begin_inset Formula $2-k=\abs{z_{3}}\ge0$
+\end_inset
+
+, 所以
+\begin_inset Formula $0\le k\le2$
+\end_inset
+
+, 直接代入上式知道
+\begin_inset Formula $k$
+\end_inset
+
+不能取到
+\begin_inset Formula $0$
+\end_inset
+
+和
+\begin_inset Formula $2$
+\end_inset
+
+, 从
+\begin_inset Formula $k$
+\end_inset
+
+的取值范围中排除
+\begin_inset Formula $0$
+\end_inset
+
+和
+\begin_inset Formula $2$
+\end_inset
+
+的情况可以求得
+\begin_inset Formula $\cos(\beta-\gamma)$
+\end_inset
+
+并使得分母的存在合理性.
+ 所以
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos(\beta-\gamma)=-\frac{2k^{2}-4k+3}{2k(2-k)}=1-\frac{3}{2k(2-k)}
+\]
+
+\end_inset
+
+从而
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin^{2}(\beta-\gamma)=1-\cos^{2}(\beta-\gamma)=1-\paren{1-\frac{3}{2k(2-k)}}^{2}
+\]
+
+\end_inset
+
+最后可以使用均值不等式或二次函数的最值判断如下的上界
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1-\frac{3}{2k(2-k)}\le-\frac{1}{2}
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula $\sin^{2}(\beta-\gamma)\le1-\frac{1}{4}=\frac{3}{4}$
+\end_inset
+
+, 这时
+\begin_inset Formula $k=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+二试
+\end_layout
+
+\begin_layout Paragraph
+1.
+ 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $n$
+\end_inset
+
+是正整数, 
+\begin_inset Formula $k$
+\end_inset
+
+是不小于
+\begin_inset Formula $2$
+\end_inset
+
+的整数, 试证
+\begin_inset Formula $n^{k}$
+\end_inset
+
+可以表示成
+\begin_inset Formula $n$
+\end_inset
+
+个相继的奇数的和.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n$
+\end_inset
+
+个相继的奇数的最小者可以设为
+\begin_inset Formula $2m-1$
+\end_inset
+
+, 那么最大者应该是
+\begin_inset Formula $2m+2n-3$
+\end_inset
+
+, 所以它们的和为
+\begin_inset Formula $\frac{(4m+2n-4)n}{2}=n(2m+n-2)$
+\end_inset
+
+.
+ 根据题意有
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n^{k}=n(2m+n-2)
+\]
+
+\end_inset
+
+这是一个丢番图方程, 其中
+\begin_inset Formula $k\ge2$
+\end_inset
+
+.
+ 因
+\begin_inset Formula $2m+n-2=n^{k-1}$
+\end_inset
+
+, 所以
+\begin_inset Formula $m=\frac{n^{k-1}-n}{2}+1$
+\end_inset
+
+.
+ 剩下要说明的是这样解出来的
+\begin_inset Formula $m$
+\end_inset
+
+总是整数, 而因为
+\begin_inset Formula $n$
+\end_inset
+
+和
+\begin_inset Formula $n^{k-1}$
+\end_inset
+
+的奇偶性相同, 所以
+\begin_inset Formula $2\mid n^{k-1}-n$
+\end_inset
+
+, 所以
+\begin_inset Formula $\frac{n^{k-1}-n}{2}\in\Integers$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+2.
+ 
+\end_layout
+
+\begin_layout Standard
+试证在
+\begin_inset Formula $2^{n}\times2^{n}$
+\end_inset
+
+(
+\begin_inset Formula $n$
+\end_inset
+
+是正整数)个相等小方格组成的棋盘上任意挖去一个小方格后, 总可以由三个小方格构成的L形块(如图)恰好铺满(既不重叠, 也不越界).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/math/Pictures/Screenshot from 2018-08-02 18-24-31.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+这是一个组合数学问题, 问题可以用归纳法来证, 当
+\begin_inset Formula $n=1$
+\end_inset
+
+时, 命题显然成立.
+ 当命题对于
+\begin_inset Formula $n=k-1$
+\end_inset
+
+时成立时, 考虑证明
+\begin_inset Formula $n=k$
+\end_inset
+
+时的情况, 因为这时方格可以分为
+\begin_inset Formula $4$
+\end_inset
+
+个
+\begin_inset Formula $n=k-1$
+\end_inset
+
+时的网格, 而挖去的那个小方格必然在
+\begin_inset Formula $4$
+\end_inset
+
+个划分后的某个网格之内, 于是根据归纳假设, 那个网格能够被L形块铺满.
+ 对于剩下的三个完整的网格, 一个很有技巧的点是挖去如下图所示的三个小方格, 这三个小方格分别位于三个完整网格中, 且它们本身组合出一个完整的L形块.
+\end_layout
+
+\begin_layout Paragraph
+3.
+ 
+\end_layout
+
+\begin_layout Standard
+计算:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\paren{\prod_{k=2}^{n}\frac{k^{3}-1}{k^{3}+1}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+考虑错位相消, 因为
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k^{3}-1=(k-1)(k^{2}+k+1),\quad k^{3}+1=(k+1)(k^{2}-k+1)
+\]
+
+\end_inset
+
+其中的一次项部分
+\begin_inset Formula $\{k-1\}$
+\end_inset
+
+和
+\begin_inset Formula $\{k+1\}$
+\end_inset
+
+关于变量
+\begin_inset Formula $k$
+\end_inset
+
+都是等差数列, 如果将
+\begin_inset Formula $k-1$
+\end_inset
+
+代入到
+\begin_inset Formula $k^{2}+k+1$
+\end_inset
+
+中, 则有
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(k-1)^{2}+(k-1)+1=k^{2}-k+1
+\]
+
+\end_inset
+
+所以问题可以通过错位相消解决:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\paren{\prod_{k=2}^{n}\frac{k^{3}-1}{k^{3}+1}}=\lim_{n\to\infty}\frac{(n-1)!}{(n+1)!/2}\cdot\frac{n^{2}+n+1}{3}=\frac{2}{3}\lim_{n\to\infty}\frac{n^{2}+n+1}{n(n+1)}=\frac{2}{3}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+4.
+\end_layout
+
+\begin_layout Standard
+在方程组
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+ax_{1}^{4}+bx_{1}^{3}=x_{2}^{2}\\
+ax_{2}^{4}+bx_{2}^{3}=x_{3}^{2}\\
+ax_{3}^{4}+bx_{3}^{3}=x_{4}^{2}\\
+ax_{4}^{4}+bx_{4}^{3}=x_{1}^{2}
+\end{cases}
+\]
+
+\end_inset
+
+中, 
+\begin_inset Formula $a,b$
+\end_inset
+
+是实数, 且
+\begin_inset Formula $a\ne0$
+\end_inset
+
+.
+ 求证:
+\end_layout
+
+\begin_layout Enumerate
+当
+\begin_inset Formula $b^{2}+4a\ge0$
+\end_inset
+
+时, 方程组至少有一组非零实数解;
+\end_layout
+
+\begin_layout Enumerate
+当
+\begin_inset Formula $b^{2}+4a<0$
+\end_inset
+
+时, 方程组不存在非零实数解.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+考虑到这是一个四次方程组, 联想考察方程
+\begin_inset Formula $ax^{4}+bx^{3}=x^{2}$
+\end_inset
+
+.
+ 这个方程有解
+\begin_inset Formula $x=0$
+\end_inset
+
+, 如果
+\begin_inset Formula $x_{1},\cdots,x_{4}$
+\end_inset
+
+有一个为
+\begin_inset Formula $0$
+\end_inset
+
+, 则它们都为
+\begin_inset Formula $0$
+\end_inset
+
+, 这时
+\begin_inset Formula $a,b$
+\end_inset
+
+的关系不定, 题目会出问题.
+ 所以现在只能考虑它们都不为
+\begin_inset Formula $0$
+\end_inset
+
+的情况.
+ 特别的考虑方程有根的条件恰好是
+\begin_inset Formula $b^{2}+4a\ge0$
+\end_inset
+
+, 这时方程
+\begin_inset Formula $ax^{2}+bx-1=0$
+\end_inset
+
+有至少一个解, 而且这个解肯定非零, 可以设为
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, 于是
+\begin_inset Formula $ax_{0}^{4}+bx_{0}^{3}=x_{0}^{2}$
+\end_inset
+
+, 如果猜想
+\begin_inset Formula $x_{1}=x_{2}=x_{3}=x_{4}=x_{0}$
+\end_inset
+
+, 则它们刚好是方程组的一个解, 于是第一问也就证完了.
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset Formula $b^{2}+4a<0$
+\end_inset
+
+, 这时方程
+\begin_inset Formula $ax^{2}+bx-1=0$
+\end_inset
+
+没有解, 如果原方程组仍有解, 就要考虑
+\begin_inset Formula $ax_{k}^{4}+bx_{k}^{3}-x_{k}^{2}=x_{k+1}^{2}-x_{k}^{2}$
+\end_inset
+
+, 其中
+\begin_inset Formula $k=1,2,3,4$
+\end_inset
+
+, 
+\begin_inset Formula $x_{5}=x_{1}$
+\end_inset
+
+.
+ 由于方程
+\begin_inset Formula $ax^{2}+bx-1=0$
+\end_inset
+
+无解, 所以
+\begin_inset Formula $ax^{4}+bx^{3}-x^{2}=0$
+\end_inset
+
+无解, 
+\begin_inset Formula $ax^{4}+bx^{3}-x^{2}$
+\end_inset
+
+只能恒为正或恒为负, 从而
+\begin_inset Formula $x_{k+1}^{2}-x_{k}^{2}$
+\end_inset
+
+对于任何
+\begin_inset Formula $k$
+\end_inset
+
+都同号, 但是
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{1\le k\le4}x_{k+1}^{2}-x_{k}^{2}=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula $4$
+\end_inset
+
+个同号的式子的和不可能为零, 导致矛盾.
+\end_layout
+
+\begin_layout Paragraph
+5.
+\end_layout
+
+\begin_layout Standard
+已知边长为
+\begin_inset Formula $1$
+\end_inset
+
+的正方体
+\begin_inset Formula $ABCD-A'B'C'D'$
+\end_inset
+
+, 
+\begin_inset Formula $AC'$
+\end_inset
+
+是对角线, 
+\begin_inset Formula $M,N$
+\end_inset
+
+分别是
+\begin_inset Formula $BB',B'C'$
+\end_inset
+
+的中点, 
+\begin_inset Formula $P$
+\end_inset
+
+是线段
+\begin_inset Formula $MN$
+\end_inset
+
+的中点.
+ 求
+\begin_inset Formula $DP$
+\end_inset
+
+与
+\begin_inset Formula $AC'$
+\end_inset
+
+的距离.
+\end_layout
+
+\begin_layout Paragraph
+6.
+\end_layout
+
+\begin_layout Standard
+设一圆和一条等轴双曲线交于四点
+\begin_inset Formula $A_{1},A_{2},A_{3},A_{4}$
+\end_inset
+
+, 其中
+\begin_inset Formula $A_{1}$
+\end_inset
+
+和
+\begin_inset Formula $A_{2}$
+\end_inset
+
+是圆的直径的一对端点, 试证:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A_{3}$
+\end_inset
+
+和
+\begin_inset Formula $A_{4}$
+\end_inset
+
+是双曲线直径的端点;
+\end_layout
+
+\begin_layout Enumerate
+双曲线在
+\begin_inset Formula $A_{3}$
+\end_inset
+
+和
+\begin_inset Formula $A_{4}$
+\end_inset
+
+处的切线都垂直于
+\begin_inset Formula $A_{1}A_{2}$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

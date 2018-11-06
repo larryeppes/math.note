@@ -1,5 +1,35 @@
 \chapter{未知的问题与解答}
 
+\bu{}{}
+证明: 对于任意的自然数$n$, 
+\bee
+\sum_{i=1}^n\frac{\sqrt{i(i+1)(i+2)(i+3)}}{i^2(i+1)^2}<2.
+\eee
+\eu
+\ba
+第一项保留, 第二项放缩为$k\paren{\frac{1}{2n-1}-\frac{1}{2n+1}}$. 
+其中$k$是某个带根号的数.
+\ea
+\ba
+\bee
+\frac{\sqrt{(n+2)(n+3)}}{n(n+1)\sqrt{n^{2}+n}}
+  <\frac{n+7/2}{\paren{n-\frac{1}{4}}\paren{n+\frac{3}{4}}\paren{n+\frac{7}{4}}}
+\eee
+则有
+\bee
+\sum_{k=1}^{n}\frac{\sqrt{(k+2)(k+3)}}{k(k+1)\sqrt{k^{2}+k}}<\frac{32n(n+2)}{(4n+3)(4n+7)}
+\eee
+\ea
+
+\bu{}{}
+Use the method of Frobenius to obtain two linearly independent
+series solutions about the regular singular point $x=0$. Write
+out the solution in open form for at least $7$ terms.
+\bee
+2xy''-y'+2y=0.
+\eee
+\eu
+
 \bu{2014-05-25}{}
 \bee
 \sum_{k=1}^{n}\paren{\frac{\sum_{i=1}^{k}x_i}{k}}^2\le(1+\sqrt{2})^2\sum_{i=1}^nx_i^2.

@@ -1,0 +1,383 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Integers}{\mathbb{Z}}
+\newcommand{\Naturals}{\mathbb{N}}
+\newcommand{\Rationals}{\mathbb{Q}}
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\pNaturals}{\mathbb{N}_{+}}
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 1
+\html_be_strict true
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Ramanujan's master theorem (RMT)
+\end_layout
+
+\begin_layout Date
+Larry Eppes
+\end_layout
+
+\begin_layout Date
+2018-09-29
+\end_layout
+
+\begin_layout Section
+Ramanujan's master theorem的几种形式
+\end_layout
+
+\begin_layout Standard
+定理简称RMT, 用于得到解析函数的Mellin变换下的解析表达式.
+ 可以用于计算定积分和无穷级数.
+\end_layout
+
+\begin_layout Theorem
+如果一个复值函数
+\begin_inset Formula $f(x)$
+\end_inset
+
+有如下展开形式
+\begin_inset Formula 
+\[
+f(x)=\sum_{k=0}^{\infty}\frac{\phi(k)}{k!}(-x)^{k}
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $f(x)$
+\end_inset
+
+的Mellin变换为
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}x^{s-1}f(x)\ud x=\Gamma(s)\phi(-s),
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $\Gamma(s)$
+\end_inset
+
+为
+\begin_inset Formula $\Gamma$
+\end_inset
+
+-函数.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+如果取
+\begin_inset Formula $\lambda(n)=\frac{\phi(n)}{\Gamma(1+n)}$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}x^{s-1}(\lambda(0)-x\lambda(1)+x^{2}\lambda(2)-\cdots)\ud x=\frac{\pi}{\sin(\pi s)}\lambda(-s).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+应用
+\end_layout
+
+\begin_layout Subsection
+Bernoulli多项式与Zeta函数
+\end_layout
+
+\begin_layout Standard
+Bernoulli多项式
+\begin_inset Formula $B_{k}(x)$
+\end_inset
+
+的生成函数为
+\begin_inset Formula 
+\[
+\frac{z\ue^{xz}}{\ue^{z}-1}=\sum_{k=0}^{\infty}B_{k}(x)\frac{z^{k}}{k!}.
+\]
+
+\end_inset
+
+它可以通过Hurwitz Zeta函数
+\begin_inset Formula 
+\[
+\zeta(s,a)=\sum_{n=0}^{\infty}\frac{1}{(n+a)^{s}}=-\frac{B_{1-s}(a)}{1-s},\qquad s\le0.
+\]
+
+\end_inset
+
+利用RMT可以得到
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}x^{s-1}\left(\frac{\ue^{-ax}}{1-\ue^{-x}}-\frac{1}{x}\right)\ud x=\Gamma(s)\zeta(s,a),\qquad0<\Re(s)<1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Gamma函数中的应用
+\end_layout
+
+\begin_layout Standard
+根据Weierstrass对Gamma函数的连乘积展开
+\begin_inset Formula 
+\[
+\Gamma(x)=\frac{\ue^{-\gamma x}}{x}\prod_{n=1}^{\infty}\left(1+\frac{x}{n}\right)^{-1}\ue^{x/n},
+\]
+
+\end_inset
+
+取
+\begin_inset Formula $\Gamma(1+x)$
+\end_inset
+
+的对数并使用RMT有
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}x^{s-1}\frac{\gamma x+\log\Gamma(1+x)}{x^{2}}\ud x=\frac{\pi}{\sin(\pi s)}\frac{\zeta(2-s)}{2-s},\qquad0<\Re(s)<1.
+\]
+
+\end_inset
+
+特别的当
+\begin_inset Formula $s=\frac{1}{2}$
+\end_inset
+
+和
+\begin_inset Formula $s=\frac{3}{4}$
+\end_inset
+
+时, 分别得到
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}\frac{\gamma x+\log\Gamma(1+x)}{x^{5/2}}\ud x=\frac{2\pi}{3}\zeta\left(\frac{3}{2}\right)
+\]
+
+\end_inset
+
+和
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}\frac{\gamma x+\log\Gamma(1+x)}{x^{9/4}}\ud x=\frac{4\sqrt{2}\pi}{5}\zeta\left(\frac{5}{4}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+其它例子
+\end_layout
+
+\begin_layout Example
+证明
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}\ue^{-x^{3}}\sin x^{3}\ud x=\Gamma\left(\frac{4}{3}\right)2^{-1/6}\sin\frac{\pi}{12}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+RMT的滥用
+\end_layout
+
+\begin_layout Standard
+因为
+\begin_inset Formula $e^{-x}$
+\end_inset
+
+的Taylor展开有
+\begin_inset Formula 
+\[
+\ue^{-x}=\sum_{k=0}^{\infty}\frac{(-x)^{k}}{k!}=\sum_{k=0}^{\infty}\frac{\cos(2\pi k)}{k!}(-x)^{k}
+\]
+
+\end_inset
+
+对这两个级数分别使用RMT得到
+\begin_inset Formula 
+\[
+\Gamma(n)=\int_{0}^{\infty}\ue^{-x}x^{n-1}\ud x=\Gamma(n)\cos(2\pi n).
+\]
+
+\end_inset
+
+问题出在何处? 通常RMT对于正数
+\begin_inset Formula $n$
+\end_inset
+
+成立, 但当
+\begin_inset Formula $n$
+\end_inset
+
+在实数范围讨论时, 
+\begin_inset Formula $\phi(n)$
+\end_inset
+
+不一定有定义.
+\end_layout
+
+\end_body
+\end_document

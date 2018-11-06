@@ -6,7 +6,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all the minted language can be found in http://pygments.org/languages/
 \newtcbinputlisting{\inputcode}[2][]{%
-  listing engine=minted,minted language=#1,minted style=friendly,%manni, igor, lovelace, xcode, vim, autumn, vs, rrt, 
+  listing engine=minted,minted language=#1,minted style=igor,%manni, igor, lovelace, xcode, vim, autumn, vs, rrt, 
   %native,perldoc,borland, tango, monokai, paraiso-dark, murphy, bw, pastie, algol_nu, paraiso-light, trac, default, algol, 
   %fruity, emacs, colorful, friendly
   minted options={fontsize=\small, linenos, autogobble, breaklines, numbersep=3mm, escapeinside=||},
@@ -17,14 +17,21 @@
   overlay={\begin{tcbclipinterior}\fill[darkgray!20!white] (frame.south west)
     rectangle ([xshift=8mm]frame.north west);\end{tcbclipinterior}}}
 
-\newtcblisting{C}{listing engine=minted,minted style=fruity,
-  minted language=C,minted options={fontsize=\small, linenos, autogobble, breaklines, numbersep=3mm, escapeinside=||},
+% \newtcblisting{C}{listing engine=minted,minted style=fruity,
+%   minted language=C,minted options={fontsize=\small, linenos, autogobble, breaklines, numbersep=3mm, escapeinside=||},
+%   colback=black!70,colframe=gray!75!black,listing only,breakable,
+%   left=9mm,enhanced,
+%   overlay={\begin{tcbclipinterior}\fill[darkgray!20!white] (frame.south west)
+%     rectangle ([xshift=8mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcblisting{java}{listing engine=minted,minted style=fruity,
+  minted language=java,minted options={fontsize=\small, linenos, autogobble, breaklines, numbersep=3mm, escapeinside=||},
   colback=black!70,colframe=gray!75!black,listing only,breakable,
   left=9mm,enhanced,
   overlay={\begin{tcbclipinterior}\fill[darkgray!20!white] (frame.south west)
     rectangle ([xshift=8mm]frame.north west);\end{tcbclipinterior}}}
 
-\newtcblisting{java}{listing engine=minted,minted style=fruity,
+\newtcblisting{javascript}{listing engine=minted,minted style=fruity,
   minted language=java,minted options={fontsize=\small, linenos, autogobble, breaklines, numbersep=3mm, escapeinside=||},
   colback=black!70,colframe=gray!75!black,listing only,breakable,
   left=9mm,enhanced,

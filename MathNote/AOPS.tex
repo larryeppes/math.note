@@ -1,14 +1,138 @@
 \chapter{AOPS}
+\section{IMO}
+\subsection{2018}
+\bq{}{}
+Let $\Gamma$ be the circumcircle of acute triangle $ABC$. Points $D$ and $E$ are on segments $AB$ and $AC$ respectively such that $AD = AE$. 
+The perpendicular bisectors of $BD$ and $CE$ intersect minor arcs $AB$ and $AC$ of $\Gamma$ at points $F$ and $G$ respectively. 
+Prove that lines $DE$ and $FG$ are either parallel or they are the same line.
+
+\begin{center}
+\begin{tikzpicture}
+\tkzDefPoint(2,2){A}
+\tkzDefPoint(5,-2){B}
+\tkzDefPoint(1,-2){C}
+\tkzDefPointWith[linear,K=0.6](A,C) \tkzGetPoint{E}
+\tkzDefCircle[radius](A,E) \tkzGetLength{rADpt}
+\tkzDrawCircle[style=dashed](A,E)
+\tkzInterLC(A,B)(A,E) \tkzGetSecondPoint{D}
+\tkzDefCircle[circum](A,B,C)
+\tkzGetPoint{O} \tkzGetLength{rOA}
+\tkzDefLine[mediator](D,B) \tkzGetPoints{K}{L}
+\tkzDrawLines[style=dashed](K,L)
+\tkzInterLC(K,L)(O,B) \tkzGetPoints{F}{F'}
+\tkzDefLine[mediator](C,E) \tkzGetPoints{M}{N}
+\tkzDrawLines[style=dashed](M,N)
+\tkzInterLC(M,N)(O,A) \tkzGetSecondPoint{G}
+\tkzDrawLines[color=red](F,G E,D)
+
+\tkzDrawCircle[R,color=blue,style=thick](O,\rOA pt)
+\tkzDrawPolygon(A,B,C)
+\tkzDrawPoints(A,B,C,O,D,E,F,G)
+\tkzLabelPoints[below](B,C,O,D,E,F,G)
+\tkzLabelPoints[above](A)
+\end{tikzpicture}
+\end{center}
+\eq
+
+\bq{}{}
+Find all integers $n \geq 3$ for which there exist real numbers $a_1, a_2, \dots a_{n + 2}$ satisfying $a_{n + 1} = a_1$, $a_{n + 2} = a_2$ and
+$$a_ia_{i + 1} + 1 = a_{i + 2},$$for $i = 1, 2, \dots, n$.
+\eq
+
+\bq{}{}
+An anti-Pascal triangle is an equilateral triangular array of numbers such that, except for the numbers in the 
+bottom row, each number is the absolute value of the difference of the two numbers immediately below it. 
+For example, the following is an anti-Pascal triangle with four rows which contains every integer from $1$ to $10$.
+\[
+\begin{array}{ c@{\hspace{4pt}}c@{\hspace{4pt}} c@{\hspace{4pt}}c@{\hspace{2pt}}c@{\hspace{2pt}}c@{\hspace{4pt}}c } 
+  \vspace{4pt} & & & 4 & & & \\
+  \vspace{4pt} & & 2 & & 6 & & \\
+  \vspace{4pt} & 5 & & 7 & & 1 & \\
+  \vspace{4pt} 8 & & 3 & & 10 & & 9 \\
+  \vspace{4pt} 
+\end{array}
+\]
+Does there exist an anti-Pascal triangle with $2018$ rows which contains every integer from $1$ to $1 + 2 + 3 + \dots + 2018$?
+\eq
+
+\bq{}{}
+A site is any point $(x, y)$ in the plane such that $x$ and $y$ are both positive integers less than or equal to 20.
+
+Initially, each of the 400 sites is unoccupied. Amy and Ben take turns placing stones with Amy going first. On her turn, Amy places 
+a new red stone on an unoccupied site such that the distance between any two sites occupied by red stones is not equal to $\sqrt{5}$. 
+On his turn, Ben places a new blue stone on any unoccupied site. (A site occupied by a blue stone is allowed to be at any distance 
+from any other occupied site.) They stop as soon as a player cannot place a stone.
+
+Find the greatest $K$ such that Amy can ensure that she places at least $K$ red stones, no matter how Ben places his blue stones.
+\eq
+
+\bq{}{}
+Let $a_1$, $a_2$, $\ldots$ be an infinite sequence of positive integers. Suppose that there is an integer $N > 1$ such that, for each $n \geq N$, 
+the number
+$$\frac{a_1}{a_2} + \frac{a_2}{a_3} + \cdots + \frac{a_{n-1}}{a_n} + \frac{a_n}{a_1}$$
+is an integer. Prove that there is a positive integer $M$ such that $a_m = a_{m+1}$ for all $m \geq M$.
+\eq
+
+\bq{}{}
+A convex quadrilateral $ABCD$ satisfies $AB\cdot CD = BC\cdot DA$. Point $X$ lies inside $ABCD$ so that 
+\[
+  \angle{XAB} = \angle{XCD}\quad\,\,\text{and}\quad\,\,\angle{XBC} = \angle{XDA}.
+\]
+Prove that $\angle{BXA} + \angle{DXC} = 180^\circ$.
+\eq
+
 \section{2003}
 \subsection{02}
 
 \bq{USAMO 1996, Problem 5}{}
 Let $ABC$ be a triangle, and $M$ an interior point such that $\angle MAB=10^\circ$, $\angle MBA=20^\circ$, $\angle MAC=40^\circ$ and $\angle MCA=30^\circ$. Prove that the triangle is isosceles.
 \eq
+\ba
+设$\angle MCB=x$, 用Ceva角元公式.
+
+根据AOPS中的\protect\href{https://artofproblemsolving.com/community/q1h2p2}{问题},
+进行推广研究有下面的结论, 现在研究, 当角度$\alpha,\beta,\gamma,\xi$均给定时, 三角形$\triangle ABC$是等腰三角形的条件.
+\begin{center}
+\begin{tikzpicture}
+\tkzDefPoint(2,3){A}
+\tkzDefShiftPoint[A](0:4){B}
+\tkzDefShiftPoint[A](55:4){C}
+\tkzDefShiftPoint[A](35:2.5){M}
+\tkzDrawSegments(A,B B,C C,A A,M B,M C,M)
+\tkzDrawPoints(A,B,C)
+\tkzLabelPoints[left](A)
+\tkzLabelPoints[right](B,C,M)
+\tkzLabelAngle[pos=0.5](B,A,M){$\alpha$}
+\tkzLabelAngle[pos=1](M,A,C){$\beta$}
+\tkzLabelAngle[pos=0.75](A,C,M){$\gamma$}
+\tkzLabelAngle[pos=0.75](M,B,A){$\xi$}
+\end{tikzpicture}
+\end{center}
+
+当$AC=AB$时, 由正弦定理有$\sin\gamma\sin(\alpha+\xi)=\sin(\beta+\gamma)\sin\xi$.
+
+当$AC=BC$时, 同样有$\sin(\beta+\gamma)\sin(\alpha+\beta-\xi)=\sin\beta\sin(\alpha+\beta+\gamma+\xi)$;
+当$AB=BC$时, 有$\sin(\alpha+\xi)\sin(\alpha+\beta-\gamma)=\sin(\alpha+\beta+\gamma+\xi)\sin\alpha$.
+
+$\triangle ABC$是等腰三角形的充要条件是$(AB-AC)(AB-BC)(AC-BC)=0$成立. 所以有
+\[
+\begin{array}{c}
+\left(\sin\gamma\sin(\alpha+\xi)-\sin(\beta+\gamma)\sin\xi\right)\left(\sin(\beta+\gamma)\sin(\alpha+\beta-\xi)-\sin\beta\sin(\alpha+\beta+\gamma+\xi)\right)\\
+\cdot\left(\sin(\alpha+\xi)\sin(\alpha+\beta-\gamma)-\sin(\alpha+\beta+\gamma+\xi)\sin\alpha\right)=0.
+\end{array}
+\]
+\ea
 
 \bq{Russian olympiad}{}
-Let $A$ and $B$ be two sets such that $A \cup B = \{1,2,..,2n\}$ and $|A|=|B|=n$. Let $A = \{a_1,a_2,\ldots,a_n\}$ and $B=\{b_1,b_2,\ldots,b_n\}$ with $a_1<a_2<\cdots <a_n$ and $b_1>b_2>\cdots>b_n$. Prove that $|a_1-b_1| + |a_2-b_2| + \cdots + |a_n-b_n|=n^2$.
+Let $A$ and $B$ be two sets such that $A \cup B = \{1,2,..,2n\}$ and $|A|=|B|=n$. Let $A = \{a_1,a_2,\ldots,a_n\}$ and $B=\{b_1,b_2,\ldots,b_n\}$ 
+with $a_1<a_2<\cdots <a_n$ and $b_1>b_2>\cdots>b_n$. Prove that $|a_1-b_1| + |a_2-b_2| + \cdots + |a_n-b_n|=n^2$.
 \eq
+\ba
+\protect\href{https://artofproblemsolving.com/community/q1h14p22}{问题和答案在此}
+
+问题可以推广, 当$A,B$是不交的元素个数相同的数积, $S=A\cup B$, 且仍记$|S|=2n$, $a_i,b_i$的增减性条件保持, 
+则上面的要证的等式等于$S$中较大的$n$项和与较小的$n$项和之差.
+\ea
 
 \newpage
 \subsection{03}

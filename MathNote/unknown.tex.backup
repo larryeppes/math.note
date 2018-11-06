@@ -1,5 +1,32 @@
 \chapter{未知的问题与解答}
 
+\bu{2014-05-25}{}
+\bee
+\sum_{k=1}^{n}\paren{\frac{\sum_{i=1}^{k}x_i}{k}}^2\le(1+\sqrt{2})^2\sum_{i=1}^nx_i^2.
+\eee
+\eu
+\ba
+\bee
+A=\begin{pmatrix}
+   1 & & & & \\
+   \frac12 & \frac12 & & & \\
+   \frac13 & \frac13 & \frac13 & & \\
+   \vdots & \vdots & \vdots & \ddots & \\
+   \frac1n & \frac1n & \frac1n & \cdots & \frac1n
+  \end{pmatrix}
+\eee
+证明$\norm{A}_2\le\sqrt{2}+1$.
+\ea
+
+\bu{2014-05-24}{}
+设$p_n$是第$n$个素数; $a_n=\sum_{i=1}^{n}p_i$. 
+则$[a_n, a_{n+1}]$中至少有一个平方数.
+\eu
+
+\bu{2015-05-23}{}
+对于任意的拓扑空间$X$, $\Reals$与$X\times X$不同胚.
+\eu
+
 \bu{2015-05-23}{}
 平方和因子定理.
 

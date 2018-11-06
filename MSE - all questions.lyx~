@@ -4,11 +4,12 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass ctex-article
+\textclass article
 \begin_preamble
 % 如果没有这一句命令，XeTeX会出错，原因参见
 % http://bbs.ctex.org/viewthread.php?tid=60547
 \DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{makeidx}
 
 \def\degree{^\circ}
 \def\bt{\begin{theorem}}
@@ -32,12 +33,14 @@
 \def\bee{\begin{equation*}}
 \def\eee{\end{equation*}}
 \def\sumcyc{\sum\limits_{cyc}}
+\def\sumsym{\sum\limits_{sym}}
 \def\prodcyc{\prod\limits_{cyc}}
 \def\i{\infty}
 \def\a{\alpha}
 \def\b{\beta}
 \def\g{\gamma}
 \def\d{\delta}
+\def\ddx{\frac{\ud}{\ud x}}
 \def\l{\lambda}
 \def\m{\mu}
 \def\t{\theta}
@@ -56,17 +59,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\Integers}{\mathbb{Z}}
-\newcommand{\Naturals}{\mathbb{N}}
+\newcommand{\NN}{\mathbb{N}}
 \newcommand{\Rationals}{\mathbb{Q}}
-\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\RR}{\mathbb{R}}
 \newcommand{\pNaturals}{\mathbb{N}_{+}}
+\newcommand{\FF}{\mathbb{F}}
 \end_preamble
-\options UTF8
+\options a4paper,UTF8
 \use_default_options true
 \maintain_unincluded_children false
 \language chinese-simplified
-\language_package none
-\inputencoding utf8-plain
+\language_package default
+\inputencoding utf8-cjk
 \fontencoding global
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -78,10 +82,11 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\font_cjk gbsn
 \use_microtype false
 \use_dash_ligatures false
 \graphics default
-\default_output_format pdf4
+\default_output_format pdf2
 \output_sync 0
 \bibtex_command default
 \index_command default
@@ -90,8 +95,8 @@
 \use_hyperref false
 \papersize default
 \use_geometry true
-\use_package amsmath 1
-\use_package amssymb 1
+\use_package amsmath 2
+\use_package amssymb 2
 \use_package cancel 1
 \use_package esint 1
 \use_package mathdots 1
@@ -114,7 +119,7 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 3cm
+\leftmargin 2cm
 \topmargin 3cm
 \bottommargin 3cm
 \secnumdepth 3
@@ -137,225 +142,55 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The below text refers to if we add 
-\begin_inset Quotes eld
-\end_inset
-
-adobefonts
-\begin_inset Quotes erd
-\end_inset
-
- to the custom class options.
- The text is outdated and will be updated to reflect this change soon.
- The change was made because we no longer need proprietary fonts to compile
- this document.
- For example, it can be compiled with out-of-the-box TeX Live 2015.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-这是一份文章模板，如果要使用书籍或报告，请设置文档类为
-\family sans
-book (C\SpecialChar TeX
-)
-\family default
-或者
-\family sans
-report (C\SpecialChar TeX
-)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Title
-数学笔记
+MSE问题归类
 \end_layout
 
 \begin_layout Section
-切空间与极值问题
+orthogonal transform
 \end_layout
 
 \begin_layout Paragraph
-Q1
+Q354511
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+index{Q354511}
+\backslash
+index{orthogonal transform}
+\end_layout
+
+\end_inset
+
+: 一个简单问题.
+ 
 \end_layout
 
 \begin_layout Standard
-设
-\begin_inset Formula $u(x,y)$
-\end_inset
-
-在
-\begin_inset Formula $x^{2}+y^{2}\le1$
-\end_inset
-
-上连续, 在
-\begin_inset Formula $x^{2}+y^{2}<1$
-\end_inset
-
-上满足
-\end_layout
-
-\begin_layout Standard
+Let
 \begin_inset Formula 
 \[
-\frac{\partial^{2}u}{\partial x^{2}}+\frac{\partial^{2}u}{\partial y^{2}}=u
-\]
-
-\end_inset
-
-且在
-\begin_inset Formula $x^{2}+y^{2}=1$
-\end_inset
-
-上
-\begin_inset Formula $u(x,y)>0$
-\end_inset
-
-.
- 证明: 当
-\begin_inset Formula $x^{2}+y^{2}\le1$
-\end_inset
-
-时, 
-\begin_inset Formula $u(x,y)>0$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-hint: 用反证法, 证明
-\begin_inset Formula $u(x,y)\ge0$
-\end_inset
-
-, 再考虑
-\begin_inset Formula $u(x,y)-\varepsilon(\ue^{x}+\ue^{y})$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Paragraph
-Q2
-\end_layout
-
-\begin_layout Standard
-设
-\begin_inset Formula $a>0$
-\end_inset
-
-, 
-\begin_inset Formula $c>0$
-\end_inset
-
-, 
-\begin_inset Formula $ac-b^{2}>0$
-\end_inset
-
-, 则方程
-\begin_inset Formula $ax^{2}+2bxy+cy^{2}=1$
-\end_inset
-
-表示椭圆, 试证该椭圆的面积为
-\begin_inset Formula $\frac{\pi}{\sqrt{ac-b^{2}}}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Paragraph
-Q3
-\end_layout
-
-\begin_layout Standard
-求圆的内接(外切)
-\begin_inset Formula $n$
-\end_inset
-
-边形中面积最大(小)者.
-\end_layout
-
-\begin_layout Paragraph
-Q4
-\end_layout
-
-\begin_layout Standard
-函数
-\begin_inset Formula $z=z(x,y)$
-\end_inset
-
-满足方程
-\begin_inset Formula $\frac{\p^{2}z}{\p x^{2}}\cdot\frac{\p^{2}z}{\p y^{2}}-\paren{\frac{\p^{2}z}{\p x\p y}}^{2}=0$
-\end_inset
-
-的一个曲面是
-\begin_inset Formula $F\paren{\frac{x-a}{z-c},\frac{y-b}{z-c}}=0$
-\end_inset
-
-.
- 其中
-\begin_inset Formula $a,b,c$
-\end_inset
-
-为常数.
-\end_layout
-
-\begin_layout Paragraph
-Q5
-\end_layout
-
-\begin_layout Standard
-给定
-\begin_inset Formula $n$
-\end_inset
-
-阶行列式
-\begin_inset Formula $A=\left|a_{ij}\right|$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Enumerate
-求证: 在行向量长有限条件下, 即
-\begin_inset Formula $\sum_{j=1}^{n}a_{ij}^{2}=s_{i}$
-\end_inset
-
-, (
-\begin_inset Formula $i=1,\cdots,n$
-\end_inset
-
-)条件下, 使
-\begin_inset Formula $A$
-\end_inset
-
-达到最大值的行向量两两正交;
-\end_layout
-
-\begin_layout Enumerate
-求证:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-A^{2}\le\prod_{i=1}^{n}\paren{\sum_{j=1}^{n}a_{ij}^{2}}.
+B=\left\{ \left[\begin{array}{c}
+3\\
+-3\\
+0
+\end{array}\right],\left[\begin{array}{c}
+2\\
+-2\\
+-1
+\end{array}\right],\left[\begin{array}{c}
+1\\
+1\\
+4
+\end{array}\right]\right\} ,\qquad v=\left[\begin{array}{c}
+5\\
+-3\\
+1
+\end{array}\right].
 \]
 
 \end_inset
@@ -363,31 +198,115 @@ A^{2}\le\prod_{i=1}^{n}\paren{\sum_{j=1}^{n}a_{ij}^{2}}.
 
 \end_layout
 
-\begin_layout Paragraph
-Q6
-\end_layout
-
-\begin_layout Standard
-确立最小正数
-\begin_inset Formula $A$
-\end_inset
-
-和最大负数
+\begin_layout Enumerate
+Verify that 
 \begin_inset Formula $B$
 \end_inset
 
-, 使不等式
+ is an orthogonal basis of 
+\begin_inset Formula $\RR^{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Transform 
+\begin_inset Formula $B$
+\end_inset
+
+ into an orthonormal basis.
+\end_layout
+
+\begin_layout Enumerate
+Write 
+\begin_inset Formula $v$
+\end_inset
+
+ as linear combination of 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Hlawka inequality
+\end_layout
+
+\begin_layout Paragraph
+Q2618951
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+index{Q2618951}
+\backslash
+index{Hlawka inequality}
+\end_layout
+
+\end_inset
+
+: 
 \end_layout
 
 \begin_layout Standard
+给定复数
+\begin_inset Formula $u,v$
+\end_inset
+
+总有不等式
 \begin_inset Formula 
 \[
-\frac{B}{xy}\le\ln(x^{2}+y^{2})\le A(x^{2}+y^{2})
+1+\left|u\right|+\left|v\right|\le\left|1+u\right|+\left|1+v\right|+\left|u+v\right|+\left|1+u+v\right|
 \]
 
 \end_inset
 
-在第一象限内成立.
+成立.
+\end_layout
+
+\begin_layout Section
+垃圾回收
+\end_layout
+
+\begin_layout Paragraph
+Q1865471: Is there a non-trivial special orthogonal transform which preserves
+ the diagonal elements of a symmetric matrix with positive entries? 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+index{orthogonal transform}
+\backslash
+index{Q1865471}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+printindex
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

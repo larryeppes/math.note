@@ -1,0 +1,712 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Integers}{\mathbb{Z}}
+\newcommand{\Naturals}{\mathbb{N}}
+\newcommand{\Rationals}{\mathbb{Q}}
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\pNaturals}{\mathbb{N}_{+}}
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+1999年河南省高中数学竞赛(高二)-简版
+\end_layout
+
+\begin_layout Paragraph
+1.
+\end_layout
+
+\begin_layout Standard
+化简
+\begin_inset Formula $\frac{\sqrt{1-2\sin20^{\circ}\cos20^{\circ}}}{\cos20^{\circ}-\sqrt{1-\cos^{2}160^{\circ}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+答: 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+2.
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $P_{1}P_{2}$
+\end_inset
+
+是抛物线
+\begin_inset Formula $x^{2}=y$
+\end_inset
+
+的一条弦, 如果
+\begin_inset Formula $P_{1}P_{2}$
+\end_inset
+
+的垂直平分线的方程是
+\begin_inset Formula $y=-x+3$
+\end_inset
+
+, 求弦
+\begin_inset Formula $P_{1}P_{2}$
+\end_inset
+
+所在的直线方程.
+\end_layout
+
+\begin_layout Standard
+答: 
+\begin_inset Formula $y=x+2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+3.
+\end_layout
+
+\begin_layout Standard
+四面体
+\begin_inset Formula $S-ABC$
+\end_inset
+
+中, 三组对棱分别相等, 依次为
+\begin_inset Formula $\sqrt{34}$
+\end_inset
+
+, 
+\begin_inset Formula $\sqrt{41}$
+\end_inset
+
+, 
+\begin_inset Formula $5$
+\end_inset
+
+, 求此四面体的体积.
+\end_layout
+
+\begin_layout Standard
+答: 
+\begin_inset Formula $20$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+4.
+\end_layout
+
+\begin_layout Standard
+已知复数
+\begin_inset Formula $z$
+\end_inset
+
+满足
+\begin_inset Formula $z^{3}=27$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $z^{5}+3z^{4}+2242$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Standard
+答: 
+\begin_inset Formula $1999$
+\end_inset
+
+或
+\begin_inset Formula $2728$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+5.
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $S_{n}$
+\end_inset
+
+为等差数列
+\begin_inset Formula $\{a_{n}\}$
+\end_inset
+
+的前
+\begin_inset Formula $n$
+\end_inset
+
+项和, 
+\begin_inset Formula $S_{9}=18$
+\end_inset
+
+, 
+\begin_inset Formula $a_{n-4}=30$
+\end_inset
+
+(
+\begin_inset Formula $n>9$
+\end_inset
+
+), 
+\begin_inset Formula $S_{n}=336$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $n$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Standard
+答: 
+\begin_inset Formula $n=21$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+6.
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $0<x<\pi$
+\end_inset
+
+, 求函数
+\begin_inset Formula $y=\frac{2-\cos x}{\sin x}$
+\end_inset
+
+的最小值.
+\end_layout
+
+\begin_layout Standard
+答: 
+\begin_inset Formula $\sqrt{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+7.
+\end_layout
+
+\begin_layout Standard
+已知
+\begin_inset Formula $\sin\frac{\alpha}{2}-2\cos\frac{\alpha}{2}=1$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $\frac{1+\sin\alpha+\cos\alpha}{1+\sin\alpha-\cos\alpha}$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Standard
+答: 
+\begin_inset Formula $\frac{3}{4}$
+\end_inset
+
+或
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+8.
+\end_layout
+
+\begin_layout Standard
+求函数
+\begin_inset Formula $y=\frac{1}{(x-1)(2x-1)}$
+\end_inset
+
+的值域.
+\end_layout
+
+\begin_layout Standard
+答: 
+\begin_inset Formula $\{y\mid y\le8\text{或}y>0\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+9.
+\end_layout
+
+\begin_layout Standard
+已知数列
+\begin_inset Formula $\{a_{n}\}$
+\end_inset
+
+中, 
+\begin_inset Formula $a_{1}=1$
+\end_inset
+
+, 
+\begin_inset Formula $a_{2}=2$
+\end_inset
+
+, 
+\begin_inset Formula $a_{n}a_{n+1}a_{n+2}=a_{n}+a_{n+1}+a_{n+2}$
+\end_inset
+
+, 且
+\begin_inset Formula $a_{n+1}a_{n+2}\ne1$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $S_{1999}=\sum_{n=1}^{1999}a_{n}$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Standard
+答: 
+\begin_inset Formula $3997$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+10.
+\end_layout
+
+\begin_layout Standard
+已知复数
+\begin_inset Formula $z\ne0$
+\end_inset
+
+.
+ 给出命题:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $z+\overline{z}=0$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $z^{2}=-a^{2}$
+\end_inset
+
+(
+\begin_inset Formula $a\in\Reals$
+\end_inset
+
+, 
+\begin_inset Formula $a\ne0$
+\end_inset
+
+);
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $z^{2}=\overline{z}^{2}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $|a+z|=|z-a|$
+\end_inset
+
+(
+\begin_inset Formula $a\in\Reals,a\ne0$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+以上命题中为
+\begin_inset Formula $z$
+\end_inset
+
+是纯虚数的充分必要条件的是?
+\end_layout
+
+\begin_layout Standard
+答: 2.
+ (此处怀疑中等数学2000年第1期中的答案有误, 1中
+\begin_inset Formula $z$
+\end_inset
+
+可能为
+\begin_inset Formula $0$
+\end_inset
+
+, 4中
+\begin_inset Formula $z$
+\end_inset
+
+也可能为
+\begin_inset Formula $0$
+\end_inset
+
+, 从而都不是纯虚数)
+\end_layout
+
+\begin_layout Paragraph
+11.
+\end_layout
+
+\begin_layout Standard
+已知
+\begin_inset Formula $[x]$
+\end_inset
+
+表示不超过
+\begin_inset Formula $x$
+\end_inset
+
+的最大整数.
+ 求方程
+\begin_inset Formula 
+\[
+3^{2x}-[10\times3^{x+1}]+\sqrt{3^{2x}-[10\times3^{x+1}]+82}=-80
+\]
+
+\end_inset
+
+的解的个数.
+\end_layout
+
+\begin_layout Standard
+答: 
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+12.
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $x_{1},x_{2},y_{1},y_{2}\in\Reals^{+}$
+\end_inset
+
+, 
+\begin_inset Formula $a=\sqrt{x_{1}x_{2}}+\sqrt{y_{1}y_{2}}$
+\end_inset
+
+, 
+\begin_inset Formula $b=\sqrt{(x_{1}+y_{1})(x_{2}+y_{2})}$
+\end_inset
+
+.
+ 求
+\begin_inset Formula $a,b$
+\end_inset
+
+的大小关系.
+\end_layout
+
+\begin_layout Standard
+答: 
+\begin_inset Formula $a\le b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+13.
+\end_layout
+
+\begin_layout Standard
+求证:
+\begin_inset Formula 
+\[
+\tan70^{\circ}=\tan20^{\circ}+2\tan40^{\circ}+4\tan10^{\circ}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+14.
+\end_layout
+
+\begin_layout Standard
+直线
+\begin_inset Formula $y=kx+m$
+\end_inset
+
+与双曲线
+\begin_inset Formula $\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1$
+\end_inset
+
+及其渐近线交于
+\begin_inset Formula $A,B,C,D$
+\end_inset
+
+四点.
+ 求证: 
+\begin_inset Formula $|AC|=|BD|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+提示: 证明
+\begin_inset Formula $AB$
+\end_inset
+
+的中点横坐标等于
+\begin_inset Formula $CD$
+\end_inset
+
+的中点横坐标.
+\end_layout
+
+\begin_layout Paragraph
+15.
+\end_layout
+
+\begin_layout Standard
+设常数
+\begin_inset Formula $a>1>b>0$
+\end_inset
+
+.
+ 则当
+\begin_inset Formula $a,b$
+\end_inset
+
+满足什么关系时, 
+\begin_inset Formula $\lg(a^{x}-b^{x})>0$
+\end_inset
+
+的解集为
+\begin_inset Formula $(1,+\infty)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+答: 
+\begin_inset Formula $a=b+1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+16.
+\end_layout
+
+\begin_layout Standard
+整数列
+\begin_inset Formula $\{a_{n}\}$
+\end_inset
+
+(
+\begin_inset Formula $n\in\Naturals$
+\end_inset
+
+)满足: 
+\begin_inset Formula $a_{1}=2$
+\end_inset
+
+, 
+\begin_inset Formula $a_{2}=7$
+\end_inset
+
+, 且有
+\begin_inset Formula 
+\[
+-\frac{1}{2}<a_{n+1}-\frac{a_{n}^{2}}{a_{n-1}}\le\frac{1}{2}.
+\]
+
+\end_inset
+
+求证: 当
+\begin_inset Formula $n\ge2$
+\end_inset
+
+时, 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+为奇数.
+\end_layout
+
+\begin_layout Standard
+提示: 证明
+\begin_inset Formula $a_{n+1}=3a_{n}+2a_{n-1}$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

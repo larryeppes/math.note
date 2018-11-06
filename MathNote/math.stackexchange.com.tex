@@ -146,4 +146,86 @@ An example of an uncountable set is the set of all real numbers. To
 see this, you can use the \textbf{diagonal method}. Ask another question
 to see how this works...
 \es
+\bs
+You can see that there are infinitely many natural numbers $1, 2, 3, \ldots$, 
+and infinitely many real numbers, such as $0, 1, \pi$, etc. 
+But are these two infinities the same?
+
+Well, suppose you have two sets of objects, e.g. people and horses, 
+and you want to know if the number of objects in one set is the same as in the other. 
+The simplest way is to find a way of corresponding the objects one-to-one. 
+For instance, if you see a parade of people riding horses, 
+you will know that there are as many people as there are horses, 
+because there is such a one-to-one correspondence.
+
+We say that a set with infinitely many things is ``countable", 
+if we can find a one-to-one correspondence between the things in this set and the natural numbers.
+
+E.g., the integers are countable: $1 \leftrightarrow 0$, $2 \leftrightarrow -1$, $3 \leftrightarrow 1$, 
+$4 \leftrightarrow -2$, $5 \leftrightarrow 2$, etc, gives such a correspondence.
+
+However, the set of real numbers is NOT countable! 
+This was proven for the first time by Georg Cantor. 
+Here is a proof using the so-called \href{http://en.wikipedia.org/wiki/Cantor's\_diagonal\_argument}{diagonal argument}.
+\es
+\bs
+Infinity is an overloaded term that can mean many things.
+
+One common non-mathematical use of infinity is to refer to 
+everything in the universe. This is {\bf not} what mathematicians mean 
+when they say infinity. That would be a kin to the set of all sets, 
+which is a paradoxical concept that is not part of mathematical discourse.
+
+Mathematicians will use infinity as a way to represent a process that 
+continues indefinitely. This is a kin to saying ``take the limit as $n$ goes 
+to infinity", which is close to saying ``continue this process indefinitely."
+
+Infinity is also use infinity to talk about size. All sets are either infinite or finite.
+
+The story doesn't stop there. There is something fundamentally different about 
+sets like the points on a line, where there are no holes, and sets like the 
+integers where there are holes. They are both infinite but one seems denser 
+than the other. 
+
+That's where whole countable uncountable thing comes in. Infinite sets 
+have a size, but it is not a number in the traditional sense. Its more 
+like ``relative size". Bijections are how we determine size for infinite sets, 
+which are explained well on this page, so I won't repeat the explanation. 
+
+A more in-depth, but still understandable explanation is given in 
+Computability and Logic by George Boolos.
+\es
+\bs
+The basic concept is thus:
+\begin{itemize}
+ \item A 'countable' infinity is one where you can give each item 
+ in the set an integer and 'count' them (even though there are 
+ an infinite number of them)
+ \item An 'uncountable' infinity defies this. You cannot assign 
+ an integer to each item in the set because you will miss items.
+\end{itemize}
+
+The key to seeing this is using the 'diagonal slash' argument as 
+originally put forward by Cantor. With a countable infinity, you can 
+create a list of all the items in the set and assign each one a different natural number. 
+This can be done with the naturals (obviously) and the complete range of 
+integers (including negative numbers) and even the rational numbers 
+(so including fractions). It cannot be done with the reals due to the diagonal slash argument:
+
+\begin{enumerate}[1.]
+ \item Create your list of all real numbers and assign each one an integer
+ \item Create a real number with the rule that the first digit after the 
+ decimal point is different from the first digit of your first number, 
+ the second digit is different from the second digit of your second number, 
+ and so on for all digits
+ \item Try and place this number in your list of all numbers. it can't be the 
+ first number, or the second or the third and so on down the list. 
+ \item Reductio Ad Absurdium, your number does not exist in your countable 
+ list of all real numbers and must be added on to create a new list. 
+ The same process can then be done again to show the list still isn't complete.
+\end{enumerate}
+
+This shows a difference between two obviously infinite sets and leads to the 
+somewhat scary conclusion that there are (at least) 2 different forms of infinity.
+\es
 \eqq
