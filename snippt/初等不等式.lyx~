@@ -1,0 +1,640 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+初等不等式
+\end_layout
+
+\begin_layout Section
+恒等式
+\end_layout
+
+\begin_layout Subsection
+三元恒等式
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\sumcyc ab\right)\left(\sumcyc a^{2}\right)=\sumcyc ab\left(a^{2}+b^{2}\right)+abc\sumcyc a
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+非负条件不等式
+\end_layout
+
+\begin_layout Subsection
+三元不等式
+\end_layout
+
+\begin_layout Paragraph
+Nesbitt不等式:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall a,b,c\in\RR^{+}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\sumcyc\frac{a}{b+c}\ge\frac{3}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Vasc不等式:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall x,y,z\in\RR^{+}$
+\end_inset
+
+, 求证:
+\begin_inset Formula 
+\[
+\left(x^{2}+y^{2}+z^{2}\right)^{2}\ge3\left(x^{3}y+y^{3}z+z^{3}x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+暴力强展: 
+\begin_inset Formula 
+\[
+\sumcyc\frac{1}{6}(-2a^{2}+3ab+b^{2}-3bc+c^{2})^{2}=\left(x^{2}+y^{2}+z^{2}\right)^{2}-3\left(x^{3}y+y^{3}z+z^{3}x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+APMO 1998:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall x,y,z\in\RR^{+}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\prodcyc\left(1+\frac{x}{y}\right)\ge2+\frac{2\left(x+y+z\right)}{\sqrt[3]{xyz}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+USAMO 1998:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall a,b,c\in\RR^{+}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\sumcyc\frac{1}{a^{3}+b^{3}+abc}\le\frac{1}{abc}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+四元不等式
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall a,b,c,d\in\RR^{+}$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\sumcyc\frac{a}{b+c}\ge2.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+16\sumcyc abc\le\left(a+b+c+d\right)^{3}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sumcyc\frac{1}{a^{2}+bc}\ge\frac{1}{ac+bd}\sumcyc\frac{a+c}{a+b}\ge\frac{4}{ac+bd}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Pham Kim Hung:
+\begin_inset Formula 
+\[
+\left(\sumcyc\frac{1}{a}\right)^{2}\ge\frac{1}{a^{2}}+\frac{4}{a^{2}+b^{2}}+\frac{12}{a^{2}+b^{2}+c^{2}}+\frac{18}{a^{2}+b^{2}+c^{2}+d^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+多元定界条件
+\end_layout
+
+\begin_layout Paragraph
+Phan Thanh Nam: 
+\begin_inset Formula $a_{1},a_{2},\cdots,a_{n}\in\RR^{+}$
+\end_inset
+
+, 且
+\begin_inset Formula $a_{i}\in[0,i]$
+\end_inset
+
+, 
+\begin_inset Formula $i\in{1,2,\cdots,n}$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+2^{n}a_{1}\left(a_{1}+a_{2}\right)\cdots\left(a_{1}+a_{2}+\cdots+a_{n}\right)\ge\left(n+1\right)a_{1}^{2}a_{2}^{2}\cdots a_{n}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+多元和为定值
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x_{1},x_{2},\cdots,x_{n}>0$
+\end_inset
+
+, 
+\begin_inset Formula $\sumcyc\frac{1}{1+x_{i}}=1$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\prodcyc x_{i}\ge\left(n-1\right)^{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $a,b,c,d,e\ge0$
+\end_inset
+
+, 
+\begin_inset Formula $a+b+c+d+e=5$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\sumcyc abc\le\frac{e\left(5-e\right)^{2}}{4}+\frac{\left(5-2e\right)^{3}}{27}\le5.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+非负和为定值的三元不等式
+\end_layout
+
+\begin_layout Paragraph
+Bulgaria TST 2003: 
+\begin_inset Formula $a+b+c=3$
+\end_inset
+
+, 
+\begin_inset Formula $a,b,c>0$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\sumcyc\frac{a}{1+b^{2}}\ge\sumcyc a-\frac{1}{2}\sumcyc ab\ge\frac{3}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $a+b+c=2$
+\end_inset
+
+, 
+\begin_inset Formula $a,b,c\ge0$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\sumcyc a^{2}b^{2}\le1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $a+b+c=3$
+\end_inset
+
+, 
+\begin_inset Formula $a,b,c\in\RR^{+}$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\sumcyc\sqrt{a}\ge\sumcyc ab.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+IMO shortlist 1996: 
+\begin_inset Formula $x+y+z=1$
+\end_inset
+
+, 
+\begin_inset Formula $x,y,z\in\RR^{+}$
+\end_inset
+
+, 则
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sumcyc\frac{xy}{x^{5}+xy+y^{5}}\le1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $x^{5}+y^{5}+z^{5}=3$
+\end_inset
+
+, 
+\begin_inset Formula $x,y,z\in\RR^{+}$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\sumcyc\frac{x^{4}}{y^{3}}\ge3.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+非负积为定值的三元不等式
+\end_layout
+
+\begin_layout Paragraph
+1998 IMO shortlist: 
+\begin_inset Formula $xyz=1$
+\end_inset
+
+, 
+\begin_inset Formula $x,y,z\in\RR^{+}$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\sumcyc\frac{x^{3}}{\left(1+y\right)\left(1+z\right)}\ge\frac{3}{4}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Mathlinks Contest: 
+\begin_inset Formula $abc=1$
+\end_inset
+
+, 
+\begin_inset Formula $a,b,c\in\RR^{+}$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\sumcyc\sqrt{\frac{a+b}{a+1}}\ge3\sqrt[6]{\prodcyc\frac{a+b}{a+1}}\ge3.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+非负和为定值的四元不等式
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula $a+b+c+d=4$
+\end_inset
+
+, 
+\begin_inset Formula $a,b,c,d>0$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\sumcyc\frac{a}{1+b^{2}}\ge2.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sumcyc\frac{a}{1+b^{2}c}\ge2.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+几何不等式
+\end_layout
+
+\begin_layout Subsection
+无条件
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Formula 
+\[
+\prodcyc\left(a+b-c\right)^{a}\le\prodcyc a^{a}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+定周长条件不等式
+\end_layout
+
+\begin_layout Paragraph
+Pham Kim Hung: 
+\begin_inset Formula $a+b+c=3$
+\end_inset
+
+的三角形有
+\begin_inset Formula 
+\[
+\sumcyc\frac{1}{\sqrt{a+b-c}}\ge\frac{9}{ab+bc+ca}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+猜想
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a_{1},a_{2},\cdots,a_{n}>0$
+\end_inset
+
+, 证明或否定
+\begin_inset Formula 
+\[
+\left(\sumcyc\frac{1}{a_{i}}\right)^{2}\ge\frac{1}{a_{1}^{2}}+\frac{4}{a_{1}^{2}+a_{2}^{2}}+\cdots+\frac{n^{2}}{a_{1}^{2}+a_{2}^{2}+\cdots+a_{n}^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
