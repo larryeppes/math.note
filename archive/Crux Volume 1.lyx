@@ -1,0 +1,1877 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Crux Mathematicorum Volume 1 笔记
+\end_layout
+
+\begin_layout Section
+复数
+\end_layout
+
+\begin_layout Paragraph
+4.
+ It is easy to verify that 
+\begin_inset Formula $2\sqrt{3}+\ui$
+\end_inset
+
+ is a cube root of 
+\begin_inset Formula $18\sqrt{3}+35\ui$
+\end_inset
+
+.
+ What are the other two cube roots?
+\end_layout
+
+\begin_layout Section
+数论问题
+\end_layout
+
+\begin_layout Paragraph
+5.
+ Prove that, if 
+\begin_inset Formula $(a,b,c)$
+\end_inset
+
+ and 
+\begin_inset Formula $(a',b',c')$
+\end_inset
+
+ are primitive Pythagorean triples, with 
+\begin_inset Formula $a>b>c$
+\end_inset
+
+ and 
+\begin_inset Formula $a'>b'>c'$
+\end_inset
+
+, then either
+\begin_inset Formula 
+\[
+aa'\pm\left(bc'-cb'\right)\ \mathrm{or}\ aa'\pm\left(bb'-cc'\right)
+\]
+
+\end_inset
+
+are perfect squares.
+\end_layout
+
+\begin_layout Paragraph
+25.
+ Find the smallest positive value of 
+\begin_inset Formula $36^{k}-5^{l}$
+\end_inset
+
+ where 
+\begin_inset Formula $k$
+\end_inset
+
+ and 
+\begin_inset Formula $l$
+\end_inset
+
+ are positive integers.
+\end_layout
+
+\begin_layout Proposition
+If 
+\begin_inset Formula $m,n,p$
+\end_inset
+
+ are positive integers, the smallest positive value of 
+\begin_inset Formula $(2p)^{2m}-(2p-1)^{n}$
+\end_inset
+
+ is 
+\begin_inset Formula $4p-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+30.
+ Let 
+\begin_inset Formula $a,b$
+\end_inset
+
+ and 
+\begin_inset Formula $c$
+\end_inset
+
+ denote three distinct integers and let 
+\begin_inset Formula $P$
+\end_inset
+
+ denote a polynomial having all integral coefficients.
+ Show that it is impossible that 
+\begin_inset Formula $P(a)=b$
+\end_inset
+
+, 
+\begin_inset Formula $P(b)=c$
+\end_inset
+
+, and 
+\begin_inset Formula $P(c)=a$
+\end_inset
+
+.
+ (Third USAMO - May 7, 1974)
+\end_layout
+
+\begin_layout Paragraph
+35*.
+ Let 
+\begin_inset Formula $m$
+\end_inset
+
+ denote a positive integer and 
+\begin_inset Formula $p$
+\end_inset
+
+ a prime.
+ Show that if 
+\begin_inset Formula $p\mid m^{4}-m^{2}+1$
+\end_inset
+
+, then 
+\begin_inset Formula $p\equiv1\pmod{12}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+50*.
+ I found the following fascinating two-part problem in Martin Eisen's 
+\emph on
+Introduction to Mathematical Probability Theory
+\emph default
+ (Prentice-Hall 1969).
+ Information as to its origin and history would be appreciated.
+\end_layout
+
+\begin_layout Itemize
+Show that 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ can begin with any sequence of digits.
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $N$
+\end_inset
+
+ be an 
+\begin_inset Formula $r$
+\end_inset
+
+-digit number.
+ What is the probability that the first 
+\begin_inset Formula $r$
+\end_inset
+
+ digits of 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ represent 
+\begin_inset Formula $N$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:1"
+
+\end_inset
+
+If 
+\begin_inset Formula $N$
+\end_inset
+
+ is a positive integer and 
+\begin_inset Formula $\a$
+\end_inset
+
+ is a positive real number that is not a rational power of 10, then infinitely
+ many terms of the sequence 
+\begin_inset Formula $S=\{\a^{i}\}_{i=1}^{\infty}$
+\end_inset
+
+ begin with 
+\begin_inset Formula $N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+Let 
+\begin_inset Formula $\a$
+\end_inset
+
+ and 
+\begin_inset Formula $S$
+\end_inset
+
+ be as in Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ If, for 
+\begin_inset Formula $x>0$
+\end_inset
+
+, 
+\begin_inset Formula $\mu(x)$
+\end_inset
+
+ represents the mantissa of 
+\begin_inset Formula $\log x$
+\end_inset
+
+, that is,
+\begin_inset Formula 
+\[
+\mu(x)=\log x-\left[\log x\right],
+\]
+
+\end_inset
+
+then 
+\begin_inset Formula $\mu(S)$
+\end_inset
+
+ is dense in the open interval 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+If 
+\begin_inset Formula $n$
+\end_inset
+
+ is a positive integer, the probability that 
+\begin_inset Formula $\a^{n}$
+\end_inset
+
+ begins with 
+\begin_inset Formula $N$
+\end_inset
+
+ is independent of 
+\begin_inset Formula $\a$
+\end_inset
+
+.
+ It is, in fact, 
+\begin_inset Formula $\log\left(1+\frac{1}{N}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+55.
+ What is the last digit of 
+\begin_inset Formula $1+2+\cdots+n$
+\end_inset
+
+ if the last digit of 
+\begin_inset Formula $1^{3}+2^{3}+\cdots+n^{3}$
+\end_inset
+
+ is 1?
+\end_layout
+
+\begin_layout Section
+组合数学
+\end_layout
+
+\begin_layout Paragraph
+3: Prove that in any set of ten different two-digit numbers one can select
+ two disjoint subsets such that the sum of numbers in each of the subsets
+ is the same.
+\end_layout
+
+\begin_layout Paragraph
+数字
+\begin_inset Formula $10$
+\end_inset
+
+是这类问题成立的最小的正整数.
+\end_layout
+
+\begin_layout Paragraph
+6.
+ (a) If 
+\begin_inset Formula $n$
+\end_inset
+
+ is a given nonnegative integer, how many distinct nonnegative integer solutions
+ are there for each of the following equations?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x+y=n,\qquad x+y+z=n,\qquad x+y+z+t=n.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+(b) Use (a) to conjecture and then prove a formula for the number of distinct
+ nonegative integer solutions of the equation
+\begin_inset Formula 
+\[
+x_{1}+x_{2}+\cdots+x_{r}=n.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+19.
+ How many different triangles can be formed from 
+\begin_inset Formula $n$
+\end_inset
+
+ straight rods of length 
+\begin_inset Formula $1,2,3,\cdots,n$
+\end_inset
+
+ units?
+\end_layout
+
+\begin_layout Paragraph
+26.
+ Given 
+\begin_inset Formula $n$
+\end_inset
+
+ integers.
+ Show that one can select a subset of these numbers and insert plus or minus
+ signs so that the number obtained is divisible by 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+52*.
+ The sum of one hundred positive integers, each less than 
+\begin_inset Formula $100$
+\end_inset
+
+, is 
+\begin_inset Formula $200$
+\end_inset
+
+.
+ Show that one can select a partial sum equal to 
+\begin_inset Formula $100$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proposition
+Suppose that 
+\begin_inset Formula $a_{1}\le a_{2}\le\cdots\le a_{n}$
+\end_inset
+
+ are natural numbers such that 
+\begin_inset Formula $a_{1}+\cdots+a_{n}=2n$
+\end_inset
+
+ and such that 
+\begin_inset Formula $a_{n}\ne n+1$
+\end_inset
+
+.
+ Show that if 
+\begin_inset Formula $n$
+\end_inset
+
+ is even, then for some subset 
+\begin_inset Formula $K$
+\end_inset
+
+ of 
+\begin_inset Formula $\{1,2,\cdots,n\}$
+\end_inset
+
+ it is true that 
+\begin_inset Formula $\sum_{i\in K}a_{i}=n$
+\end_inset
+
+.
+ Show that this is true also if 
+\begin_inset Formula $n$
+\end_inset
+
+ is odd when we make the additional assumption that 
+\begin_inset Formula $a_{n}\ne2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+不等式
+\end_layout
+
+\begin_layout Paragraph
+2: A rectangular array of 
+\begin_inset Formula $m$
+\end_inset
+
+ rows and 
+\begin_inset Formula $n$
+\end_inset
+
+ columns contains 
+\begin_inset Formula $mn$
+\end_inset
+
+ distinct real numbers.
+ For 
+\begin_inset Formula $i=1,2,\ldots,m$
+\end_inset
+
+, let 
+\begin_inset Formula $s_{i}$
+\end_inset
+
+ denote the smallest number of the 
+\begin_inset Formula $i$
+\end_inset
+
+th row; and for 
+\begin_inset Formula $j=1,2,\ldots,n$
+\end_inset
+
+.
+ let 
+\begin_inset Formula $l_{j}$
+\end_inset
+
+ denote the largest number of the 
+\begin_inset Formula $j$
+\end_inset
+
+th column.
+ Let 
+\begin_inset Formula $A=\max\{s_{i}\}$
+\end_inset
+
+ and 
+\begin_inset Formula $B=\min{l_{j}}$
+\end_inset
+
+.
+ Compare 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+14.
+ If 
+\begin_inset Formula $a,b,c$
+\end_inset
+
+ are lengths of three segments which can form a trianlge, show the same
+ for 
+\begin_inset Formula $\frac{1}{a+c}$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{b+c}$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{a+b}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+17.
+ Prove the inequality
+\begin_inset Formula 
+\[
+\frac{1}{2}\cdot\frac{3}{4}\cdot\frac{5}{6}\cdots\frac{999999}{1000000}<\frac{1}{1000}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+证明方法有放缩法, 一般的推广是
+\begin_inset Formula 
+\[
+\prod_{k=1}^{n}\frac{2k-1}{2k}<\frac{1}{\sqrt{2n}},\qquad\forall n\in\pNN.
+\]
+
+\end_inset
+
+而若使用Stirling公式, 对于充分大的
+\begin_inset Formula $n$
+\end_inset
+
+有
+\begin_inset Formula 
+\[
+\prod_{k=1}^{n}\frac{2k-1}{2k}<\frac{1}{\sqrt{\pi n}},
+\]
+
+\end_inset
+
+可以考虑上述不等式是否对于任意的正整数
+\begin_inset Formula $n$
+\end_inset
+
+都成立.
+\end_layout
+
+\begin_layout Paragraph
+还有一种加强命题的方法, 是使用不等式
+\begin_inset Formula 
+\[
+\frac{\sqrt{r-1}}{\sqrt{r}}<\frac{2r-1}{2r}<\frac{\sqrt{3r-2}}{\sqrt{3r+1}}
+\]
+
+\end_inset
+
+对于所有的整数
+\begin_inset Formula $r\ge2$
+\end_inset
+
+都成立.
+ 所以
+\begin_inset Formula 
+\[
+\frac{1}{2\sqrt{n}}<Q_{n}=\frac{(2n-1)!!}{(2n)!!}<\frac{1}{\sqrt{3n+1}},
+\]
+
+\end_inset
+
+最后
+\begin_inset Formula $Q_{n}$
+\end_inset
+
+的生成函数是
+\begin_inset Formula 
+\[
+1+\sum_{n=1}^{\infty}Q_{n}x^{n}=\frac{1}{\sqrt{1-x}}.
+\]
+
+\end_inset
+
+级数
+\begin_inset Formula 
+\[
+\sum_{n=1}^{\infty}Q_{n}\textrm{ and }\sum_{n=1}^{\infty}Q_{n}^{2}
+\]
+
+\end_inset
+
+都是发散的, 但根据Mathematics Magazine, 1968, P.166的结论有
+\begin_inset Formula 
+\[
+1+\sum_{n=1}^{\infty}Q_{n}^{3}=\frac{\left[\Gamma\left(\frac{1}{4}\right)\right]^{4}}{4\pi^{3}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+27.
+ 如果三角形的三个角满足
+\begin_inset Formula 
+\[
+\cos A\cos B+\sin A\sin B\sin C=1
+\]
+
+\end_inset
+
+证明三角形
+\begin_inset Formula $ABC$
+\end_inset
+
+是等腰直角三角形.
+\end_layout
+
+\begin_layout Paragraph
+36.
+ 设
+\begin_inset Formula $m,n$
+\end_inset
+
+为正整数, 如果
+\begin_inset Formula 
+\[
+\sin^{2m}\theta\cos^{2n}\theta\le\frac{m^{m}n^{n}}{\left(m+n\right)^{m+n}},
+\]
+
+\end_inset
+
+求
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+54.
+ 如果
+\begin_inset Formula $a,b,c>0$
+\end_inset
+
+满足
+\begin_inset Formula $a<b+c$
+\end_inset
+
+, 证明
+\begin_inset Formula 
+\[
+\frac{a}{1+a}<\frac{b}{1+b}+\frac{c}{1+c}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+If 
+\begin_inset Formula $E$
+\end_inset
+
+ is a space with metric 
+\begin_inset Formula $d$
+\end_inset
+
+, then the function 
+\begin_inset Formula $\delta:E\times E\to\RR$
+\end_inset
+
+ defined by 
+\begin_inset Formula 
+\[
+\delta(A,B)=\frac{d\left(A,B\right)}{1+d\left(A,B\right)}
+\]
+
+\end_inset
+
+is also a metric for 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ It is, in fact, a bounded metric.
+\end_layout
+
+\begin_layout Section
+代数
+\end_layout
+
+\begin_layout Paragraph
+1: 75 cows have in 12 days grazed all the grass in a 60-acre pasture, and
+ 81 cows have in 15 days grazed all the grass in a 72-acre pasture.
+ How many cows can in 18 days graze all the grass in a 96-acre pasture?(Newton)
+\end_layout
+
+\begin_layout Paragraph
+杂志对这个问题的解答提供了一种线性代数的解法, 就是使用3元一次线性方程有非零解, 则其系数行列式为0.
+\end_layout
+
+\begin_layout Paragraph
+7.
+ Find a fifth degree polynomial 
+\begin_inset Formula $P(x)$
+\end_inset
+
+ such that 
+\begin_inset Formula $P(x)+1$
+\end_inset
+
+ is divisible by 
+\begin_inset Formula $\left(x-1\right)^{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $P(x)-1$
+\end_inset
+
+ is divisible by 
+\begin_inset Formula $\left(x+1\right)^{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+答案给出了一个用导数得出的简单方法.
+\end_layout
+
+\begin_layout Paragraph
+11.
+ A basket contains exactly 
+\begin_inset Formula $30$
+\end_inset
+
+ apples.
+ The apples are distributed among 
+\begin_inset Formula $10$
+\end_inset
+
+ children, each child receiving 
+\begin_inset Formula $n$
+\end_inset
+
+ apples, where 
+\begin_inset Formula $n$
+\end_inset
+
+ is a positive integer.
+ At the end of the distribution, there are 
+\begin_inset Formula $n$
+\end_inset
+
+ apples left in the basket.
+ Find 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+12.
+ There are about 
+\begin_inset Formula $100$
+\end_inset
+
+ apples in a basket.
+ It is possible to divide the apples equally among 
+\begin_inset Formula $2,3$
+\end_inset
+
+ and 
+\begin_inset Formula $5$
+\end_inset
+
+ children but not among 
+\begin_inset Formula $4$
+\end_inset
+
+ children.
+ How many apples are there in the basket?
+\end_layout
+
+\begin_layout Paragraph
+13.
+ 证明
+\begin_inset Formula $p$
+\end_inset
+
+个最大数是
+\begin_inset Formula $q$
+\end_inset
+
+的正整数的和可以表示成
+\begin_inset Formula $q$
+\end_inset
+
+个最大数是
+\begin_inset Formula $p$
+\end_inset
+
+的正整数之和.
+\end_layout
+
+\begin_layout Paragraph
+这个证明的想法, 是把所有的整数写成若干个
+\begin_inset Formula $1$
+\end_inset
+
+个和, 每个整数一行, 然后统计每列
+\begin_inset Formula $1$
+\end_inset
+
+的数量做加和.
+ 思想类似于Abel变换恒等式的几何解释, Lebesgue积分与Riemann积分的关系.
+\end_layout
+
+\begin_layout Paragraph
+45.
+ Find constants 
+\begin_inset Formula $A,B,C,D,p,q$
+\end_inset
+
+ such that
+\begin_inset Formula 
+\[
+\begin{array}{cc}
+A(x-p)^{2}+B(x-q)^{2} & =5x^{2}+8x+14,\\
+C(x-p)^{2}+D(x-q)^{2} & =x^{2}+10x+17.
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+几何
+\end_layout
+
+\begin_layout Paragraph
+15.
+ Let 
+\begin_inset Formula $A,B,C$
+\end_inset
+
+ be three distinct points on a rectangular hyperbola.
+ Prove that the orthocentre of 
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+ lies on the hyperbola.
+\end_layout
+
+\begin_layout Paragraph
+32.
+ Construct a square given a vertex and a midpoint of one side (consider
+ all cases).
+\end_layout
+
+\begin_layout Paragraph
+33.
+ On the sides 
+\begin_inset Formula $CA$
+\end_inset
+
+ and 
+\begin_inset Formula $CB$
+\end_inset
+
+ of an isosceles right-angled triangle 
+\begin_inset Formula $ABC$
+\end_inset
+
+, points 
+\begin_inset Formula $D$
+\end_inset
+
+ and 
+\begin_inset Formula $E$
+\end_inset
+
+ are chosen such that 
+\begin_inset Formula $\left|CD\right|=\left|CE\right|$
+\end_inset
+
+.
+ The perpendiculars from 
+\begin_inset Formula $D$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+ on 
+\begin_inset Formula $AE$
+\end_inset
+
+ intersect the hypotenuse 
+\begin_inset Formula $AB$
+\end_inset
+
+ in 
+\begin_inset Formula $K$
+\end_inset
+
+ and 
+\begin_inset Formula $L$
+\end_inset
+
+ respectively.
+ Prove That 
+\begin_inset Formula $\left|KL\right|=\left|LB\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+37.
+ 
+\begin_inset Formula $E,F,G$
+\end_inset
+
+, and 
+\begin_inset Formula $H$
+\end_inset
+
+ are the midpoints of sides 
+\begin_inset Formula $AB,BC,CD$
+\end_inset
+
+, and 
+\begin_inset Formula $DA$
+\end_inset
+
+, respectively, of the convex quadrilateral 
+\begin_inset Formula $ABCD$
+\end_inset
+
+.
+ 
+\begin_inset Formula $EX,FY,GZ$
+\end_inset
+
+, and 
+\begin_inset Formula $HT$
+\end_inset
+
+ are drawn externally perpendicular to 
+\begin_inset Formula $AB,BC,CD$
+\end_inset
+
+, and 
+\begin_inset Formula $DA$
+\end_inset
+
+, respectively, and 
+\begin_inset Formula $EX=\frac{1}{2}AB$
+\end_inset
+
+, 
+\begin_inset Formula $FY=\frac{1}{2}BC$
+\end_inset
+
+, 
+\begin_inset Formula $GZ=\frac{1}{2}CD$
+\end_inset
+
+, and 
+\begin_inset Formula $HT=\frac{1}{2}DA$
+\end_inset
+
+.
+ Prove that 
+\begin_inset Formula $XZ=YT$
+\end_inset
+
+ and 
+\begin_inset Formula $XZ\perp YT$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+38
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+42.
+ Find the area of a quadrilateral as a function of its four sides, given
+ that the sums of opposite angles are equal.
+\end_layout
+
+\begin_layout Paragraph
+44.
+ Construct a square 
+\begin_inset Formula $ABCD$
+\end_inset
+
+ given its centre and any two points 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $N$
+\end_inset
+
+ on its two sides 
+\begin_inset Formula $BC$
+\end_inset
+
+ and 
+\begin_inset Formula $CD$
+\end_inset
+
+ respectively.
+\end_layout
+
+\begin_layout Paragraph
+46.
+ If 
+\begin_inset Formula $p_{1},p_{2},p_{3}$
+\end_inset
+
+ are the altitudes of a triangle and 
+\begin_inset Formula $r$
+\end_inset
+
+ is the radius of its inscribed circle, show that
+\begin_inset Formula 
+\[
+\frac{1}{p_{1}}+\frac{1}{p_{2}}+\frac{1}{p_{3}}=\frac{1}{r}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+56.
+ The area of a triangle in terms of its sides is
+\begin_inset Formula 
+\[
+\sqrt{s(s-a)(s-b)(s-c)},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $2s=a+b+c$
+\end_inset
+
+.
+ What is the area in terms of its medians 
+\begin_inset Formula $m_{1},m_{2},m_{3}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Paragraph
+if 
+\begin_inset Formula $m=\frac{1}{2}\left(m_{1}+m_{2}+m_{3}\right)$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\[
+\triangle ABC=\frac{4}{3}\sqrt{m\left(m-m_{1}\right)\left(m-m_{2}\right)\left(m-m_{3}\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+如果三角形的三条高线分别为
+\begin_inset Formula $h_{1},h_{2},h_{3}$
+\end_inset
+
+, 则三角形的面积
+\begin_inset Formula $K$
+\end_inset
+
+满足
+\begin_inset Formula 
+\[
+\frac{1}{K}=4\sqrt{\frac{1}{h}\left(\frac{1}{h}-\frac{1}{h_{1}}\right)\left(\frac{1}{h}-\frac{1}{h_{2}}\right)\left(\frac{1}{h}-\frac{1}{h_{3}}\right)},
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $\frac{1}{h}=\frac{1}{2}\left(\frac{1}{h_{1}}+\frac{1}{h_{2}}+\frac{1}{h_{3}}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Paragraph
+如果
+\begin_inset Formula $r$
+\end_inset
+
+是三角形的内切圆半径, 
+\begin_inset Formula $r_{1},r_{2},r_{3}$
+\end_inset
+
+分别是三角形的三个旁切圆半径, 则三角形的面积
+\begin_inset Formula $K$
+\end_inset
+
+满足
+\begin_inset Formula 
+\[
+K^{2}=rr_{1}r_{2}r_{3}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+62.
+ Prove that if two circles touch externally, their common tangent is a mean
+ proportional between their diameters.
+\end_layout
+
+\begin_layout Section
+微积分
+\end_layout
+
+\begin_layout Paragraph
+8.
+ 判断由
+\begin_inset Formula $n$
+\end_inset
+
+个
+\begin_inset Formula $1$
+\end_inset
+
+组成的连根式数列
+\begin_inset Formula $\{a_{n}\}$
+\end_inset
+
+的极限存在, 并求出此极限,
+\begin_inset Formula 
+\[
+a_{n}=\sqrt{1+\sqrt{1+\sqrt{1+\cdots+\sqrt{1}}}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+9*.
+ 判断数列
+\begin_inset Formula $\{b_{n}\}$
+\end_inset
+
+的收敛性, 其中
+\begin_inset Formula 
+\[
+b_{n}=\sqrt{1+\sqrt{2+\sqrt{3+\cdots+\sqrt{n}}}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+20.
+ 讨论函数
+\begin_inset Formula $f:\RR\to\RR$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+f(x)=\begin{cases}
+x, & \mathrm{if}\ x\not\in\QQ\\
+p\sin\frac{1}{q} & \mathrm{if}\ x=\frac{p}{q}\in\QQ
+\end{cases}
+\]
+
+\end_inset
+
+的连续性.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+40
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+47.
+ 如果
+\begin_inset Formula $a>1$
+\end_inset
+
+, 求级数
+\begin_inset Formula 
+\[
+\sum_{k=1}^{\infty}\frac{k^{2}}{a^{k}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+48
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+49.
+ The series
+\begin_inset Formula 
+\[
+1-\frac{1}{5}+\frac{1}{7}-\frac{1}{11}+\cdots+\frac{1}{6n-5}-\frac{1}{6n-1}+\cdots
+\]
+
+\end_inset
+
+clearly converges.
+ Find its sum.
+\end_layout
+
+\begin_layout Standard
+这也可以作为Abel定理的一个应用.
+\end_layout
+
+\begin_layout Subsection
+
+\series bold
+一个小错误的讨论.
+\end_layout
+
+\begin_layout Paragraph
+计算积分
+\begin_inset Formula 
+\[
+\int\frac{\left(x^{2}-1\right)\ud x}{x^{4}+3x^{2}+1}
+\]
+
+\end_inset
+
+得出的结果
+\begin_inset Formula $\arctan(x+x^{-1})+C$
+\end_inset
+
+是不完全正确的, 因为后者的定义域不包含
+\begin_inset Formula $0$
+\end_inset
+
+.
+ 文章给出了正确结果有
+\begin_inset Formula 
+\[
+-\arctan\frac{x}{x^{2}+1}+C
+\]
+
+\end_inset
+
+一般的解的形式可以根据将
+\begin_inset Formula $C$
+\end_inset
+
+部分的移入
+\begin_inset Formula $\arctan$
+\end_inset
+
+项中得到
+\begin_inset Formula 
+\[
+\arctan\frac{\left(x^{2}+1\right)\sin\a-x\cos\a}{\left(x^{2}+1\right)\cos\a+x\sin\a}+C',
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $\left|\a\right|<\arctan2=\frac{\pi}{2}-\arctan\frac{1}{2}$
+\end_inset
+
+.
+ 所以当
+\begin_inset Formula $\a=0$
+\end_inset
+
+时有结果
+\begin_inset Formula $-\arctan\frac{x}{x^{2}+1}+C'$
+\end_inset
+
+, 当
+\begin_inset Formula $\a=\frac{\pi}{4}$
+\end_inset
+
+时, 结果为
+\begin_inset Formula $\arctan\frac{x^{2}-x+1}{x^{2}+x+1}+C'$
+\end_inset
+
+, 当
+\begin_inset Formula $\a=\arctan\frac{5}{12}$
+\end_inset
+
+时, 结果为
+\begin_inset Formula $\arctan\frac{5x^{2}-12x+5}{12x^{2}+5x+12}+C'$
+\end_inset
+
+, 类似的还有
+\begin_inset Formula 
+\[
+\begin{array}{cc}
+-\arctan\frac{2x^{2}+x+2}{\left(x-1\right)^{2}}+C', & \a=-\arctan2,\\
+\arctan\frac{2x^{2}-x+2}{\left(x+1\right)^{2}}+C', & \a=\arctan2,\\
+\arctan\left(x+\frac{1}{x}\right)+C', & \a=\frac{\pi}{2}(\textrm{The slightly wrong answer.})
+\end{array}
+\]
+
+\end_inset
+
+ 这些结果都是原积分的积分曲线族.
+\end_layout
+
+\begin_layout Subsection
+具有缺项的收敛P-级数.
+ 
+\end_layout
+
+\begin_layout Paragraph
+这个问题可以认为是99年浙江大学数学分析考研试题最后一题的推广结论.
+ 设
+\begin_inset Formula $k$
+\end_inset
+
+和
+\begin_inset Formula $q$
+\end_inset
+
+为整数, 且
+\begin_inset Formula $q\ge2$
+\end_inset
+
+, 
+\begin_inset Formula $0\le k<q-1$
+\end_inset
+
+.
+ 集合
+\begin_inset Formula $D_{k}$
+\end_inset
+
+是
+\begin_inset Formula $q$
+\end_inset
+
+进制数字
+\begin_inset Formula $\{0,1,\cdots,q-1\}$
+\end_inset
+
+中任取
+\begin_inset Formula $k$
+\end_inset
+
+个数字形成的子集, 集合
+\begin_inset Formula $E_{k}$
+\end_inset
+
+表示那些
+\begin_inset Formula $q$
+\end_inset
+
+进制数字中不含有
+\begin_inset Formula $D_{k}$
+\end_inset
+
+中数码的那些正整数组成的数集.
+ 则有如下定理
+\end_layout
+
+\begin_layout Theorem
+The Exponent of Convergence, 
+\begin_inset Formula $\a$
+\end_inset
+
+, of the Series 
+\begin_inset Formula $\sum_{n\in E_{k}}n^{-p}$
+\end_inset
+
+ Equals 
+\begin_inset Formula $\frac{\ln(q-k)}{\ln q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+If 
+\begin_inset Formula $E$
+\end_inset
+
+ is an infinite set of positive integers and 
+\begin_inset Formula $\a$
+\end_inset
+
+ a positive real constant such that
+\begin_inset Formula 
+\[
+x^{\a-\varepsilon}\ll_{\varepsilon}E(x)\ll_{\varepsilon}x^{\a+\varepsilon}
+\]
+
+\end_inset
+
+then 
+\begin_inset Formula $\a$
+\end_inset
+
+ is the exponent of convergence of the series
+\begin_inset Formula 
+\[
+L(p,E)=\sum_{m\in E}\frac{1}{m^{p}}.
+\]
+
+\end_inset
+
+in which 
+\begin_inset Formula $f(x,\varepsilon)\ll_{\varepsilon}g(x)\ll_{\varepsilon}h(x,\varepsilon)$
+\end_inset
+
+ means that given 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+, there exists positive constants 
+\begin_inset Formula $\eta_{\varepsilon}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu_{\varepsilon}$
+\end_inset
+
+ such that
+\begin_inset Formula 
+\[
+\eta_{\varepsilon}f(x,\varepsilon)\le g(x)\le\mu_{\varepsilon}h(x,\varepsilon)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+概率论
+\end_layout
+
+\begin_layout Paragraph
+28.
+ If 
+\begin_inset Formula $7\%$
+\end_inset
+
+ of the population escapes getting a cold during any given year, how many
+ days must the average inhabitant expect to wait from one cold to the next?
+\end_layout
+
+\begin_layout Paragraph
+这是一道关于Possion分布的问题.
+\end_layout
+
+\begin_layout Paragraph
+43.
+ In a 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ matrix, the entries 
+\begin_inset Formula $a_{ij}$
+\end_inset
+
+ are randomly selected integers such that 
+\begin_inset Formula $0\le a_{ij}\le9$
+\end_inset
+
+.
+ Find the probability that
+\end_layout
+
+\begin_layout Enumerate
+the three-digit numbers formed by each row will be divisible by 11;
+\end_layout
+
+\begin_layout Enumerate
+the three-digit numbers formed by each row and each column will be divisible
+ by 11.
+\end_layout
+
+\begin_layout Paragraph
+68.
+ It takes 5 minutes to cross a certain bridge and 1000 people cross it in
+ a day of 12 hours, all times of day being equally likely.
+ Find the probability that there will be nobody on the bridge at noon.
+\end_layout
+
+\begin_layout Section
+其它
+\end_layout
+
+\begin_layout Paragraph
+10*.
+ 证明方程
+\begin_inset Formula $\ue^{z}=z$
+\end_inset
+
+有无穷多个复根.
+\end_layout
+
+\begin_layout Paragraph
+杂志中对这个方程给出了两种方法, 其中一种依赖于数形结合.
+ 另一种方法则使用Hadamard Factorization Theorem, 这一定理对于解析函数零点的连乘积展开有重要理论基础.
+ 最终问题被推广为: 函数
+\begin_inset Formula $\ue^{\lambda z}-p(z)$
+\end_inset
+
+有无穷多个零点, 这里
+\begin_inset Formula $p(z)$
+\end_inset
+
+为任意的多项式, 
+\begin_inset Formula $\lambda\ne0$
+\end_inset
+
+为任意复数.
+\end_layout
+
+\begin_layout Paragraph
+16.
+ For 
+\begin_inset Formula $n=1,2,3,\cdots$
+\end_inset
+
+, the finite sequence 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ is a permutationg of 
+\begin_inset Formula $1,2,3,\cdots,n$
+\end_inset
+
+, formed according to a law to be determined.
+ According to this law, we have
+\begin_inset Formula 
+\[
+\begin{array}{c}
+S_{1}=(1)\\
+S_{2}=(1,2)\\
+S_{3}=(1,3,2)\\
+S_{4}=(4,1,3,2)\\
+\cdots\\
+S_{9}=(8,5,4,9,1,7,6,3,2)
+\end{array}
+\]
+
+\end_inset
+
+Discover a law of formation which is satisfied by the above sequences, and
+ then give 
+\begin_inset Formula $S_{10}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+这是个按照字母表排序的问题...
+\end_layout
+
+\begin_layout Paragraph
+30*.
+ Cut a square into a minimal number of triangles with all angles acute.
+\end_layout
+
+\begin_layout Paragraph
+31.
+ A driver cruising on thee highway observed that the odometer of his car
+ showed 
+\begin_inset Formula $15951$
+\end_inset
+
+ miles.
+ He noticed that this number is palindromic: it reads the same backward
+ and forward.
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Quotes eld
+\end_inset
+
+Curious
+\begin_inset Quotes erd
+\end_inset
+
+, the driver said to himself.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+It will be a long time before that happens again.
+\begin_inset Quotes erd
+\end_inset
+
+ But exactly two hours later the odometer showed a new palindromic number.
+\end_layout
+
+\begin_layout Paragraph
+What was the average speed of the car in those two hours?
+\end_layout
+
+\begin_layout Paragraph
+67.
+ Show that in any convex 
+\begin_inset Formula $2n$
+\end_inset
+
+-gon there is a diagonal which is not parallel to any of its sides.
+\end_layout
+
+\begin_layout Paragraph
+70*.
+ Show that for any 13-gon there exists a straight line containing only one
+ of its sides.
+ Show also that for every 
+\begin_inset Formula $n>13$
+\end_inset
+
+ there exists an 
+\begin_inset Formula $n$
+\end_inset
+
+-gon for which the above statement does not hold.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

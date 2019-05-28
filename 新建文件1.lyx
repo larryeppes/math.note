@@ -1,0 +1,557 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+weak convergence of measures
+\end_layout
+
+\begin_layout Standard
+about weak convergence of finite measures.
+\end_layout
+
+\begin_layout Standard
+def.
+ 有限测度序列
+\begin_inset Formula $Q_{n}\in\mathcal{M}_{b}\left(\mathcal{A}_{n}\right)$
+\end_inset
+
+, 定义在一般可测空间
+\begin_inset Formula $\left(\Omega_{n},\mathcal{A}_{n}\right)$
+\end_inset
+
+, 称为是有界的, 如果
+\begin_inset Formula 
+\[
+\limsup_{n\to\infty}Q_{n}\left(\Omega_{n}\right)<\infty.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Theta$
+\end_inset
+
+是带有距离
+\begin_inset Formula $d$
+\end_inset
+
+的度量空间, 
+\begin_inset Formula $\mathcal{B}$
+\end_inset
+
+是Borel 
+\begin_inset Formula $\sigma$
+\end_inset
+
+代数, 记
+\begin_inset Formula $\mathcal{C}\left(\Theta\right)$
+\end_inset
+
+是所有有界连续函数
+\begin_inset Formula $f:\Theta\to\RR$
+\end_inset
+
+组成的集合.
+\end_layout
+
+\begin_layout Standard
+序列
+\begin_inset Formula $Q_{n}\in\mathcal{M}_{b}\left(\mathcal{B}\right)$
+\end_inset
+
+称为是tight, 如果对于任意的
+\begin_inset Formula $\varepsilon\in\left(0,\infty\right)$
+\end_inset
+
+, 存在紧子集
+\begin_inset Formula $K\subset\Theta$
+\end_inset
+
+使得
+\begin_inset Formula 
+\[
+\limsup_{n\to\infty}Q_{n}\left(\Theta\setminus K\right)<\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+序列
+\begin_inset Formula $Q_{n}\in\mathcal{M}_{b}\left(\mathcal{B}\right)$
+\end_inset
+
+称为是弱收敛于
+\begin_inset Formula $Q_{0}\in\mathcal{M}_{b}\left(\mathcal{B}\right)$
+\end_inset
+
+的, 如果
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\int f\ud Q_{n}=\int f\ud Q_{0},\qquad\forall f\in C\left(\Theta\right);
+\]
+
+\end_inset
+
+记为
+\begin_inset Formula $Q_{n}\underset{w}{\longrightarrow}Q_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Weak Convergence of Probability Measures
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $D=D[0,1]$
+\end_inset
+
+是那些右连续并且有左极限的函数
+\begin_inset Formula $x:[0,1]\to\RR$
+\end_inset
+
+组成的空间.
+\end_layout
+
+\begin_layout Standard
+Borel sigma-algebra 
+\begin_inset Formula $\mathcal{S}$
+\end_inset
+
+是由拓扑空间中的开集生成的最小sigma代数.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathcal{S}$
+\end_inset
+
+的子集族
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+称为一个
+\begin_inset Formula $\pi$
+\end_inset
+
+-系统, 如果集合的交运算封闭, 即
+\begin_inset Formula $A,B\in\mathcal{A}$
+\end_inset
+
+, then 
+\begin_inset Formula $A\cap B\in\mathcal{A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+说
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+是一个
+\begin_inset Formula $\lambda$
+\end_inset
+
+-系统, 如果(i) 
+\begin_inset Formula $\mathcal{S}\in\mathcal{L}$
+\end_inset
+
+, (ii) 
+\begin_inset Formula $A\in\mathcal{L}\implies A^{c}\in\mathcal{L}$
+\end_inset
+
+, (iii) 对于任何两两不交集合
+\begin_inset Formula $A_{n}\in\mathcal{L},$
+\end_inset
+
+ 
+\begin_inset Formula $\cup_{n}A_{n}\in\mathcal{L}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+度量空间
+\begin_inset Formula $S$
+\end_inset
+
+称为是可分的, 如果它有可数稠子集.
+ 可分是拓扑性质.
+\end_layout
+
+\begin_layout Standard
+完备的可分度量空间称为Polish空间.
+\end_layout
+
+\begin_layout Standard
+集合
+\begin_inset Formula $K$
+\end_inset
+
+称为是紧的, 如果
+\begin_inset Formula $K$
+\end_inset
+
+的任何开覆盖有有限子覆盖.
+\end_layout
+
+\begin_layout Standard
+集合
+\begin_inset Formula $A\subset S$
+\end_inset
+
+称为是相对紧的, 如果
+\begin_inset Formula $A$
+\end_inset
+
+的任何序列有收敛子列, 其收敛极限可能不在
+\begin_inset Formula $A$
+\end_inset
+
+中.
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $P_{n},P$
+\end_inset
+
+是空间
+\begin_inset Formula $\left(S,\mathcal{S}\right)$
+\end_inset
+
+上的概率测度.
+ 说
+\begin_inset Formula $P_{n}$
+\end_inset
+
+弱收敛于
+\begin_inset Formula $P$
+\end_inset
+
+, as 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+, 如果对于任何有界连续函数
+\begin_inset Formula $f:S\to\RR$
+\end_inset
+
+有
+\begin_inset Formula 
+\[
+\int_{S}f\left(x\right)P_{n}\left(dx\right)\to\int_{s}f\left(x\right)P\left(dx\right),\quad n\to\infty.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $X$
+\end_inset
+
+是一个定义在空间
+\begin_inset Formula $\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+上的
+\begin_inset Formula $\left(S,\mathcal{S}\right)$
+\end_inset
+
+值随机变量.
+ 称
+\begin_inset Formula $S$
+\end_inset
+
+上的概率测度
+\begin_inset Formula $P$
+\end_inset
+
+为
+\begin_inset Formula $X$
+\end_inset
+
+的概率分布, 如果对于任意的
+\begin_inset Formula $A\in\mathcal{S}$
+\end_inset
+
+有
+\begin_inset Formula $P\left(A\right)=\mathbb{P}\left(X\in A\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $X_{n},X$
+\end_inset
+
+是定义在概率空间
+\begin_inset Formula $\left(\Omega_{n},\mathcal{F}_{n},\mathbb{P}_{n}\right),\left(\Omega,\mathcal{F},\mathbb{P}\right)$
+\end_inset
+
+上的
+\begin_inset Formula $\left(S,\mathcal{S}\right)$
+\end_inset
+
+值随机变量.
+ 称
+\begin_inset Formula $X_{n}$
+\end_inset
+
+在分布意义下收敛于
+\begin_inset Formula $X$
+\end_inset
+
+, as 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+, and write 
+\begin_inset Formula $X_{n}\implies X$
+\end_inset
+
+, 如果对于任何有界连续函数
+\begin_inset Formula $f:S\to\RR$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\mathbb{E}_{n}\left(f\left(X_{n}\right)\right)\to\mathbb{E}\left(f\left(X\right)\right),\quad n\to\infty.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+call 
+\begin_inset Formula $A\in\mathcal{S}$
+\end_inset
+
+ a P-continuity set if 
+\begin_inset Formula $P\left(\partial A\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+question
+\end_layout
+
+\begin_layout Standard
+if nonnegative radon measure 
+\begin_inset Formula $\mu,\nu$
+\end_inset
+
+ of 
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+ satisfies(
+\begin_inset Formula $0<a<2$
+\end_inset
+
+):
+\begin_inset Formula 
+\[
+\nu\left(\RR^{n}\right)=C\mu\left(\RR^{n}\right)^{a}\mu\left(\RR^{n}\right)
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+v\left(E\right)\le C\mu\left(\RR^{n}\right)^{a}\mu\left(E\right),\qquad\forall E\in\RR^{n}\quad E\ \text{be any Borel set}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\nu$
+\end_inset
+
+ is nonzero only at points 
+\begin_inset Formula $\left(x_{j}\right)_{j=1}^{\infty}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=C\mu\left(\RR^{n}\right)^{a}\mu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

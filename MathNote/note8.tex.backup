@@ -606,7 +606,7 @@ a_{k+1}=a_k\paren{1+\frac1na_k}
 \ea
 
 \bq{}{}
-已知函数$f(x)$的定义域为$\Reals$, 对于任意实数$m,n$均有$f(m+n)=f(m)+f(n)-1$, 且$f\paren{\frac12}=2$, 
+已知函数$f(x)$的定义域为$\RR$, 对于任意实数$m,n$均有$f(m+n)=f(m)+f(n)-1$, 且$f\paren{\frac12}=2$, 
 当$x>-\frac12$时, 恒有$f(x)>0$, 求证: $f(x)$单调递增.
 \eq
 \ba
@@ -832,7 +832,7 @@ f(x)=\frac{6\sqrt{8-x}}{\sqrt{x}+\sqrt{x-6}}
 \ea
 
 \bq{}{}
-已知$a,b,c,d\in\Reals$, 满足$a+b+c+d=3$, $a^2+2b^2+3c^2+6d^2=5$, 
+已知$a,b,c,d\in\RR$, 满足$a+b+c+d=3$, $a^2+2b^2+3c^2+6d^2=5$, 
 则$a$的最小值与最大值的和是\underline{3}.
 \eq
 \ba
@@ -908,7 +908,7 @@ a\cos C+b\cos B+c\cos A&>a\cos C+b\cos A+c\cos B.
 \ea
 
 \bq{}{}
-设$x,y\in\Reals^+$, $x+y=3952$, 则(\qquad).
+设$x,y\in\RR^+$, $x+y=3952$, 则(\qquad).
 
 \begin{enumerate}[A.]
  \item $x^{1949}\cdot y^{2003}\ge1949^{1949}\cdot2003^{2003}$.
@@ -961,7 +961,7 @@ a<\frac{\frac{\sqrt{2}}{2}\paren{\cos\frac{\b}{2}-\sin\frac{\b}{2}}}{\paren{\cos
 设$b_1,b_2,\cdots,b_n$是正数$a_1,a_2,\cdots,a_n$的一个排列, 证明$\sum_{k=1}^{n}\frac{a_k}{b_k}\ge n$.
 \eq
 \ba
-不妨设$a_1\ge a_2\ge\cdots\ge a_n$, 因$a_k\in\Reals^+$, 所以$\frac1{a_1}\le\frac1{a_2}\le\cdots\le\frac1{a_n}$,
+不妨设$a_1\ge a_2\ge\cdots\ge a_n$, 因$a_k\in\RR^+$, 所以$\frac1{a_1}\le\frac1{a_2}\le\cdots\le\frac1{a_n}$,
 又$\frac1{b_1},\frac1{b_2},\cdots,\frac1{b_n}$是$\frac1{a_1},\frac1{a_2},\cdots,\frac1{a_n}$的一个排列,
 于是$n= \sum_{k=1}^{n}a_k\cdot\frac1{a_k}\le\sum_{k=1}^{n}a_k\cdot\frac1{b_k}$, 另外
 \bee
@@ -989,7 +989,7 @@ a<\frac{\frac{\sqrt{2}}{2}\paren{\cos\frac{\b}{2}-\sin\frac{\b}{2}}}{\paren{\cos
 \ea
 
 \bq{}{}
-若$A=a\sin^2x+b\cos^2x$, $B=a\cos^2x+b\sin^2x$, ($a,b\in\Reals$), 
+若$A=a\sin^2x+b\cos^2x$, $B=a\cos^2x+b\sin^2x$, ($a,b\in\RR$), 
 证明$m=AB, n=ab$, $P=A^2+B^2$, $Q=a^2+b^2$满足$m+Q\ge P+n$.
 \eq
 \ba
@@ -999,14 +999,14 @@ $AB=ab+\sin^2x\cos^2x(a-b)^2$, 所以$AB-ab=(a-b)^2\sin^2x\cos^2x\ge0$,
 \ea
 
 \bq{}{}
-已知$x,y,z\in\Reals^+$, 且满足$xyz(x+y+z)=1$, 求$t=(x+y)(x+z)$的最小值.
+已知$x,y,z\in\RR^+$, 且满足$xyz(x+y+z)=1$, 求$t=(x+y)(x+z)$的最小值.
 \eq
 \ba
 $x^2+xy+xz=\frac{1}{yz}$, 所以$t=yz+\frac1{yz}\ge2$, 当$y=z=1$, $x=\sqrt{2}-1$时取等号.
 \ea
 
 \bq{}{}
-如果$a_{n}=\sum_{k=1}^n\frac1k$, ($n\in\Naturals$), 证明: 对于任意的$n\ge2$, 
+如果$a_{n}=\sum_{k=1}^n\frac1k$, ($n\in\NN$), 证明: 对于任意的$n\ge2$, 
 都有$a_n^2>2\paren{\frac{a_2}{2}+\frac{a_3}{3}+\cdots+\frac{a_n}{n}}$.
 \eq
 \ba
@@ -1038,7 +1038,7 @@ a_n^2=\sum_{k=2}^{n}(a_k^2-a_{k-1}^2)+a_1^2
 \ea
 
 \bq{}{}
-若$n\in\Naturals$, $n>1$, 求证: $1-\frac12+\frac13-\frac14+\cdots+\frac1{2n-1}-\frac1{2n}>\frac47$.
+若$n\in\NN$, $n>1$, 求证: $1-\frac12+\frac13-\frac14+\cdots+\frac1{2n-1}-\frac1{2n}>\frac47$.
 \eq
 \ba
 因$n=2$时上式成立, 记$f(n)=LHS$. 因为$f(n)-f(n-1)=\frac1{2n-1}-\frac1{2n}>0$, ($n\ge3$), 
@@ -1062,7 +1062,7 @@ f(n)=\sum_{k=1}^{2n}\frac1k-2\sum_{k=1}^{n}\frac{1}{2k}
 \eee
 由均值不等式有$\frac{(n+1)+(n+2)+\cdots+2n}{n}>\frac{n}{\frac1{n+1}+\frac1{n+2}+\cdots+\frac1{2n}}$,
 所以$\frac1{n+1}+\frac1{n+2}+\cdots+\frac1{2n}>\frac{n^2}{n(3n+1)}$, 
-又因为$n\in\Naturals_+$, $n>1$, 所以$3n+1\le3n+\frac{n}{2}=\frac{7n}{2}$, 
+又因为$n\in\NN_+$, $n>1$, 所以$3n+1\le3n+\frac{n}{2}=\frac{7n}{2}$, 
 所以$\frac{2n}{3n+1}\ge\frac47$, 得证.
 \ea
 
@@ -1095,7 +1095,7 @@ LHS=(\sin^2\b+\cos^2\b)\paren{\frac{\cos^4\a}{\sin^2\b}+\frac{\sin^4\a}{\cos^2\b
 \ea
 
 \bq{}{}
-设$f(x)=x^2+px+q$, $p,q\in\Reals$, 若$\abs{f(x)}$在$x\in[-1,1]$上的最大值$M$, 求$M$的最小值.
+设$f(x)=x^2+px+q$, $p,q\in\RR$, 若$\abs{f(x)}$在$x\in[-1,1]$上的最大值$M$, 求$M$的最小值.
 \eq
 \ba
 设$M=\max_{-1\le x\le 1}\abs{f(x)}$, 则$M\ge\abs{f(1)}=\abs{1+p+q}$,
@@ -1198,7 +1198,7 @@ xy+2yz+zw\le\frac{1+\sqrt{2}}{2}(x^2+y^2+z^2+w^2),
 \ea
 
 \bq{}{}
-已知$a,b,c\in\Reals^+$, 求$\frac{(a+1)^3}{b}+\frac{(b+1)^3}{c}+\frac{(c+1)^3}{a}$的最小值.
+已知$a,b,c\in\RR^+$, 求$\frac{(a+1)^3}{b}+\frac{(b+1)^3}{c}+\frac{(c+1)^3}{a}$的最小值.
 \eq
 \ba
 \bee
@@ -1218,7 +1218,7 @@ xy+2yz+zw\le\frac{1+\sqrt{2}}{2}(x^2+y^2+z^2+w^2),
 \ea
 
 \bq{}{}
-设$x,y,z\in\Reals^+$, 且$x^4+y^4+z^4=1$, 求$u=\sumcyc\frac{x^3}{1-x^8}$的最小值.
+设$x,y,z\in\RR^+$, 且$x^4+y^4+z^4=1$, 求$u=\sumcyc\frac{x^3}{1-x^8}$的最小值.
 \eq
 \ba
 \begin{align*}
@@ -1238,7 +1238,7 @@ $a>b>0$, $c>d>0$时易得$\paren{a+\frac1c}\paren{b+\frac1d}>\paren{a+\frac1d}\p
 \ea
 
 \bq{}{}
-设$n$为自然数, $x,y\in\Reals^+$, 且$x+y=2$, 求$3+\frac{1}{1+x^n}+\frac{1}{y^n}$的最小值.
+设$n$为自然数, $x,y\in\RR^+$, 且$x+y=2$, 求$3+\frac{1}{1+x^n}+\frac{1}{y^n}$的最小值.
 \eq
 \ba
 方法一: 用幂平均不等式和调和平均不等式
@@ -1333,7 +1333,7 @@ bd\ge1
  (1-a)(c-b)\ge1
 \end{cases}
 \eee
-令$(1-a)b=2+x^2$, $ab=1+y^2$, $x,y\in\Reals$, 则$a=\frac{1+y^2}{3+x^2+y^2}$, 
+令$(1-a)b=2+x^2$, $ab=1+y^2$, $x,y\in\RR$, 则$a=\frac{1+y^2}{3+x^2+y^2}$, 
 $b=3+x^{2}+y^{2}$, 所以从上式第三个式子得出
 \be\label{20181006003}
 c\ge\frac{(y^{2}+2)(x^{2}+y^{2}+3)}{y^{2}+1},
@@ -1380,12 +1380,12 @@ $f$上凸; $x\in\left[\frac{\sqrt{3}}{3},1\right]$时, $f$下凸,
 \ea
 
 \bq{}{}
-设正整数数列$a_{1}$, $a_{2}$, $a_{3}$, $a_{4}$等比, 公比$r\not\in\Integers$,
+设正整数数列$a_{1}$, $a_{2}$, $a_{3}$, $a_{4}$等比, 公比$r\not\in\ZZ$,
 且$r\ge1$, 求$a_{4}$的最小值.
 \eq
 \ba
 $r$为有理数, 令$r=q/p$, ($q>p\ge2$), $a_{4}=a_{1}r^{3}=\frac{a_{1}q^{3}}{p^{3}}$,
-因为$a_{4}\in\Integers$, 所以$p^{3}\mid a_{1}$, 所以$a_{1}=kp^{3}$($k\in\pNaturals$),
+因为$a_{4}\in\ZZ$, 所以$p^{3}\mid a_{1}$, 所以$a_{1}=kp^{3}$($k\in\pNN$),
 $a_{4}=kq^{3}$, $q>p\ge2$, 所以$k=1$, $q=3$.
 \ea
 
@@ -1435,7 +1435,7 @@ $a_{4}=kq^{3}$, $q>p\ge2$, 所以$k=1$, $q=3$.
 \eq
 \ba
 $a=\lg(xy^{-1}+z)$, $b=\lg(yz+x^{-1})$, $c=\lg[(xz)^{-1}+y]$, 设$N$为$xy^{-1}+z$,
-$yz+x^{-1}$, $(xz)^{-1}+y$中最大的, 则$M=\lg N$, 因为$x,y,z\in\Reals^{+}$,
+$yz+x^{-1}$, $(xz)^{-1}+y$中最大的, 则$M=\lg N$, 因为$x,y,z\in\RR^{+}$,
 所以$N^{2}\ge(xy^{-1}+z)[(xz)^{-1}+y]=[(yz)^{-1}+yz]+\paren{x+\frac{1}{x}}\ge2+2=4$,
 所以$N\ge2$, 当且仅当$x=y=z=1$时取等号, 所以$M=\lg N=\lg2$.
 \ea
@@ -1453,7 +1453,7 @@ $yz+x^{-1}$, $(xz)^{-1}+y$中最大的, 则$M=\lg N$, 因为$x,y,z\in\Reals^{+}$
 \bee
 \cot^{2}B+(\cot C-\sqrt{3})\cot B+(\cot^{2}C-\sqrt{3}\cot C+1)=0,
 \eee
-因为$\cot B\in\Reals$, 所以$\Delta\ge0$, 但是$\Delta=(\cot C-\sqrt{3})^{2}-4(\cot^{2}C-\sqrt{3}\cot C+1)=-(\sqrt{3}\cot C-1)^{2}\le0$,
+因为$\cot B\in\RR$, 所以$\Delta\ge0$, 但是$\Delta=(\cot C-\sqrt{3})^{2}-4(\cot^{2}C-\sqrt{3}\cot C+1)=-(\sqrt{3}\cot C-1)^{2}\le0$,
 所以$\sqrt{3}\cot C-1=0$, $C=60\degree$.
 \ea
 \ba
@@ -1525,7 +1525,7 @@ a_{k-1}^{2}+2<a_{k}^{2}<a_{k-1}^{2}+3
 定义在$x>0$上的函数$f(x)$满足:
 \begin{enumerate}
 \item 存在$a>1$使得$f(a)\ne0$;
-\item 对于任意的$b\in\Reals$, 有$f(x^{b})=bf(x)$.
+\item 对于任意的$b\in\RR$, 有$f(x^{b})=bf(x)$.
 \end{enumerate}
 求证: 对于任意的$x>2$有$f(x-1)f(x+1)<[f(x)]^{2}.$
 \eq
@@ -1565,4 +1565,178 @@ f(x-1)f(x+1)\le\left(\frac{f(x-1)+f(x+1)}{2}\right)^{2}=\left(\frac{f(x^{2}-1)}{
 \bee
 2\Delta_{n}\le\frac{1}{4}\sum\frac{\sqrt{a_{i}^{2}+a_{i+1}^{2}-2a_{i}a_{i+1}\cos A_{i+1}}}{\sin A_{i+1}}\sum\sqrt{a_{i}^{2}+a_{i+1}^{2}-2a_{i}a_{i+1}\cos A_{i+1}}.
 \eee
+\ea
+
+\bq{}{}
+求证: 
+\bee
+|a|+|b|\le\sqrt{a^{2}\cos^{2}\theta+b^{2}\sin^{2}\theta}+\sqrt{a^{2}\sin^{2}\theta+b^{2}\cos^{2}\theta}\le\sqrt{2(a^{2}+b^{2})}.
+\eee
+\eq
+\ba
+后者用平方平均不等式易得. 下面证明前者, 令$z_{1}=a\cos\theta+\ui b\sin\theta$, $z_{2}=a\sin\theta+\ui b\cos\theta$,
+$u=|z_{1}|+|z_{2}|$, 则
+\begin{align*}
+u^{2} & =|z_{1}|^{2}+|z_{2}|^{2}+2|z_{1}|\cdot|z_{2}|\\
+ & =a^{2}\cos^{2}\theta+b^{2}\sin^{2}\theta+a^{2}\sin^{2}\theta+b^{2}\cos^{2}\theta+\left|(a^{2}-b^{2})\sin2\theta+2ab\ui\right|\\
+ & =a^{2}+b^{2}+\sqrt{(a^{2}-b^{2})^{2}\sin^{2}2\theta+4a^{2}b^{2}}\\
+ & \le a^{2}+b^{2}+\sqrt{(a^{2}+b^{2})^{2}}\\
+ & =2(a^{2}+b^{2})
+\end{align*}
+又因为$u^{2}=a^{2}+b^{2}+\sqrt{(a^{2}-b^{2})^{2}\sin^{2}2\theta+4a^{2}b^{2}}\ge a^{2}+b^{2}+\sqrt{4a^{2}b^{2}}=(|a|+|b|)^{2}$,
+即$u\ge|a|+|b|$. 左边不等式还可以通过分析法解得, 通过去根号.
+\ea
+
+\bq{}{}
+设$x,y,z\in\RR^{+}$, 求证
+\bee
+\sumcyc\frac{x^{2}}{y^{2}+z^{2}+yz}\ge1.
+\eee
+\eq
+\ba
+\begin{align*}
+\sumcyc\frac{x^{2}}{y^{2}+z^{2}+yz} & \ge\sumcyc\frac{x^{2}}{y^{2}+z^{2}+\frac{y^{2}+z^{2}}{2}}\\
+ & =\sumcyc\frac{2x^{2}}{3(y^{2}+z^{2})}\\
+ & =\frac{2}{3}\sumcyc\frac{x^{2}}{y^{2}+z^{2}}\\
+ & =\frac{2}{3}\left[\sumcyc\left(\frac{x^{2}}{y^{2}+z^{2}}+1\right)-3\right]\\
+ & =\frac{2}{3}(x^{2}+y^{2}+z^{2})\sumcyc\frac{1}{y^{2}+z^{2}}-2\\
+ & =\frac{1}{3}\left(\sumcyc x^{2}+y^{2}\right)\left(\sumcyc\frac{1}{x^{2}+y^{2}}\right)-2\\
+ & \ge\frac{1}{3}\left(\sum1\right)^{2}-2=1.
+\end{align*}
+\ea
+\ba
+不妨设$x\ge y\ge z\ge0$, 所以$x^{2}\ge y^{2}\ge z^{2}\ge0$, $xy\ge xz\ge yz$.
+\bee
+x^{2}+y^{2}+xy\ge x^{2}+z^{2}+xz\ge y^{2}+z^{2}+yz.
+\eee
+用排序不等式
+\bee
+\sumcyc\frac{x^{2}}{y^{2}+z^{2}+yz}\ge\sumcyc\frac{z^{2}}{y^{2}+z^{2}+yz}\ge\sumcyc\frac{y^{2}}{y^{2}+z^{2}+yz}\ge\sumcyc\frac{yz}{y^{2}+z^{2}+yz},
+\eee
+由此不等式组生成$3$个不等式, 相加即得.
+\ea
+
+\bq{}{}
+已知$a,b\in\RR^{+}$, $n\in\pNN$, 且$\frac{\sin^{4}\a}{a^{n}}+\frac{\cos^{4}\a}{b^{n}}=\frac{1}{a^{n}+b^{n}}$,
+求证:
+\bee
+\frac{\sin^{8}\a}{a^{3n}}+\frac{\cos^{8}\a}{b^{3n}}=\frac{1}{(a^{n}+b^{n})^{3}}.
+\eee
+\eq
+\ba
+用Cauchy不等式, 
+\bee
+(a^{n}+b^{n})\left(\frac{\sin^{8}\a}{a^{3n}}+\frac{\cos^{8}\a}{b^{3n}}\right)\ge\left(\frac{\sin^{4}\a}{a^{n}}+\frac{\cos^{4}\a}{b^{n}}\right)^{2}=\frac{1}{(a^{n}+b^{n})^{2}},
+\eee
+当且仅当$\frac{a^{n}}{\sin^{2}\a}=\frac{b^{n}}{\cos^{2}\a}$时等号成立, 又
+\bee
+(a^{n}+b^{n})\left(\frac{\sin^{4}\a}{a^{n}}+\frac{\cos^{4}\a}{b^{n}}\right)\ge(\sin^{2}\a+\cos^{2}\a)^{2}=1,
+\eee
+即$\frac{\sin^{4}\a}{a^{n}}+\frac{\cos^{4}\a}{b^{n}}\ge\frac{1}{a^{n}+b^{n}}$,
+等号成立, 则$\frac{a^{n}}{\sin^{2}\a}=\frac{b^{n}}{\cos^{2}\a}$.
+\ea
+
+\bq{}{}
+设$x_{1},x_{2},\cdots,x_{n}>0$, $x_{1}+x_{2}+\cdots+x_{n}=1$, $n\ge2$,
+且$n\in\pNN$, 求证:
+\bee
+\sum_{i=1}^{n}\frac{x_{i}}{\sqrt{1-x_{i}}}\ge\frac{\sum_{i=1}^{n}\sqrt{x_{i}}}{\sqrt{n-1}}.
+\eee
+\eq
+\ba
+\begin{align*}
+LHS & =\sum\frac{1}{\sqrt{1-x_{i}}}-\sum\sqrt{1-x_{i}}\\
+ & \ge\frac{n^{2}}{\sum\sqrt{1-x_{i}}}-\sum\sqrt{1-x_{i}}\\
+ & \ge\frac{n^{2}}{\paren{\sum1}^{1/2}\paren{\sum(1-x_{i})}^{1/2}}-\paren{\sum1}^{1/2}\paren{\sum(1-x_{i})}^{1/2}\\
+ & =\frac{n^{2}}{\sqrt{n(n-1)}}-\sqrt{n(n-1)}=\frac{\sqrt{n}}{\sqrt{n-1}}\\
+ & \ge\frac{\sum\sqrt{x_{i}}}{\sqrt{n-1}}
+\end{align*}
+\ea
+\ba
+\begin{align*}
+\left[\left[\left(\sum(1-x_{i})\right)^{1/2}\left(\sum\frac{x_{i}}{\sqrt{1-x_{i}}}\right)^{1}\right]^{2/3}\right]^{3/2} & =\left[\left(\sum(1-x_{i})\right)^{1/3}\left(\sum\frac{x_{i}}{\sqrt{1-x_{i}}}\right)^{2/3}\right]^{3/2}(\text{Holder不等式})\\
+ & \ge\left[\sum(1-x_{i})^{1/3}\cdot\left(\frac{x_{i}}{\sqrt{1-x_{i}}}\right)^{2/3}\right]^{3/2}\\
+ & =\left(\sum x_{i}^{2/3}\right)^{3/2}(\text{幂平均不等式})\\
+ & \ge n^{3/2}\cdot\frac{\sum x_{i}}{n}=\sqrt{n}\ge\sum\sqrt{x_{i}}
+\end{align*}
+\ea
+
+\bq{}{}
+设$a_{1},a_{2},\cdots,a_{n}\in\RR^{+}$, 且满足$a_{1}+a_{2}+\cdots+a_{n}<1$,
+求证:
+\bee
+\frac{a_{1}a_{2}\cdots a_{n}[1-(a_{1}+a_{2}+\cdots+a_{n})]}{(a_{1}+a_{2}+\cdots+a_{n})(1-a_{1})(1-a_{2})\cdots(1-a_{n})}\le\frac{1}{n^{n+1}}.
+\eee
+\eq
+\ba
+令$\sum a_{i}=A$, 则
+\bee
+1-a_{i}=1-A+a_{1}+\cdots+a_{i-1}+a_{i+1}+\cdots+a_{n}\ge n\sqrt[n]{(1-A)a_{1}\cdots a_{i-1}a_{i+1}\cdots a_{n}}.
+\eee
+所以
+\bee
+\prod(1-a_{i})\ge n(1-A)\sqrt[n]{\left(\prod a_{i}\right)^{n-1}}.
+\eee
+因为$A\ge n\sqrt[n]{\prod a_{i}}$, 所以
+\bee
+A\cdot\prod\left(1-a_{i}\right)\ge n^{n+1}\left(1-A\right)\prod a_{i}
+\eee
+所以
+\bee
+\frac{\left(\prod a_{i}\right)\left(1-A\right)}{A\cdot\prod(1-a_{i})}\le\frac{1}{n^{n+1}}\qquad(n\ge2)
+\eee
+最后说明一下$n=1$时的情况成立便可.
+\ea
+\ba
+设$a_{n+1}=1-\sum a_{i}$, 所以$a_{n+1}>0$, 所以$\sum_{i=1}^{n+1}a_{i}=1$,
+不等式变为
+\bee
+n^{n+1}\prod_{i=1}^{n+1}a_{i}\le\prod_{i=1}^{n+1}(1-a_{i})
+\eee
+对于每一个$i$($i=1,2,\cdots,n+1$), 由均值不等式有
+\bee
+1-a_{i}=a_{1}+\cdots+a_{i-1}+a_{i+1}+\cdots+a_{n+1}\ge n\sqrt[n]{a_{1}\cdots a_{i-1}a_{i+1}\cdots a_{n+1}}=n\sqrt[n]{\frac{1}{a_{i}}\prod_{k=1}^{n+1}a_{k}},
+\eee
+所以$\prod_{k=1}^{n+1}(1-a_{k})\ge n^{n+1}\prod_{k=1}^{n}a_{k}$. 如果$n\ge2$,
+等号成立. 当且仅当$a_{1}=a_{2}=\cdots=a_{n}$时成立, 即$a_{i}=\frac{1}{n+1}$,
+若$n=1$时, 对$a_{1}\in(0,1)$等式均成立.
+\ea
+
+\bq{}{}
+固定正整数$n\ge2$, $n$个非负实数$x_{1},x_{2},\cdots,x_{n}$满足$\sum_{i=1}^{n}x_{i}=1$,
+试求
+\bee
+\sum_{i=1}^{n}(x_{i}^{5}-x_{i}^{4})
+\eee
+的最大值和最小值.
+\eq
+\ba
+因为$x_{i}^{5}\le x_{i}^{4}$, 所以$\sum_{i=1}^{n}(x_{i}^{5}-x_{i}^{4})\le0$,
+令$x_{1}=1$, $x_{2}=\cdots=x_{n}=0$即得等号. 令$f(x)=x^{5}-x^{4}$, $f''(x)=20x^{3}-12x^{2}$,
+所以$f$在$\left[0,\frac{3}{5}\right]$上是上凸函数, 在$\left[\frac{3}{5},1\right]$上是下凸函数,
+将落在$\left[0,\frac{3}{5}\right]$中两数保持和不变向两边``拉'', 可使$\sum_{i=1}^{n}f(x_{i})$变小,
+调整到最后$x_{1},x_{2},\cdots,x_{n}$中有$(n-2)$个$0$, 另外两数记为$a,b$, 则
+\bee
+\sum f(x_{i})\ge(n-2)f(0)+f(a)+f(b)=f(a)+f(b)=-ab(a^{3}+b^{3})=-ab(a+b)(a^{2}+b^{2}-ab)=-ab(1-3ab).
+\eee
+而$0\le ab\le1/4$, 于是当$ab=1/6$时, 取最小值$-1/12$, 此时$a,b=\frac{1}{2}\left(1\pm\sqrt{1/3}\right)$.
+所以$\sum f(x_{i})$的最小值为$-1/12$.
+\ea
+
+\bq{}{}
+设$x_{1},x_{2},\cdots,x_{1997}$是实数, 满足下述条件:
+\begin{enumerate}
+\item $-\frac{1}{\sqrt{3}}\le x_{i}\le\sqrt{3}$, $i=1,2,\cdots,1997$;
+\item $x_{1}+x_{2}+\cdots+x_{1997}=-318\sqrt{3}$.
+\end{enumerate}
+确定$\sum_{i=1}^{1997}x_{i}^{12}$的最大值.
+\eq
+\ba
+设$f(x)=x^{12}$, 则$f''(x)=132x^{10}\ge0$, 于是$f(x)$在$\left[-\frac{1}{\sqrt{3}},\sqrt{3}\right]$上是下凸的,
+当$x_{i},x_{j}\in\left(-\frac{1}{\sqrt{3}},\sqrt{3}\right)$时, 保持其和不变,
+向两边``拉'', 可使$\sum_{i=1}^{1999}x_{i}^{12}$增加, 于是最终将调整到至多一个数落在区间$\left(-\frac{1}{\sqrt{3}},\sqrt{3}\right)$内,
+设有$a$个$-\frac{1}{\sqrt{3}}$, $b$个$\sqrt{3}$, 另一个数记为$c$, $a+b=1996$,
+$-\frac{1}{\sqrt{3}}\le c\le\sqrt{3}$, 则$-\frac{1}{\sqrt{3}}a+\sqrt{3}b+c=-318\sqrt{3}$,
+$-a+3b+\sqrt{3}c=-954$. 于是$4b=1042-c\sqrt{3}$, $1039\le4b\le1043$,
+所以$b=260$, $a=1736$, $c=2/\sqrt{3}$. 于是$\sum_{i=1}^{1997}x_{i}^{12}$的最大值为$a\left(-\frac{1}{\sqrt{3}}\right)^{12}+b\left(\sqrt{3}\right)^{12}+\left(\frac{2}{\sqrt{3}}\right)^{12}=189548$.
 \ea

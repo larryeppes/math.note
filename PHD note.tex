@@ -1,0 +1,930 @@
+%% LyX 2.3.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[a4paper,UTF8]{article}
+\usepackage[T1]{fontenc}
+\usepackage{CJKutf8}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2cm}
+\usepackage{calc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{esint}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}[section]
+\ifx\proof\undefined
+\newenvironment{proof}[1][\protect\proofname]{\par
+	\normalfont\topsep6\p@\@plus6\p@\relax
+	\trivlist
+	\itemindent\parindent
+	\item[\hskip\labelsep\scshape #1]\ignorespaces
+}{%
+	\endtrivlist\@endpefalse
+}
+\providecommand{\proofname}{Proof}
+\fi
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{\protect\definitionname}
+\theoremstyle{plain}
+\newtheorem{lem}[thm]{\protect\lemmaname}
+\theoremstyle{plain}
+\newtheorem{fact}[thm]{\protect\factname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\sline{\noindent\rule[0.25\baselineskip]{\textwidth}{1pt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+\providecommand{\bb}[1]{\mathbb{#1}}
+\providecommand{\mc}[1]{\mathcal{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+
+\makeatother
+
+\providecommand{\definitionname}{定义}
+\providecommand{\factname}{事实}
+\providecommand{\lemmaname}{引理}
+\providecommand{\propositionname}{命题}
+\providecommand{\theoremname}{定理}
+
+\begin{document}
+\begin{CJK}{UTF8}{gbsn}%
+\title{数学笔记}
+\maketitle
+
+\section{report}
+
+\subsection{2019-05-04}
+
+investigate functional
+
+\[
+I:\mathcal{A}\to\RR,\omega\mapsto\int_{U}F\left(D\omega\right)\ud x.
+\]
+\[
+\mathcal{A}\equiv\left\{ \omega\in W^{1,q}\left(U;\RR^{m}\right)\mid\omega=g\ \text{ on \ \ensuremath{\partial U}}\right\} ,\quad1<q<\infty,
+\]
+in which
+\[
+g:\partial U\to\RR^{m},
+\]
+and
+\[
+F:M^{m\times n}\to\RR
+\]
+be given smooth function. 
+
+for $P\in M^{m\times n}$, $\alpha>0$, $\beta\ge0$, suppose $F\left(P\right)\ge\alpha\left|P\right|^{q}-\beta$.
+
+$\omega\in\mathcal{A}$, so $\omega:U\to\RR^{m},\ x\mapsto\left(\omega^{1}\left(x\right),\cdots,\omega^{m}\left(x\right)\right)$.
+and denote
+\[
+D\omega=\left(\begin{array}{ccc}
+\omega_{x_{1}}^{1} & \cdots & \omega_{x_{n}}^{1}\\
+\vdots & \ddots & \vdots\\
+\omega_{x_{1}}^{m} & \cdots & \omega_{x_{n}}^{m}
+\end{array}\right)=\frac{\partial\omega}{\partial\left(x_{1},\cdots,x_{n}\right)}.
+\]
+
+\sline
+
+existence problem for a minimizer of $I\left[\cdot\right]$ in $\mathcal{A}$
+turns the weak lower semicontinuity of $I\left[\cdot\right]$.
+
+$I\left[\cdot\right]$在class $\mathcal{A}$ 中最小值存在问题转化为$I\left[\cdot\right]$的弱下半连续性问题.
+
+$F$的什么样的非线性结构条件可以推出$I\left[\cdot\right]$的弱下半连续性?
+
+\sline
+
+suppose $u$ is a smooth minimizer, $v=\left(v^{1},\cdots,v^{m}\right)$
+is Lipschitz function with compact support in $U$, then
+\[
+i\left(t\right)\equiv I\left[u+tv\right]=\int_{U}F\left(Du+tDv\right)\ud x
+\]
+with
+\[
+0\le i''\left(0\right)=\int_{U}\frac{\partial^{2}F}{\partial p_{i}^{k}\partial p_{j}^{l}}\left(Du\right)v_{x_{i}}^{k}v_{x_{j}}^{l}\ud x
+\]
+select
+\[
+v\left(x\right)\equiv\varepsilon\zeta\left(x\right)\rho\left(\frac{x\cdot\xi}{\varepsilon}\right)\eta
+\]
+send $\varepsilon\to0$
+\[
+\frac{\partial^{2}F}{\partial p_{i}^{k}\partial p_{j}^{l}}\left(Du\left(x\right)\right)\eta_{k}\eta_{l}\xi_{i}\xi_{j}\ge0,\ x\in U,\eta\in\RR^{m},\xi\in\RR^{n}.
+\]
+concern $F$ satisfy \textbf{the Hadamard-Legedre inequality}
+\[
+\left(\eta\otimes\xi\right)^{T}D^{2}F\left(P\right)\left(\eta\otimes\xi\right)\ge0\quad\left(P\in M^{m\times n},\eta\in\RR^{m},\xi\in\RR^{n}\right).
+\]
+$\eta\otimes\xi=\left(\eta_{k}\xi_{i}\right)_{m\times n}$, $P=\left(p_{j}^{i}\right)_{m\times n}$,
+$D^{2}F\left(P\right)=\left(\frac{\partial^{2}F}{\partial p_{i}^{k}\partial p_{j}^{l}}\right)_{\left(m\times n\right)\times\left(m\times n\right)}$,
+$F$ called \textbf{rank-one convex}.
+
+\sline
+\begin{thm}
+If $F:M^{m\times n}\to\RR$ is rank-one convex, then for each $P\in M^{m\times n}$,
+$\eta\in\RR^{m}$, $\xi\in\RR^{n}$, scalar function
+\[
+f\left(t\right)\equiv F\left(P+t\left(\eta\otimes\xi\right)\right)\quad\left(t\in\RR\right)
+\]
+is convex.
+\end{thm}
+\begin{proof}
+$f''\left(t\right)=\left(\eta\otimes\xi\right)^{T}D^{2}F\left(P+t\left(\eta\otimes\xi\right)\right)\left(\eta\otimes\xi\right)\ge0$.
+\end{proof}
+\textbf{the reverse does not imply $F$ is convex}.
+
+\sline
+
+lower semi-continuous of $I\left[\cdot\right]$ implies $F$ is rank-one
+convex.
+
+$P\in M^{m\times n}$, $U=Q=\left(0,1\right)^{n}\subset\RR^{n}$,
+$v\in C_{c}^{\infty}\left(Q;\RR^{m}\right)$, $k\in\NN_{+}$, 
+\[
+Q=\bigcup_{l=1}^{2^{kn}}Q_{l}
+\]
+for each $Q_{l}$ with side length $\frac{1}{2^{k}}$, centered at
+$x_{l}$.
+\[
+u_{k}\left(x\right)=\frac{1}{2^{k}}v\left(2^{k}\left(x-x_{l}\right)\right)+Px\quad x\in Q_{l},
+\]
+\[
+u\left(x\right)=Px
+\]
+then $u_{k}\rightharpoonup u$ in $W^{1,q}\left(U;\RR^{m}\right)$,
+since $\norm{u_{k}-u}_{L^{p}}\ll\frac{C}{2^{k}}$, 
+\[
+Du_{k}-Du=\left(v_{x^{j}}^{i}\left(2^{k}\left(x-x_{l}\right)\right)\right)_{m\times n}\rightharpoonup\left(0\right)_{m\times n}=\boldsymbol{0}.
+\]
+we can use the following theorem
+
+\noindent\fbox{\begin{minipage}[t]{1\columnwidth - 2\fboxsep - 2\fboxrule}%
+\begin{thm}
+$f$ and $g$ are continuous 1-periodic functions. Then
+\[
+\lim_{n\to\infty}\int_{0}^{1}f\left(x\right)g\left(nx\right)\ud x=\int_{\left[0,1\right]}f\ud x\int_{\left[0,1\right]}g\ud x.
+\]
+\end{thm}
+%
+\end{minipage}}
+
+$u\left(x\right)=Px$ is a minimizer on $Q$ subject to its own boundary
+values. If $I\left[u\right]\le\liminf_{k\to\infty}I\left[u_{k}\right]$,
+then 
+\[
+\int_{Q}F\left(p\right)\ud x=L^{n}\left(Q\right)F\left(P\right)\le\int_{Q}F\left(P+Dv\right)\ud x.
+\]
+
+that is the following theorem:
+\begin{thm}
+if the functional $I\left[\cdot\right]$ is lower semicontinuous with
+respect to weak convergence in $W^{1,q}\left(U;\RR^{m}\right)$, then
+$F:M^{m\times n}\to\RR$ is quasiconvex, moreover, $F$ is automatically
+rank-one convex.
+\end{thm}
+%
+\begin{defn}
+A function $F:M^{m\times n}\to\RR$ is called quasiconvex provided
+\[
+L^{n}\left(Q\right)F\left(P\right)=\int_{Q}F\left(P\right)\ud x\le\int_{Q}F\left(P+Dv\right)\ud x,\quad\forall P\in M^{m\times n},v\in C_{c}^{\infty}\left(Q;\RR^{m}\right).
+\]
+其中$Q$是$\RR^{n}$中的单位开立方体.
+\end{defn}
+%
+\sline
+
+\textbf{open question}: rank-one convex is quasiconvex function? ref{[}13{]}
+and {[}93{]}.
+\begin{thm}
+if $F$ is quadratic, then $F$ is quasiconvex iff $F$ is rank-one
+convex.
+\end{thm}
+%
+\begin{thm}
+convex function is quasiconvex and rank-one convex, by Jensen's inequality.
+
+\[
+F\left(\fint_{Q}P+Dv\ud x\right)\le\fint_{Q}F\left(P+Dv\right)\ud x.
+\]
+\end{thm}
+%
+\sline
+
+growth condition: $0\le F\left(P\right)\le C\left(1+\left|P\right|^{q}\right)$,
+$P\in M^{m\times n}$, $C$ be constant.
+\[
+\left|P\right|=\sum_{i=1}^{m}\sum_{j=1}^{n}\left|p_{ij}\right|
+\]
+
+\begin{lem}
+$F$ is rank-one convex and verifies growth condition 
+\[
+0\le F\left(P\right)\le C\left(1+\left|P\right|^{q}\right),
+\]
+$P\in M^{m\times n}$. Then
+\[
+\left|DF\left(P\right)\right|\le C\left(1+\left|P\right|^{q-1}\right)\qquad P\in M^{m\times n}
+\]
+for $C$ be constant. 
+\end{lem}
+\begin{proof}
+define $f\left(t\right)\equiv F\left(P+t\left(\eta\otimes\xi\right)\right)\quad\left(t\in\RR\right)$,
+$\eta=e_{k}$, $\xi=e_{i}$. then $F$ rank-one convex implies $f$
+is a convex function, then
+\[
+f'\left(0\right)\le f'\left(\delta\right)=\frac{f\left(r\right)-f\left(0\right)}{r}\le\frac{C}{r}\max_{B\left(r\right)}\left|f\right|,\quad r>0
+\]
+\[
+f'\left(0\right)=DF\left(P\right)
+\]
+\[
+\max_{B\left(r\right)}\left|f\right|=F\left(P+te_{ki}\right)\le\max_{B\left(r\right)}C\left(1+\left|P+te_{ki}\right|^{q}\right)\le C\left(1+\left|P\right|^{q}+r^{q}\right)
+\]
+select $r=1+\left|P\right|$, but not $r=\left|P\right|-1$.
+\end{proof}
+%
+注意, 这一引理是针对rank-one convex而言的, 从而quasiconvex自然也有此引理成立.
+
+\sline
+
+\subsection{2019-04-05}
+
+Concentration and sobolev inequalities
+
+Gagliardo-Nirenberg-Sobolev inequality 可以得出$W^{1,p}\left(U\right)$嵌入到$L^{p^{*}}\left(U\right)$
+for $1\le p<n$, $p^{*}=\frac{pn}{n-p}$.
+
+$W^{1,p}\left(U\right)$可以紧嵌入到$L^{q}\left(U\right)$中, for $1\le q<p^{*}$.
+\begin{thm}
+(Estimates for $W^{1,p}$, $1\le p<n$)
+\end{thm}
+%
+\begin{thm}
+(\textbf{Rellich-Kondrachov Compactness Theorem}). Assume $U$ bounded
+open subset of $\RR^{n}$, and $\partial U$ is $C^{1}$. Suppose
+$1\le p<n$. Then
+\[
+W^{1,p}\left(U\right)\Subset L^{q}\left(U\right)
+\]
+for each $1\le q<p^{*}$.
+\end{thm}
+%
+\begin{proof}
+根据定理 Estimates for $W^{1,p}$, $1\le p<n$. and since $U$ is Bounded
+and $\partial U$ is $C^{1}$, so
+\[
+W^{1,p}\left(U\right)\subset L^{q}\left(U\right),\quad\norm{u}_{L^{q}\left(U\right)}\le C\norm{u}_{W^{1,p}\left(U\right)}.
+\]
+所以只需证紧嵌入. 设$\left(u_{m}\right)_{1}^{\infty}$ 是$W^{1,p}\left(U\right)$中的有界序列,
+现求它在$L^{q}\left(U\right)$中的收敛子列.
+
+用延拓定理对函数序列$\left(u_{m}\right)$延拓到$V$上, $V$是有界开集 of $\RR^{n}$,
+and
+\[
+\sup_{m}\norm{u_{m}}_{W^{1,p}\left(V\right)}<\infty.
+\]
+then smooth the functions $u_{m}^{\varepsilon}:=\eta_{\varepsilon}*u_{m}$
+($\varepsilon>0$, $m=1,2,\cdots$), 
+\[
+u_{m}^{\varepsilon}\to u_{m}\ \text{in }L^{1}\left(V\right)\text{ as }\varepsilon\to0,\text{ uniformly in }m.
+\]
+这是计算技巧, 再由插值不等式
+\[
+u_{m}^{\varepsilon}\to u_{m}\ \text{in }L^{q}\left(V\right)\text{ as }\varepsilon\to0,\text{ uniformly in }m.
+\]
+
+然后, for each fixed $\varepsilon>0$, the sequence $\left(u_{m}^{\varepsilon}\right)_{1}^{\infty}$
+is uniformly bounded and equicontinuous. (计算技术)
+
+对序列$\left(u_{m}^{\varepsilon}\right)_{1}^{\infty}$使用Arzela-Ascoli紧性判别法,
+构造出子列$\left(u_{m_{j}}\right)_{j=1}^{\infty}$满足
+\[
+\limsup_{j,k\to\infty}\norm{u_{m_{j}}-u_{m_{k}}}_{L^{q}\left(V\right)}\le\delta.
+\]
+最后取$\delta=1,\frac{1}{2},\frac{1}{3},\cdots$, 并利用对角线原理构造子列$\left(u_{m_{l}}\right)_{l=1}^{\infty}$满足
+\[
+\limsup_{l,k\to\infty}\norm{u_{m_{l}}-u_{m_{k}}}_{L^{q}\left(V\right)}=0.
+\]
+\end{proof}
+但是一般从$W^{1,q}\left(U\right)$到$L^{q^{*}}\left(U\right)$的嵌入不是紧嵌入,
+其中$1\le q<n$.
+
+\subsubsection{定义}
+\begin{defn}
+Let $X$ and $Y$ be Banach spaces, $X\subset Y$. say $X$ is \textbf{compactly
+embedded} in $Y$, $X\Subset Y,$ provided
+\end{defn}
+\begin{enumerate}
+\item $\norm{x}_{Y}\le C\norm{x}_{X}$ ($x\in X$) for some constant $C$;
+\item each bounded sequence in $X$ is precompact in $Y$.
+\end{enumerate}
+%
+\begin{defn}
+Let $\left(X,\tau\right)$ be a topological space, and let $\Sigma$
+be a $\sigma$-algebra containing $\tau$ (namely, containing the
+Borel $\sigma$-algebra). A collection of measures $M$ on $\Sigma$
+is called \textbf{tight} if for every $\varepsilon>0$ there is compact
+set $K_{\varepsilon}\subset X$ s.t. for each measure $\mu\in M$,
+we have that $\left|\mu\left(X\setminus K_{\varepsilon}\right)\right|<\varepsilon$.
+\end{defn}
+%
+\begin{defn}
+Let $X$ be a non-empty set, $\mathcal{A}$ is a $\sigma$-algebra
+on $X$. Given two measure $\mu$ and $\nu$ on $\mathcal{A}$, say
+$\nu$ has \textbf{the Radon-Nikodym property relative to} $\mu$,
+if there exists a measureable function $f:X\to[0,\infty]$, s.t.
+\[
+\nu\left(A\right)=\int_{A}f\ud\mu,\quad\forall A\in\mathcal{A}.
+\]
+say $f$ is a \textbf{density} for $\nu$ relative to $\mu$. 
+\end{defn}
+
+\subsubsection{定理}
+\begin{thm}
+设$n\ge3$, (为了防止$2^{*}=\infty$, 其实$2^{*}=\frac{2n}{n-2}$),
+\[
+\begin{array}{cc}
+f_{k}\to f\ \text{ strongly in }L_{loc}^{2}\left(\RR^{n}\right), & \left|f_{k}\right|^{2^{*}}\to\nu\ \text{ in }\mathcal{M}\left(\RR^{n}\right),\\
+Df_{k}\wc Df\ \text{ in }L^{2}\left(\RR^{n};\RR^{n}\right), & \left|Df_{k}\right|^{2}\wc\mu\ \text{ in }\mathcal{M}\left(\RR^{n}\right).
+\end{array}
+\]
+则
+\end{thm}
+\begin{enumerate}
+\item There exists an at most countable index set $J$, and distinct points
+$\left\{ x_{j}\right\} _{j\in J}\subset\RR^{n}$, and nonnegative
+weights $\left\{ \mu_{j},\nu_{j}\right\} _{j\in J}$ s.t.
+\[
+\begin{array}{cc}
+\nu=\left|f\right|^{2^{*}}+\sum_{j\in J}\nu_{j}\delta_{x_{j}}, & \mu\ge\left|Df\right|^{2}+\sum_{j\in J}\mu_{j}\delta_{x_{j}}\end{array}.
+\]
+\item $\nu_{j}\le C_{2}^{2^{*}}\mu_{j}^{2^{*}/2}$, for all $j\in J$. here
+$C_{2}$ is the optimal constant for the Gagliardo-Nirenberg-Sobolev
+inequality.
+\item if $f\equiv0$ and $\nu\left(\RR^{n}\right)^{1/2^{*}}\ge C_{2}\mu\left(\RR^{n}\right)^{1/2}$,
+then $\nu$ is concentrated at a single point.
+\end{enumerate}
+这个定理是为了展示$W^{1,2}\left(U\right)$不能紧嵌入到$L^{2^{*}}\left(U\right)$中,
+这个定理指明了这种非紧性的构造方法.
+\begin{proof}
+first assume $f\equiv0$, then $Df\equiv0$. 
+
+$\mu,\nu$都是非负有限测度, 这是条件中的弱收敛保证的.
+
+consider 
+\[
+D=\left\{ x\in\RR^{n}\mid\mu\left(\left\{ x\right\} \right)>0\right\} 
+\]
+then $D$ is at most countable for $\mu$ is positive finite measure.
+then suppose $\left(x_{j}\right)_{j\in J}=D$, $\mu_{j}=\mu\left(\left\{ x_{j}\right\} \right)$,
+for subadditivity of $\mu$
+\[
+\mu\ge\sum_{j\in J}\mu_{j}\delta_{x_{j}}.
+\]
+
+by $\left|f_{k}\right|^{2^{*}}\to\nu\ \text{ in }\mathcal{M}\left(\RR^{n}\right)$
+and $\left|Df_{k}\right|^{2}\wc\mu\ \text{ in }\mathcal{M}\left(\RR^{n}\right)$,
+for all $\phi\left(x\right)\in C_{c}^{\infty}\left(\RR^{n}\right)$,
+$\phi f_{k}\in W^{1,2}\left(\RR^{n}\right)$ with compact support.
+use the Gagliardo-Nirenberg-Sobolev inequality.
+\[
+\norm{\phi f_{k}}_{2^{*}}\le C_{2}\norm{D\left(\phi f_{k}\right)}_{2}
+\]
+
+by $f_{k}\to0$ in $L_{loc}^{2}$, so
+\[
+\left(\int_{\RR^{n}}\left|\phi\right|^{2^{*}}\ud\nu\right)^{1/2^{*}}\le C_{2}\left(\int_{\RR^{n}}\left|\phi\right|^{2}\ud\mu\right)^{1/2}
+\]
+
+by regularity of $\mu$ and $\nu$ 
+\[
+\nu\left(E\right)\le C_{2}^{2^{*}}\mu\left(E\right)^{2^{*}/2}
+\]
+for all $E$ to be Borel set of $\RR^{n}$. then when $\mu\left(E\right)=0$
+implies $\nu\left(E\right)=0$, i.e. $\nu\ll\mu$. then 
+\[
+\nu\left(E\right)=\int_{E}D_{\mu}\nu\left(x\right)\ud\mu
+\]
+for all $E$ to be Borel set, and 
+\[
+D_{\mu}\nu\left(x\right)\equiv\lim_{r\to0}\frac{\nu\left(B\left(x,r\right)\right)}{\mu\left(B\left(x,r\right)\right)},\qquad\mu-a.e.\ \ x\in\RR^{n}
+\]
+因为$\nu\left(E\right)\le C_{2}^{2^{*}}\mu\left(E\right)^{2^{*}/2}$,
+所以在$\RR^{n}\setminus D$上$\mu-a.e.$有$D_{\mu}\nu=0$. 从而可令$\nu_{j}=D_{\mu}\nu\left(x_{j}\right)\mu_{j}$.
+所以
+\[
+\nu\left(E\right)=\int_{E}D_{\mu}\nu\left(x\right)\ud\mu=\int_{E\cap D}D_{\mu}\nu\left(x\right)\ud\mu=\sum_{x\in E\cap D}D_{\mu}\nu\left(x_{j}\right)\mu_{j}=\sum_{x\in E}\nu_{j}\delta_{x_{j}}\left(x\right)
+\]
+
+从而$\nu_{j}\le C_{2}^{2^{*}}\mu_{j}^{2^{*}/2}$. 最后证(3). 首先有$\nu\left(\RR^{n}\right)=C_{2}^{2^{*}}\mu\left(\RR^{n}\right)^{2^{*}/2}$.
+用Holder不等式有
+\[
+\left(\int_{\RR^{n}}\left|\phi\right|^{2^{*}}\ud\nu\right)^{1/2^{*}}\le C_{2}\left(\int_{\RR^{n}}\left|\phi\right|^{2}\ud\mu\right)^{1/2}\Longrightarrow\left(\int_{\RR^{n}}\left|\phi\right|^{2^{*}}\ud\nu\right)^{1/2^{*}}\le C_{2}\mu\left(\RR^{n}\right)^{1/n}\left(\int_{\RR^{n}}\left|\phi\right|^{2^{*}}\ud\mu\right)^{1/2^{*}}
+\]
+\textbf{所以$\text{\frame{\ensuremath{\nu}=\ensuremath{C_{2}^{2^{*}}\mu\left(\RR^{n}\right)^{2/\left(n-2\right)}\mu}}}$.
+}因此
+\[
+\left(\int_{\RR^{n}}\left|\phi\right|^{2^{*}}\ud\nu\right)^{1/2^{*}}\le C_{2}\left(\int_{\RR^{n}}\left|\phi\right|^{2}\ud\mu\right)^{1/2}
+\]
+成为\textbf{
+\[
+\left(\int_{\RR^{n}}\left|\phi\right|^{2^{*}}\ud\nu\right)^{1/2^{*}}\left(\nu\left(\RR^{n}\right)\right)^{1/n}\le\left(\int_{\RR^{n}}\left|\phi\right|^{2}\ud\nu\right)^{1/2}
+\]
+}
+
+when $f\not\equiv0$, then $\left|Df_{k}-Df\right|^{2}=\left|Df_{k}\right|^{2}-2Df_{k}Df+\left|Df\right|^{2}\wc\left|Df_{k}\right|^{2}-\left|Df\right|^{2}\wc\mu-\left|Df\right|^{2}$
+to be a positive measure, also we can get 
+\[
+\mu-\left|Df\right|^{2}\ge\sum_{j\in J}\mu_{j}\delta_{x_{j}}.
+\]
+
+如何证明, 
+\[
+\int\phi\left(\left|f_{k}\right|^{2^{*}}-\left|f_{k}-f\right|^{2^{*}}\right)\ud x\to\int\phi\left|f\right|^{2^{*}}\ud x
+\]
+\end{proof}
+
+\subsubsection{问题}
+\begin{enumerate}
+\item (solved)为什么Sobolev函数的弱导数满足牛顿莱布尼兹公式: 
+\[
+\int_{U}\varphi\left(u\left(x+1\right)-u\left(x\right)\right)\ud x=\int_{U}\varphi\int_{0}^{1}Du\left(x+t\right)\ud t\ud x.
+\]
+\end{enumerate}
+
+\subsubsection{反例}
+
+\section{notes for Toro, Geometric Measure Theory - Recent Applications}
+
+Let $\Omega\subset\RR^{n+1}$ be a bounded domain, $f\in C\left(\partial\Omega\right)$.
+The classical Dirichlet problems asks whether there is a function
+$u\in C\left(\overline{\Omega}\right)\cap W^{1,2}\left(\Omega\right)$
+such that
+
+\[
+\begin{cases}
+\Delta u=0 & in\ \Omega\\
+u=f & on\ \partial\Omega.
+\end{cases}
+\]
+Here $u\in W^{1,2}\left(\Omega\right)$ means: $u$ and its weak derivatives
+are in $L^{2}\left(\Omega\right)$ and $\Delta u=0$ is interpreted
+in the weak sense; that is, for any $\zeta\in C_{c}^{1}\left(\Omega\right)$,
+\[
+\int\left\langle \nabla u,\nabla\zeta\right\rangle =0.
+\]
+The questions here are whether a sol. $u$ exists, how regular it
+is, whether there is a formula in terms of $f$.
+
+say $\Omega$ is regular if for all $f\in C\left(\partial\Omega\right)$,
+any sol. $u$ is in $C\left(\overline{\Omega}\right)\cap W^{1,2}\left(\Omega\right)$.
+
+a characterization of regular domains using capacity.
+
+the Maximum Principle $\left|u\left(x\right)\right|\le\max_{\partial\Omega}\left|f\right|$.
+
+for $x\in\Omega$, $T_{x}:C\left(\partial\Omega\right)\to\RR$, $f\mapsto u\left(x\right)$.
+\[
+u\left(x\right)=\int_{\partial\Omega}f\left(q\right)\ud\omega^{x}\left(q\right).
+\]
+
+
+\section{BV space}
+
+\subsection{Kreuzer - Bounded variation and Helly’s selection theorem.pdf}
+
+全体左连续的有界变差函数不是完备的, 有界变差函数的定义不能推广到大于1维.
+
+\section{Sobolev space}
+
+弱导数（Weak Derivative）是一个函数的微分（强微分）概念的推广，它可以作用于那些勒贝格可积（Lebesgue Integrable）的函数，而不必预设函数的可导性（事实上大部分可以弱微分的函数并不可微）。
+
+弱导数作用于那些勒贝格可积的函数，而不必预设函数的可微性。一个典型的勒贝格可积函数的空间是$L^{1}\left(\left[a,b\right]\right)$。在分布中，可以定义一个更一般的微分概念。
+
+令$u$是一个在$L^{1}\left(\left[q,p\right]\right)$中的勒贝格可积的函数，称$v\in L^{1}\left(\left[q,p\right]\right)$是$u$的一个弱导数，如果
+\[
+\int_{q}^{p}u\left(t\right)\varphi'\left(t\right)\ud t=-\int_{q}^{p}v\left(t\right)\varphi\left(t\right)\ud t,
+\]
+其中$\varphi$是任意一个连续可微的函数，并且满足$\varphi\left(p\right)=\varphi\left(q\right)=0$。
+
+推广到$n$维的情形，如果$u$和$v$是$L_{loc}^{1}\left(U\right)$中的函数（在某个开集$U\subset\RR^{n}$中局部可积），并且$\alpha$是一个多重指标，那么$v$称为$u$的$\alpha$次弱微分，如果
+\[
+\int_{U}uD^{\alpha}\varphi=\left(-1\right)^{\alpha}\int_{U}v\varphi,
+\]
+其中$\varphi\in C_{c}^{\infty}\left(U\right)$是一个任意给定的函数，即给定的支撑集含于$U$的无穷可微的函数。
+
+如果$u$的弱导数存在，一般被记为$D^{\alpha}u$。可以证明，一个函数的弱微分在测度意义是唯一的，即如果有两个不同的弱导数，其仅可能在一个零测集上存在差异.
+
+\section{Holder space}
+
+\section{Lorentz space}
+
+\section{Lipschitz space}
+
+\section{Functional Analysis}
+
+\subsection{稠密性}
+\begin{thm}
+\textbf{\cite[Appendix, C.4. Theorem 6]{key-1}} If $1\le p<\infty$
+and $f\in L_{loc}^{p}\left(U\right)$, $U$ is open set of $\RR^{n}$,
+then there is smooth functions $f^{\epsilon}\to f$ in $L_{loc}^{p}\left(U\right)$.
+
+If $f\in C\left(U\right)$, then there is smooth functions such that
+$f^{\epsilon}\rightrightarrows f$ on compact subsets of $U$.
+
+for any function $f$, there is smooth functions such that $f^{\epsilon}\to f\ a.e.$
+as $\epsilon\to0$.
+\end{thm}
+\begin{fact}
+continuous functions not dense in $L^{\infty}$, i.e. the Heaviside
+function.
+\end{fact}
+
+\subsection{空间关系}
+\begin{prop}
+for any bounded open set $U$, there is 
+\[
+C\left(\overline{U}\right)\subset Lipchitz\subset Holder\subset W^{k,p}.
+\]
+\end{prop}
+
+\section{论文}
+
+\subsection{古典导数与弱导数}
+
+有弱导数不一定有古典导数. 几乎处处有古典导数, 不一定有弱导数: 除一点有跳跃间断点的$C^{1}$函数均无弱导数. 
+
+没有跳跃间断点, 几乎处处可导函数不一定有弱导数. $I=\left(-1,1\right)$.
+\begin{lem}
+设函数$f$, 对任意的$\phi$, 有
+\[
+\int_{I}f\left(x\right)\phi\left(x\right)\ud x=\phi\left(0\right),
+\]
+则$f$在$I$是非局部Lebesgue可积函数.
+\end{lem}
+%
+\begin{lem}
+设函数$f,g\in L_{loc}^{1}\left(I\right)$且在分布意义下相等, 即对于任意的$\phi$,
+\[
+\int_{I}f\phi\ud x=\int_{I}g\phi\ud x,
+\]
+则$f$与$g$几乎处处相等. 反之, 若$f$与$g$几乎处处相等且其中之一属于$L_{loc}^{1}\left(I\right)$,
+则另一个也属于$L_{loc}^{1}\left(I\right)$且分布意义下必相等.
+\end{lem}
+%
+\begin{lem}
+设连续函数$u$几乎处处可导且导函数$\frac{\ud u}{\ud x}\in L_{loc}^{1}\left(I\right)$,
+则$u$弱可导, 弱导数$u'$几乎处处等于$\frac{\ud u}{\ud x}$.
+\end{lem}
+%
+\begin{lem}
+\label{L7.4}设$u$存在弱导数, 那么存在函数$\widetilde{u}\in C\left(I\right)$,
+使得在$I$上几乎处处有$u=\widetilde{u}$且对于任意的$x,y\in I$, 有
+\[
+\widetilde{u}\left(x\right)-\widetilde{u}\left(y\right)=\int_{y}^{x}u'\left(t\right)\ud t.
+\]
+\end{lem}
+%
+\begin{lem}
+引理\ref{L7.4}中连续表示$\widetilde{u}$存在弱导数, 且弱导数$\widetilde{u}'=u'\ a.e.$
+\end{lem}
+%
+\begin{lem}
+$u$存在弱导数, 则存在零测集$I_{0}$, 使得$u$在$I\setminus I_{0}$上是相对连续的且当$x\in I\setminus I_{0}$,
+$u\left(x\right)=\widetilde{u}\left(x\right)$.
+\end{lem}
+%
+\begin{lem}
+$u$存在弱导数, 则连续表示$\widetilde{u}$的不可导点是零测集且$\frac{\ud\widetilde{u}}{\ud x}\left(x\right)=u'\left(x\right)\ a.e.$
+\end{lem}
+%
+\begin{lem}
+设$u$在点$x_{0}$古典意义下可导, 则$\widetilde{u}$在点$x_{0}$也古典意义下可导且$\frac{\ud\widetilde{u}}{\ud x}\left(x_{0}\right)=\frac{\ud u}{\ud x}\left(x_{0}\right)$.
+\end{lem}
+%
+\begin{thm}
+设函数$u$几乎处处可导且$u$弱可导, 则$u'=\frac{\ud u}{\ud x}\ a.e.$
+\end{thm}
+%
+\begin{thm}
+设函数$u$定义在$I$上, 则$u$存在弱导数的充要条件是存在连续表示$\widetilde{u}\in C\left(I\right)$,
+且$\widetilde{u}$古典意义下几乎处处可导, 且古典意义下的导数$\frac{\ud\widetilde{u}}{\ud x}\in L_{loc}^{1}\left(I\right)$.
+\end{thm}
+%
+\begin{thm}
+$u\in W^{1,p}\left(I\right)$的充要条件是存在连续表示$\widetilde{u}\in C\left(I\right)$,
+$\widetilde{u}$古典意义下几乎处处可导, 且古典意义下的导数$\frac{\ud\widetilde{u}}{\ud x}\in L^{p}\left(I\right)$.
+\end{thm}
+在高维空间中上述定理不成立.
+
+\section{术语表}
+\begin{enumerate}
+\item 集合函数理论
+\item 全变差测度
+\item 一致$p$可积性
+\item 弱完备
+\item Gelfand理论
+\item 有界正规复值Borel测度
+\item 弱可分离
+\item Lipschitz空间$\Lambda_{\alpha}$, $\Lambda_{p,\alpha}$
+\item Harday空间$H_{p}$
+\item 光滑化子
+\item BMO
+\item Besov $B_{p,q}^{s}$
+\item geophysical models
+\item Navier Stokes equations
+\item rotating fluids
+\item Navier Stokes Coriolis equations ($\mathrm{NSC}_{\varepsilon}$)
+\item $co\mathrm{M}$: smallest convex set containing $M$
+\item $\overline{co}M$: smallest closed convex set containing $M$
+\item $ext\ M$: $int\left(M^{c}\right)$
+\item Frechet组合
+\item Lebesgue积分的性质有哪些
+\item Volterra型积分方程
+\item Fredholm积分方程
+\item Schwartz space
+\item 古典分析的内容
+\item Levy processes
+\item direct limit of topological spaces
+\item real-valued Radon measure and signed measures
+\item upper integral
+\end{enumerate}
+
+\section{method in mathematics}
+
+\subsection{approximation method}
+
+\subsection{increase or decrease dimensions}
+
+\subsection{sliding hump method}
+
+\subsection{solve in more large space}
+
+\subsection{biconditional}
+
+\subsection{construct a counterexample}
+
+\subsection{construct from nothing}
+
+\section{reading}
+
+\subsection{weakly compact and weakly sequentially compact}
+
+\subsubsection{weakly compact from wikipedia}
+
+\textbf{weakly compact cardinal}, an infinite cardinal number on which
+every binary relation has an equally large homogeneous subset.
+
+\textbf{weakly compact set}, a compact set in a space with the weak
+topology.
+
+weakly compact set, a set that has some but not all of the properties
+of compact sets, for example:
+\begin{enumerate}
+\item \textbf{sequentially compact space}, a set in which every infinite
+sequence has a convergent subsequence.
+\item \textbf{limit point compact}, a set in which every infinite subset
+of $X$ has a limit point.
+\end{enumerate}
+
+\subsubsection{compactness in weak{*} topology from MSE/27423}
+
+$X$ be a Banach space, $X^{*}$ be dual space. 
+
+\textbf{Under the weak{*} topology, do compactness and sequential
+compactness coincide?}
+
+that is: If a subset of $X^{*}$ weakly{*} compact iff it is weakly{*}
+sequentially compact?
+
+\textbf{Is the weak{*} topology on $X^{*}$ Hausdorff? Is the weak
+topology on $X$ Hausdorff?}
+
+\paragraph{If a subset of $X^{*}$ is weakly{*} compact, then it is weakly{*}
+closed. If a subset of $X$ is weakly compact, then it is weakly closed.}
+
+Let $\mathcal{F}\subset\mathcal{F}'$ 
+
+
+\subsection{Fourier transforms}
+
+Fourier transform of functions defined on some Abelian group.
+
+denote $\bb T=\RR/\ZZ$, $1\le p\le\infty$, function $f$ defined
+on $\bb T$ can be thought of a function defined on $\bb R$ with
+$f\left(t+1\right)=f\left(t\right)$ for all $t\in\bb R$. The space
+$L^{p}\left(\bb T;\bb C\right)$ can be identified with the spaces
+$L^{p}\left(\left[0,1\right];\bb C\right)$, but $\mc C\left(\bb T;\bb C\right)$
+is not the same space as $\mc C\left(\left[0,1\right];\bb C\right)$.
+\begin{defn}
+If $f\in L^{1}\left(\bb T;\bb C\right)$, (or $f\in L^{1}\left(\left[0,1\right];\bb C\right)$)
+then its Fourier transform is the sequence $\hat{f}$ defined by
+\[
+\hat{f}\left(k\right)=\int_{0}^{1}\ue^{-\ui2\pi kt}f\left(t\right)\ud t,\qquad k\in\bb Z.
+\]
+If $F\in L^{1}\left(\bb R;\bb C\right)$, then its Fourier transform
+is the function $\hat{F}$ defined by 
+\[
+\hat{F}\left(\omega\right)=\int_{\RR}\ue^{-\ui2\pi\omega t}F\left(t\right)\ud t,\qquad\omega\in\RR.
+\]
+If $\phi\in l^{1}\left(\ZZ;\bb C\right)$, then its Fourier transform
+is the function $\hat{\phi}$ defined by 
+\[
+\hat{\phi}\left(\omega\right)=\sum_{k\in\ZZ}\ue^{-2\pi\ui\omega k}\phi_{k},\qquad\omega\in\RR.
+\]
+\end{defn}
+\begin{thm}
+(Riemann-Lebesgure lemma)
+\end{thm}
+\begin{enumerate}
+\item If $f\in L^{1}\left(\bb T;\bb C\right)$, then $\hat{f}\in c_{0}\left(\bb Z;\bb C\right)$.
+\item If $F\in L^{1}\left(\bb R;\bb C\right)$, then $\hat{F}\in C_{0}\left(\bb R;\bb C\right)$.
+\item If $\phi\in l^{1}\left(\bb Z;\bb C\right)$, then $\hat{\phi}\in C\left(\bb T;\bb C\right)$.
+\end{enumerate}
+\begin{defn}
+\end{defn}
+
+\subsection{questions to be solved}
+
+\subsubsection{question from MSE/3170661: }
+
+More generally, the sum of $p-1$ consecutive Fibonacci numbers is
+divisible by the prime $p$ as soon as the polynomial $x^{2}-x-1$
+is reducible in $F_{p}[x]$ (and $1$ is not a root, which can never
+occur).
+
+\subsubsection{note from MSE/103208}
+
+Radon测度的一些不同定义之间的关系, Radon测度似乎是定义在不同拓扑空间上的Borel sigma代数上的, 比如Hausdorff空间,
+局部紧空间, 或者局部紧Hausdorff空间. Can these definitions or most of them be
+unified? if the definitions are related in some way?
+
+From ``Measure Theory, Volumes 1-2'' by Valdimir I. Bogachev:
+\begin{defn}
+Let $X$ be a topological space. A Borel measure $\mu$ on $X$ is
+called a Radon measure if for every $B$ in $B\left(X\right)$ and
+$\varepsilon>0$, there exists a compact set $K_{\varepsilon}\subset B$
+s.t. $\left|\mu\right|\left(B\setminus K_{\varepsilon}\right)<\varepsilon$. 
+
+设$X$是一个拓扑空间, $X$上的Borel测度$\mu$称为是Radon测度, 如果对于任意的$B\in B\left(X\right)$和$\varepsilon>0$,
+存在紧集$K_{\varepsilon}\subset B$使得$\left|\mu\right|\left(B\setminus K_{\varepsilon}\right)<\varepsilon$.
+\end{defn}
+这定义了一个有限符号测度.
+
+\begin{defn}
+From Wikipedia
+
+On the Borel $\sigma$-algebra of a Hausdorff topological space $X$,
+a measure is called a Radon measure if it is locally finite, and inner
+regular.
+
+在Hausdorff拓扑空间$X$上的Borel $\sigma$-代数, 一个测度称为是Radon测度如果它是局部有限的(紧集上有限测度),
+并且是内正则的.
+\end{defn}
+%
+\begin{defn}
+From ncatlab
+
+If $X$ is a locally compact Hausdorff topological space, a Radon
+measure on $X$ is a Borel measure on $X$ that is finite on all compact
+set, outer regular on all Borel sets, and inner on open sets.
+
+$X$是局部紧Hausdorff空间, $X$上的Radon测度是一个$X$上的所有紧集上是有限Borel测度, 在所有Borel集上是外正则的,
+且在开集上是内正则的.
+\end{defn}
+%
+\begin{defn}
+From planetmath
+
+Let $X$ be a Hausdorff space. A Borel measure $\mu$ on $X$ is said
+to be a Radon measure if it is finite on compact sets and inner regular
+(tight).
+
+设$X$是Hausdorff空间. $X$上的一个Borel测度$\mu$称为是Radon测度, 如果它在紧集上有限并且内正则.
+\end{defn}
+%
+\begin{defn}
+From Wikipedia's Radon measures on locally compact spaces
+
+When the underlying measure space is a locally compact topological
+space, the definition of a Radon measure can be expressed in terms
+of continuous linear functionals on the space of continuous functions
+with compact support.
+
+当测度空间的底空间是局部紧拓扑空间, 则Radon测度可以表示为具有紧支集的连续函数空间上的连续线性泛函.
+\end{defn}
+%
+在正测度情况下, 定义1和定义4是等价的. 在局部紧Hausdorff空间中定义2和定义4等价.
+
+在第二可数的局部紧Hausdorff空间中, 每一个局部有限测度都满足定义3和4
+
+在sigma紧的局部紧Hausdorff空间中, 定义3和4等价. 这一等价性的证明可以在 ''\textbf{Arveson -
+NOTES ON MEASURE AND INTEGRATION IN LOCALLY COMPAC.pdf}'' 和 ''\textbf{Integral
+representation theory: applications to convexity, Banach spaces and
+potential theory}''中找到, 而避免使用Riesz定理.
+
+一般定义3和4是不等价的, 甚至是在局部紧度量空间中.
+
+在局部紧Hausdorff空间中, 以下存在双射
+\begin{enumerate}
+\item 满足定义3的测度
+\item 满足定义4的测度
+\item 有紧支集的连续函数空间上的正线性泛函
+\end{enumerate}
+Riesz表示定理给出1等价于3或者2等价于3, 1 and 2 equivalent is in the Schwarz book
+mentioned by Joe Lucke; see also Ex 7.14 of ``\textbf{G.B. Folland,
+Real Analysis: Modern Techniques and Their Applications}''. 在这个文献中,
+Radon测度是按照定义3给出的. 
+
+Do you have an example of a locally compact $\sigma$-compact (non-second
+countable) space which admits a locally finite measure which is not
+Radon?
+
+For a finite measure on a compact space which is not Radon, I think
+you can take the measure $\mu$ on $\left\{ 0,1\right\} ^{\RR}$ s.t.
+$\mu\left(A\right)=1$ if $A$ contains $\left\{ 0\right\} ^{S}\times\left\{ 0,1\right\} ^{\RR\setminus S}$
+for some countable set $S$, and $\mu\left(A\right)=0$ otherwise.
+
+cylindrical measures?
+
+Schwartz (Radon measures on arbitrary topological spaces and cylindrical
+measures, 1973) defines Radon measures as comprising two measures.
+
+The first is the measure given in version 3 above and the second is
+the essential measure defined as locally finite, tight measure. He
+then shows that each can generate the other. On LCH spaces, version
+3 equivalent to version 5. Prinz (Regularity of Riesz measures, 1986,
+Proc Amer Math Soc) calls version 3 a \textquotedbl Riesz\textquotedbl{}
+measure and the locally finite, tight version a \textquotedbl Radon\textquotedbl{}
+measure and refers to Schwartz to give their duality.
+
+\subsubsection{Vitali Hahn Saks笔记}
+\begin{thebibliography}{Evans}
+\bibitem[Evans]{key-1}Evans, Partial differential equations.
+\end{thebibliography}
+\end{CJK}
+
+\end{document}

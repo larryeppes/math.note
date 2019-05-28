@@ -35,10 +35,10 @@
 \ea
 
 \bq{}{}
-构造有界单调函数$f(x)$使得对于任意的$x\in\Reals$, $f'(x)$存在, 且$\lim_{x\to\pm\i}f'(x)\ne0$.
+构造有界单调函数$f(x)$使得对于任意的$x\in\RR$, $f'(x)$存在, 且$\lim_{x\to\pm\i}f'(x)\ne0$.
 \eq
 \ba
-取$a_n=1-2^{-n}$, ($n\in\Naturals$), $f(n)=a_n$, $f\paren{n+\frac12}=\frac12\paren{a_n+a_{n+1}}$, 
+取$a_n=1-2^{-n}$, ($n\in\NN$), $f(n)=a_n$, $f\paren{n+\frac12}=\frac12\paren{a_n+a_{n+1}}$, 
 且$f'(n)=0$, $f'\paren{n+\frac12}=1$, 将其它点处可微连接$f(n)$这些离散点, 知$\lim_{x\to\pm\i}f'(x)$不存在, 从而不为0.
 \ea
 
@@ -202,7 +202,7 @@ $\int_0^{2\pi}\frac{\ud \t}{3-\sin 2\t}
 \ea
 
 \bq{F.F.Abi=Khuzam and A.B.Boghossian, Some recent geometric inequalities, AMM Vol 96(1989), No. 7:576-589}{}
-函数$f(x)=\cot x-\frac1x$, 则$f^{(k)}(x)<0$, $0<x<\pi$, $k\in\Naturals$.
+函数$f(x)=\cot x-\frac1x$, 则$f^{(k)}(x)<0$, $0<x<\pi$, $k\in\NN$.
 \eq
 \ba
 \bee
@@ -210,12 +210,12 @@ $\int_0^{2\pi}\frac{\ud \t}{3-\sin 2\t}
 \eee
 将真分式展开有
 \bee
-f(x)=-2x\sum_{k=0}^{\i}c_kx^{2k}, \  x\in(0,\pi), \quad c_k=\sum_{n=1}^{\i}\frac1{(n\pi)^{2k+2}},\ (k\in\Naturals).
+f(x)=-2x\sum_{k=0}^{\i}c_kx^{2k}, \  x\in(0,\pi), \quad c_k=\sum_{n=1}^{\i}\frac1{(n\pi)^{2k+2}},\ (k\in\NN).
 \eee
 \ea
 
 \bq{}{}
-对$n\in\pNaturals$, 确定$(0,1)$的子集, 使在此子集上$\paren{\frac{\ud}{\ud x}}^n\paren{\ln x\ln(1-x)}<0$.
+对$n\in\pNN$, 确定$(0,1)$的子集, 使在此子集上$\paren{\frac{\ud}{\ud x}}^n\paren{\ln x\ln(1-x)}<0$.
 \eq
 \ba
 \bee
@@ -296,11 +296,11 @@ n!<\left(\frac{n+1}{2}\right)^n\quad (n>1).
 用均值不等式.
 \ea
 \ba
-用伯努利不等式证$\left(\frac{n+2}{n+1}\right)^{n+1}=\left(1+\frac1{n+1}\right)^{n+1}>2$, ($n\in\pNaturals$).
+用伯努利不等式证$\left(\frac{n+2}{n+1}\right)^{n+1}=\left(1+\frac1{n+1}\right)^{n+1}>2$, ($n\in\pNN$).
 \ea
 
 \bq{}{}
-设$p_n$($n\in\pNaturals$)为趋于正无穷的任意数列, 而$q_n$($n\in\pNaturals$)为趋于负无穷的任意数列($p_n, q_n\not\in[-1,0]$), 求证:
+设$p_n$($n\in\pNN$)为趋于正无穷的任意数列, 而$q_n$($n\in\pNN$)为趋于负无穷的任意数列($p_n, q_n\not\in[-1,0]$), 求证:
 \bee
 \lim_{n\to\infty}\left(1+\frac1{p_n}\right)^{p_n}=\lim_{n\to\infty}\left(1+\frac1{q_n}\right)^{q_{n}}=\ue.
 \eee
@@ -331,8 +331,8 @@ n!<\left(\frac{n+1}{2}\right)^n\quad (n>1).
 \bq{}{}
 证明不等式:
 \begin{enumerate}[(a)]
- \item $\frac{1}{n+1}<\ln\left(1+\frac1n\right)<\frac1n$, ($n\in\pNaturals$);
- \item $1+\a<\ue^{\a}$, ($\a\ne0, \a\in\Reals$).
+ \item $\frac{1}{n+1}<\ln\left(1+\frac1n\right)<\frac1n$, ($n\in\pNN$);
+ \item $1+\a<\ue^{\a}$, ($\a\ne0, \a\in\RR$).
 \end{enumerate}
 \eq
 \ba
@@ -354,7 +354,7 @@ n!<\left(\frac{n+1}{2}\right)^n\quad (n>1).
 \ea
 
 \bq{}{}
-证明: 若$\lim_{n\to\infty}x_n$存在, 则对于任何数列$y_n$($n\in\pNaturals$), $\limsup_{n\to\infty}y_n$有限且有:
+证明: 若$\lim_{n\to\infty}x_n$存在, 则对于任何数列$y_n$($n\in\pNN$), $\limsup_{n\to\infty}y_n$有限且有:
 \begin{enumerate}[(a)]
  \item $\limsup_{n\to\infty}(x_n+y_n)=\lim_{n\to\infty}x_n+\limsup_{n\to\infty}y_n$;
  \item $\limsup_{n\to\infty}x_ny_n=\lim_{n\to\infty}x_n\cdot\limsup_{n\to\infty}y_n$, ($x_n\ge0$).
@@ -365,7 +365,7 @@ n!<\left(\frac{n+1}{2}\right)^n\quad (n>1).
 \ea
 
 \bq{}{}
-证明: 若对于某数列$x_n$($n\in\pNaturals$), 无论数列$y_n$($n\in\pNaturals$)如何选取, 以下两个等式中都至少有一个成立:
+证明: 若对于某数列$x_n$($n\in\pNN$), 无论数列$y_n$($n\in\pNN$)如何选取, 以下两个等式中都至少有一个成立:
 \begin{enumerate}[(a)]
  \item $\limsup_{n\to\infty}(x_n+y_n)=\limsup_{n\to\infty}x_n+\limsup_{n\to\infty}y_n$.
  \item $\limsup_{n\to\infty}(x_ny_n)=\limsup_{n\to\infty}x_n\cdot\limsup_{n\to\infty}y_n$, ($x_n\ge0$).
@@ -374,7 +374,7 @@ n!<\left(\frac{n+1}{2}\right)^n\quad (n>1).
 \eq
 
 \bq{}{}
-证明: 若$x_n>0$($n\in\pNaturals$)及
+证明: 若$x_n>0$($n\in\pNN$)及
 \bee
 \limsup_{n\to\infty}x_n\cdot\limsup_{n\to\infty}\frac1{x_n}=1.
 \eee
@@ -382,7 +382,7 @@ n!<\left(\frac{n+1}{2}\right)^n\quad (n>1).
 \eq
 
 \bq{}{}
-证明: 若数列$x_n$($n\in\pNaturals$)有界, 且
+证明: 若数列$x_n$($n\in\pNN$)有界, 且
 \bee
 \lim_{n\to\infty}(x_{n+1}-x_n)=0.
 \eee
@@ -394,7 +394,7 @@ l=\liminf_{n\to\infty}x_n\  \textrm{和}\ L=\limsup_{n\to\infty}x_n
 \eq
 
 \bq{}{2018053117}
-证明: 若$x_n>0$($n\in\pNaturals$)且$\lim_{n\to\infty}\frac{x_{n+1}}{x_n}$存在, 则
+证明: 若$x_n>0$($n\in\pNN$)且$\lim_{n\to\infty}\frac{x_{n+1}}{x_n}$存在, 则
 \bee
 \lim_{n\to\infty}\sqrt[n]{x_n}=\lim_{n\to\infty}\frac{x_{n+1}}{x_n}.
 \eee
@@ -415,7 +415,7 @@ l=\liminf_{n\to\infty}x_n\  \textrm{和}\ L=\limsup_{n\to\infty}x_n
 \bee
 x_1=a,\quad y_1=b,\quad x_{n+1}=\sqrt{x_ny_n},\quad y_{n+1}=\frac{x_n+y_n}{2},
 \eee
-确定的数列$x_n$和$y_n$($n\in\pNaturals$)有共同的极限.
+确定的数列$x_n$和$y_n$($n\in\pNN$)有共同的极限.
 \bee
 \m(a,b)=\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n.
 \eee

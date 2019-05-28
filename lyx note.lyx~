@@ -57,7 +57,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\Integers}{\mathbb{Z}}
+\newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\NN}{\mathbb{N}}
 \newcommand{\Rationals}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
@@ -178,6 +178,11 @@ Larry Eppes
 \end_inset
 
 等问题.
+ 
+\end_layout
+
+\begin_layout Abstract
+笔记中或最后会附有一些参考文献, 如有部分网络资源无法访问, 请尝试翻墙, 如仍无法获取资源, 则可能是资源已不存在, 和联系我取得.
 \end_layout
 
 \begin_layout Standard
@@ -194,171 +199,188 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Section
-1999年浙江大学研究生数学分析试题及必要的简答
-\end_layout
-
-\begin_layout Problem
-求极限
-\begin_inset Formula $\lim_{n\to\infty}\frac{n\left(\sqrt[n]{n}-1\right)}{\ln n}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Solution*
-1.
-\end_layout
-
-\begin_layout Problem
-在
-\begin_inset Formula $xy$
-\end_inset
-
-平面上求一点, 使它到三条直线
-\begin_inset Formula $x=0$
-\end_inset
-
-, 
-\begin_inset Formula $y=0$
-\end_inset
-
-及
-\begin_inset Formula $x+2y-16=0$
-\end_inset
-
-的距离平方和最小.
-\end_layout
-
-\begin_layout Solution*
-\begin_inset Formula $\frac{128}{5}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Problem
-计算二重积分
-\begin_inset Formula $\iint_{D}xy\ud x\ud y$
-\end_inset
-
-, 其中
-\begin_inset Formula $D$
-\end_inset
-
-由曲线
-\begin_inset Formula $x^{2}+y^{2}=x+y$
-\end_inset
-
-所围成的区域.
-\end_layout
-
-\begin_layout Solution*
-\begin_inset Formula $\frac{\pi}{8}$
-\end_inset
-
-.
+2013年南京大学博士研究生入学考试试题, 分析学
 \end_layout
 
 \begin_layout Problem
 设
-\begin_inset Formula $f(x)$
+\begin_inset Formula $\Omega\subset\RR^{n}$
 \end_inset
 
-在
-\begin_inset Formula $x>0$
-\end_inset
-
-时连续, 
-\begin_inset Formula $f(1)=3$
-\end_inset
-
-, 并且
-\begin_inset Formula 
-\[
-\int_{1}^{xy}f(t)\ud t=x\int_{1}^{y}f(t)\ud t+y\int_{1}^{x}f(t)\ud t,\qquad(x>0,y>0),
-\]
-
-\end_inset
-
-试求函数
-\begin_inset Formula $f(x)$
+为Lebesgue可测集, 并且Lebesgue测度
+\begin_inset Formula $L(\Omega)<\infty$
 \end_inset
 
 .
+ 再设
+\begin_inset Formula $f(x,u)$
+\end_inset
+
+为
+\begin_inset Formula $\Omega\times\RR$
+\end_inset
+
+上的实函数, 并且满足:
 \end_layout
 
-\begin_layout Solution*
-\begin_inset Formula $f(x)=3(1+\ln x)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Problem
-设函数
-\begin_inset Formula $f(t)$
-\end_inset
-
-在
-\begin_inset Formula $(a,b)$
-\end_inset
-
-连续, 若有数列
-\begin_inset Formula $x_{n}\to a$
+\begin_layout Enumerate
+对几乎所有的
+\begin_inset Formula $x$
 \end_inset
 
 , 
-\begin_inset Formula $y_{n}\to a$
+\begin_inset Formula $f(x,u)$
 \end_inset
 
-(
-\begin_inset Formula $x_{n},y_{n}\in(a,b)$
+是
+\begin_inset Formula $u$
 \end_inset
 
-)使
-\begin_inset Formula $\lim_{n\to\infty}f(x_{n})=A$
+的连续函数;
+\end_layout
+
+\begin_layout Enumerate
+对每一个
+\begin_inset Formula $u\in\RR$
 \end_inset
 
-及
-\begin_inset Formula $\lim_{n\to\infty}f(y_{n})=B$
+, 
+\begin_inset Formula $f(x,u)$
 \end_inset
 
-, 则对
-\begin_inset Formula $A,B$
+关于
+\begin_inset Formula $x$
 \end_inset
 
-之间的任意数
-\begin_inset Formula $\mu$
+是Lebesgue可测函数;
+\end_layout
+
+\begin_layout Enumerate
+存在常数
+\begin_inset Formula $M>0$
 \end_inset
 
-, 可找到数列
-\begin_inset Formula $x_{n}\to a$
+, 
+\begin_inset Formula $p\ge1$
 \end_inset
 
 , 使得
-\begin_inset Formula $\lim_{n\to\infty}f(z_{n})=\mu$
+\begin_inset Formula 
+\[
+\left|f(x,u)\right|\le M\left(1+\left|u\right|^{p}\right).
+\]
+
 \end_inset
 
-.
+
+\end_layout
+
+\begin_layout Standard
+证明: 
+\end_layout
+
+\begin_layout Enumerate
+如果
+\begin_inset Formula $u(x)$
+\end_inset
+
+为
+\begin_inset Formula $\Omega$
+\end_inset
+
+上的Lebesgue可测函数, 则
+\begin_inset Formula $f(x,u(x))$
+\end_inset
+
+也是
+\begin_inset Formula $\Omega$
+\end_inset
+
+上的Lebesgue可测函数;
+\end_layout
+
+\begin_layout Enumerate
+设
+\begin_inset Formula $\{u_{n}\}$
+\end_inset
+
+在
+\begin_inset Formula $L^{p}(\Omega)$
+\end_inset
+
+中收敛于
+\begin_inset Formula $u$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\int_{\Omega}f(x,u_{n}(x))\ud x=\int_{\Omega}f(x,u(x))\ud x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Problem
 设
-\begin_inset Formula $0\le a_{k}<1$
+\begin_inset Formula $\Omega=\left[a,b\right]\times\left[c,d\right]$
 \end_inset
 
-, 
-\begin_inset Formula $k=1,2,\cdots,n$
+为
+\begin_inset Formula $\RR^{2}$
 \end_inset
 
-, 令
-\begin_inset Formula $s_{n}=\sum_{k=1}^{n}a_{k}$
+中的矩形, 
+\begin_inset Formula $\{x_{n}\}\subset\Omega$
 \end_inset
 
-, 证明不等式
+为一列点.
+ 让
+\begin_inset Formula $F$
+\end_inset
+
+为
+\begin_inset Formula $C(\Omega)$
+\end_inset
+
+上的有界线性泛函, 定义为
 \begin_inset Formula 
 \[
-\sum_{k=1}^{n}\frac{a_{k}}{1-a_{k}}\ge\frac{ns_{n}}{n-s_{n}}.
+F(u)=\sum_{n=1}^{\infty}\frac{1}{2^{n}}u\left(x_{n}\right)+\frac{1}{2}\int_{a}^{b}u\left(x,\frac{c+d}{2}\right)\ud x,
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $\int_{a}^{b}u\left(x,\frac{c+d}{2}\right)\ud x$
+\end_inset
+
+为Riemann积分.
+ 求
+\begin_inset Formula $\Omega$
+\end_inset
+
+上的测度
+\begin_inset Formula $\nu$
+\end_inset
+
+, 使得对任何
+\begin_inset Formula $u\in C\left(\Omega\right)$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+F(u)=\int_{\Omega}u\ud\nu.
 \]
 
 \end_inset
@@ -366,96 +388,229 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Solution*
-一种方法是用琴生不等式.
- 另一种方法将
-\begin_inset Formula $\frac{1}{1-a_{k}}$
-\end_inset
-
-展开成幂级数, 有绝对收敛性交换求和次序, 并对内层有限和用幂平均不等式.
-\end_layout
-
-\begin_layout Problem
-设函数
-\begin_inset Formula $f$
-\end_inset
-
-在
-\begin_inset Formula $[a,b]$
-\end_inset
-
-上连续, 且
-\begin_inset Formula $f>0$
-\end_inset
-
-, 记
-\begin_inset Formula $f_{\nu n}=f(a+\nu\delta_{n})$
-\end_inset
-
-, 
-\begin_inset Formula $\delta_{n}=\frac{b-a}{n}$
-\end_inset
-
-, 试证明:
-\begin_inset Formula 
-\[
-\lim_{n\to\infty}\sqrt[n]{f_{1n}f_{2n}\cdots f_{nn}}=\exp\left\{ \frac{1}{b-a}\int_{a}^{b}\ln f(x)\ud x\right\} 
-\]
-
-\end_inset
-
-并利用上述等式证明下式
-\begin_inset Formula 
-\[
-\frac{1}{2\pi}\int_{0}^{2\pi}\ln(1-2r\cos x+r^{2})\ud x=2\ln r,\quad(r>1).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Solution*
-注意
-\begin_inset Formula $\left|1-r\ue^{\ui\frac{2k\pi}{n}}\right|^{2}=1-2r\cos x+r^{2}$
-\end_inset
-
-, 再用
-\begin_inset Formula 
-\[
-\left|x^{n}-r^{n}\right|=\prod_{1\le k\le n}\left|x-r\ue^{\ui\frac{2k\pi}{n}}\right|.
-\]
-
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
 \end_layout
 
 \begin_layout Problem
-从调和级数
-\begin_inset Formula $1+\frac{1}{2}+\cdots+\frac{1}{n}+\cdots$
+设
+\begin_inset Formula $H$
 \end_inset
 
-中去掉所有分母的十进表示中含数码9的项, 证明由此所得余下的级数必定是收敛的.
-\end_layout
-
-\begin_layout Solution*
-估计所有分母中不含9且位数为
-\begin_inset Formula $m$
+为Hilbert空间, 
+\begin_inset Formula $K$
 \end_inset
 
-的倒数和的上限为
-\begin_inset Formula $\left(\frac{9}{10}\right)^{m-1}H_{8}$
+为
+\begin_inset Formula $H$
+\end_inset
+
+中的闭凸子集, 
+\begin_inset Formula $x_{0}\in H$
 \end_inset
 
 .
- 
+ 证明: 存在唯一的
+\begin_inset Formula $y_{0}\in K$
+\end_inset
+
+, 使得
+\begin_inset Formula 
+\[
+\norm{x_{0}-y_{0}}=\inf_{y\in K}\norm{x_{0}-y}.
+\]
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Remark*
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
 
-\series bold
-据说这个收敛级数收敛的值是可以求出来的.
+
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $\Omega\subset\RR^{n}$
+\end_inset
+
+为Lebesgue可测集, 
+\begin_inset Formula $\{u_{n}\}$
+\end_inset
+
+为
+\begin_inset Formula $L^{p}\left(\Omega\right)$
+\end_inset
+
+(
+\begin_inset Formula $1<p<\infty$
+\end_inset
+
+)的有界点列.
+ 证明存在子列
+\begin_inset Formula $\left\{ u_{n_{k}}\right\} $
+\end_inset
+
+以及
+\begin_inset Formula $u\in L^{p}\left(\Omega\right)$
+\end_inset
+
+, 使得对任何
+\begin_inset Formula $v\in L^{q}\left(\Omega\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{p}+\frac{1}{q}=1$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\int_{\Omega}u_{n_{k}}\left(x\right)v\left(x\right)\ud x\to\int_{\Omega}u(x)v(x)\ud x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $E\subset\RR^{n}$
+\end_inset
+
+为Lebesgue可测子集, 
+\begin_inset Formula $\alpha\in[0,1)$
+\end_inset
+
+.
+ 证明对几乎所有的
+\begin_inset Formula $x\in E$
+\end_inset
+
+, 存在
+\begin_inset Formula $\varepsilon_{\alpha}>0$
+\end_inset
+
+, 使得
+\begin_inset Formula 
+\[
+L\left(E\cap B\left(x,\varepsilon_{\alpha}\right)\right)\ge\alpha L\left(B\left(x,\varepsilon_{\alpha}\right)\right).
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $B\left(x,\varepsilon_{\alpha}\right)$
+\end_inset
+
+是
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+中以
+\begin_inset Formula $x$
+\end_inset
+
+为中心, 以
+\begin_inset Formula $\varepsilon_{\alpha}$
+\end_inset
+
+为半径的球体, 
+\begin_inset Formula $L\left(A\right)$
+\end_inset
+
+表示
+\begin_inset Formula $A$
+\end_inset
+
+的Lebesgue测度.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $X$
+\end_inset
+
+是一个不可数集, 对任何
+\begin_inset Formula $E\subset X$
+\end_inset
+
+, 让
+\begin_inset Formula 
+\[
+\mu\left(E\right)=\begin{cases}
++\infty, & \text{如果}E\text{是无限集},\\
+E\text{中所含元素的个数}, & \text{如果}E\text{是有限集}.
+\end{cases}
+\]
+
+\end_inset
+
+记
+\begin_inset Formula $L^{1}\left(X,\mu\right)=\left\{ f:X\to\RR\mid\int_{X}\left|f\left(x\right)\right|\ud\mu<+\infty\right\} $
+\end_inset
+
+, 对任何
+\begin_inset Formula $f\in L^{1}\left(X,\mu\right)$
+\end_inset
+
+让
+\begin_inset Formula $\norm{f}=\int_{X}\left|f\right|\ud\mu$
+\end_inset
+
+.
+ 证明:
+\end_layout
+
+\begin_layout Enumerate
+如果
+\begin_inset Formula $f\in L^{1}\left(X,\mu\right)$
+\end_inset
+
+, 则
+\begin_inset Formula $X$
+\end_inset
+
+的子集
+\begin_inset Formula $\left\{ x\in X\mid f\left(x\right)\ne0\right\} $
+\end_inset
+
+至多可列;
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $L^{1}\left(X,\mu\right)$
+\end_inset
+
+是不可分的;
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $L^{1}\left(X,\mu\right)$
+\end_inset
+
+是Banach空间.
 \end_layout
 
 \begin_layout Section
@@ -883,6 +1038,1487 @@ u(t)\le u_{0}\exp\left(\int_{a}^{t}v(s)\ud s\right)
 
 \begin_layout Solution*
 考虑Fourier变换或Laplace变换, 及其适用条件.
+\end_layout
+
+\begin_layout Section
+1998年浙江大学数学分析考研试题
+\end_layout
+
+\begin_layout Problem
+(20') 设
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+是定义在
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+上的单调函数.
+\end_layout
+
+\begin_layout Problem
+(1) 试证
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+在
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+上是黎曼可积的.
+\end_layout
+
+\begin_layout Problem
+(2) 若
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+在
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+上不连续, 则
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+在
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+上的不定积分不存在.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(20') 叙述并证明数列的柯西收敛准则.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(10') 设
+\begin_inset Formula $D$
+\end_inset
+
+是
+\begin_inset Formula $\RR^{2}$
+\end_inset
+
+中具有光滑边界的闭区域, 
+\begin_inset Formula $f$
+\end_inset
+
+是定义在
+\begin_inset Formula $D$
+\end_inset
+
+上的实函数, 若
+\begin_inset Formula 
+\[
+\iint_{D}\left(f\left(x,y\right)\right)^{2}\ud x\ud y=0,
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $f$
+\end_inset
+
+在
+\begin_inset Formula $D$
+\end_inset
+
+中的连续点上取值为零.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(20') 计算
+\begin_inset Formula 
+\[
+\int_{0}^{+\infty}\frac{\sin x}{x}\ud x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(20') 设有级数
+\begin_inset Formula $\sum_{n=1}^{+\infty}\frac{\sin nx}{n^{x}}$
+\end_inset
+
+, 
+\begin_inset Formula $x\in[0,+\infty)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+(1) 当
+\begin_inset Formula $x$
+\end_inset
+
+为何值时, 级数条件收敛,
+\end_layout
+
+\begin_layout Problem
+(2) 当
+\begin_inset Formula $x$
+\end_inset
+
+为何值时, 级数绝对收敛,
+\end_layout
+
+\begin_layout Problem
+(3) 证明级数在
+\begin_inset Formula $\left(0,+\infty\right)$
+\end_inset
+
+上内闭一致收敛.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(10') 设
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+在
+\begin_inset Formula $\left(0,+\infty\right)$
+\end_inset
+
+上连续, 广义积分
+\begin_inset Formula $\int_{0}^{+\infty}f\left(x\right)\ud x$
+\end_inset
+
+绝对收敛, 试证
+\begin_inset Formula 
+\[
+\lim_{p\to+\infty}\int_{0}^{+\infty}f\left(x\right)\sin^{4}px\ud x=0\Longleftrightarrow\int_{0}^{+\infty}f\left(x\right)\ud x=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+1999年浙江大学数学分析考研试题
+\end_layout
+
+\begin_layout Problem
+(10') 求极限
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\frac{n\left(\sqrt[n]{n}-1\right)}{\ln n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+1.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(10') 在
+\begin_inset Formula $xy$
+\end_inset
+
+平面上求一点, 使它到三条直线
+\begin_inset Formula $x=0$
+\end_inset
+
+, 
+\begin_inset Formula $y=0$
+\end_inset
+
+及
+\begin_inset Formula $x+2y-16=0$
+\end_inset
+
+的距离平方和最小.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\frac{128}{5}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(10') 计算二重积分
+\begin_inset Formula $\iint_{D}xy\ud x\ud y$
+\end_inset
+
+, 其中
+\begin_inset Formula $D$
+\end_inset
+
+由曲线
+\begin_inset Formula $x^{2}+y^{2}=x+y$
+\end_inset
+
+所围成的区域.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\frac{\pi}{8}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(10') 设
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+在
+\begin_inset Formula $x>0$
+\end_inset
+
+时连续, 
+\begin_inset Formula $f\left(1\right)=3$
+\end_inset
+
+, 并且
+\begin_inset Formula 
+\[
+\int_{1}^{xy}f\left(t\right)\ud t=x\int_{1}^{y}f\left(t\right)\ud t+y\int_{1}^{x}f\left(t\right)\ud t\qquad(x>0,y>0)
+\]
+
+\end_inset
+
+试求函数
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $f(x)=3(1+\ln x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(15') 设函数
+\begin_inset Formula $f(t)$
+\end_inset
+
+在
+\begin_inset Formula $(a,b)$
+\end_inset
+
+内连续, 若有数列
+\begin_inset Formula $x_{n}\to a$
+\end_inset
+
+, 
+\begin_inset Formula $y_{n}\to a$
+\end_inset
+
+(
+\begin_inset Formula $x_{n},y_{n}\in\left(a,b\right)$
+\end_inset
+
+), 使
+\begin_inset Formula $\lim_{n\to\infty}f\left(x_{n}\right)=A$
+\end_inset
+
+及
+\begin_inset Formula $\lim_{n\to\infty}f\left(y_{n}\right)=B$
+\end_inset
+
+.
+ 则对
+\begin_inset Formula $A,B$
+\end_inset
+
+之间的任意数
+\begin_inset Formula $\mu$
+\end_inset
+
+, 可找到数列
+\begin_inset Formula $z_{n}\to a$
+\end_inset
+
+使得
+\begin_inset Formula $\lim_{n\to\infty}f\left(z_{n}\right)=\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(15') 设
+\begin_inset Formula $0\le a_{k}<1$
+\end_inset
+
+, 
+\begin_inset Formula $k=1,2,\cdots,n$
+\end_inset
+
+, 令
+\begin_inset Formula $s_{n}=\sum_{k=1}^{n}a_{k}$
+\end_inset
+
+, 证明不等式
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}\frac{a_{k}}{1-a_{k}}\ge\frac{ns_{n}}{n-s_{n}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+一种方法是用琴生不等式.
+ 另一种方法将
+\begin_inset Formula $\frac{1}{1-a_{k}}$
+\end_inset
+
+展开成幂级数, 有绝对收敛性交换求和次序, 并对内层有限和用幂平均不等式.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(15') 设函数
+\begin_inset Formula $f$
+\end_inset
+
+在
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+上连续, 且
+\begin_inset Formula $f>0$
+\end_inset
+
+, 记
+\begin_inset Formula $f_{\nu n}=f\left(a+\nu\delta_{n}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\delta_{n}=\frac{b-a}{n}$
+\end_inset
+
+.
+ 试证明:
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\sqrt[n]{f_{1n}f_{2n}\cdots f_{nn}}=\exp\left\{ \frac{1}{b-a}\int_{a}^{b}\ln f\left(x\right)\ud x\right\} .
+\]
+
+\end_inset
+
+并利用上述等式证明下式
+\begin_inset Formula 
+\[
+\frac{1}{2\pi}\int_{0}^{2\pi}\ln(1-2r\cos x+r^{2})\ud x=2\ln r,\quad(r>1).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+注意
+\begin_inset Formula $\left|1-r\ue^{\ui\frac{2k\pi}{n}}\right|^{2}=1-2r\cos x+r^{2}$
+\end_inset
+
+, 再用
+\begin_inset Formula 
+\[
+\left|x^{n}-r^{n}\right|=\prod_{1\le k\le n}\left|x-r\ue^{\ui\frac{2k\pi}{n}}\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+从调和级数
+\begin_inset Formula $1+\frac{1}{2}+\cdots+\frac{1}{n}+\cdots$
+\end_inset
+
+中去掉所有分母的十进表示中含数码9的项, 证明由此所得余下的级数必定是收敛的.
+\end_layout
+
+\begin_layout Solution*
+估计所有分母中不含9且位数为
+\begin_inset Formula $m$
+\end_inset
+
+的倒数和的上限为
+\begin_inset Formula $\left(\frac{9}{10}\right)^{m-1}H_{8}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Remark*
+
+\series bold
+据说这个收敛级数收敛的值是可以求出来的.
+\end_layout
+
+\begin_layout Section
+2000年浙江大学数学分析考研试题
+\end_layout
+
+\begin_layout Definition
+(10') 1.
+ 求极限
+\begin_inset Formula 
+\[
+\lim_{x\to0}\frac{\ue-\left(1+x\right)^{\frac{1}{x}}}{x}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+2.
+ 设
+\begin_inset Formula $x_{0}=a$
+\end_inset
+
+, 
+\begin_inset Formula $x_{1}=b$
+\end_inset
+
+, 
+\begin_inset Formula $x_{n}=\frac{x_{n-2}+x_{n-1}}{2}$
+\end_inset
+
+, 
+\begin_inset Formula $n=2,3,\cdots$
+\end_inset
+
+, 求
+\begin_inset Formula $\lim_{n\to\infty}x_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+(10') 1.
+ 设
+\begin_inset Formula $f'(0)=K$
+\end_inset
+
+, 试证明
+\begin_inset Formula 
+\[
+\lim_{{a\to0^{-}\atop b\to0^{+}}}\frac{f(b)-f(a)}{b-a}=K.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+2.
+ 设
+\begin_inset Formula $f(x)$
+\end_inset
+
+在
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+上连续, 
+\begin_inset Formula $f''\left(x\right)$
+\end_inset
+
+在
+\begin_inset Formula $\left(a,b\right)$
+\end_inset
+
+内存在, 试证明存在
+\begin_inset Formula $\xi\in\left(a,b\right)$
+\end_inset
+
+, 使得
+\begin_inset Formula 
+\[
+f\left(b\right)+f\left(a\right)-2f\left(\frac{a+b}{2}\right)=\frac{\left(b-a\right)^{2}}{4}f''\left(\xi\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+(15')
+\end_layout
+
+\begin_layout Definition
+1.
+ 求数项级数
+\begin_inset Formula $\sum_{n=1}^{\infty}\frac{n}{2^{n}}$
+\end_inset
+
+的和
+\begin_inset Formula $S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+2.
+ 试证明
+\begin_inset Formula $\xi\left(x\right)=\sum_{n=1}^{\infty}\frac{1}{n^{x}}$
+\end_inset
+
+是
+\begin_inset Formula $\left(1,\infty\right)$
+\end_inset
+
+上的连续函数.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+(15')
+\end_layout
+
+\begin_layout Definition
+1.
+ 设方程组
+\begin_inset Formula 
+\[
+\begin{cases}
+x+y+u+v & =0\\
+x\sin u+y\sin v & =0
+\end{cases},
+\]
+
+\end_inset
+
+确定了可微函数
+\begin_inset Formula 
+\[
+\begin{cases}
+u=u\left(x,y\right)\\
+v=v\left(x,y\right)
+\end{cases}
+\]
+
+\end_inset
+
+试求
+\begin_inset Formula $\ud u$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\partial v}{\partial x}$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\partial v}{\partial y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+2.
+ 设
+\begin_inset Formula $F\left(y\right)=\int_{y}^{\sqrt{y}}\frac{\cos\left(x^{2}y\right)}{x}\ud x$
+\end_inset
+
+, 求
+\begin_inset Formula $F'\left(1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+(30')
+\end_layout
+
+\begin_layout Definition
+1.
+ 计算定积分
+\begin_inset Formula 
+\[
+I=\int_{0}^{\pi}\frac{x\sin\left|\cos x\right|}{1+\cos^{2}x}\ud x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+2.
+ 求以曲面
+\begin_inset Formula $z=\ue^{-x^{2}-y^{2}}$
+\end_inset
+
+为顶, 以平面
+\begin_inset Formula $z=0$
+\end_inset
+
+为底, 以柱面
+\begin_inset Formula $x^{2}+y^{2}=1$
+\end_inset
+
+为侧面的曲顶柱体的体积
+\begin_inset Formula $V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+3.
+ 设
+\begin_inset Formula $\Sigma_{+}$
+\end_inset
+
+表示半球面
+\begin_inset Formula $z=\sqrt{1-x^{2}-y^{2}}$
+\end_inset
+
+(
+\begin_inset Formula $x^{2}+y^{2}\le1$
+\end_inset
+
+)的上侧, 求第二类曲面积分
+\begin_inset Formula 
+\[
+J=\iint_{\Sigma_{+}}\left(x+y\right)z^{2}\ud y\ud z+\left(x^{2}y-2z\right)\ud z\ud x+\left(2x+z\right)y^{2}\ud x\ud y.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+(20')
+\end_layout
+
+\begin_layout Definition
+1.
+ 将函数
+\begin_inset Formula $f(x)=\left|x\right|$
+\end_inset
+
+(
+\begin_inset Formula $-\pi\le x\le\pi$
+\end_inset
+
+)展开成Fourier级数.
+\end_layout
+
+\begin_layout Definition
+2.
+ 求级数
+\begin_inset Formula $\sum_{n=1}^{\infty}\frac{1}{n^{2}}$
+\end_inset
+
+的和.
+\end_layout
+
+\begin_layout Definition
+3.
+ 计算广义积分
+\begin_inset Formula $\int_{0}^{1}\frac{\ln\left(1-x\right)}{x}\ud x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+2001年浙江大学数学分析考研试题
+\end_layout
+
+\begin_layout Problem
+(A).
+ (10') 用``
+\begin_inset Formula $\varepsilon-N$
+\end_inset
+
+语言
+\begin_inset Quotes erd
+\end_inset
+
+证明
+\begin_inset Formula $\lim_{n\to\infty}\frac{n^{2}-n+1}{3n^{2}+2n-3}=\frac{1}{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+(B).
+ (10') 设
+\begin_inset Formula $f(x)$
+\end_inset
+
+在
+\begin_inset Formula $x_{0}$
+\end_inset
+
+附近有定义且在
+\begin_inset Formula $x_{0}$
+\end_inset
+
+处不连续, 试给出不连续点的分类(名称及定义); 若
+\begin_inset Formula $f$
+\end_inset
+
+在
+\begin_inset Formula $x_{0}$
+\end_inset
+
+的一个邻域内处处可导, 问
+\begin_inset Formula $f'\left(x\right)$
+\end_inset
+
+的不连续点又可分为哪几类, 为什么?
+\end_layout
+
+\begin_layout Problem
+(C).
+ (10') 设
+\begin_inset Formula $f\left(x,y\right)$
+\end_inset
+
+为二元函数, 在
+\begin_inset Formula $\left(x_{0},y_{0}\right)$
+\end_inset
+
+附近有定义, 试讨论二重极限
+\begin_inset Formula $\lim_{x\to x_{0},y\to y_{0}}f\left(x,y\right)$
+\end_inset
+
+与累次极限
+\begin_inset Formula $\lim_{x\to x_{0}}\lim_{y\to y_{0}}f\left(x,y\right)$
+\end_inset
+
+之间的关系, 必要时, 请给出反例.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(A).
+ (5') 求
+\begin_inset Formula $\lim_{n\to\infty}\sin^{2}\left(\pi\sqrt{n^{2}+n}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+(B).
+ (5') 求
+\begin_inset Formula $\lim_{x\to1}\left(2-x\right)^{\tan\frac{\pi x}{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+(C).
+ (5') 设
+\begin_inset Formula $y=y(x)$
+\end_inset
+
+为
+\begin_inset Formula $x$
+\end_inset
+
+的可微函数, 求
+\begin_inset Formula $y'(0)$
+\end_inset
+
+, 其中
+\begin_inset Formula $y=-y\ue^{x}+2\ue^{y}\sin x-7x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+(D).
+ (8') 求
+\begin_inset Formula $\int\frac{x\ud x}{x^{3}-3x+2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+(E).
+ (7') 求
+\begin_inset Formula $\frac{1}{\left(1-x^{2}\right)\sqrt{1-x^{2}}}$
+\end_inset
+
+在
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+处的Taylor级数, 并求其收敛半径.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(A).
+ (10') 设
+\begin_inset Formula $z=z(x,y)$
+\end_inset
+
+为
+\begin_inset Formula $x,y$
+\end_inset
+
+的二次可微函数.
+ 作自变量和引变量的变换, 取
+\begin_inset Formula $u,v$
+\end_inset
+
+为新的自变量, 
+\begin_inset Formula $w=w(u,v)$
+\end_inset
+
+为新的因变量, 使得
+\begin_inset Formula $w=xz-y$
+\end_inset
+
+, 
+\begin_inset Formula $u=\frac{x}{y}$
+\end_inset
+
+, 
+\begin_inset Formula $v=x$
+\end_inset
+
+, 请将方程
+\begin_inset Formula $y\frac{\partial^{2}z}{\partial y^{2}}+2\frac{\partial z}{\partial y}=\frac{2}{x}$
+\end_inset
+
+变换为关于新变量
+\begin_inset Formula $w,u,v$
+\end_inset
+
+的方程.
+\end_layout
+
+\begin_layout Problem
+(B).
+ (10') 求
+\begin_inset Formula $\int_{D}\left(x^{2}+y^{2}\right)\ud x\ud y$
+\end_inset
+
+, 其中
+\begin_inset Formula $D$
+\end_inset
+
+是以
+\begin_inset Formula $y=x$
+\end_inset
+
+, 
+\begin_inset Formula $y=x+a$
+\end_inset
+
+, 
+\begin_inset Formula $y=a$
+\end_inset
+
+及
+\begin_inset Formula $y=3a$
+\end_inset
+
+(
+\begin_inset Formula $a>0$
+\end_inset
+
+)为边的区域.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(20') 讨论
+\begin_inset Formula $\sum_{n=1}^{\infty}\frac{(-1)^{\left[\sqrt{n}\right]}}{n^{p}}$
+\end_inset
+
+的敛散性(对于收敛情形, 要区分条件收敛与绝对收敛), 其中
+\begin_inset Formula $p\in\left(0,\infty\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\left[a\right]$
+\end_inset
+
+表示
+\begin_inset Formula $a$
+\end_inset
+
+的整数部分.
+ 并证明当参变量
+\begin_inset Formula $p\in\left(\frac{1}{2},\infty\right)$
+\end_inset
+
+时为内闭一致收敛.
+\end_layout
+
+\begin_layout Section
+2002年浙江大学数学分析考研试题
+\end_layout
+
+\begin_layout Problem
+(A).
+ (10') 用``
+\begin_inset Formula $\varepsilon-\delta$
+\end_inset
+
+语言
+\begin_inset Quotes erd
+\end_inset
+
+证明
+\begin_inset Formula 
+\[
+\lim_{x\to1}\frac{\left(x-2\right)\left(x-1\right)}{x-3}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(B).
+ (10') 给出一个一元函数
+\begin_inset Formula $f$
+\end_inset
+
+, 在有理点都不连续, 在无理点都连续, 并证明之.
+\end_layout
+
+\begin_layout Problem
+(C).
+ (10') 设
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+为二元函数, 在
+\begin_inset Formula $\left(x_{0},y_{0}\right)$
+\end_inset
+
+附近有定义, 试讨论``
+\begin_inset Formula $f\left(x,y\right)$
+\end_inset
+
+在
+\begin_inset Formula $\left(x_{0},y_{0}\right)$
+\end_inset
+
+处可微
+\begin_inset Quotes erd
+\end_inset
+
+与``
+\begin_inset Formula $f\left(x,y\right)$
+\end_inset
+
+在
+\begin_inset Formula $\left(x_{0},y_{0}\right)$
+\end_inset
+
+附近关于
+\begin_inset Formula $x,y$
+\end_inset
+
+的偏导数都存在
+\begin_inset Quotes erd
+\end_inset
+
+之间的关系, 必要时, 请给出反例.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(A).
+ (5') 设
+\begin_inset Formula $f\left(x\right)=\frac{x+2}{x+1}$
+\end_inset
+
+, 数列
+\begin_inset Formula $\left\{ x_{n}\right\} $
+\end_inset
+
+由如下递推公式定义:
+\begin_inset Formula 
+\[
+x_{0}=1,x_{n+1}=f\left(x_{n}\right),\quad n=0,1,2,\cdots.
+\]
+
+\end_inset
+
+求证: 
+\begin_inset Formula $\lim_{n\to\infty}x_{n}=\sqrt{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+(B).
+ (5') 求
+\begin_inset Formula $\lim_{x\to\infty}\left(\sqrt{\cos\frac{1}{x}}\right)^{x^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+(C).
+ (5') 求
+\begin_inset Formula $f^{(n)}(0)$
+\end_inset
+
+, 其中
+\begin_inset Formula $n=1,2,\cdots$
+\end_inset
+
+, 
+\begin_inset Formula $f(0)=0$
+\end_inset
+
+, 
+\begin_inset Formula $f(x)=\ue^{-\frac{1}{x^{2}}}$
+\end_inset
+
+(当
+\begin_inset Formula $x\ne0$
+\end_inset
+
+时).
+\end_layout
+
+\begin_layout Problem
+(D).
+ (8') 求不定积分
+\begin_inset Formula $\int\sqrt{1+x^{2}}\ud x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+(E).
+ (7') 证明
+\begin_inset Formula $\zeta\left(x\right)=\sum_{n=1}^{\infty}\frac{1}{n^{x}}$
+\end_inset
+
+在
+\begin_inset Formula $\left(1,\infty\right)$
+\end_inset
+
+上连续可微.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(A).
+ (10') 求第一型曲面积分
+\begin_inset Formula 
+\[
+I=\iint_{x^{2}+y^{2}+z^{2}=R^{2}}\frac{\ud S}{\sqrt{x^{2}+y^{2}+\left(z-h\right)^{2}}},
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $h\ne R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+(B).
+ (10') 设
+\begin_inset Formula $a,b,c$
+\end_inset
+
+为三个实数.
+ 证明: 方程
+\begin_inset Formula $\ue^{x}=ax^{2}+bx+c$
+\end_inset
+
+的根不超过三个.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+设
+\begin_inset Formula $f_{n}\left(x\right)=\cos x+\cos^{2}x+\cdots+\cos^{n}x$
+\end_inset
+
+, 求证:
+\end_layout
+
+\begin_layout Problem
+(A).
+ (10') 对任意自然数
+\begin_inset Formula $n$
+\end_inset
+
+, 方程
+\begin_inset Formula $f_{n}\left(x\right)=1$
+\end_inset
+
+在
+\begin_inset Formula $[0,\pi/3)$
+\end_inset
+
+内有且仅有一个根;
+\end_layout
+
+\begin_layout Problem
+(B).
+ (10') 设
+\begin_inset Formula $x_{n}\in[0,1/3)$
+\end_inset
+
+是
+\begin_inset Formula $f_{n}\left(x\right)=1$
+\end_inset
+
+的根, 则
+\begin_inset Formula $\lim_{n\to\infty}x_{n}=\frac{\pi}{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+2007年浙江大学数学分析考研试题简答
+\end_layout
+
+\begin_layout Problem
+(30') 证明:
+\end_layout
+
+\begin_layout Problem
+1.
+ 
+\begin_inset Formula $\ue^{x}\sin x-x\left(1+x\right)=O\left(x^{3}\right)$
+\end_inset
+
+, (
+\begin_inset Formula $x\to0$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Problem
+2.
+ 
+\begin_inset Formula $\cos x+\sin x>1+x-x^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $x\in\left(0,+\infty\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+3.
+ 设
+\begin_inset Formula $f$
+\end_inset
+
+是
+\begin_inset Formula $\left[-1,1\right]$
+\end_inset
+
+上的可积函数, 则有
+\begin_inset Formula 
+\[
+\iiint_{x^{2}+y^{2}+z^{2}\le1}f\left(z\right)\ud x\ud y\ud z=x\int_{-1}^{1}f\left(u\right)\left(1-u^{2}\right)\ud u.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(30')
+\end_layout
+
+\begin_layout Problem
+1.
+ 叙述数集的上确界及下确界的定义.
+\end_layout
+
+\begin_layout Problem
+2.
+ 设
+\begin_inset Formula $S$
+\end_inset
+
+是一个有上界的数集, 用
+\begin_inset Formula $S_{a}$
+\end_inset
+
+表示
+\begin_inset Formula $S$
+\end_inset
+
+的一个平移, 即
+\begin_inset Formula $S_{a}=\left\{ x+a\mid x\in S\right\} $
+\end_inset
+
+, 其中
+\begin_inset Formula $a$
+\end_inset
+
+是一个实数, 试证明
+\begin_inset Formula 
+\[
+\sup S_{a}=\sup S+a.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+3.
+ 确定数集
+\begin_inset Formula 
+\[
+\left\{ \left(-1\right)^{n}\frac{3n^{2}-1}{2n^{2}}\mid n=1,2,3,\cdots\right\} 
+\]
+
+\end_inset
+
+的上确界和下确界(必须用定义加以验证).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(20') 狄利克雷函数
+\begin_inset Formula 
+\[
+D\left(x\right)=\begin{cases}
+1, & x\text{为有理数},\\
+0, & x\text{为无理数.}
+\end{cases}
+\]
+
+\end_inset
+
+试分别用
+\end_layout
+
+\begin_layout Problem
+(1) 极限定义;
+\end_layout
+
+\begin_layout Problem
+(2) 柯西收敛准则,
+\end_layout
+
+\begin_layout Problem
+证明当
+\begin_inset Formula $x\to1$
+\end_inset
+
+时, 
+\begin_inset Formula $D\left(x\right)$
+\end_inset
+
+的极限不存在.
 \end_layout
 
 \begin_layout Section
@@ -1958,6 +3594,416 @@ literal "false"
 
 \end_layout
 
+\begin_layout Proposition
+若
+\begin_inset Formula $f(x)$
+\end_inset
+
+在
+\begin_inset Formula $[a,+\infty)$
+\end_inset
+
+(
+\begin_inset Formula $a>0$
+\end_inset
+
+)上满足Lipschitz条件, 则函数
+\begin_inset Formula $\frac{f(x)}{x}$
+\end_inset
+
+在
+\begin_inset Formula $[a,+\infty)$
+\end_inset
+
+上一致连续.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+\begin_inset CommandInset citation
+LatexCommand cite
+after "定理3.37"
+key "key-5"
+literal "false"
+
+\end_inset
+
+对于任意的正数序列
+\begin_inset Formula $\left\{ c_{n}\right\} $
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\liminf_{n\to\infty}\frac{c_{n+1}}{c_{n}}\le\liminf_{n\to\infty}\sqrt[n]{c_{n}}\le\limsup_{n\to\infty}\sqrt[n]{c_{n}}\le\limsup_{n\to\infty}\frac{c_{n+1}}{c_{n}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+当序列
+\begin_inset Formula $\left(p_{n}\right)$
+\end_inset
+
+满足
+\begin_inset Formula $p_{n}>0$
+\end_inset
+
+且
+\begin_inset Formula $\lim_{n\to\infty}\frac{p_{n+1}}{np_{n}}=p>0$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\left(\sqrt[n+1]{p_{n+1}}-\sqrt[n]{p_{n}}\right)=\frac{p}{e}.
+\]
+
+\end_inset
+
+后面有引用提示.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+Stirling公式
+\begin_inset Formula 
+\[
+\log n!=n\log\left(\frac{n}{e}\right)+\frac{1}{2}\log(2\pi n)+\frac{1}{12n}+O(n^{-2}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+\begin_inset CommandInset href
+LatexCommand href
+name "Wikipedia"
+target "https://en.wikipedia.org/wiki/Factorial#Rate_of_growth_and_approximations_for_large_n"
+literal "false"
+
+\end_inset
+
+中的不等式
+\begin_inset Formula 
+\[
+\left(\frac{n}{\ue}\right)^{n}\ue\le n!\le\left(\frac{n+1}{\ue}\right)^{n+1}\ue.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+Stolz-Ces
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'{a}
+\end_layout
+
+\end_inset
+
+ro theorem: 
+\begin_inset Formula $\left(a_{n}\right)_{n\ge1}$
+\end_inset
+
+和
+\begin_inset Formula $\left(b_{n}\right)_{n\ge1}$
+\end_inset
+
+是连个实数列, 
+\begin_inset Formula $\left(b_{n}\right)_{n\ge1}$
+\end_inset
+
+严格单调且发散, 如果
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}}=\ell.
+\]
+
+\end_inset
+
+则
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\frac{a_{n}}{b_{n}}=\ell.
+\]
+
+\end_inset
+
+一般
+\begin_inset Formula $\left(a_{n}\right)_{n\ge1}$
+\end_inset
+
+和
+\begin_inset Formula $\left(b_{n}\right)_{n\ge1}$
+\end_inset
+
+是连个实数列, 
+\begin_inset Formula $\left(b_{n}\right)_{n\ge1}$
+\end_inset
+
+严格单调且发散有
+\begin_inset CommandInset citation
+LatexCommand cite
+after "85-88"
+key "key-4"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\liminf_{n\to\infty}\frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}}\le\liminf_{n\to\infty}\frac{a_{n}}{b_{n}}\le\limsup_{n\to\infty}\frac{a_{n}}{b_{n}}\le\limsup_{n\to\infty}\frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+\begin_inset CommandInset citation
+LatexCommand cite
+after "55-62"
+key "key-7"
+literal "false"
+
+\end_inset
+
+存在条件收敛的级数
+\begin_inset Formula $\sum a_{n}$
+\end_inset
+
+, 
+\begin_inset Formula $\sum b_{n}$
+\end_inset
+
+使得
+\begin_inset Formula $\sum c_{n}$
+\end_inset
+
+发散, 其中
+\begin_inset Formula $c_{n}=\sum_{k}^{n}a_{k}b_{n-k}$
+\end_inset
+
+.
+ 存在两个发散级数
+\begin_inset Formula $1-\sum\left(\frac{3}{2}\right)^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $1+\sum\left(\frac{3}{2}\right)^{n-1}\left(2^{n}+\frac{1}{2^{n+1}}\right)$
+\end_inset
+
+的Cauchy乘积是一个绝对收敛级数.
+ 
+\end_layout
+
+\begin_layout Proposition
+当
+\begin_inset Formula $\sum a_{n}$
+\end_inset
+
+, 
+\begin_inset Formula $\sum b_{n}$
+\end_inset
+
+绝对收敛时, 
+\begin_inset Formula $\sum c_{n}$
+\end_inset
+
+绝对收敛, 其中
+\begin_inset Formula $c_{n}=\sum_{k}^{n}a_{k}b_{n-k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proposition
+
+\series bold
+Mertens定理
+\series default
+: 当
+\begin_inset Formula $\sum a_{n}$
+\end_inset
+
+绝对收敛, 
+\begin_inset Formula $\sum b_{n}$
+\end_inset
+
+收敛, 且
+\begin_inset Formula $\sum c_{n}=\sum a_{n}\sum b_{n}$
+\end_inset
+
+, 其中
+\begin_inset Formula $c_{n}=\sum_{k}^{n}a_{k}b_{n-k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proposition
+证明: 级数
+\begin_inset Formula $C\left(x\right)=\sum_{n=0}^{\infty}\left(-1\right)^{n}\frac{x^{2n}}{\left(2n\right)!}$
+\end_inset
+
+, 
+\begin_inset Formula $S\left(x\right)=\sum_{n=0}^{\infty}\left(-1\right)^{n}\frac{x^{2n+1}}{\left(2n+1\right)!}$
+\end_inset
+
+对所有实数
+\begin_inset Formula $x$
+\end_inset
+
+绝对收敛, 且
+\begin_inset Formula $S\left(2x\right)=2S\left(x\right)C\left(x\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proposition
+证明: 级数
+\begin_inset Formula $\sum_{n=1}^{\infty}\left(-1\right)^{n-1}\frac{1}{n^{\alpha}}$
+\end_inset
+
+, 
+\begin_inset Formula $\sum_{n=1}^{\infty}\left(-1\right)^{n-1}\frac{1}{n^{\beta}}$
+\end_inset
+
+(
+\begin_inset Formula $\alpha,\beta>0$
+\end_inset
+
+)的Cauchy乘积在
+\begin_inset Formula $\alpha+\beta>1$
+\end_inset
+
+时收敛; 在
+\begin_inset Formula $\alpha+\beta\le1$
+\end_inset
+
+时发散.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+Fatou引理： 若
+\begin_inset Formula $f_{n}:X\to\left[0,\infty\right]$
+\end_inset
+
+是可测函数列， 则
+\begin_inset Formula 
+\[
+\int_{X}\left(\liminf_{n\to\infty}f_{n}\right)\ud\mu\le\liminf_{n\to\infty}\int_{X}f_{n}\ud\mu.
+\]
+
+\end_inset
+
+proof: 设
+\begin_inset Formula $g_{k}\left(x\right)=\inf_{i\ge k}f_{i}\left(x\right)$
+\end_inset
+
+, 
+\begin_inset Formula $k\in\NN_{+}$
+\end_inset
+
+, 
+\begin_inset Formula $x\in X$
+\end_inset
+
+.
+ 则
+\begin_inset Formula $g_{k}\le f_{k}$
+\end_inset
+
+, 
+\begin_inset Formula $\int_{X}g_{k}\ud\mu\le\int_{X}f_{k}\ud\mu$
+\end_inset
+
+, 又
+\begin_inset Formula $0\le g_{1}\le g_{2}\le\cdots$
+\end_inset
+
+, 
+\begin_inset Formula $g_{k}$
+\end_inset
+
+可测， 由单调收敛定理
+\begin_inset Formula $g_{k}\left(x\right)\to\liminf f_{i}\left(x\right)$
+\end_inset
+
+, 
+\begin_inset Formula $k\to\infty$
+\end_inset
+
+, 
+\begin_inset Formula $\lim\int_{X}g_{k}\ud\mu=\int_{X}\lim g_{k}\ud\mu$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Chapter
 自编题
 \end_layout
@@ -2048,6 +4094,73 @@ noprefix "false"
 \begin_inset Formula 
 \[
 \prodcyc\cos\frac{A}{2}\le\frac{3\sqrt{3}}{8},\quad\sumcyc\sin A\le\frac{3\sqrt{3}}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+给出一个例子, 通过多元变换的Jacobi矩阵求矩阵的逆.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+证明:
+\begin_inset Formula 
+\[
+\lim_{m\to\infty}\frac{\left(2x\right)\left(2x+1\right)\cdots\left(2x+m\right)\left(\frac{1}{2}\right)\left(\frac{3}{2}\right)\cdots\left(\frac{1}{2}+m\right)}{x\left(x+1\right)\cdots\left(x+m\right)\left(x+\frac{1}{2}\right)\left(x+\frac{3}{2}\right)\cdots\left(x+m+\frac{1}{2}\right)}=2^{1-2x},\qquad\Re x>0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(未解决)设
+\begin_inset Formula $n\in\NN_{+}$
+\end_inset
+
+, 
+\begin_inset Formula $x_{i}>0$
+\end_inset
+
+, 
+\begin_inset Formula $1\le i\le n$
+\end_inset
+
+, 
+\begin_inset Formula $x_{k}=x_{k\text{ mod }n}$
+\end_inset
+
+.
+ 则
+\begin_inset Formula 
+\[
+\sumcyc\frac{x_{i}}{x_{i+1}}\ge\sumcyc\sqrt{\frac{x_{i}^{2}+1}{x_{i+1}^{2}+1}}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sumcyc\frac{x_{i}^{2}-x_{i+1}x_{i+3}}{x_{i+1}+2x_{i+2}+x_{i+3}}\ge0.
 \]
 
 \end_inset
@@ -2278,6 +4391,108 @@ literal "false"
 
 \end_layout
 
+\begin_layout Subsection
+The College Mathematics Journal
+\end_layout
+
+\begin_layout Subsubsection
+A Two-Parameter Trigonometric Series, Xiang-Qian Chang, Vol.
+ 36, No.
+ 5 (Nov., 2005), pp.
+ 408-412
+\end_layout
+
+\begin_layout Lemma
+恒等式
+\begin_inset Formula 
+\[
+\sum_{k=0}^{l-1}\exp\left(2\pi\ui\frac{n}{l}k\right)=\begin{cases}
+l, & if\ l\mid n;\\
+0, & otherwise.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+恒等式
+\begin_inset Formula 
+\[
+\sum_{k=1}^{\infty}\frac{1}{k^{2}}\left(1-\cos\left(\frac{2k\pi}{l}\right)\right)\cos\left(\frac{2k\pi}{l}n\right)=\frac{\pi^{2}}{l^{2}}\sum_{k=1}^{l-1}\exp\left(2\pi\ui\frac{n}{l}k\right)=\begin{cases}
+\frac{l-1}{l^{2}}\pi^{2}, & for\ l\mid n;\\
+-\frac{1}{l^{2}}\pi^{2}, & otherwise.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+\sum_{k=1}^{\infty}\frac{1}{k^{2}}\cos\left(\frac{2k\pi}{l}\right)=\frac{\pi^{2}}{6}-\frac{l-1}{l}\pi^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The Two-Year College Mathematics Journal
+\end_layout
+
+\begin_layout Subsubsection
+A Classroom Theorem on Trigonometric Irrationalities, Norman Schaumberger,
+ Vol.
+ 5, No.
+ 1 (Winter, 1974), pp.
+ 73-76
+\end_layout
+
+\begin_layout Theorem
+If 
+\begin_inset Formula $x$
+\end_inset
+
+ is rational in degrees, say 
+\begin_inset Formula $x=p/q$
+\end_inset
+
+, with 
+\begin_inset Formula $p$
+\end_inset
+
+ not divisible by either 30 or 45, then all trigonometric functions of 
+\begin_inset Formula $x$
+\end_inset
+
+ are irrational.
+\end_layout
+
+\begin_layout Standard
+文章给出了一个有理数度数的三角函数仍是有理数的充分条件, 但不是必要条件.
+ 如果度数是整数, 则可以得到一个充要条件.
+\end_layout
+
+\begin_layout Standard
+另外, 这篇文章不能作为证明
+\begin_inset Formula $\tan\left(\frac{p}{q}\pi\right)$
+\end_inset
+
+是有理数的所有
+\begin_inset Formula $p/q$
+\end_inset
+
+的形式.
+ 根据文章已有的结论, 定理5能否得到进一步的推广仍然未知.
+\end_layout
+
 \begin_layout Section
 书籍
 \end_layout
@@ -2352,6 +4567,254 @@ Analytic Inequalities, D.
 \end_inset
 
 必定是正定的.
+\end_layout
+
+\begin_layout Enumerate
+泛函分析中的
+\begin_inset Formula $\ell^{2}$
+\end_inset
+
+构成的Hilbert空间.
+\end_layout
+
+\begin_layout Subsection
+实变函数与泛函分析, 北京大学, 郭懋正
+\end_layout
+
+\begin_layout Proposition
+给出黎曼函数在
+\begin_inset Formula $L^{1}$
+\end_inset
+
+范数意义下不完备的反例.
+\end_layout
+
+\begin_layout Standard
+书中213页的问题, 
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+上黎曼可积函数全体在
+\begin_inset Formula $L^{1}$
+\end_inset
+
+范数定义的距离下不是完备的, 它的完备化空间是
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+上Lebesgue可积函数全体.
+ 但引用4.1中的证明有部分偏差.
+ 设闭区间
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+上全体黎曼可积函数记作
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+
+, 作为
+\begin_inset Formula $L\left(\left[a,b\right]\right)$
+\end_inset
+
+的向量子空间.
+ 设
+\begin_inset Formula $\mathcal{Q}=\left\{ r_{n}\mid n\in\NN\right\} $
+\end_inset
+
+是
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+中有理数集.
+ 取开区间
+\begin_inset Formula $\delta_{n}$
+\end_inset
+
+, 使得
+\begin_inset Formula $r_{n}\in\delta_{n}$
+\end_inset
+
+, 
+\begin_inset Formula $\sum_{n}m\left(\delta_{n}\right)<\infty$
+\end_inset
+
+.
+ 令
+\begin_inset Formula 
+\[
+f_{n}\left(x\right)=\sum_{i=1}^{n}\chi_{\delta_{i}}\left(x\right),
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $\left\{ f_{n}\right\} \subset\mathcal{R}$
+\end_inset
+
+, 且是
+\begin_inset Formula $L^{1}$
+\end_inset
+
+中的基本列, 但是对于任何
+\begin_inset Formula $f\in\mathcal{R}$
+\end_inset
+
+, 因为
+\begin_inset Formula $f$
+\end_inset
+
+黎曼可积, 所以
+\begin_inset Formula $f$
+\end_inset
+
+在
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+有界, 设
+\begin_inset Formula $\left|f\right|\le M$
+\end_inset
+
+.
+ 在由当
+\begin_inset Formula $n$
+\end_inset
+
+充分大时, 
+\begin_inset Formula $f_{n}$
+\end_inset
+
+总有一个重叠了至少
+\begin_inset Formula $\left[2M\right]$
+\end_inset
+
+次的区间
+\begin_inset Formula $\delta_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $m\left(\delta_{0}\right)=m>0$
+\end_inset
+
+, 从而
+\begin_inset Formula 
+\[
+\norm{f_{n}-f}_{1}>m\cdot2M>0,
+\]
+
+\end_inset
+
+这说明
+\begin_inset Formula $f_{n}$
+\end_inset
+
+不可能收敛到
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+
+中的任何元.
+\end_layout
+
+\begin_layout Definition
+算子
+\begin_inset Formula $E$
+\end_inset
+
+: Hilbert空间
+\begin_inset Formula $H$
+\end_inset
+
+上的有界线性算子, 若
+\begin_inset Formula $E^{2}=E$
+\end_inset
+
+, 则算子
+\begin_inset Formula $E$
+\end_inset
+
+称为幂等的.
+ 如果
+\begin_inset Formula $E^{2}=E$
+\end_inset
+
+且
+\begin_inset Formula $E^{*}=E$
+\end_inset
+
+, 则
+\begin_inset Formula $E$
+\end_inset
+
+称为
+\series bold
+投影算子
+\series default
+.
+ 即投影算子是幂等的自伴算子.
+\end_layout
+
+\begin_layout Theorem
+设
+\begin_inset Formula $E\ne0$
+\end_inset
+
+是Hilbert空间
+\begin_inset Formula $H$
+\end_inset
+
+上的幂等算子, 则下面命题等价:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $E=E^{*}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\text{ker}E=R\left(E\right)^{\perp}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $E$
+\end_inset
+
+是
+\begin_inset Formula $H$
+\end_inset
+
+到
+\begin_inset Formula $R\left(E\right)$
+\end_inset
+
+上的正交投影;
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\norm{E}=1$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+对所有
+\begin_inset Formula $H$
+\end_inset
+
+中元素
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $\left(Ex,x\right)\ge0$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -2456,6 +4919,167 @@ literal "false"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+计算极限
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\sqrt[n+1]{\left(n+1\right)!}-\sqrt[n]{n!}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+所求极限的序列称为Lalescu序列.
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset href
+LatexCommand href
+name "2020153"
+target "https://math.stackexchange.com/questions/2020153/limit-of-the-sequence-a-n-sqrtn1n1-sqrtnn"
+literal "false"
+
+\end_inset
+
+: We can write 
+\begin_inset Formula $a_{n}=\sqrt[n]{n!}(b_{n}-1)$
+\end_inset
+
+, where 
+\begin_inset Formula $b_{n}=\sqrt[n+1]{(n+1)!}/\sqrt[n]{n!}$
+\end_inset
+
+.
+ Hence 
+\begin_inset Formula 
+\[
+a_{n}=\frac{\sqrt[n]{n!}}{n}.\frac{b_{n}-1}{\ln{b_{n}}}.\ln{b_{n}^{n}}
+\]
+
+\end_inset
+
+But 
+\begin_inset Formula $\lim\limits _{n\to\infty}\sqrt[n]{n!}/n=e^{-1}$
+\end_inset
+
+, so 
+\begin_inset Formula $b_{n}\to1$
+\end_inset
+
+ as 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+.
+ On the other hand, 
+\begin_inset Formula 
+\[
+\lim\limits _{n\to\infty}b_{n}^{n}=\lim\limits _{n\to\infty}\frac{(n+1)!}{n!}.\frac{1}{\sqrt[n+1]{(n+1)!}}=e.
+\]
+
+\end_inset
+
+Also 
+\begin_inset Formula 
+\[
+\lim\limits _{n\to\infty}\frac{b_{n}-1}{\ln{b_{n}}}=\lim\limits _{n\to\infty}\frac{1}{\ln{[1+(b_{n}-1)]^{1/(b_{n}-1)}}}=\frac{1}{\ln e}=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset href
+LatexCommand href
+name "1468834"
+target "https://math.stackexchange.com/questions/1468834/computation-of-a-limit-involving-factorial-lim-n-to-infty-sqrtn1-n1?noredirect=1&lq=1"
+literal "false"
+
+\end_inset
+
+: 从Stirling公式出发.
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset href
+LatexCommand href
+name "2941072"
+target "https://math.stackexchange.com/a/2941159/49660"
+literal "false"
+
+\end_inset
+
+: 使用Stirling公式和中值定理的证明.
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset href
+LatexCommand href
+name "238245"
+target "https://math.stackexchange.com/a/298207/49660"
+literal "false"
+
+\end_inset
+
+: 证明序列的单调性, 说明极限存在(当然也可以通过上面的方法使用中值定理和二阶导数证明单调性), 所以用Cesaro平均和Stirling公式给出求解.
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset href
+LatexCommand href
+name "2941072"
+target "https://math.stackexchange.com/a/2941168/49660"
+literal "false"
+
+\end_inset
+
+: 类似Stirling公式的证明过程.
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset href
+LatexCommand href
+name "1457308"
+target "https://math.stackexchange.com/questions/1457308/if-fracp-n1np-n-to-p-0-then-sqrtn1p-n1-sqrtnp-n?noredirect=1&lq=1"
+literal "false"
+
+\end_inset
+
+: 使用结论: 当序列
+\begin_inset Formula $\left(p_{n}\right)$
+\end_inset
+
+满足
+\begin_inset Formula $p_{n}>0$
+\end_inset
+
+且
+\begin_inset Formula $\lim_{n\to\infty}\frac{p_{n+1}}{np_{n}}=p>0$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\left(\sqrt[n+1]{p_{n+1}}-\sqrt[n]{p_{n}}\right)=\frac{p}{e}.
+\]
+
+\end_inset
+
+这个结论可以利用上面的分解为三个极限存在的乘积的形式, 逐一计算各个积分得到一个证明.
 \end_layout
 
 \begin_layout Subsection
@@ -3564,6 +6188,309 @@ q_{b(n)} & \text{如果}m=p^{n},\text{其中}p\text{是素数且}n\ge2,\\
 一个推广方向是将四位数推广到任意位数的情况.
 \end_layout
 
+\begin_layout Section
+百度贴吧
+\end_layout
+
+\begin_layout Problem
+求当
+\begin_inset Formula $k\ge2$
+\end_inset
+
+时, 
+\begin_inset Formula $\sqrt{k-\sqrt{k+\sqrt{k-\sqrt{k+\cdots}}}}$
+\end_inset
+
+收敛并求极限.
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $a_{n}=\sqrt{k-\sqrt{k+\sqrt{\cdots-\sqrt{k}}}}$
+\end_inset
+
+, 根号下有
+\begin_inset Formula $2n$
+\end_inset
+
+个
+\begin_inset Formula $k$
+\end_inset
+
+, 所以
+\begin_inset Formula $a_{1}=\sqrt{k-\sqrt{k}}<\sqrt{k}.$
+\end_inset
+
+ 
+\begin_inset Formula $a_{n+1}=\sqrt{k-\sqrt{k+a_{n}}}$
+\end_inset
+
+.
+ 如果
+\begin_inset Formula $0<a_{n}<\sqrt{k}$
+\end_inset
+
+, 则
+\begin_inset Formula $a_{n+1}<\sqrt{k-\sqrt{k}}<\sqrt{k}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{n+1}>\sqrt{k-\sqrt{k+\sqrt{k}}}>0\Leftrightarrow k^{4}-2k^{3}+k^{2}-k>0$
+\end_inset
+
+.
+ 所以映射
+\begin_inset Formula $f:\left[0,\sqrt{k}\right]\to\left[0,\sqrt{k}\right],\ \ x\mapsto\sqrt{k-\sqrt{k+x}}$
+\end_inset
+
+的值域含在定义域中.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{aligned}a_{n+1}-a_{n} & =\sqrt{k-\sqrt{k+a_{n}}}-a_{n}=\frac{k-\sqrt{k+a_{n}}-a_{n}^{2}}{a_{n}+\sqrt{k-\sqrt{k+a_{n}}}}<\frac{k-\sqrt{k+a_{n}}-\left(k-\sqrt{k+a_{n-1}}\right)}{\sqrt{k-\sqrt{k+\sqrt{k}}}}\\
+ & =\frac{\sqrt{k+a_{n-1}}-\sqrt{k+a_{n}}}{\sqrt{k-\sqrt{k+\sqrt{k}}}}=\frac{a_{n-1}-a_{n}}{\sqrt{k-\sqrt{k+\sqrt{k}}}\left(\sqrt{k+a_{n-1}}+\sqrt{k+a_{n}}\right)}\\
+ & <\frac{a_{n-1}-a_{n}}{2\sqrt{k}\sqrt{k-\sqrt{k+\sqrt{k}}}}<\frac{a_{n-1}-a_{n}}{2}.
+\end{aligned}
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula $f$
+\end_inset
+
+是压缩映射(必要符号自行稍作修改).
+ 数列极限存在, 设为
+\begin_inset Formula $x$
+\end_inset
+
+, 满足
+\begin_inset Formula 
+\[
+x=\sqrt{k-\sqrt{k+x}}.
+\]
+
+\end_inset
+
+用一元四次求根公式, 在
+\begin_inset Formula $\left[0,\sqrt{k}\right]$
+\end_inset
+
+中不动点的唯一性, 有
+\begin_inset Formula 
+\[
+x=\frac{\sqrt{4k-3}-1}{2}.
+\]
+
+\end_inset
+
+其实是解一个四次方程
+\begin_inset Formula $k-k^{2}+x+2kx^{2}-x^{4}=0$
+\end_inset
+
+, 可以不用四次求根公式, 比如从结果上看, 需要对
+\begin_inset Formula $x$
+\end_inset
+
+平移
+\begin_inset Formula $1/2$
+\end_inset
+
+, 得到
+\begin_inset Formula 
+\[
+(1+4k-4x^{2})(-7+4k-8x-4x^{2})=0.
+\]
+
+\end_inset
+
+当然这些求法都太麻烦了, 用一个高中的技巧, 对于
+\begin_inset Formula $x$
+\end_inset
+
+是四次方程, 但对于
+\begin_inset Formula $k$
+\end_inset
+
+是二次方程, 解
+\begin_inset Formula $k$
+\end_inset
+
+有两个解
+\begin_inset Formula 
+\[
+k_{1}=x\left(x-1\right),\ k_{2}=x^{2}+x+1.
+\]
+
+\end_inset
+
+再解
+\begin_inset Formula $x$
+\end_inset
+
+即可.
+\end_layout
+
+\begin_layout Problem
+设函数
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+具有二阶导数, 且
+\begin_inset Formula $f\left(0\right)=0$
+\end_inset
+
+, 证明: 存在
+\begin_inset Formula $\xi\in\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$
+\end_inset
+
+, 使得
+\begin_inset Formula 
+\[
+f''\left(\xi\right)=f\left(\xi\right)\left[1+2\tan^{2}\xi\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+这是一道错题, 众所周知
+\begin_inset Formula $\tan^{2}x$
+\end_inset
+
+在
+\begin_inset Formula $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$
+\end_inset
+
+上有二阶导数且符合题意, 但
+\begin_inset Formula 
+\[
+f''\left(x\right)-f\left(x\right)(1+2\tan^{2}x)=-\frac{1}{8}\left(-25+8\cos2x+\cos4x\right)\sec^{4}x,
+\]
+
+\end_inset
+
+这段是Mathematica的计算结果, 它在任何时候都不为
+\begin_inset Formula $0$
+\end_inset
+
+.
+ 问题出在
+\begin_inset Formula $\pm\frac{\pi}{2}$
+\end_inset
+
+处, 题目可以稍作修改使命题成立, 如果
+\begin_inset Formula $f$
+\end_inset
+
+在
+\begin_inset Formula $\pm\frac{\pi}{2}$
+\end_inset
+
+处是
+\begin_inset Formula $o\left(\frac{1}{x\pm\frac{\pi}{2}}\right)$
+\end_inset
+
+的, 则命题成立.
+\end_layout
+
+\begin_layout Problem
+取
+\begin_inset Formula $g(x)=\left(f\left(x\right)\cos x\right)^{\prime}$
+\end_inset
+
+, 注意
+\begin_inset Formula $f\left(x\right)\cos x$
+\end_inset
+
+在
+\begin_inset Formula $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$
+\end_inset
+
+上有一个零点, 且由于前面的修改后的假设, 
+\begin_inset Formula $f(x)\cos x$
+\end_inset
+
+在
+\begin_inset Formula $\pm\frac{\pi}{2}$
+\end_inset
+
+处可以补充定义两个零点使仍然有二阶导数, 从而
+\begin_inset Formula $f\left(x\right)\cos x$
+\end_inset
+
+在
+\begin_inset Formula $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$
+\end_inset
+
+上有三个零点, 所以
+\begin_inset Formula $\frac{g\left(x\right)}{\cos^{2}x}$
+\end_inset
+
+在
+\begin_inset Formula $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$
+\end_inset
+
+上有两个零点.
+ 由中值定理有
+\begin_inset Formula $\xi$
+\end_inset
+
+使得
+\begin_inset Formula 
+\[
+\left(\frac{g\left(x\right)}{\cos^{2}x}\right)_{x=\xi}^{\prime}=0\Longleftrightarrow-\left(\cos\left(\xi\right)+2\sin\left(\xi\right)\tan\left(\xi\right)\right)f\left(\xi\right)+\cos\left(\xi\right)f''\left(\xi\right)=0.
+\]
+
+\end_inset
+
+即为要证的结论.
+ 下边是
+\begin_inset Formula $g\left(x\right)$
+\end_inset
+
+取得的部分步骤...
+\end_layout
+
+\begin_layout Problem
+\begin_inset Formula 
+\[
+-f\left(\xi\right)\cos\xi+f''\left(\xi\right)\cos\xi-2\sin\xi f'\left(\xi\right)=2\left(\frac{f\left(\xi\right)\sin^{2}\xi-\sin\xi\cos\xi f'\left(\xi\right)}{\cos\xi}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left(f\left(\xi\right)\cos\xi\right)''=2\left(-\frac{\left(f\left(\xi\right)\cos\xi\right)'}{\cot\xi}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+g'(x)\cos x=2\left(-g(x)\sin x\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left(\frac{g\left(x\right)}{\cos^{2}x}\right)^{\prime}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 中等数学竞赛
 \end_layout
@@ -3590,6 +6517,482 @@ q_{b(n)} & \text{如果}m=p^{n},\text{其中}p\text{是素数且}n\ge2,\\
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+求证:
+\begin_inset Formula $\left(1+\frac{1}{x}\right)^{x}+\left(1+x\right)^{1/x}\le4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+不等式等价于
+\begin_inset Formula $\frac{1}{1+x}\left(1+x\right)^{1+1/x}+\frac{x}{1+x}\left(1+\frac{1}{x}\right)^{1+x}\le4$
+\end_inset
+
+.
+ 证明
+\begin_inset Formula $f\left(x\right)=\left(1+x\right)^{1+1/x}$
+\end_inset
+
+为上凸函数, 或
+\begin_inset Formula $\ln f\left(x\right)$
+\end_inset
+
+为上凸函数.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+\begin_inset Formula $a,b,c\ge0$
+\end_inset
+
+, 
+\begin_inset Formula $a+b+c=1$
+\end_inset
+
+.
+ 求证:
+\begin_inset Formula 
+\[
+\sumcyc a\sqrt{8b^{2}+c^{2}}\le1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+用均值不等式有
+\begin_inset Formula 
+\[
+\sumcyc a\sqrt{8b^{2}+c^{2}}\le\sumcyc\frac{a\left[\left(2b+c\right)^{2}+8b^{2}+c^{2}\right]}{2\left(2b+c\right)}=\left(\sumcyc a\right)^{2}-\sumcyc\frac{bc\left(b-c\right)^{2}\left(3a+8b+4c\right)}{2\left(2a+b\right)\left(2b+c\right)\left(2c+a\right)}\le1.
+\]
+
+\end_inset
+
+现在针对中间的等式获得的方法进行讨论, 为了证明
+\begin_inset Formula 
+\[
+\sumcyc\frac{a\left[\left(2b+c\right)^{2}+8b^{2}+c^{2}\right]}{2\left(2b+c\right)}\le1=\left(\sumcyc a\right)^{2}
+\]
+
+\end_inset
+
+不等式右边的等号是为了平衡等式左边的指数.
+ 由于量纲平衡时, 前提条件
+\begin_inset Formula $a+b+c=1$
+\end_inset
+
+可以省去, 也就是对于任何
+\begin_inset Formula $a,b,c>0$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\sumcyc\frac{a\left[\left(2b+c\right)^{2}+8b^{2}+c^{2}\right]}{2\left(2b+c\right)}\le\left(\sumcyc a\right)^{2}.
+\]
+
+\end_inset
+
+于是如果记
+\begin_inset Formula 
+\[
+f(a,b,c)=\left(\sumcyc a\right)^{2}-\sumcyc\frac{a\left[\left(2b+c\right)^{2}+8b^{2}+c^{2}\right]}{2\left(2b+c\right)}
+\]
+
+\end_inset
+
+需要考虑不等式能否化成如下几种形式中的某一种:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f\left(a,b,c\right)=\sumcyc\left(\left(a-b\right)^{2}g\left(a,b,c\right)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f\left(a,b,c\right)=\sumcyc\left(\left(a-b\right)\left(a-c\right)g\left(a,b,c\right)\right)$
+\end_inset
+
+, 其中再证明
+\begin_inset Formula $g\left(a,b,c\right),g\left(b,c,a\right),g\left(c,a,b\right)$
+\end_inset
+
+与
+\begin_inset Formula $a,b,c$
+\end_inset
+
+同序或反序, 便可以依据Shur不等式证明.
+\end_layout
+
+\begin_layout Standard
+对于第一种情况, 便需要求出
+\begin_inset Formula $g\left(a,b,c\right)$
+\end_inset
+
+, 这里用到特殊值法和待定系数法.
+ 
+\end_layout
+
+\begin_layout Standard
+当
+\begin_inset Formula $a=b$
+\end_inset
+
+时, 
+\begin_inset Formula 
+\begin{equation}
+f\left(a,a,c\right)=\frac{\left(a-c\right)^{2}c\left(3a+2c\right)}{\left(2a+c\right)\left(2c+a\right)}=\frac{\left(a-c\right)^{2}c\left(3a+2c\right)3a}{\left(2a+c\right)\left(2c+a\right)3a}=\left(a-c\right)^{2}\left(g\left(a,c,a\right)+g\left(c,a,a\right)\right)\label{eq:1}
+\end{equation}
+
+\end_inset
+
+所以可以猜想
+\begin_inset Formula 
+\[
+g\left(b,c,a\right)=\frac{c\left(2c+xa+yb\right)\left(wa+ub\right)}{\left(2a+b\right)\left(2b+c\right)\left(2c+a\right)}
+\]
+
+\end_inset
+
+这里猜想
+\begin_inset Formula $g\left(b,c,a\right)$
+\end_inset
+
+的形式或
+\begin_inset Formula $g\left(c,a,b\right)$
+\end_inset
+
+的形式都一样, 但不能将上式右边猜想为
+\begin_inset Formula $g\left(a,b,c\right)$
+\end_inset
+
+, 因为
+\begin_inset Formula $a=b$
+\end_inset
+
+时, 
+\begin_inset Formula $g\left(a,b,c\right)=g\left(a,a,c\right)$
+\end_inset
+
+在上面的式子
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+中没有出现.
+ 因为
+\begin_inset Formula 
+\[
+f\left(a,b,c\right)=\frac{\sumcyc\left(4a^{4}b-6a^{3}b^{2}+2a^{4}c+3a^{3}bc-3a^{2}b^{2}c\right)}{\left(2a+b\right)\left(2b+c\right)\left(2c+a\right)},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sumcyc\left(\left(a-b\right)^{2}g\left(a,b,c\right)\right)=\frac{\begin{array}{c}
+\left(2w+uy\right)a^{4}b+2ua^{4}c+\left(2u+wx-2uy\right)a^{3}b^{2}+\left(-4u+uy\right)a^{3}c^{2}\\
++\left(-4w+2ux+2wy\right)a^{3}bc+\left(2w-2ux-wx-2wy\right)a^{2}b^{2}c
+\end{array}}{\left(2a+b\right)\left(2b+c\right)\left(2c+a\right)}.
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula $u=1$
+\end_inset
+
+, 
+\begin_inset Formula $y=4$
+\end_inset
+
+, 
+\begin_inset Formula $x=3/2$
+\end_inset
+
+, 
+\begin_inset Formula $w=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+对于第二种情况, 同样的方法, 让
+\begin_inset Formula $a=b$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\sumcyc\left(\left(a-b\right)\left(a-c\right)g\left(a,b,c\right)\right)=(-a+c)^{2}g(c,a,a),
+\]
+
+\end_inset
+
+于是
+\begin_inset Formula 
+\[
+g\left(c,a,b\right)=\frac{c\left(xa+yb+2c\right)\left(wa+ub\right)}{\left(2a+c\right)\left(2c+a\right)(2a+b)}.
+\]
+
+\end_inset
+
+所以对于任何
+\begin_inset Formula $a,b,c$
+\end_inset
+
+有
+\begin_inset Formula 
+\[
+\sumcyc\left(\left(a-b\right)\left(a-c\right)g\left(a,b,c\right)\right)=\frac{\begin{array}{c}
+2wa^{4}b+2ua^{4}c+\left(-2w+wx-uy\right)a^{3}b^{2}+\left(-2u-wx+uy\right)a^{3}c^{2}\\
++\left(-2u-2w+ux+wx+uy+wy\right)\left(a^{3}bc-a^{2}b^{2}c\right)
+\end{array}}{\left(2a+c\right)\left(2c+a\right)(2a+b)}
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula $w=2$
+\end_inset
+
+, 
+\begin_inset Formula $u=1$
+\end_inset
+
+, 
+\begin_inset Formula $x=\frac{1}{3}$
+\end_inset
+
+, 
+\begin_inset Formula $y=\frac{8}{3}$
+\end_inset
+
+.
+ 于是
+\begin_inset Formula 
+\[
+g\left(a,b,c\right)=\frac{a\left(6a+b+8c\right)}{3\left(2a+b\right)\left(a+2c\right)},
+\]
+
+\end_inset
+
+但是
+\begin_inset Formula $a>b$
+\end_inset
+
+时, 我们希望
+\begin_inset Formula 
+\[
+g\left(a,b,c\right)-g\left(b,c,a\right)=\frac{-2bc\left(6b+c\right)+a^{2}\left(4b+6c\right)-4a\left(b^{2}-2c^{2}\right)}{3\left(2a+b\right)\left(2b+c\right)\left(2c+a\right)}>0.
+\]
+
+\end_inset
+
+反之亦然.
+ 但是
+\begin_inset Formula $a=b$
+\end_inset
+
+时因为
+\begin_inset Formula $g\left(a,a,c\right)-g\left(a,c,a\right)=\frac{2c\left(c-a\right)}{3\left(2a+c\right)\left(a+2c\right)}\ne0$
+\end_inset
+
+的符号不定, 所以
+\begin_inset Formula $a,b$
+\end_inset
+
+和
+\begin_inset Formula $g\left(a,b,c\right),g\left(b,c,a\right)$
+\end_inset
+
+不可能同序或反序.
+ 所以问题解法只有前述第一种情况的可能.
+\end_layout
+
+\begin_layout Section
+不等式吧
+\end_layout
+
+\begin_layout Problem
+对于正数
+\begin_inset Formula $a,b,c$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\left(a+\frac{1}{b}-1\right)\left(b+\frac{1}{c}-1\right)\left(c+\frac{1}{a}-a\right)\le\left(a+\frac{1}{a}-1\right)\left(b+\frac{1}{b}-1\right)\left(c+\frac{1}{c}-1\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+对于正数
+\begin_inset Formula $a_{0},a_{1},a_{2},\cdots,a_{n}$
+\end_inset
+
+有
+\begin_inset Formula 
+\[
+\prod_{i=0}^{n}\left(a_{i}+\frac{1}{a_{i+1}}-1\right)\le\prod_{i=0}^{n}\left(a_{i}+\frac{1}{a_{i}}-1\right).
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $a_{n+1}=a_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+
+\series bold
+引理:
+\series default
+ 当
+\begin_inset Formula $(b-a)(b-c)\ge0$
+\end_inset
+
+时, 有
+\begin_inset Formula 
+\[
+\left(a+\frac{1}{b}-1\right)\left(b+\frac{1}{c}-1\right)\le\left(b+\frac{1}{b}-1\right)\left(a+\frac{1}{c}-1\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+组合数学
+\end_layout
+
+\begin_layout Problem
+
+\series bold
+李善兰恒等式
+\series default
+
+\begin_inset CommandInset citation
+LatexCommand cite
+after "40-43"
+key "key-6"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset Formula $n\in\RR$
+\end_inset
+
+, 
+\begin_inset Formula $k\in\NN$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\sum_{j=0}^{k}\binom{k}{j}^{2}\binom{n+2k-j}{2k}=\binom{n+k}{k}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+施惠同的推广, 
+\begin_inset Formula $l\ge k\ge0$
+\end_inset
+
+, 
+\begin_inset Formula $l,k\in\ZZ$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\binom{x+k}{h}\binom{x+l}{l}=\sum_{j=0}^{k}\binom{k}{j}\binom{l}{j}\binom{x+k+l-j}{k+l}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+\begin_inset CommandInset citation
+LatexCommand cite
+after "51-53"
+key "key-6"
+literal "false"
+
+\end_inset
+
+, 空间中
+\begin_inset Formula $n$
+\end_inset
+
+个平面, 其中没有两个平面平行, 没有三个平面交于同一条直线, 也没有四个平面过同一点.
+ 求证: 它们有
+\begin_inset Formula $\frac{1}{6}n\left(n-1\right)\left(n-2\right)$
+\end_inset
+
+个交点, 
+\begin_inset Formula $\frac{1}{2}n\left(n-1\right)^{2}$
+\end_inset
+
+段交线, 这交线是被平面切割成一些片段的, 有
+\begin_inset Formula $n+\frac{1}{2}n^{2}\left(n-1\right)$
+\end_inset
+
+个面片, 一个面片是其它平面与某个平面的交线形成的区域; 把空间分成
+\begin_inset Formula $\frac{1}{6}\left(n^{3}+5n+6\right)$
+\end_inset
+
+份.
 \end_layout
 
 \begin_layout Section
@@ -4117,7 +7520,7 @@ a+b+c+d+e+f=10,
  考虑集合
 \begin_inset Formula 
 \[
-S=\{y^{2}-x^{3}-1\mid x,y\in\Integers,0\le x,y\le p-1\}.
+S=\{y^{2}-x^{3}-1\mid x,y\in\ZZ,0\le x,y\le p-1\}.
 \]
 
 \end_inset
@@ -4222,7 +7625,7 @@ S=\{y^{2}-x^{3}-1\mid x,y\in\Integers,0\le x,y\le p-1\}.
 \end_inset
 
 , 则
-\begin_inset Formula $\varphi:\Integers_{p}\to\Integers_{p}$
+\begin_inset Formula $\varphi:\ZZ_{p}\to\ZZ_{p}$
 \end_inset
 
 , 
@@ -4234,7 +7637,7 @@ S=\{y^{2}-x^{3}-1\mid x,y\in\Integers,0\le x,y\le p-1\}.
 
 \begin_layout Standard
 设
-\begin_inset Formula $\Integers_{p}$
+\begin_inset Formula $\ZZ_{p}$
 \end_inset
 
 的原根为
@@ -4263,7 +7666,7 @@ S=\{y^{2}-x^{3}-1\mid x,y\in\Integers,0\le x,y\le p-1\}.
 
 \begin_layout Standard
 任取
-\begin_inset Formula $b\in\Integers_{p}$
+\begin_inset Formula $b\in\ZZ_{p}$
 \end_inset
 
 , 当
@@ -4292,7 +7695,7 @@ S=\{y^{2}-x^{3}-1\mid x,y\in\Integers,0\le x,y\le p-1\}.
 \end_inset
 
 的任意性, 这说明映射
-\begin_inset Formula $f:\Integers_{p}\to\Integers_{p}$
+\begin_inset Formula $f:\ZZ_{p}\to\ZZ_{p}$
 \end_inset
 
 , 
@@ -4301,7 +7704,7 @@ S=\{y^{2}-x^{3}-1\mid x,y\in\Integers,0\le x,y\le p-1\}.
 
 是映上的满射.
  再取双射
-\begin_inset Formula $g:\Integers_{p}\to\Integers_{p}$
+\begin_inset Formula $g:\ZZ_{p}\to\ZZ_{p}$
 \end_inset
 
 , 
@@ -4380,7 +7783,7 @@ S=\{y^{2}-x^{3}-1\mid x,y\in\Integers,0\le x,y\le p-1\}.
 \end_inset
 
 只是
-\begin_inset Formula $\Integers_{p}$
+\begin_inset Formula $\ZZ_{p}$
 \end_inset
 
 的一个置换, 置换不改变二次剩余的数量, 而且
@@ -4390,7 +7793,7 @@ S=\{y^{2}-x^{3}-1\mid x,y\in\Integers,0\le x,y\le p-1\}.
 , 所以
 \begin_inset Formula 
 \[
-\{0^{3}+1,1^{3}+1,\cdots,(p-2)^{3}+1\}=\Integers_{p}^{*}.
+\{0^{3}+1,1^{3}+1,\cdots,(p-2)^{3}+1\}=\ZZ_{p}^{*}.
 \]
 
 \end_inset
@@ -6004,7 +9407,7 @@ TODO
 \end_inset
 
 , 
-\begin_inset Formula $k\in\Integers$
+\begin_inset Formula $k\in\ZZ$
 \end_inset
 
 .
@@ -6326,6 +9729,54 @@ key "key-3"
 \end_inset
 
 数学博士论坛.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Muresan"
+key "key-4"
+literal "false"
+
+\end_inset
+
+Muresan, A concrete approach to classical analysis, 2009.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Rudin"
+key "key-5"
+literal "false"
+
+\end_inset
+
+Rudin, 数学分析第一册.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "HuaLG"
+key "key-6"
+literal "false"
+
+\end_inset
+
+华罗庚, 数学归纳法.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "XuSL"
+key "key-7"
+literal "false"
+
+\end_inset
+
+徐森林, 数学分析.
 \end_layout
 
 \end_body

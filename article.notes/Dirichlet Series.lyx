@@ -1,0 +1,732 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+一般Dirichlet级数的Banach空间
+\end_layout
+
+\begin_layout Section
+引言
+\end_layout
+
+\begin_layout Standard
+一般Dirichlet级数的近代研究始于H.
+ Helson的文章
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2,key-3"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+1997年H.
+ Hedenmalm, P.
+ Lindqvist和K.
+ Seip的文章
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-4"
+literal "false"
+
+\end_inset
+
+中引进了Dirichlet级数的Hilbert空间
+\begin_inset Formula $\mathscr{H}_{2}$
+\end_inset
+
+, 并证明空间中的乘数(multipliers)就是在半平面
+\begin_inset Formula $[\mathrm{Re}s>0]$
+\end_inset
+
+上收敛并有界的Dirichlet级数空间
+\begin_inset Formula $\mathscr{H}_{\infty}\left(\log n\right)$
+\end_inset
+
+中的元素, 同时证明了
+\begin_inset Formula $\mathscr{H}_{\infty}\left(\log n\right)$
+\end_inset
+
+与Hardy空间
+\begin_inset Formula $H_{\infty}\left(\mathbb{T}^{\NN}\right)$
+\end_inset
+
+(无穷维环面上的所有有界可测函数空间
+\begin_inset Formula $L_{\infty}\left(\mathbb{T}^{\NN}\right)$
+\end_inset
+
+的闭子空间)等距同构.
+ 而在文章
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-5"
+literal "false"
+
+\end_inset
+
+中证明了
+\begin_inset Formula $H_{\infty}\left(\mathbb{T}^{\NN}\right)$
+\end_inset
+
+与
+\begin_inset Formula $H_{\infty}\left(B_{c_{0}}\right)$
+\end_inset
+
+等距同构.
+\end_layout
+
+\begin_layout Standard
+文章
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-6"
+literal "false"
+
+\end_inset
+
+研究了Dirichlet级数的Hardy空间
+\begin_inset Formula $\mathscr{H}_{p}$
+\end_inset
+
+(
+\begin_inset Formula $1\le p<\infty$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+文章
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+literal "false"
+
+\end_inset
+
+中研究了在半平面有界的一般Dirichlet级数是Banach空间的条件, 并证明了这些空间之间是等距同构的.
+ 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $\{\lambda_{n}\}$
+\end_inset
+
+是严格递增的正实数序列, 并满足
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\lambda_{n}=\infty.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\lambda_{n}$
+\end_inset
+
+型Dirichlet级数定义
+\begin_inset Formula 
+\[
+D(s)=\sum_{n}b_{n}\lambda_{n}^{-s}.
+\]
+
+\end_inset
+
+特别的, 当
+\begin_inset Formula $\lambda_{n}\equiv n$
+\end_inset
+
+, 
+\begin_inset Formula $n\in\NN$
+\end_inset
+
+, 则上式便为通常的Dirichlet级数.
+ 其实通常Dirichlet级数的定义
+\begin_inset Formula $D(s)=\sum_{n}b_{n}\ue^{-s\mu_{n}}$
+\end_inset
+
+只是将
+\begin_inset Formula $\lambda_{n}$
+\end_inset
+
+视为
+\begin_inset Formula $\ue^{\mu_{n}}$
+\end_inset
+
+的另一种形式.
+\end_layout
+
+\begin_layout Standard
+记
+\begin_inset Formula $\mathscr{H}_{\infty}(\lambda_{n})$
+\end_inset
+
+是所有在半平面
+\begin_inset Formula $[\mathrm{Re}s>0]$
+\end_inset
+
+上收敛并有界的Dirichlet级数
+\begin_inset Formula $D(s)$
+\end_inset
+
+组成的复赋范空间, 其中的范数定义为
+\begin_inset Formula 
+\[
+\norm{D}_{\infty}=\sup_{\mathrm{Re}s>0}\left|D\left(s\right)\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+文章
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+literal "false"
+
+\end_inset
+
+证明了当存在
+\begin_inset Formula $q>0$
+\end_inset
+
+使得 
+\begin_inset Formula 
+\begin{equation}
+\inf_{n}\left(\lambda_{n+1}^{q}-\lambda_{n}^{q}\right)>0,\label{eq:Choi-cond}
+\end{equation}
+
+\end_inset
+
+则
+\begin_inset Formula $\mathscr{H}_{\infty}\left(\lambda_{n}\right)$
+\end_inset
+
+是Banach空间.
+\end_layout
+
+\begin_layout Standard
+如果存在严格递增的正数序列
+\begin_inset Formula $\{r_{n}\}$
+\end_inset
+
+使得
+\begin_inset Formula $\{\log r_{n}\}$
+\end_inset
+
+是
+\begin_inset Formula $\QQ$
+\end_inset
+
+-线性独立的, 对于
+\begin_inset Formula $n=\boldsymbol{p^{\alpha}}$
+\end_inset
+
+有
+\begin_inset Formula $\mu_{n}=\boldsymbol{r}^{\boldsymbol{\alpha}}$
+\end_inset
+
+, 且
+\begin_inset Formula $\{\lambda_{n}\}$
+\end_inset
+
+是序列
+\begin_inset Formula $\{\mu_{n}\}$
+\end_inset
+
+的递增重排, 则
+\begin_inset Formula $\mathscr{H}_{\infty}(\lambda_{n})$
+\end_inset
+
+与
+\begin_inset Formula $H_{\infty}\left(B_{c_{0}}\right)$
+\end_inset
+
+等距同构.
+ 
+\begin_inset Formula $H_{\infty}\left(B_{c_{0}}\right)$
+\end_inset
+
+是所有定义在开单位球
+\begin_inset Formula $B_{c_{0}}$
+\end_inset
+
+上的有界复Frechet可微函数组成的空间, 
+\begin_inset Formula $c_{0}$
+\end_inset
+
+是所有赋予上确界范数的收敛到0的复序列形成的Banach空间.
+\end_layout
+
+\begin_layout Standard
+对于给定的Dirichlet级数
+\begin_inset Formula $D(s)=\sum_{n}b_{n}\lambda_{n}^{-s}$
+\end_inset
+
+, 定义
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{aligned}\sigma_{c}(D) & =\inf{u\in\RR:\sum_{n}b_{n}\lambda_{n}^{-s}\textrm{ is convergent at }s=u},\\
+\sigma_{b}\left(D\right) & =\inf{u\in\RR:\sum_{n}b_{n}\lambda_{n}^{-s}\textrm{ is convergent and bounded on }[\mathrm{Re}s\ge u]},\\
+\sigma_{u}\left(D\right) & =\inf{u\in\RR:\sum_{n}b_{n}\lambda_{n}^{-s}\textrm{ is uniformly convergent on }[\mathrm{Re}s\ge u]},\\
+\sigma_{a}\left(D\right) & =\inf{u\in\RR:\sum_{n}\left|b_{n}\lambda_{n}^{-s}\right|\textrm{ is convergent at }s=u}.
+\end{aligned}
+\]
+
+\end_inset
+
+H.
+ Bohr在
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-7"
+literal "false"
+
+\end_inset
+
+中证明了, 如果存在
+\begin_inset Formula $l\ge0$
+\end_inset
+
+使得对于每个
+\begin_inset Formula $\delta>0$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\left(\log\frac{\lambda_{n+1}}{\lambda_{n}}\right)^{-1}=O\left(\lambda_{n}^{l+\delta}\right),\label{eq:Bohr-cond}
+\end{equation}
+
+\end_inset
+
+则
+\begin_inset Formula $\sigma_{b}\left(D\right)=\sigma_{u}\left(D\right)$
+\end_inset
+
+.
+ 如果
+\begin_inset Formula $\lim_{n\to\infty}\frac{\log n}{\log\lambda_{n}}=0$
+\end_inset
+
+, 则
+\begin_inset Formula $\sigma_{c}\left(D\right)=\sigma_{a}\left(D\right)$
+\end_inset
+
+.
+ 一般的, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-8"
+literal "false"
+
+\end_inset
+
+(19, Theorem I.2.5)证明了
+\begin_inset Formula 
+\[
+\sigma_{a}\left(D\right)-\sigma_{c}\left(D\right)\le\limsup\frac{\log n}{\log\lambda_{n}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+文章
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-9,key-10,key-11"
+literal "false"
+
+\end_inset
+
+研究了不等式
+\begin_inset Formula $\sigma_{a}\left(D\right)-\sigma_{b}\left(D\right)\le\frac{1}{2}\limsup\frac{\log n}{\log\lambda_{n}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+相关结论与证明概述
+\end_layout
+
+\begin_layout Proposition
+如下命题是等价的
+\end_layout
+
+\begin_layout Enumerate
+存在
+\begin_inset Formula $l\ge0$
+\end_inset
+
+使得对于任何
+\begin_inset Formula $\delta>0$
+\end_inset
+
+有
+\begin_inset Formula 
+\[
+\left(\log\frac{\lambda_{n+1}}{\lambda_{n}}\right)^{-1}=O\left(\lambda_{n}^{l+\delta}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+存在
+\begin_inset Formula $q>0$
+\end_inset
+
+使得
+\begin_inset Formula $\inf_{n}\left(\lambda_{n+1}^{q}-\lambda_{n}^{q}\right)>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+一些猜想
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "CHOI,2018"
+key "key-1"
+literal "false"
+
+\end_inset
+
+Y.S.
+ Choi et al., Banach Spaces of General Dirichlet Series.
+ J.
+ Math.
+ Anal.
+ Appl.
+ (2018), https://doi.org/10.1016/j.jmaa.2018.05.036.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Helson,1963"
+key "key-2"
+literal "false"
+
+\end_inset
+
+H.
+ Helson, Convergent Dirichlet series, Ark.
+ Mat.
+ 4 (1963), 501-510.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Helson,1967"
+key "key-3"
+literal "false"
+
+\end_inset
+
+H.Helson, Foundations of the theory of Dirichlet series, Acta Math.
+ 118 (1967), 61-77.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Hedenmalm,1997"
+key "key-4"
+literal "false"
+
+\end_inset
+
+H.
+ Hedenmalm, P.
+ Lindqvist and K.
+ Seip, A Hilbert space of Dirichlet series and systems of dilated functions
+ in 
+\begin_inset Formula $L^{2}(0,1)$
+\end_inset
+
+, Duke Math.
+ J.
+ 86 (1997), 1-36.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Cole,1986"
+key "key-5"
+literal "false"
+
+\end_inset
+
+B.
+ J.
+ Cole and T.
+ W.
+ Gamelin, Representing measures and Hardy spaces for the infinite polydisk
+ algebra, Proc.
+ London Math.
+ Soc.
+ 53(3) (1986), 112-142.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Bayart,2002"
+key "key-6"
+literal "false"
+
+\end_inset
+
+F.
+ Bayart, Hardy spaces of Dirichlet series and their composition operators.
+ Monatsh.
+ Math.
+ 136(3) (2002), 203-236.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Bohr,1913"
+key "key-7"
+literal "false"
+
+\end_inset
+
+H.
+ Bohr, Uber die gleichmassige Konvergenz Dirichletscher Reihen, J.
+ Reine Angew.
+ Math.
+ 143 (1913), 203-211.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Mandelbrojt,1972"
+key "key-8"
+literal "false"
+
+\end_inset
+
+S.
+ Mandelbrojt, Dirichlet series, Principles and Methods, D.
+ Reidel Publishing Co., Dordrecht, 1972.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Carlson,1921"
+key "key-9"
+literal "false"
+
+\end_inset
+
+F.
+ Carlson, Sur les series de Dirichlet, Comptes Rendus, t.
+ 172 (1921), 838.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Hardy,1916"
+key "key-10"
+literal "false"
+
+\end_inset
+
+G.H.
+ Hardy, The application of Abel's method of summation to Dirichlet series,
+ Quarterly Journal 47(1916), 176-192.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Neder,1922"
+key "key-11"
+literal "false"
+
+\end_inset
+
+L.
+ Neder, Zum Konvergenzproblem der Dirichletschen Reihen beschrankter Funktionen,
+ Math.
+ Z.
+ 14 (1922), 149-158.
+\end_layout
+
+\end_body
+\end_document

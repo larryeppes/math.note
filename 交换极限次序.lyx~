@@ -1,0 +1,319 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usetikzlibrary{mindmap}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-std
+theorems-named
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+from wiki about interchange of limiting operations
+\end_layout
+
+\begin_layout Standard
+interchange of limiting operations - 
+\series bold
+mathematical analysis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $M$
+\end_inset
+
+ are two given limiting operations cannot be assumed to give the same result
+ when applied in either order.
+ Historical sources for this theory is the study of 
+\series bold
+trigonometric series
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Conclusions that assume limiting operations do 'commute' are called 
+\emph on
+formal
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+G.
+ H.
+ Hardy wrote that 
+\begin_inset Quotes eld
+\end_inset
+
+The problem of deciding whether two given limit operations are commutative
+ is one of the most important in mathematics
+\begin_inset Quotes erd
+\end_inset
+
+.
+ An opinion apparently not in favour of the piece-wise approach, but of
+ leaving analysis at the level of heuristic, was that of Richard Courant.
+\end_layout
+
+\begin_layout Standard
+uniform convergence
+\end_layout
+
+\begin_layout Standard
+counterexamples
+\end_layout
+
+\begin_layout Standard
+double sequence 
+\begin_inset Formula $a_{m,n}$
+\end_inset
+
+ defined as 
+\begin_inset Formula 
+\[
+a_{m,n}=2^{m-n}
+\]
+
+\end_inset
+
+is not the case that the operations of 
+\begin_inset Formula $\lim_{m\to\infty}$
+\end_inset
+
+ and 
+\begin_inset Formula $\lim_{n\to\infty}$
+\end_inset
+
+ can be interchanged.
+\end_layout
+
+\begin_layout Standard
+List of related theorems
+\end_layout
+
+\begin_layout Standard
+Moore-Osgood theorem
+\end_layout
+
+\begin_layout Standard
+Tannery's theorem
+\end_layout
+
+\begin_layout Standard
+Schwartz's theorem
+\end_layout
+
+\begin_layout Standard
+Fubini's theorem
+\end_layout
+
+\begin_layout Standard
+Dominated convergence theorem
+\end_layout
+
+\begin_layout Standard
+Vitali convergence theorem
+\end_layout
+
+\begin_layout Standard
+Fichera convergence theorem
+\end_layout
+
+\begin_layout Standard
+Cafiero convergence theorem
+\end_layout
+
+\begin_layout Standard
+Leibniz integral rule
+\end_layout
+
+\begin_layout Section
+Trigonometric series from encyclopediaofmath.org
+\end_layout
+
+\begin_layout Standard
+A series in cosines and sines of multiple angles, that is, a series of the
+ form 
+\begin_inset Formula 
+\[
+\frac{a_{0}}{2}+\sum_{k=1}^{\infty}\left(a_{k}\cos kx+b_{k}\sin kx\right)
+\]
+
+\end_inset
+
+or, in complex form,
+\begin_inset Formula 
+\[
+\sum_{k=-\infty}^{\infty}c_{k}\ue^{\ui kx},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $a_{k},b_{k}$
+\end_inset
+
+ or, respectively, 
+\begin_inset Formula $c_{k}$
+\end_inset
+
+ are called the coefficients of the trigonometric series.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
