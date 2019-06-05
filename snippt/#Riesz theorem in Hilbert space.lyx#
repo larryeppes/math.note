@@ -1,0 +1,1034 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-std
+theorems-sec
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subsection
+Quadratic Variational Prob.
+\end_layout
+
+\begin_layout Theorem
+quadratic variational problems, 
+\begin_inset Formula $a:X\times X\to\mathbb{R}$
+\end_inset
+
+ is symmetric, bounded, strongly positive, bilinear form on real Hilbert
+ space 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ 
+\begin_inset Formula $b:X\to\mathbb{R}$
+\end_inset
+
+ 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ then 
+\begin_inset Formula $\min_{u\in X}\frac{1}{2}a\left(u,u\right)-b\left(u\right)$
+\end_inset
+
+ has a unique sol.
+ with variational equation 
+\begin_inset Formula $a\left(u,v\right)=b\left(v\right)$
+\end_inset
+
+, 
+\begin_inset Formula $u\in X$
+\end_inset
+
+ fixed, 
+\begin_inset Formula $\forall v\in X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $c>0$
+\end_inset
+
+, 
+\begin_inset Formula $d>0$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $c\norm{u}^{2}\le a\left(u,u\right)\le d\norm{u}$
+\end_inset
+
+, 
+\begin_inset Formula $\forall u\in X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Equivalent equation.
+ 
+\begin_inset Formula $F\left(u\right):=\frac{1}{2}a\left(u,u\right)-b\left(u\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\forall u\in X.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\phi\left(t\right):=F\left(u+tv\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\forall t\in\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\phi'\left(0\right)=\left(\frac{1}{2}a\left(u+tv,u+tv\right)-b\left(u+tv\right)\right)'\left(0\right)=a\left(u,v\right)-b\left(v\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Existence: 
+\begin_inset Formula $F\left(u_{n}\right)\to\inf_{u\in X}F\left(u\right)$
+\end_inset
+
+, 
+\begin_inset Formula $a\left(u_{n}+u_{m},u_{n}+u_{m}\right)+a\left(u_{n}-u_{m},u_{n}-u_{m}\right)=2a\left(u_{n},u_{n}\right)+2a\left(u_{m},u_{m}\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $4F\left(u_{n}\right)+4F\left(u_{m}\right)=8F\left(\frac{u_{n}+u_{m}}{2}\right)+a\left(u_{n}-u_{m},u_{n}-u_{m}\right)\ge8\inf_{u\in X}F\left(u\right)+c\norm{u_{n}-u_{m}}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(u_{n}\right)\to u\in X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Uniqueness: 
+\begin_inset Formula $u_{1},u_{2}$
+\end_inset
+
+.
+ then 
+\begin_inset Formula $a\left(u_{1},v\right)=b\left(v\right)=a\left(u_{2},v\right)$
+\end_inset
+
+, 
+\begin_inset Formula $a\left(u_{1}-u_{2},v\right)=0$
+\end_inset
+
+, 
+\begin_inset Formula $u_{1}=u_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $G$
+\end_inset
+
+ 
+\begin_inset Formula $\RR^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $n\in\NN_{+}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $f\in L^{2}\left(G\right)$
+\end_inset
+
+ 
+\begin_inset Formula $g\in H^{1}\left(G\right)$
+\end_inset
+
+.
+ Then
+\end_layout
+
+\begin_layout Enumerate
+Dirichlet Problem 
+\begin_inset Formula 
+\[
+\min_{u-g\in H_{0}^{1}\left(G\right)}\frac{1}{2}\int_{G}\left|Du\right|^{2}-\int_{G}fu\ud x
+\]
+
+\end_inset
+
+has unique sol.
+ 
+\begin_inset Formula $u\in H^{1}\left(G\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+unique sol.
+ 
+\begin_inset Formula $u\in H^{1}\left(G\right)$
+\end_inset
+
+ of BVP
+\begin_inset Formula 
+\[
+\begin{cases}
+\int_{G}Du\cdot Dv=\int_{G}fv\ud x & \forall v\in H_{0}^{1}\left(G\right)\\
+u-g\in H_{0}^{1}\left(G\right) & u=g\ \text{ on }\ \partial G.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $X=H_{0}^{1}\left(G\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $a\left(u,v\right):=\int_{G}Du\cdot Dv\ud x$
+\end_inset
+
+, 
+\begin_inset Formula $b_{1}\left(v\right):=\int_{G}fv\ud x$
+\end_inset
+
+, 
+\begin_inset Formula $\forall u,v\in H^{1}\left(G\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $w:=u-g$
+\end_inset
+
+, then
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\min_{w\in X}\frac{1}{2}a\left(w+g,w+g\right)-b_{1}\left(w+g\right)=\min_{w\in X}\frac{1}{2}a\left(w,w\right)-b\left(w\right)+\frac{1}{2}a\left(g,g\right)-b_{1}\left(g\right),
+\]
+
+\end_inset
+
+
+\begin_inset Formula $b\left(w\right):=b_{1}\left(w\right)-2a\left(w,g\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left|a\left(u,v\right)\right|=\left|\int_{G}Du\cdot Dv\ud x\right|\le\norm{u}_{H_{0}^{1}}\norm{v}_{H_{0}^{1}}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $a\left(\cdot,\cdot\right)$
+\end_inset
+
+ is bilinear, symmetric,
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left|a\left(u,u\right)\right|=\left|\int_{G}Du\cdot Du\ud x\right|\ge C\int_{G}u^{2}\ud x,$
+\end_inset
+
+ 
+\begin_inset Formula $\left|a\left(u,u\right)\right|\ge C\norm{u}_{H_{0}^{1}}^{2}\cdot\left(C+1\right)^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $b\left(\cdot\right)\in H^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Perpendicular Principle and Orthogonal decomposition
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\min_{v\in M}\norm{u-v}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M$
+\end_inset
+
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ 
+\begin_inset Formula $u\in X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v$
+\end_inset
+
+ 
+\begin_inset Formula $u$
+\end_inset
+
+ 
+\begin_inset Formula $M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M^{\perp}=\left\{ w\in X:\left(w|v\right)=0,\forall v\in M\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+The perpendicular principle, Assume 
+\begin_inset Formula $M$
+\end_inset
+
+ 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $u\in X$
+\end_inset
+
+, then 
+\begin_inset Formula 
+\[
+\min_{v\in M}\norm{u-v}
+\]
+
+\end_inset
+
+has unique sol.
+ 
+\begin_inset Formula $v$
+\end_inset
+
+, 
+\begin_inset Formula $u-v\in M^{\perp}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\norm{u-v}^{2}=\left(u|u\right)-\left(u|v\right)-\left(v|u\right)+\left(v|v\right),
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\min_{v\in M}\norm{u-v}^{2}=\min_{v\in M}a\left(v,v\right)-2b\left(v\right)+\left(u|u\right),
+\]
+
+\end_inset
+
+
+\begin_inset Formula $a\left(v,w\right):=\Re\left(v|w\right)$
+\end_inset
+
+, 
+\begin_inset Formula $b\left(v\right):=\frac{1}{2}\left[\left(u|v\right)+\left(v|u\right)\right]=\Re\left(u|v\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+证明
+\begin_inset Formula $a\left(v,w\right)$
+\end_inset
+
+ satisfies symmetric, bounded, strongly positive, bilinear form on 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $b\left(v\right)$
+\end_inset
+
+ is linear continuous functional on 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+when 
+\begin_inset Formula $X$
+\end_inset
+
+ is real Hilbert space, 
+\begin_inset Formula $v$
+\end_inset
+
+ is exist uniquely.
+\end_layout
+
+\begin_layout Proof
+when 
+\begin_inset Formula $X$
+\end_inset
+
+ is complex Hilbert space.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ 
+\begin_inset Formula $\left(v|w\right)_{*}:=\Re\left(v|w\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\forall v,w\in X.$
+\end_inset
+
+ then 
+\begin_inset Formula $\left(X,\left(\cdot|\cdot\right)_{*}\right)$
+\end_inset
+
+ is a real Hilbert space, and 
+\begin_inset Formula $\left(u|u\right)=\left(u|u\right)_{*}$
+\end_inset
+
+ for all 
+\begin_inset Formula $u\in X$
+\end_inset
+
+.
+ then 
+\begin_inset Formula $v$
+\end_inset
+
+ is exist and unique.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $X$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbb{K}$
+\end_inset
+
+.
+ to prove 
+\begin_inset Formula $u-v\in M^{\perp}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $v$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\norm{u-v}^{2}\le\norm{u-\left(v+\lambda w\right)}^{2},\forall w\in M,\lambda\in\mathbb{K}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+0\le-\overline{\lambda}\left(u-v|w\right)-\lambda\left(w|u-v\right)+\left|\lambda\right|^{2}\left(w|w\right),\forall w\in M,\lambda\in\mathbb{K}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $w\ne0$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\lambda:=\frac{\left(u-v|w\right)}{\norm{w}^{2}}$
+\end_inset
+
+, 
+\begin_inset Formula $0\le-\left|\left(u-v|w\right)\right|^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\left(u-v|w\right)=0$
+\end_inset
+
+, 
+\begin_inset Formula $\forall w\in M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $w=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+Orthogonal decomposition, If 
+\begin_inset Formula $M$
+\end_inset
+
+ 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $u\in X$
+\end_inset
+
+, then unique decomposition of 
+\begin_inset Formula $u$
+\end_inset
+
+ of the form
+\begin_inset Formula 
+\[
+u=v+w,\quad v\in M,w\in M^{\perp}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $u=v+w$
+\end_inset
+
+ 
+\begin_inset Formula $u=v_{1}+w_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $v_{1}\in M$
+\end_inset
+
+ 
+\begin_inset Formula $w_{1}\in M^{\perp}$
+\end_inset
+
+ 
+\begin_inset Formula $v\in M$
+\end_inset
+
+ 
+\begin_inset Formula $w\in M^{\perp}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $0=\left(v-v_{1}\right)+\left(w-w_{1}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $v-v_{1}\in M$
+\end_inset
+
+, 
+\begin_inset Formula $w-w_{1}\in M^{\perp}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $0=\left(v-v_{1}|w-w_{1}\right)=-\left(v-v_{1}|v-v_{1}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $v=v_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $w=w_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+The Pythagorean theorem, If 
+\begin_inset Formula $u\perp v$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $\left(u|v\right)=0$
+\end_inset
+
+, then
+\begin_inset Formula 
+\[
+\norm{u+v}^{2}=\norm{u}^{2}+\norm{v}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\norm{u+v}^{2}=\left(u|u\right)+\left(u|v\right)+\left(v|u\right)+\left(v|v\right)=\norm{u}^{2}+\norm{v}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Linear Functionals and the Riesz Theorem
+\end_layout
+
+\begin_layout Theorem
+The Riesz theorem, 
+\begin_inset Formula $X$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbb{K}$
+\end_inset
+
+, 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+ 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $f\in X^{*}$
+\end_inset
+
+ iff 
+\begin_inset Formula $\exists v\in X$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $f\left(u\right)=\left(u|v\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\forall u\in X$
+\end_inset
+
+.
+ 
+\begin_inset Formula $v\in X$
+\end_inset
+
+ uniquely by 
+\begin_inset Formula $f$
+\end_inset
+
+, and 
+\begin_inset Formula $\norm{f}=\norm{v}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+: uniqueness of 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\left(u|v\right)=\left(u|v_{1}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\forall u\in X$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\left(u|v-v_{1}\right)=0$
+\end_inset
+
+, 
+\begin_inset Formula $u=v-v_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $v=v_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Existence of 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ 
+\begin_inset Formula $f\in X^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $f\ne0$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\[
+N\left(f\right):=\left\{ u\in X:f\left(u\right)=0\right\} 
+\]
+
+\end_inset
+
+closed subspace of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\exists u_{0}\in N\left(f\right)^{\perp}$
+\end_inset
+
+, 
+\begin_inset Formula $u_{0}\ne0$
+\end_inset
+
+, 
+\begin_inset Formula $f\left(u_{0}\right)=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $u-f\left(u\right)u_{0}\in N\left(f\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $u=w+f\left(u\right)u_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $w\in N\left(f\right)$
+\end_inset
+
+, 
+\begin_inset Formula $u_{0}\in N\left(f\right)^{\perp}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(u|u_{0}\right)=f\left(u\right)\left(u_{0}|u_{0}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\left(u|\frac{u_{0}}{\left(u_{0}|u_{0}\right)}\right)=f\left(u\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $f=0$
+\end_inset
+
+, 
+\begin_inset Formula $v=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+: 
+\begin_inset Formula $f\left(u\right)=\left(u|v\right)$
+\end_inset
+
+, 
+\begin_inset Formula $f\in X^{*}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ linear, continuity.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\norm{f}\le\norm{v}$
+\end_inset
+
+, 
+\begin_inset Formula $f\left(v\right)=\norm{v}\norm{v}$
+\end_inset
+
+, 
+\begin_inset Formula $\norm{f}\ge\norm{v}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula $f\ne0$
+\end_inset
+
+, 
+\begin_inset Formula $f\in X^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $N\left(f\right)$
+\end_inset
+
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ closed plane, 
+\begin_inset Formula $\dim N\left(f\right)^{\perp}=1$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
