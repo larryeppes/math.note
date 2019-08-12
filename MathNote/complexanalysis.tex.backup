@@ -1,0 +1,30 @@
+\chapter{复变函数}
+\bq{http://math.stackexchange.com/questions/294383}{20170405001}
+求$\int_0^{+\infty}\left(\frac{x}{\ue^x-\ue^{-x}}-\frac12\right)\frac1{x^2}\ud x$.
+\eq
+\ba
+留数法. 首先
+\bee
+\int_0^{\infty}\left(\frac{x}{\ue^x-\ue^{-x}}-\frac{1}{2}\right)\frac1{x^2}\ud x
+  =\frac{1}{2}\int_0^{\infty}\frac{x-\sinh x}{x^2\sinh x}\ud x.
+\eee
+被积函数记为$f(x)$, $f(x)$是奇函数, 故
+\bee
+LHS=\frac{1}{4}\int_{-\infty}^{+\infty}\frac{x-\sinh x}{x^2\sinh x}\ud x
+  = \frac{1}{4}\sum_{n=1}^{\infty}2\pi\ui\Res\left(\frac{x-\sinh x}{x^2\sinh x}, \ui n\pi\right)
+  = -\frac{\ln 2}{2}.
+\eee
+另见\ref{un:20170405un1}.
+\ea
+
+\bq{}{}
+设$2\times 2$矩阵$A=\paren{\begin{matrix}
+                  a & b \\
+                  -b & \overline{a}
+                 \end{matrix}}
+$, 其中$b\in\RR$, 且$|a|^2+b^2=1$. 试计算$A^n$.
+\eq
+
+\bq{}{}
+区域$D$内单叶解析函数$f(z)$的导数必不为零.
+\eq

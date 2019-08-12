@@ -99,6 +99,7 @@ $A=x+y+z$($A$:成功, $x$: 艰苦的劳动, $y$: 正确的方法, $z$: 少说空
 条件同上, 有$\frac{\sin\angle A}{\sin\frac{a}{R^2}}=\frac{\sin\angle B}{\sin\frac{b}{R^2}}=\frac{\sin\angle C}{\sin\frac{c}{R^2}}$.
 \et
 
+\newpage
 \section{不等式集}
 \bq{}{}
 已知$0\le a_k\le 1$($k=1,2,\cdots, 2002$), 记$a_{2003}=a_1$, $a_{2004}=a_2$, 求$\sum_{k=1}^{2002}(a_k-a_{k+1}\cdot a_{k+2})$的最大值.
@@ -1768,3 +1769,986 @@ $-\frac{1}{\sqrt{3}}\le c\le\sqrt{3}$, 则$-\frac{1}{\sqrt{3}}a+\sqrt{3}b+c=-318
 $-a+3b+\sqrt{3}c=-954$. 于是$4b=1042-c\sqrt{3}$, $1039\le4b\le1043$,
 所以$b=260$, $a=1736$, $c=2/\sqrt{3}$. 于是$\sum_{i=1}^{1997}x_{i}^{12}$的最大值为$a\left(-\frac{1}{\sqrt{3}}\right)^{12}+b\left(\sqrt{3}\right)^{12}+\left(\frac{2}{\sqrt{3}}\right)^{12}=189548$.
 \ea
+
+\bq{}{}
+$m$个互不相同的正偶数与$n$个互不相同的正奇数的总和为$2000$, 对于所有的这样的$m$与$n$, 问$3m+4n$的最大值是多少?
+证明你的结论.
+\eq
+\ba
+$2000=\left(2+4+\cdots+2m\right)+\left[1+3+\cdots+\left(2n-1\right)\right]+a\ge m\left(m+1\right)+n^{2}$.
+所以$m,n$满足$\left(m+\frac{1}{2}\right)^{2}+n^{2}\le2000\frac{1}{4}$,
+由Cauchy不等式有
+\[
+3m+4n=3\left(m+\frac{1}{2}\right)+4n-\frac{3}{2}\le5\sqrt{\left(m+\frac{1}{2}\right)^{2}+n^{2}}-\frac{3}{2}\le5\sqrt{2000\frac{1}{4}}-\frac{3}{2}\le222,
+\]
+又因为$m,n\in\NN$, 所以$\left(3m+4n\right)_{\mathrm{max}}=222$, 其中$m=26$,
+$n=36$.
+\ea
+
+\bq{}{}
+设实数$x,y$, 满足: $x\ge1$, $y\ge1$. $\left(\log_{a}x\right)^{2}+\left(\log_{a}y\right)^{2}=\log_{a}\left(ax^{2}\right)+\log_{a}\left(ay^{2}\right)$,
+($a>1$), 当$a$在$\left(1,+\infty\right)$范围内变化时, 求$\log_{a}\left(xy\right)$的取值范围.
+\eq
+\ba
+令$\log_{a}x=s$, $\log_{a}y=t$, 因为$a>1$, $x\ge1$, $y\ge1$,
+所以$s\ge0$, $t\ge0$. 所以已知条件中的等式等价于$\left(s-1\right)^{2}+\left(t-1\right)^{2}=4$,
+令
+\[
+\begin{cases}
+s =1+2\cos\alpha\\
+t =1+2\sin\alpha
+\end{cases}\Longrightarrow\begin{cases}
+\cos\alpha \ge-\frac{1}{2}\\
+\sin\alpha \ge-\frac{1}{2}
+\end{cases}
+\]
+所以$\alpha\in\left[0,\frac{2\pi}{3}\right]\bigcup\left[\frac{11\pi}{6},2\pi\right)$,
+所以$k=s+t=\log_{a}\left(xy\right)=2+2\sqrt{2}\sin\left(\alpha+\frac{\pi}{4}\right)$,
+所以$k_{\mathrm{max}}=2+2\sqrt{2}$, $k_{\mathrm{min}}=1+\sqrt{3}$.
+\ea
+\ba
+如图, 令$\log_{a}x=s$, $\log_{a}y=t$, 因$a>1$, $x\ge1$, $y\ge1$,
+所以$s\ge0$, $t\ge0$, 则等式等价于$\left(s-1\right)^{2}+\left(t-1\right)^{2}=4$,
+$k=s+t$, $k$为直线$k=s+t$在$s$轴上的截距, 所以$k_{\mathrm{max}}=2+2\sqrt{2}$,
+$k_{\mathrm{min}}=1+\sqrt{3}$.
+
+\begin{center}
+  \begin{tikzpicture}[
+     scale=1, 
+     domain=-0.2:3.2,
+     label/.style={
+       postaction={
+	 decorate,
+	 decoration={
+	   markings, 
+	   mark=at position .75 with \node #1;
+	 }
+       }
+     },
+     dot/.style={
+       fill=blue, 
+       circle, 
+       size=1pt
+     }
+     ]
+  \draw[->] (-.1,0) -- (3.5,0) coordinate (x axis);
+  \draw[->] (0,-0.1) -- (0,3.5) coordinate (y axis);
+  \draw (1,3pt) -- (1,-3pt) node [anchor=north] {$1$};
+  \draw (3pt,1) -- (-3pt,1) node [anchor=east] {$1$};
+  \draw[red,label={[above right]{$k=s+t$}}] plot (\x, 2.732 - \x);
+  \draw[blue,label={[below right]{$(s-1)^2+(t-1)^2=4$}}] (3,1) arc (0:135:2 and 2);
+  \draw[blue,label={[below right]{}}] (3,1) arc (0:-45:2 and 2);
+  \draw[black, dashed] (1,0) -- (1,1) -- (0,1);
+  \draw[black, dashed] (2.732,0) -- (1,1) -- (0,2.732);
+  \fill [blue,opacity=.75] (1,1) circle (2pt);
+  \end{tikzpicture}
+\end{center}
+\ea
+
+\bq{}{}
+设$a,b,c,d$是$4$个不同的实数, 使得$\frac{a}{b}+\frac{b}{c}+\frac{c}{d}+\frac{d}{a}=4$,
+且$ac=bd$, 试求$\frac{a}{c}+\frac{b}{d}+\frac{c}{d}+\frac{d}{b}$的最大值.
+\eq
+\ba
+设$x=\frac{a}{b}$, $y=\frac{b}{c}$, 因$ac=bd$, 得$\frac{c}{d}=\frac{b}{a}=\frac{1}{x}$,
+$\frac{d}{a}=\frac{c}{b}=\frac{1}{y}$, 问题转化为约束条件$x\ne1$, $y\ne1$,
+$x+y+\frac{1}{x}+\frac{1}{y}=4$下, 求$xy+\frac{y}{x}+\frac{1}{xy}+\frac{x}{y}$的最大值,
+又设$x+\frac{1}{x}=e$, $y+\frac{1}{y}=f$, 则$ef=xy+\frac{y}{x}+\frac{1}{xy}+\frac{x}{y}$.
+
+当$t>0$时, $t+\frac{1}{t}\ge2$; 当$t<0$时, $t+\frac{1}{t}\le-2$. 由$x+y+\frac{1}{x}+\frac{1}{y}=4$,
+知$x,y$不同号, (否则有$x=y=1$).
+
+不妨设, $x>0$, $y<0$, 则$f\le-2$, $e=4-f\ge6$, $ef\le-12$, 当且仅当$y=-1$,
+$x=3\pm2\sqrt{2}$时等号成立. 特别地, 当$a=3+2\sqrt{3}=-d$, $b=-c=1$时, 等号成立,
+为$-12$.
+\ea
+
+\bq{}{}
+设$a_{i}\in\RR^{+}$, ($i=1,2,\cdots,n$), $\sum_{i=1}^{n}a_{i}=1$,
+求
+\[
+S=\frac{a_{1}}{1+a_{2}+a_{3}+\cdots+a_{n}}+\frac{a_{2}}{1+a_{1}+a_{3}+\cdots+a_{n}}+\cdots+\frac{a_{n}}{1+a_{1}+a_{2}+\cdots+a_{n-1}}
+\]
+的最小值.
+\eq
+\ba
+$S=\frac{a_{1}}{2-a_{1}}+\frac{a_{2}}{2-a_{2}}+\cdots+\frac{a_{n}}{2-a_{n}}$,
+关于$a_{1},a_{2},\cdots,a_{n}$对称, 不妨设$1>a_{1}\ge a_{2}\ge\cdots\ge a_{n}>0$,
+则$2-a_{1}\le2-a_{2}\le\cdots\le2-a_{n}$,
+\[
+\frac{1}{2-a_{1}}\ge\frac{1}{2-a_{2}}\ge\cdots\ge\frac{1}{2-a_{n}}>0,
+\]
+由基本不等式有
+\[
+S+n=\sum_{k=1}^{n}\frac{2}{2-a_{k}}\ge\frac{n^{2}}{\frac{1}{2}\sum_{k=1}^{n}\left(2-a_{k}\right)}=\frac{2n^{2}}{2n-1},
+\]
+所以$S\ge\frac{n}{2n-1}$.
+\ea
+\ba
+用切比雪夫不等式有
+\[
+S\ge\frac{1}{n}\left(a_{1}+\cdots+a_{n}\right)\left(\frac{1}{2-a_{1}}+\cdots+\frac{1}{2-a_{n}}\right)=\frac{1}{n}\left(\frac{1}{2-a_{1}}+\cdots+\frac{1}{2-a_{n}}\right),
+\]
+由Cauchy不等式有
+\[
+\sum_{k=1}^{n}\left(2-a_{k}\right)\sum_{k=1}^{n}\frac{1}{2-a_{k}}\ge n^{2},
+\]
+而$\sum_{k=1}^{n}\left(2-a_{k}\right)=2n-1$, 所以$S\ge\frac{1}{n}\cdot\frac{n^{2}}{2n-1}=\frac{n}{2n-1}$,
+当且仅当$a_{1}=\cdots=a_{n}=\frac{1}{n}$时, 取等号.
+\ea
+
+\bq{}{}
+已知函数$f\left(x\right)=ax^{2}+bx+c$对于一切$x\in\left[-1,1\right]$, 都有$\left|f\left(x\right)\right|\le1$,
+设
+\[
+g\left(x\right)=\left|acx^{4}+b\left(a+c\right)x^{3}+\left(a^{2}+b^{2}+c^{2}\right)x^{2}+b\left(a+c\right)x+ac\right|,\quad x\in\left[-1,1\right],
+\]
+求函数$g\left(x\right)$的最大值.
+\eq
+\ba
+$g\left(x\right)=\left|ax^{2}+bx+c\right|\cdot\left|cx^{2}+bx+a\right|$,
+设$h\left(x\right)=cx^{2}+bx+a$, $x\in\left[-1,1\right]$, 则$\left|h\left(1\right)\right|=\left|f\left(1\right)\right|\le1$,
+$\left|h\left(-1\right)\right|=\left|f\left(-1\right)\right|\le1$,
+$\left|f\left(0\right)\right|=\left|c\right|\le1$. 若$h\left(x\right)$在$\left[-1,1\right]$上严格单调,
+由$\left|h\left(1\right)\right|\le1$, $\left|h\left(-1\right)\right|\le1$知,
+对于一切$x\in\left[-1,1\right]$, 有$\left|h\left(x\right)\right|\le1$,
+故$g\left(x\right)\le\left|f(x)\right|\le1$.
+
+若$h\left(x\right)$在$\left[-1,1\right]$上不严格单调, 仍有两种情况:
+
+(1) $h\left(x\right)=a$(常数), 即$b=c=0$, 此时, $\left|f\left(1\right)\right|=\left|a\right|\le1$,
+$g\left(x\right)=a^{2}\left|x\right|^2\le1$;
+
+(2) $h\left(x\right)$是二次函数, 即$c\ne0$, 如果扩展为定义在$\RR$上, 则$h\left(x\right)=cx^{2}+bx+a$的图像顶点为$\left(x_{0},h\left(x_{0}\right)\right)$,
+则当$h\left(x\right)$在$\left[-1,1\right]$上不单调时, $x_{0}\in\left(-1,1\right)$,
+不妨设$x_{0}\in\left(-1,0\right]$, 则$h\left(x\right)$可写成$h\left(x\right)=c\left(x-x_{0}\right)^{2}+h\left(x_{0}\right)$,
+$x\in\left[-1,1\right]$, 所以$h\left(-1\right)=c\left(-1-x_{0}\right)^{2}+h\left(x_{0}\right)$,
+所以$\left|h\left(x_{0}\right)\right|=\left|h\left(-1\right)-c\left(1+x_{0}\right)^{2}\right|\le\left|h\left(-1\right)\right|+\left|c\right|\cdot\left(1+x_{0}\right)^{2}$.
+因$x_{0}\in\left(-1,0\right]$, 所以$0<1+x_{0}\le1$, $\left(1+x_{0}\right)^{2}\le1$,
+可见$\left|h\left(x_{0}\right)\right|\le1+\left|c\right|\le2$. 
+
+因$h\left(x\right)$在$\left[-1,x_{0}\right]$或$\left[x_{0},1\right]$上均严格单调,
+故由$\left|h\left(x_{0}\right)\right|\le2$, $\left|h\left(1\right)\right|\le1$,
+$\left|h\left(-1\right)\right|\le1$, 知对于任意的$x\in\left[-1,1\right]$,
+均有$\left|h\left(x\right)\right|\le2$, 所以
+\[
+g\left(x\right)\le\left|f\left(x\right)\right|\cdot\left|h\left(x\right)\right|\le1\times2=2,
+\]
+另一方面, 取$f\left(x\right)=2x^{2}-1$, $x\in\left[-1,1\right]$, $h\left(x\right)=-x^{2}+2$,
+$x\in\left[-1,1\right]$, 即
+\[
+g\left(x\right)=\left|-2x^{4}+5x^{2}-2\right|,\quad x\in\left[-1,1\right].
+\]
+则可知$g\left(0\right)=2$, 所以$g\left(x\right)$的最大值为$2$. 另外
+\[
+\begin{aligned}\left|h\left(x\right)\right| & =\left|cx^{2}+bx+a\right|=\left|-ax^{2}+bx-c+\left(c+a\right)\left(x^{2}-1\right)\right|\\
+ & \le\left|a\left(-x^{2}\right)+b\left(-x\right)+c\right|+\left|c+a\right|\cdot\left|x^{2}-1\right|\\
+ & \le1+\left|\frac{a+b+c}{2}+\frac{a-b+c}{2}\right|\cdot\left|x^{2}-1\right|\\
+ & \le1+\left|\frac{f\left(1\right)}{2}+\frac{f\left(-1\right)}{2}\right|\le1+1=2.
+\end{aligned}
+\]
+\ea
+
+\bq{}{}
+已知$x_{i}\in\RR$, ($i=1,2,\cdots,n$), ($n\ge2$), 且
+\[
+\sum_{i=1}^{n}x_{i}=0,\qquad\sum\left|x_{i}\right|=1.
+\]
+求证:
+\[
+\left|\sum\frac{x_{i}}{i}\right|\le\frac{1}{2}-\frac{1}{2n}.
+\]
+\eq
+\ba
+\[
+\left|\sum\frac{x_{i}}{i}\right|\le\frac{1}{2}-\frac{1}{2n}\Longleftrightarrow-\frac{1}{2}+\frac{1}{2n}\le\sum\frac{x_{i}}{i}\le\frac{1}{2}-\frac{1}{2n}.
+\]
+由题设$x_{i}$中有正有负, 设$x_{k_{1}},\cdots,x_{k_{l}}$为正数, $x_{k_{l+1}},\cdots,x_{k_{n}}$为非正数,
+则
+\[
+\sum x_{i}=0\Longrightarrow\sum_{i=1}^{l}x_{k_{i}}=-\sum_{i=l+1}^{n}x_{k_{i}},
+\]
+又由$\sum\left|x_{i}\right|=1$得$\sum_{i=1}^{l}x_{k_{i}}=\frac{1}{2}$,
+$\sum_{i=l+1}^{n}x_{k_{i}}=-\frac{1}{2}$. 所以
+\[
+\sum\frac{x_{i}}{i}=\sum_{i=1}^{l}\frac{x_{k_{i}}}{k_{i}}-\sum_{i=l+1}^{n}\frac{\left|x_{k_{i}}\right|}{k_{i}}\le\sum_{i=1}^{l}x_{k_{i}}-\frac{1}{n}\sum_{i=l+1}^{n}\left|x_{k_{i}}\right|=\frac{1}{2}-\frac{1}{2n}
+\]
+且
+\[
+\sum\frac{x_{i}}{i}\ge\frac{1}{n}\sum_{i=1}^{l}x_{k}-\sum_{i=l+1}^{n}\left|x_{k_{i}}\right|=\frac{1}{2n}-\frac{1}{2},\cdots
+\]
+\ea
+\ba
+归纳法, 设$n=k\ge2$成立时, 当$n=k+1$时, 设$X_{1},X_{2},\cdots,X_{k+1}$为$x_{1},x_{2},\cdots,x_{k},x_{k+1}$的从大到小的排列,
+因为
+\[
+\frac{1}{1}>\frac{1}{2}>\cdots>\frac{1}{k}>\frac{1}{k+1},
+\]
+所以, 由排序不等式
+\[
+\sum_{i=1}^{k+1}\frac{x_{i}}{i}\le\sum_{i=1}^{k+1}\frac{X_{i}}{i}.
+\]
+(若$X_{i}$中只有一个正值, 则至少有两个非正值, 取$X_{i}$的相反数得$X_{i}'$同样进行上述排列, 则可得至少两个非正值, 
+即总可假设$X_{i}$中的最后两向是非正值. 目标如下)
+
+\[
+\sum_{i=1}^{k+1}\frac{X_{i}}{i}=\frac{X_{1}}{1}+\cdots+\frac{X_{k}+X_{k+1}}{k}-\frac{X_{k+1}}{k\left(k+1\right)}.
+\]
+因$X_{1}+\cdots+X_{k+1}=0$, $\left|X_{1}\right|+\cdots+\left|X_{k+1}\right|=\left|X_{1}\right|+\cdots+\left|X_{k}+X_{k+1}\right|=1$,
+所以
+\[
+\sum_{i=1}^{k+1}\frac{X_{i}}{i}\le\frac{1}{2}-\frac{1}{2k}-\frac{X_{k+1}}{k\left(k+1\right)}\le\frac{1}{2}-\frac{1}{2k}+\frac{1}{2k\left(k+1\right)}=\frac{1}{2}-\frac{1}{2\left(k+1\right)},
+\]
+同样方式可得
+\[
+\sum_{i=1}^{k+1}\frac{x_{i}}{i}\ge\frac{1}{2\left(k+1\right)}-\frac{1}{2},
+\]
+其中$n=2$时不等式易证...
+\ea
+
+\bq{}{}
+定义在自然数$\NN$上的函数
+\[
+f\left(n\right)=\frac{1}{n+1}+\frac{1}{n+2}+\cdots+\frac{1}{3n+1},
+\]
+求证: $f\left(n\right)>1$.
+\eq
+\ba
+$f\left(n\right)>f\left(n-1\right)>\cdots>f\left(1\right)>1$,
+即$f\left(n\right)$为增数列.
+\ea
+\ba
+因为$\left(n+1\right)+\left(n+2\right)+\cdots+\left(3n+1\right)=\left(2n+1\right)^{2}$,
+设
+\[
+\begin{aligned}f\left(t\right) & =\left(2n+1\right)^{2}t^{2}-2\left(2n+1\right)t+f\left(n\right)\\
+ & =\left(\sqrt{n+1}t-\frac{1}{\sqrt{n+1}}\right)^{2}+\left(\sqrt{n+2}t-\frac{1}{\sqrt{n+2}}\right)^{2}+\cdots+\left(\sqrt{3n+1}t-\frac{1}{\sqrt{3n+1}}\right)^{2}
+\end{aligned}
+\]
+因$\left(2n+1\right)^{2}>0$, $f\left(t\right)>0$恒成立, 所以
+\[
+\Delta=4\left(2n+1\right)^{2}-4f\left(n\right)\left(2n+1\right)^{2}<0,\cdots
+\]
+\ea
+\ba
+由以上证明是Cauchy不等式的证明过程: 由Cauchy不等式
+\[
+\left[\left(n+1\right)+\left(n+2\right)+\cdots+\left(3n+1\right)\right]f\left(n\right)\ge\left(1+1+\cdots+1\right)^{2}=\left(2n+1\right)^{2},
+\]
+所以$f\left(n\right)\ge1$不可取得等号.
+\ea
+
+\bq{}{}
+已知数列$\left\{ a_{n}\right\} $中, $a_{1}=3$且$na_{n+1}=\left(n+2\right)a_{n}+n$,
+($n\in\NN$), 证明: 当$n>1$时, 下列不等式
+\[
+\frac{7}{12}-\frac{1}{2\left(n+1\right)}<\sum_{k=1}^{n}\frac{1}{a_{k}}<\frac{2}{3}-\frac{1}{2n+1}
+\]
+成立.
+\eq
+\ba
+设
+\[
+n\left(a_{n+1}+an+b\right)=\left(n+2\right)\left(a_{n}+an+b-a\right)
+\]
+所以$a=1$, $b=1$, 所以$n\left(a_{n+1}+n+1\right)=\left(n+2\right)\left(a_{n}+n\right)$,
+可得$\left\{ a_{n}+n\right\} $的通项为$a_{n}=2n^{2}+n$, 另外令
+\[
+n\left(a_{n+1}+an^{2}+bn+c\right)=\left(n+2\right)\left(a_{n}+an^{2}-2an+a+bn-b+c\right)
+\]
+令$a=1$得$b=4$, $c=3$, 所以$a_{n+1}+\left(n+1\right)\left(n+3\right)=b_{n+1}$有$\frac{b_{n+1}}{b_{n}}=\frac{n+2}{n}$,
+$a_{n}=2n^{2}+n$, 所以
+\[
+\frac{1}{2}\left(\frac{1}{n}-\frac{1}{n+1}\right)<\frac{1}{a_{n}}<\frac{1}{2}\left(\frac{1}{n-\frac{1}{2}}-\frac{1}{n+\frac{1}{2}}\right),
+\]
+所以
+\[
+\frac{7}{12}-\frac{1}{2n+2}=\frac{1}{3}+\frac{1}{2}\left(\frac{1}{2}-\frac{1}{n+1}\right)<\frac{1}{a_{1}}+\left(\frac{1}{a_{2}}+\frac{1}{a_{3}}+\cdots+\frac{1}{a_{n}}\right)<\frac{1}{3}+\frac{1}{2}\left(\frac{2}{3}-\frac{1}{n+\frac{1}{2}}\right)=\frac{2}{3}-\frac{1}{2n+1}.
+\]
+\ea
+\ba
+因$na_{n+1}=\left(n+2\right)a_{n}+n$等价于$\frac{a_{n+1}-1}{\left(n+1\right)\left(n+2\right)}=\frac{a_{n}}{n\left(n+1\right)}$,
+令$c_{n}=\frac{a_{n}}{n\left(n+1\right)}$, 有$c_{n+1}-c_{n}=\frac{1}{n+1}-\frac{1}{n+2}$,
+$c_{1}=\frac{3}{2}$, 所以
+\[
+\frac{a_{n}}{n\left(n+1\right)}=c_{n}=c_{1}+\sum_{k=1}^{n-1}\left(c_{k+1}-c_{k}\right)=2-\frac{1}{n+1},
+\]
+所以$a_{n}=n\left(2n+1\right)$...
+\ea
+\ba
+若$g\left(n\right)-g\left(n+1\right)<b_{n}<f\left(n\right)-f\left(n+1\right)$,
+则$g\left(1\right)-g\left(n+1\right)<\sum b_{i}<f\left(1\right)-f\left(n+1\right)$,
+于是要证
+\[
+\frac{7}{12}-\frac{1}{2\left(n+1\right)}<\sum\frac{1}{a_{i}}<\frac{2}{3}-\frac{1}{2n+1},
+\]
+则可试证
+\[
+\frac{1}{2n}-\frac{1}{2\left(n+1\right)}<\frac{1}{a_{n}}<\frac{1}{2n-1}-\frac{1}{2n+1},\ldots
+\]
+\ea
+
+\bq{}{}
+若$x_{i}\in\RR^{+}$, ($i=1,2,\cdots,n$), $\sum x_{i}=1$, $x_{n+1}=x_{1}$,
+$n>6$, 求证:
+\[
+\prod_{i=1}^{n}\frac{1}{x_{i}+x_{i+1}}>n!.
+\]
+\eq
+\ba
+$\prod\frac{1}{x_{i}+x_{i+1}}=\frac{1}{\prod\left(x_{i}+x_{i+1}\right)}\ge\frac{1}{\left(\frac{\sum\left(x_{i}+x_{i+1}\right)}{n}\right)^{n}}=\left(\frac{n}{2}\right)^{n}$,
+于是只需证$\left(\frac{n}{2}\right)^{n}>n!$, 因$2\cdot\left(n-2\right)<\left(\frac{n}{2}\right)^{2}$;
+$3\cdot\left(n-3\right)\le\left(\frac{n}{2}\right)^{2}$, ..., $\left(n-2\right)\cdot2\le\left(\frac{n}{2}\right)^{2}$,
+所以$\left[\left(n-2\right)!\right]^{2}\le\left(\frac{n}{2}\right)^{\left(n-3\right)\times2}$,
+所以$\left(n-2\right)!\le\left(\frac{n}{2}\right)^{n-3}$, 而$\left(n-1\right)n\le\left(\frac{n}{2}\right)^{3}$,
+即$8n-8\le n^{2}$, 即$\left(n-4\right)^{2}\ge8$, 因$n\ge7$, 所以$\left(n-4\right)^{2}\ge9>8$,
+所以$\left(n-2\right)!\left(n-1\right)n=n!\le\left(\frac{n}{2}\right)^{n}$.
+\ea
+\ba
+$\prod\ge\left(\frac{n}{2}\right)^{n}$同以上证法, 用数学归纳法.
+
+(1) 当$n=7$时, $7!\cdot2^{7}=3^{2}\cdot2^{11}\cdot5\cdot7=\left(3\cdot2^{4}\right)\left(5\cdot2^{3}\right)\left(3\cdot2^{4}\cdot7\right)<7^{2}\cdot7^{2}\cdot7^{2}\cdot7=7^{7}$成立.
+
+(2) 当$n=k\ge7$有$2^{k}k!<k^{k}$成立, 则$\left(k+1\right)!2^{k+1}=k!2^{k}\left(k+1\right)\cdot2<k^{2}\left(k+1\right)\left(1+\frac{1}{k}\right)^{k}=\left(k+1\right)^{k+1}$,
+所以命题对于$n=k+1$时也成立...
+\ea
+
+\bq{}{}
+试求下面表达式的最大值:
+\[
+\left|\left|\cdots\left|\left|x_{1}-x_{2}\right|-x_{3}\right|-\cdots-\right|-x_{2002}\right|,
+\]
+其中$x_{1},x_{2},\cdots,x_{2002}$是由$1$到$2002$的不同自然数.
+\eq
+\ba
+用$\max\left\{ a_{1},\cdots,a_{n}\right\} $表示$a_{1},\cdots,a_{n}$这$n$个数中的最大数.
+易见, 对于任何非负整数$x,y$, 有$\left|x-y\right|\le\max\left\{ x,y\right\} $,
+又由于$\max\left\{ \max\left\{ x,y\right\} ,z\right\} =\max\left\{ x,y,z\right\} $,
+所以$\left|\left|x-y\right|-z\right|\le\max\left\{ x,y,z\right\} $,
+依此类推, 可得原式不超过$\max\left\{ x_{1},\cdots,x_{n}\right\} $, 从而题设表达式的值不会超过$\max\left\{ x_{1},x_{2},\cdots,x_{2002}\right\} =2002$,
+另一方面容易看出, 题设式子的奇偶性与数
+\[
+x_{1}+x_{2}+\cdots+x_{2002}=2003\cdot1001
+\]
+的奇偶性相同, 是奇数, 所以题设式子的值不会为偶数$2002$, 又
+\[
+\begin{aligned}\left|\left|\left|\left|\cdots\left|\left|\left|2-4\right|-5\right|-3\right|-\cdots-\left(4k+2\right)\right|-\left(4k+4\right)\right|-\left(4k+5\right)\right|-\left(4k+3\right)\right|-\cdots\\
+-\left.1998\right|-\left.2000\right|-\left.2001\right|-\left.1999\right|-\left.2002\right|-\left.1\right| & =2001.
+\end{aligned}
+\]
+综上所述, 可知所求的最大值为$2001$.
+\ea
+
+\bq{}{}
+已知数列$a_{1},a_{2},\cdots,a_{n},\cdots$, 满足$a_{1}=\frac{1}{2}$, $a_{n+1}=a_{n}^{2}+a_{n}$,
+则求
+\[
+S=\frac{1}{a_{1}+1}+\frac{1}{a_{2}+1}+\cdots+\frac{1}{a_{100}+1}
+\]
+的整数部分.
+\eq
+\ba
+\[
+\frac{1}{a_{n}+1}=\frac{a_{n}}{a_{n}\left(a_{n}+1\right)}=\frac{a_{n}}{a_{n+1}}=\frac{a_{n}^{2}}{a_{n+1}\cdot a_{n}}=\frac{a_{n+1}-a_{n}}{a_{n}a_{n+1}}=\frac{1}{a_{n}}-\frac{1}{a_{n+1}},
+\]
+所以$S=2-\frac{1}{a_{101}}$, 由$a_{1}=\frac{1}{2}$, $a_{2}=\frac{3}{4}$,
+$a_{3}=\frac{21}{16}$, 知$a_{3}>1$, 所以$a_{101}>a_{100}>\cdots>a_{3}>1$,
+所以$0<\frac{1}{a_{101}}<1$, $\left[S\right]=1$.
+\ea
+
+\bq{}{}
+求最大的实数$\lambda$, 使得当实系数多项式$f\left(x\right)=x^{3}+ax^{2}+bx+c$的所有根都是非负实数时,
+只要$x\ge\min\left\{ \text{三个根}\right\} $, 就有$f\left(x\right)\ge\lambda\left(x-a\right)^{3}$,
+并且问上式中等号何时成立?
+\eq
+\ba
+设$f\left(x\right)$的三个根为$\alpha,\beta,\gamma$, 并设$0\le\alpha\le\beta\le\gamma$,
+则有$x-a=x+\alpha+\beta+\gamma$, $f\left(x\right)=\left(x-\alpha\right)\left(x-\beta\right)\left(x-\gamma\right)$,
+
+(1). $0\le x\le\alpha$时, 因$-f\left(x\right)=\left(\alpha-x\right)\left(\beta-x\right)\left(\gamma-x\right)$,
+则由A-G不等式,
+\[
+-f\left(x\right)\le\left(\frac{\alpha+\beta+\gamma-3x}{3}\right)^{3}\le\left(\frac{x+\alpha+\beta+\gamma}{3}\right)^{3},
+\]
+即$f\left(x\right)\ge-\frac{1}{27}\left(x+\alpha+\beta+\gamma\right)^{3}=-\frac{1}{27}\left(x-a\right)^{3}$,
+上式等式成立的充要条件是
+\[
+\begin{cases}
+\alpha-x=\beta-x=\gamma-x\\
+\alpha+\beta+\gamma-3x=x+\alpha+\beta+\gamma
+\end{cases}
+\]
+即$x=0$, $\alpha=\beta=\gamma$.
+
+(2). 当$\beta\le x\le\gamma$时, 因
+\[
+-f\left(x\right)=\left(x-\alpha\right)\left(x-\beta\right)\left(\gamma-x\right)\le\left(\frac{x+\gamma-\alpha-\beta}{3}\right)^{3}\le\left(\frac{x+\alpha+\beta+\gamma}{3}\right)^{3}=\left(\frac{x-a}{3}\right)^{3}.
+\]
+则$f\left(x\right)\ge-\frac{1}{27}\left(x-a\right)^{3}$, 易知上式等号成立的充要条件为
+\[
+\begin{cases}
+x-\alpha=x-\beta=\gamma-x\\
+\alpha=\beta=0.
+\end{cases}
+\]
+即$\alpha=\beta=0$, $\gamma=2x$.
+
+(3). 当$\alpha\le x\le\beta$或$x>\gamma$时, $f\left(x\right)>0\ge-\frac{1}{27}\left(x-a\right)^{3}$,
+综上可得所求的$\lambda=-\frac{1}{27}$, 且等号成立的充要条件是$x=0$, $\alpha=\beta=\gamma$或$\alpha=\beta=0$,
+$\gamma=2x$. 不过若$\alpha=\beta=\gamma=0$时, $\lambda=1$, 这一点S10P50未注意到.
+\ea
+
+\bq{}{}
+已知数列$\left\{ a_{n}\right\} $中, $a_{1}=\frac{1}{2}$, 且
+\[
+a_{n}=\frac{1}{3n-1}\left(a_{1}a_{n-1}+a_{2}a_{n-2}+\cdots+a_{n-2}a_{2}+a_{n-1}a_{1}\right),
+\]
+求证: $a_{n+1}<a_{n}$.
+\eq
+\ba
+用数学归纳法, 设$a_{k}<a_{k-1}<\cdots<a_{1}$, 则
+\[
+\begin{aligned}a_{k+1} & =\frac{1}{3k+2}\sum_{i=1}^{k}a_{i}a_{k+1-i}\le\frac{1}{3k+2}\left(\sum_{i=1}^{k-1}a_{i}a_{k-i}+\frac{1}{2}a_{k}\right)\\
+ & =\frac{3k-1}{3k+2}a_{k}+\frac{1}{3k+2}\times\frac{1}{2}a_{k}=\frac{6k}{2\left(3k+2\right)}a_{k}<a_{k}.
+\end{aligned}
+\]
+\ea
+
+\bq{}{}
+设$a_{1},\cdots,a_{n}$($n\ge3$)是$n$个正整数, 把它们按顺序放在圆周上, 且满足每一个数去除相邻两数之和都是正整数,
+令
+\[
+S_{n}=\frac{a_{1}+a_{3}}{a_{2}}+\frac{a_{2}+a_{4}}{a_{3}}+\cdots+\frac{a_{n-1}+a_{1}}{a_{n}}+\frac{a_{n}+a_{2}}{a_{1}},
+\]
+求证: $2n\le S_{n}<3n$.
+\eq
+\ba
+不等式左边可用A-G不等式得出, 对于$S_{n}<3n$用归纳法.
+
+(1) 当$n=3$时, $S_{3}=\frac{a_{1}+a_{3}}{a_{2}}+\frac{a_{2}+a_{1}}{a_{3}}+\frac{a_{3}+a_{2}}{a_{1}}$,
+不妨设$a_{3}\ge a_{2}\ge a_{1}$. 所以$a_{3}=a_{1}+a_{2}$或$2a_{3}=a_{1}+a_{2}$.
+
+若$a_{3}=a_{1}+a_{2}$, 则$S_{3}=\frac{2a_{1}}{a_{2}}+1+1+1+\frac{2a_{2}}{a_{1}}$,
+而$a_{2}\mid2a_{1}$, $a_{1}\mid2a_{2}$, $a_{2}\ge a_{1}$, 所以$a_{2}=2a_{1}$或$a_{2}=a_{1}$或$2a_{2}=a_{1}$,
+所以$S_{3}=7$或$8<9$.
+
+若$2a_{3}=a_{1}+a_{2}$, 同样有$S_{3}<9$.
+
+(2) 若$n=k$时成立, 则$n=k+1$时, 设$a_{k+1}$最大, $a_{1}=\min\left\{ a_{1},a_{k}\right\} $,
+即$a_{k+1}\ge a_{k}\ge a_{1}$, 则$2a_{k+1}\ge a_{1}+a_{k}$, 所以
+\[
+\begin{aligned}S_{k+1} & =\frac{a_{1}+a_{3}}{a_{2}}+\frac{a_{2}+a_{4}}{a_{3}}+\cdots+\frac{a_{k+1}+a_{2}}{a_{1}}\\
+ & <\frac{a_{1}+a_{3}}{a_{2}}+\frac{a_{2}+a_{4}}{a_{3}}+\cdots+\frac{a_{k-1}+a_{1}}{a_{k}}+1+1+1+\frac{a_{k}+a_{2}}{a_{1}}\\
+ & =3+S_{k}\quad\left(a_{k+1}=a_{1}+a_{k}\right);
+\end{aligned}
+\]
+或
+\[
+\begin{aligned}S_{k+1} & =\frac{a_{1}+a_{3}}{a_{2}}+\frac{a_{2}+a_{4}}{a_{3}}+\cdots+\frac{a_{k+1}+a_{2}}{a_{1}}\\
+ & <\frac{a_{1}+a_{3}}{a_{2}}+\cdots+\frac{a_{k-1}+\frac{1}{2}a_{1}}{a_{k}}+\frac{1}{2}+2+\frac{1}{2}+\frac{\frac{1}{2}a_{k}+a_{2}}{a_{1}}\\
+ & =3+S_{k}\quad\left(2a_{k+1}=a_{1}+a_{k}\right).
+\end{aligned}
+\]
+所以$S_{k+1}\le3+S_{k}$可得$S_{k+1}\le S_{3}+3\left(k-2\right)<3\left(k+1\right)$.
+\ea
+
+\bq{}{}
+$\triangle ABC$的$\angle A$, $\angle B$, $\angle C$的平分线分别交$\triangle ABC$的外接圆于点$A_{1},B_{1},C_{1}$,
+记$m=AA_{1}+BB_{1}+CC_{1}$, $n=AB+BC+CA$, 则( ).
+
+A. $m\ge n$; B. $m>n$; C. $m=n$; D. 不确定$m,n$之间的大小.
+\eq
+\ba
+托勒密定理有$AA_{1}\cdot BC=AB\cdot A_{1}C+AC\cdot A_{1}B$, $A_{1}B=A_{1}C$,
+$AB+AC>BC$, 所以
+\[
+2AA_{1}=\frac{\left(AB+AC\right)\cdot2A_{1}B}{BC}>AB+AC.
+\]
+同理$2BB_{1}>AB+BC$, $2CC_{1}>CA+CB$, 三式相加即得.
+
+另外$A_{1}C=A_{1}B$, 所以$2A_{1}C>BC$, 内心为$I$, 则$IB+IC>BC$. 所以
+\[
+\begin{aligned}2A_{1}C+IB+IC>2BC, & 2A_{1}B+IB+IC>2BC\\
+2IB_{1}+IC+IA>2AC, & IA+2IC_{1}+IB>2AB,
+\end{aligned}
+\]
+相加即得.
+\ea
+
+\bq{}{}
+$\mathrm{Rt}\triangle ABC$中, $D$为$BC$中点, $E\in AB$, $F\in AC$,
+则$C_{\triangle DEF}>BC$.
+\eq
+\ba
+做$\overrightarrow{DM}=\overrightarrow{CA}$, $\overrightarrow{DN}=\overrightarrow{BA}$,
+所以$DF=NF$, $ED=EM$, $MN=BC$. 所以
+\[
+C_{\triangle DEF}=DE+DF+EF=NF+FE+EM>MN=BC.
+\]
+\ea
+
+\bq{}{}
+若直线$y=x\lg\left(ac\right)+m$和$y=x\lg\left(bc\right)+n$, ($a,b,c>0$)相互垂直,
+求$\frac{a}{b}$的取值范围.
+\eq
+\ba
+易知$\lg\left(ac\right)\cdot\lg\left(bc\right)=-1$, 所以
+\[
+\lg^{2}c+\left(\lg a+\lg b\right)\lg c+\lg a\lg b+1=0.
+\]
+于是由$\Delta\ge0$可得$\lg^{2}\frac{a}{b}\ge4$...
+
+事实上($a,b,c>0$)是多余的, 我们只需用下列方法便可得知: 令$\frac{a}{b}=t$, 显然$a,b,c$三者同号,
+则因$\lg\left(ac\right)\lg\left(bc\right)=-1$. 所以$\lg\left(bct\right)\lg\left(bc\right)=-1$,
+所以$\lg^{2}\left(bc\right)+\lg t\lg\left(bc\right)+1=0$. 所以由$\Delta\ge0$可得$\lg^{2}t\ge4$.
+\ea
+
+\bq{}{}
+给定$n+1$($n\ge2$)个正实数$x_{0},x_{1},\cdots,x_{n}$, 求证:
+\[
+\frac{x_{1}}{2\left(x_{0}^{2}+x_{1}^{2}\right)}+\frac{x_{2}}{3\left(x_{0}^{2}+x_{1}^{2}+x_{2}^{2}\right)}+\cdots+\frac{x_{n}}{\left(n+1\right)\left(x_{0}^{2}+x_{1}^{2}+x_{2}^{2}+\cdots+x_{n}^{2}\right)}<\frac{1}{x_{0}}
+\]
+或
+\[
+\sum_{k=1}^{n}\frac{x_{k}}{\left(k+1\right)\sum_{j=0}^{k}x_{j}^{2}}<\frac{1}{x_{0}}.
+\]
+\eq
+\ba
+\[
+\frac{x_{i}}{\left(i+1\right)\left(x_{0}^{2}+\cdots+x_{i}^{2}\right)}\le\frac{x_{i}}{\left(x_{0}+\cdots+x_{i}\right)^{2}}<\frac{x_{i}}{\left(x_{0}+\cdots+x_{i-1}\right)\left(x_{0}+\cdots+x_{i}\right)}=\frac{1}{x_{0}+\cdots+x_{i-1}}-\frac{1}{x_{0}+\cdots+x_{i}}.
+\]
+\ea
+
+\bq{优超不等式}{}
+设两组实数$x_{1},\cdots,x_{n}$和$y_{1},\cdots,y_{n}$满足条件:
+
+(i) $x_{1}\ge x_{2}\ge\cdots\ge x_{n}$; $y_{1}\ge y_{2}\ge\cdots\ge y_{n}$;
+
+(ii) 
+\[
+\begin{aligned}
+  x_{1} & \ge y_{1}\\
+x_{1}+x_{2} & \ge y_{1}+y_{2}\\
+& \vdots\\
+x_{1}+x_{2}+\cdots+x_{n} & \ge y_{1}+y_{2}+\cdots+y_{n}.
+\end{aligned}
+\]
+则对任意凸函数$f\left(x\right)$, 都有如下的不等式成立:
+\[
+f\left(x_{1}\right)+f\left(x_{2}\right)+\cdots+f\left(x_{n}\right)\ge f\left(y_{1}\right)+f\left(y_{2}\right)+\cdots+f\left(y_{n}\right).
+\]
+若$f\left(x\right)$为凹函数, 其他条件不变, 则上式不等号反向.
+\eq
+
+\bq{康托洛维奇不等式}{}
+若$a_{i}>0$, ($i=1,2,\cdots,n$)且$\sum_{i=1}^{n}a_{i}=1$, 又$0<\lambda_{1}\le\lambda_{2}\le\cdots\le\lambda_{n}$,
+则
+\[
+\left(\sum_{i=1}^{n}\lambda_{i}a_{i}\right)\left(\sum_{i=1}^{n}\frac{a_{i}}{\lambda_{i}}\right)\le\frac{\left(\lambda_{1}+\lambda_{n}\right)^{2}}{4\lambda_{1}\lambda_{n}}.
+\]
+\eq
+\ba
+因$0<\lambda_{1}\le\lambda_{2}\le\cdots\le\lambda_{n}$, 所以$\left(\lambda_{1}-\lambda_{i}\right)\left(\lambda_{i}-\lambda_{n}\right)\ge0$,
+即
+\[
+\lambda_{i}\le\left(\lambda_{1}+\lambda_{n}\right)-\frac{\lambda_{1}\lambda_{n}}{\lambda_{i}},
+\]
+所以
+\[
+\begin{aligned}\sum_{i=1}^{n}\lambda_{i}a_{i} & \le\sum_{i=1}^{n}\left[\left(\lambda_{1}+\lambda_{n}\right)-\frac{\lambda_{1}\lambda_{n}}{\lambda_{i}}\right]a_{i}\\
+ & =\left(\lambda_{1}+\lambda_{n}\right)-\lambda_{1}\lambda_{n}\sum_{i=1}^{n}\frac{a_{i}}{\lambda_{i}}.
+\end{aligned}
+\]
+即$\sum_{i=1}^{n}\lambda_{i}a_{i}\le\left(\lambda_{1}+\lambda_{n}\right)-\lambda_{1}\lambda_{n}\sum_{i=1}^{n}\frac{a_{i}}{\lambda_{i}}$,
+所以
+\[
+\begin{aligned}\left(\sum_{i=1}^{n}\lambda_{i}a_{i}\right)\left(\sum_{i=1}^{n}\frac{a_{i}}{\lambda_{i}}\right) & \le\left[\left(\lambda_{1}+\lambda_{n}\right)-\lambda_{1}\lambda_{n}\sum_{i=1}^{n}\frac{a_{i}}{\lambda_{i}}\right]\sum_{i=1}^{n}\frac{a_{i}}{\lambda_{i}}\\
+ & =-\lambda_{1}\lambda_{n}\left(\sum_{i=1}^{n}\frac{a_{i}}{\lambda_{i}}-\frac{\lambda_{1}+\lambda_{n}}{2\lambda_{1}\lambda_{n}}\right)^{2}+\frac{\left(\lambda_{1}+\lambda_{n}\right)^{2}}{4\lambda_{1}\lambda_{n}}\\
+ & \le\frac{\left(\lambda_{1}+\lambda_{n}\right)^{2}}{4\lambda_{1}\lambda_{n}}.
+\end{aligned}
+\]
+\ea
+
+\bq{用琴生不等式证明A-G不等式}{}
+设$a_{i}\in\RR^{+}$($i=1,2,\cdots,n$), 求证:
+\[
+\frac{1}{n}\sum a_{i}\ge\sqrt[n]{\prod a_{i}},
+\]
+当$a_{1}=\cdots=a_{n}$时取等号.
+\eq
+\ba
+设$y=\ln x$, 因$y'=\frac{1}{x}$, $y''=-\frac{1}{x^{2}}<0$, 所以$y$为上凸函数.
+所以
+\[
+\frac{1}{n}\sum\ln a_{i}\le\ln\frac{\sum a_{i}}{n}.
+\]
+即得.
+\ea
+
+\bq{Cauchy不等式推导调和平均$\le$算术平均}{}
+\[
+\frac{n}{\sum\frac{1}{a_{i}}}\le\frac{\sum a_{i}}{n},\qquad\left(a_{i}>0\right).
+\]
+\eq
+\ba
+因$\sum a_{i}\sum\frac{1}{a_{i}}\ge\left(\underbrace{1+1+\cdots+1}_{n\text{个}1}\right)^{2}=n^{2}$,
+由此不等式得到$\sum_{i=1}^{n}\frac{a_{i}a_{i+1}}{a_{i}+a_{i+1}}\le\frac{1}{2}\sum_{i=1}^{n}a_{i}$,
+其中$a_{n+1}=a_{1}$.
+\ea
+
+\bq{贝努利不等式}{}
+设$1+x>0$, $x\ne0$, $n\in\NN$, $n\ge2$, 求证: $\left(1+x\right)^{n}>1+nx$.
+\eq
+\ba
+因$x\ne0$, $1+x>0$, 由均值不等式
+\[
+\left(1+x\right)^{n}+n-1=\left(1+x\right)^{n}+1+1+\cdots+1>n\cdot\sqrt[n]{\left(1+x\right)^{n}\cdot1\cdot1\cdots1}=n\left(1+x\right).
+\]
+所以$\left(1+x\right)^{n}>1+nx$, (可用归纳法)
+\ea
+注: 贝努利一般式为$\left(1+x\right)^{\alpha}>1+\alpha x$, $\alpha<0$或$\alpha>1$.
+
+\bq{Abel不等式}{}
+设$a_{i},b_{i}\in\RR$, ($i=1,2,\cdots,n$), $b_{1}\ge b_{2}\ge\cdots\ge b_{n}\ge0$.
+\[
+S_{k}=\sum_{i=1}^{k}a_{i}\quad\left(k=1,2,\cdots,n\right),
+\]
+又记$M=\max_{1\le k\le n}S_{k}$, $m=\min_{1\le k\le n}S_{k}$, 求证:
+\[
+mb_{1}\le\sum_{k=1}^{n}a_{i}b_{i}\le Mb_{1}.
+\]
+\eq
+\ba
+由Abel恒等式及$b_{i}$的单调性, 得
+\[
+\sum_{i=1}^{n}a_{i}b_{i}=\sum_{i=1}^{n-1}S_{i}\left(b_{i}-b_{i+1}\right)+S_{n}b_{n}\le M\left(\sum_{i=1}^{n-1}\left(b_{i}-b_{i+1}\right)+b_{n}\right)=Mb_{1},
+\]
+同理可证第一个不等式.
+\ea
+
+\bq{钟凯莱不等式}{}
+设$a_{1},\cdots,a_{n}$和$b_{1},\cdots,b_{n}$都是正数, 且$b_{1}>b_{2}>\cdots>b_{n}$,
+若对所有的$k=1,2,\cdots,n$有
+\[
+\sum_{i=1}^{k}b_{i}\le\sum_{i=1}^{k}a_{i},
+\]
+则
+\[
+\sum_{j=1}^{n}b_{j}^{2}\le\sum_{j=1}^{n}a_{j}^{2}.
+\]
+\eq
+\ba
+由Abel恒等变换公式
+\[
+\begin{aligned}\sum_{j=1}^{n}b_{j}^{2} & =b_{n}\sum_{j=1}^{n}b_{j}+\sum_{j=1}^{n-1}\left(\sum_{k=1}^{j}b_{k}\right)\left(b_{j}-b_{j+1}\right)\\
+ & \le b_{n}\sum_{j=1}^{n}b_{j}+\sum_{j=1}^{n-1}\left(\sum_{k=1}^{j}a_{k}\right)\left(b_{j}-b_{j+1}\right)\\
+ & =\sum_{j=1}^{n}a_{j}b_{j}
+ \le\left(\sum_{j=1}^{n}a_{j}^{2}\right)^{1/2}\left(\sum_{j=1}^{n}b_{j}^{2}\right)^{1/2}.\quad\text{Cauchy不等式}
+\end{aligned}
+\]
+即得.
+\ea
+
+\bq{W. Janous猜想}{}
+设$x,y,z\in\RR^{+}$, 求证: $\frac{z^{2}-x^{2}}{x+y}+\frac{x^{2}-y^{2}}{y+z}+\frac{y^{2}-z^{2}}{z+x}\ge0$.
+\eq
+\ba
+原不等式等价于
+\[
+\frac{z^{2}}{x+y}+\frac{y^{2}}{x+z}+\frac{x^{2}}{y+z}\ge\frac{x^{2}}{x+y}+\frac{y^{2}}{y+z}+\frac{z^{2}}{z+x},
+\]
+用排序不等式.
+\ea
+\ba
+令$y+z=a$, $z+x=b$, $x+y=c$, 则$a,b,c>0$. 所以原式等价于
+\[
+\begin{aligned} & \frac{ac}{b}+\frac{ba}{c}+\frac{cb}{a}\ge a+b+c\\
+ & \frac{ac}{b}+\frac{ba}{c}\ge2a,\\
+ & \frac{bc}{c}+\frac{cb}{a}\ge2b,\cdots
+\end{aligned}
+\]
+此结论可推广为: 若$x,y,z>0$, 求证:
+\[
+\frac{y\left(y^{2}-x^{2}\right)}{z+x}+\frac{z\left(z^{2}-y^{2}\right)}{x+y}+\frac{x\left(x^{2}-z^{2}\right)}{y+z}\ge0.
+\]
+用排序不等式可得.
+\ea
+
+\bq{闵可夫斯基不等式}{}
+求证: 对于任意实数$x_{1},x_{2},\cdots,x_{n}$及$y_{1},y_{2},\cdots,y_{n}$有
+\[
+\sqrt{\sum_{k=1}^{n}\left(x_{k}+y_{k}\right)^{2}}\le\sqrt{\sum_{k=1}^{n}x_{k}^{2}}+\sqrt{\sum_{k=1}^{n}y_{k}^{2}}
+\]
+当且仅当$x_{1},x_{2},\cdots,x_{n}$与$y_{1},y_{2},\cdots,y_{n}$对应成比例时取到.
+\eq
+\ba
+原式当且仅当
+\[
+\sum_{k=1}^{n}\left(x_{k}+y_{k}\right)^{2}\le\sum x_{k}^{2}+2\sqrt{\sum x_{k}^{2}\sum y_{k}^{2}}+\sum y_{k}^{2},
+\]
+而
+\[
+\sum x_{k}y_{k}\le\left(\sum x_{k}^{2}\right)^{1/2}\left(\sum y_{k}^{2}\right)^{1/2},
+\]
+所以不等式成立.
+\ea
+
+\bq{幂平均不等式}{}
+若$\alpha>\beta>0$, $a_{i}\in\RR^{+}$, ($i=1,2,\cdots,n$), 则
+\[
+\left(\frac{a_{1}^{\alpha}+a_{2}^{\alpha}+\cdots+a_{n}^{\alpha}}{n}\right)^{1/\alpha}\ge\left(\frac{a_{1}^{\beta}+a_{2}^{\beta}+\cdots+a_{n}^{\beta}}{n}\right)^{1/\beta}.
+\]
+\eq
+\ba
+令$x_{i}=a_{i}^{\beta}$, 则$a_{i}=x_{i}^{1/\beta}$, 原不等式等价于
+\[
+\frac{1}{n}\sum x_{k}^{\alpha/\beta}\ge\left(\frac{1}{n}\sum x_{k}\right)^{\alpha/\beta},
+\]
+因为$\alpha>\beta>0$, 所以$\frac{\alpha}{\beta}>1$, $f\left(x\right)=x^{p}$,
+($p>1$)是$\left(0,+\infty\right)$上的凸函数, 故由琴生不等式知上式成立, 从而命题成立.
+\ea
+
+\bq{赫尔德(H\"{o}lder)不等式}{}
+设$a_{i},b_{i}\in\RR^{+}$, ($i=1,2,\cdots,n$), $\alpha>0$, $\beta>0$,
+$\alpha+\beta=1$, 则
+\[
+\sum_{i=1}^{n}a_{i}^{\alpha}b_{i}^{\beta}\le\left(\sum_{i=1}^{n}a_{i}\right)^{\alpha}\left(\sum_{i=1}^{n}b_{i}\right)^{\beta}.
+\]
+\eq
+\ba
+令$A=\sum_{i=1}^{n}a_{i}$, $B=\sum_{i=1}^{n}b_{i}$, 则
+\[
+A^{-\alpha}B^{-\beta}\sum_{i=1}^{n}a_{i}^{\alpha}b_{i}^{\beta}=\sum_{i=1}^{n}\left(\frac{a_{i}}{A}\right)^{\alpha}\left(\frac{b_{i}}{B}\right)^{\beta},\quad\alpha+\beta=1.
+\]
+因$f\left(x\right)=\ln x$, ($x>0$)是上凸函数, 所以
+\[
+\begin{aligned}\alpha\ln\frac{a_{i}}{A}+\beta\ln\frac{b_{i}}{B} & =\frac{\alpha\ln\frac{a_{i}}{A}+\beta\ln\frac{b_{i}}{B}}{\alpha+\beta}\qquad\because\alpha+\beta=1\\
+ & \le\ln\frac{\alpha\frac{a_{i}}{A}+\beta\frac{b_{i}}{B}}{\alpha+\beta}=\ln\left(\alpha\frac{a_{i}}{A}+\beta\frac{b_{i}}{B}\right)
+\end{aligned}
+\]
+所以$\left(\frac{a_{i}}{A}\right)^{\alpha}\left(\frac{b_{i}}{B}\right)^{\beta}\le\alpha\frac{a_{i}}{A}+\beta\frac{b_{i}}{B}$,
+两边取$\sum_{i=1}^{n}$有
+\[
+\sum_{i=1}^{n}\left(\frac{a_{i}}{A}\right)^{\alpha}\left(\frac{b_{i}}{B}\right)^{\beta}\le\frac{\alpha}{A}\sum a_{i}+\frac{\beta}{B}\sum b_{i}=\alpha+\beta=1.
+\]
+\ea
+
+\bq{}{}
+H\"{o}lder不等式推出Cauchy不等式.
+\eq
+\ba
+令$\alpha=\beta=\frac{1}{2}$, 代入H\"{o}lder不等式, 并令$x_{i}^{2}=a_{i}$,
+$y_{i}^{2}=b_{i}$, 即得.
+\ea
+
+\bq{}{}
+优超不等式推出钟开莱不等式.
+\eq
+\ba
+取$f\left(x\right)=x^{2}$, 则$f\left(x\right)$为下凸函数, 用钟开莱不等式中的符号,
+因为$\left(a_{1},a_{2},\cdots,a_{n}\right)\succ\left(b_{1},b_{2},\cdots,b_{n}\right)$,
+所以$\sum f\left(a_{k}\right)\ge\sum f\left(b_{k}\right)$.
+\ea
+
+\bq{}{}
+优超不等式推出琴生不等式.
+\eq
+\ba
+设$\sum_{k=1}^{n}a_{k}=\sum_{k=1}^{n}b_{k}$, $b_{1}=b_{2}=\cdots=b_{n}=\frac{1}{n}\sum a_{i}$,
+不妨设$a_{1}\ge a_{2}\ge\cdots\ge a_{n}$, 则$\left(a_{1},a_{2},\cdots,a_{n}\right)\succ\left(b_{1},b_{2},\cdots,b_{n}\right)$.
+若$f\left(x\right)$是$\left[a,b\right]$或$\left(a,b\right)$内的下凸函数,
+则对于$\left[a,b\right]$或$\left(a,b\right)$中任意$n$个数$a_{1},a_{2},\cdots,a_{n}$有
+\[
+\frac{1}{n}\sum f\left(a_{k}\right)\ge f\left(\frac{1}{n}\sum a_{k}\right),
+\]
+当且仅当$x_{1}=\cdots=x_{n}$时取等号. 若$f\left(x\right)$为上凸函数, 命题反号.
+\ea
+
+\bq{}{}
+求所有正整数$a_{1},a_{2},\cdots,a_{n}$, 使得
+\[
+\frac{99}{100}=\frac{a_{0}}{a_{1}}+\frac{a_{1}}{a_{2}}+\cdots+\frac{a_{n-1}}{a_{n}},
+\]
+其中$a_{0}=1$,
+\[
+\left(a_{k+1}-1\right)a_{k-1}\ge a_{k}^{2}\left(a_{k}-1\right),\quad k=1,2,\cdots,n.
+\]
+(S24P53).
+\eq
+\ba
+设$a_{1},a_{2},\cdots,a_{n}$是满足条件的正整数, 由归纳法原理$a_{k+1}>a_{k}$,
+$a_{k+1}\ge2$, ($k=0,1,2,\cdots,n-1$), 所以
+\[
+\left(a_{k+1}-1\right)a_{k-1}\ge a_{k}^{2}\left(a_{k}-1\right)\Longleftrightarrow\frac{a_{k-1}}{a_{k}\left(a_{k}-1\right)}\ge\frac{a_{k}}{a_{k+1}-1},
+\]
+即
+\[
+a_{k-1}\left(\frac{1}{a_{k}-1}-\frac{1}{a_{k}}\right)\ge\frac{a_{k}}{a_{k+1}-1}.
+\]
+即
+\[
+\frac{a_{k-1}}{a_{k}}\le\frac{a_{k-1}}{a_{k}-1}-\frac{a_{k}}{a_{k+1}-1}
+\]
+对于$k=i+1,i+2,\cdots,n$求和得:
+\[
+\sum_{k=i+1}^{n}\frac{a_{k-1}}{a_{k}}\le\frac{a_{i}}{a_{i+1}-1}-\frac{a_{n}}{a_{n+1}-1}<\frac{a_{i}}{a_{i+1}-1},
+\]
+
+当$i=0$时, 有$\frac{1}{a_{1}}\le\frac{99}{100}<\frac{1}{a_{1}-1}\Longleftrightarrow a_{1}=2$.
+
+当$i=1$时, 有$\frac{a_{1}}{a_{2}}\le\frac{99}{100}-\frac{1}{a_{1}}<\frac{a_{1}}{a_{2}-1}\Longleftrightarrow a_{2}=5$.
+
+当$i=2$时, 有$\frac{a_{2}}{a_{3}}\le\frac{99}{100}-\frac{1}{a_{1}}-\frac{a_{1}}{a_{2}}\le\frac{a_{2}}{a_{3}-1}\Longleftrightarrow a_{3}=56$.
+
+同理, $i=3$时, 有$a_{4}=78400$. 又$\frac{1}{2}+\frac{2}{5}+\frac{5}{56}+\frac{56}{78400}=\frac{99}{100}$,
+故方程有唯一解$a_{1}=2$, $a_{2}=5$, $a_{3}=56$, $a_{4}=78400$.
+\ea
+
+\bq{(2002年, 全国卷) S14, P182}{}
+设数列$\left\{ a_{n}\right\} $满足
+\[
+a_{n+1}=a_{n}^{2}-na_{n}+1,\qquad n\in\NN_{+},
+\]
+当$a_{1}\ge3$时, 求证: $\forall n\in\NN_{+}$, 有
+\[
+\sum_{k=1}^{n}\frac{1}{1+a_{k}}\le\frac{1}{2}.
+\]
+\eq
+\ba
+令$b_{n}=a_{n}+1$, 则$b_{1}\ge4$, $b_{n+1}=b_{n}^{2}-\left(n+2\right)b_{n}+3+n$,
+可归纳证明
+\[
+b_{n}\ge2^{n+1}.
+\]
+\ea
+
+\bq{}{}
+已知$a,b,c\in\RR$, $f\left(x\right)=ax^{2}+bx+c$, $g\left(x\right)=ax+b$,
+当$-1\le x\le1$时, $\left|f\left(x\right)\right|\le1$. 证明: 当$\left|x\right|\le1$时,
+$\left|g\left(x\right)\right|\le2$.
+\eq
+\ba
+设$g\left(x\right)=f\left(x_{1}\right)+\mu f\left(x_{2}\right)=ax+b$,
+所以$\mu=-1$, $x_{1}=\frac{x+1}{2}$, $x_{2}=\frac{x-1}{2}$, 所以
+\[
+\left|g\left(x\right)\right|=\left|f\left(\frac{x+1}{2}\right)-f\left(\frac{x-1}{2}\right)\right|\le\left|f\left(\frac{x-1}{2}\right)\right|+\left|f\left(\frac{x-1}{2}\right)\right|\le2.
+\]
+\ea
+
+\bq{}{}
+在$\triangle ABC$内任取一点, 求证:
+
+(1) $\frac{PD}{AD}+\frac{PE}{BE}+\frac{PF}{CF}=1$.
+
+(2) 若$AB$为三角形中最长边, 则$PD+PE+PF<AB$.
+\eq
+\ba
+证明中的(1)用共边定理即得.
+
+(2): 先证$AB>AD$, $AB>BE$, $AB>CF$, $\max\left(BC,AC\right)\le AB$,
+设$\frac{PD}{AD}=k$, $\frac{PE}{BE}=n$, $\frac{PF}{CF}=m$, 则$k+m+n=1$,
+$PD=kAD$, $PE=n\cdot BE$, $PF=m\cdot CF$. 所以
+\[
+PD+PE+PF<kAB+nAB+mAB.
+\]
+\ea
+
+\bq{}{}
+设非负实数$x_{1},x_{2},x_{3},x_{4},x_{5}$满足$\sum_{i=1}^{5}\frac{1}{1+x_{i}}=1$,
+求证: $\sum\frac{x_{i}}{4+x_{i}^{2}}\le1$. (S8 P121, 3)
+\eq
+\ba
+\[
+\begin{aligned}\sum\frac{x_{i}}{4+x_{i}^{2}} & =\sum\frac{1}{\frac{4}{x_{i}}+\frac{x_{i}}{4}+\frac{3x_{i}}{4}}\le\sum\frac{1}{2+\frac{3x_{i}}{4}}\\
+ & =\sum\frac{4}{3x_{i}+8}=\frac{4}{3}\sum\frac{1}{x_{i}+8/3}\\
+ & =\frac{4}{3}\sum\frac{\frac{1}{x_{i}+1}}{1+\frac{5}{3}\cdot\frac{1}{x_{i}+1}}.
+\end{aligned}
+\]
+因为$\frac{1}{x_{i}+1}>0$, 令$y=\frac{x}{1+\frac{5}{3}x}$, 易知$y''<0$,
+所以
+\[
+\frac{1}{5}\left(\frac{4}{3}\sum\frac{\frac{1}{x_{i}+1}}{1+\frac{5}{3}\cdot\frac{1}{x_{i}+1}}\right)\le\frac{4}{3}\frac{\frac{1}{5}\sum\frac{1}{1+x_{i}}}{1+\frac{5}{3}\times\frac{1}{5}\sum\frac{1}{1+x_{i}}}=\frac{4}{3}\times\frac{\frac{1}{5}}{1+\frac{1}{3}}=\frac{1}{5}
+\]
+即得.
+\ea
+注: 若已知$x_{1},x_{2},\cdots,x_{t}$非负, 且$\sum_{i=1}^{t}\frac{1}{1+x_{i}}=1$,
+求$\sum\frac{x_{i}}{4+x_{i}^{2}}$的最大值, 用上述方法时, 知当$t=4,5,6,7,8,9$时
+\[
+\sum\frac{x_{i}}{4+x_{i}^{2}}\le\frac{t\left(t-1\right)}{t^{2}-2t+5},
+\]
+当$x_{1}=\cdots=x_{t}=t-1$时取等.
+
+$t=3$时, 在第一步用均值不等式放缩时便把$x_{i}$全部消去, 此时,
+\[
+\sum_{i=1}^{3}\frac{x_{i}}{4+x_{i}^{2}}\le\frac{3}{4}.
+\]
+当$x_{1}=x_{2}=x_{3}=2$时取等号, 
+
+$t=2$时, 因为$\sum_{i=1}^{2}\frac{1}{1+x_{i}}=1=\frac{1}{1+x_{1}}+\frac{1}{1+x_{2}}$,
+所以设$x_{1}=\frac{1}{x_{2}}=t$, 所以
+\[
+\begin{aligned}\sum^{2}\frac{x_{i}}{4+x_{i}^{2}} & =\frac{x_{1}}{4+x_{1}^{2}}+\frac{x_{2}}{4+x_{2}^{2}}=\frac{4x_{1}+4x_{2}+x_{1}+x_{2}}{16+1+4x_{1}^{2}+4x_{2}^{2}}\\
+ & =\frac{5\left(t+\frac{1}{t}\right)}{17+4\left(t^{2}+\frac{1}{t}\right)}=\frac{5\left(t+\frac{1}{t}\right)}{9+4\left(t+\frac{1}{t}\right)^{2}}\\
+\left(\text{令}t+\frac{1}{t}=s\ge2\right) & =\frac{5s}{9+4s^{2}}=\frac{5}{\frac{9}{s}+4s}\le\frac{2}{5}.
+\end{aligned}
+\]
+当$s=2$时取等号.
+
+\bq{(06. 浙江)}{}
+$x_{n}>0$, $x_{n}^{2}+x_{n}=3x_{n+1}^{2}+2x_{n+1}$, $x_{1}=1$,
+则
+\[
+\left(\frac{1}{2}\right)^{n-1}\le x_{n}\le\left(\frac{1}{2}\right)^{n-2}.
+\]
+\eq
+\ba
+因为$x_{n}^{2}+x_{n}>2\left(x_{n+1}^{2}+2x_{n+1}\right)$, 所以$x_{n}^{2}+x_{n}\le\frac{1}{2^{n-1}}\left(x_{1}^{2}+x_{1}\right)=\frac{1}{2^{n-2}}$,
+($n\ge1$); 所以$x_{n}\le\frac{1}{2^{n-2}}$. 因$x_{n}^{2}+x_{n}<\left(2x_{n+1}\right)^{2}+\left(2x_{n+1}\right)$,
+所以$\left(x_{n}-2x_{n+1}\right)\left(x_{n}+2x_{n+1}+1\right)<0$. 所以$x_{n+1}\ge\frac{1}{2}x_{n}$,
+所以$x_{n}\ge\frac{1}{2^{n-1}}x_{1}=\frac{1}{2^{n-1}}$.
+\ea
+
+\bq{}{}
+已知$\frac{b+c}{a}=1$, 求证: $b^{2}+4ac\ge0$.
+\eq
+\ba
+构造$ax^{2}-bx-c=0$, ($a\ne0$), 因为有实根$x=1$, 所以$\Delta=b^{2}+4ac\ge0$.
+\ea
+\ba
+因为$a=b+c$, 所以$b^{2}+4ac=b^{2}+4c\left(b+c\right)=\left(b+2c\right)^{2}\ge0$. 
+\ea
+
+\bq{}{}
+$\triangle ABC$三边为$a,b,c$, $m\in\RR^{+}$, 证: $\frac{a}{a+m}+\frac{b}{b+m}>\frac{c}{c+m}$.
+\eq
+\ba
+当$\frac{a}{b}<1$时, 用$\frac{a+m}{b+m}>\frac{a}{b}$, 
+\[
+\frac{a}{a+m}+\frac{b}{b+m}>\frac{a}{a+b+m}+\frac{b}{a+b+m}=\frac{a+b}{a+b+m}>\frac{c}{c+m}.
+\]
+\ea
+
+\bq{}{}
+已知: $x,y,z<1$的正数, 取$x,y,z,1-x,1-y,1-z$中的最大者, 设为$x$, 则$1-z\le x$,
+$z<1$, 从而
+\[
+x\left(1-y\right)+y\left(1-z\right)+z\left(1-x\right)<x\left(1-y\right)+yx+1\cdot\left(1-x\right)=1.
+\]
+\eq
+
+\bq{}{}
+已知: $a<0$, $b\le0$, $c>0$, $\sqrt{b^{2}-4ac}=b^{2}-2ac$, 求$\sqrt{b^{2}-4ac}$的最小值.
+\eq
+\ba
+因为$\sqrt{b^{2}-4ac}$的最小值为$\sqrt{b^{2}-4ac}=b^{2}-2ac$的最小值, 其中$b^{2}\ge0$,
+$-2ac>0$, 所以$b^{2}-2ac$的最小值是$b=0$时, 此时$\sqrt{-4ac}=-2ac$, 所以$ac=-1$或$0$,
+所以$\sqrt{b^{2}-4ac}\ge\sqrt{-4ac}=\sqrt{4}=2$.
+\ea
+
+\bq{}{}
+已知$t\in\RR$, 证$t^{4}-t+\frac{1}{2}>0$. 
+\eq
+\ba
+$t^{4}-t+\frac{1}{2}=\left(t^{2}-\frac{1}{2}\right)^{2}+\left(t-\frac{1}{2}\right)^{2}>0$恒成立.
+\ea
+\newpage

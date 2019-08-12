@@ -1,0 +1,1243 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-extended-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Analysis II
+\end_layout
+
+\begin_layout Author
+冯磊
+\end_layout
+
+\begin_layout Date
+June 22, 2019
+\end_layout
+
+\begin_layout Section
+问题1
+\end_layout
+
+\begin_layout Solution
+pf1: 用数学分析的方法, 考虑单变量函数
+\begin_inset Formula 
+\[
+F\left(c\right)\equiv\int_{a}^{b}\sin\left(f\left(x\right)+c\right)\ud x-c
+\]
+
+\end_inset
+
+它显然是
+\begin_inset Formula $c$
+\end_inset
+
+的连续函数, 因
+\begin_inset Formula $\lim_{c\to-\infty}F\left(c\right)=+\infty$
+\end_inset
+
+, 
+\begin_inset Formula $\lim_{c\to+\infty}F\left(c\right)=-\infty$
+\end_inset
+
+.
+ 故存在
+\begin_inset Formula $c_{0}\in\RR$
+\end_inset
+
+使
+\begin_inset Formula 
+\[
+\int_{a}^{b}\sin\left(f\left(x\right)+c_{0}\right)\ud x-c_{0}=0=F\left(c_{0}\right),
+\]
+
+\end_inset
+
+即
+\begin_inset Formula $f\left(x\right)+c_{0}=\int_{a}^{b}\sin\left(f\left(x\right)+c_{0}\right)\ud x+f\left(x\right)$
+\end_inset
+
+, 于是
+\begin_inset Formula $u\left(x\right)=f\left(x\right)+c_{0}\in C\left[a,b\right]$
+\end_inset
+
+即为所求的一个解.
+ 最后一步需要
+\begin_inset Formula $f$
+\end_inset
+
+的连续性.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+pf2: 用Schauder不动点定理, 取
+\begin_inset Formula 
+\[
+M=\left\{ g\left(x\right)\in C\left[a,b\right]:\norm{g\left(x\right)-f\left(x\right)}_{C\left[a,b\right]}\le b-a\right\} .
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $M$
+\end_inset
+
+是
+\begin_inset Formula $C\left[a,b\right]$
+\end_inset
+
+中的非空有界闭凸子集.
+\end_layout
+
+\begin_layout Solution
+非空: 
+\begin_inset Formula $f\left(x\right)\in M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+有界: 
+\begin_inset Formula $\forall g\in M$
+\end_inset
+
+, 
+\begin_inset Formula $\norm{g}\le\norm{f}+b-a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+闭: 
+\begin_inset Formula $\left(g_{k}\right)\subset M$
+\end_inset
+
+, 
+\begin_inset Formula $g_{k}\to g$
+\end_inset
+
+ in 
+\begin_inset Formula $C\left[a,b\right]$
+\end_inset
+
+, 所以
+\begin_inset Formula $g_{k}\rightrightarrows g$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+\norm{g_{k}\left(x\right)-f\left(x\right)}_{C\left[a,b\right]}\le b-a\Longrightarrow\norm{g-f}_{C\left[a,b\right]}\le b-a.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+凸: 
+\begin_inset Formula $g,h\in M$
+\end_inset
+
+, 
+\begin_inset Formula $\norm{\lambda g+\left(1-\lambda\right)h-f}\le\lambda\norm{g-f}+\left(1-\lambda\right)\norm{h-f}\le b-a$
+\end_inset
+
+, 所以
+\begin_inset Formula $\lambda g+\left(1-\lambda\right)h\in M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+定义算子
+\begin_inset Formula $A\left(u\right)\equiv f\left(x\right)+\int_{a}^{b}\sin\left(u\left(x\right)\right)\ud x$
+\end_inset
+
+, 则
+\begin_inset Formula $\norm{A\left(u\right)-f\left(x\right)}\le b-a$
+\end_inset
+
+, 所以
+\begin_inset Formula $A\left(u\right)\in M$
+\end_inset
+
+, 即
+\begin_inset Formula $A:M\to M$
+\end_inset
+
+, 连续性由
+\begin_inset Formula $f$
+\end_inset
+
+的连续性保证, 由聚点定理知, 
+\begin_inset Formula $A$
+\end_inset
+
+是紧算子.
+ 故Schauder不动点定理知, 存在
+\begin_inset Formula $u\in M$
+\end_inset
+
+, 使得
+\begin_inset Formula $A\left(u\right)=u$
+\end_inset
+
+.
+ 即非线性积分方程
+\begin_inset Formula 
+\[
+u\left(x\right)=\int_{a}^{b}\sin u\left(x\right)\ud x+f\left(x\right)
+\]
+
+\end_inset
+
+有解.
+\end_layout
+
+\begin_layout Section
+问题2
+\end_layout
+
+\begin_layout Standard
+定义算子
+\begin_inset Formula $Tu\equiv1+\int_{a}^{b}K\left(x,y\right)u\left(y\right)\ud y$
+\end_inset
+
+, 
+\begin_inset Formula $T:C\left[a,b\right]\to C\left[a,b\right]$
+\end_inset
+
+, 则
+\begin_inset Formula $u\le v$
+\end_inset
+
+时有
+\begin_inset Formula 
+\[
+Tv-Tu=\int_{a}^{b}K\left(x,y\right)\left(v-u\right)\ud y\ge0.
+\]
+
+\end_inset
+
+定义
+\begin_inset Formula $u_{n+1}=Tu_{n}$
+\end_inset
+
+, 
+\begin_inset Formula $v_{n+1}=Tv_{n}$
+\end_inset
+
+.
+ 则有
+\begin_inset Formula 
+\[
+0=u_{0}\le u_{1}\le\cdots\le u_{n}\le\cdots\le v_{n}\le v_{n-1}\le\cdots\le v_{1}\le v_{0}=2.
+\]
+
+\end_inset
+
+另一方面
+\begin_inset Formula $\norm{Tv-Tu}\le\int_{a}^{b}K\left(x,y\right)\ud y\cdot\norm{v-u}\le\frac{1}{2}\norm{v-u}$
+\end_inset
+
+.
+ 故
+\begin_inset Formula $T$
+\end_inset
+
+是压缩映射, 故
+\begin_inset Formula $T$
+\end_inset
+
+在完备空间
+\begin_inset Formula $C\left[a,b\right]$
+\end_inset
+
+中存在唯一不动点
+\begin_inset Formula 
+\[
+u\left(x\right)=Tu\left(x\right)=1+\int_{a}^{b}K\left(x,y\right)u\left(y\right)\ud y.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+问题3
+\end_layout
+
+\begin_layout Standard
+必要性: 设
+\begin_inset Formula $\left(e_{i}\right)\subset B$
+\end_inset
+
+是
+\begin_inset Formula $B$
+\end_inset
+
+中逼近恒等元, 则取
+\begin_inset Formula $E=\left(e_{i}\right)$
+\end_inset
+
+, 由
+\begin_inset Formula $\sup\norm{e_{i}}<+\infty$
+\end_inset
+
+, 有
+\begin_inset Formula $E$
+\end_inset
+
+有界.
+ 所以对于任意的
+\begin_inset Formula $x\in B$
+\end_inset
+
+, 
+\begin_inset Formula $e_{i}x\to x$
+\end_inset
+
+, 
+\begin_inset Formula $xe_{i}\to x$
+\end_inset
+
+.
+ 即
+\begin_inset Formula $\norm{e_{i}x-x}\to0$
+\end_inset
+
+, 
+\begin_inset Formula $\norm{xe_{i}-x}\to0$
+\end_inset
+
+, 
+\begin_inset Formula $i\to\infty$
+\end_inset
+
+.
+ 故对于任意的
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+, 存在
+\begin_inset Formula $I$
+\end_inset
+
+, 使得
+\begin_inset Formula $\forall i>I$
+\end_inset
+
+, 
+\begin_inset Formula $\norm{e_{i}x-x}<\frac{\varepsilon}{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\norm{xe_{i}-x}<\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ 故
+\begin_inset Formula 
+\[
+\norm{e_{i}x-x}+\norm{xe_{i}-x}<\varepsilon.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+充分性: 只需证
+\begin_inset Formula $E$
+\end_inset
+
+中存在至多可数个点
+\begin_inset Formula $\left(e_{i}\right)$
+\end_inset
+
+符合题意即可, 取
+\begin_inset Formula $\varepsilon=\frac{1}{2^{n}}$
+\end_inset
+
+, 则对于任意的
+\begin_inset Formula $x$
+\end_inset
+
+都有
+\begin_inset Formula $e_{x}^{n}$
+\end_inset
+
+使得
+\begin_inset Formula $\norm{e_{x}^{n}x-x}+\norm{xe_{x}^{n}-x}<\varepsilon$
+\end_inset
+
+, 于是取
+\begin_inset Formula 
+\[
+E=\bigcup_{x\in B}\left\{ e_{x}^{n}:n\in\NN_{+}\right\} 
+\]
+
+\end_inset
+
+便为所求的
+\begin_inset Formula $\left\{ e_{i}\right\} \subset B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+问题4
+\end_layout
+
+\begin_layout Standard
+由H
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\begin_inset Quotes erd
+\end_inset
+
+o
+\end_layout
+
+\end_inset
+
+lder不等式, 
+\begin_inset Formula 
+\[
+\left\Vert Tu\right\Vert _{L^{\infty}}=\left\Vert \int_{\Omega}K\left(x,y\right)u\left(y\right)\ud y\right\Vert _{L^{\infty}}\le\left\Vert \left\Vert K\left(x,y\right)\right\Vert _{L^{p'}}\left\Vert u\right\Vert _{L^{p}}\right\Vert _{L^{\infty}}=\left\Vert u\right\Vert _{L^{p}}\sup_{x\in\Omega}\left\Vert K\left(x,y\right)\right\Vert _{L^{p'}}<\infty.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{aligned}\norm{Tu}_{L^{1}} & =\int_{\Omega}\left|Tu\right|\ud x\\
+ & =\int_{\Omega}\left|\int_{\Omega}K\left(x,y\right)u\left(y\right)\ud y\right|\ud x\\
+ & \le\int_{\Omega}\norm{K\left(x,y\right)}_{L^{p'}}\norm{u}_{L^{p}}\ud x\\
+ & \le\left|\Omega\right|\norm{u}_{L^{p}}\sup_{x\in\Omega}\norm{K\left(x,y\right)}_{L^{p'}}<\infty.
+\end{aligned}
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula $T$
+\end_inset
+
+映
+\begin_inset Formula $L^{p}\left(\Omega\right)$
+\end_inset
+
+中的有界集为
+\begin_inset Formula $L^{1}\cap L^{\infty}$
+\end_inset
+
+中的有界集.
+ 从而对于任意的
+\begin_inset Formula $r\in\left[1,\infty\right]$
+\end_inset
+
+, 
+\begin_inset Formula $T$
+\end_inset
+
+将
+\begin_inset Formula $L^{p}\left(\Omega\right)$
+\end_inset
+
+中的有界集映为
+\begin_inset Formula $L^{r}$
+\end_inset
+
+有界集.
+\end_layout
+
+\begin_layout Standard
+由于
+\begin_inset Formula $C_{c}^{\infty}\left(\Omega^{2}\right)$
+\end_inset
+
+在
+\begin_inset Formula $L^{p'}\left(\Omega^{2}\right)$
+\end_inset
+
+上稠密, 所以有
+\begin_inset Formula $K_{n}\left(x,y\right)\to K\left(x,y\right)$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{p'}$
+\end_inset
+
+, 定义
+\begin_inset Formula 
+\[
+T_{n}:L^{p}\to L^{p},\quad u\mapsto T_{n}u=\int_{\Omega}K_{n}\left(x,y\right)u\left(y\right)\ud y
+\]
+
+\end_inset
+
+由于
+\begin_inset Formula $K_{n}$
+\end_inset
+
+连续, 所以对于任何
+\begin_inset Formula $L^{p}\left(\Omega\right)$
+\end_inset
+
+中的有界序列
+\begin_inset Formula $\left\{ u_{k}\right\} $
+\end_inset
+
+, 有
+\begin_inset Formula $T_{n}u_{k}$
+\end_inset
+
+是等度连续, 
+\begin_inset Formula 
+\[
+\left|T_{n}u_{k}\left(x_{1}\right)-T_{n}u_{k}\left(x_{2}\right)\right|\le\left|\int_{\Omega}\left(K_{n}\left(x_{1},y\right)-K_{n}\left(x_{2},y\right)\right)u_{k}\left(y\right)\ud y\right|\le C_{\Omega}\max_{x,y\in\Omega}\left|K_{n}^{\prime}\left(x,y\right)\right|\norm{u_{k}}_{L^{p}}\left|x_{1}-x_{2}\right|.
+\]
+
+\end_inset
+
+
+\begin_inset Formula $T_{n}u_{k}$
+\end_inset
+
+关于
+\begin_inset Formula $k$
+\end_inset
+
+的一致有界性的证明同
+\begin_inset Formula $T$
+\end_inset
+
+.
+ 所以由Arzel
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+`a
+\end_layout
+
+\end_inset
+
+-Ascoli定理, 
+\begin_inset Formula $T_{n}$
+\end_inset
+
+是
+\begin_inset Formula $L\left(L^{p},C\right)$
+\end_inset
+
+的紧算子, 也是
+\begin_inset Formula $L\left(L^{p},L^{p}\right)$
+\end_inset
+
+上的紧算子.
+\end_layout
+
+\begin_layout Standard
+由于对于任意的
+\begin_inset Formula $u\in L^{p}$
+\end_inset
+
+有
+\begin_inset Formula 
+\[
+\begin{aligned}\norm{T_{n}u-Tu}_{L^{p}} & =\int_{\Omega}\left|T_{n}u-Tu\right|\ud x\\
+ & \le\int_{\Omega}\left|\int_{\Omega}\left(K_{n}\left(x,y\right)-K\left(x,y\right)\right)u\left(y\right)\ud y\right|\ud x\\
+ & \le\int_{\Omega}\left(\int_{\Omega}\left|K_{n}-K\right|^{p'}\ud y\right)^{1/p'}\left(\int_{\Omega}\left|u\right|^{p}\ud y\right)^{1/p}\ud x\to0,\quad n\to\infty.
+\end{aligned}
+\]
+
+\end_inset
+
+所以有
+\begin_inset Formula $T_{n}\to T$
+\end_inset
+
+, 由于紧算子的极限仍然是紧算子, 故
+\begin_inset Formula $T$
+\end_inset
+
+是
+\begin_inset Formula $L\left(L^{p},L^{p}\right)$
+\end_inset
+
+上的紧算子.
+\end_layout
+
+\begin_layout Section
+问题5
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $u_{n}\left(x\right)=\phi\left(x+n\right)$
+\end_inset
+
+, 
+\begin_inset Formula $Du_{n}\left(x\right)=\phi'\left(x+n\right)$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\norm{u_{n}}_{W^{1,p}\left(\RR\right)}=\norm{u_{n}}_{L^{p}\left(\RR\right)}+\norm{Du_{n}}_{L^{p}\left(\RR\right)}=\norm{\phi\left(x+n\right)}_{L^{p}\left(\RR\right)}+\norm{\phi'\left(x+n\right)}_{L^{p}\left(\RR\right)},
+\]
+
+\end_inset
+
+因
+\begin_inset Formula $\phi\in C_{c}^{\infty}\left(\RR\right)$
+\end_inset
+
+, 及积分平移不变性知
+\begin_inset Formula 
+\[
+\norm{u_{n}}_{W^{1,p}\left(\RR\right)}=\norm{\phi\left(x\right)}_{L^{p}\left(\RR\right)}+\norm{\phi'\left(x\right)}_{L^{p}\left(\RR\right)}\le\left|\text{spt}\phi\right|\left(\norm{\phi}_{L^{\infty}}+\norm{\phi'}_{L^{\infty}}\right)<+\infty.
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $\left(u_{n}\right)$
+\end_inset
+
+在
+\begin_inset Formula $W^{1,p}\left(\RR\right)$
+\end_inset
+
+中有界.
+\end_layout
+
+\begin_layout Enumerate
+反证法, 假设
+\begin_inset Formula $\phi\not\equiv0$
+\end_inset
+
+, 有子列
+\begin_inset Formula $\left(u_{n_{k}}\right)$
+\end_inset
+
+及
+\begin_inset Formula $u\in L^{q}\left(\RR\right)$
+\end_inset
+
+, 
+\begin_inset Formula $1\le q<\infty$
+\end_inset
+
+, 则由于
+\begin_inset Formula $\liminf_{k\to\infty}u_{n_{k}}=0$
+\end_inset
+
+, 由Fatou引理有
+\begin_inset Formula 
+\[
+\liminf_{k\to\infty}\norm{u_{n_{k}}-u}_{L^{q}}\ge\norm{\liminf_{k\to\infty}\left(u_{n_{k}}-u\right)}_{L^{q}}\ge\norm{u}_{L^{q}}.
+\]
+
+\end_inset
+
+于是
+\begin_inset Formula $u=0$
+\end_inset
+
+, a.e.
+ 然而此时
+\begin_inset Formula $\norm{u_{n_{k}}-u}_{L^{q}}=\norm{u_{n_{k}}}_{L^{q}}=\norm{\phi}_{L^{q}}>0$
+\end_inset
+
+.
+ 不可能有
+\begin_inset Formula $u_{n_{k}}\to u=0$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{q}$
+\end_inset
+
+.
+ 最后, 至于
+\begin_inset Formula $q=\infty$
+\end_inset
+
+的情况是平凡的.
+\end_layout
+
+\begin_layout Enumerate
+对于任意的
+\begin_inset Formula $\psi\in C_{c}^{\infty}\left(\RR\right)$
+\end_inset
+
+, 则当
+\begin_inset Formula $n$
+\end_inset
+
+充分大时有
+\begin_inset Formula $\text{spt}\psi\cap\text{spt}u_{n}=\text{spt}\psi\cap\left(\text{spt}\phi+n\right)=\emptyset$
+\end_inset
+
+.
+ 此时
+\begin_inset Formula 
+\[
+\int_{\RR}\psi u_{n}\ud x=0,\qquad\int_{\RR}\psi'Du_{n}\ud x=0.
+\]
+
+\end_inset
+
+即
+\begin_inset Formula $u_{n}\wc0$
+\end_inset
+
+ in 
+\begin_inset Formula $W^{1,p}\left(\RR\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+问题6
+\end_layout
+
+\begin_layout Standard
+由Ehrling-Nirenberg-Gagliardo插值不等式, 
+\begin_inset Formula $\Omega\subset\RR^{d}$
+\end_inset
+
+中具有一致锥性质的有界区域, 则对于任意的
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+, 恒存在只依赖于
+\begin_inset Formula $p\ge1$
+\end_inset
+
+, 
+\begin_inset Formula $m,\varepsilon$
+\end_inset
+
+与区域
+\begin_inset Formula $\Omega$
+\end_inset
+
+的常数
+\begin_inset Formula $C>0$
+\end_inset
+
+, 使得对于任何
+\begin_inset Formula $u\in W^{m,p}\left(\Omega\right)$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\sum_{\left|\alpha\right|\le m-1}\int_{\Omega}\left|D^{\alpha}u\right|^{p}\ud x\le\varepsilon\sum_{\left|\alpha\right|=m}\int_{\Omega}\left|D^{\alpha}u\right|^{p}\ud x+C\int_{\Omega}\left|u\right|^{p}\ud x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+另外, from WikiPedia, Gagliardo-Nirenberg插值不等式: 考虑函数
+\begin_inset Formula $u:\RR^{d}\to\RR$
+\end_inset
+
+, 
+\begin_inset Formula $1\le q,r\le\infty$
+\end_inset
+
+和自然数
+\begin_inset Formula $m$
+\end_inset
+
+.
+ 如果实数
+\begin_inset Formula $\alpha$
+\end_inset
+
+和自然数
+\begin_inset Formula $j$
+\end_inset
+
+满足
+\begin_inset Formula 
+\[
+\frac{1}{p}=\frac{j}{n}+\left(\frac{1}{r}-\frac{m}{n}\right)\alpha+\frac{1-\alpha}{q},\qquad\frac{j}{m}\le\alpha\le1.
+\]
+
+\end_inset
+
+则存在只依赖于
+\begin_inset Formula $m,d,j,q,r$
+\end_inset
+
+和
+\begin_inset Formula $\alpha$
+\end_inset
+
+的常数
+\begin_inset Formula $C$
+\end_inset
+
+使得
+\begin_inset Formula 
+\[
+\norm{D^{j}u}_{L^{p}}\le C\norm{D^{m}u}_{L^{r}}^{\alpha}\norm{u}_{L^{q}}^{1-\alpha}.
+\]
+
+\end_inset
+
+特别的, 当
+\begin_inset Formula $p=r=q$
+\end_inset
+
+时, 
+\begin_inset Formula $\alpha=\frac{j}{m}$
+\end_inset
+
+, 从而
+\begin_inset Formula 
+\[
+\norm{D^{j}u}_{L^{p}}\le C\norm{D^{m}u}_{L^{p}}^{j/m}\norm{u}_{L^{p}}^{1-j/m}\le\varepsilon\norm{D^{m}u}_{L^{p}}+C\left(\varepsilon,\Omega,m,d,p\right)\norm{u}_{L^{p}},
+\]
+
+\end_inset
+
+最后一步需要Young不等式凑出系数
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, 即
+\begin_inset Formula 
+\[
+fg=\frac{f}{\varepsilon}\cdot\varepsilon g\le\frac{f^{p}}{\varepsilon^{p}p}+\frac{\varepsilon^{q}g^{q}}{q},\qquad\frac{1}{p}+\frac{1}{q}=1.
+\]
+
+\end_inset
+
+最后对所有
+\begin_inset Formula $j<m$
+\end_inset
+
+求和并调整
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+既得.
+\end_layout
+
+\begin_layout Section
+问题7
+\end_layout
+
+\begin_layout Standard
+1.
+ 由
+\begin_inset Formula $\boldsymbol{u}_{n}$
+\end_inset
+
+为稳态不可压Navier-Stokes方程的弱解, 则有
+\begin_inset Formula 
+\[
+\int_{\Omega}\left|\nabla\boldsymbol{u}_{n}\right|^{2}\ud x\le\int_{\Omega}\boldsymbol{f}\cdot\boldsymbol{u}_{n}\ud x.
+\]
+
+\end_inset
+
+由Young不等式, 
+\begin_inset Formula 
+\[
+\int_{\Omega}\left|\nabla\boldsymbol{u}_{n}\right|^{2}\ud x\le\int_{\Omega}\frac{\boldsymbol{f}}{\varepsilon}\cdot\varepsilon\boldsymbol{u}_{n}\ud x\le\int_{\Omega}\frac{\left|\boldsymbol{f}/\varepsilon\right|^{2}+\left|\varepsilon\boldsymbol{u}_{n}\right|^{2}}{2}\ud x\le\frac{\norm{\boldsymbol{f}}_{L^{2}}^{2}}{2\varepsilon^{2}}+\frac{\varepsilon^{2}}{2}\norm{\boldsymbol{u}_{n}}_{L^{2}}^{2}.
+\]
+
+\end_inset
+
+由Poincar
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'e
+\end_layout
+
+\end_inset
+
+不等式, 及在
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+上
+\begin_inset Formula $\boldsymbol{u}_{n}=0$
+\end_inset
+
+, 有
+\begin_inset Formula $\norm{\boldsymbol{u}_{n}}_{L^{2}}^{2}\le C\norm{\nabla\boldsymbol{u}_{n}}_{L^{2}}^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $C$
+\end_inset
+
+与
+\begin_inset Formula $\boldsymbol{u}_{n}$
+\end_inset
+
+无关, 所以
+\begin_inset Formula 
+\[
+\int_{\Omega}\left|\nabla\boldsymbol{u}_{n}\right|^{2}\ud x\le\frac{\norm{\boldsymbol{f}}_{L^{2}}^{2}}{2\varepsilon^{2}}+\frac{C\varepsilon^{2}}{2}\norm{\nabla\boldsymbol{u}_{n}}_{L^{2}}^{2},
+\]
+
+\end_inset
+
+取
+\begin_inset Formula $C\varepsilon^{2}=1$
+\end_inset
+
+, 即
+\begin_inset Formula $\varepsilon=\frac{1}{\sqrt{C}}$
+\end_inset
+
+时有
+\begin_inset Formula 
+\[
+\int_{\Omega}\left|\nabla\boldsymbol{u}_{n}\right|^{2}\ud x\le C\norm{\boldsymbol{f}}_{L^{2}}^{2},
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula 
+\[
+\norm{\boldsymbol{u}_{n}}_{W_{0}^{1,2}\left(\Omega\right)}^{2}=\norm{\boldsymbol{u}_{n}}_{L^{2}}^{2}+\norm{\nabla\boldsymbol{u}_{n}}_{L^{2}}^{2}\le\left(C+1\right)\norm{\nabla\boldsymbol{u}_{n}}_{L^{2}}^{2}\le\left(C+1\right)C\norm{\boldsymbol{f}}_{L^{2}}^{2}.
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula $\left\{ \boldsymbol{u}_{n}\right\} $
+\end_inset
+
+在
+\begin_inset Formula $W_{0}^{1,2}\left(\Omega\right)$
+\end_inset
+
+中一致有界.
+\end_layout
+
+\begin_layout Standard
+2.
+ 由1中的一致有界结论, 及Banach-Alaoglu定理, 有子列
+\begin_inset Formula $\left\{ \boldsymbol{u}_{n_{k}}\right\} $
+\end_inset
+
+弱收敛于
+\begin_inset Formula $W_{0}^{1,2}\left(\Omega;\RR^{3}\right)$
+\end_inset
+
+中的某个元
+\begin_inset Formula $\boldsymbol{u}$
+\end_inset
+
+.
+ 由于
+\begin_inset Formula $W^{1,2}\hookrightarrow L^{2}$
+\end_inset
+
+, 所以不妨设
+\begin_inset Formula $\boldsymbol{u}_{n_{k}}\to\boldsymbol{u}$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+, 这里强极限和前面的若极限是同一函数, 这可以由弱极限唯一性得到.
+\end_layout
+
+\begin_layout Standard
+于是由
+\begin_inset Formula $\boldsymbol{u}_{n_{k}}\wc\boldsymbol{u}$
+\end_inset
+
+ in 
+\begin_inset Formula $W_{0}^{1,2}\left(\Omega;\RR^{3}\right)$
+\end_inset
+
+, 所以
+\begin_inset Formula $\nabla\boldsymbol{u}_{n_{k}}\wc\nabla\boldsymbol{u}$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+, 所以
+\begin_inset Formula $\int_{\Omega}\nabla\boldsymbol{u}_{n_{k}}:\nabla\boldsymbol{\varphi}\ud x\to\int_{\Omega}\nabla\boldsymbol{u}:\nabla\boldsymbol{\varphi}\ud x$
+\end_inset
+
+, 
+\begin_inset Formula $\forall\boldsymbol{\varphi}\in C_{c}^{\infty}\left(\Omega;\RR^{3}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+由
+\begin_inset Formula $\nabla\boldsymbol{u}_{n_{k}}\wc\nabla\boldsymbol{u}$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{2}\left(\Omega;\RR^{3}\right)$
+\end_inset
+
+, 以及
+\begin_inset Formula $\boldsymbol{u}_{n_{k}}\to\boldsymbol{u}$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{2}\left(\Omega;\RR^{3}\right)$
+\end_inset
+
+, 所以
+\begin_inset Formula 
+\[
+\int_{\Omega}\left(\boldsymbol{u}_{k}\cdot\nabla\boldsymbol{u}_{k}\right)\cdot\boldsymbol{\varphi}\ud x\to\int_{\Omega}\left(\boldsymbol{u}\cdot\nabla\boldsymbol{u}\right)\cdot\boldsymbol{\varphi}\ud x.
+\]
+
+\end_inset
+
+所以由
+\begin_inset Formula $\boldsymbol{u}_{n_{k}}$
+\end_inset
+
+满足(3.3), 对
+\begin_inset Formula $k\to\infty$
+\end_inset
+
+取极限便有
+\begin_inset Formula 
+\[
+\int_{\Omega}\left(\boldsymbol{u}\cdot\nabla\boldsymbol{u}\right)\cdot\boldsymbol{\varphi}\ud x+\int_{\Omega}\nabla\boldsymbol{u}:\nabla\boldsymbol{\varphi}\ud x=\int_{\Omega}\boldsymbol{f}\cdot\boldsymbol{\varphi}\ud x,\qquad\forall\boldsymbol{\varphi}\in C_{c}^{\infty}\left(\Omega;\RR^{3}\right),\text{div}\boldsymbol{\varphi}=0.
+\]
+
+\end_inset
+
+最后证明(3.4), 因为
+\begin_inset Formula $\boldsymbol{f}\in L^{2}\left(\Omega;\RR^{3}\right)$
+\end_inset
+
+, 所以
+\begin_inset Formula $\int_{\Omega}\boldsymbol{f}\cdot\boldsymbol{u}_{n_{k}}\ud x\to\int_{\Omega}\boldsymbol{f}\cdot\boldsymbol{u}\ud x$
+\end_inset
+
+, 由
+\begin_inset Formula $\boldsymbol{u}_{n_{k}}\wc\boldsymbol{u}$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+, 由共鸣定理有下半连续性
+\begin_inset Formula 
+\[
+\norm{\nabla\boldsymbol{u}}^{2}\le\liminf_{k\to\infty}\norm{\nabla\boldsymbol{u}_{n_{k}}}^{2}\le\liminf_{k\to\infty}\int_{\Omega}\boldsymbol{f}\cdot\boldsymbol{u}_{n_{k}}\ud x=\int_{\Omega}\boldsymbol{f}\cdot\boldsymbol{u}\ud x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

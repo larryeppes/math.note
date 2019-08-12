@@ -1,0 +1,350 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+华东理工大学2007年硕士研究生入学考试试题 - 数学分析
+\end_layout
+
+\begin_layout Standard
+一.
+ (24') 计算题:
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Formula $\lim_{x\to0}\frac{\sqrt{1+\tan x}-\sqrt{1-\tan x}}{\ue^{x}-1}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Formula $\lim_{n\to\infty}\sqrt[n]{\sin1+\sin\frac{1}{2}+\cdots+\sin\frac{1}{n}}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Formula $\lim_{n\to\infty}\int_{0}^{\pi/2}\sin^{n}x\ud x$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+4.
+ 
+\begin_inset Formula $\lim_{x\to0}\frac{\ln\left(\sin^{2}x+\ue^{x}\right)-x}{\ln\left(x^{2}+\ue^{2x}\right)-2x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+二.
+ (16') 设常数
+\begin_inset Formula $a_{1},a_{2},\cdots,a_{n}$
+\end_inset
+
+满足条件
+\begin_inset Formula $a_{1}-\frac{a_{2}}{3}+\cdots+\left(-1\right)^{n-1}\frac{a_{n}}{2n-1}=0$
+\end_inset
+
+, 求证方程
+\begin_inset Formula 
+\[
+a_{1}\cos x+a_{2}\cos3x+\cdots+a_{n}\cos\left(2n-1\right)x=0
+\]
+
+\end_inset
+
+在
+\begin_inset Formula $\left(0,\frac{\pi}{2}\right)$
+\end_inset
+
+内必有实根.
+\end_layout
+
+\begin_layout Standard
+三.
+ (16') 设
+\begin_inset Formula $0<x_{0}<\frac{\pi}{2}$
+\end_inset
+
+, 
+\begin_inset Formula $x_{n}=\sin x_{n-1}$
+\end_inset
+
+, 
+\begin_inset Formula $n=1,2,\cdots$
+\end_inset
+
+.
+ 求证:
+\end_layout
+
+\begin_layout Standard
+(1) 
+\begin_inset Formula $\lim_{n\to\infty}x_{n}=0$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+(2) 
+\begin_inset Formula $\lim_{n\to\infty}\sqrt{\frac{n}{3}}x_{n}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+四.
+ (14') 设
+\begin_inset Formula $0<p_{1}<p_{2}<\cdots<p_{n}<\cdots$
+\end_inset
+
+, 证明: 级数
+\begin_inset Formula $\sum_{n=1}^{\infty}\frac{1}{p_{n}}$
+\end_inset
+
+收敛当且仅当级数
+\begin_inset Formula $\sum_{n=1}^{\infty}\frac{n}{p_{1}+\cdots+p_{n}}$
+\end_inset
+
+收敛.
+\end_layout
+
+\begin_layout Standard
+五.
+ (14') 设
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+在
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+上连续, 且对
+\begin_inset Formula $\forall x\in\left[a,b\right]$
+\end_inset
+
+, 
+\begin_inset Formula $f\left(x\right)\ge0$
+\end_inset
+
+; 证明:
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\left[\int_{a}^{b}f^{n}\left(x\right)\ud x\right]^{1/n}=\max_{a\le x\le b}\left\{ f\left(x\right)\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+六.
+ (16') 证明:
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\iint_{\left|x\right|\le n,\ \left|y\right|\le n}\sin\left(x^{2}+y^{2}\right)\ud x\ud y=\pi,
+\]
+
+\end_inset
+
+但是
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\iint_{x^{2}+y^{2}\le2n\pi}\sin\left(x^{2}+y^{2}\right)\ud x\ud y=0
+\]
+
+\end_inset
+
+(
+\begin_inset Formula $n$
+\end_inset
+
+取自然数).
+\end_layout
+
+\begin_layout Standard
+七.
+ (16') 设
+\begin_inset Formula $\psi\left(x\right)$
+\end_inset
+
+在区间
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+上Riemann可积, 证明:
+\begin_inset Formula 
+\[
+\lim_{p\to\infty}\int_{a}^{b}\psi\left(x\right)\sin px\ud x=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+八.
+ (16') 计算
+\end_layout
+
+\begin_layout Standard
+九.
+ (18') 设
+\end_layout
+
+\end_body
+\end_document

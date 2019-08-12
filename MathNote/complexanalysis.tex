@@ -18,5 +18,34 @@ LHS=\frac{1}{4}\int_{-\infty}^{+\infty}\frac{x-\sinh x}{x^2\sinh x}\ud x
 \ea
 
 \bq{}{}
+设$2\times 2$矩阵$A=\paren{\begin{matrix}
+                  a & b \\
+                  -b & \overline{a}
+                 \end{matrix}}
+$, 其中$b\in\RR$, 且$|a|^2+b^2=1$. 试计算$A^n$.
+\eq
+\ba
+设$a=\cos\alpha+\ui\sin\alpha\cos\beta$, $b=\sin\alpha\beta$, 于是
+\begin{equation*}
+ E=\paren{\begin{matrix}
+           1 & 0\\
+           0 & 1
+          \end{matrix}
+},\quad
+I=\paren{\begin{matrix}
+          \ui\cos\beta & \sin\beta\\
+          -\sin\beta & -\ui\cos\beta
+         \end{matrix}
+},\quad
+A=\cos\alpha E+\sin\alpha I, 
+E^2=E, EI=IE=I, I^2=-E.
+\end{equation*}
+所以$I$是$2\times2$矩阵中的虚单位. 所以用二项式定理可得
+\begin{equation*}
+ A^n=\cos n\alpha E+\sin n\alpha I.
+\end{equation*}
+\ea
+
+\bq{}{}
 区域$D$内单叶解析函数$f(z)$的导数必不为零.
 \eq

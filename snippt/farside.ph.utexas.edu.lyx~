@@ -1,0 +1,603 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Two-Dimensional Incompressible Inviscid Flow
+\end_layout
+
+\begin_layout Standard
+二维不可压无粘流体
+\end_layout
+
+\begin_layout Standard
+本章研究二维、不可压缩、无粘流体。有关这个主题的更多信息可以在Batchelor 2000和Milne-Thompson 2011中找到。
+\end_layout
+
+\begin_layout Subsection
+Two-Dimensional Flow
+\end_layout
+
+\begin_layout Standard
+当每个点的速度平行于一个固定平面时，并且在给定的平面法线上处处相同，流体运动被称为二维的。平行于
+\begin_inset Formula $xy$
+\end_inset
+
+平面的二维流有形式
+\begin_inset Formula 
+\[
+\boldsymbol{v}=\boldsymbol{v}_{x}\left(x,y,t\right)\boldsymbol{e}_{x}+\boldsymbol{v}_{y}\left(x,y,t\right)\boldsymbol{e}_{y}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+流体是不可压缩的，本质上意味着它的密度是均匀和恒定的，流体连续性要求流体流入区域的速度等于流出区域的速度.
+ 流体流过一个表面的速度通常称为流量.
+ The rate of fluid flow across a surface is generally termed the 
+\series bold
+flux
+\series default
+.
+ denote the flux by 
+\begin_inset Formula $\psi$
+\end_inset
+
+ then it is solely a function of the location and the time.
+ then we can write 
+\begin_inset Formula 
+\[
+{\displaystyle \psi=\psi(x,y,t).}
+\]
+
+\end_inset
+
+The function 
+\begin_inset Formula $\psi$
+\end_inset
+
+ is known as the 
+\series bold
+stream function
+\series default
+.
+ 
+\emph on
+the existence of a stream function is a direct consequence of the assumed
+ incompressible nature of the flow.
+\end_layout
+
+\begin_layout Standard
+the stream function is constant along a streamline(the local fluid velocity
+ is directed everywhere parallel to streamline).
+\end_layout
+
+\begin_layout Standard
+记
+\begin_inset Formula $P_{1}P_{2}=\delta_{s}$
+\end_inset
+
+, 
+\begin_inset Formula $O$
+\end_inset
+
+是原点, 任何
+\begin_inset Formula $OP_{i}$
+\end_inset
+
+连线的流量flux记为
+\begin_inset Formula $\psi_{i}$
+\end_inset
+
+, 则由流体不可压条件得出连接
+\begin_inset Formula $P_{1}P_{2}$
+\end_inset
+
+的直线上的流量是
+\begin_inset Formula $\psi_{2}-\psi_{1}$
+\end_inset
+
+, 流量与垂直于
+\begin_inset Formula $P_{1}P_{2}$
+\end_inset
+
+的直线的速度成正比, 与平行于直线
+\begin_inset Formula $P_{1}P_{2}$
+\end_inset
+
+的速度方向无关, 故有
+\begin_inset Formula $v_{\perp}\delta_{s}=\psi_{2}-\psi_{1}$
+\end_inset
+
+, 即
+\begin_inset Formula 
+\[
+v_{\perp}=\frac{\psi_{2}-\psi_{1}}{\delta_{s}}\to\frac{\ud\psi}{\ud s},\quad\delta_{s}\to0.
+\]
+
+\end_inset
+
+
+\series bold
+如何理解
+\series default
+
+\begin_inset Formula 
+\[
+v_{x}=-\frac{\partial\psi}{\partial y},\quad v_{y}=\frac{\partial\psi}{\partial x}?
+\]
+
+\end_inset
+
+从而有
+\begin_inset Formula $\boldsymbol{v}=\boldsymbol{e}_{z}\times\nabla\psi=\nabla z\times\nabla\psi$
+\end_inset
+
+, 容易验证
+\begin_inset Formula $\nabla\cdot\boldsymbol{v}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+如何快速证明与合理解释: 
+\begin_inset Formula $\nabla\cdot\left(A\times B\right)=B\cdot\nabla\times A-A\cdot\nabla\times B$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+\nabla\cdot\left(A\times B\right)=\left|\begin{array}{ccc}
+\partial_{1} & \partial_{2} & \partial_{3}\\
+A_{1} & A_{2} & A_{3}\\
+B_{1} & B_{2} & B_{3}
+\end{array}\right|=B\cdot\left|\begin{array}{ccc}
+\partial_{1} & \partial_{2} & \partial_{3}\\
+A_{1} & A_{2} & A_{3}\\
+\boldsymbol{i} & \boldsymbol{j} & \boldsymbol{k}
+\end{array}\right|+A\cdot\left|\begin{array}{ccc}
+\partial_{1} & \partial_{2} & \partial_{3}\\
+\boldsymbol{i} & \boldsymbol{j} & \boldsymbol{k}\\
+B_{1} & B_{2} & B_{3}
+\end{array}\right|=B\cdot\left|\begin{array}{ccc}
+\boldsymbol{i} & \boldsymbol{j} & \boldsymbol{k}\\
+\partial_{1} & \partial_{2} & \partial_{3}\\
+A_{1} & A_{2} & A_{3}
+\end{array}\right|-A\cdot\left|\begin{array}{ccc}
+\boldsymbol{i} & \boldsymbol{j} & \boldsymbol{k}\\
+\partial_{1} & \partial_{2} & \partial_{3}\\
+B_{1} & B_{2} & B_{3}
+\end{array}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The vorticity in two-dimensional flow, 二维流体中的涡量具有形式
+\begin_inset Formula $\boldsymbol{\omega}=\omega_{z}\boldsymbol{e}_{z}$
+\end_inset
+
+, 其中
+\begin_inset Formula $\omega_{z}=\frac{\partial v_{y}}{\partial x}-\frac{\partial v_{x}}{\partial y}=\Delta\psi=\nabla^{2}\psi$
+\end_inset
+
+.
+ 无旋二维流动的特征是
+\begin_inset Formula $\Delta\psi=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+用柱坐标表示
+\begin_inset Formula $\boldsymbol{v}=v_{r}\left(r,\theta,t\right)\boldsymbol{e}_{r}+v_{\theta}\left(r,\theta,t\right)\boldsymbol{e}_{\theta}$
+\end_inset
+
+, 其中
+\begin_inset Formula $v_{r}=-\frac{1}{r}\frac{\partial\psi}{\partial\theta}$
+\end_inset
+
+, 
+\begin_inset Formula $v_{\theta}=\frac{\partial\psi}{\partial r}$
+\end_inset
+
+, 从而涡量
+\begin_inset Formula 
+\[
+\omega_{z}=\frac{1}{r}\frac{\p}{\p r}\left(r\frac{\p\psi}{\p r}\right)+\frac{1}{r^{2}}\frac{\p^{2}\psi}{\p\theta^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Velocity Potentials and Stream Functions
+\end_layout
+
+\begin_layout Standard
+速度势和流函数
+\end_layout
+
+\begin_layout Standard
+takes the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+{\displaystyle {\bf v}=v_{x}(x,y,t)\,{\bf e}_{x}+v_{y}(x,y,t)\,{\bf e}_{y}.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+if the flow is irrotational then 
+\begin_inset Formula $\nabla\times{\bf v}={\bf 0}$
+\end_inset
+
+, 对于
+\begin_inset Formula $\ensuremath{{\bf v}=-\nabla\phi}$
+\end_inset
+
+是显然符合要求的, where 
+\begin_inset Formula $\phi\left(x,y,t\right)$
+\end_inset
+
+ is the 
+\series bold
+velocity potential
+\series default
+.
+ Hence,
+\begin_inset Formula 
+\[
+\ensuremath{{\displaystyle v_{x}}}\ensuremath{{\displaystyle =-\frac{\partial\phi}{\partial x},}}\ensuremath{{\displaystyle v_{y}}}\ensuremath{{\displaystyle =-\frac{\partial\phi}{\partial y}.}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+if the flow is incompressible then 
+\begin_inset Formula $\nabla\cdot{\bf v}=0$
+\end_inset
+
+, 对于
+\begin_inset Formula ${\bf v}=\nabla z\times\nabla\psi$
+\end_inset
+
+是显然符合要求的, 其中
+\begin_inset Formula $\psi\left(x,y,t\right)$
+\end_inset
+
+ is the 
+\series bold
+stream function
+\series default
+.
+ Hence,
+\begin_inset Formula 
+\[
+\ensuremath{{\displaystyle v_{x}}}\ensuremath{{\displaystyle =-\frac{\partial\psi}{\partial y},}}\ensuremath{{\displaystyle v_{y}}}\ensuremath{{\displaystyle =\frac{\partial\psi}{\partial x}.}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+if the flow is both irrotational and incompressible, 由前面的讨论
+\begin_inset Formula $\ensuremath{{\displaystyle \frac{\partial\phi}{\partial x}}}\ensuremath{{\displaystyle =\frac{\partial\psi}{\partial y}}}$
+\end_inset
+
+, 
+\begin_inset Formula $\ensuremath{{\displaystyle \frac{\partial\psi}{\partial x}}}\ensuremath{{\displaystyle =-\frac{\partial\phi}{\partial y}}}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\Delta\phi=0$
+\end_inset
+
+, 
+\begin_inset Formula $\Delta\psi=0$
+\end_inset
+
+.
+ for two-dimensional, irrotational, incompressible flow, the velocity potential
+ and the stream function both satisfy Laplace's equation, 对于二维非旋转不可压缩流，速度势和流函数均满
+足拉普拉斯方程.
+ 同时
+\begin_inset Formula $\ensuremath{{\displaystyle \nabla\phi\cdot\nabla\psi=0.}}$
+\end_inset
+
+the contours of the velocity potential and the stream function cross at
+ right-angles.
+ 速度势和流函数的等值线正交.
+\end_layout
+
+\begin_layout Subsection
+Two-Dimensional Uniform Flow
+\end_layout
+
+\begin_layout Standard
+Consider a steady two-dimensional flow pattern that is uniform, 考虑一个稳定的二维均匀流体,
+ the fluid velocity is the same everywhere in the 
+\begin_inset Formula $xy$
+\end_inset
+
+ plane.
+ suppose the common fluid velocity is 
+\begin_inset Formula 
+\[
+\ensuremath{{\displaystyle {\bf v}=V_{0}\,\cos\theta_{0}\,{\bf e}_{x}+V_{0}\,\sin\theta_{0}\,{\bf e}_{y}}},
+\]
+
+\end_inset
+
+在与
+\begin_inset Formula $x$
+\end_inset
+
+轴夹角
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+的方向上有一致的速度
+\begin_inset Formula $V_{0}$
+\end_inset
+
+.
+ 其对应的stream function是
+\begin_inset Formula $\psi\left(x,y\right)=V_{0}\left(\sin\theta_{0}x-\cos\theta_{0}y\right)$
+\end_inset
+
+.
+ cylindrical coordinates is 
+\begin_inset Formula $\psi\left(r,\theta\right)=-V_{0}r\sin\left(\theta-\theta_{0}\right)$
+\end_inset
+
+, uniform flow irrotational.
+ 
+\series bold
+this flow can also be derived from a velocity potential
+\series default
+, 
+\begin_inset Formula $\phi\left(r,\theta\right)=-V_{0}r\cos\left(\theta-\theta_{0}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Two-Dimensional Sources and Sinks
+\end_layout
+
+\begin_layout Standard
+二维源汇
+\end_layout
+
+\begin_layout Standard
+Consider a uniform line source, coincident with the 
+\begin_inset Formula $z$
+\end_inset
+
+-axis, that emits fluid isotropically at the steady rate of 
+\begin_inset Formula $Q$
+\end_inset
+
+ unit volumes per unit length per unit time.
+ 均匀线源在单位时间, 单位长度, 单位体积中以稳定速度
+\begin_inset Formula $Q$
+\end_inset
+
+各向同性的释放流体.
+ 根据对称性，我们期望相关的稳定流体模式是各向同性的，并且在任何地方径向远离源。i.e.
+ 
+\begin_inset Formula $\ensuremath{{\displaystyle {\bf v}=v_{r}(r)\,{\bf e}_{r}}}$
+\end_inset
+
+, 
+\begin_inset Formula $r=\sqrt{x^{2}+y^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+考虑一个在
+\begin_inset Formula $z$
+\end_inset
+
+-方向上半径为
+\begin_inset Formula $r$
+\end_inset
+
+, 与源同轴的单位高度的圆柱面
+\begin_inset Formula $S$
+\end_inset
+
+.
+ 在稳定状态下，流体通过该表面的速度必须等于被该表面包围的源的截面放出流体的速度。Hence
+\begin_inset Formula 
+\[
+\ensuremath{{\displaystyle \int_{S}{\bf v}\cdot d{\bf S}=2\pi\,r\,v_{r}(r)=Q}}\Longrightarrow\ensuremath{{\displaystyle v_{r}(r)=\frac{Q}{2\pi\,r}.}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+the stream function associated with a line source of strength 
+\begin_inset Formula $Q$
+\end_inset
+
+ that is coincident with the 
+\begin_inset Formula $z$
+\end_inset
+
+-axis is 
+\begin_inset Formula $\ensuremath{{\displaystyle \psi(r,\theta)=-\frac{Q}{2\pi}\,\theta.}}$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

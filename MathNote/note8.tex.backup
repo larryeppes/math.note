@@ -99,6 +99,7 @@ $A=x+y+z$($A$:成功, $x$: 艰苦的劳动, $y$: 正确的方法, $z$: 少说空
 条件同上, 有$\frac{\sin\angle A}{\sin\frac{a}{R^2}}=\frac{\sin\angle B}{\sin\frac{b}{R^2}}=\frac{\sin\angle C}{\sin\frac{c}{R^2}}$.
 \et
 
+\newpage
 \section{不等式集}
 \bq{}{}
 已知$0\le a_k\le 1$($k=1,2,\cdots, 2002$), 记$a_{2003}=a_1$, $a_{2004}=a_2$, 求$\sum_{k=1}^{2002}(a_k-a_{k+1}\cdot a_{k+2})$的最大值.
@@ -1477,6 +1478,14 @@ $|f(-1)|\le1$, $|f(1)|\le1$, 当$|x|\le1$时, 证明: $|f(x)|\le\frac{5}{4}$.
 且$|f(1)|\le1$, $|f(-1)|\le1$, $\left|f\left(-\frac{b}{2a}\right)\right|\le\frac{5}{4}$,
 从而$|f(x)|\le\frac{5}{4}$.
 \ea
+\ba
+注意到, $a=\frac{f(1)+f(-1)}{2}-f(0)$, $b=\frac{f(1)-f(-1)}{2}$, $c=f(0)$. 所以
+\bee
+\abs{f(x)} = \abs{f(1)-\frac{x^2+x}{2}+f(-1)\cdot\frac{x^2-x}{2}+f(0)(1-x^2)}
+	\le \frac{|x|(x+1)}{2}+\frac{|x|(1-x)}{2}+(1-x^2)
+	= |x|+1-|x|^2\le\frac54.
+\eee
+\ea
 
 \bq{}{}
 已知数列$\{a_{n}\}$, 其中$a_{1}=1$, $a_{2}=\frac{1}{a_{1}}+a_{1}$, $\cdots$,
@@ -1660,6 +1669,26 @@ LHS & =\sum\frac{1}{\sqrt{1-x_{i}}}-\sum\sqrt{1-x_{i}}\\
  & \ge n^{3/2}\cdot\frac{\sum x_{i}}{n}=\sqrt{n}\ge\sum\sqrt{x_{i}}
 \end{align*}
 \ea
+\ba
+不妨设$x_1\le x_2\le\cdots\le x_n$, 显然
+\bee
+\frac{1}{\sqrt{1-x_1}}\le\frac1{\sqrt{1-x_2}}\le\cdots\le\frac1{\sqrt{1-x_n}},
+\eee
+利用Chebyshev不等式和幂平均不等式有
+\bee
+\sum_{i=1}^n\frac{x_i}{\sqrt{1-x_i}}\ge\frac1n\paren{\sum x_i}\cdot\paren{\sum\frac1{\sqrt{1-x_i}}}
+  =\frac1n\sum\frac1{\sqrt{1-x_i}}\ge\left[\frac1n\sum\paren{\frac1{\sqrt{1-x_i}}}^{-2}\right]^{-1/2}
+  =\left[\frac1n\sum(1-x_i)\right]^{-1/2}=\sqrt{\frac{n}{n-1}}.
+\eee
+由Cauchy不等式得
+\bee
+\sum\sqrt{x_i}\le\sqrt{\sum1}\sqrt{\sum x_i}=\sqrt{n}
+\eee
+所以
+\bee
+\sum\frac{x_i}{1-x_i}\ge\sqrt{\frac{n}{n-1}}\ge\frac{\sum\sqrt{x_i}}{n-1}.
+\eee
+\ea
 
 \bq{}{}
 设$a_{1},a_{2},\cdots,a_{n}\in\RR^{+}$, 且满足$a_{1}+a_{2}+\cdots+a_{n}<1$,
@@ -1740,3 +1769,241 @@ $-\frac{1}{\sqrt{3}}\le c\le\sqrt{3}$, 则$-\frac{1}{\sqrt{3}}a+\sqrt{3}b+c=-318
 $-a+3b+\sqrt{3}c=-954$. 于是$4b=1042-c\sqrt{3}$, $1039\le4b\le1043$,
 所以$b=260$, $a=1736$, $c=2/\sqrt{3}$. 于是$\sum_{i=1}^{1997}x_{i}^{12}$的最大值为$a\left(-\frac{1}{\sqrt{3}}\right)^{12}+b\left(\sqrt{3}\right)^{12}+\left(\frac{2}{\sqrt{3}}\right)^{12}=189548$.
 \ea
+
+\bq{}{}
+$m$个互不相同的正偶数与$n$个互不相同的正奇数的总和为$2000$, 对于所有的这样的$m$与$n$, 问$3m+4n$的最大值是多少?
+证明你的结论.
+\eq
+\ba
+$2000=\left(2+4+\cdots+2m\right)+\left[1+3+\cdots+\left(2n-1\right)\right]+a\ge m\left(m+1\right)+n^{2}$.
+所以$m,n$满足$\left(m+\frac{1}{2}\right)^{2}+n^{2}\le2000\frac{1}{4}$,
+由Cauchy不等式有
+\[
+3m+4n=3\left(m+\frac{1}{2}\right)+4n-\frac{3}{2}\le5\sqrt{\left(m+\frac{1}{2}\right)^{2}+n^{2}}-\frac{3}{2}\le5\sqrt{2000\frac{1}{4}}-\frac{3}{2}\le222,
+\]
+又因为$m,n\in\NN$, 所以$\left(3m+4n\right)_{\mathrm{max}}=222$, 其中$m=26$,
+$n=36$.
+\ea
+
+\bq{}{}
+设实数$x,y$, 满足: $x\ge1$, $y\ge1$. $\left(\log_{a}x\right)^{2}+\left(\log_{a}y\right)^{2}=\log_{a}\left(ax^{2}\right)+\log_{a}\left(ay^{2}\right)$,
+($a>1$), 当$a$在$\left(1,+\infty\right)$范围内变化时, 求$\log_{a}\left(xy\right)$的取值范围.
+\eq
+\ba
+令$\log_{a}x=s$, $\log_{a}y=t$, 因为$a>1$, $x\ge1$, $y\ge1$,
+所以$s\ge0$, $t\ge0$. 所以已知条件中的等式等价于$\left(s-1\right)^{2}+\left(t-1\right)^{2}=4$,
+令
+\[
+\begin{cases}
+s =1+2\cos\alpha\\
+t =1+2\sin\alpha
+\end{cases}\Longrightarrow\begin{cases}
+\cos\alpha \ge-\frac{1}{2}\\
+\sin\alpha \ge-\frac{1}{2}
+\end{cases}
+\]
+所以$\alpha\in\left[0,\frac{2\pi}{3}\right]\bigcup\left[\frac{11\pi}{6},2\pi\right)$,
+所以$k=s+t=\log_{a}\left(xy\right)=2+2\sqrt{2}\sin\left(\alpha+\frac{\pi}{4}\right)$,
+所以$k_{\mathrm{max}}=2+2\sqrt{2}$, $k_{\mathrm{min}}=1+\sqrt{3}$.
+\ea
+\ba
+如图, 令$\log_{a}x=s$, $\log_{a}y=t$, 因$a>1$, $x\ge1$, $y\ge1$,
+所以$s\ge0$, $t\ge0$, 则等式等价于$\left(s-1\right)^{2}+\left(t-1\right)^{2}=4$,
+$k=s+t$, $k$为直线$k=s+t$在$s$轴上的截距, 所以$k_{\mathrm{max}}=2+2\sqrt{2}$,
+$k_{\mathrm{min}}=1+\sqrt{3}$.
+
+\begin{center}
+  \begin{tikzpicture}[
+     scale=1, 
+     domain=-0.2:3.2,
+     label/.style={
+       postaction={
+	 decorate,
+	 decoration={
+	   markings, 
+	   mark=at position .75 with \node #1;
+	 }
+       }
+     },
+     dot/.style={
+       fill=blue, 
+       circle, 
+       size=1pt
+     }
+     ]
+  \draw[->] (-.1,0) -- (3.5,0) coordinate (x axis);
+  \draw[->] (0,-0.1) -- (0,3.5) coordinate (y axis);
+  \draw (1,3pt) -- (1,-3pt) node [anchor=north] {$1$};
+  \draw (3pt,1) -- (-3pt,1) node [anchor=east] {$1$};
+  \draw[red,label={[above right]{$k=s+t$}}] plot (\x, 2.732 - \x);
+  \draw[blue,label={[below right]{$(s-1)^2+(t-1)^2=4$}}] (3,1) arc (0:135:2 and 2);
+  \draw[blue,label={[below right]{}}] (3,1) arc (0:-45:2 and 2);
+  \draw[black, dashed] (1,0) -- (1,1) -- (0,1);
+  \draw[black, dashed] (2.732,0) -- (1,1) -- (0,2.732);
+  \fill [blue,opacity=.75] (1,1) circle (2pt);
+  \end{tikzpicture}
+\end{center}
+\ea
+
+\bq{}{}
+设$a,b,c,d$是$4$个不同的实数, 使得$\frac{a}{b}+\frac{b}{c}+\frac{c}{d}+\frac{d}{a}=4$,
+且$ac=bd$, 试求$\frac{a}{c}+\frac{b}{d}+\frac{c}{d}+\frac{d}{b}$的最大值.
+\eq
+\ba
+设$x=\frac{a}{b}$, $y=\frac{b}{c}$, 因$ac=bd$, 得$\frac{c}{d}=\frac{b}{a}=\frac{1}{x}$,
+$\frac{d}{a}=\frac{c}{b}=\frac{1}{y}$, 问题转化为约束条件$x\ne1$, $y\ne1$,
+$x+y+\frac{1}{x}+\frac{1}{y}=4$下, 求$xy+\frac{y}{x}+\frac{1}{xy}+\frac{x}{y}$的最大值,
+又设$x+\frac{1}{x}=e$, $y+\frac{1}{y}=f$, 则$ef=xy+\frac{y}{x}+\frac{1}{xy}+\frac{x}{y}$.
+
+当$t>0$时, $t+\frac{1}{t}\ge2$; 当$t<0$时, $t+\frac{1}{t}\le-2$. 由$x+y+\frac{1}{x}+\frac{1}{y}=4$,
+知$x,y$不同号, (否则有$x=y=1$).
+
+不妨设, $x>0$, $y<0$, 则$f\le-2$, $e=4-f\ge6$, $ef\le-12$, 当且仅当$y=-1$,
+$x=3\pm2\sqrt{2}$时等号成立. 特别地, 当$a=3+2\sqrt{3}=-d$, $b=-c=1$时, 等号成立,
+为$-12$.
+\ea
+
+\bq{}{}
+设$a_{i}\in\RR^{+}$, ($i=1,2,\cdots,n$), $\sum_{i=1}^{n}a_{i}=1$,
+求
+\[
+S=\frac{a_{1}}{1+a_{2}+a_{3}+\cdots+a_{n}}+\frac{a_{2}}{1+a_{1}+a_{3}+\cdots+a_{n}}+\cdots+\frac{a_{n}}{1+a_{1}+a_{2}+\cdots+a_{n-1}}
+\]
+的最小值.
+\eq
+\ba
+$S=\frac{a_{1}}{2-a_{1}}+\frac{a_{2}}{2-a_{2}}+\cdots+\frac{a_{n}}{2-a_{n}}$,
+关于$a_{1},a_{2},\cdots,a_{n}$对称, 不妨设$1>a_{1}\ge a_{2}\ge\cdots\ge a_{n}>0$,
+则$2-a_{1}\le2-a_{2}\le\cdots\le2-a_{n}$,
+\[
+\frac{1}{2-a_{1}}\ge\frac{1}{2-a_{2}}\ge\cdots\ge\frac{1}{2-a_{n}}>0,
+\]
+由基本不等式有
+\[
+S+n=\sum_{k=1}^{n}\frac{2}{2-a_{k}}\ge\frac{n^{2}}{\frac{1}{2}\sum_{k=1}^{n}\left(2-a_{k}\right)}=\frac{2n^{2}}{2n-1},
+\]
+所以$S\ge\frac{n}{2n-1}$.
+\ea
+\ba
+用切比雪夫不等式有
+\[
+S\ge\frac{1}{n}\left(a_{1}+\cdots+a_{n}\right)\left(\frac{1}{2-a_{1}}+\cdots+\frac{1}{2-a_{n}}\right)=\frac{1}{n}\left(\frac{1}{2-a_{1}}+\cdots+\frac{1}{2-a_{n}}\right),
+\]
+由Cauchy不等式有
+\[
+\sum_{k=1}^{n}\left(2-a_{k}\right)\sum_{k=1}^{n}\frac{1}{2-a_{k}}\ge n^{2},
+\]
+而$\sum_{k=1}^{n}\left(2-a_{k}\right)=2n-1$, 所以$S\ge\frac{1}{n}\cdot\frac{n^{2}}{2n-1}=\frac{n}{2n-1}$,
+当且仅当$a_{1}=\cdots=a_{n}=\frac{1}{n}$时, 取等号.
+\ea
+
+\bq{}{}
+已知函数$f\left(x\right)=ax^{2}+bx+c$对于一切$x\in\left[-1,1\right]$, 都有$\left|f\left(x\right)\right|\le1$,
+设
+\[
+g\left(x\right)=\left|acx^{4}+b\left(a+c\right)x^{3}+\left(a^{2}+b^{2}+c^{2}\right)x^{2}+b\left(a+c\right)x+ac\right|,\quad x\in\left[-1,1\right],
+\]
+求函数$g\left(x\right)$的最大值.
+\eq
+\ba
+$g\left(x\right)=\left|ax^{2}+bx+c\right|\cdot\left|cx^{2}+bx+a\right|$,
+设$h\left(x\right)=cx^{2}+bx+a$, $x\in\left[-1,1\right]$, 则$\left|h\left(1\right)\right|=\left|f\left(1\right)\right|\le1$,
+$\left|h\left(-1\right)\right|=\left|f\left(-1\right)\right|\le1$,
+$\left|f\left(0\right)\right|=\left|c\right|\le1$. 若$h\left(x\right)$在$\left[-1,1\right]$上严格单调,
+由$\left|h\left(1\right)\right|\le1$, $\left|h\left(-1\right)\right|\le1$知,
+对于一切$x\in\left[-1,1\right]$, 有$\left|h\left(x\right)\right|\le1$,
+故$g\left(x\right)\le\left|f(x)\right|\le1$.
+
+若$h\left(x\right)$在$\left[-1,1\right]$上不严格单调, 仍有两种情况:
+
+(1) $h\left(x\right)=a$(常数), 即$b=c=0$, 此时, $\left|f\left(1\right)\right|=\left|a\right|\le1$,
+$g\left(x\right)=a^{2}\left|x\right|^2\le1$;
+
+(2) $h\left(x\right)$是二次函数, 即$c\ne0$, 如果扩展为定义在$\RR$上, 则$h\left(x\right)=cx^{2}+bx+a$的图像顶点为$\left(x_{0},h\left(x_{0}\right)\right)$,
+则当$h\left(x\right)$在$\left[-1,1\right]$上不单调时, $x_{0}\in\left(-1,1\right)$,
+不妨设$x_{0}\in\left(-1,0\right]$, 则$h\left(x\right)$可写成$h\left(x\right)=c\left(x-x_{0}\right)^{2}+h\left(x_{0}\right)$,
+$x\in\left[-1,1\right]$, 所以$h\left(-1\right)=c\left(-1-x_{0}\right)^{2}+h\left(x_{0}\right)$,
+所以$\left|h\left(x_{0}\right)\right|=\left|h\left(-1\right)-c\left(1+x_{0}\right)^{2}\right|\le\left|h\left(-1\right)\right|+\left|c\right|\cdot\left(1+x_{0}\right)^{2}$.
+因$x_{0}\in\left(-1,0\right]$, 所以$0<1+x_{0}\le1$, $\left(1+x_{0}\right)^{2}\le1$,
+可见$\left|h\left(x_{0}\right)\right|\le1+\left|c\right|\le2$. 
+
+因$h\left(x\right)$在$\left[-1,x_{0}\right]$或$\left[x_{0},1\right]$上均严格单调,
+故由$\left|h\left(x_{0}\right)\right|\le2$, $\left|h\left(1\right)\right|\le1$,
+$\left|h\left(-1\right)\right|\le1$, 知对于任意的$x\in\left[-1,1\right]$,
+均有$\left|h\left(x\right)\right|\le2$, 所以
+\[
+g\left(x\right)\le\left|f\left(x\right)\right|\cdot\left|h\left(x\right)\right|\le1\times2=2,
+\]
+另一方面, 取$f\left(x\right)=2x^{2}-1$, $x\in\left[-1,1\right]$, $h\left(x\right)=-x^{2}+2$,
+$x\in\left[-1,1\right]$, 即
+\[
+g\left(x\right)=\left|-2x^{4}+5x^{2}-2\right|,\quad x\in\left[-1,1\right].
+\]
+则可知$g\left(0\right)=2$, 所以$g\left(x\right)$的最大值为$2$. 另外
+\[
+\begin{aligned}\left|h\left(x\right)\right| & =\left|cx^{2}+bx+a\right|=\left|-ax^{2}+bx-c+\left(c+a\right)\left(x^{2}-1\right)\right|\\
+ & \le\left|a\left(-x^{2}\right)+b\left(-x\right)+c\right|+\left|c+a\right|\cdot\left|x^{2}-1\right|\\
+ & \le1+\left|\frac{a+b+c}{2}+\frac{a-b+c}{2}\right|\cdot\left|x^{2}-1\right|\\
+ & \le1+\left|\frac{f\left(1\right)}{2}+\frac{f\left(-1\right)}{2}\right|\le1+1=2.
+\end{aligned}
+\]
+\ea
+
+\bq{}{}
+已知$x_{i}\in\RR$, ($i=1,2,\cdots,n$), ($n\ge2$), 且
+\[
+\sum_{i=1}^{n}x_{i}=0,\qquad\sum\left|x_{i}\right|=1.
+\]
+求证:
+\[
+\left|\sum\frac{x_{i}}{i}\right|\le\frac{1}{2}-\frac{1}{2n}.
+\]
+\eq
+\ba
+\[
+\left|\sum\frac{x_{i}}{i}\right|\le\frac{1}{2}-\frac{1}{2n}\Longleftrightarrow-\frac{1}{2}+\frac{1}{2n}\le\sum\frac{x_{i}}{i}\le\frac{1}{2}-\frac{1}{2n}.
+\]
+由题设$x_{i}$中有正有负, 设$x_{k_{1}},\cdots,x_{k_{l}}$为正数, $x_{k_{l+1}},\cdots,x_{k_{n}}$为非正数,
+则
+\[
+\sum x_{i}=0\Longrightarrow\sum_{i=1}^{l}x_{k_{i}}=-\sum_{i=l+1}^{n}x_{k_{i}},
+\]
+又由$\sum\left|x_{i}\right|=1$得$\sum_{i=1}^{l}x_{k_{i}}=\frac{1}{2}$,
+$\sum_{i=l+1}^{n}x_{k_{i}}=-\frac{1}{2}$. 所以
+\[
+\sum\frac{x_{i}}{i}=\sum_{i=1}^{l}\frac{x_{k_{i}}}{k_{i}}-\sum_{i=l+1}^{n}\frac{\left|x_{k_{i}}\right|}{k_{i}}\le\sum_{i=1}^{l}x_{k_{i}}-\frac{1}{n}\sum_{i=l+1}^{n}\left|x_{k_{i}}\right|=\frac{1}{2}-\frac{1}{2n}
+\]
+且
+\[
+\sum\frac{x_{i}}{i}\ge\frac{1}{n}\sum_{i=1}^{l}x_{k}-\sum_{i=l+1}^{n}\left|x_{k_{i}}\right|=\frac{1}{2n}-\frac{1}{2},\cdots
+\]
+\ea
+\ba
+归纳法, 设$n=k\ge2$成立时, 当$n=k+1$时, 设$X_{1},X_{2},\cdots,X_{k+1}$为$x_{1},x_{2},\cdots,x_{k},x_{k+1}$的从大到小的排列,
+因为
+\[
+\frac{1}{1}>\frac{1}{2}>\cdots>\frac{1}{k}>\frac{1}{k+1},
+\]
+所以, 由排序不等式
+\[
+\sum_{i=1}^{k+1}\frac{x_{i}}{i}\le\sum_{i=1}^{k+1}\frac{X_{i}}{i}.
+\]
+(若$X_{i}$中只有一个正值, 则至少有两个非正值, 取$X_{i}$的相反数得$X_{i}'$同样进行上述排列, 则可得至少两个非正值, 
+即总可假设$X_{i}$中的最后两向是非正值. 目标如下)
+
+\[
+\sum_{i=1}^{k+1}\frac{X_{i}}{i}=\frac{X_{1}}{1}+\cdots+\frac{X_{k}+X_{k+1}}{k}-\frac{X_{k+1}}{k\left(k+1\right)}.
+\]
+因$X_{1}+\cdots+X_{k+1}=0$, $\left|X_{1}\right|+\cdots+\left|X_{k+1}\right|=\left|X_{1}\right|+\cdots+\left|X_{k}+X_{k+1}\right|=1$,
+所以
+\[
+\sum_{i=1}^{k+1}\frac{X_{i}}{i}\le\frac{1}{2}-\frac{1}{2k}-\frac{X_{k+1}}{k\left(k+1\right)}\le\frac{1}{2}-\frac{1}{2k}+\frac{1}{2k\left(k+1\right)}=\frac{1}{2}-\frac{1}{2\left(k+1\right)},
+\]
+同样方式可得
+\[
+\sum_{i=1}^{k+1}\frac{x_{i}}{i}\ge\frac{1}{2\left(k+1\right)}-\frac{1}{2},
+\]
+其中$n=2$时不等式易证...
+\ea
+
+\newpage
