@@ -303,3 +303,61 @@ b_{1}^{n}a(a+b)\cdots(a+(n-1)b)\equiv ab_1(ab_1+1)\cdots(ab_1+n-1)\pmod{p}.
 \ba
 用Wilson公式, 注意到$k\equiv -(p-k)\pmod{p}$.
 \ea
+
+\bq{}{}
+求所有有理数$k$, 使得$0\le k\le\frac{1}{2}$, 且$\cos k\pi$是有理数.
+\eq
+\ba
+$k$有三个值, $0,\frac{1}{3},\frac{1}{2}$使$\cos k\pi$为有理数, 设$\cos\theta=\frac{p}{q}$,
+$q\ge3$, $p<q$, 且$p$与$q$互素, 那么$\cos2\theta=\frac{2p^{2}-q^{2}}{q^{2}}$,
+其分子分母的公因子必整除$2p^{2}$及$q^{2}$, 故$2p^{2}-q^{2}$与$q^{2}$的最大公因数是$1$或$2$.
+于是当$\frac{2p^{2}-q^{2}}{q^{2}}$写成最简形式时, 其分母至少是$\frac{q^{2}}{2}>q$,
+因此$\cos2\theta\ne\cos\theta$. 且$\cos2\theta$, $\cos4\theta$, ...
+都是有理数, 且其分母组成一个递增序列. 设$\theta=2^{i}\left(\frac{u}{v}\right)\pi$,
+$u,v$是互素奇数, 由$v$是奇数, 存在正整数$w>\left|i\right|$, 使$v\mid\left(2^{w}-1\right)$,
+故$2^{2w-i+1}\theta-2^{w-i+1}\theta=\frac{2^{w}-1}{v}2^{w}u\left(2\pi\right)$,
+从而$\cos\left(2^{2w-i+1}\theta\right)=\cos\left(2^{w-i+1}\theta\right)$.
+由前面所证得, 当$\theta=2^{i}\left(\frac{u}{v}\right)\pi$时, $\cos\theta$不能是分母超过$2$的有理数.
+\ea
+
+\bq{}{}
+证明: 不存在正整数$a,b,c$, 使得$a^{2}+b^{2}+c^{2}=a^{2}b^{2}$.
+\eq
+\ba
+模$4$下讨论奇偶性, 无穷递降法.
+\ea
+
+\bq{21届IMO}{} $\frac{m}{n}=1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\cdots-\frac{1}{1318}+\frac{1}{1319}$,
+其中$m,n$都是正整数, 证明: $1979\mid m$.
+\eq
+\ba
+\[
+\frac{m}{n}=\frac{1}{660}+\frac{1}{661}+\cdots+\frac{1}{1319}=1979\times\left(\frac{1}{600\times1319}+\cdots+\frac{1}{661\times1318}+\cdots+\frac{1}{989\times990}\right)=\frac{1979k}{660\times\cdots\times1319}.
+\]
+其中$k$是整数, $1979$是素数.
+\ea
+
+\bq{39届IMO, T4}{}
+已知$a,b$是正整数, 且$\left(ab^{2}+b+7\right)\mid\left(a^{2}b+a+b\right)$,
+求$a,b$. 
+\eq
+\ba
+$\left(ab^{2}+b+7\right)\mid a\left(ab^{2}+b+7\right)-b\left(a^{2}b+a+b\right)=7a-b^{2}$. 
+
+(1) 若$7a=b^{2}$, $\left(a,b\right)=\left(7k^{2},7k\right)$, ($k\in\NN$).
+
+(2) 若$7a>b^{2}$, 则$7a-b^{2}\ge ab^{2}+b+7$, 所以$7>b^{2}$,..., $\left(a,b\right)=\left(11,1\right)$,
+$\left(49,1\right)$.
+
+(3) $7a<b^{2}$, 则$b^{2}-7a\ge ab^{2}+b+7>b^{2}$...
+\ea
+
+\bq{}{}
+若$n^{2}+15n+42$是一完全平方数, 求$n$.
+\eq
+\ba
+$n\ge8$时, $\left(n+7\right)^{2}<n^{2}+15n+42<\left(n+8\right)^{2}$,
+$n<-22$时, $\left(n+8\right)^{2}<n^{2}+15n+42<\left(n+7\right)^{2}$.
+$n=-13$, $-22$, $-2$, $7$.
+\ea
+
