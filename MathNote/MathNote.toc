@@ -1,2 +1,71 @@
-\contentsline {chapter}{\numberline {1}初等数论}{3}{chapter.1}
-\contentsline {chapter}{\numberline {2}语录}{13}{chapter.2}
+\contentsline {chapter}{\numberline {1}高中笔记8}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}读书笔记}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}球面几何}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}不等式集}{5}{section.1.3}%
+\contentsline {chapter}{\numberline {2}高中数学}{47}{chapter.2}%
+\contentsline {section}{\numberline {2.1}2016年中科大入学数学考试}{47}{section.2.1}%
+\contentsline {section}{\numberline {2.2}初中代数题}{47}{section.2.2}%
+\contentsline {section}{\numberline {2.3}全国高中数学联赛}{50}{section.2.3}%
+\contentsline {section}{\numberline {2.4}数学竞赛}{52}{section.2.4}%
+\contentsline {chapter}{\numberline {3}AOPS}{55}{chapter.3}%
+\contentsline {section}{\numberline {3.1}IMO}{55}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}2018}{55}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}2003}{56}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}02}{56}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}03}{58}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}05}{59}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}06}{60}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}07}{61}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}08}{63}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}09}{65}{subsection.3.2.7}%
+\contentsline {chapter}{\numberline {4}抽象代数}{69}{chapter.4}%
+\contentsline {chapter}{\numberline {5}矩阵论}{71}{chapter.5}%
+\contentsline {section}{\numberline {5.1}矩阵迭代法}{71}{section.5.1}%
+\contentsline {chapter}{\numberline {6}数学分析}{73}{chapter.6}%
+\contentsline {section}{\numberline {6.1}极限}{73}{section.6.1}%
+\contentsline {section}{\numberline {6.2}导数}{73}{section.6.2}%
+\contentsline {section}{\numberline {6.3}积分}{74}{section.6.3}%
+\contentsline {section}{\numberline {6.4}级数}{76}{section.6.4}%
+\contentsline {section}{\numberline {6.5}其他}{77}{section.6.5}%
+\contentsline {chapter}{\numberline {7}实变函数}{97}{chapter.7}%
+\contentsline {chapter}{\numberline {8}泛函分析}{101}{chapter.8}%
+\contentsline {chapter}{\numberline {9}复变函数}{107}{chapter.9}%
+\contentsline {chapter}{\numberline {10}初等数论}{109}{chapter.10}%
+\contentsline {chapter}{\numberline {11}解析数论}{119}{chapter.11}%
+\contentsline {section}{\numberline {11.1}山东大学2014年博士研究生入学考试解析数论基础试题}{119}{section.11.1}%
+\contentsline {chapter}{\numberline {12}Inequality}{121}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Elementary Inequality}{121}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Combinatorics}{124}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Analysis}{125}{section.12.3}%
+\contentsline {chapter}{\numberline {13}神奇的反例}{127}{chapter.13}%
+\contentsline {chapter}{\numberline {14}未知的问题与解答}{129}{chapter.14}%
+\contentsline {chapter}{\numberline {15}拓扑}{139}{chapter.15}%
+\contentsline {chapter}{\numberline {16}定理集}{157}{chapter.16}%
+\contentsline {section}{\numberline {16.1}数学分析}{159}{section.16.1}%
+\contentsline {section}{\numberline {16.2}微分方程}{162}{section.16.2}%
+\contentsline {section}{\numberline {16.3}泛函分析}{163}{section.16.3}%
+\contentsline {section}{\numberline {16.4}拓扑}{164}{section.16.4}%
+\contentsline {section}{\numberline {16.5}数论}{164}{section.16.5}%
+\contentsline {section}{\numberline {16.6}不等式}{166}{section.16.6}%
+\contentsline {chapter}{\numberline {17}定义集}{169}{chapter.17}%
+\contentsline {section}{\numberline {17.1}初等数论}{169}{section.17.1}%
+\contentsline {section}{\numberline {17.2}高等代数}{169}{section.17.2}%
+\contentsline {section}{\numberline {17.3}数学分析}{171}{section.17.3}%
+\contentsline {section}{\numberline {17.4}微分方程}{173}{section.17.4}%
+\contentsline {section}{\numberline {17.5}泛函分析}{173}{section.17.5}%
+\contentsline {chapter}{\numberline {18}tex笔记}{175}{chapter.18}%
+\contentsline {section}{\numberline {18.1}使用频率较低的符号列表}{175}{section.18.1}%
+\contentsline {section}{\numberline {18.2}itemize enumerate}{176}{section.18.2}%
+\contentsline {section}{\numberline {18.3}tikz}{177}{section.18.3}%
+\contentsline {chapter}{\numberline {19}math.stackexchange.com}{181}{chapter.19}%
+\contentsline {chapter}{\numberline {20}语录}{185}{chapter.20}%
+\contentsline {chapter}{\numberline {21}GTM 120. weakly differentiable functions}{187}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Riew}{187}{section.21.1}%
+\contentsline {subparagraph}{A Borel measure $\mu $ with the properties that each subset of $\mathbb {R}^{n}$ is contained within a Borel set of equal $\mu $ measure and that $\mu \left (K\right )<\infty $ for each compact set $K\subset \mathbb {R}^{n}$ is called a Radon measure.}{187}{section*.2}%
+\contentsline {section}{\numberline {21.2}Questions}{187}{section.21.2}%
+\contentsline {subparagraph}{1. recall the defination of Holder space $C^{k,\alpha }\left (\overline {\Omega }\right )$ for any open set $\Omega \subset \mathbb {R}^{n}$.}{187}{section*.3}%
+\contentsline {subparagraph}{2. prove that $C^{k,\alpha }\left (\overline {\Omega }\right )$ is a Banach space.}{187}{section*.4}%
+\contentsline {subparagraph}{3. define Lebesgure measurable set using outer Lebesgue measure.}{187}{section*.5}%
+\contentsline {subparagraph}{4. the defination of Borel set in $\mathbb {R}^{n}$.}{187}{section*.6}%
+\contentsline {subparagraph}{5. if $\left |\cdot \right |$ is the outer Lebesgure measure, then for any $A,B\subset \mathbb {R}^{n}$, $d\left (A,B\right )>0$ implies $\left |A\cup B\right |=\left |A\right |+\left |B\right |$.}{187}{section*.7}%
+\contentsline {subparagraph}{6. using the above conclusion, prove that for any closed set in $\mathbb {R}^{n}$ is measurable, so any Borel set is measurable.}{187}{section*.8}%
