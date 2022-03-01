@@ -8,6 +8,9 @@ EnglishReadingStack/
 .pygtex
 .gz
 .aux
+.idx
+.synctex
+.toc
 .log
 .out
 .mintedcmd
