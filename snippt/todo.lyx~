@@ -4,11 +4,13 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass ctex-article
+\textclass article
 \begin_preamble
 % 如果没有这一句命令，XeTeX会出错，原因参见
 % http://bbs.ctex.org/viewthread.php?tid=60547
 \DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{tkz-euclide}
+\usetkzobj{all}
 
 \def\degree{^\circ}
 \def\bt{\begin{theorem}}
@@ -39,13 +41,11 @@
 \def\g{\gamma}
 \def\d{\delta}
 \def\l{\lambda}
-\def\li{\mathrm{li}}
-\def\tr{\mathrm{tr}}
-\def\id{\mathrm{id}}
-\def\supp{\mathrm{supp}}
 \def\m{\mu}
 \def\t{\theta}
 \def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\curl{\mathrm{curl}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,17 +60,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\Integers}{\mathbb{Z}}
-\newcommand{\Naturals}{\mathbb{N}}
+\newcommand{\NN}{\mathbb{N}}
 \newcommand{\Rationals}{\mathbb{Q}}
-\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\RR}{\mathbb{R}}
 \newcommand{\pNaturals}{\mathbb{N}_{+}}
+
+\renewcommand{\div}{\mathrm{div}}
 \end_preamble
-\options UTF8
+\options a4paper,UTF8
 \use_default_options true
+\begin_modules
+theorems-bytype
+theorems-chap-bytype
+theorems-named
+\end_modules
 \maintain_unincluded_children false
 \language chinese-simplified
-\language_package none
-\inputencoding utf8-plain
+\language_package default
+\inputencoding utf8-cjk
 \fontencoding global
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -82,10 +89,11 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\font_cjk gbsn
 \use_microtype false
 \use_dash_ligatures false
 \graphics default
-\default_output_format pdf4
+\default_output_format pdf2
 \output_sync 0
 \bibtex_command default
 \index_command default
@@ -94,8 +102,8 @@
 \use_hyperref false
 \papersize default
 \use_geometry true
-\use_package amsmath 1
-\use_package amssymb 1
+\use_package amsmath 2
+\use_package amssymb 2
 \use_package cancel 1
 \use_package esint 1
 \use_package mathdots 1
@@ -118,7 +126,7 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 3cm
+\leftmargin 2cm
 \topmargin 3cm
 \bottommargin 3cm
 \secnumdepth 3
@@ -142,178 +150,621 @@
 \begin_body
 
 \begin_layout Title
-数学笔记
+TODO列表
 \end_layout
 
 \begin_layout Section
-切空间与极值问题
+Reference todo list
 \end_layout
 
-\begin_layout Paragraph
-Q1
-\end_layout
-
-\begin_layout Standard
-设
-\begin_inset Formula $u(x,y)$
-\end_inset
-
-在
-\begin_inset Formula $x^{2}+y^{2}\le1$
-\end_inset
-
-上连续, 在
-\begin_inset Formula $x^{2}+y^{2}<1$
-\end_inset
-
-上满足
+\begin_layout Subsection
+罗增儒, 解题学引论
 \end_layout
 
 \begin_layout Standard
+美国数学家P.
+ R.
+ Halmos哈尔莫斯, 数学的心脏, 数学通报, 1982, 4, P.27.
+\end_layout
+
+\begin_layout Standard
+1900年, Hilbert在巴黎国际数学家大会上, 发表
+\begin_inset Quotes erd
+\end_inset
+
+数学问题
+\begin_inset Quotes erd
+\end_inset
+
+的著名演讲.
+\end_layout
+
+\begin_layout Standard
+邓东皋等, 数学与文化, 北京大学出版社, 1990年5月第1版, P191, 李文林, 袁向东译.
+\end_layout
+
+\begin_layout Standard
+1980年4月, 美国数学教师协会, 
+\begin_inset Quotes eld
+\end_inset
+
+关于行动的议程
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+波利亚, 数学的发现.
+\end_layout
+
+\begin_layout Standard
+威克尔格伦, 怎样解题.
+\end_layout
+
+\begin_layout Standard
+刘学质, 问题解决在美国和日本, 数学教学, 1993, 2, P17.
+\end_layout
+
+\begin_layout Standard
+余致甫主编, 数学教育学概论, P219.
+\end_layout
+
+\begin_layout Standard
+张奠宙等, 数学教育学, P225.
+\end_layout
+
+\begin_layout Standard
+美国全国数学管理者大会(NCSM), 
+\begin_inset Quotes eld
+\end_inset
+
+21世纪的数学基础
+\begin_inset Quotes erd
+\end_inset
+
+, 1988.
+\end_layout
+
+\begin_layout Itemize
+解题思想
+\end_layout
+
+\begin_layout Itemize
+解题观点
+\end_layout
+
+\begin_layout Itemize
+解题目的, C2-4
+\end_layout
+
+\begin_layout Itemize
+解题过程, C3
+\end_layout
+
+\begin_layout Itemize
+解题程序, C3
+\end_layout
+
+\begin_layout Itemize
+解题坐标系, C4-2
+\end_layout
+
+\begin_layout Itemize
+解题技巧
+\end_layout
+
+\begin_layout Itemize
+解题方法
+\end_layout
+
+\begin_layout Itemize
+解题原则, C2-2-3, C4-1-2, C4-2-2
+\end_layout
+
+\begin_layout Itemize
+解题策略, C6
+\end_layout
+
+\begin_layout Standard
+郑毓信, 数学方法论
+\end_layout
+
+\begin_layout Standard
+徐利治, 1980, 浅谈数学方法论.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+波利亚, 怎样解题.
+\end_layout
+
+\begin_layout Standard
+江泽涵, 关于波利亚的
+\begin_inset Quotes erd
+\end_inset
+
+怎样解题
+\begin_inset Quotes erd
+\end_inset
+
+和
+\begin_inset Quotes erd
+\end_inset
+
+数学的发展
+\begin_inset Quotes erd
+\end_inset
+
+的一些往事, 中学数学教学(皖), 1983, 2, p4.
+\end_layout
+
+\begin_layout Standard
+波利亚, 数学与似真推理, 数学的发现.
+\end_layout
+
+\begin_layout Standard
+数学竞赛中的技巧: 构造, 映射, 递推, 区分, 染色, 极端, 对称, 配对, 特殊化, 一般化, 数字化, 有序化, 不变量, 整体处理,
+ 变换还原, 逐步调整, 奇偶分析, 优化假设, 计算两次, 辅助图表, 化归, RMI原理, 以退求进, 正难则反.
+\end_layout
+
+\begin_layout Standard
+罗增儒等, 数学竞赛教程.
+\end_layout
+
+\begin_layout Standard
+斯托里亚尔, 数学教育学.
+\end_layout
+
+\begin_layout Standard
+戴再平, 数学习题理论
+\end_layout
+
+\begin_layout Standard
+任樟辉, 数学思维论
+\end_layout
+
+\begin_layout Standard
+初等数学研究会
+\end_layout
+
+\begin_layout Standard
+杨世明, 中国初等数学研究文集, 河南教育出版社, 1992年.
+\end_layout
+
+\begin_layout Standard
+李炯生, 黄国勋, 中国初等数学研究, 科学技术文献出版社, 1991年.
+\end_layout
+
+\begin_layout Standard
+杨学枝, 林章衍, 福建省初等数学研究文集, 福建教育出版社, 1993年.
+\end_layout
+
+\begin_layout Standard
+杨之, 初等数学研究的问题与课题, 湖南教育出版社, 1993年.
+\end_layout
+
+\begin_layout Standard
+陈计, 叶中豪, 初等数学前沿, 江苏教育出版社, 1996年.
+\end_layout
+
+\begin_layout Standard
+写进
+\begin_inset Quotes erd
+\end_inset
+
+高三数学解题能力强化训练
+\begin_inset Quotes erd
+\end_inset
+
+, 陕西教育出版社, 1990年12月第1版.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+数学通报, 1979.12, 问题16, 在实数范围内解方程
 \begin_inset Formula 
 \[
-\frac{\partial^{2}u}{\partial x^{2}}+\frac{\partial^{2}u}{\partial y^{2}}=u
+\frac{11x^{2}-6}{7-12x^{2}}=\sqrt{\frac{7x+6}{12x+11}}.
 \]
 
 \end_inset
 
-且在
-\begin_inset Formula $x^{2}+y^{2}=1$
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
-上
-\begin_inset Formula $u(x,y)>0$
+
+\end_layout
+
+\begin_layout Problem
+1956年北京数学竞赛, 求
+\begin_inset Formula $x^{2}-2x\sin\frac{\pi x}{2}+1=0$
 \end_inset
 
-.
- 证明: 当
-\begin_inset Formula $x^{2}+y^{2}\le1$
+的所有实数根.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
-时, 
-\begin_inset Formula $u(x,y)>0$
+
+\end_layout
+
+\begin_layout Standard
+罗增儒, 高中数学奥林匹克系列教材, 第一册.
+\end_layout
+
+\begin_layout Standard
+若两个三角形可以分成两两对应全等的三角形, 则称这两个三角形剖分相等的三角形.
+ 在面积理论里: 面积相等的三角形必是剖分相等的.
+ 见前段壮, 几何基础, 高等教育出版社, 1959年3月.
+\end_layout
+
+\begin_layout Standard
+费里德曼, 怎样学会解数学题.
+\end_layout
+
+\begin_layout Standard
+胡炳生, 数学解题研究和发现.
+\end_layout
+
+\begin_layout Standard
+唐以荣, 中学数学综合题解规律讲义.
+\end_layout
+
+\begin_layout Standard
+过伯祥, 数学教育研究导引.
+\end_layout
+
+\begin_layout Standard
+过伯祥, 波利亚的数学发现图式,国内外中学数学, 1985, 4.
+\end_layout
+
+\begin_layout Standard
+过伯祥, 波利亚的解题观, 中等数学, 1988, 2.
+\end_layout
+
+\begin_layout Standard
+施铁如, 解代数应用题的认识模式, 心理学报, 1985, 3.
+\end_layout
+
+\begin_layout Standard
+王梓坤, 高等数学解题过程的分析和研究.
+\end_layout
+
+\begin_layout Standard
+波利亚, 数学与猜想.
+\end_layout
+
+\begin_layout Standard
+庞正球等, 波利亚数学教育思想简略述评.
+\end_layout
+
+\begin_layout Standard
+杨之,信息与解题, 福建中学数学, 1987, 4.
+\end_layout
+
+\begin_layout Standard
+罗增儒, 讲授艺术的认识与实践, 见讲授艺术论(王国俊主编), 陕西师范大学出版社, 1992年1月第1版.
+\end_layout
+
+\begin_layout Standard
+张乃达, 王左芬, 突出学科的基本结构, 发展逻辑思维能力, 福建中学数学, 1983, 4.
+\end_layout
+
+\begin_layout Standard
+胡炳生, 数学解题研究和发现.
+\end_layout
+
+\begin_layout Standard
+戴维斯, 赫什著, 王前, 俞晓群等译, 数学经验.
+ 江苏教育出版社, 1991年12月第1次印刷.
+\end_layout
+
+\begin_layout Standard
+梅森, Thinking Mathematically.
+\end_layout
+
+\begin_layout Standard
+唐以荣, 中学数学综合题解题规律讲义.
+\end_layout
+
+\begin_layout Problem
+已知
+\begin_inset Formula 
+\[
+\frac{a}{1+a+ab}+\frac{b}{1+b+bc}+\frac{c}{1+c+ca}=1,
+\]
+
+\end_inset
+
+求证
+\begin_inset Formula $abc=1$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-hint: 用反证法, 证明
-\begin_inset Formula $u(x,y)\ge0$
+\begin_inset Separator plain
 \end_inset
 
-, 再考虑
-\begin_inset Formula $u(x,y)-\varepsilon(\ue^{x}+\ue^{y})$
-\end_inset
 
-.
-\end_layout
-
-\begin_layout Paragraph
-Q2
 \end_layout
 
 \begin_layout Standard
-设
-\begin_inset Formula $a>0$
-\end_inset
-
-, 
-\begin_inset Formula $c>0$
-\end_inset
-
-, 
-\begin_inset Formula $ac-b^{2}>0$
-\end_inset
-
-, 则方程
-\begin_inset Formula $ax^{2}+2bxy+cy^{2}=1$
-\end_inset
-
-表示椭圆, 试证该椭圆的面积为
-\begin_inset Formula $\frac{\pi}{\sqrt{ac-b^{2}}}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Paragraph
-Q3
+雅诺夫斯卡娅, 什么叫解题, 的演讲.
 \end_layout
 
 \begin_layout Standard
-求圆的内接(外切)
+弗里德曼, 怎样学会解数学题.
+\end_layout
+
+\begin_layout Standard
+罗增儒, 怎样解答高考数学题.
+\end_layout
+
+\begin_layout Standard
+奥加涅相, 中小学数学教学法.
+\end_layout
+
+\begin_layout Standard
+笛卡尔, 指导思维的法则.
+\end_layout
+
+\begin_layout Standard
+卢正勇, 怎样提高解题能力.
+\end_layout
+
+\begin_layout Standard
+解恩泽, 徐本顺, 数学思想方法.
+\end_layout
+
+\begin_layout Standard
+罗巴切夫斯基, 几何学原理的扼要阐述暨平行线定理的一个严格证明.
+\end_layout
+
+\begin_layout Standard
+柏尔特拉米, 非欧几何的实际解释.
+\end_layout
+
+\begin_layout Standard
+罗增儒, 评1984年高考理科试题的分量, 中学数学教学参考.
+ 1984, 5.
+\end_layout
+
+\begin_layout Standard
+张乃达, 数学思维教育学.
+\end_layout
+
+\begin_layout Standard
+周纯荔, 数学教育与数学方法论, 中等数学, 1989, 1.
+\end_layout
+
+\begin_layout Standard
+张乃达, 按照思维发展规律进行解题教学, 福建中学数学, 1985, 4.
+\end_layout
+
+\begin_layout Standard
+波利亚, 数学分析中的问题和定理.
+\end_layout
+
+\begin_layout Standard
+罗增儒, 怎样解答高考数学题.
+\end_layout
+
+\begin_layout Standard
+克鲁捷茨基, 中小学数学能力心理学, 上海教育出版社.
+\end_layout
+
+\begin_layout Standard
+罗增儒, 利用单位圆证明三角条件等式, 中学数学研究, 1983, 1.
+\end_layout
+
+\begin_layout Standard
+李仁夫, 系统科学在数学教育中的渗透, 数学通报, 1992, 3.
+\end_layout
+
+\begin_layout Standard
+中学数学教学(安徽), 1982, 3.
+\end_layout
+
+\begin_layout Standard
+数学通讯, 1984年11期.
+\end_layout
+
+\begin_layout Standard
+罗增儒, 不等式与图形的性质, 数学通讯, 1989, 10.
+\end_layout
+
+\begin_layout Problem
+IMO20-6, 一个国际社团成员来自6个国家, 共有成员1978人, 用1,2,3,
+\begin_inset Formula $\cdots$
+\end_inset
+
+,1977,1978编号.
+ 请证明该团至少有一个成员的顺序号数与他的两个同胞的顺序号数之和相等, 或是一个同胞的顺序号数的两倍.
+\end_layout
+
+\begin_layout Problem
+问题背景: 图论中的Schur定理.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+第三届全国数学奥林匹克集训班考试题, 数学老师把一个两位自然数
 \begin_inset Formula $n$
 \end_inset
 
-边形中面积最大(小)者.
-\end_layout
-
-\begin_layout Paragraph
-Q4
-\end_layout
-
-\begin_layout Standard
-函数
-\begin_inset Formula $z=z(x,y)$
+的约数个数告诉了
+\begin_inset Formula $S$
 \end_inset
 
-满足方程
-\begin_inset Formula $\frac{\p^{2}z}{\p x^{2}}\cdot\frac{\p^{2}z}{\p y^{2}}-\paren{\frac{\p^{2}z}{\p x\p y}}^{2}=0$
-\end_inset
-
-的一个曲面是
-\begin_inset Formula $F\paren{\frac{x-a}{z-c},\frac{y-b}{z-c}}=0$
-\end_inset
-
-.
- 其中
-\begin_inset Formula $a,b,c$
-\end_inset
-
-为常数.
-\end_layout
-
-\begin_layout Paragraph
-Q5
-\end_layout
-
-\begin_layout Standard
-给定
+, 把
 \begin_inset Formula $n$
 \end_inset
 
-阶行列式
-\begin_inset Formula $A=\left|a_{ij}\right|$
+的各位数字和告诉了
+\begin_inset Formula $P$
+\end_inset
+
+, 
+\begin_inset Formula $S$
+\end_inset
+
+与
+\begin_inset Formula $P$
+\end_inset
+
+是两位很聪明的学生, 他们希望推导出
+\begin_inset Formula $n$
+\end_inset
+
+的准确值, 
+\begin_inset Formula $S$
+\end_inset
+
+和
+\begin_inset Formula $P$
+\end_inset
+
+进行了如下的对话
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P$
+\end_inset
+
+: 我不知道
+\begin_inset Formula $n$
+\end_inset
+
+是多少.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $S$
+\end_inset
+
+: 我也不知道, 但我知道
+\begin_inset Formula $n$
+\end_inset
+
+是否为偶数.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P$
+\end_inset
+
+: 现在我知道
+\begin_inset Formula $n$
+\end_inset
+
+是多少了.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $S$
+\end_inset
+
+: 现在我也知道了.
+\end_layout
+
+\begin_layout Standard
+老师证实了
+\begin_inset Formula $S$
+\end_inset
+
+和
+\begin_inset Formula $P$
+\end_inset
+
+都是诚实可信的, 他们的每一句话都是有根据的.
+ 试问
+\begin_inset Formula $n$
+\end_inset
+
+的值究竟是多少? 为什么?
+\end_layout
+
+\begin_layout Problem
+已知
+\begin_inset Formula $a+b+c=0$
+\end_inset
+
+, 证明: 
+\begin_inset Formula $a^{3}+b^{3}+c^{3}=3abc$
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Enumerate
-求证: 在行向量长有限条件下, 即
-\begin_inset Formula $\sum_{j=1}^{n}a_{ij}^{2}=s_{i}$
+\begin_layout Proof
+齐次线性方程组
+\begin_inset Formula 
+\[
+\begin{cases}
+ax+by+cz & =0\\
+cx+ay+bz & =0\\
+bx+cy+az & =0
+\end{cases}
+\]
+
 \end_inset
 
-, (
-\begin_inset Formula $i=1,\cdots,n$
+有非零解
+\begin_inset Formula $x=y=z=1$
 \end_inset
 
-)条件下, 使
-\begin_inset Formula $A$
+, 从而系数行列式等于
+\begin_inset Formula $0$
 \end_inset
 
-达到最大值的行向量两两正交;
-\end_layout
-
-\begin_layout Enumerate
-求证:
+.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+行列式证法
 \begin_inset Formula 
 \[
-A^{2}\le\prod_{i=1}^{n}\paren{\sum_{j=1}^{n}a_{ij}^{2}}.
+a^{3}+b^{3}+c^{3}-3abc=\left|\begin{array}{ccc}
+a & b & c\\
+c & a & b\\
+b & c & a
+\end{array}\right|=\left|\begin{array}{ccc}
+a+b+c & b & c\\
+c+a+b & a & b\\
+b+c+a & c & a
+\end{array}\right|=0.
 \]
 
 \end_inset
@@ -321,44 +772,216 @@ A^{2}\le\prod_{i=1}^{n}\paren{\sum_{j=1}^{n}a_{ij}^{2}}.
 
 \end_layout
 
-\begin_layout Paragraph
-Q6
-\end_layout
-
-\begin_layout Standard
-确立最小正数
-\begin_inset Formula $A$
+\begin_layout Problem
+对
+\begin_inset Formula $\left|a\right|<1$
 \end_inset
 
-和最大负数
-\begin_inset Formula $B$
+, 
+\begin_inset Formula $\left|b\right|<1$
 \end_inset
 
-, 使不等式
-\end_layout
+, 
+\begin_inset Formula $\left|c\right|<1$
+\end_inset
 
-\begin_layout Standard
+, 有
 \begin_inset Formula 
 \[
-\frac{B}{xy}\le\ln(x^{2}+y^{2})\le A(x^{2}+y^{2})
+\left|\frac{a+b+c+abc}{1+ab+bc+ca}\right|<1.
 \]
 
 \end_inset
 
-在第一象限内成立.
+
+\end_layout
+
+\begin_layout Problem
+对
+\begin_inset Formula $a_{1},a_{2},\cdots,a_{n}\in\left(-1,1\right)$
+\end_inset
+
+, 求证:
+\begin_inset Formula 
+\[
+\left|\frac{\prod_{i=1}^{n}\left(1+a_{i}\right)-\prod_{i=1}^{n}\left(1-a_{i}\right)}{\prod_{i=1}^{n}\left(1+a_{i}\right)+\prod_{i=1}^{n}\left(1-a_{i}\right)}\right|<1.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-hint.
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+惠州人, 让解题更富于美感, 湖南数学通讯, 1989, 3.
+\end_layout
+
+\begin_layout Standard
+中学数学综合题解解法新论, P70.
+\end_layout
+
+\begin_layout Standard
+上海, 中学数学教学, 1986年第4期.
  
-\begin_inset Formula $A=\frac{1}{\ue}$
+\begin_inset Quotes eld
 \end_inset
 
-, 
-\begin_inset Formula $B=-\frac{1}{2\ue}$
+上海中学数学
+\begin_inset Quotes erd
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+罗增儒, 一个不等式的形数沟通, 中学生数学, 1989, 5.
+\end_layout
+
+\begin_layout Standard
+罗增儒, 函数
+\begin_inset Formula $y=\frac{a}{\sin x}+\frac{b}{\cos x}$
+\end_inset
+
+的最小值的初等求法, 数学通讯, 1988, 12.
+\end_layout
+
+\begin_layout Standard
+Weizenboeck不等式, at P235.
+\end_layout
+
+\begin_layout Standard
+Pedoe不等式, at P237.
+\end_layout
+
+\begin_layout Standard
+波利亚, 舍贵, 数学分析中的问题和定理.
+\end_layout
+
+\begin_layout Standard
+张奠宙, 数学教育学.
+\end_layout
+
+\begin_layout Standard
+王梓坤, 今日数学及其应用.
+\end_layout
+
+\begin_layout Standard
+严士健, 面向21世纪的中国数学教育改革;
+\end_layout
+
+\begin_layout Standard
+严士健, 21世纪中国数学教育展望, 北京师范大学出版社.
+\end_layout
+
+\begin_layout Standard
+皮亚诺, 算术原理新方法
+\end_layout
+
+\begin_layout Standard
+罗庆洲, 一点意见, 中学生数学, 1983, 3.
+\end_layout
+
+\begin_layout Standard
+华罗庚, 数学归纳法.
+\end_layout
+
+\begin_layout Standard
+王连笑, 极端原理与解题.
+ 河南科学技术出版社, 1997年1月.
+\end_layout
+
+\begin_layout Standard
+抽屉原理又称鸽笼原理, 狄利克雷原理, 面积重叠原理等.
+\end_layout
+
+\begin_layout Problem
+IMO28-3.
+ 
+\begin_inset Formula $x_{1},\cdots,x_{n}$
+\end_inset
+
+都是实数且满足条件
+\begin_inset Formula $\sum_{i=1}^{n}x_{i}^{2}=1$
+\end_inset
+
+, 求证: 对于每个整数
+\begin_inset Formula $k\ge2$
+\end_inset
+
+, 存在
+\begin_inset Formula $n$
+\end_inset
+
+个不全为零的整数
+\begin_inset Formula $a_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $\left|a_{i}\right|\le k-1$
+\end_inset
+
+, 
+\begin_inset Formula $i=1,2,\cdots,n$
+\end_inset
+
+, 使得
+\begin_inset Formula 
+\[
+\left|a_{1}x_{1}+a_{2}x_{2}+\cdots+a_{n}x_{n}\right|\le\frac{\left(k-1\right)\sqrt{n}}{k^{n}-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+丁怀成, 李清煜, 用反证法证86年高考理科数学第八题, 数学通讯, 1987, 4.
+\end_layout
+
+\begin_layout Standard
+陈永明, 从一道高考题的错证看学点数理逻辑的必要性, 数学教学, 1990, 1.
+\end_layout
+
+\begin_layout Standard
+罗增儒, 方程变形的困惑, 中学数学(湖北), 1990, 9.
+\end_layout
+
+\begin_layout Standard
+盖尔鲍姆, J.
+ M.
+ 奥姆斯特德, 分析中的反例, 上海科学技术出版社.
+ 1980年4月.
+\end_layout
+
+\begin_layout Standard
+郑毓信, 数学方法论.
+\end_layout
+
+\begin_layout Standard
+拉卡托斯, 证明与反驳, 康宏逵译, 上海译文出版社, 1987年10月.
+\end_layout
+
+\begin_layout Standard
+徐利治, 郑毓信, 关系映射反演方法, 江苏教育出版社, 1989年5月.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
@@ -374,1004 +997,193 @@ newpage
 
 \end_inset
 
-哦
+
 \end_layout
 
-\begin_layout Section
-MSE
+\begin_layout Subsection
+Lecture 3: Compensated Compactness
 \end_layout
 
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-
-\series bold
-Frullani定理:
-\series default
- 设
-\begin_inset Formula $f:[0,\infty)\to\Reals$
-\end_inset
-
-为连续函数, 且满足
+\begin_layout Itemize
+非线性或线性PDEs的一个本质上的难点: 弱收敛之积不再保持弱收敛.
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-\lim_{x\to\infty}f(x)=0,
-\]
-
+\begin_layout Itemize
+在第一讲中, 有结论: 
+\begin_inset Formula $A\left(\frac{x}{\varepsilon}\right)\nabla u^{\varepsilon}\wc A^{\circ}\nabla u^{\circ}$
 \end_inset
 
-证明:
-\begin_inset Formula 
-\[
-\int_{0}^{\infty}\frac{f(ax)-f(bx)}{x}\ud x=f(0)\left[\ln\frac{b}{a}\right],
-\]
-
-\end_inset
-
-其中
-\begin_inset Formula $a,b\in(0,\infty)$
+ in 
+\begin_inset Formula $L^{2}\left(\Omega\right)$
 \end_inset
 
 .
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-证明概览: 
-\series default
-设
-\begin_inset Formula $a<b$
+ 其中, 
+\begin_inset Formula $A^{\circ}=\bar{A}+\bar{A\nabla\chi}$
 \end_inset
 
 , 
-\begin_inset Formula $x,y>0$
+\begin_inset Formula $A^{\circ}$
 \end_inset
 
-, 注意
-\begin_inset Formula 
-\[
-\int_{x}^{y}\frac{f(at)-f(bt)}{t}\ud t=\int_{ax}^{bx}\frac{f(u)}{u}\ud u-\int_{ay}^{by}\frac{f(u)}{u}\ud u.
-\]
-
+通常与
+\begin_inset Formula $A\left(\frac{x}{\varepsilon}\right)$
 \end_inset
 
-让
-\begin_inset Formula $x\to0$
+的弱极限
+\begin_inset Formula $\bar{A}$
 \end_inset
 
-, 
-\begin_inset Formula $y\to+\infty$
-\end_inset
-
-, 其中上式右边的第一个积分利用
-\begin_inset Formula $f$
-\end_inset
-
-在
-\begin_inset Formula $x=0$
-\end_inset
-
-处的连续性可以得到
-\begin_inset Formula $f(0)\ln\frac{b}{a}$
-\end_inset
-
-, 第二个积分利用极限
-\begin_inset Formula $\lim_{x\to\infty}f(x)=0$
-\end_inset
-
-得到
-\begin_inset Formula $0$
-\end_inset
-
-.
+不同.
 \end_layout
 
-\begin_layout Standard
-
-\series bold
-证明概览2:
-\series default
- 在一个更弱的条件
-\begin_inset Formula $f$
-\end_inset
-
-单调或
-\begin_inset Formula $f'\in L^{1}$
-\end_inset
-
-下证明结论, 考虑区域
-\begin_inset Formula 
-\[
-D=\{(x,y)\in\Reals^{2}:x\ge0,a\le y\le b\}
-\]
-
-\end_inset
-
-和重积分
-\begin_inset Formula 
-\[
-\iint_{D}-f'(xy)\ud x\ud y
-\]
-
-\end_inset
-
-先对
-\begin_inset Formula $x$
-\end_inset
-
-积分再对
-\begin_inset Formula $y$
-\end_inset
-
-积分得到
-\begin_inset Formula $f(0)(\ln b-\ln a)$
-\end_inset
-
-; 先对
-\begin_inset Formula $y$
-\end_inset
-
-积分得到
-\begin_inset Formula $\int_{0}^{\infty}\frac{f(ax)-f(bx)}{x}\ud x$
-\end_inset
-
-.
+\begin_layout Itemize
+以下证明, 在导数的某种线性组合下有界的条件下, 积的弱极限等于弱极限之积.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Box ovalbox
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-
-\series bold
-推论:
-\series default
- 设
-\begin_inset Formula $f:[0,\infty)\to\Reals$
-\end_inset
-
-为连续函数, 且满足
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-\lim_{x\to\infty}f(x)=l
-\]
-
-\end_inset
-
-证明:
-\begin_inset Formula 
-\[
-\int_{0}^{\infty}\frac{f(ax)-f(bx)}{x}\ud x=(f(0)-l)\ln\frac{b}{a},
-\]
-
-\end_inset
-
-其中
-\begin_inset Formula $a,b\in(0,\infty)$
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-还有一个更一般的结论, 为如下形式
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box ovalbox
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-(
-\series bold
-T.M.
- Apostol
-\series default
-) 函数
-\begin_inset Formula $f$
-\end_inset
-
-满足对于任何
-\begin_inset Formula $a,b>0$
-\end_inset
-
-, 
-\begin_inset Formula $\int_{a}^{b}f$
-\end_inset
-
-都存在.
- 假设
-\begin_inset Formula 
-\[
-A=\lim_{x\to0^{+}}x\int_{x}^{1}\frac{f(t)}{t^{2}}\ud t,\qquad B=\lim_{x\to+\infty}\frac{1}{x}\int_{1}^{x}f(t)\ud t
-\]
-
-\end_inset
-
-都存在, 则
-\begin_inset Formula 
-\[
-\int_{0}^{\infty}\frac{f(ax)-f(bx)}{x}\ud x=(B-A)\log\frac{a}{b}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-证明概览:
-\series default
- 定义
-\begin_inset Formula $xg(x)=\int_{1}^{x}f(t)\ud t$
-\end_inset
-
-.
- 则
-\begin_inset Formula 
-\[
-\int_{a}^{b}\frac{f(x)}{x}\ud x=g(b)-g(a)+\int_{a}^{b}\frac{g(x)}{x}\ud x.
-\]
-
-\end_inset
-
-注意这里的
-\begin_inset Formula $g(x)$
-\end_inset
-
-可能不可导, 可以用R-S积分证明上式.
- 所以
-\begin_inset Formula 
-\[
-\int_{aT}^{bT}\frac{f(x)}{x}\ud x=g(bT)-g(aT)+\int_{aT}^{bT}\frac{g(x)}{x}\ud x\to B\int_{a}^{b}\frac{1}{x}\ud x,\quad T\to\infty.
-\]
-
-\end_inset
-
-另外
-\begin_inset Formula 
-\[
-\int_{1}^{T}\frac{f(ax)-f(bx)}{x}\ud x=\int_{aT}^{bT}\frac{f(x)}{x}\ud x+\int_{a}^{b}\frac{f(x)}{x}\ud x\to B\log\frac{a}{b}+\int_{a}^{b}\frac{f(x)}{x}\ud x.
-\]
-
-\end_inset
-
-同样的证明另一边.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box ovalbox
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-
-\series bold
-Frullani积分定理:
-\series default
- 设
-\begin_inset Formula 
-\[
-f(x)-f(\infty)=\sum_{k=0}^{\infty}\frac{u(k)(-x)^{k}}{k!},\qquad g(x)-g(\infty)=\sum_{k=0}^{\infty}\frac{v(k)(-x)^{k}}{k!},
-\]
-
-\end_inset
-
-且
-\begin_inset Formula $f,g$
-\end_inset
-
-均为
-\begin_inset Formula $[0,\infty)$
-\end_inset
-
-上的连续函数, 如果
-\begin_inset Formula $f(0)=g(0)$
-\end_inset
-
-且
-\begin_inset Formula $f(\infty)=g(\infty)$
-\end_inset
-
-.
- 则
-\begin_inset Formula 
-\[
-\lim_{n\to0+}I_{n}\equiv\lim_{n\to0+}\int_{0}^{\infty}x^{n-1}\{f(ax)-g(bx)\}\ud x=\{f(0)-f(\infty)\}\left\{ \log\frac{b}{a}+\frac{\ud}{\ud s}\left(\log\frac{v(s)}{u(s)}\right)_{s=0}\right\} 
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-当
-\begin_inset Formula $f(x)=g(x)$
-\end_inset
-
-时, Frullani积分定理退化成为Frullani定理.
- 证明需要用到Ramanujan's master theorem:
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Box ovalbox
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-Ramanuja's master theorem: 
-\begin_inset Formula 
-\[
-\int_{0}^{\infty}x^{n-1}\sum_{k=0}^{\infty}\frac{\phi(k)(-x)^{k}}{k!}\ud x=\Gamma(n)\phi(-n).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-证明概览: 根据上面的定理, 有
-\begin_inset Formula 
-\[
-I_{n}=\Gamma(n+1)\left\{ \frac{a^{-n}u(-n)-b^{-n}v(-n)}{n}\right\} .
-\]
-
-\end_inset
-
-最后用L'Hospital法则即可.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-P1804720
-\end_layout
-
-\begin_layout Standard
-Assume 
-\begin_inset Formula $f:[0,1]\to\Reals$
-\end_inset
-
- is differentiable and 
-\begin_inset Formula $f'$
-\end_inset
-
- is integrable.
- Given 
-\begin_inset Formula $f(1/4)=f(3/4)=f(1)-f(0)=0$
-\end_inset
-
-, then prove that
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\int_{0}^{1}(f'(x))^{2}\ge32\int_{0}^{1}(f(x))^{2}\ud x+16\paren{\int_{0}^{1/2}f(x)\ud x-\int_{1/2}^{1}f(x)\ud x}^{2}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Q412052
-\end_layout
-
-\begin_layout Standard
-let 
-\begin_inset Formula $f\in C^{1}[0,2]$
-\end_inset
-
-, and such 
-\begin_inset Formula $\int_{0}^{2}f(x)\ud x=0$
-\end_inset
-
-, 
-\begin_inset Formula $f(0)=f(2)$
-\end_inset
-
-, show that
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\int_{0}^{2}f^{2}(x)\ud x\le\int_{0}^{2}f'^{2}(x)\ud x.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Q499212
-\end_layout
-
-\begin_layout Standard
-let 
-\begin_inset Formula $f\in C^{1}[a,b]$
-\end_inset
-
-, and such that 
-\begin_inset Formula $f(a)=f(b)=0$
-\end_inset
-
-, show that 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\int_{a}^{b}f^{2}(x)\ud x\le(b-a)^{2}\int_{a}^{b}[f'(x)]^{2}\ud x.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Q282095
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $S=\{f:\Reals\to\Reals\}$
-\end_inset
-
- that satisfies: 
-\begin_inset Formula $\forall f\in S$
-\end_inset
-
-, 
-\begin_inset Formula $f'$
-\end_inset
-
- exists and 
-\begin_inset Formula $f'$
-\end_inset
-
- is continuous and 
-\begin_inset Formula $f(0)=f(1)=0.$
-\end_inset
-
- Please prove that 
-\begin_inset Formula $\exists\delta$
+\begin_layout Itemize
+\begin_inset Formula $\Omega$
 \end_inset
 
 : 
-\begin_inset Formula $\forall f\in S$
+\begin_inset Formula $\RR^{d}$
 \end_inset
 
-, such that
+中有界Lipschitz区域.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\int_{0}^{1}(f(x))^{2}\ud x\le\delta\int_{0}^{1}(f'(x))^{2}\ud x.
-\]
-
+\begin_layout Itemize
+\begin_inset Formula $v_{n}=v_{n}\left(x\right)\in\RR^{d}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Paragraph
-Q453286
-\end_layout
-
-\begin_layout Standard
-Let
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-D=\{y\in C^{1}(0,1):y(0)=y(1)=0\}
-\]
-
-\end_inset
-
-Suppose there exists a 
-\begin_inset Formula $C_{0}$
-\end_inset
-
- such that
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\int_{0}^{1}y^{2}\ud x\le C_{0}\int_{0}^{1}(y')^{2}\ud x
-\]
-
-\end_inset
-
-for all 
-\begin_inset Formula $y\in D$
-\end_inset
-
-, and for all 
-\begin_inset Formula $C<C_{0}$
-\end_inset
-
- there exists a 
-\begin_inset Formula $y\in D$
-\end_inset
-
- such that the inequality is false.
-\end_layout
-
-\begin_layout Paragraph
-Q499416
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $f$
-\end_inset
-
- on 
-\begin_inset Formula $[a,b]$
-\end_inset
-
- two continuously differentiable functions, such
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-f(a)=f(b)=0,f'(a)=1,f'(b)=0,b>a>0
-\]
-
-\end_inset
-
-show that
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\int_{a}^{b}\paren{f''(x)}^{2}\ud x\ge\frac{4}{b-a}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Q2919511
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $f:(0,+\infty)\to\Reals$
-\end_inset
-
- differentiable such that 
-\begin_inset Formula $\abs{f'(x)}\le\frac{1}{x^{2}}$
-\end_inset
-
-, for every 
-\begin_inset Formula $x>0$
-\end_inset
-
-, Prove that 
-\begin_inset Formula $\lim_{x\to\infty}\abs{f(2x)-f(x)}=0$
+, 
+\begin_inset Formula $w_{n}=w_{n}\left(x\right)\in\RR^{d}$
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Paragraph
-Q2171291
-\end_layout
-
-\begin_layout Standard
-I have a limit as
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\lim_{x\to0^{+}}\paren{\paren{1+\sin\paren{\frac{2\pi}{x}}}\sqrt{x}}.
-\]
-
+\begin_layout Itemize
+\begin_inset Formula $v_{n}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Paragraph
-Q1431842
-\end_layout
-
-\begin_layout Standard
-What is the limit of
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{1}{\sqrt{n}}\sum_{k=1}^{n}\frac{1}{\sqrt{2k-1}+\sqrt{2k+1}}.
-\]
-
+在
+\begin_inset Formula $H^{1}\left(\Omega\right)$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Paragraph
-Q495019
-\end_layout
-
-\begin_layout Standard
-Limit of
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-s_{n}=\frac{1}{\sqrt{n}}\paren{1+\frac{1}{\sqrt{2}}+\cdots+\frac{1}{\sqrt{n}}}.
-\]
-
+中有界, 
+\begin_inset Formula $v_{n}\wc v$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Paragraph
-Q1971124
-\end_layout
-
-\begin_layout Standard
-Find the limit
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\lim_{n\to\infty}\paren{\frac{1}{\sqrt{2n^{4}+1}}+\frac{2}{\sqrt{2n^{4}+2}}+\cdots+\frac{n}{\sqrt{2n^{4}+n}}}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Q2504243
-\end_layout
-
-\begin_layout Standard
-Find
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\lim_{n\to\infty}\frac{(2n-1)!!}{(2n)!!}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Q1956291
-\end_layout
-
-\begin_layout Standard
-Evaluation of
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\lim_{n\to\infty}\binom{2n}{n}^{1/n}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Q1700204
-\end_layout
-
-\begin_layout Standard
-Evaluation of
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\lim_{n\to\infty}\sqrt[n]{\sum_{k=1}^{n}\paren{k^{999}+\frac{1}{\sqrt{k}}}}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Q564129
-\end_layout
-
-\begin_layout Standard
-let 
-\begin_inset Formula $f(x)$
-\end_inset
-
- can change sign in 
-\begin_inset Formula $x\in[0,1]$
-\end_inset
-
- and is continuous derivative function, show that 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\min_{x\in[0,1]}f(x)\ge-\int_{0}^{1}\abs{f'(x)}\ud x.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Q534636
-\end_layout
-
-\begin_layout Standard
-show that
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-I=\int_{-\pi}^{\pi}\cos(2x)\cos(3x)\cos(4x)\cdots\cos(2005x)\ud x>0.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Q1064602
-\end_layout
-
-\begin_layout Standard
-For 
-\begin_inset Formula $1\le p<\infty$
-\end_inset
-
-, how would you show for any 
-\begin_inset Formula $f\in L^{p}(\Reals)$
-\end_inset
-
- and given 
-\begin_inset Formula $\varepsilon>0$
-\end_inset
-
-, there exists 
-\begin_inset Formula $L<\infty$
-\end_inset
-
- and 
-\begin_inset Formula $g\in\mathcal{S}(\Reals)$
-\end_inset
-
- such that 
-\begin_inset Formula $\norm{f-g}_{p}<\varepsilon$
-\end_inset
-
- and 
-\begin_inset Formula $\supp(\hat{g})\subset[-L,L]$
+ in 
+\begin_inset Formula $L^{2}\left(\Omega\right)$
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Paragraph
-Q1525219
+\begin_layout Itemize
+\begin_inset Formula $w_{n}$
+\end_inset
+
+在
+\begin_inset Formula $L^{2}\left(\Omega\right)$
+\end_inset
+
+中有界, 
+\begin_inset Formula $w_{n}\wc w$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{2}\left(\Omega\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Rellich紧嵌入定理推出, 有子列
+\begin_inset Formula $v_{n}\to v$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{2}\left(\Omega\right)$
+\end_inset
+
+, 故
+\begin_inset Formula 
+\[
+v_{n}\cdot w_{n}\wc v\cdot w\ \ \text{ in }\ L^{1}\left(\Omega\right).
+\]
+
+\end_inset
+
+从而整个序列收敛.
+ 这在Navier-Stokes方程中的非线性项取极限时遇到, 在那里
+\begin_inset Formula $u_{n}$
+\end_inset
+
+由一列光滑序列逼近.
+\end_layout
+
+\begin_layout Itemize
+核心: div-curl引理.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+Newtonian potential
 \end_layout
 
 \begin_layout Standard
-Let 
-\begin_inset Formula $L_{0}^{1}(\Reals^{n})$
+div-curl引理: 
+\begin_inset Formula $v\in D'\left(\Omega\right)$
 \end_inset
 
- denote the closed subspace of 
-\begin_inset Formula $L^{1}$
+, 
+\begin_inset Formula $v=v\left(x\right)\in\RR^{d}$
 \end_inset
 
- functions whose Fourier transform vanishes at the origin (equivalently,
+, 定义
+\begin_inset Formula $\text{div}v=\text{div}v\left(x\right)\in\RR$
+\end_inset
+
+.
  
-\begin_inset Formula $\int f=0$
+\begin_inset Formula $\text{div}v:=\p_{x_{\alpha}}v_{\alpha}$
 \end_inset
 
-).
- At the top of pg.
- 231 in E.M.
- Stein, 
-\emph on
-Singular Integrals and Differentiability Properites of Functions
-\emph default
-, the author claims that a dense subspace of 
-\begin_inset Formula $L_{0}^{1}(\Reals^{n})$
+ in 
+\begin_inset Formula $D'\left(\Omega\right)$
 \end_inset
 
- is the subspace
+.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $w\in D'\left(\Omega\right)$
+\end_inset
+
+, 
+\begin_inset Formula $w=w\left(x\right)\in\RR^{d}$
+\end_inset
+
+, 
+\begin_inset Formula $\curl w=\curl w\left(x\right)\in\RR^{d^{2}}$
+\end_inset
+
+.
 \begin_inset Formula 
 \[
-\left\{ f\in L^{1}(\Reals^{n}):\supp(\hat{f})\ \mathrm{compact},\supp(\hat{f})\subset\Reals^{n}\setminus\{0\}\right\} 
-\]
-
-\end_inset
-
-and that density.
-\end_layout
-
-\begin_layout Section
-遗留的未整理问题
-\end_layout
-
-\begin_layout Paragraph
-P1.
- A closed form for 
-\begin_inset Formula $\int_{0}^{1}\frac{\ln(-\ln x)\li^{2}x}{x}\ud x$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $\li x$
-\end_inset
-
- denote the logarithmic integral
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\li x=\int_{0}^{x}\frac{\ud t}{\ln t}
-\]
-
-\end_inset
-
-and
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-I=\int_{0}^{1}\frac{\ln(-\ln x)\li^{2}x}{x}\ud x\approx-4.311872263\ldots
+\left(\curl w\right)_{\alpha\beta}:=\p_{x_{\beta}}w^{\alpha}-\p_{x_{\alpha}}w^{\beta}\ \text{ in }\ D'\left(\Omega\right),\quad1\le\alpha,\beta\le d.
 \]
 
 \end_inset
@@ -1379,18 +1191,280 @@ I=\int_{0}^{1}\frac{\ln(-\ln x)\li^{2}x}{x}\ud x\approx-4.311872263\ldots
 
 \end_layout
 
-\begin_layout Paragraph
-P2 
+\begin_layout Standard
+试证: 若
+\begin_inset Formula $v\in D'\left(\Omega\right)$
+\end_inset
+
+, 则
+\begin_inset Formula $D^{\alpha}v\in D'\left(\Omega\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\forall\alpha\in\NN^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+(Div-Curl lemma) 
+\begin_inset Formula $1<p<\infty$
+\end_inset
+
+.
+ 
+\begin_inset Formula $v_{n}=v_{n}\left(x\right)\in L^{p}\left(\Omega;\RR^{d}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\mathrm{div}v_{n}\in L^{p}\left(\Omega\right)$
+\end_inset
+
+, 
+\begin_inset Formula $w_{n}=w_{n}\left(x\right)\in L^{p'}\left(\Omega;\RR^{d}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\mathrm{curl}w_{n}\in L^{p'}\left(\Omega;\RR^{d^{2}}\right)$
+\end_inset
+
+.
+ 假设:
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\norm{v_{n}}_{L^{p}\left(\Omega\right)}+\norm{\mathrm{div}v_{n}}_{L^{p}\left(\Omega\right)}$
+\end_inset
+
+一致有界, 
+\begin_inset Formula $v_{n}\wc v$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{p}\left(\Omega\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\norm{w_{n}}_{L^{p'}\left(\Omega\right)}+\norm{\mathrm{curl}w_{n}}_{L^{p'}\left(\Omega\right)}$
+\end_inset
+
+一致有界, 
+\begin_inset Formula $w_{n}\wc w$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{p'}\left(\Omega\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+则
+\begin_inset Formula $v_{n}\cdot w_{n}\wc v\cdot w$
+\end_inset
+
+ in 
+\begin_inset Formula $D'$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-find the integral
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+在div-curl引理中, 我们只对导数的线性组合进行控制, 而Rellich紧性定理却要对
+\begin_inset Formula $v_{n}$
+\end_inset
+
+或
+\begin_inset Formula $w_{n}$
+\end_inset
+
+的所有一阶导数有控制.
+\end_layout
+
+\begin_layout Standard
+div-curl引理常用于满足
+\begin_inset Formula $\mathrm{div}v_{n}=0$
+\end_inset
+
+或
+\begin_inset Formula $\mathrm{curl}w_{n}=0$
+\end_inset
+
+的序列.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $p=p'=2$
+\end_inset
+
+时, 用Fourier变换的直接证明, 证明中对于任意的有界区域
+\begin_inset Formula $\Omega$
+\end_inset
+
+适用, 而不需对
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+做更多的假设.
+\end_layout
+
+\begin_layout Proof
+The strategy: 低频, 高频部分与Rellich's injection 
+\begin_inset Formula $H_{0}^{1}\left(\Omega\right)\Subset L^{2}\left(\Omega\right)$
+\end_inset
+
+对比.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\forall\varphi\in C_{c}^{\infty}\left(\Omega\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\psi\in C_{c}^{\infty}\left(\Omega\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\psi\vert_{\mathrm{spt}\varphi}=1$
+\end_inset
+
+.
+ 定义
 \begin_inset Formula 
 \[
-\int_{0}^{\frac{\pi}{2}}\ud\theta\ue^{-R\sin\theta}
+\widetilde{v_{n}}:=\begin{cases}
+\varphi v_{n} & \text{in }\Omega\\
+0 & \text{on }\partial\Omega
+\end{cases},\qquad\widetilde{w_{n}}:=\begin{cases}
+\psi w_{n} & \text{in }\Omega\\
+0 & \text{on }\partial\Omega
+\end{cases}
+\]
+
+\end_inset
+
+则有
+\begin_inset Formula 
+\[
+\int_{\Omega}v_{n}\cdot w_{n}\varphi=\int_{\RR^{d}}\widetilde{v_{n}}\cdot\widetilde{w_{n}}=\int_{\RR^{d}}\widehat{\widetilde{v_{n}}}\cdot\widehat{\widetilde{w_{n}}}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula $\widehat{\widetilde{v_{n}}},\widehat{\widetilde{w_{n}}}$
+\end_inset
+
+在
+\begin_inset Formula $L^{2}\left(\RR^{d}\right)$
+\end_inset
+
+中有界.
+ 
+\begin_inset Formula $\widehat{\widetilde{v_{n}}}\wc\widehat{\widetilde{v}}$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{2}\left(\RR^{d}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\widehat{\widetilde{w_{n}}}\wc\widehat{\widetilde{w}}$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{2}\left(\RR^{d}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\xi_{\alpha}\widehat{\widetilde{v_{n,\alpha}}}$
+\end_inset
+
+在
+\begin_inset Formula $L^{2}\left(\RR^{d}\right)$
+\end_inset
+
+中有界.
+ 
+\begin_inset Formula $\xi_{\beta}\widehat{\widetilde{w_{n,\alpha}}}-\xi_{\alpha}\widehat{\widetilde{w_{n,\beta}}}$
+\end_inset
+
+在
+\begin_inset Formula $L^{2}\left(\RR^{d}\right)$
+\end_inset
+
+中有界.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\int_{\RR^{d}}\widehat{\widetilde{v_{n}}}\cdot\widehat{\widetilde{w_{n}}}=\int_{B\left(0,R\right)}\widehat{\widetilde{v_{n}}}\cdot\widehat{\widetilde{w_{n}}}+\int_{\RR^{d}\setminus B\left(0,R\right)}\widehat{\widetilde{v_{n}}}\cdot\widehat{\widetilde{w_{n}}},\qquad R>0.
+\]
+
+\end_inset
+
+低频: 
+\begin_inset Formula $\norm{\widehat{\widetilde{v_{n}}}}_{L^{\infty}\left(\RR^{d}\right)}\le\norm{\widetilde{v}}_{L^{1}\left(\Omega\right)}\le C_{\Omega}\norm{v_{n}}_{L^{2}}$
+\end_inset
+
+, 同理
+\begin_inset Formula $\norm{\widehat{\widetilde{w_{n}}}}_{\infty}\lesssim\norm{w_{n}}_{2}$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+\widehat{\widetilde{v_{n}}}\left(\xi\right)=\int_{\Omega}\widetilde{v_{n}}\ue^{-\ui x\cdot\xi}\ud x\to\int_{\Omega}\widetilde{v}\ue^{-\ui x\cdot\xi}\ud x=\widehat{\widetilde{v}}\left(\xi\right)
+\]
+
+\end_inset
+
+即有点态收敛, 同理
+\begin_inset Formula $\widehat{\widetilde{w_{n}}}\to\widehat{\widetilde{w}}$
+\end_inset
+
+ a.e., 所以DCT可得
+\begin_inset Formula 
+\[
+\int_{B\left(0,R\right)}\widehat{\widetilde{v_{n}}}\cdot\widehat{\widetilde{w_{n}}}\to\int_{B\left(0,R\right)}\widehat{\widetilde{v}}\cdot\widehat{\widetilde{w}}.
+\]
+
+\end_inset
+
+高频: 
+\begin_inset Formula 
+\[
+\left|\int_{\RR^{d}\setminus B\left(0,R\right)}\widehat{\widetilde{v_{n}}}\cdot\widehat{\widetilde{w_{n}}}\right|=\left|\int_{\RR^{d}\setminus B\left(0,R\right)}\frac{\xi^{\beta}\cdot\xi^{\beta}}{\left|\xi\right|^{2}}\widehat{\widetilde{v_{n}}}\cdot\widehat{\widetilde{w_{n}}}\right|\le\frac{1}{R}\int_{\RR^{d}\setminus B\left(0,R\right)}\left|\xi^{\beta}\widehat{\widetilde{v_{n}}}^{\alpha}\widehat{\widetilde{w_{n}}}^{\alpha}\right|\le\frac{1}{R}\int_{\RR^{d}\setminus B\left(0,R\right)}\left|\xi^{\alpha}\widehat{\widetilde{v_{n}}}^{\alpha}\widehat{\widetilde{w_{n}}}^{\beta}\right|+\left|\left(\xi^{\beta}\widehat{\widetilde{w_{n}}}^{\alpha}-\xi^{\alpha}\widehat{\widetilde{w_{n}}}^{\beta}\right)\widehat{\widetilde{v_{n}}}^{\alpha}\right|=O\left(\frac{1}{R}\right).
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula 
+\[
+\int_{\Omega}v_{n}\cdot w_{n}\varphi\to\int_{B\left(0,R\right)}\widehat{\widetilde{v}}\cdot\widehat{\widetilde{w}}+O\left(\frac{1}{R}\right),\qquad n\to\infty.
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula 
+\[
+\int_{\Omega}v_{n}\cdot w_{n}\varphi\to\int_{\RR^{d}}\widehat{\widetilde{v}}\cdot\widehat{\widetilde{w}}=\int_{\RR^{d}}\widetilde{v}\cdot\widetilde{w}=\int_{\Omega}v\cdot w\varphi.
 \]
 
 \end_inset
@@ -1398,505 +1472,2332 @@ find the integral
 
 \end_layout
 
-\begin_layout Paragraph
-P3
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-I recently got stuck on evaluating the following integral,
+\begin_inset Formula $1<p,p'<\infty$
+\end_inset
+
+时
 \end_layout
 
 \begin_layout Standard
+此时Fourier变换不再适用.
+\end_layout
+
+\begin_layout Standard
+当存在序列
+\begin_inset Formula $z_{n}$
+\end_inset
+
+使得
+\begin_inset Formula $w_{n}=\nabla z_{n}$
+\end_inset
+
+且
 \begin_inset Formula 
 \[
-\int_{-\infty}^{\infty}\ue^{-x^{2}/a}\ln\paren{1+b\ue^{-cx^{2}}}\ud x
+\begin{cases}
+z_{n}\to z & \text{ in }L^{p'}\left(\Omega\right)\\
+\nabla z_{n}\wc\nabla z & \text{ in }L^{p'}\left(\Omega\right)
+\end{cases}
+\]
+
+\end_inset
+
+所以有
+\begin_inset Formula $\mathrm{curl}w_{n}=0$
+\end_inset
+
+.
+ 所以
+\begin_inset Formula 
+\[
+\int_{\Omega}v_{n}\cdot w_{n}\varphi=\int_{\Omega}v_{n}\cdot\nabla z_{n}\varphi=-\int_{\Omega}\mathrm{div}v_{n}\cdot z_{n}\varphi-\int_{\Omega}\left(v_{n}\cdot\nabla\varphi\right)z_{n}\to-\int_{\Omega}\mathrm{div}v\cdot z\varphi-\int_{\Omega}\left(v\cdot\nabla\varphi\right)z=\int_{\Omega}\left(v\cdot\nabla z\right)\varphi=\int_{\Omega}v\cdot w\varphi.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A few singular integrals
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $-\Delta$
+\end_inset
+
+的基本解:
+\begin_inset Formula 
+\[
+\Gamma\left(x\right):=\begin{cases}
+\frac{1}{2\pi}\log\left|x\right| & d=2\\
+c_{d}\frac{1}{\left|x\right|^{d-2}} & d\ge3.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall f\in C_{0}^{\infty}\left(\RR^{d}\right)$
+\end_inset
+
+, 牛顿位势
+\begin_inset Formula $u\left(x\right)=\Gamma*f\left(x\right)$
+\end_inset
+
+是
+\begin_inset Formula $-\Delta u=f$
+\end_inset
+
+, 
+\begin_inset Formula $x\in\RR^{d}$
+\end_inset
+
+的弱解.
+\end_layout
+
+\begin_layout Proposition
+如下结论成立
+\end_layout
+
+\begin_layout Enumerate
+设
+\begin_inset Formula $1<q<d$
+\end_inset
+
+, 则
+\begin_inset Formula $\exists c>0$
+\end_inset
+
+使得
+\begin_inset Formula $\forall f\in L^{q}\left(\Omega\right)$
+\end_inset
+
+, 牛顿位势
+\begin_inset Formula $u=\Gamma*f$
+\end_inset
+
+满足
+\begin_inset Formula 
+\[
+\norm{\nabla u}_{L^{q^{*}}\left(\Omega\right)}\le C\norm{f}_{q;\Omega}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+设
+\begin_inset Formula $1<q<\infty$
+\end_inset
+
+, 则
+\begin_inset Formula $\exists c>0$
+\end_inset
+
+使得
+\begin_inset Formula $\forall f\in L^{q}\left(\Omega\right)$
+\end_inset
+
+, 牛顿位势
+\begin_inset Formula $u=\Gamma*f$
+\end_inset
+
+满足
+\begin_inset Formula 
+\[
+\norm{\nabla^{2}u}_{q;\Omega}\le C\norm{f}_{q;\Omega}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+关于
+\begin_inset Formula $\nabla u$
+\end_inset
+
+的估计, 可由以下形式的奇异积分得到:
+\end_layout
+
+\begin_layout Standard
+对于
+\begin_inset Formula $0<\alpha<d$
+\end_inset
+
+, 
+\begin_inset Formula $f\in C_{c}^{\infty}\left(\RR^{d}\right)$
+\end_inset
+
+, define:
+\begin_inset Formula 
+\[
+I_{\alpha}f\left(x\right):=\frac{1}{\left|\cdot\right|^{d-\alpha}}*f\left(x\right)=\int_{\RR^{d}}\frac{1}{\left|x-y\right|^{d-\alpha}}f\left(y\right)\ud y.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\nabla\Gamma\left(x\right)=\begin{cases}
+\frac{1}{2\pi}\frac{x}{\left|x\right|^{2}} & d=2\\
+c_{d}\left(2-d\right)\frac{x}{\left|x\right|^{d}} & d\ge3.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Formula $\forall0<\alpha<d$
+\end_inset
+
+, 
+\begin_inset Formula $\forall1<p<\frac{d}{\alpha}$
+\end_inset
+
+, 
+\begin_inset Formula $\forall f\in L^{p}\left(\RR^{d}\right)$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\norm{I_{\alpha}f}_{q;\RR^{d}}\le C\norm{f}_{p;\RR^{d}},
 \]
 
 \end_inset
 
 where 
-\begin_inset Formula $a>0$
+\begin_inset Formula $\frac{1}{q}=\frac{1}{p}-\frac{\alpha}{d}$
 \end_inset
 
 , 
-\begin_inset Formula $b>0$
+\begin_inset Formula $C=C\left(\alpha,d,p\right)$
 \end_inset
 
-.
- I don't know if there is an effective substitution to use.
-\end_layout
-
-\begin_layout Paragraph
-P4 求证: 收敛数列空间
-\begin_inset Formula $c$
+, say 
+\begin_inset Formula $I_{\alpha}$
 \end_inset
 
-作为
-\begin_inset Formula $l^{\infty}$
+ is (强) 
+\begin_inset Formula $\left(p,q\right)$
 \end_inset
 
-的子空间是完备的, 且是可分的子空间.
+型算子.
 \end_layout
 
 \begin_layout Standard
-只需证
-\begin_inset Formula $c$
+\begin_inset Separator plain
 \end_inset
 
-是
-\begin_inset Formula $l^{\infty}$
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
 \end_inset
 
-的闭集, 设
-\begin_inset Formula $x_{0}=(\xi_{i}^{(0)})_{i=1}^{\infty}\in\overline{c}$
+convolution in Lorentz spaces.
+\end_layout
+
+\begin_layout Standard
+Remark, 通过缩放, 可以求出
+\begin_inset Formula $q$
 \end_inset
 
-, 则
-\begin_inset Formula $\forall\varepsilon>0$
+是满足以上表达式的.
+\end_layout
+
+\begin_layout Standard
+以上命题可以推出, 当
+\begin_inset Formula $1<p<d$
 \end_inset
 
 , 
-\begin_inset Formula $\exists x_{\varepsilon}\in c$
+\begin_inset Formula $\frac{1}{p^{*}}=\frac{1}{p}-\frac{1}{d}$
 \end_inset
 
-, 记
-\begin_inset Formula $x_{\varepsilon}=(\xi_{i}^{(\varepsilon)})_{i=1}^{\infty}$
-\end_inset
-
-, 使得
-\begin_inset Formula $d(x_{\varepsilon},x_{0})<\frac{\varepsilon}{3}$
-\end_inset
-
-, 即
-\begin_inset Formula $\sup_{n}\abs{\xi_{n}^{(\varepsilon)}-\xi_{n}^{(0)}}<\frac{\varepsilon}{3}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-又由于
-\begin_inset Formula $\{\xi_{n}^{(\varepsilon)}\}_{n=1}^{\infty}$
-\end_inset
-
-为收敛数列, 故存在
-\begin_inset Formula $N$
-\end_inset
-
-, 使
-\begin_inset Formula $m,n>N$
-\end_inset
-
-时, 恒有
-\begin_inset Formula $\abs{\xi_{m}^{(\varepsilon)}-\xi_{n}^{(\varepsilon)}}<\frac{\varepsilon}{3}$
-\end_inset
-
-, 故
-\end_layout
-
-\begin_layout Standard
+时, 
 \begin_inset Formula 
 \[
-\abs{\xi_{m}^{(0)}-\xi_{n}^{(0)}}\le\abs{\xi_{m}^{(0)}-\xi_{m}^{(\varepsilon)}}+\abs{\xi_{m}^{(\varepsilon)}-\xi_{n}^{(\varepsilon)}}+\abs{\xi_{n}^{(\varepsilon)}-\xi_{n}^{(0)}}<\frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\varepsilon,\qquad\forall m,n>N.
+\norm{\nabla u}_{p^{*};\RR^{d}}\le C\norm{I_{1}f}_{p^{*};\RR^{d}}\le C\norm{f}_{p;\RR^{d}}.
 \]
 
 \end_inset
 
-故
-\begin_inset Formula $\{\xi_{n}^{(0)}\}$
-\end_inset
 
-是Cauchy列, 所以
-\begin_inset Formula $x_{0}\in c$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
-再证
-\begin_inset Formula $c$
+对
+\begin_inset Formula $\nabla^{2}u$
 \end_inset
 
-是可分的, 记
-\begin_inset Formula $M=\{x:(\xi_{1},\xi_{2},\cdots,\xi_{n},\cdots);\exists N_{n}\textrm{使}\forall n>N_{x}\textrm{有}\xi_{n}=\xi_{N_{x}},\textrm{且}\xi_{n}\in\Rationals,\forall n\}$
-\end_inset
-
-.
- 易知
-\begin_inset Formula $M\sim\bigcup_{n=1}^{\infty}\Rationals^{n}$
-\end_inset
-
-, 故
-\begin_inset Formula $M$
-\end_inset
-
-是可列集, 下证
-\begin_inset Formula $\overline{M}=c$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-设
-\begin_inset Formula $x_{0}=(\xi_{1}^{(0)},\xi_{2}^{(0)},\cdots,\xi_{n}^{(0)},\cdots)\in c$
-\end_inset
-
-, 且
-\begin_inset Formula $\lim_{n\to\infty}\xi_{n}^{(0)}=a$
-\end_inset
-
-, 则
-\begin_inset Formula $\forall\varepsilon>0$
-\end_inset
-
-, 存在
-\begin_inset Formula $N$
-\end_inset
-
-, 使
-\begin_inset Formula $n>N$
-\end_inset
-
-时, 恒有
-\begin_inset Formula $\abs{\xi_{n}^{(0)}-a}<\frac{\varepsilon}{2}$
-\end_inset
-
-, 设
-\begin_inset Formula $r\in\Rationals$
-\end_inset
-
-, 满足
-\begin_inset Formula $\abs{a-r}<\frac{\varepsilon}{2}$
-\end_inset
-
-, 取
-\begin_inset Formula $r_{i}\in\Rationals$
-\end_inset
-
-, 使
-\begin_inset Formula $\abs{\xi_{i}^{(0)}-r_{i}}<\varepsilon$
-\end_inset
-
-, (
-\begin_inset Formula $i=1,2,\cdots,N$
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-则
-\begin_inset Formula $x=(r_{1},r_{2},\cdots,r_{N},r,r,\cdots)\in M$
-\end_inset
-
-, 且
-\begin_inset Formula $d(x,x_{0})<\varepsilon$
-\end_inset
-
-.
- 故
-\begin_inset Formula $M$
-\end_inset
-
-在
-\begin_inset Formula $c$
-\end_inset
-
-中稠密, 所以
-\begin_inset Formula $c$
-\end_inset
-
-可分.
-\end_layout
-
-\begin_layout Paragraph
-P5 试举反例说明: 完备性不是拓扑性质.
-\end_layout
-
-\begin_layout Standard
-在
-\begin_inset Formula $\Reals$
-\end_inset
-
-上赋予度量
-\begin_inset Formula $d(x,y)=\abs{\arctan x-\arctan y}$
-\end_inset
-
-, 则
-\begin_inset Formula $(\Reals,d)$
-\end_inset
-
-是度量空间, 但不完备, 由于恒等映射
-\begin_inset Formula $I:\Reals\to(\Reals,d)$
-\end_inset
-
-是同胚映射, 故得.
- 
-\end_layout
-
-\begin_layout Paragraph
-P6 Salamin-Brent 算法:
-\end_layout
-
-\begin_layout Standard
-令
-\begin_inset Formula $a_{0}=1$
+的估计, 对于
+\begin_inset Formula $d\ge2$
 \end_inset
 
 , 
-\begin_inset Formula $b_{0}=s_{0}=\frac{1}{\sqrt{2}}$
+\begin_inset Formula $1\le\alpha,\beta\le d$
 \end_inset
 
-, 并用递推公式
-\end_layout
-
-\begin_layout Standard
+, 
 \begin_inset Formula 
 \[
-\begin{array}{c}
-a_{n}=\frac{a_{n-1}+b_{n-1}}{2},\\
-b_{n}=\sqrt{a_{n-1}b_{n-1}},\\
-s_{n}=s_{n-1}-2^{n}(a_{n}^{2}-b_{n}^{2}),\\
-p_{n}=\frac{2a_{n}^{2}}{s_{n}},
-\end{array}
+\partial_{x_{\alpha}}\partial_{x_{\beta}}\Gamma\left(x\right)=\begin{cases}
+-d\frac{\widetilde{c_{d}}}{\left|x\right|^{\alpha}}\cdot\frac{x_{\alpha}x_{\beta}}{\left|x\right|^{2}}, & \alpha\ne\beta\\
+\frac{\widetilde{c_{d}}}{\left|x\right|^{d}}\left\{ 1-d\frac{x_{\alpha}^{2}}{\left|x\right|^{2}}\right\} , & \alpha=\beta.
+\end{cases}
 \]
 
 \end_inset
 
-做迭代, 则
-\begin_inset Formula $p_{n}$
+当
+\begin_inset Formula $d=2$
 \end_inset
 
-二阶收敛于
-\begin_inset Formula $\pi$
+时, 
+\begin_inset Formula $\widetilde{c_{2}}=\frac{1}{2\pi}$
+\end_inset
+
+, 当
+\begin_inset Formula $d\ge3$
+\end_inset
+
+时, 
+\begin_inset Formula $\widetilde{c_{d}}=\left(2-d\right)c_{d}$
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Paragraph
-P7 
 \end_layout
 
 \begin_layout Standard
-设实方阵的秩是
-\begin_inset Formula $r$
+求导之后的核在
+\begin_inset Formula $0$
 \end_inset
 
-.
- 试证: 
-\begin_inset Formula $A$
+和
+\begin_inset Formula $\infty$
 \end_inset
 
-能表成
-\begin_inset Formula $A=PTO$
+附近不再可积, 在上面的命题中相当于
+\begin_inset Formula $\alpha=0$
 \end_inset
 
-, 其中
-\begin_inset Formula $O$
+, 这样不能再用以上命题了.
+\end_layout
+
+\begin_layout Standard
+在某些情况下, subtle cancellations properties可以定义一个算子并证其有界性, 如在Calderon-Zygmund理论便是如此处
+理的.
+\end_layout
+
+\begin_layout Proposition
+定义自
+\begin_inset Formula $f\in C_{0}^{\infty}\left(\RR^{d}\right)$
 \end_inset
 
-是
-\begin_inset Formula $n$
-\end_inset
-
-阶实正交方阵, 
+上的算子
 \begin_inset Formula $T$
 \end_inset
 
-是实下三角方阵:
-\end_layout
+: 
+\begin_inset Formula $Tf\left(x\right):=p.v.\ K*f\left(x\right)$
+\end_inset
 
-\begin_layout Standard
+, 对于任何
+\begin_inset Formula $p\in\left(1,\infty\right)$
+\end_inset
+
+是
+\begin_inset Formula $L^{p}\left(\RR^{d}\right)\to L^{p}\left(\RR^{d}\right)$
+\end_inset
+
+有界线性算子.
+ 其中
 \begin_inset Formula 
 \[
-T=\begin{pmatrix}\begin{pmatrix}t_{11}\\
-t_{21} & t_{22}\\
-\vdots & \vdots & \ddots\\
-t_{r1} & t_{r2} & \cdots & t_{rr}
-\end{pmatrix} & 0^{(r,n-r)}\\
-T_{1}^{(n-r,r)} & 0_{n-r}
-\end{pmatrix}
+K\left(x\right):=\frac{1}{\left|x\right|^{d}}\omega\left(\frac{x}{\left|x\right|}\right),
 \]
 
 \end_inset
 
-且其中对角元素
-\begin_inset Formula $t_{11},t_{22},\cdots,t_{rr}$
+
+\begin_inset Formula $\omega=\omega\left(s\right)$
 \end_inset
 
-恒大于零, 再
-\begin_inset Formula $P$
+是定义在
+\begin_inset Formula $\mathbb{S}^{d-1}$
 \end_inset
 
-是置换方阵, 即是第一种初等方阵的乘积.
-\end_layout
+上的Lipschitz函数, 使得
+\begin_inset Formula 
+\[
+\int_{\mathbb{S}^{d-1}}\omega\left(s\right)\ud\sigma\left(s\right)=0.
+\]
 
-\begin_layout Paragraph
-P8 设
-\begin_inset Formula $\mathcal{L}$
 \end_inset
 
-是
-\begin_inset Formula $n$
-\end_inset
 
-维实Euclid空间.试证:
 \end_layout
 
 \begin_layout Standard
-(2) 对于
-\begin_inset Formula $\mathcal{L}$
+\begin_inset Separator plain
 \end_inset
 
-中的有限个向量
-\begin_inset Formula $\beta_{1},\beta_{2},\cdots,\beta_{s}$
+
+\end_layout
+
+\begin_layout Standard
+Riesz变换的Remark.
+\end_layout
+
+\begin_layout Standard
+Riesz位势的
+\begin_inset Formula $L^{p}$
 \end_inset
 
-, 则存在向量
-\begin_inset Formula $\beta_{0}$
+有界性.
+\end_layout
+
+\begin_layout Standard
+Helmholtz分解与div-curl引理的证明.
+\end_layout
+
+\begin_layout Standard
+关于奇异积分的估计.
+\end_layout
+
+\begin_layout Standard
+Leray投影算子
+\end_layout
+
+\begin_layout Standard
+Fourier空间
+\end_layout
+
+\begin_layout Standard
+能量收敛: 
+\begin_inset Formula 
+\[
+\xi^{\varepsilon}\left(x\right):=A\left(\frac{x}{\varepsilon}\right)\nabla u^{\varepsilon}\wc A^{\circ}\nabla u^{\circ}\ \text{ in }\ L^{2}\left(\Omega\right).
+\]
+
 \end_inset
 
-, 使得
-\begin_inset Formula $(\beta_{0},\beta_{j})\ne0$
+
+\begin_inset Formula 
+\[
+\nabla u^{\varepsilon}\wc\nabla u^{\circ}\ \text{ in }L^{2}\left(\Omega\right).
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+A^{\circ}=\overline{A}+\overline{A\nabla\chi}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\nabla\cdot\xi^{\varepsilon}=\mathrm{div}\xi^{\varepsilon}=-f.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Longrightarrow A\left(\frac{x}{\varepsilon}\right)\nabla u^{\varepsilon}\cdot\nabla u^{\varepsilon}\wc A^{\circ}\nabla u^{\circ}\cdot\nabla u^{\circ}\ \text{ in }D'.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jacobian行列式的弱连续性.
+ 证明中用到了
+\begin_inset Formula $\mathcal{M}\left(\Omega\right)\subset\left(L^{\infty}\left(\Omega\right)\right)'$
+\end_inset
+
+, 是否有
+\begin_inset Formula $\left(L^{\infty}\left(\Omega\right)\right)'\subset\mathcal{M}\left(\Omega\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+应用泛函分析, 薛小平
+\end_layout
+
+\begin_layout Subsubsection
+广义函数简介
+\end_layout
+
+\begin_layout Standard
+算子演算, 对Heaviside函数求导数, 把导数记为
+\begin_inset Formula $\delta\left(x\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+波函数具有形式
+\begin_inset Formula $\ue^{\ui\lambda x}$
+\end_inset
+
+(
+\begin_inset Formula $x\in\RR$
+\end_inset
+
+), 
+\begin_inset Formula $\lambda\in\RR$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Cauchy积分: 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\infty}^{\infty}\ue^{\ui\lambda x}\ud x=\lim_{n\to\infty}\frac{1}{2\pi}\int_{-n}^{n}\ue^{\ui\lambda x}=\lim_{n\to\infty}\frac{1}{\pi}\frac{\sin n\lambda}{\lambda}$
 \end_inset
 
 , 
-\begin_inset Formula $j=1,2,\cdots,s$
+\begin_inset Formula $\frac{1}{\pi}\frac{\sin n\lambda}{\lambda}\wc\delta\left(x\right),\ \lambda\to\infty$
+\end_inset
+
+ in 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+广义微商理论.
+\end_layout
+
+\begin_layout Standard
+基本函数空间
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C_{0}^{k}\left(\Omega\right)$
+\end_inset
+
+表示
+\begin_inset Formula $C^{k}\left(\bar{\Omega}\right)$
+\end_inset
+
+中满足支集是
+\begin_inset Formula $\Omega$
+\end_inset
+
+内紧集(有界闭集)的所有函数组成的空间.
+\end_layout
+
+\begin_layout Theorem
+设
+\begin_inset Formula $u\left(x\right)$
+\end_inset
+
+是
+\begin_inset Formula $\Omega$
+\end_inset
+
+上定义的一个可积函数, 并且在
+\begin_inset Formula $\Omega$
+\end_inset
+
+的一个紧集
+\begin_inset Formula $K$
+\end_inset
+
+外恒为零, 则当
+\begin_inset Formula $\delta>0$
+\end_inset
+
+充分小时
+\begin_inset Formula 
+\[
+u_{\delta}\left(x\right)=\int_{\Omega}u\left(y\right)j_{\delta}\left(x-y\right)\ud y
+\]
+
+\end_inset
+
+是
+\begin_inset Formula $C_{0}^{\infty}\left(\RR^{n}\right)$
+\end_inset
+
+中的函数.
+ 其中
+\begin_inset Formula $j_{\delta}\left(x\right)=\frac{1}{\delta^{n}}j\left(\frac{x}{\delta}\right)$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+j\left(x\right)=\begin{cases}
+C_{n}\ue^{-\frac{1}{1-\norm{x}^{2}}}, & \norm{x}<1;\\
+0, & \norm{x}\ge1.
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset Formula $C_{n}$
+\end_inset
+
+是依赖于维数
+\begin_inset Formula $n$
+\end_inset
+
+的常数, 使
+\begin_inset Formula $\int_{\norm{x}\le1}j\left(x\right)\ud x=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+为什么以上定理的条件要求
+\begin_inset Formula $u$
+\end_inset
+
+支在紧集
+\begin_inset Formula $K$
+\end_inset
+
+中?如果去掉此条件将如何?
+\end_layout
+
+\begin_layout Standard
+如果
+\begin_inset Formula $u$
+\end_inset
+
+的可积性取消将如何, 比如
+\begin_inset Formula $u$
+\end_inset
+
+在
+\begin_inset Formula $\partial K$
+\end_inset
+
+的邻域附近积分为无穷?
+\end_layout
+
+\begin_layout Definition
+设
+\begin_inset Formula $\left\{ \varphi_{i}\right\} \subset C_{c}^{\infty}\left(\Omega\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\varphi\in C_{c}^{\infty}\left(\Omega\right)$
+\end_inset
+
+, 如果满足下列条件:
+\end_layout
+
+\begin_layout Enumerate
+存在一个紧集
+\begin_inset Formula $K\subset\Omega$
+\end_inset
+
+使得
+\begin_inset Formula 
+\[
+\text{spt}\left(\varphi_{j}\right)\subset K(j=1,2,\cdots),\quad\text{spt}\left(\varphi\right)\subset K;
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+对于任意多重指标
+\begin_inset Formula $p=\left(p_{1},p_{2},\cdots,p_{n}\right)$
+\end_inset
+
+, 函数列
+\begin_inset Formula $\left\{ D^{p}\varphi_{j}\right\} $
+\end_inset
+
+在
+\begin_inset Formula $K$
+\end_inset
+
+上一致收敛于
+\begin_inset Formula $D^{p}\varphi$
+\end_inset
+
+, 即
+\begin_inset Formula 
+\[
+\max_{x\in K}\left|D^{p}\varphi_{j}\left(x\right)-D^{p}\varphi\left(x\right)\right|\to0,j\to\infty,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+则称
+\begin_inset Formula $\left\{ \varphi_{i}\right\} $
+\end_inset
+
+收敛于
+\begin_inset Formula $\varphi$
+\end_inset
+
+, that is 
+\begin_inset Formula $\varphi_{j}\to\varphi$
+\end_inset
+
+ in 
+\begin_inset Formula $D$
+\end_inset
+
+, 称
+\begin_inset Formula $C_{c}^{\infty}\left(\Omega\right)$
+\end_inset
+
+按照收敛概念及线性运算为基本函数空间, 并记为
+\begin_inset Formula $D\left(\Omega\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathscr{D}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathfrak{D}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D$
+\end_inset
+
+中的线性运算关于收敛概念是连续的.
+\end_layout
+
+\begin_layout Definition
+称
+\begin_inset Formula $\left\{ \varphi_{j}\right\} \subset D$
+\end_inset
+
+为Cauchy列, 如果满足
+\end_layout
+
+\begin_layout Enumerate
+存在紧集
+\begin_inset Formula $K$
+\end_inset
+
+使得
+\begin_inset Formula $\text{spt}$
+\end_inset
+
+
+\begin_inset Formula $\left(\varphi_{j}\right)\subset K$
+\end_inset
+
+(
+\begin_inset Formula $j=1,2,\cdots$
+\end_inset
+
+);
+\end_layout
+
+\begin_layout Enumerate
+对
+\begin_inset Formula $\forall\varepsilon>0$
+\end_inset
+
+, 及多重指标
+\begin_inset Formula $p$
+\end_inset
+
+, 存在自然数
+\begin_inset Formula $N$
+\end_inset
+
+, 使当
+\begin_inset Formula $j_{1},j_{2}\ge N$
+\end_inset
+
+时有
+\begin_inset Formula 
+\[
+\max_{x\in K}\left|D^{p}\varphi_{j_{1}}\left(x\right)-D^{p}\varphi_{j_{2}}\left(x\right)\right|<\varepsilon.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $D$
+\end_inset
+
+是完备的, 即若
+\begin_inset Formula $\left\{ \varphi_{j}\right\} \subset D$
+\end_inset
+
+是任意一个Cauchy列, 则存在
+\begin_inset Formula $\varphi\in D$
+\end_inset
+
+, 使得
+\begin_inset Formula $\varphi_{j}\to\varphi$
+\end_inset
+
+ in 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $D$
+\end_inset
+
+上的一切连续线性泛函, 称为广义函数, 即
+\begin_inset Formula $D$
+\end_inset
+
+上的广义函数
+\begin_inset Formula $f$
+\end_inset
+
+满足
+\end_layout
+
+\begin_layout Enumerate
+线性: 对任何
+\begin_inset Formula $\alpha,\beta$
+\end_inset
+
+及
+\begin_inset Formula $\varphi_{1},\varphi_{2}\in D$
+\end_inset
+
+有
+\begin_inset Formula $f\left(\alpha\varphi_{1}+\beta\varphi_{2}\right)=\alpha f\left(\varphi_{1}\right)+\beta f\left(\varphi_{2}\right)$
 \end_inset
 
 ;
 \end_layout
 
-\begin_layout Standard
-(3) 设
-\begin_inset Formula $\mathscr{A}_{1},\mathscr{A}_{2},\cdots,\mathscr{A}_{s}$
+\begin_layout Enumerate
+连续: 设
+\begin_inset Formula $\left\{ \varphi_{j}\right\} \subset D$
 \end_inset
 
-是
-\begin_inset Formula $\mathcal{L}$
+, 
+\begin_inset Formula $\varphi\in D$
 \end_inset
 
-上有限多个两两不同的线性变换, 则存在向量
-\begin_inset Formula $\beta_{0}$
+, 若
+\begin_inset Formula $\varphi_{j}\to\varphi$
 \end_inset
 
-, 使得
-\begin_inset Formula $\mathscr{A}_{1}(\beta_{0}),\mathscr{A}_{2}(\beta_{0}),\cdots,\mathscr{A}_{s}(\beta_{0})$
+ in 
+\begin_inset Formula $D$
 \end_inset
 
-也两两不等.
-\end_layout
-
-\begin_layout Paragraph
-P9
-\end_layout
-
-\begin_layout Standard
-设
-\begin_inset Formula $A$
+, 则有
+\begin_inset Formula $f\left(\varphi_{j}\right)\to f\left(\varphi\right)$
 \end_inset
 
-和
-\begin_inset Formula $B$
+, 
+\begin_inset Formula $j\to\infty$
 \end_inset
 
-是
-\begin_inset Formula $n\times m$
-\end_inset
-
-实矩阵.
- 试证有不等式:
+.
 \end_layout
 
 \begin_layout Standard
+一切广义函数所组成的集合, 记作
+\begin_inset Formula $D'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+每个
+\begin_inset Formula $f\in L_{loc}\left(\Omega\right)$
+\end_inset
+
+都对应一个函数型广义函数
+\begin_inset Formula $f^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $f^{*}\left(\varphi\right)=\int_{\Omega}f\left(x\right)\varphi\left(x\right)\ud x$
+\end_inset
+
+, 
+\begin_inset Formula $\forall\varphi\in D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+映射
+\begin_inset Formula $T:L_{loc}\left(\Omega\right)\to D'$
+\end_inset
+
+定义为
+\begin_inset Formula $T\left(f\right)=f^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+定义如上, 则
+\begin_inset Formula $T$
+\end_inset
+
+是一对一线性映射.
+\end_layout
+
+\begin_layout Standard
+证明较繁?
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $f\in D'$
+\end_inset
+
+当且仅当对任意紧集
+\begin_inset Formula $K\subset\Omega$
+\end_inset
+
+, 存在常数
+\begin_inset Formula $C$
+\end_inset
+
+及非负整数
+\begin_inset Formula $m$
+\end_inset
+
+, 使得当
+\begin_inset Formula $\text{spt}\varphi\subset K$
+\end_inset
+
+时有
 \begin_inset Formula 
 \[
-\tr(AB'-BA')(AB'-BA')'\le\tr(AA')\tr(BB'),
+\left|f\left(\varphi\right)\right|\le C\sum_{\left|p\right|\le m}\sup_{x\in K}\left|D^{p}\varphi\right|,\qquad\forall\varphi\in D.
 \]
 
 \end_inset
 
-且等式成立当且仅当存在
-\begin_inset Formula $n$
-\end_inset
 
-阶实正交方阵
-\begin_inset Formula $O_{1}$
-\end_inset
-
-和
-\begin_inset Formula $m$
-\end_inset
-
-阶实正交方阵
-\begin_inset Formula $O_{2}$
-\end_inset
-
-, 使得
 \end_layout
 
 \begin_layout Standard
+试证必要性.
+\end_layout
+
+\begin_layout Definition
+设
+\begin_inset Formula $\left\{ f_{j}\right\} \subset D'$
+\end_inset
+
+, 
+\begin_inset Formula $f\in D'$
+\end_inset
+
+, 如果对一切
+\begin_inset Formula $\varphi\in D$
+\end_inset
+
+成立
 \begin_inset Formula 
 \[
-O_{1}AO_{2}=\begin{pmatrix}\diag(a,b) & 0\\
-0 & 0
-\end{pmatrix},\qquad O_{1}BO_{2}=\begin{pmatrix}\begin{pmatrix}0 & -b\\
-a & 0
-\end{pmatrix} & 0\\
-0 & 0
-\end{pmatrix},
+\lim_{j\to\infty}f_{j}\left(\varphi\right)=f\left(\varphi\right),
+\]
+
+\end_inset
+
+则称
+\begin_inset Formula $\left\{ f_{j}\right\} $
+\end_inset
+
+在
+\begin_inset Formula $D'$
+\end_inset
+
+中收敛于
+\begin_inset Formula $f$
+\end_inset
+
+, 记为
+\begin_inset Formula $f_{j}\to f$
+\end_inset
+
+ in 
+\begin_inset Formula $D'$
+\end_inset
+
+.
+ 
+\begin_inset Formula $D'$
+\end_inset
+
+按照这种收敛概念, 称为广义函数空间.
+\end_layout
+
+\begin_layout Standard
+函数型广义函数在
+\begin_inset Formula $D'$
+\end_inset
+
+中稠密吗?
+\end_layout
+
+\begin_layout Standard
+对任一多重指标
+\begin_inset Formula $p$
+\end_inset
+
+, 
+\begin_inset Formula $D^{p}$
+\end_inset
+
+是一个由
+\begin_inset Formula $D$
+\end_inset
+
+到
+\begin_inset Formula $D$
+\end_inset
+
+的连续线性映射.
+\end_layout
+
+\begin_layout Proposition
+设
+\begin_inset Formula $f\in D'$
+\end_inset
+
+, 定义
+\begin_inset Formula $g\left(\varphi\right)=-f\left(\frac{\partial\varphi}{\partial x_{1}}\right)$
+\end_inset
+
+(
+\begin_inset Formula $\varphi\in D$
+\end_inset
+
+), 则
+\begin_inset Formula $g\in D'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $f\in D'$
+\end_inset
+
+定义
+\begin_inset Formula $f$
+\end_inset
+
+对
+\begin_inset Formula $x_{1}$
+\end_inset
+
+的一阶偏导数为
+\begin_inset Formula $g$
+\end_inset
+
+, 并记为
+\begin_inset Formula $g=\frac{\partial f}{\p x_{1}}$
+\end_inset
+
+, 则
+\begin_inset Formula $g$
+\end_inset
+
+仍然是广义函数.
+ 一般地对任意多重指标
+\begin_inset Formula $p$
+\end_inset
+
+, 定义
+\begin_inset Formula $D^{p}f$
+\end_inset
+
+为如下广义函数:
+\begin_inset Formula 
+\[
+g_{p}\left(\varphi\right)=\left(-1\right)^{\left|p\right|}f\left(D^{p}\varphi\right),
+\]
+
+\end_inset
+
+即
+\begin_inset Formula $D^{p}f=g_{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+广义函数可以进行无限次求导运算.
+\end_layout
+
+\begin_layout Definition
+设
+\begin_inset Formula $\Psi\in C^{\infty}\left(\Omega\right)$
+\end_inset
+
+, 
+\begin_inset Formula $f\in D'$
+\end_inset
+
+, 定义
+\begin_inset Formula $D$
+\end_inset
+
+上的泛函为
+\begin_inset Formula $\left(\Psi f\right)\left(\varphi\right)=f\left(\Psi\varphi\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\varphi\in D$
+\end_inset
+
+, 那么
+\begin_inset Formula $\Psi f$
+\end_inset
+
+显然是
+\begin_inset Formula $D'$
+\end_inset
+
+上连续线性泛函, 即
+\begin_inset Formula $\Psi f\in D'$
+\end_inset
+
+, 称
+\begin_inset Formula $\Psi$
+\end_inset
+
+是
+\begin_inset Formula $D'$
+\end_inset
+
+的一个乘子.
+\end_layout
+
+\begin_layout Standard
+对于
+\begin_inset Formula $\Psi\in C^{\infty}\left(\Omega\right)$
+\end_inset
+
+, 
+\begin_inset Formula $f\in D'$
+\end_inset
+
+, 可定义乘积
+\begin_inset Formula $\Psi f$
+\end_inset
+
+, 但对于两个一般的广义函数不能定义乘积.
+\end_layout
+
+\begin_layout Proposition
+证明:
+\end_layout
+
+\begin_layout Enumerate
+设
+\begin_inset Formula $f,g\in D'$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha,\beta$
+\end_inset
+
+是数, 则
+\begin_inset Formula $\frac{\p}{\p x_{j}}\left(\alpha f+\beta g\right)=\alpha\frac{\p f}{\p x_{j}}+\beta\frac{\p g}{\p x_{j}}$
+\end_inset
+
+, 
+\begin_inset Formula $j=1,2,\cdots,n$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+设
+\begin_inset Formula $\Psi\in C^{\infty}\left(\Omega\right)$
+\end_inset
+
+, 
+\begin_inset Formula $f\in D'$
+\end_inset
+
+, 则
+\begin_inset Formula $\frac{\p}{\p x_{j}}\left(\Psi f\right)=\Psi\frac{\p f}{\p x_{j}}+f\frac{\p\Psi}{\p x_{j}}$
+\end_inset
+
+, 
+\begin_inset Formula $j=1,2,\cdots,n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+设
+\begin_inset Formula $f_{j}\in D'$
+\end_inset
+
+, 
+\begin_inset Formula $f\in D'$
+\end_inset
+
+, 若
+\begin_inset Formula $f_{j}\to f$
+\end_inset
+
+ in 
+\begin_inset Formula $D'$
+\end_inset
+
+, 则
+\begin_inset Formula $\frac{\p f_{j}}{\p x_{i}}\to\frac{\p f}{\p x_{i}}$
+\end_inset
+
+ in 
+\begin_inset Formula $D'$
+\end_inset
+
+, 
+\begin_inset Formula $i=1,2,\cdots,n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+设
+\begin_inset Formula $\left\{ f_{j}\right\} \subset D'$
+\end_inset
+
+, 
+\begin_inset Formula $f\in D'$
+\end_inset
+
+, 称级数
+\begin_inset Formula $\sum_{j=1}^{\infty}f_{j}$
+\end_inset
+
+在
+\begin_inset Formula $D'$
+\end_inset
+
+中收敛于
+\begin_inset Formula $f$
+\end_inset
+
+, 是指前
+\begin_inset Formula $m$
+\end_inset
+
+项和
+\begin_inset Formula $S_{m}=\sum_{j=1}^{m}f_{j}$
+\end_inset
+
+在
+\begin_inset Formula $D'$
+\end_inset
+
+中收敛于
+\begin_inset Formula $f$
+\end_inset
+
+, 记为
+\begin_inset Formula $\sum_{j=1}^{\infty}f_{j}=f$
+\end_inset
+
+.
+ 若级数
+\begin_inset Formula $\sum_{j=1}^{\infty}f_{j}$
+\end_inset
+
+收敛于
+\begin_inset Formula $f$
+\end_inset
+
+, 则级数
+\begin_inset Formula $\sum_{j=1}^{\infty}\frac{\p f_{j}}{\p x_{i}}$
+\end_inset
+
+收敛于
+\begin_inset Formula $\frac{\p f}{\p x_{i}}$
+\end_inset
+
+(
+\begin_inset Formula $i=1,2,\cdots,n$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+设
+\begin_inset Formula $\left\{ f_{j}\right\} \subset D'$
+\end_inset
+
+, 如果对每个
+\begin_inset Formula $\varphi\in D$
+\end_inset
+
+, 极限
+\begin_inset Formula $\lim_{j\to\infty}f_{j}\left(\varphi\right)$
+\end_inset
+
+存在且有限, 则必存在
+\begin_inset Formula $f\in D'$
+\end_inset
+
+, 使得
+\begin_inset Formula $f_{j}\to f$
+\end_inset
+
+ in 
+\begin_inset Formula $D'$
+\end_inset
+
+.
+ (要用到拓扑线性空间的知识?)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\frac{1}{\pi}\frac{\sin jx}{x}\to\delta\left(x\right)$
+\end_inset
+
+ in 
+\begin_inset Formula $D'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\frac{1}{\pi}\frac{1}{x^{2}+\varepsilon^{2}}\to\delta\left(x\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\left(\varepsilon\to0^{+}\right)$
+\end_inset
+
+ in 
+\begin_inset Formula $D'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\frac{1}{2\sqrt{\pi t}}\ue^{-\frac{x^{2}}{4t}}\to\delta\left(x\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\left(t\to0^{+}\right)$
+\end_inset
+
+ in 
+\begin_inset Formula $D'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proposition
+设
+\begin_inset Formula $\Omega\in\RR^{n}$
+\end_inset
+
+是一个开集, 
+\begin_inset Formula $f_{j}\left(x\right)$
+\end_inset
+
+是
+\begin_inset Formula $\Omega$
+\end_inset
+
+上的一列局部可积函数, 并且对任意紧集
+\begin_inset Formula $K\subset\Omega$
+\end_inset
+
+, 存在常数
+\begin_inset Formula $M_{K}$
+\end_inset
+
+使得
+\begin_inset Formula 
+\[
+\left|f_{j}\left(x\right)\right|\le M_{K},
+\]
+
+\end_inset
+
+又
+\begin_inset Formula $f_{j}\left(x\right)\to f_{0}\left(x\right),\ a.e.$
+\end_inset
+
+, 证明: 
+\begin_inset Formula $f_{j}^{*}\to f_{0}^{*}$
+\end_inset
+
+ in 
+\begin_inset Formula $D'$
+\end_inset
+
+.
+ 其中每个
+\begin_inset Formula $f\in L_{loc}\left(\Omega\right)$
+\end_inset
+
+都对应一个函数型广义函数
+\begin_inset Formula $f^{*}$
+\end_inset
+
+定义为
+\begin_inset Formula $f^{*}\left(\varphi\right)=\int_{\Omega}f\left(x\right)\varphi\left(x\right)\ud x$
+\end_inset
+
+, 
+\begin_inset Formula $\forall\varphi\in D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Sobolev spaces in one dimension and absolutely continuous functions, Jordan
+ Bell
+\end_layout
+
+\begin_layout Standard
+A sequence of Borel sets 
+\begin_inset Formula $E_{n}$
+\end_inset
+
+ is said to shrink nicely to 
+\begin_inset Formula $x$
+\end_inset
+
+ if there is some 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+ and a sequence 
+\begin_inset Formula $r_{n}\to0$
+\end_inset
+
+ such that 
+\begin_inset Formula $E_{n}\subset B\left(x,r_{n}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda\left(E_{n}\right)\ge\alpha\cdot\lambda\left(B\left(x,r_{n}\right)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+良好收缩于
+\begin_inset Formula $x$
+\end_inset
+
+的集合必须是Borel集, 有无推广定义?
+\end_layout
+
+\begin_layout Theorem
+fundamental lemma of the calculus of variations, the Du Bois-Reymond Lemma.
+\end_layout
+
+\begin_layout Theorem
+If 
+\begin_inset Formula $f\in\mathscr{L}_{loc}^{1}\left(\lambda\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\int_{\RR}f\phi\ud\lambda=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $\phi\in\mathscr{D}\left(\RR\right)$
+\end_inset
+
+, then 
+\begin_inset Formula $f=0$
+\end_inset
+
+ almost everywhere.
+\end_layout
+
+\begin_layout Proof
+For 
+\begin_inset Formula $x$
+\end_inset
+
+ be a Lebesgue point of 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $r\in\left(0,1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+f\left(x\right)=f\left(x\right)\cdot\frac{1}{r}\int_{\RR}\eta\left(\frac{x-y}{r}\right)\ud y=\frac{1}{r}\int_{\RR}\left(f\left(x\right)-f\left(y\right)\right)\eta\left(\frac{x-y}{r}\right)\ud\lambda\left(y\right)+\frac{1}{r}\int_{\RR}f\left(y\right)\eta\left(\frac{x-y}{r}\right)\ud\lambda\left(y\right).
+\]
+
+\end_inset
+
+用Lebesgue微分定理.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lars Hormander, The Analysis of Linear Partial Differential Operators 
+\begin_inset Formula $I$
+\end_inset
+
+, second ed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathscr{D}\left(\RR\right)$
+\end_inset
+
+ is a locally convex space.
+\end_layout
+
+\begin_layout Standard
+Haim Brezis, Functional Analysis, Sobolev Spaces and Partial Differential
+ Equations.
+\end_layout
+
+\begin_layout Lemma
+If 
+\begin_inset Formula $f\in\mathscr{L}_{loc}^{1}\left(\lambda\right)$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+\int_{\RR}f\phi'\ud\lambda=0,\qquad\phi\in\mathscr{D}\left(\RR\right),
+\]
+
+\end_inset
+
+then there is some 
+\begin_inset Formula $c\in\RR$
+\end_inset
+
+ such that 
+\begin_inset Formula $f=c$
+\end_inset
+
+ almost everywhere.
+\end_layout
+
+\begin_layout Proof
+for 
+\begin_inset Formula $\eta,\omega\in\mathscr{D}\left(\RR\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\int_{\RR}\eta\ud\lambda=1$
+\end_inset
+
+, 考察
+\begin_inset Formula $h=\omega-\eta\cdot\int_{\RR}\omega\ud\lambda\in\mathscr{D}\left(\RR\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\phi\left(x\right)=\int_{-\infty}^{x}h\ud\lambda\in\mathscr{D}\left(\RR\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\phi'\left(x\right)=h\left(x\right)$
+\end_inset
+
+ for all 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 最后使用分布积分和Du Bois-Reymond Lemma求出
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+Let 
+\begin_inset Formula $g\in\mathscr{L}_{loc}^{1}\left(\lambda\right)$
+\end_inset
+
+, let 
+\begin_inset Formula $a\in\RR$
+\end_inset
+
+, and define 
+\begin_inset Formula $f:\RR\to\RR$
+\end_inset
+
+ by 
+\begin_inset Formula $f\left(x\right)=\int_{a}^{x}g\left(y\right)\ud\lambda\left(y\right)$
+\end_inset
+
+.
+ then 
+\begin_inset Formula $\int_{\RR}f\phi'\ud\lambda=-\int_{\RR}g\phi\ud\lambda$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+用Fubini定理.
+\end_layout
+
+\begin_layout Standard
+locally absolutely continuous function.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $f\in H^{1}\left(\RR\right)$
+\end_inset
+
+, 
+\begin_inset Formula $a\in\RR$
+\end_inset
+
+, define 
+\begin_inset Formula $h\left(x\right)=\int_{a}^{x}Df\ud\lambda$
+\end_inset
+
+, then 
+\begin_inset Formula $f-h=c$
+\end_inset
+
+ almost everywhere, for some 
+\begin_inset Formula $c\in\RR$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\tilde{f}=h+c$
+\end_inset
+
+ is locally abosolutely continuous.
+\end_layout
+
+\begin_layout Theorem
+For 
+\begin_inset Formula $f\in H^{1}\left(\RR\right)$
+\end_inset
+
+, there is a function 
+\begin_inset Formula $\tilde{f}\in AC_{loc}\left(\RR\right)$
+\end_inset
+
+ such that 
+\begin_inset Formula $\tilde{f}=f$
+\end_inset
+
+ almost everywhere and 
+\begin_inset Formula $\tilde{f}'=Df$
+\end_inset
+
+ almost everywhere.
+ The function 
+\begin_inset Formula $\tilde{f}$
+\end_inset
+
+ is 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+-Holder continuous.
+\end_layout
+
+\begin_layout Standard
+对
+\begin_inset Formula $\left|\tilde{f}\left(x\right)-\tilde{f}\left(y\right)\right|\le\int_{y}^{x}\left|\tilde{f}'\right|\ud\lambda$
+\end_inset
+
+用Holder不等式.
+\end_layout
+
+\begin_layout Standard
+Giovanni Leoni, A first course in Sobolev Spaces.
+\end_layout
+
+\begin_layout Subsection
+分析2
+\end_layout
+
+\begin_layout Standard
+Banach代数是定义在Banach空间上的.
+\end_layout
+
+\begin_layout Standard
+J.
+ B.
+ Conway, A Course in Functional Analysis.
+ 2nd Edition, GTM 96.
+\end_layout
+
+\begin_layout Proposition
+If 
+\begin_inset Formula $A\in L_{inv}\left(X,Y\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $B\in L\left(X,Y\right)$
+\end_inset
+
+ with 
+\begin_inset Formula $\norm{B}\le\norm{A^{-1}}^{-1}$
+\end_inset
+
+, then 
+\begin_inset Formula $A-B\in L_{inv}\left(X,Y\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The subset 
+\begin_inset Formula $L_{inv}\left(X,Y\right)$
+\end_inset
+
+ is open in 
+\begin_inset Formula $L\left(X,Y\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+J.
+ Dugundji.
+ Topology, Boston: Allyn and Bacon, 1966.
+\end_layout
+
+\begin_layout Standard
+N.
+ Dundord, J.
+ T.
+ Schwartz.
+ Linear Operators I: General Theory.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset href
+LatexCommand href
+name "高数求极限"
+target "http://tieba.baidu.com/p/3225351255"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+证明极限
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\frac{a\left(a+r\right)\left(a+2r\right)\cdots\left(a+nr\right)}{r^{n+1}n^{n+\frac{1}{2}+\frac{a}{r}}}
+\]
+
+\end_inset
+
+存在并求值, 其中
+\begin_inset Formula $a,r$
+\end_inset
+
+是已知正数.
+ 
+\end_layout
+
+\begin_layout Paragraph
+求极限
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\frac{1+\frac{n}{1!}+\frac{n^{2}}{2!}+\cdots+\frac{n^{n}}{n!}}{\ue^{n}}=\frac{1}{2}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{1}{2}<\frac{1}{\ue^{n}}\sum_{k=0}^{n}\frac{n^{k}}{k!}<\frac{1}{2}+\frac{1}{3}\sqrt{\frac{2}{n\pi}}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\left(\frac{n!}{n^{n}}\right)^{1/n}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{x\to0}\frac{\tan\left(a+x\right)\tan\left(a-x\right)-\tan^{2}a}{\left(1-\cos\sqrt{x}\right)^{2}}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{x\to0}\frac{1-\cos x\sqrt{\cos2x}\sqrt[3]{\cos3x}\cdots\sqrt[n]{\cos nx}}{\left(x+\sin x\right)^{2}}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{x\to0}\frac{\sin\left(\ue^{x}-1\right)-\ue^{\sin x}+1}{\sin^{4}3x}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sqrt{5+1\sqrt{6+2\sqrt{7+3\sqrt{8+\cdots}}}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{x\to0}\frac{\tan\tan x-\sin\sin x}{\left(\left(1+x\right)^{1/x}-\ue\right)^{3}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+已知数列
+\begin_inset Formula 
+\[
+a_{n}=\left(1-\frac{2}{2\times3}\right)\frac{2}{3\times4}+\left(1-\frac{2}{2\times3}\right)\left(1-\frac{2}{3\times4}\right)\frac{2}{4\times5}+\cdots+\left(1-\frac{2}{2\times3}\right)\cdots\left(1-\frac{2}{n(n+1)}\right)\frac{2}{\left(n+1\right)\left(n+2\right)},
+\]
+
+\end_inset
+
+求
+\begin_inset Formula $\lim_{n\to\infty}a_{n}=\frac{1}{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+求
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\frac{\sum_{i=1}^{n}i^{3}\left(1+\frac{1}{i}\right)^{i}\cdot\sum_{k=1}^{n}k^{2}\sqrt{2+\sqrt{2+\cdots+\sqrt{2}}}}{n^{7}}.
+\]
+
+\end_inset
+
+其中连根号2的个数为
+\begin_inset Formula $k$
+\end_inset
+
+个.
+ 用Stolz公式证明
+\begin_inset Formula $\lim_{n\to\infty}n\left(a_{n}-2\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+求
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\sum_{i=1}^{n}\sum_{j=1}^{n}\sum_{k=1}^{n}\sum_{h=1}^{n}\frac{n^{6}}{\left(n+i\right)\left(n^{2}+j^{2}\right)\left(n^{3}+k^{3}\right)\left(n^{4}+h^{4}\right)}=\frac{\pi\ln2}{4}\left(\frac{\sqrt{3}\pi}{9}+\frac{\ln2}{3}\right)\left(\frac{\pi}{4\sqrt{2}}+\frac{\ln\left(\sqrt{2}+1\right)}{2\sqrt{2}}\right).
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}n^{2}\left[\sum_{i=1}^{n}\frac{2\ln\left(n+i\right)-2\ln n}{n^{2}+i^{2}}-\sum_{j=1}^{n}\sum_{k=1}^{n}\frac{1}{\left(n+j\right)\left(n^{2}+k^{2}\right)}\right]=\frac{12\ln2+\pi}{16}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{x\to0}\frac{\ln\ln\ln\left[x+\left(1+x\right)^{\left(1+x\right)^{1/x}/x}\right]+x\left(1-\frac{1}{\ue^{\ue+1}}\right)}{x^{2}}=\frac{1}{2}\ue+\frac{25}{24}-\frac{\left(1+\ue\right)\left(1-\ue^{\ue+1}\right)^{2}}{2\ue^{2\ue+2}}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}n^{2}\left(-2\pi+n\sin2\pi\ue n!\right)=-2\pi.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}n\left[\sqrt[n]{1^{n}+2^{n}+\cdots+n^{n}}-n-1+\ln\left(\ue-1\right)\right]=-\frac{\ue+1}{2\left(\ue-1\right)^{2}}-\frac{\left[\ln\left(\ue-1\right)-1\right]^{2}}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+求
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}n\left[\left(1+\sin\pi\sqrt{4n^{2}+1}\right)^{n}-\ue^{\pi/4}\right]=-\frac{\pi^{2}}{32}\ue^{\pi/4}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+求
+\begin_inset Formula 
+\[
+\lim_{x\to0}\frac{\ue^{\left(1+x\right)^{1/x}}-\left(1+x\right)^{\ue/x}}{x^{2}}=\frac{\ue^{\ue+1}}{8}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+求
+\begin_inset Formula 
+\[
+\lim_{x\to0}\frac{\tan^{5/2}x-\ln\left(1+\sin^{5/2}x\right)}{\left[\ln\left(x+\sqrt{1+x^{2}}\right)-\sin x\right]^{9/10}}=\frac{5}{4}\times15^{9/10}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+求
+\begin_inset Formula 
+\[
+\lim_{x\to1^{-}}\left(\frac{4\arctan\frac{1+x}{1-x}}{\left(x-1\right)^{3}}+\frac{x-3}{\left(x-1\right)^{2}}-\frac{2\pi}{\left(x-1\right)^{3}}\right)=\frac{1}{3}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+求
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\sum_{k=1}^{n}\frac{k\int_{0}^{k\pi}x\left|\sin x\right|\ud x}{\pi\ue^{k}}=\frac{\ue^{3}+4\ue^{2}+\ue}{\left(\ue-1\right)^{4}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+求
+\begin_inset Formula 
+\[
+\lim_{x\to0}\frac{\left(\cos x\right)^{\cos x}-\left(1-x\right)^{x}-\frac{1}{2}x^{2}}{\arcsin\tan x-\arctan\arctan x}=\frac{3}{7}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\sum_{k=0}^{n}\frac{2^{3k}\cdot3^{-3k/2}}{\left(3k\right)!}=\frac{1}{3}\ue^{2/\sqrt{3}}+\frac{2}{3}\ue^{-1/\sqrt{3}}\cos1-1.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{x\to0}\frac{\sum_{k=1}^{n-1}\sqrt[k]{\cos kx}-\left(n-1\right)\sqrt[n]{\cos nx}}{1-\prod_{k=1}^{n}\cos^{k}\left(n-k+1\right)x}=\frac{6\left(n-1\right)}{\left(n+1\right)^{2}\left(n+2\right)}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{n,m\to\infty}\sum_{i=1}^{n}\sum_{j=1}^{m}\frac{\left(-1\right)^{i+j}}{i+j}=\ln2-\frac{1}{2}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\frac{\pi^{n}n^{n}}{\left(2+\sum_{r=1}^{n}\frac{4^{r}\left(r!\right)^{2}}{\left(2r+1\right)!}\right)^{2n}}=\ue^{-5/4}.
+\]
+
+\end_inset
+
+提示: 用Stolz公式估计分母中括号内的阶为
+\begin_inset Formula $\sqrt{n}$
+\end_inset
+
+, 或者
+\begin_inset Formula 
+\[
+\sum_{r=1}^{n}\frac{4^{r}\left(r!\right)^{2}}{\left(2r+1\right)!}=\frac{4^{1+n}\left[\left(n+1\right)!\right]^{2}}{\left(2n+2\right)!}-2.
+\]
+
+\end_inset
+
+可以证明
+\begin_inset Formula 
+\[
+2+\sum_{r=1}^{n}\frac{4^{r}\left(r!\right)^{2}}{\left(2r+1\right)!}=\sqrt{\pi n}+\frac{5\sqrt{\pi}}{32\sqrt{n}}+o\left(\frac{1}{n}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset href
+LatexCommand href
+name "用对数求导法求导数"
+target "http://tieba.baidu.com/p/5963510627"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y=x^{\sqrt{x}}$
+\end_inset
+
+, 
+\begin_inset Formula $\ln y=\sqrt{x}\ln x$
+\end_inset
+
+, 两边同时求导(
+\begin_inset Formula $\frac{d}{dx}\ln y=\frac{d\ln y}{dy}\cdot\frac{dy}{dx}=\frac{1}{y}\cdot y'$
+\end_inset
+
+), 
+\begin_inset Formula $\frac{y'}{y}=\frac{1}{2\sqrt{x}}\ln x+\sqrt{x}\cdot\frac{1}{x}=\frac{\ln x}{2\sqrt{x}}+\frac{1}{\sqrt{x}}$
+\end_inset
+
+, 所以
+\begin_inset Formula $y'=\left(\frac{\ln x}{2\sqrt{x}}+\frac{1}{\sqrt{x}}\right)y$
+\end_inset
+
+, 代入
+\begin_inset Formula $y$
+\end_inset
+
+自己化简.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y=\frac{\left(x-2\right)\sqrt[5]{x-1}}{\left(x+3\right)\ue^{x}}$
+\end_inset
+
+, 
+\begin_inset Formula $\ln y=\ln\left(x-2\right)+\frac{1}{5}\ln\left(x-1\right)-\ln\left(x+3\right)-x$
+\end_inset
+
+, 两边同时求导, 
+\begin_inset Formula $\frac{y'}{y}=\frac{1}{x-2}+\frac{1}{5\left(x-1\right)}-\frac{1}{x+3}-1$
+\end_inset
+
+, 方法同上, 自己化简.
+\end_layout
+
+\begin_layout Section
+数论征解问题
+\end_layout
+
+\begin_layout Standard
+证明方程
+\begin_inset Formula $\left(2^{x}-1\right)\left(3^{y}-1\right)=2z^{2}$
+\end_inset
+
+的正整数解仅有
+\begin_inset Formula $\left(x,y,z\right)=\left(1,1,1\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\left(1,2,2\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\left(1,5,11\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+前苏联, 菲赫金哥尔茨, 微积分学教程第一卷
+\end_layout
+
+\begin_layout Standard
+P225-226中的Cauchy中值定理最后的附注, 能否用隐函数定理和拉格朗日中值定理证明Cauchy中值定理?
+\end_layout
+
+\begin_layout Section
+不等式
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $a_{i}>0$
+\end_inset
+
+, 
+\begin_inset Formula $i=1,2,\cdots,n$
+\end_inset
+
+, 则有
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}a_{k}^{\frac{k}{k+1}}\le\sum_{k=1}^{n}a_{k}+\sqrt{\frac{2\left(\pi^{2}-3\right)}{9}\sum_{k=1}^{n}a_{k}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+极限
+\end_layout
+
+\begin_layout Standard
+证明, 若
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+在
+\begin_inset Formula $\RR$
+\end_inset
+
+上非恒为零, 存在任意阶导数, 且对任意的
+\begin_inset Formula $x\in\RR$
+\end_inset
+
+, 有
+\begin_inset Formula $\left|f^{\left(n\right)}\left(x\right)-f^{\left(n-1\right)}\left(x\right)\right|<\frac{1}{n^{2}}$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}f^{\left(n\right)}\left(x\right)=C\ue^{x},
 \]
 
 \end_inset
 
 其中
-\begin_inset Formula $a>0$
+\begin_inset Formula $C$
 \end_inset
 
-, 
-\begin_inset Formula $b\ge0$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Paragraph
-P10
-\end_layout
-
-\begin_layout Standard
-设
-\begin_inset Formula $\sigma:V\to W$
-\end_inset
-
-是一个线性映射, 且
-\begin_inset Formula $\beta,\gamma$
-\end_inset
-
-分别是
-\begin_inset Formula $V,W$
-\end_inset
-
-的基.
- 那么, 
-\begin_inset Formula $\sigma$
-\end_inset
-
-可逆当且仅当
-\begin_inset Formula $[\sigma]_{\beta}^{\gamma}$
-\end_inset
-
-可逆.
- 此时
+是常数.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-[\sigma^{-1}]_{\gamma}^{\beta}=[\sigma]_{\beta}^{\gamma-1}.
+\sin^{k}x\cdot\sin kx+\cos^{k}x\cdot\cos kx=\cos^{k}2x
+\]
+
+\end_inset
+
+恒等, 求
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+将
+\begin_inset Formula $1-12$
+\end_inset
+
+分成总和相等的两组, 每组6个数, 有几种方法?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f_{1}=1$
+\end_inset
+
+, 
+\begin_inset Formula $f_{2n+1}=f_{2n}=f_{2n-1}+f_{n}$
+\end_inset
+
+, 求证
+\begin_inset Formula $\frac{\log_{2}f_{n}}{\left(\log_{2}n\right)^{2}}\to0.5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+求方程近似根(精确到小数点后两位数):
+\begin_inset Formula 
+\[
+\frac{240000}{\sum_{k=1}^{240}\frac{1}{\left(1+\frac{x}{12}\right)^{k}}}=1867.93
 \]
 
 \end_inset
@@ -1905,266 +3806,133 @@ P10
 \end_layout
 
 \begin_layout Standard
-证 令
-\begin_inset Formula $[\sigma]_{\beta}^{\gamma}=A$
+设
+\begin_inset Formula $\left\{ a_{n}\right\} ,\left\{ b_{n}\right\} $
 \end_inset
 
-.
- 若
-\begin_inset Formula $\sigma$
-\end_inset
-
-可逆, 则
-\begin_inset Formula $\sigma^{-1}:W\to V$
-\end_inset
-
-也是线形映射, 且
-\begin_inset Formula $\sigma^{-1}\sigma=\id_{V}$
+都是有界数列, 且
+\begin_inset Formula $\alpha a_{n+1}+\beta a_{n}=b_{n}$
 \end_inset
 
 , 
-\begin_inset Formula $\sigma\sigma^{-1}=\id_{W}$
+\begin_inset Formula $\alpha\ne\beta$
 \end_inset
 
-.
- 显然
-\begin_inset Formula $[\id_{V}]_{\beta}=[\id_{W}]_{\gamma}=I$
+, 证明: 
+\begin_inset Formula $\lim_{n\to\infty}b_{n}$
 \end_inset
 
-.
- 令
-\begin_inset Formula $[\sigma^{-1}]_{\gamma}^{\beta}=B$
+存在的充要条件是
+\begin_inset Formula $\lim_{n\to\infty}a_{n}$
 \end_inset
 
-.
- 又
-\begin_inset Formula $AB=BA=I$
-\end_inset
-
-.
- 因此
-\begin_inset Formula $A$
-\end_inset
-
-可逆, 且
-\begin_inset Formula $A$
-\end_inset
-
-的逆为
-\begin_inset Formula $B$
-\end_inset
-
-.
- 反之, 若
-\begin_inset Formula $A$
-\end_inset
-
-可逆, 则存在线性映射
-\begin_inset Formula $\tau:W\to V$
-\end_inset
-
-, 使
-\begin_inset Formula $[\tau]_{\gamma}^{\beta}=A^{-1}$
-\end_inset
-
-.
- 于是
-\begin_inset Formula $[\sigma\tau]_{\gamma}=AA^{-1}=I$
-\end_inset
-
-.
- 所以
-\begin_inset Formula $\sigma\tau=\id_{W}$
-\end_inset
-
-.
- 同理
-\begin_inset Formula $\tau\sigma=\id_{V}$
-\end_inset
-
-.
- 因此
-\begin_inset Formula $\sigma$
-\end_inset
-
-可逆.
-\end_layout
-
-\begin_layout Paragraph
-P11
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $f:\Reals\to\Reals$
-\end_inset
-
- be twice continuously differentiable.
- Show that if 
-\begin_inset Formula $f'$
-\end_inset
-
- and 
-\begin_inset Formula $f''$
-\end_inset
-
- are uniformly continuous on 
-\begin_inset Formula $\Reals$
-\end_inset
-
-, then for every 
-\begin_inset Formula $\varepsilon>0$
-\end_inset
-
- there exists 
-\begin_inset Formula $\delta>0$
-\end_inset
-
- such that
+存在.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\abs{f''(x)-\frac{f(x+h)+f(x-h)-2f(x)}{h^{2}}}<\varepsilon
+\int_{-1}^{1}\frac{\arctan x}{1+x}\ln\left(\frac{1+x^{2}}{2}\right)\ud x=\frac{\pi^{3}}{96};
 \]
 
 \end_inset
 
-for all 
-\begin_inset Formula $x$
-\end_inset
 
- whenever 
-\begin_inset Formula $0<\abs{h}<\delta$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Paragraph
-P12
 \end_layout
 
 \begin_layout Standard
-设三角形的外心为
-\begin_inset Formula $O$
+由组合恒等式:
+\begin_inset Formula 
+\[
+\sum_{k=1}^{\infty}\frac{2^{k-1}H_{k-1}^{(2)}}{k\binom{2k}{k}}=\frac{\pi^{3}}{96}=\int_{-1}^{1}\frac{\arctan x}{1+x}\ln\left(\frac{1+x^{2}}{2}\right)\ud x
+\]
+
 \end_inset
 
-, 内心为
-\begin_inset Formula $I$
+提示: 
+\begin_inset Formula $Li_{3}\left(x\right)=\sum_{n=1}^{\infty}\frac{x^{n}}{n^{2}}$
 \end_inset
 
-, 则
-\begin_inset Formula $I$
+, 
+\begin_inset Formula $\left|x\right|<1$
 \end_inset
 
-为旁心三角形
-\begin_inset Formula $I_{A}I_{B}I_{C}$
+和Beta函数.
+\begin_inset Formula 
+\[
+\sum_{k=1}^{\infty}\frac{\left(10k-3\right)8^{k}}{\binom{3k}{k}\binom{2k}{k}^{2}k^{3}}=\frac{\pi^{2}}{2},\qquad\sum_{k=1}^{\infty}\frac{\left(35k-8\right)81^{k}}{\binom{4k}{2k}\binom{2k}{k}^{2}k^{3}}=12\pi^{2}.
+\]
+
 \end_inset
 
-的垂心, 
-\begin_inset Formula $I$
+
+\begin_inset Formula 
+\[
+\sum_{n=0}^{\infty}\left(\frac{\left(81n+32\right)8^{n}}{49^{n}}\sum_{k=0}^{n}\binom{2k}{k}\binom{2\left(n-k\right)}{n-k}\binom{-\frac{1}{4}}{k}\binom{-\frac{3}{4}}{n-k}\right)=\frac{14\sqrt{7}}{\pi}.
+\]
+
 \end_inset
 
-关于
-\begin_inset Formula $O$
+
+\begin_inset Formula 
+\[
+\sum_{n=0}^{\infty}\left(\frac{357n+103}{2160^{n}}\binom{2n}{n}\sum_{k=0}^{n}\binom{n}{k}\binom{n+2k}{2k}\binom{2k}{k}\left(-324\right)^{n-k}\right)=\frac{90}{\pi}.
+\]
+
 \end_inset
 
-的对称点
-\begin_inset Formula $P$
-\end_inset
 
-是三角形
-\begin_inset Formula $I_{A}I_{B}I_{C}$
-\end_inset
-
-的外心, 则
-\begin_inset Formula $I_{A}I_{B}I_{C}$
-\end_inset
-
-的欧拉线与直线
-\begin_inset Formula $OI$
-\end_inset
-
-重合.
-\end_layout
-
-\begin_layout Paragraph
-P13
 \end_layout
 
 \begin_layout Standard
-设
-\begin_inset Formula $x_{n}=\sqrt{2+\sqrt{3+\cdots+\sqrt{n}}}$
+\begin_inset Formula 
+\[
+\int_{0}^{1}\frac{x\arctan x}{1+x^{2}}\ln\left(1-x^{2}\right)\ud x=-\frac{\pi^{3}}{48}-\frac{\pi}{8}\ln2+Catalan\times\ln2;
+\]
+
 \end_inset
 
-, 求证: 
-\begin_inset Formula $x_{n+1}-x_{n}<\frac{1}{n!}$
+
+\begin_inset Formula 
+\[
+\int_{0}^{1}\frac{\ln\left(1-x^{2}\right)}{1+x^{2}}\ln\left(\frac{1+x^{2}}{2}\right)\ud x=\frac{\pi}{4}\ln^{2}2+\frac{\pi^{3}}{32}-2Catalan\times\ln2;
+\]
+
 \end_inset
 
-.
-\end_layout
 
-\begin_layout Paragraph
-P14
-\end_layout
+\begin_inset Formula 
+\[
+\int_{-1}^{1}\frac{\arctan x}{1+x}\ln\left(\frac{1+x^{2}}{2}\right)\ud x=-\int_{0}^{1}\frac{\ln\left(1-x^{2}\right)}{1+x^{2}}\ln\left(\frac{1+x^{2}}{2}\right)\ud x-2\int_{0}^{1}\frac{x\arctan x}{1+x^{2}}\ln\left(1-x^{2}\right)\ud x;
+\]
 
-\begin_layout Standard
-在
-\begin_inset Formula $\triangle ABC$
 \end_inset
 
-中, 分别在
-\begin_inset Formula $AB,AC$
+
+\begin_inset Formula 
+\[
+\int_{0}^{1}\frac{\ln\left(1-x^{4}\right)\ln x}{1+x^{2}}\ud x=\frac{\pi^{3}}{16}-3Catalan\times\ln2;
+\]
+
 \end_inset
 
-上取点
-\begin_inset Formula $D,E$
+
+\begin_inset Formula 
+\[
+\int_{0}^{\pi/4}\left(\ln\cos x\right)^{2}\ud x=\frac{7}{32}\pi\ln^{2}2-\frac{7}{384}\pi^{3}-\frac{1}{2}Catalan\times\ln2-\Im\left(Li_{3}\left(\frac{1-\ui}{2}\right)\right);
+\]
+
 \end_inset
 
-, 使得
-\begin_inset Formula $BD=CE$
+
+\begin_inset Formula 
+\[
+\int_{0}^{\pi/2}\frac{x\sin x}{1+\cos^{2}x}\ud x=Li_{2}\left(\sqrt{2}-1\right)-Li_{2}\left(1-\sqrt{2}\right);
+\]
+
 \end_inset
 
-, 连接
-\begin_inset Formula $BE,CD$
-\end_inset
 
-相交于点
-\begin_inset Formula $P$
-\end_inset
-
-, 点
-\begin_inset Formula $M$
-\end_inset
-
-是
-\begin_inset Formula $BC$
-\end_inset
-
-的中点, 
-\begin_inset Formula $\angle BAC$
-\end_inset
-
-的平分线
-\begin_inset Formula $AQ$
-\end_inset
-
-与
-\begin_inset Formula $PM$
-\end_inset
-
-相交于点
-\begin_inset Formula $Q$
-\end_inset
-
-.
- 求证: 四边形
-\begin_inset Formula $BPCQ$
-\end_inset
-
-是平行四边形.
 \end_layout
 
 \end_body

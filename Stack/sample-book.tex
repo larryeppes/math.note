@@ -56,6 +56,240 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{tikz}
+
+\begin{tcblisting}{title=画图}
+	\begin{tikzcd}
+		A \arrow[rd] \arrow[r, "\phi"] & B \\
+		& C
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[r, "\phi"] \arrow[d, red]
+		& B \arrow[d, "\psi" red] \\
+		C \arrow[r, red, "\eta" blue]
+		& D
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[r, "\phi" near start, "\psi"', "\eta" near end] & B
+	\end{tikzcd}
+	\begin{tikzcd}
+		T
+		\arrow[drr, bend left, "x"]
+		\arrow[ddr, bend right, "y"]
+		\arrow[dr, dotted, "{(x,y)}" description] & & \\
+		& X \times_Z Y \arrow[r, "p"] \arrow[d, "q"]
+		& X \arrow[d, "f"] \\
+		& Y \arrow[r, "g"]
+		& Z
+	\end{tikzcd}\\
+	\begin{tikzcd}[column sep=tiny]
+		& \pi_1(U_1) \ar[dr] \ar[drr, "j_1", bend left=20]
+		&
+		&[1.5em] \\
+		\pi_1(U_1\cap U_2) \ar[ur, "i_1"] \ar[dr, "i_2"']
+		&
+		& \pi_1(U_1) \ast_{ \pi_1(U_1\cap U_2)} \pi_1(U_2) \ar[r, dashed, "\simeq"]
+		& \pi_1(X) \\
+		& \pi_1(U_2) \ar[ur]\ar[urr, "j_2"', bend right=20]
+		&
+		&
+	\end{tikzcd}
+	\begin{tikzcd}
+		X \arrow[r, hook] \arrow[dr, dashrightarrow]
+		& \bar{X} \arrow[d]\\
+		& Y
+	\end{tikzcd}
+\end{tcblisting}
+
+\begin{tcblisting}{title=画图}
+	\begin{tikzcd}
+		A \arrow[r, tail, two heads, dashed] & B
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow{d} \arrow{r}[near start]{\phi}[near end]{\psi}
+		& B \arrow[red]{d}{\xi} \\
+		C \arrow[red]{r}[blue]{\eta}
+		& D
+	\end{tikzcd}
+	\begin{tikzcd}[column sep=small]
+					 & A \arrow[dl] \arrow[dr] & \\
+		B \arrow{rr} &
+			  			   & C
+	\end{tikzcd}
+	\begin{tikzcd}[row sep=tiny]
+		& B \arrow[dd] \\
+		A \arrow[ur] \arrow[dr] &
+		\\
+		& C
+	\end{tikzcd}
+	% in preamble
+	\tikzcdset{
+		arrow style=tikz,
+		diagrams={>={Straight Barb[scale=0.8]}}
+	}
+	% in document body
+	\begin{tikzcd}
+		A \arrow[r, tail] \arrow[rd] & B \arrow[d, two heads]\\
+		& D
+	\end{tikzcd}
+\end{tcblisting}
+
+\begin{tcblisting}{title=画图}
+	\begin{tikzcd}
+		A \arrow[to=Z, red] \arrow[to=2-2, blue]
+		& B \\
+		|[alias=Z]| C
+		& D
+		\arrow[from=ul, to=1-2, purple]
+	\end{tikzcd}
+	\begin{tikzcd}[column sep=scriptsize]
+		A \arrow[dr] \arrow[rr, ""{name=U, below, draw=red}]{}
+		& & B \arrow[dl] \\
+		& C \arrow[Rightarrow, from=U, "\psi"]
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[r, bend left=50, ""{name=U, below, draw=red}]
+		\arrow[r, bend right=50, ""{name=D, draw=red}]
+		& B
+		\arrow[Rightarrow, from=U, to=D]
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[r] \arrow[d] \arrow[dr, phantom, "\ulcorner", very near start]
+		& B \arrow[d] \\
+		C \arrow[r]
+		& D
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[r, red, shift left=1.5ex] \arrow[r]
+		\arrow[dr, blue, shift right=1.5ex] \arrow[dr]
+		& B \arrow[d, purple, shift left=1.5ex] \arrow[d]\\
+		& C
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[r]
+		& B \arrow[r, shift left]
+		\arrow[r, shift right]
+		& C \arrow[r]
+		\arrow[r, shift left=2]
+		\arrow[r, shift right=2]
+		& \cdots
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[r, yshift=0.7ex] \arrow[r, yshift=-0.7ex]
+		& B \arrow[d, xshift=0.7ex] \arrow[d, xshift=-0.7ex] \\
+		& C
+	\end{tikzcd}
+\end{tcblisting}
+
+\begin{tcblisting}{title=画图}
+	\begin{tikzcd}[cells={nodes={draw=gray}}]
+		A \arrow[r, black]
+\arrow[r, blue, end anchor=north east]
+			\arrow[r,
+red, start anchor={[xshift=-1ex]},
+end anchor={[yshift=2ex]north east}]
+		& B
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[r, shift left]
+\ar[r, shorten=2mm, shift right]
+		& B
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[dr] & B \arrow[dl, crossing over] \\
+		C
+	& D
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[r, "/" marking]
+\arrow[rd, "\circ" marking]
+		& B \\
+		& C
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[r, "\phi" description] & B
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[dr, controls={+(1.5,0.5) and +(-1,0.8)}]
+		\arrow[dr, dashed, to path=|- (\tikztotarget)]
+		& \\
+		& B \arrow[loop right]
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \arrow[r]
+& B \arrow[r]
+		\arrow[d, phantom, ""{coordinate, name=Z}]
+		& C \arrow[dll,
+"\delta",
+		rounded corners,
+		to path={ -- ([xshift=2ex]\tikztostart.east)
+			|- (Z) [near end]\tikztonodes
+			-| ([xshift=-2ex]\tikztotarget.west)
+			-- (\tikztotarget)}] \\
+		D \arrow[r]
+& E \arrow[r]
+	& F
+	\end{tikzcd}
+\end{tcblisting}
+
+\begin{tcblisting}{title=画图}
+	\begin{tikzpicture}[commutative diagrams/every diagram]
+		\matrix[matrix of math nodes, name=m, commutative diagrams/every cell] {
+			X & \bar X \\
+			& Y
+			\\};
+		\path[commutative diagrams/.cd, every arrow, every label]
+		(m-1-1) edge[commutative diagrams/hook] (m-1-2)
+		edge[commutative diagrams/dashed] (m-2-2)
+		(m-1-2) edge (m-2-2);
+	\end{tikzpicture}
+	\begin{tikzcd}[ampersand replacement=\&]
+		A \oplus B \ar[r, "{\begin{pmatrix} e & f \\ g & h \end{pmatrix}}"]
+		\& C \oplus D
+	\end{tikzcd}
+	\tikzset{
+		math to/.tip={Glyph[glyph math command=rightarrow]},
+		loop/.tip={Glyph[glyph math command=looparrowleft, swap]},
+		weird/.tip={Glyph[glyph math command=Rrightarrow, glyph length=1.5ex]},
+		pi/.tip={Glyph[glyph math command=pi, glyph length=1.5ex, glyph axis=0pt]},
+	}
+	\begin{tikzpicture}[line width=rule_thickness]
+		\draw[loop-math to, bend left] (0,2) to (1,2);
+		\draw[math to-weird] (0,1) to (1,1);
+		\draw[pi-pi] (0,0) to (1,0);
+	\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title=画图}
+	\begin{dependency}
+		\begin{deptext}
+			My \& dog \& also \& likes \& eating \& sausage \\
+		\end{deptext}
+		\depedge{5}{6}{dobj}
+	\end{dependency}\\
+	\begin{dependency}
+		\begin{deptext}
+			My \& dog \& also \& likes \& eating \& sausage \\
+		\end{deptext}
+		\depedge{2}{1}{poss}
+		\depedge{4}{2}{nsubj}
+		\depedge{4}{3}{advmod}
+		\depedge{4}{5}{xcomp}
+		\depedge{5}{6}{dobj}
+	\end{dependency}\\
+	\begin{dependency}[theme=night]
+		\begin{deptext}[column sep=.5cm, row sep=.1ex]
+			PRP\$ \& NN \& RB \&[.5cm] VBZ \& VBG \& NN \\
+			My \& dog \& also \& likes \& eating \& sausage \\
+		\end{deptext}
+		\deproot{4}{root}
+		\depedge{2}{1}{poss}
+		\depedge{4}{2}{nsubj}
+		\depedge{4}{3}{advmod}
+		\depedge{4}{5}{xcomp}
+		\depedge{5}{6}{dobj}
+	\end{dependency}
+\end{tcblisting}
+
 \begin{tcblisting}{title=画图}
   \begin{tikzpicture}
    \draw[gray, thick] (-1,2) -- (1,-2);
@@ -82,6 +316,51 @@
     \draw[orange, ultra thick] (4,0) -- (6,0) -- (5.7,2) -- cycle;
   \end{tikzpicture}
 \end{tcblisting}
+
+%% 关联图
+\tikz[remember picture] \node[fill=green!30] (n3) {$\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}$};
+
+\tikz[remember picture]
+\node[
+	color=red!20,
+%	circle,
+	draw,
+%	label=angle:text,
+	fill=red,
+	] (nodename) {
+	contents
+};
+
+%
+here is some text\quad\qquad\tikz[remember picture]
+\node[
+color=yellow!10,
+%	circle,
+draw,
+%	label=angle:text,
+fill=blue!20,
+] (n1) {
+	$\sum_{n=1}^{\infty}$
+};
+
+\tikz[remember picture]
+\draw[overlay,->,very thick,red,opacity=.5]
+(nodename) to[bend left] (n1);
+
+here is a circle I will type more words: \tikz[remember picture] \node[fill=red!50] (n1) {$f(x)=\sin x$};
+
+here is a node: \tikz[remember picture] \node[fill=blue!50] (n2) {$f(x)=\sin x$};
+
+\begin{tikzpicture}[remember picture,overlay]
+	\draw[->,very thick] (n1) -- (n2);
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture]
+	\node (c) [fill=yellow!20] {Big circle};
+	
+	\draw[overlay,->,very thick,red,opacity=.5]
+	(c) to[bend right] (n1) (n1) -| (n2) (n3) to[bend left] (n1);
+\end{tikzpicture}
 
 \begin{tcblisting}{title=270226}
   \definecolor{myred}{RGB}{183,18,52}
@@ -155,3 +434,25 @@
   $\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$\\
   $\mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$
 \end{tcblisting}
+
+\section{pstricks}
+{\black this is black.}
+{\darkgray this is darkgray.}
+{\gray this is gray.}
+{\lightgray this is lightgray.}
+{\white this is white.}
+
+{\red this is red.}
+{\green this is green.}
+{\blue this is blue.}
+{\cyan this is cyan.}
+{\magenta this is magenta.}
+{\yellow this is yellow.}
+
+%{\psset{linecolor=green,linestyle=dotted}\psline(8,7)}
+
+%\begin{tcblisting}
+%	
+%\end{tcblisting}
+\newpage
+

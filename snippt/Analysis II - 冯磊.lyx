@@ -10,7 +10,7 @@
 % http://bbs.ctex.org/viewthread.php?tid=60547
 \DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
 \usepackage{tkz-euclide}
-\usetkzobj{all}
+%\usetkzobj{all}
 
 \def\degree{^\circ}
 \def\bt{\begin{theorem}}

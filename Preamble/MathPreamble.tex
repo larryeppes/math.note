@@ -2,8 +2,12 @@
 \usepackage[usenames,dvipsnames,svgnames]{xcolor}
 % \usepackage{zhspacing}
 \usepackage{tikz}
-\usetikzlibrary{calc, datavisualization}
+\usepackage{pstricks}
+\usepackage{tikz-dependency}
+\usetikzlibrary{calc, datavisualization, cd}
+\tikzset{every picture/.append style={remember picture}}
 \usepackage{pgfplots}
+%\usepackage{zhspacing}
 \usepackage{tkz-euclide}
 % \usetkzobj{all} % for new version of tkz-euclide, this line not needed.
 \pgfplotsset{compat=newest}
@@ -22,15 +26,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % from tcolorbox.pdf
-\tcbuselibrary{theorems, breakable, skins, raster, listings, minted, xparse, listingsutf8, documentation}
+\tcbuselibrary{theorems, 
+	breakable, 
+	skins, 
+	raster, 
+	listings, 
+	minted,
+	xparse, 
+	listingsutf8, 
+	documentation}
+\tcbset{highlight math style={enhanced, colframe=red, colback=red!10!white,boxsep=0pt}}
+
 \newtcbtheorem[number within=section]{question}{问题}%
   {colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{q}
 \newtcbtheorem[number within=section]{definition}{定义}%
   {colback=blue!5,colframe=gray!50!black,fonttitle=\bfseries}{def}
 \newtcbtheorem[number within=section]{lemma}{引理}%
-  {colback=purple!5,colframe=purple!75!black,fonttitle=\bfseries}{lm}
+  {colback=purple!5,colframe=yellow!80!black,fonttitle=\bfseries}{lm}
 \newtcbtheorem[number within=section]{theorem}{定理}%
-  {colback=purple!5,colframe=purple!75!black,fonttitle=\bfseries}{th}
+  {colback=purple!5,colframe=red!50!yellow,fonttitle=\bfseries}{th}
 \newtcbtheorem[number within=section]{corrolary}{推论}%
   {colback=yellow!5,colframe=yellow!75!black,fonttitle=\bfseries}{co}
 \newtcbtheorem[number within=section]{undone}{未知}%
@@ -82,6 +96,7 @@
 \def\ud{\,\mathrm{d}}
 \def\GF{\mathrm{GF}}
 \def\ui{\mathrm{i}}
+\def\udiv{\mathrm{div}}
 \def\Re{\mathrm{Re}}
 \def\Im{\mathrm{Im}}
 \def\Res{\mathrm{Res}}
@@ -115,6 +130,9 @@
 
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\NN}{\mathbb{N}}
+\newcommand{\CC}{\mathbb{C}}
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\notea}[1]{\colorbox{red!20}{#1}}
+\newcommand{\noteb}[1]{\tcbhighmath{#1}}
