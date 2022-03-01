@@ -1,0 +1,32 @@
+\chapter{Harmonic Analysis}
+\section{Lorentz space}
+\subsection{非对角线Marcinkiewicz插值定理}
+\bd{}{}
+称算子$T$是拟线性的, 如果$T$满足:
+\bee
+\left|T(\lambda f)\right|=\left|\lambda\right|\cdot\left|T(f)\right| \text{ and } \left|T(f+g)\right|\le K(\left|T(f)\right|+\left|T(g)\right|,
+\eee
+其中$K>0$, $\lambda\in \CC$. 一般情况认为$K\ge 1$.
+\ed
+
+\bt{}{}
+设$0<r\le\infty$, $0<p_{0}\ne p_{1}\le\infty$, $0<q_{0}\ne q_{1}\le\infty$,
+$\left(X,\mu\right)$和$\left(Y,\nu\right)$是两个测度空间. 设$T$是定义在$L^{p_{0}}(X)+L^{p_{1}}(X)$上取值在$Y$上的可测函数的拟线性算子或是定义在$X$上的简单函数取值在$Y$上的可测函数的线性算子.
+若对于某个$M_{0},M_{1}<\infty$, 有以下估计:
+
+\[
+\norm{T(\chi_{A})}_{L^{q_{0},\infty}}\le M_{0}\mu(A)^{1/p_{0}},
+\]
+\[
+\norm{T(\chi_{A})}_{L^{q_{1},\infty}}\le M_{1}\mu(A)^{1/p_{1}},
+\]
+对于$X$上的可测子集$A$: $\mu(A)<\infty$成立. 设对于固定的$0<\theta<1$有
+\[
+\frac{1}{p}=\frac{1-\theta}{p_{0}}+\frac{\theta}{p_{1}}\quad\text{and}\quad\frac{1}{q}=\frac{1-\theta}{q_{0}}+\frac{\theta}{q_{1}}.
+\]
+则存在常数$M$, 与$K$, $p_{0}$, $p_{1}$, $q_{0}$, $q_{1}$, $M_{0}$,
+$M_{1}$, $r$和$\theta$有关, 使得对于所有$f\in D(T)\cap L^{p,r}(X)$有
+\[
+\norm{T(f)}_{L^{p,r}}\le M\norm{f}_{L^{p,r}}.
+\]
+\et

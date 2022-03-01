@@ -1,0 +1,147 @@
+\chapter{PDE-NSE-Boussinesq}
+\section{journals with url}
+\href{https://aip.scitation.org/journal/jmp}{Journal of Mathematical Physics}
+
+\section{Boussinesq system}
+\subsection{\cite{T}}
+% theorem
+\begin{theorem}{The Uniform Gronwall Lemma, (\cite{T}, p. 91)}{}
+	Let $g, h, y$, be three positive locally integrable functions on $(t_{0},+\infty)$ 
+	such that $y^{\prime}$ is locally integrable on $(t_{0},+\infty)$, 
+	and which satisfy
+	$$
+	\begin{array}{c}
+		\noteb{\frac{d y}{d t} \leq g y+h \quad \text { for } \quad t \geq t_{0}} \\
+		\noteb{\int_{t}^{t+r} g(s) d s \leq a_{1}, \quad \int_{t}^{t+r} h(s) d s \leq a_{2}, \quad \int_{t}^{t+r} y(s) d s \leq a_{3} \text { for } t \geq t_{0}}
+	\end{array}
+	$$
+	where $r, a_{1}, a_{2}, a_{3}$, are positive constants. Then
+	$$
+	\noteb{y(t+r) \leq\left(\frac{a_{3}}{r}+a_{2}\right) \exp \left(a_{1}\right), \quad \forall t \geq t_{0}}
+	$$
+\end{theorem}
+
+
+\subsection{\cite{HKZ}}
+2d Boussinesq方程的正则性, global适定性, with zero diffusivity, positive viscosity, 在开光滑bdd区域$\Omega$. 
+
+
+$\tcbhighmath[remember as=omega]{\Omega\subseteq\RR^2}$: smooth, bdd, connected open set.
+
+$\tcbhighmath[remember as=Hdef]{H=\{u\in L^2(\Omega): \udiv u = 0, u\cdot n=0 \text{ on } \partial\Omega\}}$, $n$是区域$\Omega$的单位外法向量.
+
+$\tcbhighmath[remember as=Vdef]{V=\{u\in H_0^1(\Omega): \udiv u = 0\}}$.
+
+$A:D\left(A\right)\to H$: the Stokes operator. 
+$\tcbhighmath[remember as=DAdef,overlay={\draw[blue, thick, ->] (Vdef.east) to[bend left] ([xshift=1cm]frame.north);}]{D\left(A\right)=H^{2}\cap V}$,
+
+$\tcbhighmath[remember as=Adef]{A\coloneqq-\mathbb{P}\Delta}$, 
+$\mathbb{P}$: the Leray projector
+in $L^{2}\left(\Omega\right)\to H$.
+
+$\tcbhighmath[remember as=Bdef]{B\left(u,w\right)\coloneqq\mathbb{P}\left(u\cdot\nabla w\right)}$,
+$\forall u,w\in V$.
+
+$\tcbhighmath{\begin{cases}
+	\frac{\partial u}{\partial t}-\Delta u+u\cdot\nabla u+\nabla p=\rho e_{2},\\
+	\nabla\cdot u=0,\\
+	\frac{\partial\rho}{\partial t}+u\cdot\nabla\rho=0, & x\in\Omega,\\
+	u\vert_{\partial\Omega}=0,\\
+	\left(u(0),\rho(0)\right)=\left(u_{0},\rho_{0}\right).
+\end{cases}}$
+
+% theorem
+\begin{theorem}{\cite{HKZ}}{}
+	Assume that \colorbox{red!20}{$u_{0} \in H^{2}(\Omega) \cap V$} and \colorbox{red!20}{$\rho_{0} \in H^{1}(\Omega)$} with \colorbox{red!20}{$\left\|u_{0}\right\|_{H^{2}} \leq M_{0}$} and 
+	\colorbox{red!20}{$\left\|\rho_{0}\right\|_{H^{1}} \leq M_{1}$}, 
+	where $M_{0}, M_{1}>0$ are arbitrary. Then there exists a unique global solution $(u, \rho)$ such that 
+	$$\tcbhighmath{u \in L^{\infty}\left([0, \infty), H^{2}(\Omega)\right) \cap L_{\mathrm{loc}}^{2}\left([0, \infty), H^{3}(\Omega)\right)}$$
+	and 
+	$$\tcbhighmath{\rho \in L^{\infty}\left([0, \infty), H^{1}(\Omega)\right).}$$ 
+	Moreover, for every
+	$T>0$ we have
+	$$
+	\tcbhighmath{\|u(t)\|_{H^{2}(\Omega)} \leq C\left(M_{0}, M_{1}, T\right)}
+	$$
+	and
+	$$
+	\tcbhighmath{\|\rho(t)\|_{H^{1}(\Omega)} \leq C\left(M_{0}, M_{1}, T\right)}
+	$$
+	for $t \in[0, T]$.
+\end{theorem}
+三步: A priori bounds, the construction of solutions, uniqueness.
+
+方法: Uniform Gronwall Lemma, the Brezis-Gallouet inequality.
+
+$\left\langle u_{t}+Au+B(u,u)=\mathbb{P}(\rho e_{2}),u\right\rangle \Longrightarrow u\in L^{\infty}(L^{2}),\ \nabla u\in L_{loc}^{2}(L^{2}).$
+
+$\left\langle u_{t}+Au+B(u,u)=\mathbb{P}(\rho e_{2}),Au\right\rangle \Longrightarrow\nabla u\in L^{\infty}(L^{2}),\ Au\in L_{loc}^{2}(L^{2}).$
+
+$\left\langle u_{t}+Au+B(u,u)=\mathbb{P}(\rho e_{2}),A^{2}u\right\rangle \Longrightarrow Au\in L_{loc}^{\infty}L^{2},\ \nabla\rho\in L_{loc}^{\infty}(L^{2}),\ A^{3/2}u\in L_{loc}^{2}(L^{2})$ with Brezis-Gallouet ineq. and Lemma 2.3.
+
+在唯一性的证明中:
+using $\left\langle \frac{\partial u}{\partial t}+Au+B(u,u^{1})+B(u^{2},u)=\mathbb{P}(\rho e_{2}),Au\right\rangle $
+and $\left\langle \frac{\partial\rho}{\partial t}+u\cdot\nabla\rho^{1}+u^{2}\cdot\nabla\rho=0,\rho\right\rangle $,
+and
+
+\[
+\begin{aligned}\left|\left\langle B(u,u^{1}),Au\right\rangle \right| & \lesssim\norm{Au}_{2}\norm{B(u,u^{1})}_{2}\\
+	& \lesssim\norm{Au}_{2}\norm{u\cdot\nabla u^{1}}_{2}\\
+	& \lesssim\norm{Au}_{2}\norm{u}_{\infty}\norm{A^{1/2}u^{1}}_{2}\\
+	& \lesssim\norm{Au}_{2}\norm{u}_{2}^{1/2}\norm{Au}_{2}^{1/2}\norm{A^{1/2}u^{1}}_{2}
+\end{aligned}
+\]
+\[
+\begin{aligned}\left|\left\langle B(u^{2},u),Au\right\rangle \right| & \lesssim\norm{B(u^{2},u)}_{2}\norm{Au}_{2}\\
+	& \lesssim\norm{\mathbb{P}(u^{2}\cdot\nabla u)}_{2}\norm{Au}_{2}\\
+	& \lesssim\norm{u^{2}}_{\infty}\norm{\nabla u}_{2}\norm{Au}_{2}\\
+	& \lesssim\norm{u^{2}}_{2}^{1/2}\norm{Au^{2}}_{2}^{1/2}\norm{u}_{2}^{1/2}\norm{Au}_{2}^{1/2}\norm{Au}_{2}.
+\end{aligned}
+\]
+
+% lemma
+\begin{lemma}{\cite{HKZ}}{}
+	For $u,v\in D\left(A\right)$, we have
+	\[
+	\norm{\nabla B\left(u,v\right)}_{L^{2}}\lesssim\norm{u}_{2}^{1/4}\norm{Au}_{2}^{3/4}\norm{v}_{2}^{1/4}\norm{Av}_{2}^{3/4}+\norm{u}_{2}^{1/2}\norm{Au}_{2}^{1/2}\norm{Av}_{2}.
+	\]
+\end{lemma}
+Leray decomposition: $\mathbb{P}v=v-\nabla(p+q)$, $v\in H^{1}(\Omega)$.
+
+$\tcbhighmath{\begin{cases}
+	\Delta p=\udiv v & \text{ in }\Omega,\\
+	p=0 & \text{ on }\partial\Omega.
+\end{cases}\Longrightarrow\norm{\nabla p}_{H^{1}}\lesssim\norm{v}_{H^{1}}.}$
+
+$\tcbhighmath{\begin{cases}
+	\Delta q=0 & \text{ in }\Omega,\\
+	\frac{\partial q}{\partial n}=(v-\nabla p)\cdot n & \text{ on }\partial\Omega.
+\end{cases}\Longrightarrow\norm{q}_{H^{2}}\lesssim\norm{v-\nabla p}_{H^{1/2}(\partial\Omega)}.}$
+
+so $\norm{\nabla\mathbb{P}v}_{2}\lesssim\norm{v}_{H^{1}}$. then use
+Gagliardo-Nirenberg inequality.
+
+% theorem
+\begin{theorem}{\cite{HKZ}}{}
+	Assume that \colorbox{red!20}{$\Omega=\mathbb{T}^{2}$} (periodic boundary conditions) or 
+	\colorbox{red!20}{$\Omega=\mathbb{R}^{2}$}. 
+	Assume that \colorbox{red!20}{$u_{0} \in H^{2}(\Omega)$} is divergence-free and that 
+	\colorbox{red!20}{$\rho_{0} \in H^{1}(\Omega)$} with 
+	\colorbox{red!20}{$\left\|u_{0}\right\|_{H^{2}} \leq M_{0}$} and 
+	\colorbox{red!20}{$\left\|\rho_{0}\right\|_{H^{1}} \leq M_{1}$}, 
+	where $M_{0}, M_{1}>0$ are arbitrary. 
+	Then there exists a unique global solution $(u, \rho)$ such that 
+	$$\tcbhighmath{u \in L^{\infty}\left([0, \infty), H^{2}(\Omega)\right) \cap L_{\mathrm{loc}}^{2}\left([0, \infty), H^{3}(\Omega)\right)}$$ 
+	and 
+	$$\tcbhighmath{\rho \in L^{\infty}\left([0, \infty), H^{1}(\Omega)\right).}$$
+	Moreover, we have
+	$$
+	\tcbhighmath{\|u(t)\|_{H^{2}(\Omega)} \leq C\left(M_{0}, M_{1}, T\right)}
+	$$
+	and
+	$$
+	\tcbhighmath{\|\rho(t)\|_{H^{1}(\Omega)} \leq C\left(M_{0}, M_{1}, T\right)}
+	$$
+	for all $t \leq T$, where $T>0$ is arbitrary.
+\end{theorem}
+
