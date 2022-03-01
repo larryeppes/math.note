@@ -1,1 +1,0 @@
-pygmentize -l latex -f latex -P commandprefix=PYG -F tokenmerge -o MathNote.out.pyg MathNote.listing
