@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.7.15)  1 MAR 2022 14:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.7.15)  1 MAR 2022 18:15
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1360,10 +1360,6 @@ Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 
 Writing index file MathNote.idx
 Package hyperref Info: Option `unicode' set `true' on input line 23.
-
-Package hyperref Warning: Option `backref' has already been used,
-(hyperref)                setting the option has no effect on input line 23.
-
 Package hyperref Info: Option `colorlinks' set `true' on input line 23.
 (x:/texlive/2021/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
 Library (tcolorbox): 'tcbtheorems.code.tex' version '4.42'
@@ -1447,7 +1443,10 @@ Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
 (x:/texlive/2021/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
-)
+
+(x:/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+))
 (x:/texlive/2021/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count383
@@ -1589,17 +1588,7 @@ thNote.aex <nul: /p x=^%~$PATH:i>> MathNote.aex)...executed.
 
 runsystem(del MathNote.aex)...executed.
 
- (./MathNote.aux
-
-LaTeX Warning: Label `q:20170404012' multiply defined.
-
-
-LaTeX Warning: Label `q:20170626001' multiply defined.
-
-
-LaTeX Warning: Label `Cauchy' multiply defined.
-
-)
+ (./MathNote.aux)
 \openout1 = `MathNote.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -1684,7 +1673,8 @@ LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
- (x:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(x:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count416
 \scratchdimen=\dimen364
@@ -1760,10 +1750,6 @@ LaTeX Info: Redefining \nameref on input line 7.
 \@outlinefile=\write9
 \openout9 = `MathNote.out'.
 
-
-(x:/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)
 \c@lstlisting=\count423
 
 (x:/texlive/2021/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.bdg
@@ -1841,7 +1827,7 @@ LaTeX Font Warning: Font shape `C70/gbsn/m/sl' undefined
 [4]
 
 LaTeX Font Warning: Font shape `C70/gbsn/m/it' undefined
-(Font)              using `C70/gbsn/m/n' instead on input line 107.
+(Font)              using `C70/gbsn/m/n' instead on input line 108.
 
 [5] [6] [7] [8]
 Missing character: There is no l in font nullfont!
@@ -1885,19 +1871,9 @@ runsystem(gnuplot MathNote.pgf-plot.gnuplot)...executed.
 
 PGFPlots: reading {MathNote.pgf-plot.table}
  [14] [15] [16] [17] [18] [19] [20]
-[21] [22] [23] [24] [25] [26] [27]
-Overfull \hbox (0.31764pt too wide) detected at line 1682
-[] [] \OMS/cmsy/m/n/10 ^^U [] [] ^^A [] \OT1/cmr/m/n/10 = [] [] [] \OMS/cmsy/m/
-n/10 ^^U [][] \OT1/cmr/m/n/10 = [][] = []\OML/cmm/m/it/10 :
- []
-
-[28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42]
-[43] [44]) (./senior.tex
+[21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
+[36] [37] [38] [39] [40] [41] [42] [43] [44]) (./senior.tex
 Chapter 2.
-
-Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead
- on input line 53.
-
 [45
 
 ] [46] [47] [48] [49] [50]) (./AOPS.tex [51] [52
@@ -1909,11 +1885,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [53]
 [54] [55] [56] [57] [58]
-Underfull \vbox (badness 6445) has occurred while \output is active []
+Underfull \vbox (badness 6542) has occurred while \output is active []
 
  [59]
 [60]
-Underfull \vbox (badness 7777) has occurred while \output is active []
+Underfull \vbox (badness 7907) has occurred while \output is active []
 
  [61]
 Missing character: There is no ^^R in font gbsnu22!
@@ -1922,26 +1898,15 @@ Missing character: There is no ^^R in font gbsnu22!
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [63]
-Underfull \hbox (badness 1024) in paragraph at lines 423--423
-[][]\OT1/cmr/bx/n/10 USAMO 1997/5; also: ineq E2.37 in Book: Ine-gal-i-tati; Au
--thors:L.Panaitopol,V.
- []
-
 [64]) (./abstractalgebra.tex [65] [66
 
 ]
 Chapter 4.
-
-LaTeX Font Warning: Command \large invalid in math mode on input line 40.
-
 ) (./matrixtheory.tex [67] [68]
 Chapter 5.
+[69
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 24.
-
-) (./mathematicalanalysis.tex [69
-
-] [70]
+]) (./mathematicalanalysis.tex [70]
 Chapter 6.
 [71
 
@@ -1955,92 +1920,96 @@ Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 931.
 
-[87] [88] [89] [90] [91] [92] [93]) (./realanalysis.tex [94]
+[87]) (./realanalysis.tex [88]
 Chapter 7.
-[95
+[89
 
 ]
-Overfull \hbox (6.4777pt too wide) in paragraph at lines 67--71
-[]\C70/gbsn/m/it/10/89 ã\OT1/cmr/m/it/10 . \OT1/cmr/m/n/10 (I) \C70/gbsn/bx/n/1
-0/75 1 \C70/gbsn/m/sl/10/67 a \C70/gbsn/m/sl/10/4e ö\OT1/cmr/m/n/10 , $\OMS/cms
-y/m/n/10 f\OML/cmm/m/it/10 A[]\OMS/cmsy/m/n/10 g[]$\C70/gbsn/m/n/10/53 U \C70/g
-bsn/m/sl/10/8c ^^C \C70/gbsn/m/sl/10/4e 
- \C70/gbsn/m/n/10/53 G\OT1/cmr/m/n/10 , \C70/gbsn/m/sl/10/67 	$[][] \OML/cmm/m/
-it/10 A[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 A[]$\OT1/cmr/m/n/10 ($\OMS/cmsy/m/
-n/10 8\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^U \OT1/cmr/m/n/10 1$), \C70/gbsn/m/
-sl/10/4e Ž \C70/gbsn/bx/n/10/66 /$[][] [][] \OML/cmm/m/it/10 A[] \OT1/cmr/m/n/1
-0 = [][] \OML/cmm/m/it/10 A[] \OMS/cmsy/m/n/10 ^^[ [][] [][] \OML/cmm/m/it/10 A
-[]$\OT1/cmr/m/n/10 . \C70/gbsn/m/n/10/53 s$[][] \OML/cmm/m/it/10 A[] \OT1/cmr/m
-/n/10 =
+Overfull \hbox (6.46625pt too wide) in paragraph at lines 67--71
+[]\C70/gbsn/m/it/10/89 ã\T1/cmr/m/it/10 . \T1/cmr/m/n/10 (I) \C70/gbsn/bx/n/10/
+75 1 \C70/gbsn/m/sl/10/67 a \C70/gbsn/m/sl/10/4e ö\T1/cmr/m/n/10 , $\OMS/cmsy/m
+/n/10 f\OML/cmm/m/it/10 A[]\OMS/cmsy/m/n/10 g[]$\C70/gbsn/m/n/10/53 U \C70/gbsn
+/m/sl/10/8c ^^C \C70/gbsn/m/sl/10/4e 
+ \C70/gbsn/m/n/10/53 G\T1/cmr/m/n/10 , \C70/gbsn/m/sl/10/67 	$[][] \OML/cmm/m/i
+t/10 A[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 A[]$\T1/cmr/m/n/10 ($\OMS/cmsy/m/n/
+10 8\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^U \OT1/cmr/m/n/10 1$\T1/cmr/m/n/10 ),
+ \C70/gbsn/m/sl/10/4e Ž \C70/gbsn/bx/n/10/66 /$[][] [][] \OML/cmm/m/it/10 A[] \
+OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 A[] \OMS/cmsy/m/n/10 ^^[ [][] [][] \OML/
+cmm/m/it/10 A[]$\T1/cmr/m/n/10 . \C70/gbsn/m/n/10/53 s$[][] \OML/cmm/m/it/10 A[
+] \OT1/cmr/m/n/10 =
  []
 
-[96] [97]) (./functionalanalysis.tex [98]
+[90] [91]) (./functionalanalysis.tex [92]
 Chapter 8.
 
 Underfull \vbox (badness 2478) has occurred while \output is active []
 
- [99
+ [93
 
 ]
-[100] [101] [102] [103]) (./complexanalysis.tex [104]
+[94] [95] [96] [97]) (./complexanalysis.tex [98]
 Chapter 9.
-) (./elementary-number-theory.tex [105
+) (./elementary-number-theory.tex [99
 
-] [106
+] [100
 
 ]
 Chapter 10.
-[107] [108] [109] [110] [111]) (./elementary-number-theory-stack.tex [112]
-[113] [114]) (./analytic-number-theory.tex [115] [116
+[101] [102] [103] [104] [105]) (./elementary-number-theory-stack.tex [106]
+[107] [108]) (./analytic-number-theory.tex [109] [110
 
 ]
 Chapter 11.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [117])
-(./inequality.tex [118]
+ [111])
+(./inequality.tex [112]
 Chapter 12.
-[119
+[113
 
-] [120] [121] [122]) (./counterexamples.tex [123] [124
+] [114] [115] [116]) (./counterexamples.tex [117] [118
 
 ]
 Chapter 13.
-[125]) (./unknown.tex [126]
+[119]) (./unknown.tex [120]
 Chapter 14.
-[127
+[121
 
-] [128] [129]
-Underfull \vbox (badness 3590) has occurred while \output is active []
+] [122] [123]
+Underfull \vbox (badness 3601) has occurred while \output is active []
 
- [130]
-[131] [132]
+ [124]
+[125] [126]
 Missing character: There is no ^^Y in font gbsnu5c!
 
 Underfull \hbox (badness 10000) in paragraph at lines 403--403
-[][]\OT1/cmr/bx/n/10 http://math.stackexchange.com/questions/428663/closed-form
--of-sum-limits-i-1n-k1-i-
+[][]\T1/cmr/bx/n/10 http://math.stackexchange.com/questions/428663/closed-form-
+of-sum-limits-i-1n-k1-i-
  []
 
-[133] [134]) (./Topology.tex [135] [136
+[127] [128]) (./Topology.tex [129] [130
 
 ]
 Chapter 15.
-[137] [138] [139] [140]) (./Topology-stack.tex [141] [142] [143] [144] [145]
-[146] [147] [148] [149] [150] [151] [152]) (./theorem-set.tex [153] [154
+[131] [132] [133] [134]) (./Topology-stack.tex [135] [136] [137] [138] [139]
+[140] [141] [142] [143] [144] [145] [146]) (./theorem-set.tex [147] [148
 
 ]
 Chapter 16.
-[155] [156]
-Underfull \vbox (badness 7613) has occurred while \output is active []
+[149] [150]
+Underfull \vbox (badness 7631) has occurred while \output is active []
 
- [157]
-[158] [159] [160] [161] [162] [163]) (./definenation.tex [164] [165] [166
+ [151]
+[152] [153] [154] [155] [156] [157]) (./definenation.tex [158] [159] [160
 
 ]
 Chapter 17.
-[167] [168] [169] [170] [171]) (../Stack/sample-book.tex [172]
+
+Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead
+ on input line 16.
+
+[161] [162] [163] [164] [165]) (../Stack/sample-book.tex [166]
 Chapter 18.
 \openout4 = `MathNote.listing'.
 
@@ -2048,9 +2017,15 @@ Chapter 18.
 (./_minted-MathNote/default.pygstyle)
 (./_minted-MathNote/2C9FCD99B982BA0502C2909B660A0781F5D2B03F2214E93D451346FD3F1
 DEAB9.pygtex
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
-) (./MathNote.listing)
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+.
+ (x:/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
+)
+(./MathNote.listing)
 \openout4 = `MathNote.listing'.
 
 
@@ -2060,35 +2035,41 @@ DEAB9.pygtex) (./MathNote.listing
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [173
+ [167
 
 ]
 \openout4 = `MathNote.listing'.
 
 
 (./_minted-MathNote/0106B87E5331156F42823CEB68DA87D8F5D2B03F2214E93D451346FD3F1
-DEAB9.pygtex) (./MathNote.listing)
+DEAB9.pygtex
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+13.
+ (x:/texlive/2021/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+))
+(./MathNote.listing)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [174]
+ [168]
 \openout4 = `MathNote.listing'.
 
 
 (./_minted-MathNote/4530134B729950FE8390BF1BFC3BFB4FF5D2B03F2214E93D451346FD3F1
-DEAB9.pygtex) (./MathNote.listing) [175]
+DEAB9.pygtex) (./MathNote.listing) [169]
 \openout4 = `MathNote.listing'.
 
 
 (./_minted-MathNote/749EAE4CF13ECAEC0D4B8F67A29740A1F5D2B03F2214E93D451346FD3F1
 DEAB9.pygtex) (./MathNote.listing)
-Underfull \hbox (badness 6396) in paragraph at lines 7--181
+Underfull \hbox (badness 6445) in paragraph at lines 7--181
 [][] [] [] [] [] []
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [176]
+ [170]
 \openout4 = `MathNote.listing'.
 
 
@@ -2096,7 +2077,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 DEAB9.pygtex) (./MathNote.listing)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [177]
+ [171]
 \openout4 = `MathNote.listing'.
 
 
@@ -2104,7 +2085,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 DEAB9.pygtex) (./MathNote.listing)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [178]
+ [172]
 \openout4 = `MathNote.listing'.
 
 
@@ -2112,7 +2093,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 DEAB9.pygtex) (./MathNote.listing)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [179]
+ [173]
 \openout4 = `MathNote.listing'.
 
 
@@ -2120,7 +2101,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 DEAB9.pygtex) (./MathNote.listing)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [180]
+ [174]
 \openout4 = `MathNote.listing'.
 
 
@@ -2131,13 +2112,13 @@ DEAB9.pygtex) (./MathNote.listing)
 
 (./_minted-MathNote/32B266DDB57BF5947EBA23BD8D93843AF5D2B03F2214E93D451346FD3F1
 DEAB9.pygtex) (./MathNote.listing)
-Underfull \vbox (badness 4378) has occurred while \output is active []
+Underfull \vbox (badness 4403) has occurred while \output is active []
 
- [181]
-Overfull \vbox (49.30685pt too high) has occurred while \output is active []
+ [175]
+Overfull \vbox (49.34364pt too high) has occurred while \output is active []
 
 
-[182]
+[176]
 \openout4 = `MathNote.listing'.
 
 
@@ -2152,8 +2133,8 @@ LaTeX Font Info:    Trying to load font information for U+euf on input line 4.
 
 (x:/texlive/2021/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)) [183])
-(./PDE-NSE-Boussinesq.tex [184
+)) [177])
+(./PDE-NSE-Boussinesq.tex [178
 
 ]
 Chapter 19.
@@ -2165,143 +2146,143 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 25.
 
-[185]
-Underfull \vbox (badness 5460) has occurred while \output is active []
+[179]
+Underfull \vbox (badness 5504) has occurred while \output is active []
 
- [186])
-(./harmonic-analysis.tex [187] [188
+ [180])
+(./harmonic-analysis.tex [181] [182
 
 ]
 Chapter 20.
-) (./math.stackexchange.com.tex [189] [190
+) (./math.stackexchange.com.tex [183] [184
 
 ]
 Chapter 21.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [191]
-[192] [193]) (./quote.tex [194]
+ [185]
+[186] [187]) (./quote.tex [188]
 Chapter 22.
-) (./gtm120.tex [195
+) (./gtm120.tex [189
 
-] [196
+] [190
 
 ]
 Chapter 23.
-) (./bib.tex [197] [198
+) (./bib.tex [191] [192
 
-]) [199]
+]) [193]
 No file MathNote.ind.
 (./MathNote.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `MathNote.out' has not changed.
 (rerunfilecheck)             Checksum: C377D0D0AADDD4E977178059BD978F2C;6995.
  ) 
 Here is how much of TeX's memory you used:
- 60504 strings out of 478994
- 1384162 string characters out of 5862207
- 1966435 words of memory out of 5000000
- 75276 multiletter control sequences out of 15000+600000
- 476268 words of font info for 287 fonts, out of 8000000 for 9000
+ 60502 strings out of 478994
+ 1384546 string characters out of 5862207
+ 1964947 words of memory out of 5000000
+ 75288 multiletter control sequences out of 15000+600000
+ 484797 words of font info for 291 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  118i,17n,119p,765b,3435s stack positions out of 5000i,500n,10000p,200000b,80000s
-{x:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<x:/tex
-live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><x:/texlive/2021
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><x:/texlive/2021/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmex10.pfb><x:/texlive/2021/texmf-dist/fonts/
-type1/public/amsfonts/cmextra/cmex7.pfb><x:/texlive/2021/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmitt10.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi10.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi5.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.p
-fb><x:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><x:/tex
-live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><x:/texlive/2021/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><x:/texlive/2021/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsl10.pfb><x:/texlive/2021/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy5.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy7.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
-fb><x:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><x:/te
-xlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb><x:/texlive/2021
-/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><x:/texlive/2021/texmf
--dist/fonts/type1/arphic/gbsnu/gbsnu4e.pfb><x:/texlive/2021/texmf-dist/fonts/ty
-pe1/arphic/gbsnu/gbsnu4f.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbs
-nu/gbsnu50.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu51.pfb
-><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu52.pfb><x:/texlive/2
-021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu53.pfb><x:/texlive/2021/texmf-dist
-/fonts/type1/arphic/gbsnu/gbsnu54.pfb><x:/texlive/2021/texmf-dist/fonts/type1/a
-rphic/gbsnu/gbsnu55.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gb
-snu56.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu57.pfb><x:/
-texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu58.pfb><x:/texlive/2021/t
-exmf-dist/fonts/type1/arphic/gbsnu/gbsnu59.pfb><x:/texlive/2021/texmf-dist/font
-s/type1/arphic/gbsnu/gbsnu5a.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic
-/gbsnu/gbsnu5b.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu5c
-.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu5d.pfb><x:/texli
-ve/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu5e.pfb><x:/texlive/2021/texmf-
-dist/fonts/type1/arphic/gbsnu/gbsnu5f.pfb><x:/texlive/2021/texmf-dist/fonts/typ
-e1/arphic/gbsnu/gbsnu60.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsn
-u/gbsnu61.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu62.pfb>
-<x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu63.pfb><x:/texlive/20
-21/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu64.pfb><x:/texlive/2021/texmf-dist/
-fonts/type1/arphic/gbsnu/gbsnu65.pfb><x:/texlive/2021/texmf-dist/fonts/type1/ar
-phic/gbsnu/gbsnu66.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbs
-nu67.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu68.pfb><x:/t
-exlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu69.pfb><x:/texlive/2021/te
-xmf-dist/fonts/type1/arphic/gbsnu/gbsnu6a.pfb><x:/texlive/2021/texmf-dist/fonts
-/type1/arphic/gbsnu/gbsnu6b.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/
-gbsnu/gbsnu6c.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6d.
-pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6e.pfb><x:/texliv
-e/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6f.pfb><x:/texlive/2021/texmf-d
-ist/fonts/type1/arphic/gbsnu/gbsnu70.pfb><x:/texlive/2021/texmf-dist/fonts/type
-1/arphic/gbsnu/gbsnu71.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu
-/gbsnu72.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu73.pfb><
-x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu74.pfb><x:/texlive/202
-1/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu75.pfb><x:/texlive/2021/texmf-dist/f
-onts/type1/arphic/gbsnu/gbsnu76.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arp
-hic/gbsnu/gbsnu77.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsn
-u78.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu79.pfb><x:/te
-xlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu7a.pfb><x:/texlive/2021/tex
-mf-dist/fonts/type1/arphic/gbsnu/gbsnu7b.pfb><x:/texlive/2021/texmf-dist/fonts/
-type1/arphic/gbsnu/gbsnu7c.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/g
-bsnu/gbsnu7d.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu7e.p
-fb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu7f.pfb><x:/texlive
-/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu80.pfb><x:/texlive/2021/texmf-di
-st/fonts/type1/arphic/gbsnu/gbsnu81.pfb><x:/texlive/2021/texmf-dist/fonts/type1
-/arphic/gbsnu/gbsnu82.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/
-gbsnu83.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu84.pfb><x
-:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu85.pfb><x:/texlive/2021
-/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu86.pfb><x:/texlive/2021/texmf-dist/fo
-nts/type1/arphic/gbsnu/gbsnu88.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arph
-ic/gbsnu/gbsnu89.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu
-8a.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu8b.pfb><x:/tex
-live/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu8c.pfb><x:/texlive/2021/texm
-f-dist/fonts/type1/arphic/gbsnu/gbsnu8d.pfb><x:/texlive/2021/texmf-dist/fonts/t
-ype1/arphic/gbsnu/gbsnu8f.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gb
-snu/gbsnu90.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu91.pf
-b><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu94.pfb><x:/texlive/
-2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu95.pfb><x:/texlive/2021/texmf-dis
-t/fonts/type1/arphic/gbsnu/gbsnu96.pfb><x:/texlive/2021/texmf-dist/fonts/type1/
-arphic/gbsnu/gbsnu97.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/g
-bsnu98.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu99.pfb><x:
-/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu9a.pfb><x:/texlive/2021/
-texmf-dist/fonts/type1/arphic/gbsnu/gbsnu9e.pfb><x:/texlive/2021/texmf-dist/fon
-ts/type1/arphic/gbsnu/gbsnu9f.pfb><x:/texlive/2021/texmf-dist/fonts/type1/publi
-c/amsfonts/symbols/msam10.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msam7.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msbm10.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msbm7.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-<x:/texlive/2021/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb><x:/texlive/2021/
-texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><x:/texlive/2021/texmf-dist
-/fonts/type1/public/yhmath/yhcmex.pfb>
-Output written on MathNote.pdf (199 pages, 1761894 bytes).
+{x:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{x:/texl
+ive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<x:/texlive/2021/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><x:/texlive/2021/texmf-dis
+t/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><x:/texlive/2021/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb><x:/texlive/2021/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi5.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi7.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><x
+:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><x:/texlive/2
+021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><x:/texlive/2021/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><x:/texlive/2021/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy7.pfb><x:/texlive/2021/texmf-dist/fonts/type1/pu
+blic/amsfonts/euler/eufm10.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/g
+bsnu/gbsnu4e.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu4f.p
+fb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu50.pfb><x:/texlive
+/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu51.pfb><x:/texlive/2021/texmf-di
+st/fonts/type1/arphic/gbsnu/gbsnu52.pfb><x:/texlive/2021/texmf-dist/fonts/type1
+/arphic/gbsnu/gbsnu53.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/
+gbsnu54.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu55.pfb><x
+:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu56.pfb><x:/texlive/2021
+/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu57.pfb><x:/texlive/2021/texmf-dist/fo
+nts/type1/arphic/gbsnu/gbsnu58.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arph
+ic/gbsnu/gbsnu59.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu
+5a.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu5b.pfb><x:/tex
+live/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu5c.pfb><x:/texlive/2021/texm
+f-dist/fonts/type1/arphic/gbsnu/gbsnu5d.pfb><x:/texlive/2021/texmf-dist/fonts/t
+ype1/arphic/gbsnu/gbsnu5e.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gb
+snu/gbsnu5f.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu60.pf
+b><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu61.pfb><x:/texlive/
+2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu62.pfb><x:/texlive/2021/texmf-dis
+t/fonts/type1/arphic/gbsnu/gbsnu63.pfb><x:/texlive/2021/texmf-dist/fonts/type1/
+arphic/gbsnu/gbsnu64.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/g
+bsnu65.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu66.pfb><x:
+/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu67.pfb><x:/texlive/2021/
+texmf-dist/fonts/type1/arphic/gbsnu/gbsnu68.pfb><x:/texlive/2021/texmf-dist/fon
+ts/type1/arphic/gbsnu/gbsnu69.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphi
+c/gbsnu/gbsnu6a.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6
+b.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6c.pfb><x:/texl
+ive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6d.pfb><x:/texlive/2021/texmf
+-dist/fonts/type1/arphic/gbsnu/gbsnu6e.pfb><x:/texlive/2021/texmf-dist/fonts/ty
+pe1/arphic/gbsnu/gbsnu6f.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbs
+nu/gbsnu70.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu71.pfb
+><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu72.pfb><x:/texlive/2
+021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu73.pfb><x:/texlive/2021/texmf-dist
+/fonts/type1/arphic/gbsnu/gbsnu74.pfb><x:/texlive/2021/texmf-dist/fonts/type1/a
+rphic/gbsnu/gbsnu75.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gb
+snu76.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu77.pfb><x:/
+texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu78.pfb><x:/texlive/2021/t
+exmf-dist/fonts/type1/arphic/gbsnu/gbsnu79.pfb><x:/texlive/2021/texmf-dist/font
+s/type1/arphic/gbsnu/gbsnu7a.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic
+/gbsnu/gbsnu7b.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu7c
+.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu7d.pfb><x:/texli
+ve/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu7e.pfb><x:/texlive/2021/texmf-
+dist/fonts/type1/arphic/gbsnu/gbsnu7f.pfb><x:/texlive/2021/texmf-dist/fonts/typ
+e1/arphic/gbsnu/gbsnu80.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsn
+u/gbsnu81.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu82.pfb>
+<x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu83.pfb><x:/texlive/20
+21/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu84.pfb><x:/texlive/2021/texmf-dist/
+fonts/type1/arphic/gbsnu/gbsnu85.pfb><x:/texlive/2021/texmf-dist/fonts/type1/ar
+phic/gbsnu/gbsnu86.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbs
+nu88.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu89.pfb><x:/t
+exlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu8a.pfb><x:/texlive/2021/te
+xmf-dist/fonts/type1/arphic/gbsnu/gbsnu8b.pfb><x:/texlive/2021/texmf-dist/fonts
+/type1/arphic/gbsnu/gbsnu8c.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/
+gbsnu/gbsnu8d.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu8f.
+pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu90.pfb><x:/texliv
+e/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu91.pfb><x:/texlive/2021/texmf-d
+ist/fonts/type1/arphic/gbsnu/gbsnu94.pfb><x:/texlive/2021/texmf-dist/fonts/type
+1/arphic/gbsnu/gbsnu95.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu
+/gbsnu96.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu97.pfb><
+x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu98.pfb><x:/texlive/202
+1/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu99.pfb><x:/texlive/2021/texmf-dist/f
+onts/type1/arphic/gbsnu/gbsnu9a.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arp
+hic/gbsnu/gbsnu9e.pfb><x:/texlive/2021/texmf-dist/fonts/type1/arphic/gbsnu/gbsn
+u9f.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
+pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb><
+x:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><x:/t
+exlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><x:/texliv
+e/2021/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb><x:/texlive/2021/texmf-dis
+t/fonts/type1/public/rsfs/rsfs7.pfb><x:/texlive/2021/texmf-dist/fonts/type1/pub
+lic/cm-super/sfbx1000.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/cm-sup
+er/sfbx1200.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx144
+0.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><x:/
+texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><x:/texlive/20
+21/texmf-dist/fonts/type1/public/cm-super/sfit0900.pfb><x:/texlive/2021/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1000.pfb><x:/texlive/2021/texmf-dist/fonts/
+type1/public/cm-super/sfsl1000.pfb><x:/texlive/2021/texmf-dist/fonts/type1/publ
+ic/cm-super/sfti1000.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/cm-supe
+r/sftt0900.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000
+.pfb><x:/texlive/2021/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb>
+Output written on MathNote.pdf (193 pages, 1855609 bytes).
 PDF statistics:
- 2844 PDF objects out of 2984 (max. 8388607)
- 2424 compressed objects within 25 object streams
- 1072 named destinations out of 1200 (max. 500000)
+ 2799 PDF objects out of 2984 (max. 8388607)
+ 2383 compressed objects within 24 object streams
+ 1040 named destinations out of 1200 (max. 500000)
  997 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -50,7 +50,7 @@ $\sum\limits_{k=1}^{K}a_{k}>2016$.
 \ea
 
 \bq{}{20170518005}
-设 $f(x)=a_nx^n+\cdots+a_1x+a_0\in\Bbb C[x]$, $a_n\ne0$, $\alpha$ 是 $f(x)$ 任一根, 则
+设 $f(x)=a_nx^n+\cdots+a_1x+a_0\in\CC[x]$, $a_n\ne0$, $\alpha$ 是 $f(x)$ 任一根, 则
 \bee
 |\alpha|<1+\max_{0\le k\le n-1}\left|\frac{a_k}{a_n}\right|.
 \eee
@@ -83,12 +83,12 @@ $\sum\limits_{k=1}^{K}a_{k}>2016$.
 \ea
 
 \bq{}{20170518004}
-设多项式$f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n\in\Bbb Z[x]$, 且满足
+设多项式$f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n\in\ZZ[x]$, 且满足
 \begin{enumerate}[(i)]
  \item $0<a_0<a_1<\cdots<a_{n-1}<a_{n}$;
  \item $a_n=p^m$, 这里$p$是一个素数($m$是正整数), 且$p\nmid a_{n-1}$.
 \end{enumerate}
-证明: $f(x)$在$\Bbb Z$上不可约.
+证明: $f(x)$在$\ZZ$上不可约.
 \eq
 \ba
 反证法, $f=gh$. $g=b_0x^r+\cdots+b_r$, $h=c_0x^s+\cdots+c_s$. 则由条件不妨设$p\nmid b_r$, $\abs{c_s}=p^m$, $\abs{b_r}=1$. 
@@ -97,11 +97,11 @@ $\abs{g(0)}=\abs{b_r}=\abs{b_0}\abs{\alpha_1}\cdots\abs{\alpha_r}>\abs{b_0}\ge1$
 \ea
 
 \bq{}{20170518006}
-设$f(x)=a_nx^n+\cdots+a_1x+p\in\Bbb Z[x]$, $a_n\ne 0$, $p$是素数, 且
+设$f(x)=a_nx^n+\cdots+a_1x+p\in\ZZ[x]$, $a_n\ne 0$, $p$是素数, 且
 \bee
 \abs{a_1}+\cdots+\abs{a_n}<p,
 \eee
-证明: $f(x)$在$\Bbb Z$上不可约.
+证明: $f(x)$在$\ZZ$上不可约.
 \eq
 \ba
 反证, $f=gh$, $f$的根的模均大于1, 若$|g(0)|=1$, 则其实线性分解的模大于1. 矛盾.
@@ -112,14 +112,14 @@ $\abs{g(0)}=\abs{b_r}=\abs{b_0}\abs{\alpha_1}\cdots\abs{\alpha_r}>\abs{b_0}\ge1$
 \bee
 M=\max_{0\le i\le n-1}\abs{\frac{a_i}{a_n}}.
 \eee
-若有一个整数$m\ge M+2$, 使$|f(m)|$为素数, 则$f(x)$在$\Bbb Z$上不可约.
+若有一个整数$m\ge M+2$, 使$|f(m)|$为素数, 则$f(x)$在$\ZZ$上不可约.
 \eq
 \ba
 反证, $f=gh$, 由\ref{q:20170518005}知, 当$\abs{g(m)}=1$时, $\abs{g(m)}$的实线性分解的每项都大于1而导致矛盾.
 \ea
 
 \bq{}{}
-判别$x^5+4x^4+2x^3+3x^2-x+5$在$\Bbb Q$上是否可约.
+判别$x^5+4x^4+2x^3+3x^2-x+5$在$\QQ$上是否可约.
 \eq
 \ba
 让$x+6$代替$x$化简得$x^5+34x^4+458x^3+3063x^2+10187x+13499$, 由于$13499$是素数, 由\ref{q:20170518004}即得.
@@ -132,7 +132,7 @@ M=\max_{0\le i\le n-1}\abs{\frac{a_i}{a_n}}.
 \ea
 
 \bq{}{20170518001}
-设$f(x)=a_nx^n+\cdots+a_1x+a_0\in\Bbb Z[x]$, 其中$0\le a_i\le 9$($i=0,1,\cdots,n$), 且$a_n\ne0$. 如$\alpha$是$f(x)$的一个复根, 则
+设$f(x)=a_nx^n+\cdots+a_1x+a_0\in\ZZ[x]$, 其中$0\le a_i\le 9$($i=0,1,\cdots,n$), 且$a_n\ne0$. 如$\alpha$是$f(x)$的一个复根, 则
 $\Re(\alpha)\le0$或$|\alpha|<4$.
 \eq
 \ba
@@ -146,10 +146,10 @@ $\Re(\alpha)\le0$或$|\alpha|<4$.
 
 \bq{}{20170518002}
 设$f(x)$是$n$次整系数多项式($n\ge1$), $\alpha_1,\cdots,\alpha_n$是其全部复根. 若存在整数$k$, $k>1+\Re(\alpha_j)$, ($j=1,\cdots,n$), 
-使$|f(k)|$是素数, 则$f(x)$在$\Bbb Z$上不可约.
+使$|f(k)|$是素数, 则$f(x)$在$\ZZ$上不可约.
 \eq
 \ba
-反证, $f=gh$, 对$g$进行$\Bbb R[x]$上的标准分解, 则有$\abs{g(k)}>1$, 同理$\abs{h(k)}>1$. 与$f(k)$素矛盾.
+反证, $f=gh$, 对$g$进行$\RR[x]$上的标准分解, 则有$\abs{g(k)}>1$, 同理$\abs{h(k)}>1$. 与$f(k)$素矛盾.
 \ea
 
 \bq{http://tieba.baidu.com/p/4811340691}{}
@@ -316,7 +316,7 @@ f'(x)=\cdots(\textrm{用}\ln(1-x)<-x)<-\frac2{(x+1)(x+3)}\paren{1-\frac2{x+3}}^x
 \ea
 
 \bq{}{}
-求满足如下恒等式的所有实函数$f(x):\Bbb R\to\Bbb R$,
+求满足如下恒等式的所有实函数$f(x):\RR\to\RR$,
 \be\label{20170703}
 f(f(x))f(y)-xy=f(x)+f(f(y))-1.
 \ee

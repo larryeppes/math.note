@@ -197,7 +197,7 @@ f(x_1,x_2,\cdots,x_n)=X'AX
 {\color{red}{\bf{问题: 对于上下极限是否仍有类似结论?}}}.
 
 \bt{}{20170702001}
-假设$f_n: [a,b]\to\Bbb R$, 每个在$[a,b]$上均可积, 且$f_n(x)\rightrightarrows f(x)$, $n\to\infty$.
+假设$f_n: [a,b]\to\RR$, 每个在$[a,b]$上均可积, 且$f_n(x)\rightrightarrows f(x)$, $n\to\infty$.
 则$f(x)$可积, 且
 \bee
 \int_a^bf\ud x=\lim_{n\to\infty}\int_a^bf_n\ud x.
@@ -208,7 +208,7 @@ f(x_1,x_2,\cdots,x_n)=X'AX
 \ea
 
 \bt{(一致收敛级数)逐项积分}{20170702002}
-$u_k: [a,b]\to\Bbb R$, 对每个$k\in\Bbb N_+$均可积, $\sum_{k=1}^{\infty}u_k(x)$在$[a,b]$上一致收敛.
+$u_k: [a,b]\to\RR$, 对每个$k\in\NN_+$均可积, $\sum_{k=1}^{\infty}u_k(x)$在$[a,b]$上一致收敛.
 则$f(x)=\sum_{k=1}^{\infty}u_k(x)$可积, 且
 \bee
 \int_a^bf(x)\ud x=\sum_{k=1}^{\infty}\int_a^bu_k(x)\ud x.
@@ -219,7 +219,7 @@ $u_k: [a,b]\to\Bbb R$, 对每个$k\in\Bbb N_+$均可积, $\sum_{k=1}^{\infty}u_k
 \ea
 
 \bt{逐项微分}{20170702003}
-设$u_k:[a,b]\to\Bbb R$, $k\in \Bbb N_+$, 每项均有连续导数(端点处单边可微), 若有:
+设$u_k:[a,b]\to\RR$, $k\in \NN_+$, 每项均有连续导数(端点处单边可微), 若有:
 \begin{enumerate}[(i)]
  \item $\sum_{k=1}^{\infty}u_k(x_0)$在某些点$x_0\in[a,b]$收敛.
  \item $\sum_{k=1}^{\infty}u'_k(x)$在$[a,b]$上一致收敛到$f(x)$.
@@ -231,13 +231,13 @@ $u_k: [a,b]\to\Bbb R$, 对每个$k\in\Bbb N_+$均可积, $\sum_{k=1}^{\infty}u_k
 \end{enumerate}
 \et
 \ba
-(1). $u'_k$连续($k\in\Bbb N_+$), $\sum_{k=1}^{\infty}u'_k\rightrightarrows f$, 则$f\in C[a,b]$, 所以$f$在$[a,b]$上可积.
+(1). $u'_k$连续($k\in\NN_+$), $\sum_{k=1}^{\infty}u'_k\rightrightarrows f$, 则$f\in C[a,b]$, 所以$f$在$[a,b]$上可积.
 让$x\in[a,b]$, 对$u'_k$和$f$在区间$[x_0, x]$上使用\ref{th:20170702002}, (或$[x,x_0]$, 如果$x<x_0$), 则有
 \bee
 \sum_{k=1}^{\infty}\int_{x_0}^{x}u'_k(x)\ud x=\int_{x_0}^{x}f(x)\ud x=\lim_{n\to\infty}\sum_{k=1}^{n}(u_k(x)-u_k(x_0)).
 \eee
 由假设(i), $\sum_{k=1}^{\infty}u_k(x_0)$收敛, 所以级数$F(x)=\lim_{n\to\infty}\sum_{k=1}^{n}u_k(x)$对任意$x\in[a,b]$均收敛, 
-所以$F: [a,b]\to\Bbb R$是良定义的, 于是$F(x)-F(x_0)=\int_{x_0}^{x}f(x)\ud x$, 由$f$连续, 两边求导, 便有$F'(x)=f(x)$.
+所以$F: [a,b]\to\RR$是良定义的, 于是$F(x)-F(x_0)=\int_{x_0}^{x}f(x)\ud x$, 由$f$连续, 两边求导, 便有$F'(x)=f(x)$.
 
 (2). Cauchy判别法, 取$\varepsilon>0$, 则$\exists N_1$使任意$n\ge m\ge N_1$有
 \bee
@@ -257,7 +257,7 @@ $u_k: [a,b]\to\Bbb R$, 对每个$k\in\Bbb N_+$均可积, $\sum_{k=1}^{\infty}u_k
 \ea
 
 \bt{求导与极限的交换}{}
-函数列$f_n: [a,b]\to\Bbb R$, $n\in\Bbb N_+$, 在$[a,b]$上连续可微, $f_n(x)\to f(x)$, $x\in[a,b]$.
+函数列$f_n: [a,b]\to\RR$, $n\in\NN_+$, 在$[a,b]$上连续可微, $f_n(x)\to f(x)$, $x\in[a,b]$.
 $f'_n(x)\rightrightarrows\varphi(x)$, $x\in[a,b]$, 则$f$可微且$f'(x)=\varphi(x)$, 从而$f_n\rightrightarrows f$.
 \et
 \ba
@@ -314,13 +314,13 @@ y''+P(x)y'+Q(x)y=0
 设$\{f_n\}$是$[0,1]$上一致有界, 等度连续函数族, 则存在某一子序列$\{f_{n(i)}\}$在$[0,1]$上一致收敛.
 \et
 
-\bt{Hahn-Banach, $\Bbb R-version$}{}
-设$\mathcal X$是定义在$\Bbb R$上的向量空间, $q: \mathcal{X}\to \Bbb R$是拟半范数. 
-若给定线性子空间$\mathcal{Y}\subset\mathcal{X}$和其上的线性映射$\phi: \mathcal{Y}\to\Bbb R$, 使得
+\bt{Hahn-Banach, $\RR-version$}{}
+设$\mathcal X$是定义在$\RR$上的向量空间, $q: \mathcal{X}\to \RR$是拟半范数. 
+若给定线性子空间$\mathcal{Y}\subset\mathcal{X}$和其上的线性映射$\phi: \mathcal{Y}\to\RR$, 使得
 \bee
 \phi(y)\le q(y), \forall y\in\mathcal{Y}.
 \eee
-则存在线性映射$\varphi: \mathcal{X}\to\Bbb R$满足
+则存在线性映射$\varphi: \mathcal{X}\to\RR$满足
 \begin{enumerate}[(i)]
  \item $\varphi\mid_{\mathcal{Y}}=\phi$;
  \item $\varphi(x)\le q(x)$, $\forall x\in\mathcal{X}$.
@@ -331,8 +331,8 @@ y''+P(x)y'+Q(x)y=0
 \bee
 \mathcal{X}=\{y+sx_0: y\in\mathcal{Y}, s\in\mathbb{R}\}.
 \eee
-于是只需找到$\alpha\in\Bbb R$使得映射$\varphi(y+sx_0)=\phi(y)+s\alpha$, $\forall y\in\mathcal{Y}$, 
-$s\in\Bbb R$满足条件(ii), 于是$s>0$时有
+于是只需找到$\alpha\in\RR$使得映射$\varphi(y+sx_0)=\phi(y)+s\alpha$, $\forall y\in\mathcal{Y}$, 
+$s\in\RR$满足条件(ii), 于是$s>0$时有
 \bee
 \alpha\le q(z+x_0)-\phi(z), \forall z\in\mathcal{Y}, z=s^{-1}y, s>0
 \eee
@@ -344,27 +344,27 @@ $s\in\Bbb R$满足条件(ii), 于是$s>0$时有
 然后用Zorn引理.
 \ea
 
-\bu{Hahn-Banach定理, $\Bbb C$-version}{}
-设$\mathcal{X}$是复数域$\Bbb C$上的向量空间, $q: \mathcal{X}\to\Bbb R$是$\mathcal{X}$上的拟半范数, 
-给定线性子空间$\mathcal{Y}\subset\mathcal{X}$和$\mathcal{Y}$上的线性映射$\phi: \mathcal{Y}\to\Bbb C$使得
+\bu{Hahn-Banach定理, $\CC$-version}{}
+设$\mathcal{X}$是复数域$\CC$上的向量空间, $q: \mathcal{X}\to\RR$是$\mathcal{X}$上的拟半范数, 
+给定线性子空间$\mathcal{Y}\subset\mathcal{X}$和$\mathcal{Y}$上的线性映射$\phi: \mathcal{Y}\to\CC$使得
 \bee
 \Re\phi(y)\le q(y),\quad\forall y\in\mathcal{Y}.
 \eee
-则存在线性映射$\psi:\mathcal{X}\to\Bbb C$满足:
+则存在线性映射$\psi:\mathcal{X}\to\CC$满足:
 \begin{enumerate}[(i)]
  \item $\psi\mid_{\mathcal{Y}}=\phi$;
  \item $\Re\psi(x)\le q(x)$, $\forall x\in\mathcal{X}$.
 \end{enumerate}
 \eu
 \ba
-设$\phi_1=\Re\phi$, 因$\phi_1$是$(\mathcal{Y},\Bbb R)$上的线性映射且被拟半范数$q$控制, 
-则由$\Bbb R$-Hahn Banach定理, $\phi_1$可延拓到$(\mathcal{X},\Bbb R)$上的实线性映射$\psi_1$且满足
+设$\phi_1=\Re\phi$, 因$\phi_1$是$(\mathcal{Y},\RR)$上的线性映射且被拟半范数$q$控制, 
+则由$\RR$-Hahn Banach定理, $\phi_1$可延拓到$(\mathcal{X},\RR)$上的实线性映射$\psi_1$且满足
 \begin{enumerate}[(i')]
  \item $\psi_1\mid_{\mathcal{Y}}=\phi_1$;
  \item $\psi_1(x)\le q(x)$, $\forall x\in\mathcal{X}$.
 \end{enumerate}
-但注意这里用的是实的Hahn Banach定理, 所延拓的$\psi_1$是针对实向量空间$(\mathcal{X},\Bbb R)$的, 要得到复向量空间的$\psi_1$, 
-则在$(\mathcal{Y},\Bbb C)$上考虑$\psi_1(y)=\phi_1(y)$, 但新定义的$\psi_1$是实域上的线性映射, 而不是复域上的线性映射, 
+但注意这里用的是实的Hahn Banach定理, 所延拓的$\psi_1$是针对实向量空间$(\mathcal{X},\RR)$的, 要得到复向量空间的$\psi_1$, 
+则在$(\mathcal{Y},\CC)$上考虑$\psi_1(y)=\phi_1(y)$, 但新定义的$\psi_1$是实域上的线性映射, 而不是复域上的线性映射, 
 显然所求线性映射$\psi$的实部$\Re\psi$在{\color{red}{实线性空间}}中也满足以上两条件. 
 若取$\Re \psi=\psi_1$, 则$\psi$在实的情况已满足条件(ii). 而$\Im\psi(y)=\Re(-\ui\psi(y))=\Re\psi(-\ui y)=\psi_1(-\ui y)$, 于是$\psi(y)=\psi_1(y)+\ui\psi_1(-\ui y)$, 
 要证$\psi\mid_{\mathcal{Y}}=\phi$, 只需证$\Im\psi(y)=\Im\phi(y)$, $\forall y\in\mathcal{Y}$, 然而
@@ -413,7 +413,7 @@ f(x)\equiv0\pmod{p}
 \et
 \ba
 $n=1$时结论显然成立, 对$n$归纳. 假设$n-1$时已正确, 当$f$的次数是$n$时, 若同余方程无解, 则无需证明.
-若$x=a$是一个解, 用$(x-a)$除$f(x)$得$f(x)=g(x)(x-a)+A$, ($A\in\Bbb Z$), 若同余方程(\ref{20150512001})除$x\equiv a\pmod{p}$外无解, 则证毕, 
+若$x=a$是一个解, 用$(x-a)$除$f(x)$得$f(x)=g(x)(x-a)+A$, ($A\in\ZZ$), 若同余方程(\ref{20150512001})除$x\equiv a\pmod{p}$外无解, 则证毕, 
 否则设$x=b$是(\ref{20150512001})的另一个解, 且$a\not\equiv b\pmod{p}$, 则
 \bee
 0\equiv f(b)=g(b)(b-a)+A\pmod{p}, \textrm{又由}0\equiv f(a)=g(a)(a-a)+A=A\pmod{p}.
@@ -423,7 +423,7 @@ $n=1$时结论显然成立, 对$n$归纳. 假设$n-1$时已正确, 当$f$的次�
 \ea
 
 \bt{整系数多项式的有理根}{}
-$f(x)=a_nx^n+\cdots+a_0\in\Bbb Z[x]$, $n\ge1$, $a_na_0\ne0$且$(a_n,\cdots, a_0)=1$, 若$\frac{b}{c}$是$f(x)$的一个有理根$(b,c)=1$, 
+$f(x)=a_nx^n+\cdots+a_0\in\ZZ[x]$, $n\ge1$, $a_na_0\ne0$且$(a_n,\cdots, a_0)=1$, 若$\frac{b}{c}$是$f(x)$的一个有理根$(b,c)=1$, 
 则$c\mid a_n$, $b\mid a_0$.
 
 特别地, 首项系数为$\pm 1$的整系数多项式的有理根必是整数.
@@ -435,7 +435,7 @@ $f(x)=a_nx^n+\cdots+a_0\in\Bbb Z[x]$, $n\ge1$, $a_na_0\ne0$且$(a_n,\cdots, a_0)
 \ea
 
 \bt{Gauss引理}{}
-$\Bbb Z[x]$中两个本原多项式的乘积仍是一个本原多项式.
+$\ZZ[x]$中两个本原多项式的乘积仍是一个本原多项式.
 \et
 \ba
 反证法, $f(x)=a_nx^n+\cdots+a_0$, $g(x)=b_mx^m+\cdots+b_0$, 若$f(x)g(x)$不是本原多项式, 则有素数$p$整除$f(x)g(x)$的所有系数.
@@ -444,7 +444,7 @@ $\Bbb Z[x]$中两个本原多项式的乘积仍是一个本原多项式.
 
 \bt{艾森斯坦判别法}{}
 设$f(x)=a_nx^n+\cdots+a_0$是一个整系数多项式, 其中$n\ge1$. 若存在一个素数$p$, 使得$p\nmid a_n$, $p\mid a_i$($i=0,1,\cdots,n-1$), 
-但$p^2\nmid a_0$, 则$f(x)$在$\Bbb Z$上不可约.
+但$p^2\nmid a_0$, 则$f(x)$在$\ZZ$上不可约.
 \et
 
 \bt{科恩定理}{}
@@ -452,7 +452,7 @@ $\Bbb Z[x]$中两个本原多项式的乘积仍是一个本原多项式.
 \bee
 f(x)=a_nx^n+\cdots+a_1x+a_0.
 \eee
-在$\Bbb Z$上不可约.
+在$\ZZ$上不可约.
 \et
 \ba
 先用\ref{q:20170518001}, 再用\ref{q:20170518002}.

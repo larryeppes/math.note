@@ -30,3 +30,13 @@
 
 ![image-20220301133402537](pic/README/image-20220301133402537.png)
 
+### 补充工具的搭建
+
+在`MathNote/note8.tex`文件中有一部分绘图代码使用了`gnuplot`工具. 这个工具的windows版本可以在[这里](http://tmacchant33.starfree.jp/gnuplot_bin.html)下载. gnuplot的官网在[这里](http://www.gnuplot.info/).
+
+所以要在编辑器的`选项→设置TeXstudio→构建→命令($PATH)`处补充添加`PATH`环境变量, 就是添加`path\to\gnuplot\bin`, 配置方式类似下面的说明, 图文知道这里略去.
+
+对于WinEdt编辑器, 则需要在`Options→Execution Medes...→PATH`中的`Extra PATH Folders`中添加`path\to\gnuplot\bin`.
+
+这个工具的效果是在`MathNote`文件中生成以`.pgf-plot.gnuplot`和`.pgf-plot.table`结尾的两个文件, 本仓库编译时没有清除这两个文件, 所以即便本地没有安装`gnuplot`工具, **也不影响编译结果的输出**. 但以后这些编译产生的文件会从仓库中移除.
+

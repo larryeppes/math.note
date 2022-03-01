@@ -100,6 +100,7 @@ $A=x+y+z$($A$:成功, $x$: 艰苦的劳动, $y$: 正确的方法, $z$: 少说空
 \et
 
 \newpage
+
 \section{不等式集}
 \bq{}{}
 已知$0\le a_k\le 1$($k=1,2,\cdots, 2002$), 记$a_{2003}=a_1$, $a_{2004}=a_2$, 求$\sum_{k=1}^{2002}(a_k-a_{k+1}\cdot a_{k+2})$的最大值.
@@ -759,22 +760,20 @@ $a>0, b>0, c>0$, $c^2=a^2+b^2$, 所以
 方程$\sqrt{3}\sin x-3\cos x=2a-1$等价于$\sin\paren{x-\frac{\pi}{3}}=\frac{2a-1}{2\sqrt{3}}$, 
 从而得到$-1\le \frac{2a-1}{2\sqrt{3}}\le 1$. 解得$\frac12-\sqrt{3}\le a\le \frac12+\sqrt{3}$, 而且
 \bee
-x_1=\left\{
-\begin{array}{ll}
- \frac{\pi}{3}+\arcsin\frac{2a-1}{2\sqrt{3}}, & \paren{\frac12-\sqrt{3}\le a<-1}\\
- -\frac{2\pi}{3}-\arcsin\frac{2a-1}{2\sqrt{3}}, & \paren{-1\le a\le\frac12+\sqrt{3}}
-\end{array}
-\right.
+x_1=
+\begin{cases}
+	\frac{\pi}{3}+\arcsin\frac{2a-1}{2\sqrt{3}}, & \paren{\frac12-\sqrt{3}\le a<-1}\\
+	-\frac{2\pi}{3}-\arcsin\frac{2a-1}{2\sqrt{3}}, & \paren{-1\le a\le\frac12+\sqrt{3}}
+\end{cases}
 \eee
 其图像如图, 位于$a$轴下方, 方程$2\cos^2x-2\sin^2x=a$等价于$\cos 2x=\frac{a}{2}$,
 其中$-1\le\frac{a}{2}\le 1$, 所以$-2\le a\le 2$, 解得
 \bee
-x_2=\left\{
-\begin{array}{ll}
- \frac12\arccos\frac{a}{2}, & (-2<a\le 2)\\
- \pi, & (a=2).
-\end{array}
-\right.
+x_2=
+\begin{cases}
+	\frac12\arccos\frac{a}{2}, & (-2<a\le 2)\\
+	\pi, & (a=2).
+\end{cases}
 \eee
 其图像如图, 它位于$a$轴上方, 比较两个函数的图像, 不难看出$|x_1|\le x_2$的充要条件是$\frac12-\sqrt{3}\le a\le -1$或$a=2$.
 \begin{center}
@@ -1675,11 +1674,11 @@ LHS & =\sum\frac{1}{\sqrt{1-x_{i}}}-\sum\sqrt{1-x_{i}}\\
 \frac{1}{\sqrt{1-x_1}}\le\frac1{\sqrt{1-x_2}}\le\cdots\le\frac1{\sqrt{1-x_n}},
 \eee
 利用Chebyshev不等式和幂平均不等式有
-\bee
-\sum_{i=1}^n\frac{x_i}{\sqrt{1-x_i}}\ge\frac1n\paren{\sum x_i}\cdot\paren{\sum\frac1{\sqrt{1-x_i}}}
-  =\frac1n\sum\frac1{\sqrt{1-x_i}}\ge\left[\frac1n\sum\paren{\frac1{\sqrt{1-x_i}}}^{-2}\right]^{-1/2}
-  =\left[\frac1n\sum(1-x_i)\right]^{-1/2}=\sqrt{\frac{n}{n-1}}.
-\eee
+\begin{align*}
+	\sum_{i=1}^{n}\frac{x_{i}}{\sqrt{1-x_{i}}} & \ge\frac{1}{n}\paren{\sum x_{i}}\cdot\paren{\sum\frac{1}{\sqrt{1-x_{i}}}}\\
+	& =\frac{1}{n}\sum\frac{1}{\sqrt{1-x_{i}}}\ge\left[\frac{1}{n}\sum\paren{\frac{1}{\sqrt{1-x_{i}}}}^{-2}\right]^{-1/2}\\
+	& =\left[\frac{1}{n}\sum(1-x_{i})\right]^{-1/2}=\sqrt{\frac{n}{n-1}}.
+\end{align*}
 由Cauchy不等式得
 \bee
 \sum\sqrt{x_i}\le\sqrt{\sum1}\sqrt{\sum x_i}=\sqrt{n}
