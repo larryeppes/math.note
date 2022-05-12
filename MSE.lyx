@@ -1,0 +1,634 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+
+%\everymath{\color{blue}\everymath{}}
+\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-extended-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Q4431616
+\end_layout
+
+\begin_layout Standard
+证明
+\begin_inset Formula 
+\[
+0\le yz+zx+xy-2xyz\le\frac{7}{27},
+\]
+
+\end_inset
+
+其中 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $y$
+\end_inset
+
+ 和 
+\begin_inset Formula $z$
+\end_inset
+
+ 是满足 
+\begin_inset Formula $x+y+z=1$
+\end_inset
+
+ 的非负实数.
+\end_layout
+
+\begin_layout Standard
+Prove.
+ 设 
+\begin_inset Formula $p=a+b+c=1$
+\end_inset
+
+, 
+\begin_inset Formula $q=ab+bc+ca$
+\end_inset
+
+, 
+\begin_inset Formula $r=abc$
+\end_inset
+
+, 则 
+\begin_inset Formula $p^{3}-4pq+9r\ge0$
+\end_inset
+
+.
+ 使用 three degree Schur
+\begin_inset Formula 
+\[
+a(a-b)(a-c)+b(b-c)(b-a)+c(c-a)(c-b)\ge0
+\]
+
+\end_inset
+
+来证明上述不等式.
+ 则 
+\begin_inset Formula $r\ge\frac{4q-1}{9}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+命题相当于证明 
+\begin_inset Formula $q-2r\le\frac{7}{27}$
+\end_inset
+
+, 即 
+\begin_inset Formula $q-2r\le q-\frac{8q-2}{9}\le\frac{7}{27}$
+\end_inset
+
+, 
+\begin_inset Formula $q\le\frac{1}{3}$
+\end_inset
+
+.
+ 这可以由 
+\begin_inset Formula $p^{2}\ge3q$
+\end_inset
+
+ 证得.
+\end_layout
+
+\begin_layout Section
+tmp
+\end_layout
+
+\begin_layout Standard
+证明
+\begin_inset Formula 
+\[
+\sum_{n=1}^{\infty}\left(n\left(\sum_{k=n}^{\infty}\frac{1}{k^{2}}\right)^{2}-\frac{1}{n}\right)=\frac{3}{2}-\frac{\zeta(2)}{2}+\frac{3\zeta(3)}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+由 Abel 求和公式, 并记
+\begin_inset Formula $a_{n}=\left(\sum_{k=n}^{\infty}\frac{1}{k^{2}}\right)^{2}-\frac{1}{n^{2}}$
+\end_inset
+
+, 
+\begin_inset Formula $b_{n}=\sum_{k=1}^{n}k$
+\end_inset
+
+, 
+\begin_inset Formula $b_{0}=0$
+\end_inset
+
+, 则有
+\begin_inset Formula 
+\begin{align*}
+\sum_{n=1}^{\infty}\left(n\left(\sum_{k=n}^{\infty}\frac{1}{k^{2}}\right)^{2}-\frac{1}{n}\right) & =\sum_{n=1}^{\infty}(b_{n}-b_{n-1})a_{n}\\
+ & =\lim_{n\to\infty}a_{n}b_{n}+\sum_{n=1}^{\infty}b_{n}(a_{n}-a_{n+1})\\
+ & =\lim_{n\to\infty}a_{n}b_{n}+\sum_{n=1}^{\infty}\left[\frac{1}{2}\left(\frac{1}{n^{2}}+\frac{1}{n^{3}}+\frac{1}{n(n+1)}\right)+\frac{n+1}{n}\sum_{k=n+1}^{\infty}\frac{1}{k^{2}}-\frac{1}{n}\right]\\
+ & =\lim_{n\to\infty}a_{n}b_{n}+\frac{1}{2}\left(\zeta(2)+\zeta(3)+1\right)+\sum_{n=1}^{\infty}\left(\frac{n+1}{n}\sum_{k=n+1}^{\infty}\frac{1}{k^{2}}-\frac{1}{n}\right)\\
+ & =\lim_{n\to\infty}a_{n}b_{n}+\frac{1}{2}\left(\zeta(2)+\zeta(3)+1\right)+\sum_{n=1}^{\infty}\left(\sum_{k=n+1}^{\infty}\frac{1}{nk^{2}}\right)+\sum_{n=1}^{\infty}\left(\sum_{k=n+1}^{\infty}\frac{1}{k^{2}}-\frac{1}{n}\right)
+\end{align*}
+
+\end_inset
+
+由 Stoltz-Cesaro 公式:
+\begin_inset Formula 
+\begin{align*}
+\lim_{n\to\infty}\frac{\sum_{k=n}^{\infty}\frac{1}{k^{2}}}{\frac{1}{n}} & =\lim_{n\to\infty}\frac{\frac{1}{n^{2}}}{\frac{1}{n}-\frac{1}{n+1}}=1\Longrightarrow\sum_{k=n}^{\infty}\frac{1}{k^{2}}=\frac{1}{n}+o\left(\frac{1}{n}\right).
+\end{align*}
+
+\end_inset
+
+所以
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}a_{n}b_{n}=\lim_{n\to\infty}o\left(\frac{1}{n^{2}}\right)\frac{n(n+1)}{2}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+另外, 有
+\begin_inset Formula 
+\begin{align*}
+\sum_{n=1}^{\infty}\left(\sum_{k=n+1}^{\infty}\frac{1}{nk^{2}}\right) & =\sum_{n=1}^{\infty}\sum_{k=1}^{\infty}\frac{1}{n(n+k)^{2}}=\sum_{n=1}^{\infty}\sum_{k=1}^{\infty}\frac{1}{k(k+n)^{2}}\\
+ & =\frac{1}{2}\sum_{n=1}^{\infty}\sum_{k=1}^{\infty}\left(\frac{1}{n}+\frac{1}{k}\right)\frac{1}{(n+k)^{2}}\\
+ & =\frac{1}{2}\sum_{n=1}^{\infty}\sum_{k=1}^{\infty}\frac{1}{nk}\int_{0}^{1}x^{n+k-1}\ud x\\
+ & =\frac{1}{2}\int_{0}^{1}\frac{1}{x}\sum_{n=1}^{\infty}\frac{x^{n}}{n}\sum_{k=1}^{\infty}\frac{x^{k}}{k}\ud x\\
+ & =\frac{1}{2}\int_{0}^{1}\frac{\ln^{2}(1-x)}{x}\ud x\\
+ & =\frac{1}{2}\int_{0}^{1}\frac{\ln^{2}x}{1-x}\ud x\\
+ & =\frac{1}{2}\int_{0}^{1}\sum_{k=0}^{\infty}x^{k}\ln^{2}x\ud x=\frac{1}{2}\sum_{k=0}^{\infty}\int_{0}^{\infty}y^{2}\ue^{-(k+1)y}\ud y\\
+ & =\sum_{k=0}^{\infty}\frac{1}{(k+1)^{3}},
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\sum_{n=1}^{\infty}\left(\sum_{k=n+1}^{\infty}\frac{1}{k^{2}}-\frac{1}{n}\right) & =\lim_{l\to\infty}\sum_{n=1}^{l}\left(\sum_{k=n+1}^{\infty}\frac{1}{k^{2}}-\frac{1}{n}\right)\\
+ & =\lim_{l\to\infty}\sum_{n=1}^{l}\left(\sum_{k=l+1}^{\infty}\frac{1}{k^{2}}+\sum_{k=n+1}^{l}\frac{1}{k^{2}}-\frac{1}{n}\right)\\
+ & =\lim_{l\to\infty}\left(l\sum_{k=l+1}^{\infty}\frac{1}{k^{2}}+\sum_{k=2}^{l}\sum_{n=1}^{k-1}\frac{1}{k^{2}}-\sum_{n=1}^{l}\frac{1}{n}\right)\\
+ & =1+\lim_{l\to\infty}\left(\sum_{k=1}^{l}\frac{k-1}{k^{2}}-\sum_{n=1}^{l}\frac{1}{n}\right)\\
+ & =1+\lim_{l\to\infty}\left(\sum_{k=1}^{l}\frac{1}{k}-\sum_{k=1}^{l}\frac{1}{k^{2}}-\sum_{n=1}^{l}\frac{1}{n}\right)=1-\zeta(2).
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+证明:
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}\ue^{-tu}\frac{\sinh\left(\frac{u}{2}\left(\pi-2\gamma\right)\right)}{\sinh\left(\frac{u}{2}\pi\right)}\ud u=\frac{\sin2\gamma}{\sin\left(\gamma+t\right)\sin\left(\gamma-t\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+方法一.
+ 利用
+\begin_inset Formula $\sinh x=\frac{\ue^{x}-\ue^{-x}}{2}$
+\end_inset
+
+, 将双曲函数化为指数函数.
+ 
+\begin_inset Formula 
+\begin{align*}
+\ue^{-tu}\frac{\sinh\left(\frac{u}{2}\left(\pi-2\gamma\right)\right)}{\sinh\left(\frac{u}{2}\pi\right)} & =\ue^{-tu}\frac{\ue^{\frac{u}{2}\left(\pi-2\gamma\right)}-\ue^{-\frac{u}{2}\left(\pi-2\gamma\right)}}{\ue^{\frac{u}{2}\pi}-\ue^{-\frac{u}{2}\pi}}\\
+ & =\ue^{-tu}\frac{\ue^{-u\gamma}-\ue^{-u(\pi-\gamma)}}{1-\ue^{-u\pi}}
+\end{align*}
+
+\end_inset
+
+所以
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}\ue^{-tu}\frac{\sinh\left(\frac{u}{2}\left(\pi-2\gamma\right)\right)}{\sinh\left(\frac{u}{2}\pi\right)}\ud u=\int_{0}^{\infty}(\ue^{tu}+\ue^{-tu})\frac{\ue^{-u\gamma}-\ue^{-u(\pi-\gamma)}}{1-\ue^{-u\pi}}\ud u.
+\]
+
+\end_inset
+
+当
+\begin_inset Formula $u>0$
+\end_inset
+
+时, 
+\begin_inset Formula $\ue^{-u\pi}<1$
+\end_inset
+
+, 利用幂级数
+\begin_inset Formula $\frac{1}{1-x}=\sum_{k=0}^{\infty}x^{k}$
+\end_inset
+
+有
+\begin_inset Formula $\frac{1}{1-\ue^{-u\pi}}=\sum_{k=0}^{\infty}\ue^{-uk\pi}$
+\end_inset
+
+.
+ 带入上式化简得到
+\begin_inset Formula 
+\begin{align*}
+\int_{-\infty}^{\infty}\ue^{-tu}\frac{\sinh\left(\frac{u}{2}\left(\pi-2\gamma\right)\right)}{\sinh\left(\frac{u}{2}\pi\right)}\ud u & =\int_{0}^{\infty}\sum_{k=0}^{\infty}\left(\ue^{-u(k\pi+\gamma-t)}+\ue^{-u(k\pi+\gamma+t)}-\ue^{((k+1)\pi-\gamma-t)}-\ue^{-u((k+1)\pi-\gamma+t)}\right)\ud u\\
+ & =\sum_{k=0}^{\infty}\left(\frac{1}{k\pi+\gamma-t}+\frac{1}{k\pi+\gamma+t}-\frac{1}{(k+1)\pi-\gamma-t}-\frac{1}{(k+1)\pi-\gamma+t}\right)\\
+ & =\frac{1}{\gamma-t}+\frac{1}{\gamma+t}+\sum_{k=1}^{\infty}\left({\color{magenta}\frac{1}{k\pi+\gamma-t}}+\frac{1}{k\pi+\gamma+t}-\frac{1}{k\pi-\gamma-t}-{\color{magenta}\frac{1}{k\pi-\gamma+t}}\right)\\
+ & =\frac{2\gamma}{\gamma^{2}-t^{2}}+\sum_{k=1}^{\infty}\left(\frac{2(\gamma-t)}{(\gamma-t)^{2}-(k\pi)^{2}}+\frac{2(\gamma+t)}{(\gamma+t)^{2}-(k\pi)^{2}}\right).
+\end{align*}
+
+\end_inset
+
+ 注意验证上述积分的收敛性, 这里略去, 需要注意
+\begin_inset Formula $\cot z=\frac{1}{z}+2\sum_{n=1}^{\infty}\frac{z}{z^{2}-(n\pi)^{2}}$
+\end_inset
+
+.
+ 所以上式可化简为
+\begin_inset Formula 
+\begin{align*}
+\int_{-\infty}^{\infty}\ue^{-tu}\frac{\sinh\left(\frac{u}{2}\left(\pi-2\gamma\right)\right)}{\sinh\left(\frac{u}{2}\pi\right)}\ud u & =\frac{2\gamma}{\gamma^{2}-t^{2}}+\left(\cot(\gamma-t)-\frac{1}{\gamma-t}\right)+\left(\cot(\gamma+t)-\frac{1}{\gamma+t}\right)\\
+ & =\frac{\sin(2\gamma)}{\sin(\gamma+t)\sin(\gamma-t)}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+方法二: 求原函数法: 设
+\begin_inset Formula 
+\[
+I=\int\ue^{-t\lambda}\frac{\sinh\left(\frac{\lambda}{2}\left(\pi-2\gamma\right)\right)}{\sinh\left(\frac{\lambda}{2}\pi\right)}\ud\lambda,
+\]
+
+\end_inset
+
+取
+\begin_inset Formula $\lambda=\frac{2\log x}{\pi}$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+I=\frac{2}{\pi}\int\frac{x^{-\frac{2t}{\pi}}\left(x^{\frac{\pi-2\gamma}{\pi}}-x^{-\frac{\pi-2\gamma}{\pi}}\right)}{x-\frac{1}{x}}\frac{1}{x}\ud x,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+MSE4435480
+\end_layout
+
+\begin_layout Standard
+Ryley 定理: 任何整数可以表示为三个有理数的立方和.
+ 事实上, 对于任意的整数
+\begin_inset Formula $n$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+n=\left(n+\frac{1}{3}\right)^{3}+\left(\frac{3n-9n^{2}}{9n^{2}-3n+1}\right)^{3}+\left(\frac{9n-27n^{3}-1}{27n^{2}-9n+3}\right)^{3}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+存在整数 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $n$
+\end_inset
+
+ 不能表示为两有理数的立方和.
+\end_layout
+
+\begin_layout Standard
+证明: 设
+\begin_inset Formula $n=x^{3}+y^{3}$
+\end_inset
+
+, 其中
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $y\in\QQ$
+\end_inset
+
+, 将有理数
+\begin_inset Formula $x,y$
+\end_inset
+
+表示成有相同的分母, 并设
+\begin_inset Formula $x=\frac{X}{Z}$
+\end_inset
+
+, 
+\begin_inset Formula $y=\frac{Y}{Z}$
+\end_inset
+
+, 其中
+\begin_inset Formula $X,Y,Z\in\ZZ$
+\end_inset
+
+.
+ 则有
+\begin_inset Formula 
+\[
+X^{3}+Y^{3}=nZ^{3},
+\]
+
+\end_inset
+
+由Fermat大定理或Fermat递降原理, 上式对于
+\begin_inset Formula $n=1$
+\end_inset
+
+, 三元组
+\begin_inset Formula $(X,Y,Z)\in\ZZ^{3}$
+\end_inset
+
+无解.
+\end_layout
+
+\begin_layout Standard
+https://oeis.org/A020897 列举了能够表示成两非零有理数立方和的整数序列与相关文献.
+\end_layout
+
+\begin_layout Section
+Q1414550
+\end_layout
+
+\begin_layout Standard
+假设一个“样本空间”被定义为一个给定随机实验的可能结果的集合，那么在概率和统计中使用“样本空间”而不是“样本集”是否有根本的原因，或者仅仅是出于历史或方便的原因
+?换句话说，样本空间是否具有将它们与仅仅是集合区分开来的属性，如果没有，那么使用“样本空间”而不是“样本集”的(历史)起源是什么?
+\end_layout
+
+\begin_layout Standard
+到目前为止，我找到的唯一解释是威廉·彭德、大卫·萨德勒、朱莉娅·谢伊和德里克·沃德合著的《剑桥大学12年级2单元数学增强版》: 使用“样本空间”而不是“样本集”
+这个词的原因是，多阶段实验的样本空间具有空间的一些特征。具体而言，两阶段实验的样本空间可以在二维图形上显示，三阶段实验的样本空间可以在三维图形上显示。
+\end_layout
+
+\begin_layout Standard
+概率和统计更像是19世纪和20世纪初的力学和物理学(柯尔莫戈罗夫的公理直到20世纪30年代才出现!)“样本空间”可能是类似于(经典力学中的)“状态空间”的术语，
+当然，这只是一个猜测。无论如何，你怎么称呼它都无关紧要(在马尔可夫链中，你会说“状态空间”，因为它们被认为是经典力学的概率类比，“只有当前的状态才能推断未来”)
+。
+\end_layout
+
+\begin_layout Standard
+虽然样本集也可能是一个有价值的术语，但值得回顾的是，数学中的任何空间总是一个定义了某种操作的集合。
+\end_layout
+
+\begin_layout Standard
+首先，感谢您快速的回复。作为注释，我理解一些集合，加上一些适当的结构和操作，也是空间。但通常情况并非如此。所以在某种意义上，样本集比样本空间更一般因此样本空间可
+能被限制在那些特定的情况下即集合也是一个空间。那么，为什么恰恰相反呢?
+\end_layout
+
+\begin_layout Section
+Q135994
+\end_layout
+
+\begin_layout Standard
+There is no universal definition for "structure".
+ 
+\end_layout
+
+\begin_layout Standard
+In layman's terms, 
+\end_layout
+
+\begin_layout Standard
+set = collection of elements.
+ 
+\end_layout
+
+\begin_layout Standard
+With added structure = operations on those elements + operations on subsets
+ of those elements + properties which hold on those elements + properties
+ which hold on subsets of those elements.
+ 
+\end_layout
+
+\begin_layout Standard
+So think of elements, subsets of elements, properties on those things, operation
+s on those things.
+ 
+\end_layout
+
+\begin_layout Standard
+集合是由元素组成的.
+ 集合上附加的结构由以下四点:
+\end_layout
+
+\begin_layout Standard
+1.
+ 这些元素上的运算; 2.
+ 这些元素形成的子集上的运算; 3.
+ 这些元素的性质; 4.
+ 这些元素形成的子集的性质.
+\end_layout
+
+\end_body
+\end_document
