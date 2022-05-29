@@ -472,7 +472,7 @@ I=\frac{2}{\pi}\int\frac{x^{-\frac{2t}{\pi}}\left(x^{\frac{\pi-2\gamma}{\pi}}-x^
 \end_layout
 
 \begin_layout Section
-MSE4435480
+Q4435480
 \end_layout
 
 \begin_layout Standard
@@ -628,6 +628,383 @@ s on those things.
  这些元素形成的子集上的运算; 3.
  这些元素的性质; 4.
  这些元素形成的子集的性质.
+\end_layout
+
+\begin_layout Section
+Q3785073
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $P$
+\end_inset
+
+ and 
+\begin_inset Formula $Q$
+\end_inset
+
+ be monic polynomials, with integer coefficients and degrees 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $d$
+\end_inset
+
+ respectively, where 
+\begin_inset Formula $d\mid n$
+\end_inset
+
+.
+ Suppose there are infinitely many pairs of 
+\begin_inset Formula $(a,b)\in\ZZ^{2}$
+\end_inset
+
+ such that 
+\begin_inset Formula $P(a)=Q(b)$
+\end_inset
+
+.
+ Prove or disprove if there exists a polynomial 
+\begin_inset Formula $R$
+\end_inset
+
+ with integer coefficients such that 
+\begin_inset Formula 
+\[
+P(x)=Q(R(x)).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+related question: 
+\begin_inset CommandInset href
+LatexCommand href
+name "see here"
+target "https://math.stackexchange.com/questions/1157780"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $d\mid n$
+\end_inset
+
+ 是不可缺少的, 否则取 
+\begin_inset Formula $P(x)=x^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $Q(x)=x^{2}$
+\end_inset
+
+, 则有数对 
+\begin_inset Formula $(a,b)=(n^{2},n^{3})$
+\end_inset
+
+, 满足 
+\begin_inset Formula $P(a)=Q(b)$
+\end_inset
+
+, 从而符合上面结论的 
+\begin_inset Formula $R$
+\end_inset
+
+ 不存在.
+\end_layout
+
+\begin_layout Standard
+reference: Todd Cochrane, 
+\begin_inset CommandInset href
+LatexCommand href
+name "The Diophantine Equation f(x)=g(y)"
+target "https://www.ams.org/journals/proc/1990-109-03/S0002-9939-1990-1019271-X/S0002-9939-1990-1019271-X.pdf"
+literal "false"
+
+\end_inset
+
+, Proceedings of the American Mathematical Society, Volume 109, Number 3,
+ July 1990.
+\end_layout
+
+\begin_layout Standard
+上面的文献给出如下定理:
+\end_layout
+
+\begin_layout Theorem*
+Suppose that 
+\begin_inset Formula $m\mid n$
+\end_inset
+
+ and that 
+\begin_inset Formula $(a_{n}/b_{m})$
+\end_inset
+
+ is the 
+\begin_inset Formula $m$
+\end_inset
+
+-th power of a rational number.
+ Then either
+\begin_inset Newline newline
+\end_inset
+
+(iCC) 
+\begin_inset Formula $f(x)=g(h(x))$
+\end_inset
+
+ for some polynomial 
+\begin_inset Formula $h(x)$
+\end_inset
+
+ with rational coefficients taking integral values at infinitely many integers;
+ or
+\begin_inset Newline newline
+\end_inset
+
+(ii) equation 
+\begin_inset Formula 
+\[
+f(x)\equiv a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots+a_{0}=b_{m}y^{m}+b_{m-1}y^{m-1}+\cdots+b_{0}\equiv g(y)
+\]
+
+\end_inset
+
+has at most finitely many integral solutions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+由上面的定理, 所问问题的多项式 
+\begin_inset Formula $R$
+\end_inset
+
+ 在有理系数多项式空间中是存在的.
+ 由于
+\begin_inset Formula $P,Q$
+\end_inset
+
+都是首一多项式, 所以
+\begin_inset Formula $R$
+\end_inset
+
+不能是非整系数多项式.
+ 这个结论见
+\begin_inset CommandInset href
+LatexCommand href
+name "这里"
+target "https://math.stackexchange.com/questions/3793239"
+literal "false"
+
+\end_inset
+
+.
+ 也就是下面的命题
+\end_layout
+
+\begin_layout Proposition*
+设
+\begin_inset Formula $p(x)$
+\end_inset
+
+为首一
+\begin_inset Formula $n$
+\end_inset
+
+次整系数多项式, 
+\begin_inset Formula $q(x)$
+\end_inset
+
+为有理系数多项式, 若
+\begin_inset Formula $p(q(x))$
+\end_inset
+
+是整系数多项式, 则
+\begin_inset Formula $q(x)$
+\end_inset
+
+也是整系数多项式.
+ 
+\end_layout
+
+\begin_layout Proof
+用反证法, 设
+\begin_inset Formula $q(x)$
+\end_inset
+
+中非整数系数均化为既约分数的形式, 从其中的分母中任取一个素因子
+\begin_inset Formula $p$
+\end_inset
+
+, 则从
+\begin_inset Formula $q(x)$
+\end_inset
+
+的各项系数的分母中可以确定整数
+\begin_inset Formula $k$
+\end_inset
+
+, 使得
+\begin_inset Formula $p^{k}$
+\end_inset
+
+是
+\begin_inset Formula $q(x)$
+\end_inset
+
+中分母含有因子
+\begin_inset Formula $p$
+\end_inset
+
+的最大因子, 也就是
+\begin_inset Formula $q(x)$
+\end_inset
+
+的各项系数的分母均不能被
+\begin_inset Formula $p^{k+1}$
+\end_inset
+
+整除, 但有部分系数的分母能被
+\begin_inset Formula $p^{k}$
+\end_inset
+
+整除, 将这些项合并可以写成
+\begin_inset Formula $\frac{x^{j}w(x)}{p^{k}}$
+\end_inset
+
+的形式, 其中
+\begin_inset Formula $w(x)$
+\end_inset
+
+是有理系数多项式, 其中各项系数的分母不含有因子
+\begin_inset Formula $p$
+\end_inset
+
+, 
+\begin_inset Formula $j\ge0$
+\end_inset
+
+.
+ 于是让
+\begin_inset Formula $s(x)=q(x)-\frac{x^{j}w(x)}{p^{k}}$
+\end_inset
+
+, 便有
+\begin_inset Formula 
+\[
+q(x)=\frac{x^{j}w(x)}{p^{k}}+s(x).
+\]
+
+\end_inset
+
+现在考虑
+\begin_inset Formula $p(q(x))$
+\end_inset
+
+的展开式中项
+\begin_inset Formula $x^{jn}$
+\end_inset
+
+的系数, 这些系数中必然含有
+\begin_inset Formula $\frac{w(0)^{n}}{p^{kn}}$
+\end_inset
+
+项, 对于其他可能的项的分母必然不能被
+\begin_inset Formula $p^{kn}$
+\end_inset
+
+整除.
+ 这说明
+\begin_inset Formula $p(q(x))$
+\end_inset
+
+不可能是整系数多项式.
+\end_layout
+
+\begin_layout Proposition*
+设
+\begin_inset Formula $p\in\CC[x]$
+\end_inset
+
+, 
+\begin_inset Formula $q\in\QQ[x]$
+\end_inset
+
+均为首一多项式, 
+\begin_inset Formula $p(0)\in\ZZ$
+\end_inset
+
+, 
+\begin_inset Formula $\mathrm{deg}p,\mathrm{deg}q>0$
+\end_inset
+
+, 且
+\begin_inset Formula $p\circ q\in\ZZ[x]$
+\end_inset
+
+, 则
+\begin_inset Formula $q\in\ZZ[x]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+设
+\begin_inset Formula $\alpha$
+\end_inset
+
+为
+\begin_inset Formula $q$
+\end_inset
+
+的任意一个根.
+ 则
+\begin_inset Formula $p(q(\alpha))-p(0)=0$
+\end_inset
+
+, 于是
+\begin_inset Formula $\alpha$
+\end_inset
+
+是首一整系数多项式
+\begin_inset Formula $r(x)=p(q(x))-p(0)$
+\end_inset
+
+的根, 所以
+\begin_inset Formula $\alpha$
+\end_inset
+
+是代数整数.
+ 由于
+\begin_inset Formula $\alpha$
+\end_inset
+
+的任意性, 
+\begin_inset Formula $q$
+\end_inset
+
+的所有根都是代数整数, 所以
+\begin_inset Formula $q\in\ZZ[x]$
+\end_inset
+
+.
+ (非首一整系数多项式必有非代数整数的根.) 
 \end_layout
 
 \end_body

@@ -1,0 +1,727 @@
+%% LyX 2.3.6.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[a4paper,UTF8]{article}
+\usepackage[T1]{fontenc}
+\usepackage{CJKutf8}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{esint}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true]
+ {hyperref}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\theoremstyle{plain}
+    \ifx\thechapter\undefined
+      \newtheorem{prop}{\protect\propositionname}
+    \else
+      \newtheorem{prop}{\protect\propositionname}[chapter]
+    \fi
+\theoremstyle{definition}
+    \ifx\thechapter\undefined
+      \newtheorem{defn}{\protect\definitionname}
+    \else
+      \newtheorem{defn}{\protect\definitionname}[chapter]
+    \fi
+\theoremstyle{plain}
+    \ifx\thechapter\undefined
+	    \newtheorem{thm}{\protect\theoremname}
+	  \else
+      \newtheorem{thm}{\protect\theoremname}[chapter]
+    \fi
+\theoremstyle{plain}
+    \ifx\thechapter\undefined
+  \newtheorem{cor}{\protect\corollaryname}
+\else
+      \newtheorem{cor}{\protect\corollaryname}[chapter]
+    \fi
+\theoremstyle{definition}
+    \ifx\thechapter\undefined
+      \newtheorem{example}{\protect\examplename}
+    \else
+      \newtheorem{example}{\protect\examplename}[chapter]
+    \fi
+\theoremstyle{definition}
+\newtheorem*{sol*}{\protect\solutionname}
+\theoremstyle{definition}
+    \ifx\thechapter\undefined
+      \newtheorem{xca}{\protect\exercisename}
+    \else
+      \newtheorem{xca}{\protect\exercisename}[chapter]
+    \fi
+\theoremstyle{plain}
+    \ifx\thechapter\undefined
+      \newtheorem{lem}{\protect\lemmaname}
+    \else
+      \newtheorem{lem}{\protect\lemmaname}[chapter]
+    \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+
+%\everymath{\color{blue}\everymath{}}
+\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+
+\makeatother
+
+\providecommand{\corollaryname}{推论}
+\providecommand{\definitionname}{定义}
+\providecommand{\examplename}{例}
+\providecommand{\exercisename}{练习}
+\providecommand{\lemmaname}{引理}
+\providecommand{\propositionname}{命题}
+\providecommand{\solutionname}{解答}
+\providecommand{\theoremname}{定理}
+
+\newbox\bwk\edef\tempd#1pt{#1\string p\string t}\tempd\def\nbextr#1pt{#1}
+\def\npts#1{\expandafter\nbextr\the#1\space}
+\def\ttwplink#1#2{\special{ps:1 0 0 setrgbcolor}#2\special{ps:0 0 0 setrgbcolor}\setbox\bwk=\hbox{#2}\special{ps:( linkto #1)\space\npts{\wd\bwk} \npts{\dp\bwk} -\npts{\ht\bwk} true\space Cpos}}
+\begin{document}
+\begin{CJK}{UTF8}{gbsn}%
+\title{紧算子}
+
+\maketitle
+紧算子是一种特殊的线性算子.
+
+为什么研究紧算子?
+
+一个主要原因是, 紧算子可以用有限秩算子(finite rank operator)逼近, 便于对算子方程的解做数值逼近.
+\begin{prop}
+若$H$是无穷维Hilbert空间, 算子$A\in CL(H)$, 且$\norm{A}<1$, 则对于任何$y\in H$,
+存在唯一的$x\in H$满足
+\[
+(I-A)x=y.
+\]
+这个解$x$可以由Neumann级数
+\[
+x=(I-A)^{-1}y=(I+A+A^{2}+\cdots)y
+\]
+给出.
+\end{prop}
+上面的解有两种缺点:
+
+1. 计算$A^{n}$是不现实的.
+
+2. 级数收敛速度不理想.
+
+\section{紧算子}
+\begin{defn}
+(紧算子) 设$X,Y$是赋范空间, 线性变换$T:X\to Y$称为是紧算子, 若对于任何有界序列$(x_{n})_{n\in\NN}\subseteq X$,
+序列$(Tx_{n})_{n\in\NN}$有收敛子列.
+\end{defn}
+记从$X$到$Y$的所有紧算子形成集合为$K(X,Y)$.
+\begin{thm}
+设$X,Y$是赋范空间, $T:X\to Y$是线性变换, 则以下命题等价:
+
+(1). $T$是紧的.
+
+(2). $\overline{T(B)}$是紧的, 其中$B$是$X$中的单位球, 即
+\[
+B\coloneqq\left\{ x\in X:\norm{x}\le1\right\} .
+\]
+\end{thm}
+\begin{proof}
+(1)$\Longrightarrow$(2). 也就是证$\overline{T(B)}$中的序列$(z_{n})_{n\in\NN}$有收敛子列.
+
+(2)$\Longrightarrow$(1). 即证$X$中有界序列$(x_{n})$, 使$(Tx_{n})_{n\in\NN}$有收敛子列.
+\end{proof}
+
+\section{紧算子集$K(X,Y)$}
+\begin{cor}
+$K(X,Y)\subseteq CL(X,Y)$. 
+\end{cor}
+\begin{proof}
+紧算子将$X$中的单位球映为$Y$中的紧集, 从而是$Y$中的有界集, 即这紧算子是有界算子, 线性有界算子是连续的.
+\end{proof}
+\begin{example}
+不是所有连续线性变换都是紧的.
+\end{example}
+\begin{sol*}
+设$X$为任一无穷维内积空间, 比如$l^{2}$. 其上的恒等算子$I\in CL(X)$不是紧算子.
+
+因为$I$映$X$中正交基$(u_{n})_{n\in\NN}$的像没有收敛子列.
+\end{sol*}
+\begin{defn}
+称算子$T$是有限秩算子(finite rank operator), 如果它的值域$\mathrm{ran}(T)$是有限维向量空间.
+\end{defn}
+\begin{thm}
+设$X$是赋范空间, $Y$是内积空间, 若$T\in CL(X,Y)$使$\mathrm{ran}(T)$是有限维的, 则$T$是紧算子.
+\end{thm}
+\begin{proof}
+设有界序列$(x_{n})_{n\in\NN}\subseteq X$, $u_{1},\cdots,u_{m}$为$\mathrm{ran}(T)$的正交基.
+
+则$\left(\left\langle Tx_{n},u_{l}\right\rangle \right)_{n\in\NN}$对于任何$l$有界,
+类似聚点定理的证明.
+\end{proof}
+\begin{example}
+$L(\CC^{n},\CC^{m})=CL(\CC^{n},\CC^{m})=K(\CC^{n},\CC^{m})$.
+\end{example}
+\begin{sol*}
+若$A\in\CC^{n\times m}$, 则$T_{A}:\CC^{n}\to\CC^{m}$, $x\mapsto Ax$满足$T_{A}\in CL(\CC^{n},\CC^{m})$,
+且因为$\mathrm{ran}T_{A}\subseteq\CC^{m}$, $T_{A}$是有限秩的. 故$T_{A}$是紧算子.
+
+特别地, 恒等算子$I:\CC^{d}\to\CC^{d}$是紧算子.
+\end{sol*}
+%
+\begin{thm}
+$K(X,Y)$是$CL(X,Y)$的子空间, 其中$X,Y$均为赋范空间.
+\end{thm}
+\begin{proof}
+1. $0$是紧算子, 因为对于任何有界序列$(x_{n})\subseteq X$, $(0x_{n})_{n\in\NN}=(0)_{n\in\NN}$是收敛的.
+
+2. 若$T,S$均是紧算子, 设$(x_{n})_{n\in\NN}$有界, 则$(Tx_{n})_{n\in\NN}$有子列$(Tx_{n_{k}})_{k\in\NN}$收敛.
+
+$(Sx_{n_{k}})_{k\in\NN}$有子列$(Sx_{n_{k_{l}}})_{l\in\NN}$收敛.
+
+故子列$\left((T+S)x_{n_{k_{l}}}\right)_{l\in\NN}$收敛, 即说明$T+S$是紧算子.
+
+3. 若$T$是紧算子, $\alpha\in\mathbb{K}$, $(x_{n})_{n\in\NN}\in X$为有界序列,
+则$(Tx_{n})_{n\in\NN}$有收敛子列$(Tx_{n_{k}})_{k\in\NN}$.
+
+因此$\left((\alpha T)x_{n_{k}}\right)_{k\in\NN}=\left(\alpha(Tx_{n_{k}})\right)_{k\in\NN}$收敛,
+故$\alpha T$是紧算子.
+\end{proof}
+\begin{thm}
+设$X$是赋范空间, $Y$是Banach空间, $(T_{n})_{n\in\NN}\subseteq K(X,Y)$在赋范空间$CL(X,Y)$中收敛于$T\in CL(X,Y)$.
+则$T$是紧算子, 即$T\in K(X,Y)$, $K(X,Y)$是$CL(X,Y)$的闭线性子空间.
+\end{thm}
+\begin{proof}
+1. 设$\left(x_{n}\right)_{n\in\NN}$是$X$中有界序列, 则由$(T_{n})_{n\in\NN}\subseteq K(X,Y)$,
+知
+
+$\left(T_{1}x_{n}\right)_{n\in\NN}$有收敛子列$\left(T_{1}x_{n}^{(1)}\right)_{n\in\NN}$;
+
+$\left(T_{2}x_{n}^{(1)}\right)_{n\in\NN}$有收敛子列$\left(T_{2}x_{n}^{(2)}\right)_{n\in\NN}$;
+
+...
+
+考虑序列$x_{1}$, $x_{2}^{(1)}$, $x_{3}^{(2)}$, $\cdots$, 则
+\[
+\left\{ x_{k+1}^{(k)},x_{k+2}^{(k+1)},x_{k+3}^{(k+2)},\cdots\right\} \text{是序列}\left\{ x_{k+1}^{(k)},x_{k+2}^{(k)},x_{k+3}^{(k)},\cdots\right\} \text{的子列.}
+\]
+
+因$\left(T_{k}x_{n}^{(k)}\right)_{n\in\NN}$收敛, 从而$\left(T_{k}x_{k+n+1}^{(k+n)}\right)_{n\in\NN}$也收敛,
+即$\left(T_{k}x_{n+1}^{(n)}\right)_{n\in\NN}$收敛.
+
+2. 对于任意的$m,n\in\NN$, 有
+\begin{align*}
+\norm{Tx_{n+1}^{(n)}-Tx_{m+1}^{(m)}} & \le\norm{Tx_{n+1}^{(n)}-T_{k}x_{n+1}^{(n)}}+\norm{T_{k}x_{n+1}^{(n)}-T_{k}x_{m+1}^{(m)}}+\norm{T_{k}x_{m+1}^{(m)}-Tx_{m+1}^{(m)}}\\
+ & \le\norm{T-T_{k}}\cdot\norm{x_{n+1}^{(n)}}+\norm{T_{k}x_{n+1}^{(n)}-T_{k}x_{m+1}^{(m)}}+\norm{T_{k}-T}\cdot\norm{x_{m+1}^{(m)}}\\
+ & \to0,\qquad m,n\to\infty.
+\end{align*}
+故$\left(Tx_{n+1}^{(n)}\right)_{n\in\NN}$在$Y$中是Cauchy列, 由$Y$是Banach空间,
+它在$Y$中收敛.
+
+由$\left(Tx_{n+1}^{(n)}\right)_{n\in\NN}$是$\left(Tx_{n}\right)_{n\in\NN}$的子列,
+故$T$是紧算子.
+\end{proof}
+\begin{cor}
+设$X$是赋范空间, $Y$是Hilbert空间, $\left(T_{n}\right)_{n\in\NN}\subseteq CL(X,Y)$是有限秩算子,
+且在$CL(X,Y)$中收敛于$T$, 则$T$是紧算子.
+\end{cor}
+\begin{example}
+(什么时候$l^{2}$中的对角算子是紧算子)
+
+设$X,Y=l^{2}$, $\left(\lambda_{n}\right)_{n\in\NN}$在域$\mathbb{K}$中有界,
+$\Lambda\in CL(l^{2})$定义为
+\[
+\Lambda=\mathrm{diag}(\lambda_{1},\lambda_{2},\lambda_{3},\cdots).
+\]
+则$\norm{\Lambda}=\sup_{n\in\NN}\left|\lambda_{n}\right|$, 下面证明$\Lambda$是紧算子当且仅当$\lim_{n\to\infty}\lambda_{n}=0$.
+\end{example}
+\begin{sol*}
+$\Longleftarrow$: 取$n\in\NN$, 算子$\Lambda_{n}=\mathrm{diag}(\lambda_{1},\cdots,\lambda_{n},0,\cdots)\in CL(l^{2})$,
+则$\Lambda_{n}$是有限秩算子, $\mathrm{ran}\Lambda_{n}\subseteq\mathrm{span}\left\{ e_{1},\cdots,e_{n}\right\} $.
+
+从而$\Lambda_{n}$是紧算子, 而
+\[
+\norm{\Lambda-\Lambda_{n}}=\norm{\mathrm{diag}(0,\cdots,0,\lambda_{n+1},\lambda_{n+2},\cdots)}=\sup_{k:k>n}\left|\lambda_{k}\right|\to0,\quad n\to\infty.
+\]
+即$\Lambda$是紧算子序列$\left(\Lambda_{n}\right)_{n\in\NN}$的强极限(一致极限, uniform
+limit), 故$\Lambda$是紧算子.
+
+$\Longrightarrow$: 反证, 设$\Lambda$是紧算子, 但存在$\epsilon>0$, 使对于任意的$N\in\NN$,
+存在$n>N$使得$\left|\lambda_{n}\right|\ge\epsilon$.
+
+取$N=1$, 则存在$n_{1}>1$, 使得$\left|\lambda_{n_{1}}\right|\ge\epsilon$.
+
+取$N=n_{1}$, 则存在$n_{2}>n_{1}$, 使得$\left|\lambda_{n_{2}}\right|\ge\epsilon$.
+
+...
+
+则有$\left(\lambda_{n}\right)_{n\in\NN}$的子列$\left(\lambda_{n_{k}}\right)_{k\in\NN}$,
+使$\left|\lambda_{n_{k}}\right|\ge\epsilon$, 对于任何$k\in\NN$. 于是$\left(\Lambda e_{n_{k}}\right)_{k\in\NN}=\left(\lambda_{n_{k}}e_{n_{k}}\right)_{k\in\NN}$没有收敛子列.
+
+与$\Lambda$是紧算子矛盾.
+\end{sol*}
+\begin{xca}
+(Hilbert Schmidt算子是紧算子)
+
+设$H$是Hilbert空间, 有标准正交基$\left\{ u_{1},u_{2},u_{3},\cdots\right\} $. 
+
+设$T\in CL(H)$是Hilbert-Schmidt算子, 即满足$\sum_{n=1}^{\infty}\norm{Tu_{n}}^{2}<+\infty$.
+
+(1) 若$m\in\NN$, 则定义$T_{m}:H\to H$, $x\mapsto\sum_{n=1}^{m}\left\langle x,u_{n}\right\rangle Tu_{n}$.
+则$T_{m}\in CL(H)$且满足
+\[
+\norm{(T-T_{m})x}^{2}\le\norm{x}^{2}\sum_{n=m+1}^{\infty}\norm{Tu_{n}}^{2}.
+\]
+这是因为$x=\sum_{n}\left\langle x,u_{n}\right\rangle u_{n}$, $Tx=\sum_{n}\left\langle x,u_{n}\right\rangle Tu_{n}$.
+
+(2) 证明每个Hilbert-Schmidt算子$T$是紧算子.
+
+Hint: $T$是有限秩算子序列$\left(T_{m}\right)_{m\in\NN}$的强极限.
+\end{xca}
+%
+\begin{xca}
+设$H$是Hilbert空间, $x_{0},y_{0}\in H$给定, 定义$x_{0}\otimes y_{0}:H\to H$,
+$x\mapsto\left\langle x,y_{0}\right\rangle x_{0}$.
+
+(1) 证明$x_{0}\otimes y_{0}\in CL(H)$, 且$\norm{x_{0}\otimes y_{0}}\le\norm{x_{0}}\cdot\norm{y_{0}}$.
+
+(2) $x_{0}\otimes y_{0}$是否为紧算子.
+
+(3) 设$A,B\in CL(H)$, 证明$A(x_{0}\otimes y_{0})B=(Ax_{0})\otimes(B^{*}y_{0})$.
+\end{xca}
+\begin{defn}
+(代数中的理想)
+
+代数$R$中的理想$I$是$R$的一个子集, 且满足:
+
+(I1). $0\in I$.
+
+(I2). 若$a,b\in I$, 则$a+b\in I$.
+
+(I3). 若$a\in I$, $r\in R$, 则$ar\in I$且$ra\in I$.
+\end{defn}
+\begin{thm}
+\label{thm:5.5} 设$H$是Hilbert空间, 则
+
+(1). 若$T\in K(H)$是紧算子, $S\in CL(H)$, 则$TS$是紧算子.
+
+(2). 若$T\in CL(H)$是紧算子, 则$T^{*}$是紧算子.
+
+(3). 若$T\in CL(H)$是紧算子, $S\in CL(H)$, 则$ST$是紧算子.
+
+即$K(H)$是$CL(H)$的闭理想.
+\end{thm}
+\begin{proof}
+(2). 用(1)知, $TT^{*}$是紧算子, 并注意以下不等式
+\begin{align*}
+0\le\norm{T^{*}x_{m}-T^{*}x_{n}}^{2} & =\left\langle TT^{*}(x_{m}-x_{n}),(x_{m}-x_{n})\right\rangle \\
+ & \le\norm{TT^{*}(x_{m}-x_{n})}\cdot\norm{x_{m}-x_{n}}.
+\end{align*}
+
+(3). 
+\[
+\left.\begin{array}{c}
+T\text{紧}\xrightarrow{(2)}T^{*}\text{紧}\\
+S\in K(H)\longrightarrow S^{*}\in CL(H)
+\end{array}\right\} \xrightarrow{(1)}T^{*}S^{*}\text{紧}\xrightarrow{(2)}(T^{*}S^{*})^{*}=S^{**}T^{**}=ST\text{紧}.
+\]
+\end{proof}
+\begin{example}
+(无穷维Hilbert空间中的紧算子不可逆)
+
+设$H$是无穷维Hilbert空间, $T\in K(H)$, 若$T\in CL(H)$可逆, 则$T^{-1}\in CL(H)$,
+由定理\ref{thm:5.5}知
+\[
+I=TT^{-1}\in K(H).
+\]
+但$I$在$H$中并不是紧算子, 矛盾.
+\end{example}
+\begin{xca}
+设$T\in CL(H)$, $H$是无穷维Hilbert空间.
+
+\textcolor{red}{(1). 举例$H$和$T$, 使得$T^{2}$是$H$上的紧算子, 但$T$不是紧算子.}
+
+(2). 证明: 若$T$是自伴的, $T^{2}$是紧算子, 则$T$是紧算子. (Hint: 才用定理\ref{thm:5.5}中(2)的证明.)
+\end{xca}
+%
+\begin{xca}
+设$H$是无穷维Hilbert空间, $S,T\in CL(H)$, 判断以下命题是否正确:
+
+(1). 若$S,T$均是紧算子, 则$S+T$是紧算子. \textsurd{}
+
+(2). 若$S+T$紧, 则$S$或$T$紧. \texttimes{}
+
+(3). 若$S$或$T$紧, 则$ST$紧. \textsurd{}
+
+(4). 若$ST$紧, 则$S$紧或$T$紧. \texttimes{}
+\end{xca}
+%
+\begin{xca}
+设$H$是Hilbert空间, $A\in CL(H)$, 定义$\Lambda\in CL(CL(H))$: $CL(H)\to CL(H)$,
+$T\mapsto A^{*}T+TA$. 证明$CL(H)$的子空间$K(H)$是$\Lambda$-不变子空间, 即$\Lambda K(H)\subseteq K(H)$.
+
+Hint: 用定理\ref{thm:5.5}
+\end{xca}
+
+\section{紧算子的逼近}
+
+考虑方程$(I-K)x=y$, 其中$K$是Hilbert空间$H$上给定的算子, $y\in H$给定, 求$x\in H$的问题.
+
+用有限秩算子逼近, 设$K_{0}$与$K$接近, $y_{0}$与$y$很接近, 求$x_{0}$的问题$(I-K_{0})x=y_{0}$是容易的.
+
+下面估计$\norm{x-x_{0}}$的大小.
+\begin{thm}
+设$H$是Hilbert空间, $K\in CL(H)$使$I-K$在$CL(H)$中可逆, $K_{0}\in CL(H)$满足
+\[
+\epsilon\coloneqq\norm{(K-K_{0})(I-K)^{-1}}.
+\]
+则对于任意的$y,y_{0}\in H$, 存在唯一的$x,x_{0}\in H$满足:
+
+(a). $(I-K)x=y$;
+
+(b). $(I-K_{0})x_{0}=y_{0}$;
+
+(c). $\norm{x-x_{0}}\le\frac{\norm{(I-K)^{-1}}}{1-\epsilon}\left(\epsilon\norm{y}+\norm{y-y_{0}}\right)$.
+\end{thm}
+\begin{proof}
+由$\norm{(K-K_{0})(I-K)^{-1}}<1$, Neumann级数定理给出$I+(K-K_{0})(I-K)^{-1}$可逆,
+故
+\[
+I-K_{0}=I-K+K-K_{0}=\left(I+(K-K_{0})(I-K)^{-1}\right)(I-K)
+\]
+可逆, 从而
+\[
+\norm{(I-K_{0})^{-1}}\le\frac{\norm{(I-K)^{-1}}}{1-\norm{(K-K_{0})(I-K)^{-1}}}=\frac{\norm{(I-K)^{-1}}}{1-\epsilon}.
+\]
+由
+\[
+(I-K)^{-1}-(I-K_{0})^{-1}=(I-K_{0})^{-1}(K-K_{0})(I-K)^{-1}
+\]
+有
+\[
+\norm{(I-K)^{-1}-(I-K_{0})^{-1}}\le\frac{\norm{(I-K)^{-1}}}{1-\epsilon}\cdot\epsilon,
+\]
+故(a), (b)解得$x,x_{0}\in H$存在唯一, 且
+\[
+x-x_{0}=\left((I-K)^{-1}-(I-K_{0})^{-1}\right)y+(I-K_{0})^{-1}(y-y_{0})
+\]
+有
+\[
+\norm{x-x_{0}}\le\frac{\epsilon\norm{(I-K)^{-1}}}{1-\epsilon}\cdot\norm{y}+\frac{\norm{(I-K)^{-1}}}{1-\epsilon}\cdot\norm{y-y_{0}}
+\]
+即得.
+\end{proof}
+\begin{thm}
+(Galerkin逼近)
+
+设$H$是Hilbert空间, $K$是$H$上的紧算子, $\left(P_{n}\right)_{n\in\NN}$为有限秩投影算子($P_{n}^{2}=P_{n}=P_{n}^{*}\in CL(H)$),
+且$P_{n}$强收敛于$I$, 即对于任意的$x\in H$, $\lim_{n\to\infty}P_{n}x=x$,
+则$P_{n}KP_{n}\to K$ in $CL(H)$.
+\end{thm}
+\begin{proof}
+以此证明:
+
+(1). $P_{n}K\to K$ in $CL(H)$, (投影逼近)(projection approximation)
+
+(2). $KP_{n}\to K$ in $CL(H)$, (sloan approximation)
+
+(3). $P_{n}KP_{n}\to K$ in $CL(H)$. (Galerkin逼近)
+
+(1): 注意
+\[
+\norm{P_{n}x}^{2}=\left\langle P_{n}x,P_{n}x\right\rangle \le\norm{P_{n}x}\cdot\norm{x}\Longrightarrow\norm{P_{n}}\le1.
+\]
+反证$P_{n}K\not\to K$ in $CL(H)$, 则$\exists\epsilon>0$, s.t. $\forall N\in\NN$,
+$\exists n>N$, s.t. $\norm{P_{n}K-K}>\epsilon$.
+
+从而有$\left(x_{n_{k}}\right)_{k\in\NN}$, 使$\norm{x_{n_{k}}}\le1$,
+$\norm{\left(P_{n_{k}}K-K\right)x_{n_{k}}}>\epsilon$, 由$K$紧, 取$Kx_{n_{k_{l}}}\to y$
+in $H$. 故
+\begin{align*}
+\epsilon<\norm{(P_{n_{k}}K-K)x_{n_{k_{l}}}} & =\norm{\left(P_{n_{k_{l}}}-I\right)y+\left(P_{n_{k_{l}}}-I\right)\left(Kx_{n_{k_{l}}}-y\right)}\\
+ & \le\norm{\left(P_{n_{k_{l}}}-I\right)y}+\norm{P_{n_{k_{l}}}-I}\cdot\norm{Kx_{n_{k_{l}}}-y}\to0.
+\end{align*}
+矛盾.
+
+(2): 因$K$是紧算子, 故$K^{*}$紧, 由(1), $P_{n}^{*}K^{*}=P_{n}K^{*}\to K^{*}$
+in $CL(H)$. 从而
+\[
+\norm{KP_{n}-K}=\norm{\left(KP_{n}-K\right)^{*}}=\norm{P_{n}K^{*}-K^{*}}\to0,\qquad n\to\infty.
+\]
+
+(3):
+\begin{align*}
+\norm{P_{n}KP_{n}-K} & =\norm{P_{n}(KP_{n}-K)+P_{n}K-K}\\
+ & \le\norm{P_{n}}\cdot\norm{KP_{n}-K}+\norm{P_{n}K-K}\to0.
+\end{align*}
+\end{proof}
+
+\section{紧算子的谱定理}
+\begin{thm}
+(紧自伴算子的谱定理)
+
+设$H$是Hilbert空间, $T=T^{*}\in K(H)$有有限秩, 则存在正交特征向量$u_{n}$, $n\in\NN$与相应的特征向量$\lambda_{n}$,
+$n\in\NN$, 使得$\lim_{n\to\infty}\lambda_{n}=0$, 且对于任意的$x\in H$,
+有
+\[
+Tx=\sum_{n=1}^{\infty}\lambda_{n}\left\langle x,u_{n}\right\rangle u_{n}.
+\]
+\end{thm}
+先证几个引理.
+\begin{lem}
+若$T=T^{*}\in CL(H)$, 则
+\[
+\norm{T}=\sup_{\norm{x}=1}\left|\left\langle Tx,x\right\rangle \right|.
+\]
+\end{lem}
+\begin{proof}
+设$M\coloneqq\sup_{\norm{x}=1}\left|\left\langle Tx,x\right\rangle \right|$,
+则易证$M\le\norm{T}$. 下证$\norm{T}\le M$.
+
+注意
+\begin{align*}
+\left\langle T(x+y),x+y\right\rangle  & =\left\langle Tx,x\right\rangle +2\mathrm{Re}\left\langle Tx,y\right\rangle +\left\langle Ty,y\right\rangle \\
+\left\langle T(x-y),x-y\right\rangle  & =\left\langle Tx,x\right\rangle -2\mathrm{Re}\left\langle Tx,y\right\rangle +\left\langle Ty,y\right\rangle 
+\end{align*}
+故
+\begin{align*}
+4\mathrm{Re}\left\langle Tx,y\right\rangle  & =\left\langle T(x+y),x+y\right\rangle -\left\langle T(x-y),x-y\right\rangle \\
+ & \le M\norm{x+y}^{2}+M\norm{x-y}^{2}\\
+ & =2M\left(\norm{x}^{2}+\norm{y}^{2}\right).
+\end{align*}
+取$\theta\in\RR$, 用$\ue^{\ui\theta}y$代替$y$使
+\[
+\mathrm{Re}\left\langle Tx,y\right\rangle =\left\langle Tx,y\right\rangle \le\frac{M}{2}\left(\norm{x}^{2}+\norm{y}^{2}\right).
+\]
+
+当$Tx=0$, 或$x=0$时, $\norm{Tx}\le M\cdot\norm{x}$, 显然成立.
+
+当$Tx\ne0$, 且$x\ne0$时, 则取$y\coloneqq\frac{\norm{x}}{\norm{Tx}}Tx$,
+有
+\[
+\norm{Tx}\cdot\norm{x}\le M\cdot\norm{x}^{2}\Longrightarrow\norm{T}\le M.
+\]
+
+特别地, 当$T$是紧算子时, 存在$x\in H$, $\norm{x}=1$使
+\[
+\left|\left\langle Tx,x\right\rangle \right|=\norm{T}=\sup_{\norm{x}=1}\left\langle Tx,x\right\rangle .
+\]
+\end{proof}
+\begin{lem}
+\label{lem:5.2} 若$H$是非平凡Hilbert空间, $T=T^{*}\in K(H)$. 则$\norm{T}$或$-\norm{T}$之一为$T$的特征值.
+\end{lem}
+\begin{proof}
+不妨设$T\ne0$. 由于$T$是自伴的, 故$\left\langle Tx,x\right\rangle \in\RR$,
+取$\left(x_{n}\right)_{n\in\NN}$, $\norm{x_{n}}=1$, 不妨证$\left\langle Tx_{n},x_{n}\right\rangle \to\lambda=\norm{T}$,
+$n\to\infty$. 则
+\begin{align*}
+0 & \le\norm{Tx_{n}-\lambda x_{n}}^{2}=\norm{Tx_{n}}^{2}-2\lambda\left\langle Tx_{n},x_{n}\right\rangle +\lambda^{2}\\
+ & \le\norm{T}-2\lambda\left\langle Tx_{n},x_{n}\right\rangle +\lambda^{2}\to0,\quad n\to\infty.
+\end{align*}
+
+故$Tx_{n}-\lambda x_{n}\to0$, 由$T$紧, $Tx_{n_{k}}\to y$, 则$x_{n_{k}}\to\frac{y}{\lambda}$,
+再由$T$连续, 
+\[
+y=\lim_{k\to\infty}Tx_{n_{k}}=T\frac{y}{\lambda}=\frac{1}{\lambda}Ty.
+\]
+而
+\[
+\norm{y}=\lim_{k\to\infty}\norm{\lambda x_{n_{k}}}=\lambda\ne0.
+\]
+\end{proof}
+\begin{lem}
+设$H$是Hilbert空间, $T=T^{*}\in CL(H)$, $Y$是$H$中$T$-不变闭子空间, 则
+
+(1). $Y^{\perp}$也是$T$-不变子空间;
+
+(2). $T$在Hilbert空间$Y^{\perp}$上的限制$T\mid_{Y^{\perp}}:Y^{\perp}\to Y^{\perp}$也是自伴的;
+
+(3). 若$T$是紧的, 则$T\mid_{Y^{\perp}}$也紧.
+\end{lem}
+\begin{proof}
+(1). 对于任意的$z\in Y^{\perp}$, 有$Tz\in Y^{\perp}$.
+
+(2). $Y^{\perp}$是Hilbert空间中的闭子空间, 也是Hilbert空间.
+
+(1)推出$Y^{\perp}$是$T$-不变子空间, 所以$T\mid_{Y^{\perp}}$是良定的.
+
+最后由$T$自伴推出$T\mid_{Y^{\perp}}$自伴.
+
+(3). 设$\left(z_{n}\right)_{n\in\NN}\subseteq Y^{\perp}$, $\left(z_{n}\right)_{n\in\NN}$有界,
+$\left(Tz_{n_{k}}\right)\subseteq Y^{\perp}$收敛于$z\in H$.
+
+由$Y^{\perp}$是$H$的闭子空间, 所以$z\in Y^{\perp}$.
+\end{proof}
+%
+\begin{proof}
+(谱定理的证明)
+
+设$H\coloneqq H$, $T_{1}\coloneqq T$.
+
+则引理\ref{lem:5.2}推出存在$\lambda_{1}$, $u_{1}$, s.t. $\left|\lambda_{1}\right|=\norm{T_{1}}$,
+$\norm{u_{1}}=1$, $T_{1}u_{1}=\lambda_{1}u_{1}$.
+
+取$H_{2}\coloneqq\left(\mathrm{span}\left\{ u_{1}\right\} \right)^{\perp}$为$H_{1}$的闭子空间,
+是$T$-不变子空间, 让$T_{2}=T\mid_{H_{2}}$, 则$T_{2}$是紧自伴的.
+
+故存在$\lambda_{2}$, $u_{2}$, s.t. $\left|\lambda_{2}\right|=\norm{T_{2}}$,
+$\norm{u_{2}}=1$, $T_{2}u_{2}=\lambda_{2}u_{2}$且
+\[
+\left|\lambda_{2}\right|=\left|\left\langle T_{2}u_{2},u_{2}\right\rangle \right|=\left\langle Tu_{2},u_{2}\right\rangle \le\norm{T}=\left|\lambda_{1}\right|.
+\]
+
+综上, $\left\{ u_{1},u_{2}\right\} $是正交的, 且$Tu_{1}=\lambda_{1}u_{1}$,
+$Tu_{2}=\lambda_{2}u_{2}$.
+
+取$H_{3}\coloneqq\left(\mathrm{span}\left\{ u_{1},u_{2}\right\} \right)^{\perp}$为$H_{2}$的闭子空间,
+是$T$-不变子空间, 让$T_{3}=T\mid_{H_{3}}$, 则$T_{3}$是紧自伴的.
+
+故存在$\lambda_{3}$, $u_{3}$, s.t. $\left|\lambda_{3}\right|=\norm{T_{3}}$,
+$\norm{u_{3}}=1$, $T_{3}u_{3}=\lambda_{3}u_{3}$, 且
+\[
+\left|\lambda_{3}\right|=\left|\left\langle T_{3}u_{3},u_{3}\right\rangle \right|=\left|\left\langle T_{2}u_{3},u_{3}\right\rangle \right|\le\norm{T_{2}}=\left|\lambda_{2}\right|.
+\]
+
+如此下去, 有$H_{n}\coloneqq\left(\mathrm{span}\left\{ u_{1},\cdots,u_{n-1}\right\} \right)^{\perp}$,
+$H_{n}\ne0$, 否则对于任何$x\in H$,
+\[
+x-\sum_{k=1}^{n-1}\left\langle x,u_{k}\right\rangle u_{k}\in H_{n}=\left\{ 0\right\} .
+\]
+故
+\[
+Tx=\sum_{k=1}^{n-1}\left\langle x,u_{k}\right\rangle Tu_{k},\qquad\forall x\in H.
+\]
+与$T$是无穷秩算子矛盾.
+
+下面证明$\left|\lambda_{n}\right|\to0$, $n\to\infty$. 否则
+\[
+\inf_{n\in\NN}\left|\lambda_{n}\right|\eqqcolon\epsilon>0,
+\]
+则取$n\ne m$时
+\[
+\norm{Tu_{n}-Tu_{m}}^{2}=\norm{\lambda_{n}u_{n}-\lambda_{m}u_{m}}^{2}=\lambda_{n}^{2}+\lambda_{m}^{2}\ge2\epsilon^{2},
+\]
+与$T$是紧算子矛盾.
+
+最后证
+\[
+Tx=\sum_{k=1}^{\infty}\lambda_{k}\left\langle x,u_{k}\right\rangle u_{k},\qquad\forall x\in H.
+\]
+即, 对于任意的$x$, $x-\sum_{k=1}^{n-1}\left\langle x,u_{k}\right\rangle u_{k}\in H_{n}$与不等式
+\begin{align*}
+\norm{Tx-\sum_{k=1}^{n-1}\lambda_{k}\left\langle x,u_{k}\right\rangle u_{k}} & =\norm{T\left(x-\sum_{k=1}^{n-1}\left\langle x,u_{k}\right\rangle u_{k}\right)}\\
+ & \le\norm{T_{n}}\cdot\norm{x-\sum_{k=1}^{n-1}\left\langle x,u_{k}\right\rangle u_{k}}\\
+ & \le\left|\lambda_{n}\right|\cdot\norm{x}\to0,\qquad n\to\infty.
+\end{align*}
+ 
+\end{proof}
+\begin{xca}
+设$H$是无穷维Hilbert空间, $T=T^{*}\in K(H)$是双射, 则$T$的特征向量形成$H$中的一组基.
+\end{xca}
+\begin{proof}
+只需证$T$是无穷秩的, 用线性相关性和双射反证, 然后用紧自伴算子的谱定理.
+\end{proof}
+\begin{xca}
+设$H$是Hilbert空间, 设$T=T^{*}\in K(H)$有无穷秩, 且是正算子, 即
+\[
+\left\langle Tx,x\right\rangle \ge0,\qquad\forall x\in H.
+\]
+证明$T$有平方根, 即算子$\sqrt{T}\in CL(H)$使$\left(\sqrt{T}\right)^{2}=T$.
+\end{xca}
+\begin{proof}
+用谱定理, $T$的所有特征根$\lambda_{n}\ge0$, 构造算子$S:H\to H$, 满足对于任意的$x\in H$,
+有
+\[
+Sx\coloneqq\sum_{n=1}^{\infty}\sqrt{\lambda_{n}}\left\langle x,u_{n}\right\rangle u_{n},
+\]
+则$S^{2}=T$.
+\end{proof}
+\end{CJK}
+
+\end{document}

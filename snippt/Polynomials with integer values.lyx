@@ -1,0 +1,368 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+
+%\everymath{\color{blue}\everymath{}}
+\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-extended-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Polynomials with integer values
+\end_layout
+
+\begin_layout Author
+B.
+ Sury
+\end_layout
+
+\begin_layout Standard
+A 
+\series bold
+quote
+\series default
+ attributed to the famous mathematician L.
+ Kronecker is 'Die Ganzen Zahlen hat Gott gemacht, alles andere ist Menschenwerk.
+' A translation might be 'God gave us integers and all else is man's work.'
+ All of us are familiar already from middle school with the similarities
+ between the set of integers and the set of all polynomials in one variable.
+ 
+\end_layout
+
+\begin_layout Standard
+A paradigm of this is the Euclidean (division) algorithm.
+ 
+\end_layout
+
+\begin_layout Standard
+However, it requires an 
+\series bold
+astute(精明的)
+\series default
+ observer to notice that one has to deal with polynomials with real or rational
+ coefficients rather than just integer coefficients for a strict analogy.
+ 
+\end_layout
+
+\begin_layout Standard
+There are also some apparent dissimilarities - for instance, there is no
+ notion among integers corresponding to the derivative of a polynomial.
+ 
+\end_layout
+
+\begin_layout Standard
+In this discussion, we shall consider polynomials with integer coefficients.
+ 
+\end_layout
+
+\begin_layout Standard
+Of course a complete study of this encompasses the whole subject of algebraic
+ number theory, one might say.
+ 
+\end_layout
+
+\begin_layout Standard
+For the most of this article (in fact, with the exception of 2.3, 2.4 and
+ 4.3), we stick to fairly elementary methods and address a number of rather
+ natural questions.
+ 
+\end_layout
+
+\begin_layout Standard
+To give a prelude, one such question might be "
+\series bold
+if an integral polynomial takes only values which are perfect squares, then
+ must it be the square of a polynomial?
+\series default
+" 
+\end_layout
+
+\begin_layout Standard
+Note that for a natural number 
+\begin_inset Formula $n$
+\end_inset
+
+, the polynomial 
+\begin_inset Formula $\binom{X}{n}=\frac{X(X-1)\cdots(X-n+1)}{n(n-1)\cdots1}$
+\end_inset
+
+ takes integer values at all integers although it does not have integer
+ coefficients.
+\end_layout
+
+\begin_layout Section
+Prime values and irreducibility
+\end_layout
+
+\begin_layout Lemma
+A polynomial 
+\begin_inset Formula $p$
+\end_inset
+
+ takes 
+\begin_inset Formula $\ZZ$
+\end_inset
+
+ to 
+\begin_inset Formula $\ZZ$
+\end_inset
+
+ iff, 
+\begin_inset Formula $p(x)=a_{0}+a_{1}\binom{x}{1}+\cdots+a_{n}\binom{x}{n}$
+\end_inset
+
+ for some 
+\begin_inset Formula $a_{i}\in\ZZ$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+充分性是显然的.
+ 任何多项式
+\begin_inset Formula $p$
+\end_inset
+
+可以写成
+\begin_inset Formula $a_{0}+a_{1}\binom{x}{1}+\cdots+a_{n}\binom{x}{n}$
+\end_inset
+
+的形式, 但
+\begin_inset Formula $a_{i}\in\QQ$
+\end_inset
+
+.
+ 为证明
+\begin_inset Formula $a_{i}\in\ZZ$
+\end_inset
+
+, 需要注意
+\begin_inset Formula $p(\ZZ)\subset\ZZ$
+\end_inset
+
+.
+ 于是
+\begin_inset Formula $a_{0}=p(0)\in\ZZ$
+\end_inset
+
+, 
+\begin_inset Formula $a_{0}+a_{1}=p(1)\in\ZZ$
+\end_inset
+
+, 
+\begin_inset Formula $a_{0}+a_{1}\binom{2}{2}+a_{2}\in\ZZ$
+\end_inset
+
+, 如此下去, 可以证明
+\begin_inset Formula $a_{i}\in\ZZ$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Corollary
+If a polynomial 
+\begin_inset Formula $p$
+\end_inset
+
+ takes 
+\begin_inset Formula $\ZZ$
+\end_inset
+
+ to 
+\begin_inset Formula $\ZZ$
+\end_inset
+
+ and has degree 
+\begin_inset Formula $n$
+\end_inset
+
+, then 
+\begin_inset Formula $n!p(x)\in\ZZ[x]$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
