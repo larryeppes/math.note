@@ -1,0 +1,519 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+
+%\everymath{\color{blue}\everymath{}}
+\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-extended-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+散度定理
+\end_layout
+
+\begin_layout Standard
+Stokes公式的行列式版本
+\begin_inset Formula 
+\[
+\iint_{\Sigma}\begin{vmatrix}\ud y\ud z & \ud z\ud x & \ud x\ud y\\
+\partial_{x} & \partial_{y} & \partial_{z}\\
+P & Q & R
+\end{vmatrix}=\oint_{\Gamma}P\ud x+Q\ud y+R\ud z.
+\]
+
+\end_inset
+
+散度定理也叫Gauss定理.
+\end_layout
+
+\begin_layout Theorem
+(Gauss公式) 设空间闭区域
+\begin_inset Formula $\Omega$
+\end_inset
+
+是由分片光滑的闭曲面
+\begin_inset Formula $\Sigma$
+\end_inset
+
+所围成, 若
+\begin_inset Formula $P,Q,R\in C^{1}(\Omega)$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\iiint_{\Omega}\left(\partial_{x}P+\partial_{y}Q+\partial_{z}R\right)\ud v=\oiint_{\Sigma}P\ud y\ud z+Q\ud z\ud x+R\ud x\ud y,
+\]
+
+\end_inset
+
+或
+\begin_inset Formula 
+\[
+\iiint_{\Omega}\left(\partial_{x}P+\partial_{y}Q+\partial_{z}R\right)\ud v=\oiint_{\Sigma}\left(P\cos\alpha+Q\cos\beta+R\cos\gamma\right)\ud S,
+\]
+
+\end_inset
+
+这里
+\begin_inset Formula $\Sigma$
+\end_inset
+
+是
+\begin_inset Formula $\Omega$
+\end_inset
+
+的整个边界曲面的外侧, 
+\begin_inset Formula $\cos\alpha$
+\end_inset
+
+, 
+\begin_inset Formula $\cos\beta$
+\end_inset
+
+, 
+\begin_inset Formula $\cos\gamma$
+\end_inset
+
+为
+\begin_inset Formula $\Sigma$
+\end_inset
+
+在点
+\begin_inset Formula $(x,y,z)$
+\end_inset
+
+处的单位外法向的方向余弦.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Green公式的向量版本
+\begin_inset Formula 
+\[
+\int_{C}\overrightarrow{F}\cdot\overrightarrow{n}\ud s=\iint_{D}\udiv F(x,y)\ud A,
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $C$
+\end_inset
+
+沿着区域
+\begin_inset Formula $D$
+\end_inset
+
+的边界的正向.
+\end_layout
+
+\begin_layout Theorem
+(The Divergence Theorem) 设
+\begin_inset Formula $E$
+\end_inset
+
+为简单区域, 
+\begin_inset Formula $S=\partial E$
+\end_inset
+
+, 以向外为正方向, 设
+\begin_inset Formula $\overrightarrow{F}$
+\end_inset
+
+为
+\begin_inset Formula $C^{1}$
+\end_inset
+
+中的向量场, 定义在包含
+\begin_inset Formula $E$
+\end_inset
+
+的某个开区域内, 则
+\begin_inset Formula 
+\[
+\iint_{S}\overrightarrow{F}\cdot\ud\overrightarrow{S}=\iiint_{E}\udiv\overrightarrow{F}\ud V.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+散度定理说明了, 在一定条件下, 
+\begin_inset Formula $\overrightarrow{F}$
+\end_inset
+
+沿着
+\begin_inset Formula $\partial E$
+\end_inset
+
+的通量为
+\begin_inset Formula $\overrightarrow{F}$
+\end_inset
+
+在
+\begin_inset Formula $E$
+\end_inset
+
+上散度的三重积分.
+\end_layout
+
+\begin_layout Proof
+设
+\begin_inset Formula $\overrightarrow{F}=P\overrightarrow{i}+Q\overrightarrow{j}+R\overrightarrow{k}$
+\end_inset
+
+, 则
+\begin_inset Formula $\udiv F=\partial_{x}P+\partial_{y}Q+\partial_{z}R$
+\end_inset
+
+.
+ 故
+\begin_inset Formula 
+\[
+\iiint_{E}\udiv F\ud V=\iiint_{E}\partial_{x}P\ud V+\iiint_{E}\partial_{y}Q\ud V+\iiint_{E}\partial_{z}R\ud V.
+\]
+
+\end_inset
+
+若
+\begin_inset Formula $\overrightarrow{n}$
+\end_inset
+
+表示
+\begin_inset Formula $S$
+\end_inset
+
+的单位外法向, 则
+\begin_inset Formula 
+\begin{align*}
+\iint_{S}\overrightarrow{F}\cdot\ud\overrightarrow{S} & =\iint_{S}\overrightarrow{F}\cdot\overrightarrow{n}\ud S=\iint_{S}(P,Q,R)\cdot\overrightarrow{n}\ud S\\
+ & =\iint_{S}P\cdot n_{x}\ud S+\iint_{S}Q\cdot n_{y}\ud S+\iint_{S}R\cdot n_{z}\ud S.
+\end{align*}
+
+\end_inset
+
+先考虑
+\begin_inset Formula 
+\[
+E=\left\{ \left(x,y,z\right):(x,y)\in D,\ u_{1}(x,y)\le z\le u_{2}(x,y)\right\} ,
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $D$
+\end_inset
+
+为
+\begin_inset Formula $E$
+\end_inset
+
+在
+\begin_inset Formula $x,y$
+\end_inset
+
+平面的投影, 则
+\begin_inset Formula 
+\begin{align*}
+\iiint_{E}\frac{\partial R}{\partial z}\ud V & =\iint_{D}\left[\int_{u_{1}(x,y)}^{u_{2}(x,y)}\frac{\partial R}{\partial z}(x,y,z)\ud z\right]\ud A\\
+ & =\iint_{D}\left[R(x,y,u_{2}(x,y))-R(x,y,u_{1}(x,y))\right]\ud A.
+\end{align*}
+
+\end_inset
+
+另一方面, 表面
+\begin_inset Formula $S$
+\end_inset
+
+由三部分组成: 
+\begin_inset Formula $S_{1},S_{2},S_{3}$
+\end_inset
+
+, 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+为底面, 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+为上表面, 
+\begin_inset Formula $S_{3}$
+\end_inset
+
+为侧面(可能不存在或者是一条曲线, 不能成为面).
+\end_layout
+
+\begin_layout Proof
+\begin_inset Graphics
+	filename pics/Snipaste_2022-05-31_14-24-34.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+在
+\begin_inset Formula $S_{3}$
+\end_inset
+
+上, 
+\begin_inset Formula $n_{z}=0$
+\end_inset
+
+, 此时
+\begin_inset Formula 
+\[
+\iint_{S_{3}}R\cdot n_{z}\ud S=\iint_{S_{3}}0\ud S=0,
+\]
+
+\end_inset
+
+故
+\begin_inset Formula 
+\[
+\iint_{S}R\cdot n_{z}\ud S=\iint_{S_{1}}R\cdot n_{z}\ud S+\iint_{S_{2}}R\cdot n_{z}\ud S.
+\]
+
+\end_inset
+
+设
+\begin_inset Formula $S_{2}$
+\end_inset
+
+的方程是
+\begin_inset Formula $z=u_{2}(x,y)$
+\end_inset
+
+, 
+\begin_inset Formula $(x,y)\in D$
+\end_inset
+
+, 外法向量
+\begin_inset Formula $\overrightarrow{n}$
+\end_inset
+
+方向向上, 则
+\begin_inset Formula 
+\[
+\iint_{S_{2}}R\cdot n_{z}\ud S=\iint_{D}R(x,y,u_{2}(x,y))\ud A.
+\]
+
+\end_inset
+
+同理
+\begin_inset Formula 
+\[
+\iint_{S_{1}}R\cdot n_{z}\ud S=-\iint_{D}R(x,y,u_{1}(x,y))\ud A.
+\]
+
+\end_inset
+
+故
+\begin_inset Formula 
+\[
+\iint_{S}R\cdot n_{z}\ud S=\iiint_{E}\partial_{z}R\ud V.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -57,6 +57,7 @@
 \def\p{\partial}
 \def\wc{\rightharpoonup}
 \def\wcs{\buildrel\ast\over\rightharpoonup}
+\def\tom{\overset{\mathrm{m}}{\to}}
 \def\udiv{\mathrm{div}}
 \def\diam{\mathrm{diam}}
 \def\dist{\mathrm{dist}}
@@ -358,7 +359,7 @@ Banach-Alaoglu定理
 
 \begin_layout Proof
 在
-\begin_inset Formula $\vspan\left\{ z_{j}\right\} _{j\in\NN}$
+\begin_inset Formula $\mathrm{span}\left\{ z_{j}\right\} _{j\in\NN}$
 \end_inset
 
 上定义线性泛函
@@ -634,6 +635,1806 @@ g(x)=\limsup_{j\to\infty}f_{j}(x),\qquad h(x)=\liminf_{j\to\infty}f_{j}(x)
 \end_inset
 
 , 则
+\begin_inset Formula 
+\[
+\left\{ x:\sup_{j\ge k}f_{j}(x)>a\right\} =\bigcup_{j=k}^{\infty}f_{j}^{-1}(a,\infty].
+\]
+
+\end_inset
+
+即依次证明:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\bigcup_{j=k}^{\infty}f_{j}^{-1}(a,\infty]\subseteq\left\{ x:\sup_{j\ge k}f_{j}(x)>a\right\} ;
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+y\not\in\bigcup_{j\ge k}^{\infty}f_{j}^{-1}(a,\infty]\Longrightarrow y\not\in\left\{ x:\sup_{j\ge k}f_{j}(x)>a\right\} .
+\]
+
+\end_inset
+
+故有
+\begin_inset Formula $g_{k}^{-1}(a,\infty]\in\Sigma$
+\end_inset
+
+, 注意
+\begin_inset Formula $\mathscr{B}_{\overline{\RR}}$
+\end_inset
+
+是由集族
+\begin_inset Formula 
+\[
+\left\{ (a,\infty]:a\in\RR\right\} 
+\]
+
+\end_inset
+
+生成的.
+\end_layout
+
+\begin_layout Proof
+注意到
+\begin_inset Formula 
+\[
+h_{k}(x)=-\sup_{j\ge k}(-f_{j}(x)),
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $h_{k}(x)$
+\end_inset
+
+也可测.
+\end_layout
+
+\begin_layout Proof
+由于
+\begin_inset Formula 
+\[
+g(x)=\inf_{k\ge1}g_{k}(x),\quad h(x)=\sup_{k\ge1}h_{k}(x).
+\]
+
+\end_inset
+
+而
+\begin_inset Formula $g_{k},h_{k}$
+\end_inset
+
+可测, 故
+\begin_inset Formula $g,h$
+\end_inset
+
+可测.
+\end_layout
+
+\begin_layout Subsection
+依测度收敛
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $(\Omega,\Sigma,\mu)$
+\end_inset
+
+为概率空间, 
+\begin_inset Formula $L^{0}(\mu)$
+\end_inset
+
+为所有
+\begin_inset Formula $\Omega\to\CC$
+\end_inset
+
+的可测函数的等价类形成的集族, 其中
+\begin_inset Formula $\CC$
+\end_inset
+
+有Borel 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-代数.
+ 两个函数
+\begin_inset Formula $f$
+\end_inset
+
+和
+\begin_inset Formula $g$
+\end_inset
+
+等价, 若
+\begin_inset Formula 
+\[
+\mu\left\{ x\in\Omega:f(x)\ne g(x)\right\} =0.
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $L^{0}(\mu)$
+\end_inset
+
+是一个向量空间, 对于
+\begin_inset Formula $f,g\in L^{0}(\mu)$
+\end_inset
+
+, 定义
+\begin_inset Formula 
+\[
+\rho(f,g)=\int_{\Omega}\frac{\left|f-g\right|}{1+\left|f-g\right|}\ud\mu
+\]
+
+\end_inset
+
+是
+\begin_inset Formula $L^{0}(\mu)$
+\end_inset
+
+上的度量.
+ 在此度量下, 
+\begin_inset Formula $L^{0}(\mu)$
+\end_inset
+
+形成一个拓扑向量空间, 有
+\begin_inset Formula $\rho$
+\end_inset
+
+诱导的拓扑称为依测度收敛拓扑.
+\end_layout
+
+\begin_layout Theorem
+假设
+\begin_inset Formula $\left(f_{n}\right)\subseteq L^{0}(\mu)$
+\end_inset
+
+, 在依测度收敛拓扑意义下, 
+\begin_inset Formula $f_{n}\to0$
+\end_inset
+
+, 当且仅当, 对于任意的
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\mu\left(\left\{ x\in\Omega:\left|f_{n}\right|\ge\epsilon\right\} \right)=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+: 对于任意固定的
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+, 取
+\begin_inset Formula 
+\[
+A_{n}=\left\{ x\in\Omega:\left|f_{n}(x)\right|\ge\epsilon\right\} =\left\{ x\in\Omega:\frac{\left|f_{n}(x)\right|}{1+\left|f_{n}(x)\right|}\ge\frac{\epsilon}{1+\epsilon}\right\} ,
+\]
+
+\end_inset
+
+则
+\begin_inset Formula 
+\[
+\int_{\Omega}\frac{\epsilon}{1+\epsilon}\chi_{A_{n}}\ud\mu\le\int_{\Omega}\frac{\left|f_{n}\right|}{1+\left|f_{n}\right|}\ud\mu=\rho(f_{n},0).
+\]
+
+\end_inset
+
+即
+\begin_inset Formula 
+\[
+\mu(A_{n})\le\frac{1+\epsilon}{\epsilon}\rho(f_{n},0)\to0,\quad n\to\infty.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+: 设
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+, 假设
+\begin_inset Formula $\mu(A_{n})\to0$
+\end_inset
+
+, 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+.
+ 则有
+\begin_inset Formula $n_{\epsilon}$
+\end_inset
+
+, 使得对于任意的
+\begin_inset Formula $n\ge n_{\epsilon}$
+\end_inset
+
+有
+\begin_inset Formula $\mu(A_{n})<\epsilon$
+\end_inset
+
+, 从而
+\begin_inset Formula 
+\begin{align*}
+\rho(f_{n},0) & =\int_{A_{n}}\frac{\left|f_{n}\right|}{1+\left|f_{n}\right|}\ud\mu+\int_{\Omega\setminus A_{n}}\frac{\left|f_{n}\right|}{1+\left|f_{n}\right|}\ud\mu\\
+ & \le\int_{A_{n}}1\ud\mu+\int_{\Omega\setminus A_{n}}\frac{\epsilon}{1+\epsilon}\ud\mu\\
+ & \le\epsilon+\frac{\epsilon}{1+\epsilon}<2\epsilon.
+\end{align*}
+
+\end_inset
+
+故在依测度收敛拓扑意义下, 
+\begin_inset Formula $f_{n}\to0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+假设
+\begin_inset Formula $\left(f_{n}\right)\subseteq L^{0}(\mu)$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}f_{n}(x)\to0,\quad a.e.\ x\in\Omega.
+\]
+
+\end_inset
+
+则在依测度收敛意义下, 
+\begin_inset Formula $f_{n}\to0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+对于任意固定的
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+, 取任意的
+\begin_inset Formula $\eta>0$
+\end_inset
+
+.
+ 由Egorov定理, 存在
+\begin_inset Formula $E\in\Sigma$
+\end_inset
+
+, 
+\begin_inset Formula $\mu(E)<\eta$
+\end_inset
+
+, 使得在
+\begin_inset Formula $\Omega\setminus E$
+\end_inset
+
+上有
+\begin_inset Formula 
+\[
+f_{n}\rightrightarrows0,\quad n\to\infty.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+故存在
+\begin_inset Formula $n_{0}$
+\end_inset
+
+, 使得对于任意的
+\begin_inset Formula $n\ge n_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\forall x\in\Omega\setminus E$
+\end_inset
+
+, 有
+\begin_inset Formula $\left|f_{n}(x)\right|<\epsilon$
+\end_inset
+
+, 从而对于任意的
+\begin_inset Formula $n\ge n_{0}$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\begin{align*}
+\mu\left(\left\{ x\in\Omega:\left|f_{n}\right|\ge\epsilon\right\} \right) & \le\mu(E)+\mu\left(\left\{ x\in\Omega\setminus E:\left|f_{n}\right|\ge\epsilon\right\} \right)\\
+ & =\mu(E)<\eta.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+用DCT以及定理 2.
+\end_layout
+
+\begin_layout Theorem
+若
+\begin_inset Formula $\left(f_{n}\right)\subseteq L^{1}(\mu)$
+\end_inset
+
+, 有
+\begin_inset Formula $f_{n}\to0$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{1}(\mu)$
+\end_inset
+
+, 则
+\begin_inset Formula $f_{n}$
+\end_inset
+
+依测度收敛于
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+设
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+A_{n}=\left\{ x\in\Omega:\left|f_{n}\right|\ge\epsilon\right\} ,
+\]
+
+\end_inset
+
+则Chebyshev不等式有
+\begin_inset Formula 
+\[
+\mu(A_{n})\le\frac{1}{\epsilon}\norm{f_{n}}_{1}\to0,\quad n\to\infty.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+设
+\begin_inset Formula $\left(f_{n}\right)\subseteq L^{0}(\Omega)$
+\end_inset
+
+, 
+\begin_inset Formula $f_{n}\tom0$
+\end_inset
+
+, 则有子列
+\begin_inset Formula $\left(f_{n_{k}}\right)$
+\end_inset
+
+几乎处处收敛于
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+对于任意的
+\begin_inset Formula $k\in\NN$
+\end_inset
+
+, 取
+\begin_inset Formula $n_{k}$
+\end_inset
+
+使得对于任意的
+\begin_inset Formula $n\ge n_{k}$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\mu\left(\left\{ x\in\Omega:\left|f_{n}\right|\ge\frac{1}{k}\right\} \right)<\frac{1}{2^{n}}.
+\]
+
+\end_inset
+
+取
+\begin_inset Formula 
+\[
+E_{k}=\left\{ x\in\Omega:\left|f_{n_{k}}\right|\ge\frac{1}{k}\right\} ,
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $\mu(E_{k})<\frac{1}{2^{k}}$
+\end_inset
+
+, 取
+\begin_inset Formula 
+\[
+E=\bigcap_{k=1}^{\infty}\bigcup_{m=k}^{\infty}E_{m}=\limsup_{k\to\infty}E_{k},
+\]
+
+\end_inset
+
+则
+\begin_inset Formula 
+\[
+\mu(E)\le\mu\left(\bigcup_{m=k}^{\infty}E_{k}\right)\le\frac{1}{2^{k}}+\frac{1}{2^{k+1}}+\cdots=2^{1-k},\quad\forall k.
+\]
+
+\end_inset
+
+即
+\begin_inset Formula $\mu(E)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+若
+\begin_inset Formula $x\in\Omega\setminus E$
+\end_inset
+
+, 则
+\begin_inset Formula $x\in\cup_{k=1}^{\infty}\cap_{m=k}^{\infty}E_{m}^{c}$
+\end_inset
+
+, 故有
+\begin_inset Formula $k_{0}$
+\end_inset
+
+, 使得
+\begin_inset Formula $x\in\cap_{m=k_{0}}^{\infty}E_{m}^{c}$
+\end_inset
+
+, 即当
+\begin_inset Formula $m\ge k_{0}$
+\end_inset
+
+时, 
+\begin_inset Formula $x\not\in E_{m}$
+\end_inset
+
+, 即
+\begin_inset Formula 
+\[
+\left|f_{n_{m}}(x)\right|<\frac{1}{m},\qquad f_{n_{m}}(x)\to0,\quad m\to\infty.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(f_{n_{k}}\right)$
+\end_inset
+
+即为所求的子列.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+下面证明
+\begin_inset Formula $\rho$
+\end_inset
+
+是完备度量, 即
+\begin_inset Formula $L^{0}(\mu)$
+\end_inset
+
+在此度量下是一个
+\begin_inset Formula $F$
+\end_inset
+
+-空间.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\rho$
+\end_inset
+
+是
+\begin_inset Formula $L^{0}(\mu)$
+\end_inset
+
+上的完备度量, 即依测度基本列有依测度收敛子列.
+\end_layout
+
+\begin_layout Proof
+假设
+\begin_inset Formula $\left(f_{n}\right)\subseteq L^{0}(\mu)$
+\end_inset
+
+为Cauchy序列.
+\end_layout
+
+\begin_layout Proof
+则有子列
+\begin_inset Formula $\left(f_{n_{k}}\right)_{k\in\NN}$
+\end_inset
+
+, 使得对于任意的
+\begin_inset Formula $l\ge k$
+\end_inset
+
+满足
+\begin_inset Formula $\rho\left(f_{n_{k}},f_{n_{l}}\right)<\frac{1}{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+仍记子列为
+\begin_inset Formula $\left(f_{n}\right)_{n\in\NN}$
+\end_inset
+
+, 则有
+\begin_inset Formula $\forall m\ge n$
+\end_inset
+
+, 
+\begin_inset Formula $\rho(f_{m},f_{n})<\frac{1}{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+取
+\begin_inset Formula 
+\begin{align*}
+A_{k,m}(\epsilon) & =\left\{ x\in\Omega:\left|f_{k}(x)-f_{m}(x)\right|\ge\epsilon\right\} \\
+ & =\left\{ x\in\Omega:\frac{\left|f_{k}-f_{m}\right|}{1+\left|f_{k}-f_{m}\right|}\ge\frac{\epsilon}{1+\epsilon}\right\} ,
+\end{align*}
+
+\end_inset
+
+则
+\begin_inset Formula 
+\[
+\frac{\epsilon}{1+\epsilon}\chi_{A_{k,m}(\epsilon)}\le\frac{\left|f_{k}-f_{m}\right|}{1+\left|f_{k}-f_{m}\right|}.
+\]
+
+\end_inset
+
+即, 当
+\begin_inset Formula $m\ge k$
+\end_inset
+
+时, 
+\begin_inset Formula 
+\[
+\mu(A_{k,m}(\epsilon))\le\frac{1+\epsilon}{\epsilon}\int_{\Omega}\frac{\left|f_{k}-f_{m}\right|}{1+\left|f_{k}-f_{m}\right|}\ud\mu=\frac{1+\epsilon}{\epsilon}\rho(f_{k},f_{m})<\frac{1+\epsilon}{\epsilon}\frac{1}{k}.
+\]
+
+\end_inset
+
+取
+\begin_inset Formula $\epsilon_{n}=\frac{1}{2^{n}}$
+\end_inset
+
+, 确定
+\begin_inset Formula $k_{n}$
+\end_inset
+
+, 使得对于任意的
+\begin_inset Formula $m\ge k_{n}$
+\end_inset
+
+有
+\begin_inset Formula 
+\[
+\mu\left(A_{k,m}\left(\frac{1}{2^{n}}\right)\right)<\frac{1+\epsilon_{n}}{\epsilon_{n}}\cdot\frac{1}{k_{n}}\le\frac{1}{2^{n}}.
+\]
+
+\end_inset
+
+取
+\begin_inset Formula $g_{n}=f_{k_{n}}$
+\end_inset
+
+, 让
+\begin_inset Formula 
+\[
+E_{n}=\left\{ x\in\Omega:\left|g_{n+1}(x)-g_{n}(x)\right|\ge\frac{1}{2^{n}}\right\} ,\quad F_{n}=\bigcup_{k=n}^{\infty}E_{k}.
+\]
+
+\end_inset
+
+则
+\begin_inset Formula 
+\[
+\mu(F_{n})\le\sum_{k=n}^{\infty}\mu(E_{k})<\sum_{k=n}^{\infty}\frac{1}{2^{k}}=2^{1-n}.
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $F=\cap_{n=1}^{\infty}F_{n}$
+\end_inset
+
+, 满足
+\begin_inset Formula $\mu(F)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+当
+\begin_inset Formula $x\not\in F$
+\end_inset
+
+时, 则存在
+\begin_inset Formula $n$
+\end_inset
+
+, 使得对于任意的
+\begin_inset Formula $r>n$
+\end_inset
+
+, 
+\begin_inset Formula $x\not\in E_{r}$
+\end_inset
+
+.
+ 即对于任意的
+\begin_inset Formula $r\ge n$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\left|g_{r+1}(x)-g_{r}(x)\right|<\frac{1}{2^{r}}.
+\]
+
+\end_inset
+
+故可定义
+\begin_inset Formula $g:\Omega\to\CC$
+\end_inset
+
+如下
+\begin_inset Formula 
+\[
+g(x)=\chi_{\Omega\setminus F}(x)\limsup_{k\to\infty}g_{k}(x),\qquad x\in\Omega.
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $g(x)\in L^{0}(\Omega)$
+\end_inset
+
+, (由定理 1).
+\end_layout
+
+\begin_layout Proof
+对于
+\begin_inset Formula $x\not\in F_{k}$
+\end_inset
+
+, 有
+\begin_inset Formula $x\not\in F$
+\end_inset
+
+.
+ 从而
+\begin_inset Formula $g_{k}(x)\to g(x)$
+\end_inset
+
+, 
+\begin_inset Formula $k\to\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+对于任意的
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+, 取
+\begin_inset Formula $k$
+\end_inset
+
+使得
+\begin_inset Formula $2^{1-k}\le\epsilon$
+\end_inset
+
+, 则对于
+\begin_inset Formula $x\not\in F_{k}$
+\end_inset
+
+, 
+\begin_inset Formula $j\ge k$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\begin{align*}
+\left|g_{j}(x)-g(x)\right| & \le\left|g_{j}(x)-g_{l}(x)\right|+\left|g_{l}(x)-g(x)\right|\qquad l>j\\
+ & \le2^{1-j}+0\qquad l\to\infty.\\
+ & \le2^{1-k}.
+\end{align*}
+
+\end_inset
+
+从而
+\begin_inset Formula 
+\begin{align*}
+\mu\left(\left\{ x\in\Omega:\left|g_{k}(x)-g(x)\right|\ge\epsilon\right\} \right) & \le\mu(F_{k})+\mu\left(\left\{ x\in\Omega\setminus F_{k}:\left|g_{k}(x)-g(x)\right|\ge\epsilon\right\} \right)\\
+ & \le2^{1-k}+\mu(\emptyset)\\
+ & \le\epsilon.
+\end{align*}
+
+\end_inset
+
+故
+\begin_inset Formula $g_{k}\tom g$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+一致可积性
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $\left(\Omega,\Sigma,\mu\right)$
+\end_inset
+
+为概率空间, 
+\begin_inset Formula $L^{1}(\mu)$
+\end_inset
+
+中的子集
+\begin_inset Formula $\mathscr{F}$
+\end_inset
+
+称为是一致可积的, 若对于任意的
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+, 存在
+\begin_inset Formula $\delta>0$
+\end_inset
+
+, s.t.
+ 
+\begin_inset Formula $\forall E\in\Sigma$
+\end_inset
+
+满足
+\begin_inset Formula $\mu(E)\le\delta$
+\end_inset
+
+, 且
+\begin_inset Formula $\forall f\in\mathscr{F}$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\int_{E}\left|f\right|\ud\mu\le\epsilon.
+\]
+
+\end_inset
+
+也即, 称
+\begin_inset Formula $\mathscr{F}$
+\end_inset
+
+是一致可积的, 如果
+\begin_inset Formula 
+\[
+\lim_{\mu(E)\to0}\sup_{f\in\mathscr{F}}\int_{E}\left|f\right|\ud\mu=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+假设
+\begin_inset Formula $\mathscr{F}$
+\end_inset
+
+是
+\begin_inset Formula $L^{1}(\mu)$
+\end_inset
+
+中的有界子集, 则以下命题等价:
+\end_layout
+
+\begin_layout Theorem
+1).
+ 
+\begin_inset Formula $\mathscr{F}$
+\end_inset
+
+是一致可积的.
+\end_layout
+
+\begin_layout Theorem
+2).
+ 
+\begin_inset Formula 
+\[
+\lim_{C\to\infty}\sup_{f\in\mathscr{F}}\int_{\left\{ \left|f\right|>C\right\} }\left|f\right|\ud\mu=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+1)
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+2).
+ 取
+\begin_inset Formula 
+\[
+K=\sup_{f\in\mathscr{F}}\norm{f}_{L^{1}}<\infty.
+\]
+
+\end_inset
+
+
+\begin_inset Formula $\mathscr{F}$
+\end_inset
+
+一致可积, 由Chebyshev不等式, 有
+\begin_inset Formula 
+\[
+\mu\left(\left\{ \left|f\right|>M\right\} \right)\le\frac{\norm{f}_{L^{1}}}{M}\le\frac{K}{M}.
+\]
+
+\end_inset
+
+由于
+\begin_inset Formula 
+\[
+\lim_{M\to\infty}\mu\left(\left\{ \left|f\right|>M\right\} \right)=0.
+\]
+
+\end_inset
+
+
+\begin_inset Formula $\mathscr{F}$
+\end_inset
+
+一致可积.
+ 即得.
+\end_layout
+
+\begin_layout Proof
+2)
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+1).
+ 假设
+\begin_inset Formula 
+\[
+\lim_{M\to\infty}\sup_{f\in\mathscr{F}}\int_{\left\{ \left|f\right|>M\right\} }\left|f\right|\ud\mu=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+对于
+\begin_inset Formula $E\in\Sigma$
+\end_inset
+
+, 
+\begin_inset Formula $f\in\mathscr{F}$
+\end_inset
+
+.
+ 当
+\begin_inset Formula $M>0$
+\end_inset
+
+时, 
+\begin_inset Formula 
+\begin{align*}
+\int_{E}\left|f\right|\ud\mu & =\int_{E\cap\left\{ \left|f\right|\le M\right\} }\left|f\right|\ud\mu+\int_{E\cap\left\{ \left|f\right|>M\right\} }\left|f\right|\ud\mu\\
+ & \le M\mu(E)+\sup_{f\in\mathscr{F}}\int_{\left\{ \left|f\right|>M\right\} }\left|f\right|\ud\mu.
+\end{align*}
+
+\end_inset
+
+故
+\begin_inset Formula 
+\[
+\sup_{f\in\mathscr{F}}\int_{E}\left|f\right|\ud\mu\le M\mu(E)+\sup_{f\in\mathscr{F}}\int_{\left\{ \left|f\right|>M\right\} }\left|f\right|\ud\mu.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+对于任意的
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+, 则有
+\begin_inset Formula $M$
+\end_inset
+
+使得
+\begin_inset Formula 
+\[
+\sup_{f\in\mathscr{F}}\int_{\left\{ \left|f\right|>M\right\} }\left|f\right|\ud\mu<\frac{\epsilon}{2},
+\]
+
+\end_inset
+
+再取
+\begin_inset Formula $\delta=\frac{\epsilon}{2M}$
+\end_inset
+
+, 则对于任意的
+\begin_inset Formula $E\in\Sigma$
+\end_inset
+
+, 满足
+\begin_inset Formula $\mu(E)\le\delta$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\sup_{f\in\mathscr{F}}\int_{E}\left|f\right|\ud\mu\le\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon,
+\]
+
+\end_inset
+
+即
+\begin_inset Formula $\mathscr{F}$
+\end_inset
+
+一致可积.
+\end_layout
+
+\begin_layout Theorem
+(Lebesgue积分的绝对连续性).
+ 假设
+\begin_inset Formula $f\in L^{1}(\mu)$
+\end_inset
+
+, 于是
+\begin_inset Formula $\forall\epsilon>0$
+\end_inset
+
+, 
+\begin_inset Formula $\exists\delta>0$
+\end_inset
+
+, s.t.
+ 
+\begin_inset Formula $\forall E\in\Sigma$
+\end_inset
+
+, 并满足
+\begin_inset Formula $\mu(E)\le\delta$
+\end_inset
+
+, 总有
+\begin_inset Formula 
+\[
+\int_{E}\left|f\right|\ud\mu\le\epsilon.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+定义
+\begin_inset Formula 
+\[
+g_{n}(x)=\min\left\{ \left|f(x)\right|,n\right\} ,\quad x\in\Omega,n\in\NN.
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $g_{n}(x)\nearrow\left|f\right|$
+\end_inset
+
+, 由单调收敛定理
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\int_{\Omega}g_{n}\ud\mu=\int_{\Omega}\left|f\right|\ud\mu.
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $\forall\epsilon>0$
+\end_inset
+
+, 
+\begin_inset Formula $\exists N$
+\end_inset
+
+, 使得
+\begin_inset Formula 
+\[
+0\le\int_{\Omega}\left|f\right|\ud\mu-\int_{\Omega}g_{N}\ud\mu\le\frac{\epsilon}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+取
+\begin_inset Formula $\delta=\frac{\epsilon}{2N}$
+\end_inset
+
+, 
+\begin_inset Formula $\forall E\in\Sigma$
+\end_inset
+
+, 只要
+\begin_inset Formula $\mu(E)\le\delta$
+\end_inset
+
+, 便有
+\begin_inset Formula 
+\begin{align*}
+\int_{E}\left|f\right|\ud\mu & =\int_{E}\left(\left|f\right|-g_{N}\right)\ud\mu+\int_{E}g_{N}\ud\mu\\
+ & \le\frac{\epsilon}{2}+N\cdot\frac{\epsilon}{2N}=\epsilon.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+(Vitali收敛定理) 假设
+\begin_inset Formula $f\in L^{0}(\mu)$
+\end_inset
+
+, 
+\begin_inset Formula $(f_{n})\subseteq L^{1}(\mu)$
+\end_inset
+
+, 则以下命题等价
+\end_layout
+
+\begin_layout Theorem
+(1).
+ 
+\begin_inset Formula $(f_{n})$
+\end_inset
+
+一致可积, 
+\begin_inset Formula $(f_{n})$
+\end_inset
+
+在
+\begin_inset Formula $L^{1}(\mu)$
+\end_inset
+
+中有界, 
+\begin_inset Formula $f_{n}\tom f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+(2).
+ 
+\begin_inset Formula $f\in L^{1}(\mu)$
+\end_inset
+
+, 
+\begin_inset Formula $f_{n}\to f$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{1}(\mu)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+(1)
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+(2):
+\end_layout
+
+\begin_layout Proof
+(a): 由
+\begin_inset Formula $f_{n}\tom f$
+\end_inset
+
+, 故有子列
+\begin_inset Formula $f_{n_{k}}\to f$
+\end_inset
+
+, a.e.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+取
+\begin_inset Formula 
+\[
+K=\sup_{k\ge1}\norm{f_{n_{k}}}_{L^{1}}<\infty.
+\]
+
+\end_inset
+
+由Fatou引理, 
+\begin_inset Formula 
+\[
+\norm{f}_{L^{1}}\le\liminf_{k\to\infty}\norm{f_{n_{k}}}_{L^{1}}\le K.
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $\left|f\right|\in L^{1}(\mu)$
+\end_inset
+
+, 由
+\begin_inset Formula $f\in L^{0}(\mu)$
+\end_inset
+
+, 所以
+\begin_inset Formula $f\in L^{1}(\mu)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+(b): 以下证明
+\begin_inset Formula $(f_{n})$
+\end_inset
+
+的任何子列
+\begin_inset Formula $(g_{n})$
+\end_inset
+
+有收敛子列, 即有子列
+\begin_inset Formula $g_{n_{k}}\to f$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{1}(\mu)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+注: 一般, 拓扑空间中的序列收敛于
+\begin_inset Formula $x$
+\end_inset
+
+, iff, 它的任何子列有收敛子列收敛于
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+由
+\begin_inset Formula $f_{n}\tom f$
+\end_inset
+
+, 故
+\begin_inset Formula $g_{n}\tom f$
+\end_inset
+
+, 故有子列
+\begin_inset Formula $g_{n_{k}}\to f$
+\end_inset
+
+ a.e.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+所以
+\begin_inset Formula $\forall\epsilon>0$
+\end_inset
+
+, 由
+\begin_inset Formula $(f_{n})$
+\end_inset
+
+一致可积, 故
+\begin_inset Formula $\exists\delta>0$
+\end_inset
+
+, s.t.
+ 
+\begin_inset Formula $\forall E\in\Sigma$
+\end_inset
+
+满足
+\begin_inset Formula $\mu(E)\le\delta$
+\end_inset
+
+, 便有
+\begin_inset Formula 
+\[
+\int_{E}\left|g_{n_{k}}\right|\ud\mu\le\epsilon,\quad\forall k.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+由Fatou引理
+\begin_inset Formula 
+\[
+\int_{E}\left|f\right|\ud\mu\le\liminf_{n\to\infty}\norm{\chi_{E}g_{n_{k}}}_{L^{1}}\le\epsilon.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+由于
+\begin_inset Formula $g_{n_{k}}\to f$
+\end_inset
+
+ a.e.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 根据Egorov定理, 
+\begin_inset Formula $\exists E\in\Sigma$
+\end_inset
+
+, 
+\begin_inset Formula $\mu(E)\le\delta$
+\end_inset
+
+, 使得
+\begin_inset Formula $g_{n_{k}}\rightrightarrows f$
+\end_inset
+
+ on 
+\begin_inset Formula $E^{c}$
+\end_inset
+
+.
+ 故
+\begin_inset Formula $\exists k_{0}$
+\end_inset
+
+, 使得当
+\begin_inset Formula $k>k_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\forall x\in E^{c}$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\left|g_{n_{k}}(x)-f(x)\right|\le\epsilon.
+\]
+
+\end_inset
+
+故
+\begin_inset Formula 
+\begin{align*}
+\int_{\Omega}\left|g_{n_{k}}-f\right|\ud\mu & =\int_{E}\left|g_{n_{k}}-f\right|\ud\mu+\int_{E^{c}}\left|g_{n_{k}}-f\right|\ud\mu\\
+ & \le\int_{E}\left|g_{n_{k}}\right|\ud\mu+\int_{E}\left|f\right|\ud\mu+\epsilon\cdot\mu(E^{c})\\
+ & \le\epsilon+\epsilon+\epsilon.
+\end{align*}
+
+\end_inset
+
+ 即得.
+\end_layout
+
+\begin_layout Proof
+(2)
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+(1): 因
+\begin_inset Formula $f_{n}\to f$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{1}(\mu)$
+\end_inset
+
+, 故
+\begin_inset Formula $(f_{n})$
+\end_inset
+
+在
+\begin_inset Formula $L^{1}(\mu)$
+\end_inset
+
+中有界, 同时
+\begin_inset Formula $f_{n}\tom f$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+下证一致可积性.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\forall\epsilon>0$
+\end_inset
+
+, 
+\begin_inset Formula $\exists\delta_{f}>0$
+\end_inset
+
+, s.t.
+ 
+\begin_inset Formula $\forall E\in\Sigma$
+\end_inset
+
+, 
+\begin_inset Formula $\mu(E)\le\delta_{f}$
+\end_inset
+
+, 有Lebesgue积分的绝对连续性
+\begin_inset Formula 
+\[
+\int_{E}\left|f\right|\ud\mu\le\epsilon.
+\]
+
+\end_inset
+
+由
+\begin_inset Formula $f_{n}\to f$
+\end_inset
+
+ in 
+\begin_inset Formula $L^{1}(\mu)$
+\end_inset
+
+, 故有
+\begin_inset Formula $n_{0}$
+\end_inset
+
+, s.t.
+ 
+\begin_inset Formula $\forall n>n_{0}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\norm{f_{n}-f}_{L^{1}}\le\epsilon.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+对于
+\begin_inset Formula $1\le n\le n_{0}$
+\end_inset
+
+, 有
+\begin_inset Formula $\delta_{f_{n}}>0$
+\end_inset
+
+, s.t.
+ 
+\begin_inset Formula $\forall E\in\Sigma$
+\end_inset
+
+, 
+\begin_inset Formula $\mu(E)\le\delta_{f_{n}}$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\int_{E}\left|f_{n}\right|\ud\mu\le\epsilon.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+于是只要
+\begin_inset Formula $\delta=\min\left\{ \delta_{f},\delta_{f_{1}},\cdots,\delta_{f_{n_{0}}}\right\} $
+\end_inset
+
+, 则
+\begin_inset Formula $\forall E\in\Sigma$
+\end_inset
+
+, 
+\begin_inset Formula $\mu(E)<\delta$
+\end_inset
+
+, 便有
+\begin_inset Formula 
+\[
+\int_{E}\left|f_{n}\right|\ud\mu\le\epsilon,\qquad1\le n\le n_{0};
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\int_{E}\left|f_{n}\right|\ud\mu & \le\int_{E}\left|f_{n}-f\right|\ud\mu+\int_{E}\left|f\right|\ud\mu\\
+ & \le\epsilon+\epsilon,\qquad n>n_{0}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+(de la Vall
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'{e}
+\end_layout
+
+\end_inset
+
+e-Poussin判别法) 假设
+\begin_inset Formula $\mathscr{F}\subseteq L^{1}(\mu)$
+\end_inset
+
+, 
+\begin_inset Formula $\mathscr{F}$
+\end_inset
+
+是有界的一致可积的充要条件是存在凸, 连续, 不减函数
+\begin_inset Formula $G:[0,\infty)\to[0,\infty)$
+\end_inset
+
+满足
+\begin_inset Formula 
+\[
+\lim_{t\to\infty}\frac{G(t)}{t}=\infty,\qquad\sup_{f\in\mathscr{F}}\int_{\Omega}G\left(\left|f(x)\right|\right)\ud\mu(x)<\infty.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+: 设
+\begin_inset Formula 
+\[
+\sup_{f\in\mathscr{F}}\int_{\Omega}G\left(\left|f(x)\right|\right)\ud\mu(x)\le M<\infty.
+\]
+
+\end_inset
+
+对于
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+, 
+\begin_inset Formula $\exists C$
+\end_inset
+
+, s.t.
+ 
+\begin_inset Formula $t\ge C$
+\end_inset
+
+使得
+\begin_inset Formula $\frac{G(t)}{t}\ge\frac{M}{\epsilon}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Proof
+故对于
+\begin_inset Formula $f\in\mathscr{F}$
+\end_inset
+
+, 若
+\begin_inset Formula $x\in\Omega$
+\end_inset
+
+, 
+\begin_inset Formula $\left|f(x)\right|\ge C$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\frac{G\left(\left|f(x)\right|\right)}{\left|f(x)\right|}\ge\frac{M}{\epsilon},
+\]
+
+\end_inset
+
+即
+\begin_inset Formula $\left|f(x)\right|\le\frac{\epsilon}{M}G\left(\left|f(x)\right|\right)$
+\end_inset
+
+, 于是
+\begin_inset Formula 
+\[
+\int_{\left\{ \left|f\right|\ge C\right\} }\left|f\right|\ud\mu\le\int_{\left\{ \left|f\right|\ge C\right\} }\frac{\epsilon}{M}G\left(\left|f(x)\right|\right)\ud\mu(x)\le\frac{\epsilon}{M}\cdot M=\epsilon.
+\]
+
+\end_inset
+
+由定理 7, 即得.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+: 对于
+\begin_inset Formula $f\in\mathscr{F}$
+\end_inset
+
+, 
+\begin_inset Formula $j\ge1$
+\end_inset
+
+, 取
+\begin_inset Formula 
+\[
+\mu_{j}(f)=\mu\left(\left\{ x\in\Omega:\left|f(x)>j\right|\right\} \right),\qquad\left\{ x\in\Omega:\left|f(x)\right|>j\right\} \in\Sigma.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+由于
+\begin_inset Formula $\mathscr{F}$
+\end_inset
+
+有界, 一致可积, 则存在严格增加正整数
+\begin_inset Formula $C_{n}$
+\end_inset
+
+, 使得
+\begin_inset Formula $\forall n$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\sup_{f\in\mathscr{F}}\int_{\left\{ \left|f\right|>C_{n}\right\} }\left|f\right|\ud\mu\le2^{-n}.
+\]
+
+\end_inset
+
+于是
+\begin_inset Formula 
+\begin{align*}
+\int_{\left\{ \left|f\right|>C_{n}\right\} }\left|f\right|\ud\mu & =\sum_{j=C_{n}}^{\infty}\int_{\left\{ j<\left|f\right|\le j+1\right\} }\left|f\right|\ud\mu\\
+ & \ge\sum_{j=C_{n}}^{\infty}j\left(\mu_{j}(f)-\mu_{j+1}(f)\right)\\
+ & =\sum_{j=C_{n}}^{\infty}\mu_{j}(f).
+\end{align*}
+
+\end_inset
+
+故
+\begin_inset Formula 
+\[
+\sum_{n=1}^{\infty}\sum_{j=C_{n}}^{\infty}\mu_{j}(f)\le\sum_{n=1}^{\infty}\int_{\left\{ \left|f\right|>C_{n}\right\} }\left|f\right|\ud\mu\le\sum_{n=1}^{\infty}2^{-n}=1.
+\]
+
+\end_inset
+
+定义
+\begin_inset Formula 
+\[
+\alpha_{n}=\begin{cases}
+0, & n<C_{1};\\
+\max\left\{ k:C_{k}\le n\right\} , & n\ge C_{1},
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+g(x)=\sum_{n=0}^{\infty}\alpha_{n}\chi_{(n,n+1]}(t),\quad0\le t<\infty,
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+G(t)=\int_{0}^{t}g(s)\ud s,\quad0\le t<\infty.
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $G$
+\end_inset
+
+非负不减, 且凸, 也就是
+\begin_inset Formula 
+\[
+G'(t_{1})(t_{2}-t_{1})=g(t_{1})(t_{2}-t_{1})\le G(t_{2})-G(t_{1}),\qquad\forall0\le t_{1}\le t_{2}<\infty,
+\]
+
+\end_inset
+
+且
+\begin_inset Formula 
+\[
+g\left(\frac{t}{2}\right)\left(t-\frac{t}{2}\right)\le G(t)-G\left(\frac{t}{2}\right)\le G(t)\Longrightarrow\frac{G(t)}{t}\ge\frac{g\left(\frac{t}{2}\right)}{2}\to\infty,\quad t\to\infty.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+由于
+\begin_inset Formula $f\in\mathscr{F},$
+\end_inset
+
+
+\begin_inset Formula $G(0)=G(1)=0$
+\end_inset
+
+, 
+\begin_inset Formula $\forall n\ge1$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+G(n+1)\le g(1)+g(2)+\cdots+g(n+1)=\alpha_{1}+\cdots+\alpha_{n}.
+\]
+
+\end_inset
+
+故
+\begin_inset Formula 
+\begin{align*}
+\int_{\Omega}G\left(\left|f(x)\right|\right)\ud\mu(x) & =\int_{\left\{ \left|f\right|=0\right\} }G\left(\left|f(x)\right|\right)\ud\mu(x)+\sum_{n=0}^{\infty}\int_{\left\{ n<\left|f\right|\le n+1\right\} }G\left(\left|f(x)\right|\right)\ud\mu(x)\\
+ & \le\sum_{n=0}^{\infty}G(n+1)\left(\mu_{n}(f)-\mu_{n+1}(f)\right)\\
+ & \le\sum_{n=1}^{\infty}\left(\mu_{n}(f)-\mu_{n+1}(f)\right)\sum_{j=1}^{n}\alpha_{j}\\
+ & =\sum_{n=1}^{\infty}\mu_{n}\left(f\right)\alpha_{n}\\
+ & =\sum_{n=1}^{\infty}\sum_{j=C_{n}}^{\infty}\mu_{j}(f)\le1.
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

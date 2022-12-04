@@ -1,0 +1,2793 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+
+%\everymath{\color{blue}\everymath{}}
+\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-extended-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Paragraph
+ATOM
+\end_layout
+
+\begin_layout Standard
+A Taste of Mathematics - series published by the CMS
+\end_layout
+
+\begin_layout Paragraph
+小学难度数字游戏
+\end_layout
+
+\begin_layout Standard
+http://www.chiark.greenend.org.uk/~sgtatham/puzzles/js/rect.html
+\end_layout
+
+\begin_layout Paragraph
+Knot Theory
+\end_layout
+
+\begin_layout Standard
+2021 MathemAttic Article Contest
+\end_layout
+
+\begin_layout Standard
+The trefoil knot is the simplest non-trivial knot, which can be created
+ by forming an overhand knot and joining its two loose ends as shown in
+ Figure 1b.
+ There are a plethora of knots, of which many are equivalent, meaning they
+ can be manipulated by a sequence of carefully designed operations to have
+ the same appearance.
+\end_layout
+
+\begin_layout Standard
+William Thomson proposed that an atom can be modeled as a knotted vortex
+ of aether [1].
+\end_layout
+
+\begin_layout Paragraph
+TODO
+\end_layout
+
+\begin_layout Standard
+OC551
+\end_layout
+
+\begin_layout Standard
+OC554
+\end_layout
+
+\begin_layout Standard
+4684
+\end_layout
+
+\begin_layout Standard
+4688
+\end_layout
+
+\begin_layout Paragraph
+MA141(初中竞赛, 初等数论)
+\end_layout
+
+\begin_layout Standard
+Determine all sets consisting of an odd number 
+\begin_inset Formula $2m+1$
+\end_inset
+
+ of consecutive positive integers, for some integer 
+\begin_inset Formula $m\geq1$
+\end_inset
+
+ such that the sum of the cubes of the smallest 
+\begin_inset Formula $m+1$
+\end_inset
+
+ integers is equal to the sum of the cubes of the largest 
+\begin_inset Formula $m$
+\end_inset
+
+ integers.
+\end_layout
+
+\begin_layout Paragraph
+MA142(几何, 小学数学, 面积相等的证明, 列方程法)
+\end_layout
+
+\begin_layout Standard
+The sketch shown is from the files of Leonardo da Vinci.
+ Two perpendicular diameters divide a circle into four parts.
+ On each of these diameters a circle of half the diameter is drawn, tangent
+ to the original circle and meeting at its centre.
+ A radius to the large circle is drawn through the intersection points of
+ these smaller circles.
+ Show that the red and blue shaded regions are of the same area.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/area-1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+MA143
+\end_layout
+
+\begin_layout Standard
+The integers from 1 to 
+\begin_inset Formula $n$
+\end_inset
+
+ are added to form the sum 
+\begin_inset Formula $N$
+\end_inset
+
+ and the integers from 1 to 
+\begin_inset Formula $m$
+\end_inset
+
+ are added to form the sum 
+\begin_inset Formula $M$
+\end_inset
+
+, where 
+\begin_inset Formula $n>m+1$
+\end_inset
+
+.
+ If the difference between the two sums is 
+\begin_inset Formula $N-M=2012$
+\end_inset
+
+, then determine the value of 
+\begin_inset Formula $n+m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+MA144
+\end_layout
+
+\begin_layout Standard
+Betty和Greta在一张
+\begin_inset Formula $7\times7$
+\end_inset
+
+的棋盘上玩一个游戏, Betty先走.
+ Betty每走一步, 都在棋盘上找到一个未经涂色的
+\begin_inset Formula $2\times2$
+\end_inset
+
+的区块将其涂成棕色.
+ Greta每走一步都在棋盘上选择一个未经涂色的格子将其涂成绿色.
+ 当Betty没有区块可以涂色时, 剩下的格子由Greta全部涂成绿色.
+ 试问, 是否有哪个选手有必胜策略, 无论对手怎么操作, 自己涂色的数量总能至少染色
+\begin_inset Formula $25$
+\end_inset
+
+个方格.
+\end_layout
+
+\begin_layout Paragraph
+Ans
+\end_layout
+
+\begin_layout Standard
+考虑在方格棋盘上, 坐标都为偶数的
+\begin_inset Formula $9$
+\end_inset
+
+个格子.
+ Betty的每一步染色必然覆盖这
+\begin_inset Formula $9$
+\end_inset
+
+个格子中的其中一个, 而且每个格子对应一种
+\begin_inset Formula $2\times2$
+\end_inset
+
+的填充方式.
+ 如果Greta无论先手还是后手, 先占据
+\begin_inset Formula $9$
+\end_inset
+
+个格子中的
+\begin_inset Formula $4$
+\end_inset
+
+个, 则Betty最多只能走
+\begin_inset Formula $5$
+\end_inset
+
+步, 也只能染色
+\begin_inset Formula $20$
+\end_inset
+
+个方格.
+ 所以Greta有必胜策略.
+\end_layout
+
+\begin_layout Paragraph
+MA145(数论, 初等数论, 整除)
+\end_layout
+
+\begin_layout Standard
+Determine all integers 
+\begin_inset Formula $n$
+\end_inset
+
+ for which 
+\begin_inset Formula $n^{3}-3n+2$
+\end_inset
+
+ is divisible by 
+\begin_inset Formula $2n+1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+OC552(数论, 解方程)
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $a,b$
+\end_inset
+
+为两个不同的正实数, 考虑方程
+\begin_inset Formula 
+\[
+\lfloor ax+b\rfloor=\lfloor bx+a\rfloor,
+\]
+
+\end_inset
+
+证明: 存在一个区间长度至少为
+\begin_inset Formula $\frac{1}{\max\left\{ a,b\right\} }$
+\end_inset
+
+的区间, 使得区间内的每个值都是上述方程的解.
+\end_layout
+
+\begin_layout Paragraph
+pf:
+\end_layout
+
+\begin_layout Standard
+不妨设
+\begin_inset Formula $a\ge b$
+\end_inset
+
+, 记
+\begin_inset Formula $a+b=n+r$
+\end_inset
+
+, 其中
+\begin_inset Formula $n$
+\end_inset
+
+是整数, 
+\begin_inset Formula $0\le r<1$
+\end_inset
+
+, 则区间
+\begin_inset Formula $\left(\frac{a-r}{a},\frac{1+a-r}{a}\right)$
+\end_inset
+
+内的每个点都满足方程.
+\end_layout
+
+\begin_layout Paragraph
+OC553(数论, 整数)
+\end_layout
+
+\begin_layout Standard
+求所有的整数数对
+\begin_inset Formula $(a,b)$
+\end_inset
+
+使得
+\begin_inset Formula $a^{2}+2b^{2}+2a+1$
+\end_inset
+
+是
+\begin_inset Formula $2ab$
+\end_inset
+
+的一个因子.
+\end_layout
+
+\begin_layout Paragraph
+OC555(数论, 2018 Poland MO, 6th problem, final round)
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $p>3$
+\end_inset
+
+为素数, 
+\begin_inset Formula $K$
+\end_inset
+
+是满足下式的
+\begin_inset Formula $\left\{ 1,2,\cdots,p\right\} $
+\end_inset
+
+的置换
+\begin_inset Formula $(a_{1},a_{2},\cdots,a_{p})$
+\end_inset
+
+的总数, 使得
+\begin_inset Formula 
+\[
+p\mid a_{1}a_{2}+a_{2}a_{3}+\cdots+a_{p-1}a_{p}+a_{p}a_{1},
+\]
+
+\end_inset
+
+证明: 
+\begin_inset Formula $p^{2}\mid K+p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+pf
+\end_layout
+
+\begin_layout Standard
+定义: 
+\begin_inset Formula $d:\left(\mathbb{F}_{p}\right)^{d}\to\left(\mathbb{F}_{p}\right)^{d}$
+\end_inset
+
+, 
+\begin_inset Formula $v:\left(\mathbb{F}_{p}\right)^{d}\to\mathbb{F}_{p}$
+\end_inset
+
+, 如下:
+\begin_inset Formula 
+\[
+\begin{aligned}d\left(x_{1},x_{2},\ldots,x_{p}\right) & =\left(x_{2}-x_{1},x_{3}-x_{2},\ldots,x_{p}-x_{p-1},x_{1}-x_{p}\right)\\
+v\left(x_{1},x_{2}\ldots,x_{p}\right) & =x_{1}x_{2}+x_{2}x_{3}+\cdots+x_{p-1}x_{p}+x_{p}x_{1}
+\end{aligned}
+\]
+
+\end_inset
+
+再定义, 滑移
+\begin_inset Formula $\ell_{h}:(\mathbb{F}_{p})^{p}\to(\mathbb{F}_{p})^{p}$
+\end_inset
+
+, 提升
+\begin_inset Formula $s_{h}:(\mathbb{F}_{p})^{p}\to(\mathbb{F}_{p})^{p}$
+\end_inset
+
+如下:
+\begin_inset Formula 
+\[
+\begin{aligned}\ell_{h}\left(x_{1},x_{2},\ldots,x_{p}\right) & =\left(x_{1}+h,x_{2}+h,\ldots,x_{p}+h\right)\\
+s_{h}\left(x_{1},x_{2},\ldots,x_{p}\right) & =\left(x_{1+h},x_{2+h},\ldots,x_{p+h}\right)
+\end{aligned}
+\]
+
+\end_inset
+
+则有, 对于任意的
+\begin_inset Formula $X\in(\mathbb{F}_{p})^{p}$
+\end_inset
+
+, 
+\begin_inset Formula $\ell_{1}(s_{1}(X))=s_{1}(\ell_{1}(X))$
+\end_inset
+
+, 故
+\begin_inset Formula 
+\[
+\begin{aligned}\ell_{h_{1}}\circ s_{k_{1}}\circ\ell_{h_{2}}\circ s_{k_{2}}\cdots\ell_{h_{n}}\circ s_{k_{n}}(X) & =\ell_{h_{1}+h_{2}+\cdots+h_{n}}\left(s_{k_{1}+k_{2}+\cdots+k_{n}}(X)\right)\\
+ & =s_{k_{1}+k_{2}+\cdots+k_{n}}\left(\ell_{h_{1}+h_{2}+\cdots+h_{n}}(X)\right).
+\end{aligned}
+\]
+
+\end_inset
+
+对于
+\begin_inset Formula $X,Y\in(\mathbb{F}_{p})^{p}$
+\end_inset
+
+, 记
+\begin_inset Formula $X\sim Y$
+\end_inset
+
+, 如果存在某个
+\begin_inset Formula $h$
+\end_inset
+
+, 使得
+\begin_inset Formula $Y=s_{h}(X)$
+\end_inset
+
+, 则
+\begin_inset Formula $\sim$
+\end_inset
+
+是
+\begin_inset Formula $(\mathbb{F}_{p})^{p}$
+\end_inset
+
+上的一个等价关系.
+ 设
+\begin_inset Formula $\pi,\rho$
+\end_inset
+
+为
+\begin_inset Formula $\mathbb{F}_{p}$
+\end_inset
+
+上的置换, 记
+\begin_inset Formula $\pi\approx\rho$
+\end_inset
+
+, 如果
+\begin_inset Formula $d(\pi)\sim d(\rho)$
+\end_inset
+
+, 则
+\begin_inset Formula $\approx$
+\end_inset
+
+是
+\begin_inset Formula $\mathbb{F}_{p}$
+\end_inset
+
+的置换集合
+\begin_inset Formula $S_{p}$
+\end_inset
+
+上的一个等价关系.
+ 且有关系
+\begin_inset Formula $d(\ell_{i}(\pi))=d(\pi)$
+\end_inset
+
+, 所以每个
+\begin_inset Formula $\pi$
+\end_inset
+
+有
+\begin_inset Formula $p$
+\end_inset
+
+个与之等价的滑移.
+\end_layout
+
+\begin_layout Standard
+对于任意的
+\begin_inset Formula $h,k\in\mathbb{F}_{p}$
+\end_inset
+
+, 有
+\begin_inset Formula $\ell_{h}(\pi)\approx\pi\approx s_{k}(\pi)$
+\end_inset
+
+, 因此
+\begin_inset Formula $\pi\approx s_{k}(\ell_{h}(\pi))$
+\end_inset
+
+, 即等价类
+\begin_inset Formula $\left[\pi\right]_{\approx}$
+\end_inset
+
+是所有
+\begin_inset Formula $\pi$
+\end_inset
+
+通过连续的提升与滑移所得的所有置换集合.
+\end_layout
+
+\begin_layout Standard
+对于
+\begin_inset Formula $\pi=(a_{1},\cdots,a_{p})$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+v\left(\ell_{1}(\pi)\right)=\sum_{k=1}^{p}\left(a_{k}+1\right)\left(a_{k+1}+1\right)=v(\pi)+p^{2}=v(\pi)+0=v(\pi).
+\]
+
+\end_inset
+
+即
+\begin_inset Formula $v$
+\end_inset
+
+在
+\begin_inset Formula $[\pi]_{\approx}$
+\end_inset
+
+下是良定的, 也就是当
+\begin_inset Formula $\pi\approx\rho$
+\end_inset
+
+时, 有
+\begin_inset Formula $i$
+\end_inset
+
+使得
+\begin_inset Formula $\ell_{i}(\pi)=\rho$
+\end_inset
+
+, 从而
+\begin_inset Formula $v(\pi)=v(\rho)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+对于
+\begin_inset Formula $1\le m\le p-1$
+\end_inset
+
+, 考虑置换
+\begin_inset Formula $\pi_{m}=(0,m,2m,3m,\cdots,(p-1)m)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\pi_{m}$
+\end_inset
+
+的等价类
+\begin_inset Formula $[\pi_{m}]_{\approx}$
+\end_inset
+
+有
+\begin_inset Formula $p$
+\end_inset
+
+个元素, (对应
+\begin_inset Formula $p$
+\end_inset
+
+个滑移, 但提升保持
+\begin_inset Formula $d$
+\end_inset
+
+值, 即
+\begin_inset Formula $d(s_{i}(\pi))=d(\pi)$
+\end_inset
+
+), 且
+\begin_inset Formula 
+\[
+v(\pi_{m})=m\sum_{k=0}^{p-1}k(k+1)=0,
+\]
+
+\end_inset
+
+只需考虑
+\begin_inset Formula $\pi\not\in\bigcup_{m=1}^{p-1}[\pi_{m}]_{\approx}$
+\end_inset
+
+, 由于
+\begin_inset Formula $p$
+\end_inset
+
+是素数, 故
+\begin_inset Formula $d(s_{0}(\pi))$
+\end_inset
+
+, 
+\begin_inset Formula $d(s_{1}(\pi))$
+\end_inset
+
+, 
+\begin_inset Formula $\cdots$
+\end_inset
+
+, 
+\begin_inset Formula $d(s_{p-1}(\pi))$
+\end_inset
+
+两两不同.
+ 否则, 不妨设
+\begin_inset Formula $d(s_{i}(\pi))=d(s_{j}(\pi))$
+\end_inset
+
+, 
+\begin_inset Formula $i>j$
+\end_inset
+
+, 
+\begin_inset Formula $i,j\in\mathbb{Z}_{p}$
+\end_inset
+
+, 则由定义, 
+\begin_inset Formula $(x_{k+i+1}-x_{k+i})_{k=1}^{p}=(x_{k+j+1}-x_{k+j})_{k=1}^{p}$
+\end_inset
+
+, 比如
+\begin_inset Formula $k=p$
+\end_inset
+
+时对应等式
+\begin_inset Formula $x_{i+2}-x_{i+1}=x_{j+2}-x_{j+1}$
+\end_inset
+
+.
+ 若记
+\begin_inset Formula $d=i-j$
+\end_inset
+
+, 
+\begin_inset Formula $y_{k}=x_{j+2+kd}-x_{j+1+kd}$
+\end_inset
+
+, 则
+\begin_inset Formula $y_{1}=y_{0}$
+\end_inset
+
+, 有
+\begin_inset Formula $y_{k+1}=y_{k}$
+\end_inset
+
+.
+ 由于
+\begin_inset Formula $p$
+\end_inset
+
+是素数, 
+\begin_inset Formula $\left(j+2+kd\right)_{k=1}^{p}$
+\end_inset
+
+刚好取遍
+\begin_inset Formula $\mathbb{Z}_{p}$
+\end_inset
+
+, 而这说明
+\begin_inset Formula $y_{k}$
+\end_inset
+
+作为
+\begin_inset Formula $x_{k}$
+\end_inset
+
+相邻两项的差分总是常数, 这与
+\begin_inset Formula $\pi\not\in\bigcup_{m=1}^{p-1}[\pi_{m}]_{\approx}$
+\end_inset
+
+矛盾.
+ 故
+\begin_inset Formula $[\pi]_{\approx}$
+\end_inset
+
+有
+\begin_inset Formula $p^{2}$
+\end_inset
+
+个元素, 若这些等价类中有
+\begin_inset Formula $C$
+\end_inset
+
+个的
+\begin_inset Formula $v$
+\end_inset
+
+值为
+\begin_inset Formula $0$
+\end_inset
+
+, 则满足
+\begin_inset Formula $v(\pi)=0$
+\end_inset
+
+的所有的
+\begin_inset Formula $\pi\in S_{p}$
+\end_inset
+
+有
+\begin_inset Formula $(p-1)p+Cp^{2}$
+\end_inset
+
+个, 即得所求的结果.
+\end_layout
+
+\begin_layout Subsection
+使用Conway三角形记号求解代数问题
+\end_layout
+
+\begin_layout Subsubsection
+Conway坐标
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $x,y,z\in\RR$
+\end_inset
+
+满足
+\begin_inset Formula 
+\[
+x+y>0;y+z>0;z+x>0;xy+yz+zx>0;
+\]
+
+\end_inset
+
+记
+\begin_inset Formula 
+\[
+a=\sqrt{x+y},\ b=\sqrt{y+z},\ c=\sqrt{z+x},
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $a,b,c$
+\end_inset
+
+是某个非退化三角形的三边长, 即
+\begin_inset Formula $a+b>c$
+\end_inset
+
+.
+ 三角形的半周长和面积为
+\begin_inset Formula 
+\[
+s=\frac{1}{2}\left(\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x}\right),\quad S=\frac{1}{2}\sqrt{xy+yz+zx}.
+\]
+
+\end_inset
+
+三角形对应的内接圆半径
+\begin_inset Formula $r$
+\end_inset
+
+与外接圆半径
+\begin_inset Formula $R$
+\end_inset
+
+为
+\begin_inset Formula 
+\[
+r=\frac{S}{C}=\frac{\sqrt{xy+yz+zx}}{\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x}},\quad R=\frac{abc}{4F}=\frac{\sqrt{(x+y)(y+z)(z+x)}}{2\sqrt{xy+yz+zx}}
+\]
+
+\end_inset
+
+三角形中线长公式为
+\begin_inset Formula 
+\[
+m_{a}^{2}=\frac{x+y+4z}{4};\quad m_{b}^{2}=\frac{4x+y+z}{4};\quad m_{c}^{2}=\frac{x+4y+z}{4}.
+\]
+
+\end_inset
+
+三角形的高线长为
+\begin_inset Formula 
+\begin{align*}
+h_{a} & =\sqrt{\frac{xy+yz+zx}{x+y}}=\sqrt{z+\frac{xy}{x+y}},\\
+h_{b} & =\sqrt{\frac{xy+yz+zx}{y+z}}=\sqrt{x+\frac{yz}{y+z}},\\
+h_{c} & =\sqrt{\frac{xy+yz+zx}{z+x}}=\sqrt{y+\frac{zx}{z+x}},
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Ex 1.
+ (Turkey NMO - 2006)
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $x,y,z>0$
+\end_inset
+
+, 满足
+\begin_inset Formula $xy+yz+zx=1$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\frac{27}{4}(x+y)(y+z)(z+x)\geq(\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x})^{2}\geq6\sqrt{3}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+pf
+\end_layout
+
+\begin_layout Standard
+相当于证明
+\begin_inset Formula 
+\[
+\frac{27}{4}a^{2}b^{2}c^{2}\geq(a+b+c)^{2}
+\]
+
+\end_inset
+
+代入
+\begin_inset Formula $R=\frac{abc}{4S}=\frac{abc}{2}$
+\end_inset
+
+, 
+\begin_inset Formula $2s=a+b+c$
+\end_inset
+
+, 有
+\begin_inset Formula $27R^{2}\ge4s^{2}$
+\end_inset
+
+.
+ 这等价于Mitrinovi
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'{c}
+\end_layout
+
+\end_inset
+
+不等式.
+\end_layout
+
+\begin_layout Standard
+第二个不等式相当于证明, 
+\begin_inset Formula $s^{2}\ge\frac{3}{2}\sqrt{3}$
+\end_inset
+
+.
+ 由于
+\begin_inset Formula $S=rs=\frac{1}{2}$
+\end_inset
+
+, 所以等价于证明
+\begin_inset Formula $s^{2}\ge3\sqrt{3}rs$
+\end_inset
+
+, 即
+\begin_inset Formula $s\ge3\sqrt{3}r$
+\end_inset
+
+, 这又等价于Mitrinovi
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'{c}
+\end_layout
+
+\end_inset
+
+不等式.
+\end_layout
+
+\begin_layout Paragraph
+Ex 2.
+ (IMO - DataBase - 2008)
+\end_layout
+
+\begin_layout Standard
+若
+\begin_inset Formula $x,y,z\in\mathbb{R}$
+\end_inset
+
+, 使得
+\begin_inset Formula $y+z$
+\end_inset
+
+, 
+\begin_inset Formula $z+x$
+\end_inset
+
+, 
+\begin_inset Formula $x+y$
+\end_inset
+
+和
+\begin_inset Formula $yz+zx+xy$
+\end_inset
+
+均非负, 则有
+\begin_inset Formula 
+\[
+\sum_{cyc}\sqrt{(z+x)(x+y)}\ge x+y+z+\sqrt{3(xy+yz+zx)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+pf
+\end_layout
+
+\begin_layout Standard
+由Conway三角代换, 所证不等式相当于
+\begin_inset Formula 
+\[
+\sum_{cyc}ab\ge\frac{1}{2}(a^{2}+b^{2}+c^{2})+2\sqrt{3}S.
+\]
+
+\end_inset
+
+即
+\begin_inset Formula 
+\[
+a^{2}+b^{2}+c^{2}\ge(a-b)^{2}+(b-c)^{2}+(c-a)^{2}+4\sqrt{3}S.
+\]
+
+\end_inset
+
+即Hadwiger-Finsler不等式.
+\end_layout
+
+\begin_layout Subsubsection
+Problems
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $x,y,z\in\mathbb{R}$
+\end_inset
+
+, 满足
+\begin_inset Formula $x+y>0$
+\end_inset
+
+, 
+\begin_inset Formula $y+z>0$
+\end_inset
+
+, 
+\begin_inset Formula $z+x>0$
+\end_inset
+
+, 
+\begin_inset Formula $xy+yz+zx>0$
+\end_inset
+
+, 证明以下命题
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Formula $\sum_{cyc}(x+y)\sqrt{(x+z)(y+z)}\ge4(xy+yz+zx)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Formula $(\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x})^{2}\geq6\sqrt{3(xy+yz+zx)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Formula $2(\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x})\sqrt{xy+yz+zx}\leq3\sqrt{3(x+y)(y+z)(z+x)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+4.
+ 
+\begin_inset Formula $8(x+y+z)(xy+yz+zx)\leq9(x+y)(y+z)(z+x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+5.
+ 
+\begin_inset Formula $x+y+z\geq\sqrt{3(xy+yz+zx)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+6.
+ 
+\begin_inset Formula $\frac{1}{\sqrt{x+y}}+\frac{1}{\sqrt{y+z}}+\frac{1}{\sqrt{z+x}}\geq2\sqrt{\frac{3(xy+yz+zx)}{(x+y)(y+z)(z+x)}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+7.
+ 
+\begin_inset Formula $\frac{1}{\sqrt{x+y}}+\frac{1}{\sqrt{y+z}}+\frac{1}{\sqrt{z+x}}\leq\frac{\sqrt{3}(\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x})}{2\sqrt{xy+yz+zx}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+8.
+ 
+\begin_inset Formula $\frac{1}{\sqrt{(x+y)(x+z)}}+\frac{1}{\sqrt{(y+z)(y+x)}}+\frac{1}{\sqrt{(z+x)(z+y)}}\geq\frac{4(xy+yz+zx)}{(x+y)(y+z)(z+x)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+9.
+ 
+\begin_inset Formula $\frac{1}{\sqrt{(x+y)(x+z)}}+\frac{1}{\sqrt{(y+z)(y+x)}}+\frac{1}{\sqrt{(z+x)(z+y)}}\leq\frac{(\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x})^{2}}{4(xy+yz+zx)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+10.
+ 
+\begin_inset Formula $\frac{1}{x+y}+\frac{1}{y+z}+\frac{1}{z+x}\geq\frac{\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x}}{\sqrt{(x+y)(y+z)(z+x)}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+11.
+ 
+\begin_inset Formula $\frac{1}{x+y}+\frac{1}{y+z}+\frac{1}{z+x}\leq\frac{(\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x})^{2}}{4(xy+yz+zx)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+12.
+ 
+\begin_inset Formula $\sqrt{\frac{x+y}{x+z}}+\sqrt{\frac{x+z}{x+y}}\leq\frac{(\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x})\sqrt{(x+y)(y+z)(z+x)}}{2(xy+yz+zx)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+13.
+ 
+\begin_inset Formula $(x+y+z)(\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x})^{2}\geq18(xy+yz+zx)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+14.
+ 
+\begin_inset Formula $\sqrt{(x+y)(x+z)}+\sqrt{(y+z)(y+x)}+\sqrt{(z+x)(z+y)}\geq\frac{36(xy+yz+zx)}{(\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x})^{2}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+15.
+ 
+\begin_inset Formula $\sqrt{(x+y)(x+z)}+\sqrt{(y+z)(y+x)}+\sqrt{(z+x)(z+y)}\leq\frac{9(x+y)(y+z)(z+x)}{4(xy+yz+zx)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+16.
+ 
+\begin_inset Formula $\sqrt{(x+y)(x+z)}+\sqrt{(y+z)(y+x)}+\sqrt{(z+x)(z+y)}\geq2\sqrt{3(xy+yz+zx)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+17.
+ 
+\begin_inset Formula $x^{2}+y^{2}+z^{2}\geq xy+yz+zx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+18.
+ 
+\begin_inset Formula $(x+y)(x+z)+(y+z)(y+x)+(z+x)(z+y)\geq4(xy+yz+zx)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+19.
+ 
+\begin_inset Formula $\frac{9\sqrt{(x+y)(y+z)(z+x)}}{\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x}}\geq2\sqrt{3(xy+yz+zx)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+20.
+ 
+\begin_inset Formula $\sqrt{3}(\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x})\leq4\sqrt{\frac{(x+y)(y+z)(z+x)}{xy+yz+zx}}+\frac{2\sqrt{xy+yz+zx}}{\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+21.
+ 
+\begin_inset Formula $\sqrt{x+\frac{y+z}{4}}+\sqrt{y+\frac{z+x}{4}}+\sqrt{z+\frac{x+y}{4}}\geq\frac{9\sqrt{xy+yz+zx}}{\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+22.
+ 
+\begin_inset Formula $\sqrt{x+\frac{y+z}{4}}+\sqrt{y+\frac{z+x}{4}}+\sqrt{z+\frac{x+y}{4}}\leq\frac{9\sqrt{(x+y)(y+z)(z+x)}}{4\sqrt{xy+yz+zx}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+23.
+ 
+\begin_inset Formula $\frac{3\sqrt{xy+yz+zx}}{\sqrt{x+y}+\sqrt{y+z}+\sqrt{z+x}}\leq\sqrt[4]{\frac{3}{4}(xy+yz+zx)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+使用Conway三角代换, 上面的问题分别等价于以下命题
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Formula $R\geq2r$
+\end_inset
+
+ (Euler) 
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Formula $s\geq3\sqrt{3}r$
+\end_inset
+
+ (Mitrinovi
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'{c}
+\end_layout
+
+\end_inset
+
+ I) 
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Formula $s\leq\frac{3\sqrt{3}}{2}R$
+\end_inset
+
+ (Mitrinovi
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'{c}
+\end_layout
+
+\end_inset
+
+ II) 
+\end_layout
+
+\begin_layout Standard
+4.
+ 
+\begin_inset Formula $a^{2}+b^{2}+c^{2}\leq9R^{2}$
+\end_inset
+
+ (Leibniz) 
+\end_layout
+
+\begin_layout Standard
+5.
+ 
+\begin_inset Formula $a^{2}+b^{2}+c^{2}\geq4\sqrt{3}S$
+\end_inset
+
+ (Ionescu-Weitzenbock) 
+\end_layout
+
+\begin_layout Standard
+6.
+ 
+\begin_inset Formula $\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\geq\frac{\sqrt{3}}{R}$
+\end_inset
+
+ (Leuenberger I) 
+\end_layout
+
+\begin_layout Standard
+7.
+ 
+\begin_inset Formula $\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\leq\frac{\sqrt{3}}{2r}$
+\end_inset
+
+ (Leuenberger II) 
+\end_layout
+
+\begin_layout Standard
+8.
+ 
+\begin_inset Formula $\frac{1}{ab}+\frac{1}{bc}+\frac{1}{ca}\geq\frac{1}{R^{2}}$
+\end_inset
+
+ (Leuenberger III) 
+\end_layout
+
+\begin_layout Standard
+9.
+ 
+\begin_inset Formula $\frac{1}{ab}+\frac{1}{bc}+\frac{1}{ca}\leq\frac{1}{4r^{2}}$
+\end_inset
+
+ (Leuenberger IV) 
+\end_layout
+
+\begin_layout Standard
+10.
+ 
+\begin_inset Formula $\frac{1}{a^{2}}+\frac{1}{b^{2}}+\frac{1}{c^{2}}\geq\frac{1}{2Rr}$
+\end_inset
+
+ (Steinig I) 
+\end_layout
+
+\begin_layout Standard
+11.
+ 
+\begin_inset Formula $\frac{1}{a^{2}}+\frac{1}{b^{2}}+\frac{1}{c^{2}}\leq\frac{1}{4r^{2}}$
+\end_inset
+
+ (Steinig II) 
+\end_layout
+
+\begin_layout Standard
+12.
+ 
+\begin_inset Formula $\frac{b}{c}+\frac{c}{b}\leq\frac{R}{r}$
+\end_inset
+
+ (BĂndilĂ) 
+\end_layout
+
+\begin_layout Standard
+13.
+ 
+\begin_inset Formula $a^{2}+b^{2}+c^{2}\geq36r^{2}$
+\end_inset
+
+ (Neuberg) 
+\end_layout
+
+\begin_layout Standard
+14.
+ 
+\begin_inset Formula $ab+bc+ca\geq36r^{2}$
+\end_inset
+
+ (Leuenberger V) 
+\end_layout
+
+\begin_layout Standard
+15.
+ 
+\begin_inset Formula $ab+bc+ca\leq9R^{2}$
+\end_inset
+
+ (Leuenberger VI) 
+\end_layout
+
+\begin_layout Standard
+16.
+ 
+\begin_inset Formula $ab+bc+ca\geq4\sqrt{3}S$
+\end_inset
+
+ (Gordon) 
+\end_layout
+
+\begin_layout Standard
+17.
+ 
+\begin_inset Formula $a^{4}+b^{4}+c^{4}\geq16S^{2}$
+\end_inset
+
+ (Goldner I) 
+\end_layout
+
+\begin_layout Standard
+18.
+ 
+\begin_inset Formula $a^{2}b^{2}+b^{2}c^{2}+c^{2}a^{2}\geq16S^{2}$
+\end_inset
+
+ (Goldner II)
+\end_layout
+
+\begin_layout Standard
+19.
+ 
+\begin_inset Formula $\frac{9abc}{a+b+c}\geq4\sqrt{3}S$
+\end_inset
+
+ (Curry) 
+\end_layout
+
+\begin_layout Standard
+20.
+ 
+\begin_inset Formula $s\sqrt{3}\leq4R+r$
+\end_inset
+
+ (Doucet) 
+\end_layout
+
+\begin_layout Standard
+21.
+ 
+\begin_inset Formula $m_{a}+m_{b}+m_{c}\geq9r($
+\end_inset
+
+Gotman I) 
+\end_layout
+
+\begin_layout Standard
+22.
+ 
+\begin_inset Formula $m_{a}+m_{b}+m_{c}\leq\frac{9R}{2}$
+\end_inset
+
+ (Gotman II) 
+\end_layout
+
+\begin_layout Standard
+23.
+ 
+\begin_inset Formula $\frac{3}{\frac{1}{h_{a}}+\frac{1}{h_{b}}+\frac{1}{h_{c}}}\leq\sqrt[4]{3S^{2}}$
+\end_inset
+
+ (Makowski)
+\end_layout
+
+\begin_layout Paragraph
+4681
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $n$
+\end_inset
+
+为正整数, 且
+\begin_inset Formula 
+\[
+P_{n}(x)=\prod_{k=1}^{n}\left(x+4\sin^{2}\frac{2k\pi}{2n+1}\right).
+\]
+
+\end_inset
+
+求
+\begin_inset Formula $P_{n}(0)$
+\end_inset
+
+与
+\begin_inset Formula $P_{n}'(0)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+解:
+\end_layout
+
+\begin_layout Standard
+取对数求导, 易得
+\begin_inset Formula 
+\[
+P_{n}^{\prime}(0)=\frac{P_{n}(0)}{4}\cdot\sum_{k=1}^{n}\left[\csc\left(\frac{2k\pi}{2n+1}\right)\right]^{2}.
+\]
+
+\end_inset
+
+由
+\begin_inset Formula $\left|\sin(2\pi-v)\right|=\left|\sin v\right|$
+\end_inset
+
+, 故
+\begin_inset Formula 
+\[
+P_{n}(0)=4^{n}\cdot\left|\prod_{k=1}^{2n}\sin\left(\frac{2k\pi}{2n+1}\right)\right|,
+\]
+
+\end_inset
+
+由
+\begin_inset Formula $\left|\ue^{2\ui u}-1\right|=2\left|\sin u\right|$
+\end_inset
+
+, 故
+\begin_inset Formula 
+\[
+P_{n}(0)=\left|\prod_{k=1}^{2n}\left(e^{4i\left(\frac{k\pi}{2n+1}\right)}-1\right)\right|=\left|\prod_{k=1}^{2n}\left(\ue^{\frac{2\ui k\pi}{2n+1}}-1\right)\right|.
+\]
+
+\end_inset
+
+当
+\begin_inset Formula $k=1,2,\cdots,2n$
+\end_inset
+
+时, 
+\begin_inset Formula $\ue^{\frac{2\ui k\pi}{2n+1}}$
+\end_inset
+
+是
+\begin_inset Formula 
+\[
+f(x)=\frac{x^{2n+1}-1}{x-1}=1+x+\cdots+x^{2n}
+\]
+
+\end_inset
+
+的根, 故
+\begin_inset Formula 
+\[
+P_{n}(0)=\left|\prod_{k=1}^{2n}\left(e^{\left(\frac{2ik\pi}{2n+1}\right)}-1\right)\right|=|f(1)|=2n+1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+下面计算
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}\left[\csc\left(\frac{2k\pi}{2n+1}\right)\right]^{2}=\sum_{k=1}^{n}\left[\cot\left(\frac{2k\pi}{2n+1}\right)\right]^{2}+n.
+\]
+
+\end_inset
+
+则同上面类似, 
+\begin_inset Formula $\cot\left(\frac{2k\pi}{2n+1}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $k=1,2,\cdots,2n$
+\end_inset
+
+是
+\begin_inset Formula 
+\[
+(x-\ui)^{2n+1}-(x+\ui)^{2n+1}
+\]
+
+\end_inset
+
+的零点, 令
+\begin_inset Formula $y=x^{2}$
+\end_inset
+
+代入上式, 得到
+\begin_inset Formula $y$
+\end_inset
+
+的多项式, 其零点为
+\begin_inset Formula $\cot^{2}\left(\frac{2k\pi}{2n+1}\right)$
+\end_inset
+
+, 将多项式展开的前两项为
+\begin_inset Formula 
+\[
+2(2n+1)y^{n}-\frac{2n(2n-1)}{3}y^{n-1}+\cdots.
+\]
+
+\end_inset
+
+由Vieta定理, 
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}\left[\cot\left(\frac{2k\pi}{2n+1}\right)\right]^{2}=\frac{n(2n-1)}{3},
+\]
+
+\end_inset
+
+故
+\begin_inset Formula 
+\[
+P_{n}^{\prime}(0)=\frac{2n+1}{4}\cdot\left[\frac{n(2n-1)}{3}+n\right]=\frac{n(n+1)(2n+1)}{6}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+4682
+\end_layout
+
+\begin_layout Standard
+求集合
+\begin_inset Formula $A=\left\{ \sqrt[mn]{m+n}:m,n\in\mathbb{N}_{+}\right\} $
+\end_inset
+
+的上, 下确界.
+\end_layout
+
+\begin_layout Paragraph
+解法1
+\end_layout
+
+\begin_layout Standard
+显然
+\begin_inset Formula $\sqrt[mn]{m+n}\ge1$
+\end_inset
+
+, 对于任意的
+\begin_inset Formula $m,n\in\mathbb{N}$
+\end_inset
+
+, 故
+\begin_inset Formula $\inf A\ge1$
+\end_inset
+
+.
+ 又由
+\begin_inset Formula $m=1$
+\end_inset
+
+时, 
+\begin_inset Formula $x_{n}=\sqrt[n]{n+1}\in A$
+\end_inset
+
+, 且有
+\begin_inset Formula $\lim_{n\to\infty}x_{n}=1$
+\end_inset
+
+, 故
+\begin_inset Formula $\inf A=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+取
+\begin_inset Formula $m=n=1$
+\end_inset
+
+, 则
+\begin_inset Formula $\sqrt[mn]{m+n}=2\in A$
+\end_inset
+
+, 故
+\begin_inset Formula $\sup A\ge2$
+\end_inset
+
+.
+ 又
+\begin_inset Formula $\sqrt[mn]{m+n}\le2$
+\end_inset
+
+等价于
+\begin_inset Formula $m+n\le2^{mn}$
+\end_inset
+
+, 而
+\begin_inset Formula 
+\[
+2^{mn}=(1+1)^{mn}\ge1+mn\ge m+n,
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $\sup A\le2$
+\end_inset
+
+, 即
+\begin_inset Formula $\sup A=2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+解法2
+\end_layout
+
+\begin_layout Standard
+由AM-GM不等式
+\begin_inset Formula 
+\[
+\sqrt[mn]{m+n}\leq\frac{(m+n)+\underbrace{1+1+\cdots+1}_{mn-1}}{mn}=\frac{m+n+mn-1}{mn};
+\]
+
+\end_inset
+
+由GM-HM不等式, 
+\begin_inset Formula 
+\[
+\sqrt[mn]{m+n}\geq\frac{mn}{\frac{1}{m+n}+\underbrace{\frac{1}{1}+\frac{1}{1}+\cdots+\frac{1}{1}}_{mn-1}}=\frac{mn}{\frac{1}{m+n}+mn-1}.
+\]
+
+\end_inset
+
+故
+\begin_inset Formula 
+\[
+\inf A\geq\inf_{m,n\in\mathbb{N}}\frac{mn}{\frac{1}{m+n}+mn-1}=1,\quad\sup A\leq\sup_{m,n\in\mathbb{N}}\frac{m+n+mn-1}{mn}=2.
+\]
+
+\end_inset
+
+取等条件同解法1.
+\end_layout
+
+\begin_layout Paragraph
+4683
+\end_layout
+
+\begin_layout Standard
+对于
+\begin_inset Formula $n\in\mathbb{N}_{+}$
+\end_inset
+
+, 
+\begin_inset Formula $S(n)$
+\end_inset
+
+表示
+\begin_inset Formula $n$
+\end_inset
+
+的十进表示的数字之和, 
+\begin_inset Formula $P(x)\in\mathbb{Z}[x]$
+\end_inset
+
+不为常数, 证明, 对于任意的
+\begin_inset Formula $r\in\mathbb{R}$
+\end_inset
+
+, 存在
+\begin_inset Formula $k\in\mathbb{Z}$
+\end_inset
+
+, 使得
+\begin_inset Formula $S\left(\left|P(k)\right|\right)>r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+证明1
+\end_layout
+
+\begin_layout Standard
+不妨设
+\begin_inset Formula $P(x)$
+\end_inset
+
+的首项系数为正, 则存在
+\begin_inset Formula $x_{0}>0$
+\end_inset
+
+, 使得
+\begin_inset Formula $\forall x>x_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $P(x)>0$
+\end_inset
+
+.
+ 故只需证
+\begin_inset Formula 
+\[
+A\coloneqq\left\{ S(P(n))\mid n\in\mathbb{Z},\ n>x_{0}\right\} 
+\]
+
+\end_inset
+
+无界即可.
+\end_layout
+
+\begin_layout Standard
+用反证法, 假设
+\begin_inset Formula $A$
+\end_inset
+
+有界, 则存在
+\begin_inset Formula $r,t\in\mathbb{Z}$
+\end_inset
+
+, 使得
+\begin_inset Formula 
+\begin{align*}
+S(P(t))=r, & t>x_{0},\\
+S(P(n))\le r, & \forall n>x_{0},
+\end{align*}
+
+\end_inset
+
+设
+\begin_inset Formula $k$
+\end_inset
+
+使得
+\begin_inset Formula $P(t)<10^{k}$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+P(t+10^{k})-P(t)=10^{k}Q(t),
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $Q(x)\in\mathbb{Z}[x]$
+\end_inset
+
+, 于是
+\begin_inset Formula $P(t+10^{k})=P(t)+10^{k}Q(t)$
+\end_inset
+
+, 从而
+\begin_inset Formula 
+\[
+S(P(t+10^{k}))=S(P(t))+S(Q(t))>S(P(t))=r.
+\]
+
+\end_inset
+
+矛盾.
+\end_layout
+
+\begin_layout Paragraph
+证明2
+\end_layout
+
+\begin_layout Standard
+对于任何
+\begin_inset Formula $m,n\in\mathbb{N}_{+}$
+\end_inset
+
+, 记
+\begin_inset Formula 
+\[
+A(n,m)=\left\{ k\in\mathbb{N}_{+}:k<10^{m}\text{ 且 }S(k)\le n\right\} ,
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $\left|A(n,m)\right|$
+\end_inset
+
+为
+\begin_inset Formula $x_{1}+\cdots+x_{m}\le n$
+\end_inset
+
+的非负整数解的个数.
+ 当
+\begin_inset Formula $x_{i}\ne0$
+\end_inset
+
+时, 有9中选择, 故
+\begin_inset Formula 
+\[
+\left|A(n,m)\right|\le\binom{m}{n}9^{n}.
+\]
+
+\end_inset
+
+假设
+\begin_inset Formula $P(x)$
+\end_inset
+
+是
+\begin_inset Formula $d$
+\end_inset
+
+次多项式, 其系数的绝对值之和为
+\begin_inset Formula $M$
+\end_inset
+
+, 则对于任何
+\begin_inset Formula $k\le N$
+\end_inset
+
+, 
+\begin_inset Formula $\left|P(k)\right|\le MN^{d}$
+\end_inset
+
+.
+ 由于
+\begin_inset Formula $\left|P(1)\right|,\cdots,\left|P(N)\right|$
+\end_inset
+
+中最多有
+\begin_inset Formula $2d$
+\end_inset
+
+个相同, 故
+\begin_inset Formula $\left\{ \left|P(1)\right|,\cdots,\left|P(N)\right|\right\} $
+\end_inset
+
+中至少有
+\begin_inset Formula $\frac{N}{2d}$
+\end_inset
+
+个不同的值, 每个的位数不超过
+\begin_inset Formula $m=1+\lfloor\log_{10}(MN^{d})\rfloor$
+\end_inset
+
+, 故
+\begin_inset Formula 
+\[
+\left|A(r,m)\right|\le\binom{m}{r}9^{r}\le(9m)^{r}\le(C_{1}+C_{2}\log N)^{r},
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $C_{1},C_{2}$
+\end_inset
+
+为仅依赖于
+\begin_inset Formula $d,M$
+\end_inset
+
+的常数.
+ 由于当
+\begin_inset Formula $N$
+\end_inset
+
+充分大时, 
+\begin_inset Formula $\frac{N}{2d}$
+\end_inset
+
+比
+\begin_inset Formula $\log^{r}N$
+\end_inset
+
+增长快, 故在
+\begin_inset Formula $k\le N$
+\end_inset
+
+中, 必然有
+\begin_inset Formula $\left|P(k)\right|\not\in A(r,m)$
+\end_inset
+
+, 但有
+\begin_inset Formula $P(k)<10^{m}$
+\end_inset
+
+, 即有
+\begin_inset Formula $k\le N$
+\end_inset
+
+使
+\begin_inset Formula $S\left(\left|P(k)\right|\right)>r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+证明3
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula 
+\[
+P(x)=\sum_{i=0}^{m}a_{i}x^{i},\quad m\ge1,\ a_{m}>0.
+\]
+
+\end_inset
+
+记
+\begin_inset Formula $a=\max_{i}\left|a_{i}\right|$
+\end_inset
+
+, 
+\begin_inset Formula $N,Q\in\mathbb{N}_{+}$
+\end_inset
+
+满足
+\begin_inset Formula 
+\[
+r+1<N,\qquad a(m+1)^{2}(N+m)^{m+1}<10^{Q}.
+\]
+
+\end_inset
+
+下面证明
+\begin_inset Formula 
+\[
+k=\sum_{l=0}^{N}B^{l},\qquad B=10^{Q}
+\]
+
+\end_inset
+
+有所求的性质.
+\end_layout
+
+\begin_layout Standard
+对于
+\begin_inset Formula $i,j\in\mathbb{N}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+b(i,j)=\#\left\{ \left(k_{1},k_{2},\cdots,k_{i}\right)\in\left\{ 0,1,\cdots,N\right\} ^{i}:\sum_{l=1}^{i}k_{l}=j\right\} ,
+\]
+
+\end_inset
+
+则
+\begin_inset Formula $b(i,j)\le(N+1)^{i}$
+\end_inset
+
+, 对于
+\begin_inset Formula $1\le j\le N$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+b\left(m,(m-1)N+j\right)=\binom{N-j+m-1}{m-1},
+\]
+
+\end_inset
+
+这是因为当
+\begin_inset Formula $y_{l}=N-k_{l}$
+\end_inset
+
+时, 
+\begin_inset Formula $\sum_{l=1}^{m}y_{l}=N-j$
+\end_inset
+
+的非负整数解数有
+\begin_inset Formula $\binom{N-j+m-1}{m-1}$
+\end_inset
+
+个.
+ 故
+\begin_inset Formula 
+\[
+ab(m,(m-1)N+j)\le a(N+m)^{m-1}<B.
+\]
+
+\end_inset
+
+当
+\begin_inset Formula $0\le i\le m$
+\end_inset
+
+时, 有恒等式
+\begin_inset Formula 
+\[
+k^{i}=\left(\sum_{l=0}^{N}B^{l}\right)^{i}=\sum_{j=0}^{iN}b(i,j)B^{j},
+\]
+
+\end_inset
+
+故
+\begin_inset Formula 
+\begin{align*}
+P(k) & =\sum_{i=0}^{m}a_{i}k^{i}=\sum_{i=0}^{m}\sum_{j=0}^{iN}a_{i}b(i,j)B^{j}\\
+ & =\sum_{j=0}^{mN}\sum_{i=\lceil\frac{j}{N}\rceil}^{m}a_{i}b(i,j)B^{j}\\
+ & =\sum_{j=0}^{(m-1)N}\sum_{i=\lceil\frac{j}{N}\rceil}^{m}a_{i}b(i,j)B^{j}+a_{m}\sum_{j=1}^{N-1}b(m,(m-1)N+j)B^{(m-1)N+j}+a_{m}B^{mN},
+\end{align*}
+
+\end_inset
+
+而
+\begin_inset Formula 
+\begin{align*}
+\left|R_{1}\right|=\left|\sum_{j=0}^{(m-1)N}\sum_{i=\lceil\frac{j}{N}\rceil}^{m}a_{i}b(i,j)B^{j}\right| & <\sum_{j=0}^{mN}\sum_{i=0}^{m}a(N+1)^{m}B^{(m-1)N}\\
+ & <a(m+1)^{2}(N+1)^{m+1}B^{(m-1)N}\\
+ & <B^{(m-1)N+1},
+\end{align*}
+
+\end_inset
+
+故
+\begin_inset Formula 
+\begin{align*}
+P(k) & =a_{m}B^{mN}+a_{m}\sum_{j=1}^{N-1}b(m,(m-1)N+j)B^{(m-1)N+j}+R_{1}\\
+ & =a_{m}B^{mN}+a_{m}\sum_{j=1}^{N-2}b(m,(m-1)N+j)B^{(m-1)N+j}+\underbrace{a_{m}b(m,(m-1)N+1)B^{(m-1)N+1}+R_{1}}_{R},
+\end{align*}
+
+\end_inset
+
+由
+\begin_inset Formula $0<R<B^{mN-(N-2)}$
+\end_inset
+
+, 上式中前两项表示
+\begin_inset Formula $P(k)$
+\end_inset
+
+的最高位, 且每项的十进表示在位数上互不重叠, 且至少有
+\begin_inset Formula $N-1$
+\end_inset
+
+段, 故
+\begin_inset Formula $S(P(k))\ge N-1>r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+4685(组合数学)
+\end_layout
+
+\begin_layout Standard
+假设学校有24个学生, 但只有两间教室, 每间教室可容纳12人, 每个学生每天都去其中一间教室里上学.
+ 证明存在一种上课方式, 使得每个学生在14天内与每一个同学在同一间教室上过课.
+\end_layout
+
+\begin_layout Paragraph
+解
+\end_layout
+
+\begin_layout Standard
+很简单, 将学生分
+\begin_inset Formula $A,B,C,D$
+\end_inset
+
+四组, 3天就够了, 比如
+\begin_inset Formula $(A,B)$
+\end_inset
+
+, 
+\begin_inset Formula $(A,C)$
+\end_inset
+
+, 
+\begin_inset Formula $(A,D$
+\end_inset
+
+).
+ 但两天是不足的, 因为每个学生每天最多与11个同学在同一间教室上课, 两天最多只能遇到22个同学.
+\end_layout
+
+\begin_layout Paragraph
+4686(不等式, 加强命题法)
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $a,b,c$
+\end_inset
+
+是正实数, 证明
+\begin_inset Formula 
+\[
+\frac{a^{2}}{b+c}+\frac{b^{2}}{c+a}+\frac{c^{2}}{a+b}\geq\frac{a}{2}+\sqrt[3]{\frac{b^{3}+c^{3}}{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+证明
+\end_layout
+
+\begin_layout Standard
+加强命题法, 证明
+\begin_inset Formula 
+\[
+\frac{a^{2}}{b+c}+\frac{b^{2}}{c+a}+\frac{c^{2}}{a+b}\geq\frac{a}{2}+\frac{b^{2}+c^{2}}{b+c}.
+\]
+
+\end_inset
+
+去分母, 用均值不等式
+\begin_inset Formula 
+\[
+\begin{aligned}\left(a^{2}-b^{2}\right)^{2} & +\left(a^{2}-c^{2}\right)^{2}+\left(\frac{b^{4}+2a^{3}b}{3}-a^{2}b^{2}\right)+\left(\frac{c^{4}+2a^{3}c}{3}-a^{2}c^{2}\right)\\
+ & +\left(\frac{5b^{4}+4a^{3}b+3c^{4}}{12}-ab^{2}c\right)+\left(\frac{5c^{4}+4a^{3}c+3b^{4}}{12}-abc^{2}\right)\geq0.
+\end{aligned}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+4687(数项级数)
+\end_layout
+
+\begin_layout Standard
+求
+\begin_inset Formula 
+\[
+\sum_{n=1}^{\infty}\left(\frac{1}{n+1}+\frac{1}{n+2}+\cdots+\frac{1}{2n}-\ln2+\frac{1}{4n}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+解
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula 
+\[
+S_{k}=\frac{1}{k+1}+\frac{1}{k+2}+\cdots+\frac{1}{2k}-\ln2+\frac{1}{4k}.
+\]
+
+\end_inset
+
+则
+\begin_inset Formula 
+\begin{align*}
+\sum_{n=1}^{N}S_{n} & =\sum_{n=1}^{N}\left[\sum_{k=1}^{n-1}(S_{k+1}-S_{k})+S_{1}\right]\\
+ & =NS_{1}-\sum_{n=1}^{N}\sum_{k=1}^{n-1}\frac{1}{4k(k+1)(2k+1)}\\
+ & =NS_{1}-\frac{1}{4}\sum_{k=1}^{N-1}\sum_{n=k+1}^{N}\frac{1}{k(k+1)(2k+1)}\\
+ & =NS_{1}-\frac{1}{4}\sum_{k=1}^{N-1}\frac{N-k}{k(k+1)(2k+1)}\\
+ & =N\left[S_{1}-\frac{1}{4}\sum_{k=1}^{N-1}\frac{1}{k(k+1)(2k+1)}\right]+\frac{1}{4}\sum_{k=1}^{N-1}\frac{1}{(k+1)(2k+1)}\\
+ & =N\left[S_{1}-\sum_{k=1}^{N-1}\left(\frac{1}{4}\left(\frac{1}{k}-\frac{1}{k+1}\right)+\left(\frac{1}{2k+2}-\frac{1}{2k+1}\right)\right)\right]+\frac{1}{2}\sum_{k=1}^{N-1}\left[\frac{1}{2k+1}-\frac{1}{2k+2}\right]\\
+ & =N\left(\frac{3}{4}-\ln2-\frac{1}{4}\left(1-\frac{1}{N}\right)+\left(\frac{1}{3}-\frac{1}{4}+\cdots+\frac{1}{2N-1}-\frac{1}{2N}\right)\right)+\frac{1}{2}\sum_{k=1}^{N-1}\left[\frac{1}{2k+1}-\frac{1}{2k+2}\right]\\
+ & =N\left(\frac{1}{4N}-\frac{1}{4N}+o\left(\frac{1}{N}\right)\right)+\frac{1}{2}\left(-\frac{1}{2}+\ln2-\frac{1}{4N}+o\left(\frac{1}{N}\right)\right)\\
+ & =\frac{\ln2}{2}-\frac{1}{4}+o(1).
+\end{align*}
+
+\end_inset
+
+其中, 使用了
+\begin_inset Formula 
+\[
+1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\cdots+\frac{1}{2N-1}-\frac{1}{2N}-\ln2=-\frac{1}{4N}+o\left(\frac{1}{N}\right),
+\]
+
+\end_inset
+
+这是因为Stolz公式
+\begin_inset Formula 
+\[
+\lim_{N\to\infty}\frac{1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\cdots+\frac{1}{2N-1}-\frac{1}{2N}-\ln2}{\frac{1}{N}}=\lim_{N\to\infty}\frac{\frac{1}{2N+1}-\frac{1}{2N+2}}{\frac{1}{N+1}-\frac{1}{N}}=-\frac{1}{4}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+4689(解方程, 不等式, 求导)
+\end_layout
+
+\begin_layout Standard
+设正实数
+\begin_inset Formula $x,y,z$
+\end_inset
+
+满足
+\begin_inset Formula $x+y+z=3$
+\end_inset
+
+, 且
+\begin_inset Formula 
+\[
+x^{x^{2}}y^{y^{2}}z^{z^{2}}=\frac{1}{\left(x^{2}\right)^{xz}\left(y^{2}\right)^{yx}\left(z^{2}\right)^{zy}},
+\]
+
+\end_inset
+
+求满足条件的所有
+\begin_inset Formula $x,y,z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+解
+\end_layout
+
+\begin_layout Standard
+利用不等式
+\begin_inset Formula $\log t\ge1-\frac{1}{t}$
+\end_inset
+
+, 仅当
+\begin_inset Formula $t=1$
+\end_inset
+
+时取等号.
+ 于是
+\begin_inset Formula 
+\[
+\begin{aligned}0 & =(x+y+z)^{2}-3(x+y+z)\\
+ & =\left(x^{2}+2xz\right)\left(1-\frac{1}{x}\right)+\left(y^{2}+2yx\right)\left(1-\frac{1}{y}\right)+\left(z^{2}+2zy\right)\left(1-\frac{1}{z}\right)\\
+ & <\left(x^{2}+2xz\right)\log x+\left(y^{2}+2yx\right)\log y+\left(z^{2}+2zy\right)\log z\\
+ & =\log\left(x^{x^{2}+2xz}\cdot y^{y^{2}+2yx}\cdot z^{z^{2}+2zy}\right)
+\end{aligned}
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $x=y=z=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+4690(不等式)
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $x,y,z$
+\end_inset
+
+为非负实数, 满足
+\begin_inset Formula $xy+yz+zx>3$
+\end_inset
+
+且
+\begin_inset Formula $xy+yz+zx+xyz<4$
+\end_inset
+
+, 证明
+\begin_inset Formula 
+\[
+x+y+z>xy+yz+zx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+证明
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $xy+yz+zx=3+a$
+\end_inset
+
+, 
+\begin_inset Formula $3+a+xyz=4-b$
+\end_inset
+
+, 其中
+\begin_inset Formula $a,b>0$
+\end_inset
+
+, 则
+\begin_inset Formula $xyz=1-a-b>0$
+\end_inset
+
+, 有
+\begin_inset Formula $0<a<1$
+\end_inset
+
+.
+ 由于
+\begin_inset Formula $xy+yz+zx>3$
+\end_inset
+
+, 故不妨设
+\begin_inset Formula $x>1$
+\end_inset
+
+.
+ 令
+\begin_inset Formula $y+z=A$
+\end_inset
+
+, 
+\begin_inset Formula $yz=B$
+\end_inset
+
+, 则
+\begin_inset Formula $xA+B=3+a$
+\end_inset
+
+, 
+\begin_inset Formula $xB=1-a-b$
+\end_inset
+
+.
+ 解的
+\begin_inset Formula $B=\frac{1-a-b}{x}$
+\end_inset
+
+, 
+\begin_inset Formula $A=\frac{(a+3)x+a+b-1}{x^{2}}$
+\end_inset
+
+.
+ 于是
+\begin_inset Formula 
+\begin{align*}
+x+y+z-(xy+yz+zx) & =x+A-(a+3)\\
+ & =x+\frac{(a+3)x+a+b-1}{x^{2}}-(a+3)\\
+ & =\frac{x^{3}-(3+a)x^{2}+(3+a)x+a+b-1}{x^{2}}\\
+ & =\frac{ax(x-2)^{2}+(1-a)(x-1)^{3}+b}{x^{2}}>0.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Q(来自数学游乐场群)
+\end_layout
+
+\begin_layout Standard
+已知
+\begin_inset Formula $\sum_{n=1}^{\infty}\frac{1}{a_{n}}$
+\end_inset
+
+是正项发散级数, 
+\begin_inset Formula $\lambda$
+\end_inset
+
+为正实数, 求级数
+\begin_inset Formula 
+\[
+\sum_{n=1}^{\infty}\frac{a_{1}a_{2}\cdots a_{n}}{(a_{2}+\lambda)(a_{3}+\lambda)\cdots(a_{n+1}+\lambda)}
+\]
+
+\end_inset
+
+的和.
+\end_layout
+
+\begin_layout Paragraph
+解
+\end_layout
+
+\begin_layout Standard
+由于
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1/a_{n+1}}{\prod_{k=2}^{n+1}\left(1+\frac{\lambda}{a_{k}}\right)}=\frac{1}{\lambda}\left(\frac{1}{\prod_{k=2}^{n}\left(1+\frac{\lambda}{a_{k}}\right)}-\frac{1}{\prod_{k=2}^{n+1}\left(1+\frac{\lambda}{a_{k}}\right)}\right),
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{n=2}^{\infty}\frac{a_{1}/a_{n+1}}{\prod_{k=2}^{n+1}\left(1+\frac{\lambda}{a_{k}}\right)}=\frac{a_{1}}{\lambda}\left(\frac{1}{1+\frac{\lambda}{a_{2}}}-\frac{1}{\prod_{k=2}^{\infty}\left(1+\frac{\lambda}{a_{k}}\right)}\right)=\frac{a_{1}a_{2}}{(a_{2}+\lambda)\lambda}
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula 
+\[
+\sum_{n=1}^{\infty}\frac{a_{1}a_{2}\cdots a_{n}}{\left(a_{2}+\lambda\right)\cdots(a_{n+1}+\lambda)}=\frac{a_{1}}{a_{2}+\lambda}+\sum_{n=2}^{\infty}\frac{a_{1}/a_{n+1}}{\prod_{k=2}^{n+1}\left(1+\frac{\lambda}{a_{k}}\right)}=\frac{a_{1}}{a_{2}+\lambda}+\frac{a_{1}a_{2}}{(a_{2}+\lambda)\lambda}=\frac{a_{1}}{\lambda}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+2022年阿里巴巴全球数学竞赛 决赛一题的解答
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\widetilde{h}=\frac{g}{1+\left|f\right|}$
+\end_inset
+
+, 在
+\begin_inset Formula $\Omega$
+\end_inset
+
+上显然有
+\begin_inset Formula $\widetilde{h}f=\frac{fg}{1+\left|f\right|}<g$
+\end_inset
+
+.
+ 然后用Urysohn引理, 考虑两个闭集
+\begin_inset Formula $\Omega$
+\end_inset
+
+和
+\begin_inset Formula $F=g^{-1}((-\infty,0])$
+\end_inset
+
+, 则存在连续函数
+\begin_inset Formula $\chi:\mathbb{R}^{d}\to\left[0,1\right]$
+\end_inset
+
+, 使得
+\begin_inset Formula $\chi(F)=0$
+\end_inset
+
+, 
+\begin_inset Formula $\chi(\Omega)=1$
+\end_inset
+
+.
+ 取
+\begin_inset Formula $h=\frac{1-\chi}{2}+\chi\widetilde{h}$
+\end_inset
+
+, 则由于
+\begin_inset Formula $\mathbb{R}^{d}=F\cup\Omega\cup(F^{c}\setminus\Omega)$
+\end_inset
+
+, 
+\begin_inset Formula $h\mid_{\Omega}=\widetilde{h}$
+\end_inset
+
+, 
+\begin_inset Formula $h\mid_{F}=\frac{1}{2}$
+\end_inset
+
+.
+ 现在只需要证明在
+\begin_inset Formula $F^{c}\setminus\Omega$
+\end_inset
+
+上满足
+\begin_inset Formula $h$
+\end_inset
+
+非负, 
+\begin_inset Formula 
+\[
+h>0\Longleftrightarrow\frac{g\chi}{1+\left|f\right|}+\frac{1-\chi}{2}>0\Longleftrightarrow g>\frac{\chi-1}{2}\frac{(1+\left|f\right|)}{\chi},
+\]
+
+\end_inset
+
+而这后者显然由下式所保证
+\begin_inset Formula 
+\[
+g>0\ge\frac{\chi-1}{2}\frac{1+\left|f\right|}{\chi}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(2) 由于
+\begin_inset Formula $f$
+\end_inset
+
+连续, 所以
+\begin_inset Formula $E=f^{-1}((-\infty,0])$
+\end_inset
+
+是闭集, 由(1), 存在
+\begin_inset Formula $h>0$
+\end_inset
+
+, 满足
+\begin_inset Formula $hf<g$
+\end_inset
+
+ in 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ 由于
+\begin_inset Formula $h$
+\end_inset
+
+如上面构造.
+\end_layout
+
+\end_body
+\end_document

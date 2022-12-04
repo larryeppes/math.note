@@ -1,5 +1,5 @@
 \chapter{数学分析}
-\section{极限}
+\section{极限\index{极限}}
 \bq{}{}
 设函数$\varphi(x)$可导, 且满足$\varphi(0)=0$, 又设$\varphi'(x)$单调减少. 
 \begin{enumerate}
@@ -43,6 +43,16 @@
 \ea
 
 \section{积分}
+
+\bq{}{}
+\bee
+\int_{-1}^1 \frac{\sqrt{\frac{x+1}{1-x}} \log \left(\frac{2 x^2+2 x+1}{2 x^2-2
+		x+1}\right)}{x} \, dx
+\eee
+\eq
+\ba
+$4\pi \mathrm{arccot}(\sqrt{\phi}).$
+\ea
 
 \bq{}{}
 设函数$f(x)$在$[a,b]$上有连续的导数, 且$f(a)=0$, 证明
@@ -781,6 +791,37 @@ LHS = \int_{0}^{\infty}\int_{0}^{\infty}(\ue^{-x}-\ue^{-xt})\ue^{-xs}\ud s\ud x
   = \int_{0}^{\infty}\left(\frac{1}{s+1}-\frac{1}{s+t}\right)
   = \ln\frac{s+1}{s+t}\Big\vert_{0}^{\infty}
   = \ln t
+\eee
+\ea
+
+\bq{}{}
+求积分
+\bee
+I(a)=\int_{0}^{\frac{\pi}{2}}\ln\abs{\sin^2x-a}\ud x.
+\eee
+\eq
+\ba
+当$a\le0$时, 设$a=-t$,
+\begin{align*}
+	I(a) & =\int_{0}^{\pi/2}\ln\left(t+\sin^{2}x\right)\ud x\\
+	& =\int_{0}^{\pi/2}\left[\ln\left(\sin^{2}x\right)+\int_{0}^{t}\frac{1}{s+\sin^{2}x}\ud s\right]\ud x\\
+	& =-\pi\ln2+\int_{0}^{t}\int_{0}^{\pi/2}\frac{1}{s+\sin^{2}x}\ud x\ud s\\
+	& =-\pi\ln2+\frac{\pi}{2}\int_{0}^{t}\frac{1}{\sqrt{s(1+s)}}\ud s\\
+	& =-\pi\ln2+\pi\arctanh\sqrt{\frac{-a}{1-a}}.
+\end{align*}
+当$a\ge1$时, 取$a=t+1$, 同上面的解法
+\begin{align*}
+	I(a) & =\int_{0}^{\pi/2}\ln\left(t+\cos^{2}x\right)\ud x\\
+	& =\int_{0}^{\pi/2}\left[\ln\cos^{2}x+\int_{0}^{t}\frac{1}{s+\cos^{2}x}\ud s\right]\ud x\\
+	& =-\pi\ln2+\pi\cdot\arctanh\sqrt{\frac{t}{1+t}}=-\pi\ln2+\pi\cdot\arctanh\sqrt{\frac{a-1}{a}}.
+\end{align*}
+当$0<a<1$时, 
+\bee
+I(a)=\frac{1}{4}\int_{0}^{2\pi}\ln\left|a-\sin^{2}x\right|\ud x=\frac{1}{4}\int_{0}^{2\pi}\ln\left|\frac{1-2a}{2}-\frac{\cos2x}{2}\right|\ud x.
+\eee
+令$\cos2\alpha=2a-1$, 则
+\bee
+I(a)=\frac{1}{4}\int_{0}^{2\pi}\ln\left|\frac{\cos2\alpha+\cos2x}{2}\right|\ud x=\frac{1}{4}\int_{0}^{2\pi}\ln\left|\cos(x+\alpha)\cos(x-a)\right|\ud x=\frac{1}{2}\int_{0}^{2\pi}\ln\left|\cos x\right|\ud x=-\pi\ln2.
 \eee
 \ea
 

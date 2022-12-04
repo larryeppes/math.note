@@ -1,0 +1,592 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+
+%\everymath{\color{blue}\everymath{}}
+\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-extended-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+crux-2022006
+\end_layout
+
+\begin_layout Paragraph
+MA153 (数论)
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $a,b,x,y$
+\end_inset
+
+是有理数, 满足
+\begin_inset Formula $x\ge0$
+\end_inset
+
+, 
+\begin_inset Formula $a>0$
+\end_inset
+
+且
+\begin_inset Formula $\sqrt{a}$
+\end_inset
+
+不是有理数.
+ 若假设
+\begin_inset Formula $\sqrt[3]{\sqrt{a}+b}=\sqrt{x}+y$
+\end_inset
+
+.
+ 证明
+\begin_inset Formula $\sqrt[3]{a-b^{2}}$
+\end_inset
+
+是有理数.
+\end_layout
+
+\begin_layout Standard
+证明一个引理: 假设
+\begin_inset Formula $s,t,u,v$
+\end_inset
+
+是有理数, 使得
+\begin_inset Formula $s,u\ge0$
+\end_inset
+
+且
+\begin_inset Formula $\sqrt{s}$
+\end_inset
+
+是无理数.
+ 若
+\begin_inset Formula 
+\[
+\sqrt{s}+t=\sqrt{u}+v,
+\]
+
+\end_inset
+
+则有
+\begin_inset Formula $s=u$
+\end_inset
+
+且
+\begin_inset Formula $t=v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Example 4 (无穷级数)
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $f(n)=\frac{1}{2^{n}}+\frac{1}{3^{n}}+\frac{1}{4^{n}}+\cdots$
+\end_inset
+
+, 求
+\begin_inset Formula $\sum_{n=2}^{\infty}f(n)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+本质上是交换求和次序.
+\end_layout
+
+\begin_layout Paragraph
+OC562 (游戏, 策略)
+\end_layout
+
+\begin_layout Standard
+Ruby and Sapphire are celebrating Pi Day by sharing a circular pie.
+ Ruby has two red birthday cake candles, and Sapphire has two blue candles.
+ Ruby starting, they will alternately place one candle on the perimeter
+ of the pie.
+ (Of course, no two candles may be in the same place!) After all the candles
+ are placed, each girl will get the portion of the pie that is closer to
+ one of her candles than to any of the others.
+ The goal is to get strictly more pie than one’s opponent; an equal division
+ is a draw.
+\end_layout
+
+\begin_layout Standard
+Either find a winning strategy for one player and show that it is essentially
+ unique, or show that the game, rationally played, is a draw.
+\end_layout
+
+\begin_layout Paragraph
+OC563 (定积分)
+\end_layout
+
+\begin_layout Standard
+Find, with proof, 
+\begin_inset Formula $\int_{0}^{\pi/2}\cos^{31416}(x)\ud x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+OC564 (数列)
+\end_layout
+
+\begin_layout Standard
+Define a "Fibonacci-like" sequence as follows: 
+\begin_inset Formula $A_{1}=A_{2}=1$
+\end_inset
+
+, and 
+\begin_inset Formula $A_{n}=2A_{n-2}+A_{n-1}$
+\end_inset
+
+ for 
+\begin_inset Formula $n\geq3;$
+\end_inset
+
+ so 
+\begin_inset Formula $A_{3}=2\times1+1=3$
+\end_inset
+
+, 
+\begin_inset Formula $A_{4}=2\times1+3=5$
+\end_inset
+
+, and so on.
+ Prove that for odd 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n-1}A_{i}=A_{n}-1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+OC565 (不等式, 极限)
+\end_layout
+
+\begin_layout Standard
+给定
+\begin_inset Formula $\sin(xy)=1$
+\end_inset
+
+, 求
+\begin_inset Formula $\sin x\sin y$
+\end_inset
+
+的最小上界, 并指出这个上界不可达.
+\end_layout
+
+\begin_layout Standard
+By continuity of 
+\begin_inset Formula $\cos x$
+\end_inset
+
+, given 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+, there is an 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\cos\left(\frac{1}{n}\right)>1-\varepsilon$
+\end_inset
+
+.
+ Given this 
+\begin_inset Formula $n$
+\end_inset
+
+, we find the largest odd natural number smaller than 
+\begin_inset Formula $(4n+1)\pi/2$
+\end_inset
+
+, which leaves remainder 1 when divided by 4 .
+ Say 
+\begin_inset Formula $4k+1<(4n+1)\pi/2\leqslant4k+5$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula 
+\[
+0\leqslant\frac{4k+5}{4n+1}-\frac{\pi}{2}<\frac{4}{4n+1}<\frac{1}{n},
+\]
+
+\end_inset
+
+thus 
+\begin_inset Formula 
+\[
+\sin\left(\frac{4k+5}{4n+1}\right)=\cos\left(\frac{4k+5}{4n+1}-\frac{\pi}{2}\right)>1-\varepsilon.
+\]
+
+\end_inset
+
+Taking 
+\begin_inset Formula $x=\frac{(4n+1)\pi}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $y=\frac{4k+5}{4n+1}$
+\end_inset
+
+ we have 
+\begin_inset Formula $\sin(xy)=\sin\left(\left(2k+2+\frac{1}{2}\right)\pi\right)=1$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+\sin(x)\sin(y)=\sin\left(\left(2n+\frac{1}{2}\right)\pi\right)\sin\left(\frac{4k+5}{4n+1}\right)=\sin\left(\frac{4k+5}{4n+1}\right)>1-\varepsilon.
+\]
+
+\end_inset
+
+So the upper bound is indeed 
+\begin_inset Formula $1.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+If the upper bound can be achieved, then there are odd integers 
+\begin_inset Formula $r,s,t$
+\end_inset
+
+ such that 
+\begin_inset Formula $x=r\pi/2,y=s\pi/2$
+\end_inset
+
+ and 
+\begin_inset Formula $xy=t\pi/2$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $\pi=\frac{2t}{rs}$
+\end_inset
+
+, a contradiction as 
+\begin_inset Formula $\pi$
+\end_inset
+
+ is irrational.
+\end_layout
+
+\begin_layout Paragraph
+Problem (三角函数, 不等式)
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $A,B,C$
+\end_inset
+
+记为三角形
+\begin_inset Formula $ABC$
+\end_inset
+
+中的三个角.
+ 证明
+\begin_inset Formula 
+\[
+-1<\cos A\cos B\cos C\le\frac{1}{8}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+4702 (数论, 二次剩余)
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $p$
+\end_inset
+
+是模
+\begin_inset Formula $4$
+\end_inset
+
+同余
+\begin_inset Formula $3$
+\end_inset
+
+的素数.
+ 
+\begin_inset Formula $S$
+\end_inset
+
+记为模
+\begin_inset Formula $p$
+\end_inset
+
+数域中的平方数.
+ 证明
+\begin_inset Formula 
+\[
+\prod_{{a<b\atop a,b\in S}}(a+b)=\pm1\pmod p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+4704 (不等式)
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $a,b,c,d\in[0,1)$
+\end_inset
+
+, 证明
+\begin_inset Formula 
+\[
+\frac{1}{1-a^{6}}+\frac{1}{1-b^{6}}+\frac{1}{1-c^{6}}+\frac{1}{1-d^{2}}\ge\frac{2}{1-(abc)^{2}}+\frac{2}{1-abcd}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+4705 (极限, 积分法)
+\end_layout
+
+\begin_layout Standard
+求极限
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\frac{1}{\sqrt[3]{n^{2}}}\sum_{k=1}^{n}\frac{1}{\sqrt[3]{k}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+4707 (多项式, 三角函数, 韦达定理)
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $n\ge2$
+\end_inset
+
+是整数.
+ 证明
+\begin_inset Formula 
+\begin{align*}
+\sum_{k=1}^{n-1}\csc^{2}\left(\frac{k\pi}{n}\right) & =\frac{n^{2}-1}{3},\\
+\sum_{k=1}^{n-1}\csc^{4}\left(\frac{k\pi}{n}\right) & =\frac{n^{4}+10n^{2}-11}{45}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

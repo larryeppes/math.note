@@ -16,6 +16,29 @@
 设$f(x)=x^n+a_1x^{n-1}+\cdots+a_{n-1}x+1$有$n$个实根, 且系数$a_1,\cdots,a_{n-1}$都是非负的. 证明$f(2)\ge3^n$.
 \eq
 
+\bq{}{}
+设$a,b,c\in\RR_{+}$, $a+b+c=1$. 证明
+\be
+\frac{1}{1+a^{2}}+\frac{1}{1+b^{2}}+\frac{1}{1+c^{2}}\le\frac{27}{10}.
+\ee
+\eq
+\ba
+证函数$\frac{1}{1+1+x^{2}}$在$x\in\left(0,1\right)$上满足$\frac{1}{1+x^{2}}\le\frac{27}{25}-\frac{27}{50}x$.
+\ea
+\ba
+让$a=\frac{1}{yz}$, 有$\sumcyc\frac{1}{1+y^{2}z^{2}}\ge\frac{3}{10}$,
+于是
+\begin{align*}
+	& \sum_{cyc}\frac{1}{1+y^{2}z^{2}} \ge \frac{3}{10}\\
+	\Leftrightarrow & 27+17\sum_{cyc}x^{2}y^{2}+7x^{2}y^{2}z^{2}\sum_{cyc}x^{2}\ge3x^{4}y^{4}z^{4}\\
+	\Leftrightarrow & 27+17\left(\sum_{cyc}xy\right)^{2}-34x^{2}y^{2}z^{2}+4x^{4}y^{4}z^{4}-14x^{2}y^{2}z^{2}\sum_{cyc}xy\ge0
+\end{align*}
+\be
+17\left(\frac{1}{\sqrt{27}x^{2}y^{2}z^{2}}-\sqrt{27}\right)^{2}+\frac{14}{6}\left[x^{2}y^{2}z^{2}-3\sum_{cyc}xy\right]^{2}+4\left[\frac{1}{9}x^{4}y^{4}z^{4}-\left(\sum_{cyc}xy\right)^{2}\right]+16\left(\frac{1}{27}x^{4}y^{4}z^{4}-27\right)\ge0.
+\ee
+上式显然成立. 当$x=y=z=\sqrt{3}$时, 不等式中的等号成立.
+\ea
+
 \bq{Ho Joo Lee}{}
 $a,b,c$是三个正实数, 证明:
 \bee
@@ -34,6 +57,28 @@ a+b+c\le\frac{a^2+bc}{b+c}+\frac{b^2+ca}{c+a}+\frac{c^2+ab}{a+b}.
 \eq
 \ba
 不等式等价于$\sumcyc\frac{(a-c)(a-b)}{2a^3+abc}\ge0$, 用Shur不等式\ref{th:GSI}即得.
+\ea
+
+\bq{}{}
+设正实数$a,b,c$满足$a+b+c=1$. 证明: 
+\bee
+\frac{1+a}{1-a}+\frac{1+b}{1-b}+\frac{1+c}{1-c}\le2\left(\frac{b}{a}+\frac{c}{b}+\frac{a}{c}\right).
+\eee
+\eq
+\ba
+设$a=\tan\frac{B}{2}\tan\frac{C}{2}$, 即证
+\bee
+\sumcyc\frac{1+a}{1-a}=\sumcyc\frac{1+\tan\frac{B}{2}\tan\frac{C}{2}}{1-\tan\frac{B}{2}\tan\frac{C}{2}}
+=3+2\sumcyc\frac{\cot\frac{A}{2}}{\cot\frac{B}{2}+\cot\frac{C}{2}}\le2\sumcyc\frac{\cot\frac{B}{2}}{\cot\frac{A}{2}}.
+\eee
+于是
+\begin{align*}
+	\sumcyc\frac{\cot\frac{B}{2}}{\cot\frac{A}{2}}-\sumcyc\frac{\cot\frac{A}{2}}{\cot\frac{B}{2}+\cot\frac{C}{2}} & =\sumcyc\frac{\cot\frac{B}{2}\cot\frac{C}{2}}{\cot\frac{A}{2}\left(\cot\frac{A}{2}+\cot\frac{C}{2}\right)}\\
+	& =\frac{1}{\cot\frac{A}{2}\cot\frac{B}{2}\cot\frac{C}{2}}\sumcyc\frac{\left(\cot\frac{B}{2}\cot\frac{C}{2}\right)^{2}}{\left(\cot\frac{A}{2}+\cot\frac{C}{2}\right)}\\
+	& \ge\frac{1}{\cot\frac{A}{2}\cot\frac{B}{2}\cot\frac{C}{2}}\frac{\left(\sumcyc\cot\frac{B}{2}\cot\frac{C}{2}\right)^{2}}{\sumcyc\left(\cot\frac{A}{2}+\cot\frac{C}{2}\right)}\\
+	& =\frac{1}{2}\left(\frac{\sumcyc\cot\frac{B}{2}\cot\frac{C}{2}}{\cot\frac{A}{2}\cot\frac{B}{2}\cot\frac{C}{2}}\right)^{2}\\
+	& =\frac{1}{2}\sumcyc\tan\frac{A}{2}\ge\frac{3}{2}.
+\end{align*}
 \ea
 
 \bq{Italian Winter Camp 2007}{}

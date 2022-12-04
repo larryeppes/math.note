@@ -1,0 +1,3311 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+
+%\everymath{\color{blue}\everymath{}}
+\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-extended-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Crux
+\end_layout
+
+\begin_layout Paragraph
+From the bookshelf of ...
+\end_layout
+
+\begin_layout Standard
+Thinking of Scottish basket makers that use willow and Coast Salish people
+ that use cedar bark.
+\end_layout
+
+\begin_layout Paragraph
+TODO 
+\end_layout
+
+\begin_layout Standard
+OC556
+\end_layout
+
+\begin_layout Standard
+4691
+\end_layout
+
+\begin_layout Standard
+4694
+\end_layout
+
+\begin_layout Standard
+4695
+\end_layout
+
+\begin_layout Standard
+4697
+\end_layout
+
+\begin_layout Standard
+4699
+\end_layout
+
+\begin_layout Standard
+4700
+\end_layout
+
+\begin_layout Paragraph
+Q(基础数论) 
+\end_layout
+
+\begin_layout Standard
+平面上至少要有多少个整点才能保证总能找到一对的中点也是整点.
+\end_layout
+
+\begin_layout Paragraph
+解: 
+\end_layout
+
+\begin_layout Standard
+5个.
+ 考虑坐标的奇偶性.
+\end_layout
+
+\begin_layout Paragraph
+Q(基础数论): 
+\end_layout
+
+\begin_layout Standard
+假设
+\begin_inset Formula $a,b,c,d\in\NN$
+\end_inset
+
+, 满足
+\begin_inset Formula 
+\[
+ab+cd=38,\quad ac+bd=34,\quad ad+bc=43.
+\]
+
+\end_inset
+
+求
+\begin_inset Formula $a+b+c+d$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Paragraph
+解: 
+\end_layout
+
+\begin_layout Standard
+两两相加有
+\begin_inset Formula 
+\[
+\begin{aligned}(a+d)(b+c) & =72\\
+(a+c)(b+d) & =81\\
+(a+b)(c+d) & =77
+\end{aligned}
+\]
+
+\end_inset
+
+由于
+\begin_inset Formula $a,b,c,d\in\NN$
+\end_inset
+
+, 故
+\begin_inset Formula $a+b$
+\end_inset
+
+, 
+\begin_inset Formula $c+d$
+\end_inset
+
+为
+\begin_inset Formula $7$
+\end_inset
+
+或
+\begin_inset Formula $11$
+\end_inset
+
+.
+ 故
+\begin_inset Formula $a+b+c+d=7+11=18$
+\end_inset
+
+.
+ 并有
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}(a+d)(b+c) & =72=6\times12\\
+(a+c)(b+d) & =81=9\times9\\
+(a+b)(c+d) & =77=7\times11.
+\end{aligned}
+\label{eq:1-3}
+\end{equation}
+
+\end_inset
+
+由于
+\begin_inset Formula $38,34,43$
+\end_inset
+
+相互不等, 则容易验证, 
+\begin_inset Formula $a,b,c,d$
+\end_inset
+
+两两不等.
+ 若
+\begin_inset Formula $(a,b,c,d)$
+\end_inset
+
+是方程的解, 则
+\begin_inset Formula $(b,a,d,c)$
+\end_inset
+
+, 
+\begin_inset Formula $(c,d,a,b)$
+\end_inset
+
+, 
+\begin_inset Formula $(d,c,b,a)$
+\end_inset
+
+也是方程的解.
+\end_layout
+
+\begin_layout Standard
+若
+\begin_inset Formula $A<B<C<D$
+\end_inset
+
+, 则有
+\begin_inset Formula 
+\begin{equation}
+\begin{gathered}A+B<A+C<A+D<B+D<C+D\\
+A+C<B+C<B+D
+\end{gathered}
+\label{eq:1-4}
+\end{equation}
+
+\end_inset
+
+两两之和中, 
+\begin_inset Formula $A+B$
+\end_inset
+
+, 
+\begin_inset Formula $A+C$
+\end_inset
+
+是相对最小的两个和.
+ 于是不妨设
+\begin_inset Formula $a$
+\end_inset
+
+是最小的, 则在(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:1-3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)中的分解中有
+\begin_inset Formula 
+\[
+\begin{array}{ll}
+a+d=6, & b+c=12\\
+a+c=9, & b+d=9\\
+a+b=7, & c+d=11.
+\end{array}
+\]
+
+\end_inset
+
+从而按照(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:1-4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)中的模式有
+\begin_inset Formula $a<d<b$
+\end_inset
+
+, 于是
+\begin_inset Formula $c$
+\end_inset
+
+最大, 且有
+\begin_inset Formula 
+\[
+b+c=12,\quad c+d=11.
+\]
+
+\end_inset
+
+解出
+\begin_inset Formula $(a,b,c,d)=(2,5,7,4)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+同时文献
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+做了进一步引申, 比如考虑问题
+\begin_inset Formula 
+\[
+\begin{aligned}ab+cd & =p\\
+ac+bd & =q\\
+ad+bc & =r
+\end{aligned}
+\]
+
+\end_inset
+
+的正整数解
+\begin_inset Formula $(a,b,c,d)$
+\end_inset
+
+的个数, 且满足
+\begin_inset Formula 
+\[
+a+b+c+d=18
+\]
+
+\end_inset
+
+的条件.
+ 
+\end_layout
+
+\begin_layout Standard
+探究问题:
+\end_layout
+
+\begin_layout Standard
+1).
+ 构造
+\begin_inset Formula $(p,q,r)$
+\end_inset
+
+使正整数解的和
+\begin_inset Formula $a+b+c+d$
+\end_inset
+
+达到最小值.
+ (虽然这看上去没什么可探究的, 比如直接代入
+\begin_inset Formula $(1,2,3,4)$
+\end_inset
+
+或者
+\begin_inset Formula $(1,1,1,1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+2).
+ 不妨设
+\begin_inset Formula $p<q<r$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\begin{aligned}(a+d)(b+c) & =p+q=f(x)\\
+(a+c)(b+d) & =p+r=f(y)\\
+(a+b)(c+d) & =q+r=f(z),
+\end{aligned}
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $f(x)=x(18-x)$
+\end_inset
+
+.
+ 问, 什么样的
+\begin_inset Formula $(x,y,z)$
+\end_inset
+
+给出方程的非正数解?
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+如图, 
+\begin_inset Formula $A_{0}C=1$
+\end_inset
+
+, 绿色部分是圆弧围成的图形.
+ 设
+\begin_inset Formula $a_{i}=A_{i}C$
+\end_inset
+
+, 
+\begin_inset Formula $b_{i}=A_{i}B_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $c_{i}=\left|\widehat{B_{i}A_{i+1}}\right|$
+\end_inset
+
+, 
+\begin_inset Formula $d_{i}$
+\end_inset
+
+为圆弧
+\begin_inset Formula $B_{i}A_{i}A_{i+1}$
+\end_inset
+
+所围成的面积.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/已粘贴1.png
+	width 12cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+求
+\begin_inset Formula 
+\[
+a=\sum_{i=0}^{\infty}a_{i},\quad b=\sum_{i=0}^{\infty}b_{i},\quad c=\sum_{i=0}^{\infty}c_{i},\quad\text{ and }\quad d=\sum_{i=0}^{\infty}d_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Hint: 
+\end_layout
+
+\begin_layout Standard
+归纳证明
+\begin_inset Formula 
+\[
+\begin{aligned}a_{i} & =(1-\cos x)^{i},\\
+b_{i} & =a_{i}\cos x=\cos x(1-\cos x)^{i},\\
+c_{i} & =xb_{i}=x\cos x(1-\cos x)^{i},\\
+d_{i} & =\frac{1}{2}xb_{i}^{2}=\frac{1}{2}x\cos^{2}x(1-\cos x)^{2i}.
+\end{aligned}
+\]
+
+\end_inset
+
+有
+\begin_inset Formula $a=\frac{1}{\cos x}$
+\end_inset
+
+, 
+\begin_inset Formula $b=1$
+\end_inset
+
+, 
+\begin_inset Formula $c=x$
+\end_inset
+
+, 
+\begin_inset Formula $d=\frac{x\cos x}{2(2-\cos x)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $k$
+\end_inset
+
+为自然数, 对于
+\begin_inset Formula $n\in\NN$
+\end_inset
+
+, 定义
+\begin_inset Formula $f_{k}(n)$
+\end_inset
+
+为大于
+\begin_inset Formula $kn$
+\end_inset
+
+且使
+\begin_inset Formula $nf_{k}(n)$
+\end_inset
+
+为完全平方数的最小整数, 证明若
+\begin_inset Formula $f_{k}(m)=f_{k}(n)$
+\end_inset
+
+, 则
+\begin_inset Formula $m=n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+证明: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $f_{k}(n)=nk+a_{n}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+是使
+\begin_inset Formula $nf_{k}(n)$
+\end_inset
+
+为完全平方数的最小自然数.
+ 
+\end_layout
+
+\begin_layout Standard
+记
+\begin_inset Formula $n=n'b^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $n'$
+\end_inset
+
+为无平方因子的整数.
+ 则
+\begin_inset Formula 
+\[
+f_{k}(n'b^{2})=n'b^{2}k+a_{n}=n'c^{2},
+\]
+
+\end_inset
+
+于是
+\begin_inset Formula $a_{n}=n'\cdot a_{n}'$
+\end_inset
+
+, 且
+\begin_inset Formula 
+\[
+b^{2}k+a_{n}'=c^{2}.
+\]
+
+\end_inset
+
+同样, 对于
+\begin_inset Formula $f_{k}(m)$
+\end_inset
+
+有
+\begin_inset Formula $m=m'd^{2}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+f_{k}(m'd^{2})=m'd^{2}k+a_{m}=m'l^{2},\quad a_{m}=m'a_{m}',\quad kd^{2}+a_{m}'=l^{2},
+\]
+
+\end_inset
+
+由
+\begin_inset Formula $f_{k}(m)=f_{k}(n)$
+\end_inset
+
+, 有
+\begin_inset Formula $n'c^{2}=m'l^{2}$
+\end_inset
+
+, 所以
+\begin_inset Formula $n'=m'$
+\end_inset
+
+, 
+\begin_inset Formula $c=l$
+\end_inset
+
+, 故
+\begin_inset Formula 
+\[
+kb^{2}+a_{n}'=kd^{2}+a_{m}'=c^{2}.
+\]
+
+\end_inset
+
+由于
+\begin_inset Formula $c$
+\end_inset
+
+是大于
+\begin_inset Formula $b\sqrt{k}$
+\end_inset
+
+, 
+\begin_inset Formula $d\sqrt{k}$
+\end_inset
+
+的最小自然数, 故
+\begin_inset Formula 
+\[
+\left|b\sqrt{k}-d\sqrt{k}\right|<1,
+\]
+
+\end_inset
+
+即
+\begin_inset Formula 
+\[
+\left|b-d\right|<\frac{1}{\sqrt{k}}\le1.
+\]
+
+\end_inset
+
+于是
+\begin_inset Formula $b=d$
+\end_inset
+
+, 
+\begin_inset Formula $m=n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+Anne连续地掷一个有2020个面的筛子, 筛子上的数字是从
+\begin_inset Formula $1$
+\end_inset
+
+到
+\begin_inset Formula $2020$
+\end_inset
+
+标记.
+ 每次投掷都会记录之前所投的数字, 当所有投掷的结果之和大于
+\begin_inset Formula $2019$
+\end_inset
+
+则停止投掷, 设
+\begin_inset Formula $X,Y$
+\end_inset
+
+为最大概率与最小概率投掷出的和.
+ 求投掷出
+\begin_inset Formula $Y$
+\end_inset
+
+的概率与掷出
+\begin_inset Formula $X$
+\end_inset
+
+的概率之比.
+\end_layout
+
+\begin_layout Paragraph
+解: 
+\end_layout
+
+\begin_layout Standard
+对于
+\begin_inset Formula $k=0,1,2,\cdots,2020$
+\end_inset
+
+, 记
+\begin_inset Formula $p_{k}$
+\end_inset
+
+为经过一定次数的投掷, 掷出的数字之和为
+\begin_inset Formula $k$
+\end_inset
+
+的概率, 并置
+\begin_inset Formula $p_{0}=1$
+\end_inset
+
+, 且有
+\begin_inset Formula $p_{1}=\frac{1}{2020}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+对于
+\begin_inset Formula $k=1,2,\cdots,2019$
+\end_inset
+
+, 则掷出数字和为
+\begin_inset Formula $k$
+\end_inset
+
+的序列与和为
+\begin_inset Formula $(k+1)$
+\end_inset
+
+的序列存在对应关系: 
+\begin_inset Formula $(r_{1},\cdots,r_{i})\mapsto(r_{1},\cdots,r_{i-1},r_{i}+1)$
+\end_inset
+
+, 但此处要
+\begin_inset Formula $r_{i}\ge1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+另外注意到, 除了上述从和
+\begin_inset Formula $k$
+\end_inset
+
+到和
+\begin_inset Formula $(k+1)$
+\end_inset
+
+的构造方式外, 还可以通过
+\begin_inset Formula $(r_{1},\cdots,r_{i})\mapsto(r_{1},\cdots,r_{i},1)$
+\end_inset
+
+来得到, 故
+\begin_inset Formula 
+\[
+p_{k+1}=p_{k}+\frac{p_{k}}{2020}=\frac{2021}{2020}p_{k},\qquad k=1,2,\cdots,2019.
+\]
+
+\end_inset
+
+对于
+\begin_inset Formula $k=2020,2021,\cdots,4039$
+\end_inset
+
+, 记
+\begin_inset Formula $q_{k}$
+\end_inset
+
+为掷出的数字和为
+\begin_inset Formula $k$
+\end_inset
+
+, 且除了最后一步所掷的数字和不超过
+\begin_inset Formula $2019$
+\end_inset
+
+的概率.
+ 由于在
+\begin_inset Formula $k=2020,\cdots,4039$
+\end_inset
+
+时停止投掷, 故在最后一次投掷前所得的和为
+\begin_inset Formula 
+\[
+l=k-2020,\cdots,2019
+\]
+
+\end_inset
+
+之一, 最后投出
+\begin_inset Formula $k-l$
+\end_inset
+
+, 故此时有概率等式
+\begin_inset Formula 
+\[
+q_{k}=\frac{p_{k-2020}}{2020}+\cdots+\frac{p_{2019}}{2020},
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $q_{2020}$
+\end_inset
+
+最大, 
+\begin_inset Formula $q_{4039}$
+\end_inset
+
+最小, 即
+\begin_inset Formula $X=2020$
+\end_inset
+
+, 
+\begin_inset Formula $Y=4039$
+\end_inset
+
+, 并有
+\begin_inset Formula $p_{2020}=q_{2020}$
+\end_inset
+
+, 故
+\begin_inset Formula 
+\begin{align*}
+\frac{q_{Y}}{q_{X}} & =\frac{q_{4039}}{q_{2020}}=\frac{p_{2019}}{2020}\cdot\frac{1}{p_{2020}}\\
+ & =\frac{2020}{2021}\cdot\frac{1}{2020}=\frac{1}{2021}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+如图所示, 只有正方形和长方形, 边长已标在图中, 
+\begin_inset Formula $R$
+\end_inset
+
+的面积的所有可能的值之和为
+\begin_inset Formula $\frac{m}{n}$
+\end_inset
+
+, 其中
+\begin_inset Formula $m,n$
+\end_inset
+
+为互素正整数, 求
+\begin_inset Formula $m+n$
+\end_inset
+
+的值.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/2022060501.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+解: 
+\end_layout
+
+\begin_layout Standard
+如图可得, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/2022060502.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+大正方形的边长为
+\begin_inset Formula $\sqrt{10}$
+\end_inset
+
+, 要解的方程有
+\begin_inset Formula 
+\[
+x\cos\varphi+y\sin\varphi=\frac{6}{\sqrt{10}}\quad\text{ and }\quad\left(\frac{x}{3}+y\right)\cos\varphi+x\sin\varphi=\frac{7}{\sqrt{10}}
+\]
+
+\end_inset
+
+和
+\begin_inset Formula 
+\[
+ZL=x\sin\varphi=\cos\theta=\frac{3}{\sqrt{10}}.
+\]
+
+\end_inset
+
+化简有
+\begin_inset Formula 
+\[
+2x^{2}-5xy+3y^{2}=0,
+\]
+
+\end_inset
+
+解出
+\begin_inset Formula $R$
+\end_inset
+
+的面积有
+\begin_inset Formula $\frac{9}{5}$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{5}{3}$
+\end_inset
+
+两种情况, 
+\begin_inset Formula $\frac{m}{n}=\frac{52}{15}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+解法2: 
+\end_layout
+
+\begin_layout Standard
+如图所示, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/2022060503.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $PH=a$
+\end_inset
+
+, 
+\begin_inset Formula $PE=b$
+\end_inset
+
+, 计算
+\begin_inset Formula 
+\[
+AD=AB\Longrightarrow b=3a.
+\]
+
+\end_inset
+
+以
+\begin_inset Formula $\overrightarrow{FB},\overrightarrow{KD}$
+\end_inset
+
+为基向量计算坐标
+\begin_inset Formula 
+\[
+G=(10,3),\ H=(1,6),\ I=(4,7),
+\]
+
+\end_inset
+
+设
+\begin_inset Formula $L=(x,10)$
+\end_inset
+
+, 
+\begin_inset Formula $M=(10,y)$
+\end_inset
+
+.
+ 计算
+\begin_inset Formula $N$
+\end_inset
+
+的坐标, 列方程
+\begin_inset Formula 
+\[
+\begin{cases}
+N=\lambda H+(1-\lambda)G\\
+LM\perp LI.
+\end{cases}
+\]
+
+\end_inset
+
+解得
+\begin_inset Formula $\lambda_{1,2}=\frac{5}{9},\frac{2}{3}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $L=(8,10)$
+\end_inset
+
+, 
+\begin_inset Formula $M=\left(10,\frac{22}{3}\right)$
+\end_inset
+
+或
+\begin_inset Formula $L=(7,10)$
+\end_inset
+
+, 
+\begin_inset Formula $M=(10,7)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $u,v,w$
+\end_inset
+
+为非零实数, 且
+\begin_inset Formula 
+\[
+A=-\frac{2}{3}\left(\begin{array}{ccc}
+-1/2 & v/u & w/u\\
+u/v & -1/2 & w/v\\
+u/w & v/w & -1/2
+\end{array}\right)
+\]
+
+\end_inset
+
+证明
+\begin_inset Formula $A$
+\end_inset
+
+可对角化.
+\end_layout
+
+\begin_layout Paragraph
+证明: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A$
+\end_inset
+
+的特征多项式为
+\begin_inset Formula 
+\[
+\left|\lambda I_{3}-A\right|=\left(\lambda+1\right)\left(\lambda-1\right)^{2}
+\]
+
+\end_inset
+
+特征值为
+\begin_inset Formula $\pm1$
+\end_inset
+
+, 故
+\begin_inset Formula $A$
+\end_inset
+
+可对角化的充要条件为特征空间
+\begin_inset Formula $E_{1}$
+\end_inset
+
+的维数是
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+若
+\begin_inset Formula $X=(x,y,z)$
+\end_inset
+
+, 则方程
+\begin_inset Formula 
+\[
+(A-I_{3})X^{T}=0
+\]
+
+\end_inset
+
+这等价于
+\begin_inset Formula 
+\[
+ux+vy+wz=0.
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $\mathrm{dim}E_{1}=2$
+\end_inset
+
+, 
+\begin_inset Formula $A$
+\end_inset
+
+可对角化.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $n$
+\end_inset
+
+为正整数, 
+\begin_inset Formula $x\in\RR$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+是
+\begin_inset Formula $n\times n$
+\end_inset
+
+矩阵, 
+\begin_inset Formula 
+\[
+B=\begin{pmatrix}2x & 1\\
+1 & 2x & 1\\
+ & 1 & 2x\\
+ &  &  & \ddots\\
+ &  &  &  & 2x & 1\\
+ &  &  &  & 1 & 2x
+\end{pmatrix},
+\]
+
+\end_inset
+
+若
+\begin_inset Formula $B$
+\end_inset
+
+可逆, 求
+\begin_inset Formula $B^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+解: 
+\end_layout
+
+\begin_layout Standard
+这里给出一个特别的解答.
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $A=(2x+2)I_{n}-B$
+\end_inset
+
+.
+ 并注意到
+\begin_inset Formula 
+\[
+-\sin(n-1)\theta+2\sin(n\theta)-\sin(n+1)\theta=2(1-\cos\theta)\sin n\theta\quad(\theta\in\mathbb{R},n\in\mathbb{N}),
+\]
+
+\end_inset
+
+设
+\begin_inset Formula $\Omega=\left(\sin\theta,\cdots,\sin n\theta\right)^{T}$
+\end_inset
+
+, 则当
+\begin_inset Formula $\sin(n+1)\theta=0$
+\end_inset
+
+时, 有
+\begin_inset Formula 
+\[
+A\Omega=2(1-\cos\theta)\Omega,
+\]
+
+\end_inset
+
+于是有
+\begin_inset Formula $\theta_{k}=\frac{k\pi}{n+1}$
+\end_inset
+
+, 
+\begin_inset Formula $k\in\left\{ 1,2,\cdots,n\right\} $
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\Omega_{k}=\left(\sin\theta_{k},\cdots,\sin n\theta_{k}\right)^{T},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+B\Omega_{k}=2(x+\cos\theta_{k})\Omega_{k},
+\]
+
+\end_inset
+
+于是实数
+\begin_inset Formula 
+\[
+2\rho_{k}=2(x+\cos\theta_{k}),\quad k=1,\cdots,n
+\]
+
+\end_inset
+
+是
+\begin_inset Formula $B$
+\end_inset
+
+的
+\begin_inset Formula $n$
+\end_inset
+
+个不同的特征值, 所以
+\begin_inset Formula $B$
+\end_inset
+
+可对角化
+\begin_inset Formula 
+\[
+B=PDP^{-1},\quad P=(\Omega_{1},\cdots,\Omega_{n}),\quad D=\mathrm{diag}(2\rho_{1},\cdots,2\rho_{n}).
+\]
+
+\end_inset
+
+
+\begin_inset Formula $B$
+\end_inset
+
+可逆, 当且仅当, 
+\begin_inset Formula $x\ne\cos\theta_{k}$
+\end_inset
+
+, 
+\begin_inset Formula $k\in\left\{ 1,2,\cdots,n\right\} $
+\end_inset
+
+.
+ 由于
+\begin_inset Formula 
+\[
+\sum_{j=1}^{n}\sin^{2}\left(j\theta_{k}\right)=\frac{n+1}{2}\text{ and }\sum_{j=1}^{n}\sin\left(j\theta_{r}\right)\sin\left(j\theta_{s}\right)=0,\quad k,r,s\in\left\{ 1,2,\cdots,n\right\} ,\ r\ne s.
+\]
+
+\end_inset
+
+有
+\begin_inset Formula $P^{T}P=\frac{n+1}{2}I_{n}$
+\end_inset
+
+.
+ 故
+\begin_inset Formula 
+\[
+B^{-1}=\frac{1}{n+1}P\cdot\mathrm{diag}(\rho_{1}^{-1},\cdots,\rho_{n}^{-1})P^{T}=\left(b_{rs}\right),\quad r,s\in\left\{ 1,\cdots,n\right\} ,
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula 
+\[
+b_{rs}=\frac{1}{n+1}\sum_{j=1}^{n}\frac{\sin\left(\frac{jr\pi}{n+1}\right)\sin\left(\frac{js\pi}{n+1}\right)}{x+\cos\left(\frac{j\pi}{n+1}\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+可以将矩阵约化为一个三角形矩阵的简单条件是: 若
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+是一个域, 
+\begin_inset Formula $A\in\mathcal{M}_{n}(\mathbb{F})$
+\end_inset
+
+, 则
+\begin_inset Formula $A$
+\end_inset
+
+在
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+上相似于一个三角形矩阵
+\begin_inset Formula $T$
+\end_inset
+
+, iff, 特征多项式的所有根都在
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+中, 此时
+\begin_inset Formula $T$
+\end_inset
+
+的主对角线由这些根组成.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A\in\mathcal{M}_{n}(\mathbb{F})$
+\end_inset
+
+, 存在正整数
+\begin_inset Formula $p$
+\end_inset
+
+, 使得
+\begin_inset Formula $A^{p}=O_{n}$
+\end_inset
+
+, 计算
+\begin_inset Formula $\mathrm{det}(A+I_{n})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+解: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $\lambda$
+\end_inset
+
+为
+\begin_inset Formula $A$
+\end_inset
+
+的特征值, 
+\begin_inset Formula $X$
+\end_inset
+
+为对应的特征向量, 由
+\begin_inset Formula $AX=\lambda X$
+\end_inset
+
+, 有
+\begin_inset Formula $A^{p}X=\lambda^{p}X$
+\end_inset
+
+, 故
+\begin_inset Formula $\lambda^{p}X=0$
+\end_inset
+
+, 由于
+\begin_inset Formula $X\ne0$
+\end_inset
+
+, 所以
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+, 于是存在三角形矩阵
+\begin_inset Formula $T$
+\end_inset
+
+, 使得
+\begin_inset Formula $A=PTP^{-1}$
+\end_inset
+
+, 由上述讨论, 
+\begin_inset Formula $T$
+\end_inset
+
+的对角线只有
+\begin_inset Formula $0$
+\end_inset
+
+.
+ 故
+\begin_inset Formula $A+I_{n}=P(T+I_{n})P^{-1}$
+\end_inset
+
+, 从而
+\begin_inset Formula $\mathrm{det}(A+I_{n})=\mathrm{det}(T+I_{n})=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $A,B\in\mathcal{M}_{2}(\mathbb{C})$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+C=AB-BA.
+\]
+
+\end_inset
+
+证明: 若
+\begin_inset Formula $AC=CA$
+\end_inset
+
+, 
+\begin_inset Formula $BC=CB$
+\end_inset
+
+, 则
+\begin_inset Formula $C=O_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+证明: 
+\end_layout
+
+\begin_layout Standard
+注意, 若
+\begin_inset Formula $M,N,P\in\mathcal{M}_{2}(\CC)$
+\end_inset
+
+, 且
+\begin_inset Formula $P$
+\end_inset
+
+可逆, 则
+\begin_inset Formula 
+\[
+MN=NM\Longleftrightarrow(P^{-1}MP)(P^{-1}NP)=(P^{-1}NP)(P^{-1}MP).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1).
+ 假设
+\begin_inset Formula $C$
+\end_inset
+
+有两个不同的特征值
+\begin_inset Formula $\lambda_{1,2}$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+C=PDP^{-1},\quad D=\begin{pmatrix}\lambda_{1}\\
+ & \lambda_{2}
+\end{pmatrix},
+\]
+
+\end_inset
+
+
+\begin_inset Formula $P$
+\end_inset
+
+可逆, 由于
+\begin_inset Formula $AC=CA$
+\end_inset
+
+, 
+\begin_inset Formula $BC=CB$
+\end_inset
+
+, 故
+\begin_inset Formula $A'=P^{-1}AP$
+\end_inset
+
+, 
+\begin_inset Formula $B'=P^{-1}BP$
+\end_inset
+
+满足
+\begin_inset Formula 
+\[
+DA^{'}=A'D,\quad DB'=B'D.
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $A',B'$
+\end_inset
+
+均为对角矩阵.
+ 从而
+\begin_inset Formula $A'B'=B'A'$
+\end_inset
+
+, 即有
+\begin_inset Formula $AB=BA$
+\end_inset
+
+.
+ 于是
+\begin_inset Formula $C=O_{2}$
+\end_inset
+
+, 矛盾.
+\end_layout
+
+\begin_layout Standard
+2).
+ 再设
+\begin_inset Formula $C$
+\end_inset
+
+只有特征值
+\begin_inset Formula $\lambda_{0}$
+\end_inset
+
+, 则由于
+\begin_inset Formula $\mathrm{tr}C=0$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda_{0}=0$
+\end_inset
+
+, 设
+\begin_inset Formula 
+\[
+C=QTQ^{-1},\quad T=\begin{pmatrix} & t\\
+\\
+\end{pmatrix},
+\]
+
+\end_inset
+
+若
+\begin_inset Formula $t\ne0$
+\end_inset
+
+, 取
+\begin_inset Formula $A''=Q^{-1}AQ$
+\end_inset
+
+, 
+\begin_inset Formula $B''=Q^{-1}BQ$
+\end_inset
+
+, 则有
+\begin_inset Formula $TA''=A''T$
+\end_inset
+
+, 
+\begin_inset Formula $TB''=B''T$
+\end_inset
+
+, 则有形式
+\begin_inset Formula 
+\[
+A''=\begin{pmatrix}\alpha & \beta\\
+ & \alpha
+\end{pmatrix},\quad B''=\begin{pmatrix}\gamma & \delta\\
+ & \gamma
+\end{pmatrix},\qquad\alpha,\beta,\gamma,\delta\in\CC.
+\]
+
+\end_inset
+
+故有
+\begin_inset Formula $A''B''=B''A''$
+\end_inset
+
+, 即
+\begin_inset Formula $AB=BA$
+\end_inset
+
+, 又与
+\begin_inset Formula $t\ne0$
+\end_inset
+
+矛盾.
+ 
+\end_layout
+
+\begin_layout Standard
+综上, 只有
+\begin_inset Formula $C=O_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Cayley-Hamilton定理: 若
+\begin_inset Formula $A\in\mathcal{M}_{n}(\mathbb{F})$
+\end_inset
+
+, 且
+\begin_inset Formula 
+\[
+\mathrm{det}(\lambda I_{n}-A)=\lambda^{n}+a_{n-1}\lambda^{n-1}+\cdots+a_{1}\lambda+a_{0},
+\]
+
+\end_inset
+
+则有
+\begin_inset Formula 
+\[
+A^{n}+a_{n-1}A^{n-1}+\cdots+a_{1}A+a_{0}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+证明矩阵方程
+\begin_inset Formula 
+\[
+\begin{cases}
+A^{3}+A^{2}B+AB^{2}+ABA=\left[\begin{array}{ccc}
+1 & 2 & 3\\
+0 & 1 & 2\\
+0 & 0 & 1
+\end{array}\right]\\
+B^{3}+B^{2}A+BA^{2}+BAB=\left[\begin{array}{ccc}
+-1 & 0 & 3\\
+0 & -1 & 0\\
+0 & 0 & -1
+\end{array}\right]
+\end{cases}
+\]
+
+\end_inset
+
+在复数域上的
+\begin_inset Formula $3\times3$
+\end_inset
+
+矩阵空间中无解.
+\end_layout
+
+\begin_layout Paragraph
+证明: 
+\end_layout
+
+\begin_layout Standard
+假设解存在, 则由
+\begin_inset Formula 
+\[
+\begin{aligned}(A+B)^{3} & =(A+B)\left(A^{2}+AB+BA+B^{2}\right)\\
+ & =\left(A^{3}+A^{2}B+ABA+AB^{2}\right)+\left(BA^{2}+BAB+B^{2}A+B^{3}\right)
+\end{aligned}
+\]
+
+\end_inset
+
+有
+\begin_inset Formula 
+\[
+(A+B)^{3}=\left[\begin{array}{lll}
+0 & 2 & 6\\
+0 & 0 & 2\\
+0 & 0 & 0
+\end{array}\right]
+\]
+
+\end_inset
+
+设
+\begin_inset Formula $\lambda$
+\end_inset
+
+为
+\begin_inset Formula $A+B$
+\end_inset
+
+的复特征值, 则
+\begin_inset Formula $\lambda^{3}$
+\end_inset
+
+是
+\begin_inset Formula $(A+B)^{3}$
+\end_inset
+
+的特征值, 故
+\begin_inset Formula $\lambda^{3}=0$
+\end_inset
+
+, 即
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+.
+ 所以
+\begin_inset Formula $A+B$
+\end_inset
+
+的特征多项式为
+\begin_inset Formula $\lambda^{3}$
+\end_inset
+
+.
+ 由Cayley-Hamilton定理, 
+\begin_inset Formula 
+\[
+(A+B)^{3}=O_{3},
+\]
+
+\end_inset
+
+与上式矛盾.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $a,b$
+\end_inset
+
+为
+\begin_inset Formula $\RR^{3}$
+\end_inset
+
+中线性无关列向量, 求
+\begin_inset Formula $ba^{T}-ab^{T}$
+\end_inset
+
+的实平方根, 即求
+\begin_inset Formula $3\times3$
+\end_inset
+
+实矩阵
+\begin_inset Formula $A$
+\end_inset
+
+, 满足
+\begin_inset Formula 
+\[
+A^{2}=ba^{T}-ab^{T}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+解: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A$
+\end_inset
+
+有两个解:
+\begin_inset Formula 
+\[
+A=\frac{\pm1}{m\sqrt{2m}}\left(ba^{T}-ab^{T}\right)\left(mI_{3}-\left(ba^{T}-ab^{T}\right)\right),
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula 
+\[
+m=\sqrt{(a^{T}a)(b^{T}b)-(a^{T}b)^{2}}.
+\]
+
+\end_inset
+
+记
+\begin_inset Formula $C=ba^{T}-ab^{T}$
+\end_inset
+
+, 
+\begin_inset Formula $c=(c_{1},c_{2},c_{3})^{T}=a\times b$
+\end_inset
+
+.
+ 则
+\begin_inset Formula 
+\[
+c_{1}^{2}+c_{2}^{2}+c_{3}^{2}=c^{T}c=m^{2}.
+\]
+
+\end_inset
+
+直接计算有
+\begin_inset Formula 
+\[
+C=\begin{pmatrix}0 & -c_{3} & c_{2}\\
+c_{3} & 0 & -c_{1}\\
+-c_{2} & c_{1} & 0
+\end{pmatrix},\quad\mathrm{det}(xI_{3}-C)=x^{3}+m^{2}x,
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $C^{3}+m^{2}C=0$
+\end_inset
+
+.
+ 从而
+\begin_inset Formula 
+\begin{equation}
+(C^{2}-mC+2m^{2}I_{3})(C+mI_{3})=2m^{3}I_{3}.\label{eq:2-2}
+\end{equation}
+
+\end_inset
+
+设
+\begin_inset Formula $A\in\mathcal{M}_{3}(\RR)$
+\end_inset
+
+, 使
+\begin_inset Formula $A^{2}=C$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha,\beta,\gamma$
+\end_inset
+
+为
+\begin_inset Formula $A$
+\end_inset
+
+的复特征值, 
+\begin_inset Formula $\alpha^{2},\beta^{2},\gamma^{2}$
+\end_inset
+
+为
+\begin_inset Formula $C$
+\end_inset
+
+的复特征值.
+ 故
+\begin_inset Formula $A$
+\end_inset
+
+的特征多项式必有形式
+\begin_inset Formula $\chi(x)=x(x-\omega)(x-\overline{\omega})$
+\end_inset
+
+, 其中
+\begin_inset Formula $\omega^{2}\overline{\omega}^{2}=m^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\omega^{2}+\overline{\omega}^{2}=0$
+\end_inset
+
+, 故
+\begin_inset Formula $\omega\overline{\omega}=m$
+\end_inset
+
+, 
+\begin_inset Formula $\omega+\overline{\omega}=\pm\sqrt{2m}$
+\end_inset
+
+.
+ 故
+\begin_inset Formula $\chi(A)=A^{3}\pm\sqrt{2m}A^{2}+mA=0$
+\end_inset
+
+.
+ 由于
+\begin_inset Formula $A^{2}=C$
+\end_inset
+
+, 故
+\begin_inset Formula 
+\[
+A(C+mI_{3})=\pm\sqrt{2m}C.
+\]
+
+\end_inset
+
+由(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)知
+\begin_inset Formula 
+\[
+\begin{aligned}A=\pm\sqrt{2m}C\cdot\frac{1}{2m^{3}}\left(C^{2}-mC+2m^{2}I_{3}\right) & =\frac{\pm1}{m^{2}\sqrt{2m}}\left(-m^{2}C-mC^{2}+2m^{2}C\right)\\
+ & =\frac{\pm1}{m\sqrt{2m}}C\left(mI_{3}-C\right)
+\end{aligned}
+\]
+
+\end_inset
+
+容易验证
+\begin_inset Formula 
+\[
+\left[\frac{\pm1}{m\sqrt{2m}}C\left(mI_{3}-C\right)\right]^{2}=C.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+极小多项式: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A\in\mathcal{M}_{n}(\mathbb{F})$
+\end_inset
+
+的极小多项式
+\begin_inset Formula $\mu(x)$
+\end_inset
+
+是使
+\begin_inset Formula $p(A)=O_{n}$
+\end_inset
+
+的次数最小的首一多项式
+\begin_inset Formula $p(x)$
+\end_inset
+
+, (
+\begin_inset Formula $\mu(x)$
+\end_inset
+
+, 
+\begin_inset Formula $p(x)\in\mathbb{F}[x]$
+\end_inset
+
+).
+ 特别地, 
+\begin_inset Formula $\mu(x)$
+\end_inset
+
+能整除特征多项式
+\begin_inset Formula $\chi(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $n\ge2$
+\end_inset
+
+是整数, 
+\begin_inset Formula $p$
+\end_inset
+
+是素数, 考虑
+\begin_inset Formula $\ZZ_{p}$
+\end_inset
+
+上
+\begin_inset Formula $n\times n$
+\end_inset
+
+矩阵
+\begin_inset Formula $X$
+\end_inset
+
+, 若
+\begin_inset Formula $X^{p}=I_{n}$
+\end_inset
+
+, 证明:
+\begin_inset Formula 
+\[
+(X-I_{n})^{n}=O_{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+证明: 
+\end_layout
+
+\begin_layout Standard
+由
+\begin_inset Formula $X^{p}-I_{n}=O_{n}$
+\end_inset
+
+, 则
+\begin_inset Formula $X$
+\end_inset
+
+的极小多项式是
+\begin_inset Formula $x^{p}-1=(x-1)^{p}$
+\end_inset
+
+的一个因子, 从而这个极小多项式有形式
+\begin_inset Formula 
+\[
+(x-1)^{k},\quad1\le k\le p.
+\]
+
+\end_inset
+
+
+\begin_inset Formula $X$
+\end_inset
+
+的特征多项式(
+\begin_inset Formula $n$
+\end_inset
+
+次)能整除极小多项式(
+\begin_inset Formula $k$
+\end_inset
+
+次), 所以
+\begin_inset Formula $k\le n$
+\end_inset
+
+.
+ 故由
+\begin_inset Formula $(X-I_{n})^{k}=O_{n}$
+\end_inset
+
+, 有
+\begin_inset Formula $(X-I_{n})^{n}=O_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $n$
+\end_inset
+
+是大于
+\begin_inset Formula $4$
+\end_inset
+
+的素数, 
+\begin_inset Formula $A\in\mathcal{M}_{n-1}(\QQ)$
+\end_inset
+
+使
+\begin_inset Formula $A^{n}=I_{n-1}$
+\end_inset
+
+, 求
+\begin_inset Formula 
+\[
+\mathrm{det}\left(A^{n-2}+2A^{n-3}+3A^{n-4}+\cdots+(n-2)A+(n-1)I_{n-1}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+解: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula 
+\[
+B=A^{n-2}+2A^{n-3}+3A^{n-4}+\cdots+(n-2)A+(n-1)I_{n-1},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p(x)=x^{n-1}+x^{n-2}+\cdots+x+1.
+\]
+
+\end_inset
+
+则
+\begin_inset Formula 
+\[
+O_{n-1}=A^{n}-I_{n-1}=(A-I_{n-1})p(A),
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $A$
+\end_inset
+
+的极小多项式能整除
+\begin_inset Formula $(x-1)p(x)$
+\end_inset
+
+.
+ 由于
+\begin_inset Formula $n$
+\end_inset
+
+是素数时, 
+\begin_inset Formula $p(x)$
+\end_inset
+
+在
+\begin_inset Formula $\QQ[x]$
+\end_inset
+
+中不可约, 极小多项式的指数不超过
+\begin_inset Formula $n-1$
+\end_inset
+
+, 故
+\begin_inset Formula $A$
+\end_inset
+
+的极小多项式
+\begin_inset Formula $\mu(x)=x-1$
+\end_inset
+
+, 或
+\begin_inset Formula $\mu(x)=p(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+当
+\begin_inset Formula $\mu(x)=x-1$
+\end_inset
+
+时, 
+\begin_inset Formula $A=I_{n-1}$
+\end_inset
+
+, 
+\begin_inset Formula $B=\frac{(n-1)n}{2}I_{n-1}$
+\end_inset
+
+, 故
+\begin_inset Formula $\mathrm{det}(B)=\left(\frac{n(n-1)}{2}\right)^{n-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+当
+\begin_inset Formula $\mu(x)=p(x)$
+\end_inset
+
+时, 由于
+\begin_inset Formula $\mu(x)\mid\chi(x)=\mathrm{det}(xI_{n-1}-A)$
+\end_inset
+
+, 故
+\begin_inset Formula $\chi(x)=\mu(x)=p(x)$
+\end_inset
+
+, 设
+\begin_inset Formula $w=\ue^{\frac{2\pi\ui}{n}}$
+\end_inset
+
+, 则
+\begin_inset Formula $w,w^{2},\cdots,w^{n-1}$
+\end_inset
+
+是
+\begin_inset Formula $p(x)=0$
+\end_inset
+
+的根, 故
+\begin_inset Formula 
+\[
+A=PDP^{-1},\quad P\in\mathrm{GL}_{n-1}(\CC),\quad D=\mathrm{diag}(w,w^{2},\cdots,w^{n-1}).
+\]
+
+\end_inset
+
+故
+\begin_inset Formula 
+\[
+\begin{aligned}B & =P\left(D^{n-2}+2D^{n-3}+\cdots+(n-2)D+(n-1)I_{n-1}\right)P^{-1}\\
+ & =P\mathrm{diag}\left(q(w),q\left(w^{2}\right),\ldots,q\left(w^{n-1}\right)\right)P^{-1},
+\end{aligned}
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula 
+\[
+q(x)=x^{n-2}+2x^{n-3}+\cdots+(n-2)x+(n-1).
+\]
+
+\end_inset
+
+故
+\begin_inset Formula 
+\[
+\mathrm{det}(B)=\prod_{k=1}^{n-1}q(w^{k}).
+\]
+
+\end_inset
+
+由于
+\begin_inset Formula $q(x)=x^{n-2}p'\left(\frac{1}{x}\right)$
+\end_inset
+
+, 有
+\begin_inset Formula $q(w^{k})=\frac{n}{1-w^{k}}$
+\end_inset
+
+, 从而
+\begin_inset Formula $\mathrm{det}B=\frac{n^{n-1}}{p(1)}=n^{n-2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+极小多项式中的一个重要结论:
+\end_layout
+
+\begin_layout Standard
+若
+\begin_inset Formula $A\in\mathcal{M}_{n}(\mathbb{F})$
+\end_inset
+
+, 则
+\begin_inset Formula $A$
+\end_inset
+
+在
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+上对角化, 当且仅当极小多项式在
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+中的根都是单根, 这些根是
+\begin_inset Formula $A$
+\end_inset
+
+的不同的特征值.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $A\in\mathcal{M}_{n}(\RR)$
+\end_inset
+
+满足
+\begin_inset Formula $A^{T}=-A$
+\end_inset
+
+, 证明
+\begin_inset Formula $A$
+\end_inset
+
+在
+\begin_inset Formula $\CC$
+\end_inset
+
+上可对角化.
+\end_layout
+
+\begin_layout Paragraph
+证明: 
+\end_layout
+
+\begin_layout Standard
+矩阵
+\begin_inset Formula $A^{2}=-AA^{T}$
+\end_inset
+
+是实对称阵, 故在
+\begin_inset Formula $\RR$
+\end_inset
+
+上可对角化, 且特征值是非正的, 即若
+\begin_inset Formula 
+\[
+-AA^{T}X=\lambda X,\quad\lambda\in\RR,X\in\mathcal{M}_{n,1}(\RR)
+\]
+
+\end_inset
+
+且
+\begin_inset Formula $X\ne0$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\lambda X^{T}X=-(A^{T}X)^{T}A^{T}X\le0,
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $\lambda\le0$
+\end_inset
+
+.
+ 故
+\begin_inset Formula $A^{2}$
+\end_inset
+
+的极小多项式可写为
+\begin_inset Formula 
+\[
+\mu_{2}(x)=\prod_{j=1}^{k}\left(x+a_{j}^{2}\right),
+\]
+
+\end_inset
+
+其中
+\begin_inset Formula $a_{1},\cdots,a_{k}\in\RR$
+\end_inset
+
+, 且
+\begin_inset Formula $0\le a_{1}<\cdots<a_{k}$
+\end_inset
+
+, 且有
+\begin_inset Formula 
+\[
+\prod_{j=1}^{k}\left(A^{2}+a_{j}^{2}I_{n}\right)=O_{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+若
+\begin_inset Formula $a_{1}>0$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+\prod_{j=1}^{k}\left(A-\ui a_{j}I_{n}\right)\left(A+\ui a_{j}I_{n}\right)=O_{n},
+\]
+
+\end_inset
+
+由
+\begin_inset Formula $A$
+\end_inset
+
+的极小多项式
+\begin_inset Formula 
+\[
+\mu_{1}(x)\mid\prod_{j=1}^{k}(x-\ui a_{j})(x+\ui a_{j})=\mu_{2}(x).
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $\mu_{1}$
+\end_inset
+
+的复根都是单根, 从而
+\begin_inset Formula $A$
+\end_inset
+
+可对角化.
+\end_layout
+
+\begin_layout Standard
+若
+\begin_inset Formula $a_{1}=0$
+\end_inset
+
+, 则
+\begin_inset Formula $A^{2}q(A)=O_{n}$
+\end_inset
+
+, 其中
+\begin_inset Formula $q(A)=\prod_{j=2}^{k}\left(A^{2}+a_{j}^{2}I_{n}\right)$
+\end_inset
+
+, 若有
+\begin_inset Formula $Z\in\mathcal{M}_{n,1}(\CC)$
+\end_inset
+
+使
+\begin_inset Formula $A^{2}Z=0$
+\end_inset
+
+.
+ 则
+\begin_inset Formula 
+\[
+(\overline{AZ})^{T}AZ=\overline{Z}^{T}A^{T}AZ=-\overline{Z}^{T}A^{2}Z=0.
+\]
+
+\end_inset
+
+故
+\begin_inset Formula $AZ=0$
+\end_inset
+
+, 由此, 若有
+\begin_inset Formula $X\in\mathcal{M}_{n,1}(\CC)$
+\end_inset
+
+使
+\begin_inset Formula $A^{2}q(A)X=0$
+\end_inset
+
+, 则
+\begin_inset Formula $Aq(A)X=0$
+\end_inset
+
+.
+ 由于
+\begin_inset Formula $A^{2}q(A)=O_{n}$
+\end_inset
+
+, 当
+\begin_inset Formula $X$
+\end_inset
+
+取遍
+\begin_inset Formula $\mathcal{M}_{n,1}(\CC)$
+\end_inset
+
+中的基, 便只能有
+\begin_inset Formula $Aq(A)=O_{n}$
+\end_inset
+
+.
+ 于是
+\begin_inset Formula 
+\[
+\mu_{1}(x)\mid x\prod_{j=2}^{k}(x-\ui a_{j})(x+\ui a_{j}).
+\]
+
+\end_inset
+
+从而
+\begin_inset Formula $\mu_{1}(x)$
+\end_inset
+
+的复根只有单根.
+\end_layout
+
+\begin_layout Paragraph
+Ex
+\end_layout
+
+\begin_layout Standard
+Ex1.
+ 设
+\begin_inset Formula $A\in\mathcal{M}_{n}(\mathbb{F})$
+\end_inset
+
+在
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+中有
+\begin_inset Formula $n$
+\end_inset
+
+个不同的特征值, 
+\begin_inset Formula $M\in\mathcal{M}_{n}(\mathbb{F})$
+\end_inset
+
+满足
+\begin_inset Formula $AM=MA$
+\end_inset
+
+, 证明: 存在多项式
+\begin_inset Formula $p(x)\in\mathbb{F}[x]$
+\end_inset
+
+, 使得
+\begin_inset Formula $M=p(A)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ex2.
+ 设
+\begin_inset Formula $A\in\mathcal{M}_{3}(\RR)$
+\end_inset
+
+满足
+\begin_inset Formula $A\ne O_{3}$
+\end_inset
+
+, 且
+\begin_inset Formula $A^{3}=-A$
+\end_inset
+
+, 求
+\begin_inset Formula $A$
+\end_inset
+
+的极小多项式.
+\end_layout
+
+\begin_layout Standard
+Ex3.
+ 设
+\begin_inset Formula $m,n,p$
+\end_inset
+
+为正整数, 
+\begin_inset Formula $p\ge2$
+\end_inset
+
+, 
+\begin_inset Formula $A,B\in\mathcal{M}_{n}(\CC)$
+\end_inset
+
+使得
+\begin_inset Formula $A^{m}=I_{n}$
+\end_inset
+
+, 且
+\begin_inset Formula $BA=AB^{p}$
+\end_inset
+
+, 证明
+\begin_inset Formula $B$
+\end_inset
+
+可以对角化.
+\end_layout
+
+\begin_layout Standard
+Ex1 Hint: 
+\begin_inset Formula $x(x^{2}+1)=0$
+\end_inset
+
+, 实特征多项式有虚根必定成对出现.
+\end_layout
+
+\begin_layout Standard
+Ex2 Hint: 
+\begin_inset Formula $A$
+\end_inset
+
+和
+\begin_inset Formula $M$
+\end_inset
+
+可同时对角化, 然后用Lagrange插值公式.
+\end_layout
+
+\begin_layout Standard
+Ex3 Hint: 
+\begin_inset Formula $B=B^{p^{m}}$
+\end_inset
+
+, 所以
+\begin_inset Formula $B$
+\end_inset
+
+对应的极小多项式只有单根.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $a,b,c$
+\end_inset
+
+为非零实数, 使得
+\begin_inset Formula 
+\[
+a^{3}+b^{3}+c^{3}=0,
+\]
+
+\end_inset
+
+求
+\begin_inset Formula 
+\[
+(a+b+c)\left(\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\right)
+\]
+
+\end_inset
+
+的最小值.
+\end_layout
+
+\begin_layout Paragraph
+解: 
+\end_layout
+
+\begin_layout Standard
+不妨设
+\begin_inset Formula $a,b>0$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+c=-\left(a^{3}+b^{3}\right)^{1/3}<0,
+\]
+
+\end_inset
+
+设
+\begin_inset Formula $x=a+b$
+\end_inset
+
+, 
+\begin_inset Formula $y=ab$
+\end_inset
+
+, 则
+\begin_inset Formula 
+\[
+f:=(a+b+c)\left(\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\right)=\left[x-\left(x^{3}-3xy\right)^{1/3}\right]\left[\frac{x}{y}-\frac{1}{\left(x^{3}-3xy\right)^{1/3}}\right].
+\]
+
+\end_inset
+
+由
+\begin_inset Formula $x^{2}>4y$
+\end_inset
+
+, 令
+\begin_inset Formula $x^{2}=k^{3}y$
+\end_inset
+
+, 则需要
+\begin_inset Formula $k\ge4^{1/3}$
+\end_inset
+
+, 于是
+\begin_inset Formula 
+\[
+f(k)=\left[k-\left(k^{3}-3\right)^{1/3}\right]\left[k^{2}-\frac{1}{\left(k^{3}-3\right)^{1/3}}\right]
+\]
+
+\end_inset
+
+求导得
+\begin_inset Formula $f'(k)\ge0$
+\end_inset
+
+, 当
+\begin_inset Formula $k=4^{1/3}$
+\end_inset
+
+时
+\begin_inset Formula $f$
+\end_inset
+
+最小.
+\begin_inset Formula 
+\[
+f_{\min}(k)=f\left(4^{1/3}\right)=\left(4^{1/3}-1\right)\left(4^{2/3}-1\right)=5-2^{4/3}-2^{2/3}.
+\]
+
+\end_inset
+
+最小值在
+\begin_inset Formula 
+\[
+(a,b,c)=(z,z,-2^{1/3}z)
+\]
+
+\end_inset
+
+及其轮换时, 
+\begin_inset Formula $z\in\RR\setminus\left\{ 0\right\} $
+\end_inset
+
+, 取得.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+证明: 对于任意的
+\begin_inset Formula $n\in\NN$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}\sec^{4}\frac{k\pi}{2n+1}=\frac{8n(n+1)\left(n^{2}+n+1\right)}{3}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+证明: 
+\end_layout
+
+\begin_layout Standard
+由于
+\begin_inset Formula 
+\[
+\sec^{4}\theta=1+2\tan^{2}\theta+\tan^{4}\theta,
+\]
+
+\end_inset
+
+故需求出
+\begin_inset Formula $\sum\tan^{2}\frac{k\pi}{2n+1}$
+\end_inset
+
+与
+\begin_inset Formula $\sum\tan^{4}\frac{k\pi}{2n+1}$
+\end_inset
+
+.
+ 由于
+\begin_inset Formula 
+\[
+\ui\frac{1-\ue^{\frac{2k\pi\ui}{2n+1}}}{1+\ue^{\frac{2k\pi\ui}{2n+1}}}=\tan\frac{k\pi}{2n+1}.
+\]
+
+\end_inset
+
+令
+\begin_inset Formula 
+\[
+z=\ui\frac{1-\ue^{\frac{2k\pi\ui}{2n+1}}}{1+\ue^{\frac{2k\pi\ui}{2n+1}}},
+\]
+
+\end_inset
+
+故
+\begin_inset Formula 
+\[
+(z-\ui)^{2n+1}+(z+\ui)^{2n+1}=0
+\]
+
+\end_inset
+
+的根为
+\begin_inset Formula $z_{k}=\tan\left(\frac{k\pi}{2n+1}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $0\le k\le2n$
+\end_inset
+
+.
+ 记
+\begin_inset Formula 
+\begin{align*}
+P_{n}(z) & =(z-\ui)^{2n+1}+(z+\ui)^{2n+1}\\
+ & =2z\sum_{k=0}^{n}(-1)^{k}\binom{2n+1}{2k}z^{2(n-k)}.
+\end{align*}
+
+\end_inset
+
+令
+\begin_inset Formula $Q_{n}(x)=\sum_{k=0}^{n}(-1)^{k}\binom{2n+1}{2k}x^{n-k}$
+\end_inset
+
+, 则
+\begin_inset Formula $P_{n}(z)=2zQ_{n}(z^{2})$
+\end_inset
+
+, 由于
+\begin_inset Formula $\left(z_{k}\right)_{k=0}^{2n}$
+\end_inset
+
+是
+\begin_inset Formula $P_{n}(z)=0$
+\end_inset
+
+的根.
+ 故
+\begin_inset Formula 
+\[
+\left(z_{k}^{2}\right)_{k=1}^{2n}=\left(\tan^{2}\frac{k\pi}{2n+1}\right)_{k=1}^{2n}
+\]
+
+\end_inset
+
+是
+\begin_inset Formula $Q_{n}(z^{2})=0$
+\end_inset
+
+的根.
+ 展开有
+\begin_inset Formula 
+\[
+Q_{n}(x)=\left(\begin{array}{c}
+2n+1\\
+0
+\end{array}\right)x^{n}-\left(\begin{array}{c}
+2n+1\\
+2
+\end{array}\right)x^{n-1}+\left(\begin{array}{c}
+2n+1\\
+4
+\end{array}\right)x^{n-2}-\left(\begin{array}{c}
+2n+1\\
+6
+\end{array}\right)x^{n-3}+\cdots
+\]
+
+\end_inset
+
+则由Vi
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+`{e}
+\end_layout
+
+\end_inset
+
+ta公式, 
+\begin_inset Formula $Q_{n}(x)=0$
+\end_inset
+
+的根满足
+\begin_inset Formula 
+\[
+\sum_{cyc}\alpha=n(2n+1),\quad\sum_{cyc}\alpha\beta=\frac{n(n-1)(4n^{2}-1)}{6}.
+\]
+
+\end_inset
+
+故
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}\tan^{2}\left(\frac{k\pi}{2n+1}\right)=\sum_{cyc}\alpha=n(2n+1),
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\sum_{k=1}^{n}\tan^{4}\left(\frac{k\pi}{2n+1}\right) & =\sum_{cyc}\alpha^{2}=\left(\sum\alpha\right)^{2}-2\sum\alpha\beta\\
+ & =\frac{n(2n+1)(4n^{2}+6n-1)}{3}.
+\end{align*}
+
+\end_inset
+
+故
+\begin_inset Formula 
+\[
+\begin{aligned}\sum_{k=1}^{n}\sec^{4}\left(\frac{k\pi}{2n+1}\right) & =\sum_{k=1}^{n}\left\{ 1+2\tan^{2}\left(\frac{k\pi}{2n+1}\right)+\tan^{4}\left(\frac{k\pi}{2n+1}\right)\right\} \\
+ & =\sum_{k=1}^{n}1+2\sum_{k=1}^{n}\tan^{2}\left(\frac{k\pi}{2n+1}\right)+\sum_{k=1}^{n}\tan^{4}\left(\frac{k\pi}{2n+1}\right)\\
+ & =n+2n(2n+1)+\frac{1}{3}n(2n+1)\left(4n^{2}+6n-1\right)\\
+ & =\frac{8n(n+1)\left(n^{2}+n+1\right)}{3}
+\end{aligned}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+求
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}\int_{0}^{1}\frac{\left(1+x+\frac{x^{2}}{2}+\cdots+\frac{x^{n-1}}{n-1}\right)^{n+1}}{\left(1+x+\frac{x^{2}}{2}+\cdots+\frac{x^{n}}{n}\right)^{n}}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+解: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula 
+\[
+f_{n}(x)=1+x+\frac{x^{2}}{2}+\cdots+\frac{x^{n}}{n}.
+\]
+
+\end_inset
+
+则
+\begin_inset Formula 
+\[
+\begin{aligned}I_{n} & =\int_{0}^{1}\left[\frac{f_{n-1}(x)}{f_{n}(x)}\right]^{n}f_{n-1}(x)dx<\int_{0}^{1}f_{n-1}(x)dx\\
+ & =1+\frac{1}{1\cdot2}+\frac{1}{2\cdot3}+\cdots+\frac{1}{(n-1)n}=2-\frac{1}{n}.
+\end{aligned}
+\]
+
+\end_inset
+
+当
+\begin_inset Formula $b>a\ge0$
+\end_inset
+
+时, 有
+\begin_inset Formula 
+\[
+\begin{aligned}\frac{a^{n+1}}{b^{n}} & =b-\frac{b^{n+1}-a^{n+1}}{b^{n}}\\
+ & =b-(b-a)\left(1+\frac{a}{b}+\frac{a^{2}}{b^{2}}+\cdots+\frac{a^{n}}{b^{n}}\right)\\
+ & \geq b-(b-a)(n+1).
+\end{aligned}
+\]
+
+\end_inset
+
+于是
+\begin_inset Formula 
+\[
+\frac{f_{n-1}(x)^{n+1}}{f_{n}(x)^{n}}\geq f_{n}(x)-\frac{(n+1)x^{n}}{n},
+\]
+
+\end_inset
+
+所以
+\begin_inset Formula 
+\[
+\begin{aligned}I_{n} & \geq\int_{0}^{1}f_{n}(x)dx-\int_{0}^{1}\frac{(n+1)x^{n}}{n}dx\\
+ & =1+\frac{1}{1\cdot2}+\frac{1}{2\cdot3}+\cdots+\frac{1}{n(n+1)}-\frac{1}{n}\\
+ & =2-\frac{1}{n+1}-\frac{1}{n}.
+\end{aligned}
+\]
+
+\end_inset
+
+由夹逼定理
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}I_{n}=2.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+证明2: 
+\end_layout
+
+\begin_layout Standard
+先证被积函数关于
+\begin_inset Formula $n$
+\end_inset
+
+单调递增, 即证
+\begin_inset Formula 
+\[
+f_{n-1}(x)f_{n+1}(x)\le f_{n}^{2}(x),
+\]
+
+\end_inset
+
+再证被积函数收敛于
+\begin_inset Formula $1-\ln(1-x)$
+\end_inset
+
+.
+ 用DCT有
+\begin_inset Formula 
+\[
+\int_{0}^{1}(1-\ln(1-x))dx=[2x-(x-1)\ln(1-x)]_{0}^{1}=2.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+用同样的方法可以证明如下问题.
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+对于
+\begin_inset Formula $n\ge1$
+\end_inset
+
+, 设
+\begin_inset Formula 
+\[
+I_{n}=\int_{0}^{1}\frac{\left(\sum_{k=0}^{n}x^{k}/(2k+1)\right)^{2022}}{\sum_{k=0}^{n+1}\left(x^{k}/(2k+1)\right)^{2021}}dx,\quad L=\lim_{n\to\infty}I_{n},
+\]
+
+\end_inset
+
+计算
+\begin_inset Formula $L$
+\end_inset
+
+及
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}n\left(I_{n}-L\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Q: 
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $x_{1},\cdots,x_{n}>0$
+\end_inset
+
+, 满足
+\begin_inset Formula $x_{1}+x_{2}+\cdots+x_{n}=1$
+\end_inset
+
+, 证明
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}x_{i}\ln\left(1+x_{i}\right)<\ln2.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+证明: 
+\end_layout
+
+\begin_layout Standard
+由
+\begin_inset Formula $x\ln(1+x)+y\ln(1+y)<(x+y)\ln(1+x+y)$
+\end_inset
+
+.
+ 所以
+\begin_inset Formula 
+\begin{align*}
+\sum x_{i}\ln(1+x_{i}) & <\left(\sum x_{i}\right)\ln\left(1+\sum x_{i}\right)\\
+ & =\ln2.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+证明2: 
+\end_layout
+
+\begin_layout Standard
+由
+\begin_inset Formula $x_{i}<1$
+\end_inset
+
+, 有
+\begin_inset Formula 
+\[
+\begin{aligned}\sum_{i=1}^{n}x_{i}\ln\left(1+x_{i}\right) & =\sum_{i=1}^{n}\ln\left[\left(1+x_{i}\right)^{x_{i}}\right]=\ln\prod_{i=1}^{n}\left[\left(1+x_{i}\right)^{x_{i}}\right]\\
+ & <\ln\prod_{i=1}^{n}2^{x_{i}}=\ln\left(2\sum_{i=1}^{n}x_{i}\right)=\ln2
+\end{aligned}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

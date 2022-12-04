@@ -159,6 +159,212 @@ f(x_1,x_2,\cdots,x_n)=X'AX
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{数学分析}
+
+\subsection{常用的}
+
+\subsubsection{Formulas for the Remainder Term in Taylor Series}
+
+对于任意阶可导的函数$f$, 可以考虑它的Taylor级数
+\[
+\sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^{n}.
+\]
+Taylor级数中的前$n$阶部分和称为函数$f$在点$a$处的$n$次Taylor多项式
+\[
+T_{n}(x)=f(a)+\frac{f'(a)}{1!}(x-a)+\frac{f''(a)}{2!}(x-a)^{2}+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^{n}.
+\]
+记
+\[
+f(x)=T_{n}(x)+R_{n}(x),
+\]
+其中$R_{n}(x)$称为Taylor级数的余项.
+\bt{积分型余项}{}
+	若$a\in I$为开区间, $f\in C^{n+1}(I)$, 则
+	\[
+	R_{n}(x)=\frac{1}{n!}\int_{a}^{x}(x-t)^{n}f^{(n+1)}(t)\ud t.
+	\]
+\et
+\ba
+这个定理的数学归纳法证明是容易的, 略. 
+另一种证法使用Newton-Leibniz公式, 把$R_n(x)$看成$x$与$a$的二元函数$R_n(x,a)$, 然后对$a$求导. 得到
+\bee
+\frac{\ud R_n(x,a)}{\ud a}
+	=-\left(f'(a)+f''(a)(x-a)-f'(a)+\cdots+\frac{f^{(n+1)}(a)}{n!}(x-a)^n-\frac{f^{(n)}(a)}{(n-1)!}(x-a)^{n-1}\right)
+	=-\frac{f^{(n+1)}(a)}{n!}(x-a)^n.
+\eee
+因为$R_n(x,x)=0$, 所以
+\bee
+R_n(x,a)
+	=R_n(x,x)+\int_{x}^{a}\frac{\ud R_n(x,a)}{\ud a}\ud a
+	=\int_{a}^{x}\frac{f^{(n+1)}(t)}{n!}(x-t)^n\ud t.
+\eee
+\ea
+\bt{Weighted Mean Value Theorem for Integrals}{}
+	若$f,g\in C[a,b]$, 且$g$在$[a,b]$上不变号,
+	则存在$c\in[a,b]$使得
+	\[
+	\int_{a}^{b}f(x)g(x)\ud x=f(c)\int_{a}^{b}g(x)\ud x.
+	\]
+\et
+%
+\bt{Lagrange型余项}{}
+	设$I$为开区间, 若$f\in C^{n+1}(I)$, $a,x\in I$, 则在$a$和$x$之间存在$c$使得
+	\[
+	R_{n}(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}.
+	\]
+\et
+
+\subsection{不常用的}
+
+\subsubsection{用Bolzano-Weierstrass定理直接证明连续函数的有界性定理}
+\paragraph{定理3.4.1 (有界性定理)}
+
+设$f\in C[a,b]$, 则$f$在$[a,b]$上有界.
+
+\paragraph{证法一:}
+
+反证法, 取$\left|f(x_{n})\right|\ge n$, 由聚点定理$\Longrightarrow x_{n_{k}}\to x_{0}\in[a,b]$,
+$f$连续使得$f(x_{n_{k}})\to f(x_{0})$有界, 矛盾.
+
+\paragraph{证法二:}
+
+连续点$x$处有领域$U_{x}(\delta_{x})$, 使得其上$\left|f-f(x)\right|\le1$, 这样的$\left(U_{x}\right)$形成$[a,b]$的覆盖,
+用有限覆盖定理.
+
+\bt{}{}
+如果可分空间$X$中的任何序列有收敛子列, 则$X$上的任何连续实值映射都是有界的.
+\et
+\ba
+只证明$f$有上界的情况.
+
+设$\left(x_{n}\right)_{n}$为空间$X$的稠子集, $f:X\to\RR$为连续映射.
+
+构造序列$\left(k_{n}\right)_{n}$: 对于任意的$n$, 序列$\left(x_{n}\right)_{n}$的前$n$项必然存在$k\le n$满足$f(x_{k})=\max\left(f(x_{1}),\cdots,f(x_{n})\right)$.
+将这样的$k$记为$k_{n}$.
+
+按照上面的构造, 对于任何$n$都有
+\[
+f\left(x_{k_{n}}\right)\ge\max\left(f(x_{1}),\cdots,f(x_{n})\right).
+\]
+所以$\left(f\left(x_{k_{n}}\right)\right)_{n}$是关于$n$的递增数列.
+
+构造子列$\left(z_{n}\right)_{n}$: 按照定理的条件, 序列$\left(x_{k_{n}}\right)_{n}$有收敛子列,
+记为$\left(z_{n}\right)_{n}$, 并设$z_{n}\to z$, $n\to\infty$. 
+
+因为$\left(z_{n}\right)_{n}\subseteq\left(x_{k_{n}}\right)_{n}$, 所以对于任意的$k_{i}$,
+有充分大的角标$j$, 比如$j>k_{i}$, 使$z_{j}$对应的$x_{k_{n}}$的角标比$x_{k_{i}}$的大,
+从而由$\left(f\left(x_{k_{n}}\right)\right)_{n}$的单调性, 有$f(z_{j})\ge f\left(x_{k_{i}}\right)$.
+由于$\left(z_{n}\right)_{n}$是收敛序列, $f$是连续函数, 所以存在$m>0$, 使得对于任意的$n$,
+有$f(z_{n})\le f(z)+m$.
+
+最后, 对于任意的$x\in X$. 由$f$的连续性, 以及$\left(x_{n}\right)_{n}$在$X$中稠密,
+所以存在$x_{i}$满足$f(x)\le f(x_{i})+1$.
+
+综合以上所有结论, 
+\[
+f(x)\le f(x_{i})+1\le\max\left(f(x_{1}),\cdots,f(x_{i})\right)+1\le f\left(x_{k_{i}}\right)+1\le f(z_{j})+1<f(z)+m+1.
+\]
+所以$f$有上界.
+\ea
+
+\subsubsection{Ces\`{a}ro and Abel Summability}
+
+考虑序列$\left\{ a_{n}\right\} _{n\ge0}$, 它的部分和记为
+\[
+s_{n}=a_{0}+\cdots+a_{n}.
+\]
+有时, 序列$\left\{ s_{n}\right\} $不收敛, 所以这里从另一个角度来研究部分和. 注意当$a_{n}$收敛时,
+$\frac{s_{n}}{n}$也收敛, 并与$a_{n}$的极限一致, 不要将此性质与序列的Ces\`{a}ro和混淆,
+注意区分$\frac{s_{n}}{n}$和$\sigma_{n}$表达式上的不同. 定义$\left\{ a_{n}\right\} $的Ces\`{a}ro和如下
+\[
+\sigma_{n}=\frac{1}{n}(s_{0}+\cdots+s_{n-1}).
+\]
+这和对于不收敛的序列$\left\{ a_{n}\right\} $可能是收敛的. 对于任意的$r\in[0,1)$, 可以考虑加权得到Abel和
+\[
+A(r)=\sum_{k=0}^{+\infty}a_{k}r^{k},
+\]
+当$\lim_{r\to1}A(r)$存在且有限时, 称这个极限为序列$\left\{ a_{n}\right\} $的Abel极限.
+Abel求和公式变换上式有
+\begin{align*}
+	\sum_{k=0}^{N}a_{k}r^{k} & =(1-r)\sum_{k=0}^{N}s_{k}r^{k}+s_{N}r^{N+1}.
+\end{align*}
+当$N\to+\infty$, 有$s_{N}r^{N+1}\to0$时. Abel和不是别的, 就是序列$s_{k}$的带权$(1-r)r^{k}$的和.
+
+\paragraph{性质: }
+
+部分和序列收敛蕴含Ces\`{a}ro和收敛, Ces\`{a}ro和收敛蕴含Abel和收敛.
+
+\paragraph{证明:}
+
+1. 证明主要是对下面的和式拆分进行描述说明, 其中$s_{n}\to s$, $n\to+\infty$.
+\[
+\sigma_{n}-s=\frac{1}{n}\sum_{k=0}^{N-1}(s_{k}-s)+\frac{1}{n}\sum_{k=N}^{n-1}(s_{k}-s).
+\]
+
+2. 当$r<1$时, 容易得到
+\[
+\sum_{k=0}^{+\infty}a_{k}r^{k}=(1-r)^{2}\sum_{k=0}^{+\infty}k\sigma_{k}r^{k-1},\qquad r\in(0,1).
+\]
+设$\sigma_{n}\to s$, $n\to+\infty$. 注意下式的分解
+\[
+(1-r)^{2}\sum_{k=0}^{+\infty}k\sigma_{k}r^{k-1}-s=(1-r)^{2}\sum_{k=1}^{N-1}kr^{k-1}\left(\sigma_{k}-s\right)+(1-r)^{2}\sum_{k=N}^{+\infty}kr^{k-1}\left(\sigma_{k}-s\right).
+\]
+
+
+\paragraph{序列不收敛, 但Ces\`{a}ro和收敛的例子}
+
+\[
+1-1+1-1+1-1+\cdots.
+\]
+
+\paragraph{Ces\`{a}ro和不收敛但Abel和收敛的例子}
+
+\[
+1-2+3-4+5-6+\cdots.
+\]
+
+1897年, Tauber给出了Abel和收敛可以推出原序列收敛的一个充分条件. 
+\bt{Tauber, 1897}{}
+设序列$\left\{ a_{k}\right\} $为复数列, 假设
+\[
+A(r)=\sum_{k=0}^{+\infty}a_{k}r^{k}
+\]
+对于任意的$r\in(0,1)$收敛. 若$A(r)\to A$, $r\to1^{-}$. 且$ka_{k}=o(1)$,
+则有
+\[
+\sum_{k=0}^{+\infty}a_{k}=A.
+\]
+\et
+
+\ba
+因为$\sum a_{k}r^{k}\to A$, $r\to1^{-}$, 只需证
+\[
+\sum_{k=0}^{N}a_{k}-\sum_{k=0}^{+\infty}a_{k}r^{k}\rightarrow0
+\]
+沿着$r=1-\frac{1}{N}$, $N\to+\infty$成立即可. 对于任意的$\epsilon>0$, 存在$K$使得,
+只要$k>K$, 就有$\left|ka_{k}\right|>\epsilon$. 于是记
+\[
+\begin{aligned}\sum_{k=0}^{N}a_{k}-\sum_{k=0}^{+\infty}a_{k}r^{k} & =\sum_{k=0}^{K}a_{k}\left(1-r^{k}\right)+\sum_{k=K+1}^{N}a_{k}\left(1-r^{k}\right)-\sum_{k=N+1}^{+\infty}a_{k}r^{k}\\
+& =I_{1}+I_{2}+I_{3}.
+\end{aligned}
+\]
+显然, 当$N\to+\infty$时有$I_{1}\to0$. 对于$I_{2}$, 有
+\[
+\begin{aligned}\left|I_{2}\right| & \leq(1-r)\sum_{k=K+1}^{N}\left|a_{k}\right|\left(1+\cdots+r^{k-1}\right)\\
+& \leq(1-r)\sum_{k=K+1}^{N}\left|ka_{k}\right|\\
+& \leq(1-r)N\epsilon\leq\epsilon,
+\end{aligned}
+\]
+注意上式中的$r$是沿着$1-\frac{1}{N}$趋向于$1$. 对于$I_{3}$, 有
+\[
+\left|I_{3}\right|\leq\sum_{k=N+1}^{+\infty}\left|ka_{k}\right|\frac{r^{k}}{k}<\frac{\epsilon}{N+1}\sum_{k=0}^{+\infty}r^{k}<\epsilon.
+\]
+\ea
+
+Littlewood, 1911年将上面定理的$o(1)$弱化为$\mathcal{O}(1)$. Tauberian定理一般用来从级数的Abel可和性推出实可和性.
+
+Remark: 对于正项级数, 以上三种收敛是互相等价的. 事实上, $s_{n}$是递增的必有极限, (极限可能是$+\infty$),
+从而Ces\`{a}ro和与Abel和有相同的极限.
+
 \bt{关于有界, 无界的充分条件}{}
 (1) $\lim\limits_{x\to x_0^{-}}f(x)$存在, 则$\exists\delta>0$, 当$-\delta<x-x_0<0$时, $f(x)$有界; 对$x\to x_0^+$, $x\to x_0$有类似结论.
 
@@ -262,6 +468,31 @@ $f'_n(x)\rightrightarrows\varphi(x)$, $x\in[a,b]$, 则$f$可微且$f'(x)=\varphi
 \et
 \ba
 取$u_1=f_1$, $u_n=f_n-f_{n-1}$, $n>1$, 并用\ref{th:20170702003}.
+\ea
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section{实变函数论}
+\bt{the Cantor-Schr\"{o}der-Bernstein theorem}{}
+Claim: A given set $X$ and its power set $\mathcal{P}(X)$ can never be in bijection.
+\et
+\ba
+By contradiction. Let $f$ be any function from $X$ to $\mathcal{P}(X)$. It suffices to prove $f$ cannot be surjective. 
+
+That means that some member of $\mathcal{P}(X)$, i.e. some subset of $X$, is not in the image of $f$. Consider the set:
+$$
+T=\{x \in X: x \notin f(x)\} .
+$$
+For every $x$ in $X$, either $x$ is in $T$ or it is not. 
+
+If $x$ is in $T$, then by definition of $T, x$ is not in $f(x)$, so the set $T$ can not be the set $f(x)$ (because $x \in T$ but $x \notin f(x)$). 
+
+On the other hand, if $x$ is not in $T$, then by definition of $T, x$ is in $f(x)$, so again the set $T$ can not be the set $f(x)$. 
+
+We just proved that $T$ is NOT $f(x)$ for any $x$, and so $f$ is not surjective.
 \ea
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -599,3 +830,30 @@ f(x)=(x-1)(x-2)\cdots(x-p+1)-x^{p-1}+1\equiv 0\pmod{p}
 \abs{\a_1+\a_2+\cdots+\a_m}\le\abs{\a_1}+\abs{\a_2}+\cdots+\abs{\a_m}.
 \eee
 \et
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{MSE}
+
+\bt{MSE5}{}
+Theorem (JHC) $r=\sqrt{n}$ is integral if rational, for $\mathrm{n} \in \mathbb{N}$
+\et
+\ba
+Put $\mathrm{r}=\frac{\mathrm{A}}{\mathrm{B}}$, least $\mathrm{B}>0 . \sqrt{\mathrm{n}}=\frac{\mathrm{n}}{\sqrt{\mathrm{n}}} \Rightarrow \frac{\mathrm{A}}{\mathrm{B}}=\frac{\mathrm{nB}}{\mathrm{A}}$. Taking fractional parts yields $\frac{\mathrm{b}}{\mathrm{B}}=\frac{\mathrm{a}}{\mathrm{A}}$ for $0 \leq \mathrm{b}<\mathrm{B}$.
+But $\mathrm{B} \nmid \mathrm{A} \Rightarrow \mathrm{b} \neq 0 \Rightarrow \frac{\mathrm{A}}{\mathrm{B}}=\frac{\mathrm{a}}{\mathrm{b}}$ contra $\mathrm{B}$ least. QED
+\ea
+
+\bt{MSE5}{}
+Theorem (WGD) $\mathrm{r}=\sqrt{\mathrm{n}}$ is integral if rational, for $\mathrm{n} \in \mathbb{N}$
+\et
+\ba
+Put $\mathrm{r}=\frac{\mathrm{A}}{\mathrm{B}}$, least $\mathrm{B}>0 . \sqrt{\mathrm{n}}=\frac{\mathrm{n}}{\sqrt{\mathrm{n}}} \Rightarrow \frac{\mathrm{A}}{\mathrm{B}}=\frac{\mathrm{nB}}{\mathrm{A}} \Rightarrow \mathrm{B} \mid \mathrm{A}$ by this key result:
+\ea
+
+\bt{MSE5}{}
+Unique Fractionization The least denominator B of a fraction divides every denominator. 
+\et
+\ba
+$\frac{\mathrm{A}}{\mathrm{B}}=\frac{\mathrm{C}}{\mathrm{D}} \Rightarrow \frac{\mathrm{D}}{\mathrm{B}}=\frac{\mathrm{C}}{\mathrm{A}}$. Taking fractional parts $\frac{\mathrm{b}}{\mathrm{B}}=\frac{\mathrm{a}}{\mathrm{A}}$ where $0 \leq \mathrm{b}<\mathrm{B}$. But $\mathrm{B} \nmid \mathrm{D} \Rightarrow \mathrm{b} \neq 0 \Rightarrow \frac{\mathrm{A}}{\mathrm{B}}=\frac{\mathrm{a}}{\mathrm{b}}$ contra leastness of B. Thus $\mathrm{B} \mid \mathrm{D}$ as claimed QED
+\ea

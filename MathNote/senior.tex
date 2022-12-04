@@ -4,6 +4,240 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{旧版笔记}
+
+\bq{}{}
+设集合$A=\{2,0,1,3\}$, 集合$B=\{x\mid -x\in A, 2-x^2\notin A\}$. 则集合$B$中所有元素的和为 $\underline{-5}$.
+\eq
+
+\bq{}{}
+在平面直角坐标系$xOy$中, 点$A,B$在抛物线$y^2=4x$上, 满足$\overrightarrow{OA}\cdot\overrightarrow{OB}=-4$, $F$是抛物线的焦点. 则$S_{\triangle OFA}\cdot S_{\triangle OFB}=2$.
+\eq
+
+\bq{}{}
+在$\triangle ABC$中, 已知$\sin A=10\sin B\sin C$, $\cos A=10\cos B\cos C$, 则$\tan A$的值为$\underline{11}$.
+\eq
+\ba
+由于$\sin A-\cos A=10(\sin B\sin C-\cos B\cos C)=-10\cos A$, 所以$\tan A=11$.
+\ea
+
+\bq{}{}
+已知正三棱锥$P-ABC$底面边长为$1$, 高为$\sqrt{2}$, 则其内切球半径为$\underline{\frac{\sqrt{2}}{6}}$.
+\eq
+
+\bq{}{}
+设$a,b$为实数, 函数$f(x)=ax+b$满足: 对任意$x\in[0,1]$, 有$|f(x)|\le 1$, 则$ab$的最大值为$\underline{\frac14}$.
+\eq
+\ba
+易知$a=f(1)-f(0)$, $b=f(0)$, 则
+\bee
+ab=f(0)\cdot(f(1)-f(0))=-\left(f(0)-\frac12f(1)\right)^{2}+\frac14(f(1))^2\le\frac14(f(1))^2\le\frac14.
+\eee
+当$2f(0)=f(1)=\pm1$, 即$a=b=\pm\frac12$时, $ab=\frac14$. 故$ab$的最大值为$\frac14$.
+\ea
+
+\bq{}{}
+从$1,2,\cdots,20$中任取$5$个不同的数, 其中至少有两个是相邻数的概率为$\underline{\frac{232}{323}}$.
+\eq
+\ba
+设$a_1<a_2<a_3<a_4<a_5$取自$1,2,\cdots,20$, 若$a_1,a_2,a_3,a_4,a_5$互不相邻, 则$1\le a_1 <a_2-1<a_3-2<a_4-3<a_5-4\le 16$, 
+由此知从$1,2,\cdots,20$中取$5$个互不相邻的数的选法与从$1,2,\cdots,16$中取$5$个不同的数的选法相同, 即$\binom{16}{5}$种. 
+所以, 从$1,2,\cdots,20$中任取$5$个不同的数, 
+其中至少有两个是相邻的概率为$\frac{\binom{20}{5}-\binom{16}{5}}{\binom{20}{5}}$.
+\ea
+
+\bq{}{}
+若实数$x,y$满足$x-4\sqrt{y}=2\sqrt{x-y}$, 则$x$的取值范围是$\underline{\left\{ 0\right\} \cup\left[4,20\right]}$.
+\eq
+\ba
+令$\sqrt{y}=a$, $\sqrt{x-y}=b$, ($a,b\ge0$), 此时$x=y+(x-y)=a^{2}+b^{2}$,
+且条件中等式化为$a^{2}+b^{2}-4a=2b$, 从而$a,b$满足方程$(a-2)^{2}+(b-1)^{2}=5$,
+($a,b\ge0$). 如图所示, 在$aOb$平面内, 点$(a,b)$的轨迹是以$(1,2)$为圆心, $\sqrt{5}$为半径的圆在$a,b\ge0$的部分,
+即点$O$与弧$\widearc{ACB}$的并集. 因此$\sqrt{a^{2}+b^{2}}\in\left\{ 0\right\} \cup\left[2,2\sqrt{5}\right]$,
+从而$x=a^{2}+b^{2}\in\left\{ 0\right\} \cup\left[4,20\right]$.
+
+\begin{center}
+\begin{tikzpicture}
+	\tkzInit[xmin=-2,xmax=4,ymin=-1,ymax=5]
+	
+	\tkzDefPoints{0/0/O,0/4/B,2/0/A,2/4/C,1/2/D}
+	
+	\tkzDrawX[label=$a$,noticks,>=latex]
+	\tkzDrawY[label=$b$,noticks,>=latex]
+%	\tkzDrawXY[noticks,>=latex]
+	
+	\tkzDrawPoints[red,size=6](O,A,B)
+	\tkzDrawPoints[size=6](C)
+	\tkzLabelPoints(O,A,B)
+	\tkzLabelPoints[above right](C)
+	\tkzShowPointCoord[xlabel=$1$,ylabel=$2$](D)
+	\tkzDrawArc[line width=1pt,color=red,double](D,A)(B)
+	\tkzDrawSegments[dashed](O,C)
+	\tkzDrawArc[style=dashed](D,B)(A)
+\end{tikzpicture}
+\end{center}
+\ea
+
+\bq{}{}
+已知数列$\{a_n\}$共有$9$项, 其中$a_1=a_9=1$, 且对每个$i\in\{1,2,\cdots,8\}$, 均有$\frac{a_{i+1}}{a_i}\in\left\{2,1,-\frac12\right\}$, 
+则这样的数列的个数为$\underline{491}$.
+\eq
+
+\bq{}{}
+给定正数数列${x_n}$满足$S_n\ge2S_{n-1}$, $n=2,3,\cdots$, 这里$S_n=x_1+\cdots+x_n$. 证明: 存在常数$C>0$, 使得$x_n\ge C\cdot 2^n$, $n=1,2,\cdots$.
+\eq
+\ba
+用数学归纳法证明: $x_n\ge\frac14x_1\cdot 2^n$, $n=1,2,\cdots$.
+\ea
+
+\bq{}{}
+在平面直角坐标系$xOy$中, 椭圆的方程为$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$, ($a>b>0$), $A_1,A_2$分别为椭圆的左右顶点, 
+$F_1,F_2$分别为椭圆的左右焦点, $P$为椭圆上不同于$A_1$和$A_2$的任意一点. 若平面中两个点$Q,R$满足$QA_1\perp PA_1$, 
+$QA_2\perp PA_2$, $RF_1\perp PF_1$, $RF_2\perp PF_2$, 试确定线段$QR$的长度与$b$的大小关系, 并给出证明.
+\eq
+\ba
+$|QR|\ge b$, 等号成立当且仅当$P(0,\pm b)$.
+\ea
+
+\bq{}{}
+求所有的正实数对$(a,b)$, 使得函数$f(x)=ax^2+b$满足: 对任意实数$x,y$, 有$f(xy)+f(x+y)\ge f(x)f(y)$.
+\eq
+\ba
+\be\label{2022120401}
+(ax^2y^2+b)+(a(x+y)^2+b)\ge(ax^2+b)(ay^2+b).
+\ee
+当$y=0$时, 有$(1-b)ax^2+b(2-b)\ge0$. 此时$1-b\ge 0$.
+
+在(\ref{2022120401})中令$y=-x$, 得$g(x)\coloneqq (a-a^2)x^4-2abx^2+(2b-b^2)\ge 0$, 则$a-a^2\ne 0$. 
+于是
+\bee
+g(x)=(a-a^2)\left(x^{2}-\frac{b}{1-a}\right)^{2}+\frac{b}{1-a}(2-2a-b)\ge 0
+\eee
+对一切实数$x$成立, 从而必有$a-a^2>0$. 因为$\frac{b}{1-a}>0$, 根据$g\left(\sqrt{\frac{b}{1-a}}\right)=\frac{b}{1-a}(2-2a-b)\ge0$.
+所以$a,b$满足$0<b\le 1$, $0<a<1$, $2a+n\le 2$.
+
+下面要证充分性. 利用$x^2 +y^2\ge -2xy$, 而不是$x^2+y^2\ge 2xy$.
+\ea
+
+\bq{}{}
+如图, $AB$是圆$\omega$的一条弦, $P$为弧$AB$内一点, $E,F$为线段$AB$上两点, 满足$AE=EF=FB$. 连接$PE,PF$并延长, 与圆$\omega$分别相交于点$C,D$.
+求证: $EF\cdot CD=AC\cdot BD$.
+\eq
+
+\bq{}{}
+给定正整数 $u, v$, 数列 $\left\{a_n\right\}$ 定义如下: $a_1=u+v$. 对整数 $m \geq 1$,
+$$
+\begin{cases}
+	a_{2 n}=a_n+u, &\\
+	a_{2 n+1}=a_n+v. &
+\end{cases}
+$$
+记 $S_n=a_1+a_2+\cdots+a_n$, ($m=1,2, \cdots$). 
+证明: 数列 $\left\{S_n\right\}$ 中有无穷多项是完全平方数.
+\eq
+\ba
+对于正整数 $n$, 有
+\begin{align*}
+	S_{2^{n+1}-1} & =a_1+\left(a_2+a_3\right)+\left(a_4+a_5\right)+\cdots+\left(a_{2^{n+1}-2}+a_{2^{n+1}-1}\right) \\
+	& =u+v+\left(a_1+u+a_1+v\right)+\left(a_2+u+a_2+v\right)+\cdots+\left(a_{2^n-1}+u+a_{2^n-1}+v\right) \\
+	& =2^n(u+v)+2 S_{2^n-1},
+\end{align*}
+所以
+$$
+S_{2^n-1}=(u+v) n \cdot 2^{n-1} .
+$$
+设 $u+v=2^k \cdot q$, 其中 $k$ 是非负整数, $q$ 是奇数. 取 $n=q \cdot l^2$, 其中 $l$ 为满足 $l \equiv k-1(\bmod 2)$ 的任意正整数, 
+此时 $S_{2^n-1}=q^2 l^2 \cdot 2^{k-1+q \cdot l^2}$, 注意到 $q$ 是奇数, 故
+$$
+k-1+q \cdot l^2 \equiv k-1+l^2 \equiv k-1+(k-1)^2=k(k-1) \equiv 0 \quad(\bmod 2) .
+$$
+所以, $S_{2^n-1}$ 是完全平方数. 由于 $l$ 有无穷多个, 故数列 $\left\{S_n\right\}$ 中有无穷多项是完全平方数.
+\ea
+
+\bq{}{}
+一次考试共有 $m$ 道试题, $n$ 个学生参加, 其中 $m, n \geq 2$ 为给定的整数. 每道题的得分规则是: 若该题恰有 $x$ 个学生没有答对, 
+则每个答对该题的学生得 $x$ 分, 未答对的学生得零分. 每个学生的总分为其 $m$ 道题的得分总和. 将所有学生总分从高到低排列为 $p_1 \geq p_2 \geq \cdots \geq p_n$, 
+求 $p_1+p_n$ 的最大可能值.
+\eq
+\ba
+设第 $m$ 道题的第 $n$ 个学生的得分为 $a_{m n}$, 第 $m$ 道题有 $s_m$ 人做对. 则
+\be\label{2022120402}
+p_n=\sum_{i=1}^m a_{\text {in }}
+\ee
+和
+\be\label{2022120403}
+\sum_{i=1}^n a_{m i}=s_m\left(n-s_m\right)
+\ee
+因为 $p_1 \geq p_2 \geq \cdots \geq p_n$, 所以 $p_1 \leq \sum_{i=1}^m\left(n-s_i\right)=m n-\sum_{i=1}^m s_i$. 
+(\ref{2022120402}) 和 (\ref{2022120403}) 可得 $\sum_{j=1}^n p_j=\sum_{i=1}^m \sum_{j=1}^n a_{i j}=\sum_{i=1}^m s_i\left(n-s_i\right)$
+\begin{align*}
+	p_1+p_n & \leq \frac{1}{n-1}\left(p_1+p_2+\cdots+p_n+(n-2) p_1\right) \\
+	& \leq \frac{1}{n-1} \sum_{i=1}^m s_i\left(n-s_i\right)+\frac{n-2}{n-1}\left(m n-\sum_{i=1}^m s_i\right) \\
+	& =\frac{1}{n-1}\left(2 \sum_{i=1}^m s_i-\sum_{i=1}^m s_i^2\right)+\frac{m n(n-2)}{n-1} \\
+	& \leq \frac{1}{n-1}\left(2 \sum_{i=1}^m s_i-\frac{1}{m}\left(\sum_i^m s_i\right)^2\right)+\frac{m n(n-2)}{n-1} \\
+	& =\frac{-1}{m(n-1)}\left(\sum_{i=1}^m s_i-m\right)^{2}+m(n-1) \\
+	& \leq m(n-1)
+\end{align*}
+在只有一个学生答对了全部问题, 其它 $(n-1)$ 个学生全部答错时, $p_1+p_n$ 可取到最大值 $m(n-1)$.
+\ea
+
+\bq{}{}
+设$n,k$为大于$l$的整数, $n<2^k$, 证明: 存在$2k$个不被$n$整除的整数, 若将它们任意分成两组, 则总有一组有若干个数的和被$n$整除.
+\eq
+
+\bq{}{}
+正系数一元二次方程 $a x^2+b x+c=0$ 有实根, 证:
+
+(1) $\max \{a, b, c\} \geq \frac{4}{9}(a+b+c)$,
+
+(2) $\min \{a, b, c\} \leq \frac{1}{4}(a+b+c)$.
+\eq
+\ba
+令 $a+b+c=t>0$. 
+
+(1) 若 $b \geq \frac{4}{9} t$, 结论显然成立.
+
+若 $b<\frac{4}{9} t$, 则
+\be\label{2022120404}
+\because \Delta \geq 0 \Longrightarrow a c \leq \frac{1}{4} b^2<\frac{4}{81} t^2
+\ee
+又 $a+c=t-b>t-\frac{4}{9} t=\frac{5}{9} t$, 即 $c>\frac{5}{9} t-a$, 由 (\ref{2022120404}) $\Longrightarrow \frac{4}{81} t^2>a c>a\left(\frac{5}{9} t-a\right)$, 即 $a^2-\frac{5}{9} t a+\frac{4}{81} t^2>0 \Longrightarrow a<\frac{1}{9} t$ 或 $a>\frac{4}{9} t$. 
+
+若 $a>\frac{4}{9} t, \cdots$, 若 $a<\frac{1}{9} t$ 则 $c>\frac{5}{9} t-a>\frac{4}{9} t \cdots$.
+
+(2) 若 $a \leq \frac{1}{4} t \cdots$, 若 $a>\frac{1}{4} t, \because \Delta \geq 0 \Longrightarrow b^2 \geq 4 a c>c t$, 即
+\be\label{2022120405}
+b>\sqrt{c t}
+\ee
+又 $b+c=t-a<\frac{3}{4} t$, 即
+\be\label{2022120406}
+b<\frac{3}{4} t-c
+\ee
+由 (\ref{2022120405}), (\ref{2022120406}), 得 $\frac{3}{4} t-c>\sqrt{c t}$, 
+即 $\left(\sqrt{c}+\frac{3}{2} \sqrt{t}\right)\left(\sqrt{c}-\frac{1}{2} \sqrt{t}\right)<0$. 
+$\because \sqrt{c}+\frac{3}{2} \sqrt{t}>0$, 
+$\therefore \sqrt{c}-\frac{1}{2} \sqrt{t}<0$. 
+$\therefore c<\frac{1}{4} t \cdots$.
+\ea
+
+\bq{}{}
+在一张 $(n \times n$ 的)方格纸上画出一个每边有 11 个格子的方框, 掷硬币来决定谁先开始, 开始者用铅笔沿着方框内一个小方格的格子的一条边画一条线, 第二人接着线的一端在添上一条线, 照此进行. 两人轮流画线条, 直至其中一人把对方困死而获胜为止; 这也就是线条发生重合, 或者无法再添加新的线条.
+\begin{center}
+	\begin{tikzpicture}
+		\draw[step=.5cm] (-1.1,-1.1) grid (1.1,1.1);
+		\draw[->,line width=.5mm,red,-{Stealth[length=2mm]}] (-.5,.5) -- (-.5,0) -- (0,0) -- (0,.5) -- (.5,.5) -- (.5,0) -- (.5,-.5) -- (0,-.5);
+	\end{tikzpicture}
+\end{center}
+\eq
+
+\bq{}{}
+设$a_{1},a_{2},a_{3},b_{1},b_{2},b_{3}$为互不相同的正整数, 满足
+\bee
+\left[(n+1)a_{1}^{n}+na_{2}^{n}+(n-1)a_{3}^{n}\right]\mid\left[(n+1)b_{1}^{n}+nb_{2}^{n}+(n-1)b_{3}^{n}\right]
+\eee
+对任何正整数$n$成立, 求证: 存在正整数$k$, 使得$b_{i}=ka_{i}$, ($i=1,2,3$).
+\eq
+
 \section{2016年中科大入学数学考试}
 \bq{}{}
 在四面体$ABCD$中, $AD=BD=CD$, $AB=BC=CA=1$. 若二面角$A-BC-D$等于$75\degree$, 求二面角$A-BD-C$的余弦值.
@@ -322,7 +556,7 @@ f(f(x))f(y)-xy=f(x)+f(f(y))-1.
 \ee
 \eq
 \ba
-让$x,y$互换, 则有$f(f(y))f(x)-xy=f(y)+f(f(x))-1$. 将\ref{20170703}式两边同时乘以$f(x)$与前式相加化简得
+让$x,y$互换, 则有$f(f(y))f(x)-xy=f(y)+f(f(x))-1$. 将(\ref{20170703})式两边同时乘以$f(x)$与前式相加化简得
 \bee
 (f(x)f(f(x))-1)f(y)=xy(f(x)+1)+f^2(x)-f(x)+f(f(x))-1.
 \eee
@@ -467,4 +701,79 @@ $S_n=\alpha^n+\beta^n+\gamma^n$, ($n\in \NN$),
 则$\Im(S_n)=f_n$. 补充定义$S_0=3$, 
 由于$(\sigma_1, \sigma_2,\sigma_3)=(\alpha+\beta+\gamma,\alpha\beta+\beta\gamma+\gamma\alpha,\alpha\beta\gamma)\in\RR^3$,
 所以$S_1,S_2\in\RR$. 由牛顿等幂公式得$S_n\in\RR$, 即得.
+\ea
+
+\bq{https://artofproblemsolving.com/community/c6h6319p534870}{}
+For three sequences $(x_n),(y_n),(z_n)$ with positive starting elements $x_1,y_1,z_1$ we have the following formula:
+\bee
+x_{n+1}=y_n+\frac1{z_n},\quad y_{n+1}=z_n+\frac1{x_n},\quad z_{n+1}=x_n+\frac1{y_n},\quad (n=1,2,3,\cdots)
+\eee
+a). Prove that none of the three sequences is bounded from above.
+
+b). At least one of the numbers $x_{200},y_{200},z_{200}$ is greater than $20$.
+\eq
+\ba
+a). 反证法, 并用单调收敛定理, 由于$x_{n+1}+y_{n+1}+z_{n+1}=x_{n}+y_{n}+z_{n}+\frac{1}{x_{n}}+\frac{1}{y_{n}}+\frac{1}{z_{n}}$,
+由H-A不等式,
+\be\label{eq:2022120301}
+x_{n+1}+y_{n+1}+z_{n+1}\ge x_{n}+y_{n}+z_{n}+\frac{9}{x_{n}+y_{n}+z_{n}}\ge x_{n}+y_{n}+z_{n},
+\ee
+
+所以数列$(x_{n}+y_{n}+z_{n})$不减, 若命题不成立, 则$\lim_{n\to\infty}x_{n}+y_{n}+z_{n}$存在,
+对(\ref{eq:2022120301})取极限得$\lim_{n\to\infty}\frac{1}{x_{n}+y_{n}+z_{n}}=0$, 这与数列$\left(x_{n}+y_{n}+z_{n}\right)$非负不减矛盾.
+
+b). 证明可以借助微分方程的解作为思路引导, 若令(\ref{eq:2022120301})中$T_{n}\coloneqq x_{n}+y_{n}+z_{n}$,
+则有$T_{n+1}\ge T_{n}+\frac{9}{T_{n}}$. 若将此不等式看成等式, 则为$T_{n+1}=T_{n}+\frac{9}{T_{n}}$,
+考虑到递推公式和微分方程的关系:
+\bee
+T_{n}\leftrightarrow f(n)\Longleftrightarrow n\leftrightarrow x,\ T\leftrightarrow f;
+\eee
+\bee
+\frac{T_{n+1}-T_{n}}{1}=\frac{9}{T_{n}}\leftrightarrow\frac{\ud y}{\ud x}=\frac{9}{y}.
+\eee
+而上式右边有解$\ud y^{2}=\ud(9x)\leftrightarrow y=3\sqrt{x}$, 和微分方程解法相似,
+并注意到$y^{2}\leftrightarrow T_{n}^{2}$, $\ud y^{2}\leftrightarrow T_{n+1}^{2}-T_{n}^{2}$,
+所以有如下尝试:
+\bee
+T_{n+1}^{2}-T_{n}^{2}=(T_{n+1}+T_{n})(T_{n+1}-T_{n})\ge2T_{n}\frac{9}{T_{n}}=18.
+\eee
+又利用A-G不等式, 易得$T_{2}\ge6$, 所以$T_{n}^{2}\ge18n$, 所以$T_{200}^{2}\ge60^{2}$.
+最后用抽屉原理(或叫鸽洞原理)即可.
+\ea
+
+\bq{}{}
+$a_1=1$, $a_2=2$, $a_3=3$. for $i\ge 3$, $a_{i+1}=a_i-a_{i-1}+\frac{a_i^2}{a_{i-2}}$.
+prove that, $a_i$ is a positive integer and is not divisible by $4$.
+\eq
+\ba
+用归纳法证明: $a_{n-2}\mid a_n$, 并归纳证明: $a_{4n+1}\equiv 1\pmod{4}$, $a_{4n+2}\equiv 2\pmod{4}$, $a_{4n+3}\equiv 3\pmod{4}$和$a_{4n}\equiv 2\pmod{8}$.
+\ea
+
+\bq{2002年CMO}{}
+平面上的全体有理点可分成$3$个两两不相交的集合, 满足下述两个条件:
+
+(1) 在以每个有理点为圆心的任一圆内一定包含$3$个点分别属于这$3$个集合.
+
+(2) 在任何一条直线上都不可能有三个点分别属于这$3$个集合.
+\eq
+\ba
+任一有理点均可唯一地写成 $\left(\frac{u}{w}, \frac{v}{w}\right)$ 的形式, 这里 $u, v, w$ 都是整数, 且 $(u, v, w)=1$, 记 $A=\left\{\left(\frac{u}{w}, \frac{v}{w}\right): 2 \nmid u\right\}$, $B=\left\{\left(\frac{u}{w}, \frac{v}{w}\right): 2 \mid u, 2 \nmid v\right\}, C=\left\{\left(\frac{u}{w}, \frac{v}{w}\right): 2|u, 2| v\right\}$, 下面证明这 3 个集合满足本题条件(1)和(2).
+
+该平面上的直线方程为 $a x+b y+c=0$, 如果其上有两个不同有理点 $\left(x_1, y_1\right)$ 和 $\left(x_2, y_2\right)$, 则有 $\left\{\begin{array}{l}a x_1+b y_1+c=0 \\ a x_2+b y_2+c=0\end{array}\right.$, 如果 $c=0$, 则可取 $a, b$ 为有理数. 如果 $c \neq 0$, 则可取 $c=1$, 则可从上面的联立方程组中求出 $a$ 和 $b$ 的值, 当然都是有理数, 再通分可使 $a, b, c$ 都是整数, 且满足 $(a, b, c)=1$, 令有理点 $\left(\frac{u}{w}, \frac{v}{w}\right)$ 在直线 $l: a x+b y+c=0$ 上, 则有 $a u+b v+c w=0$.
+
+(1) 先证集合 $A, B, C$ 满足条件(2), 分以下 3 种情形讨论:
+
+情形1: $2 \nmid c$, 若 $2|u, 2| v$, 则由(1)知 $2 \mid c w$, 从而 $2 \mid w$, 这与 $(u, v, w)=1$ 矛盾, 所以集合中 $C$ 的点都不能在直线 $l$ 上. 
+
+情形2: $2|c, 2| b$, 由(1)得 $2 \mid a u$, 又因 $(a, b, c)=1$, 故 $2 \nmid a$, 所以 $2 \mid u$, 这表明集合 $A$ 中的点不在直线 $l$ 上.
+
+情形3: $2 \mid c, 2 \nmid b$, 若 $2 \nmid v$, 则 $2 \nmid a u$, 从而 $2 \nmid u$, 从而集合 $B$ 中的点都不能在直线 $l$ 上. 
+
+综上所述, $A, B, C$ 这 3 个集合满 足条件(2).
+
+(2) 再证集合 $A, B, C$ 满足条件 (1), 设 $D$ 是以有理点 $\left(\frac{u_0}{w_0}, \frac{v_0}{w_0}\right)$ 为圆心, 以 $r$ 为半径的圆取正整数 $k$, 使得 $2^k>$ $\max \left\{w_0, \frac{1}{r}\left(\left|u_0\right|+\left|v_0\right|+1\right)\right\}$, 我们具体构造三个点分别属于集合 $A, B, C$, 它们是
+$$
+\left(\frac{u_0 \cdot 2^k+1}{w_0 \cdot 2^k}, \frac{v_0 \cdot 2^k}{w_0 \cdot 2^k}\right) \in A,\left(\frac{u_0 \cdot 2^k}{w_0 \cdot 2^k}, \frac{v_0 \cdot 2^k+1}{w_0 \cdot 2^k}\right) \in B,\left(\frac{u_0 \cdot 2^k}{u_0\left(2^k+1\right)}, \frac{v_0 \cdot 2^k}{w_0\left(2^k+1\right)}\right) \in C,
+$$
+它们都在 $\odot O$ 内部, 值的注意的是: 在上述 3 点中, $u, v, w$ 不一定互质, 但由于 $2^k>w_0$, 故约分不改变分子的奇偶性, 这表明条件(1)成立.
 \ea
