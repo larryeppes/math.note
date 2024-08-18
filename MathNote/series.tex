@@ -1,0 +1,941 @@
+\section{数项级数}
+
+\subsection{级数收敛与发散的概念}
+
+无穷级数
+\[
+\sum_{n=1}^{\infty}a_{n}=a_{1}+a_{2}+\cdots+a_{n}+\cdots
+\]
+其中
+\[
+S_{n}=\sum_{k=1}^{n}a_{k}=a_{1}+\cdots+a_{n}
+\]
+称为级数的第$n$个部分和.
+
+\paragraph{级数收敛的必要条件:}
+
+如果 $\sum_{n=1}^{\infty}a_{n}$ 收敛, 则通项 $a_{n}\rightarrow0$, $(n\rightarrow\infty)$.
+(否定表述)
+
+\paragraph{级数收敛的Cauchy准则:}
+
+$\sum_{n=1}^{\infty}a_{n}$ 收敛 $\Longleftrightarrow$ 任给 $\varepsilon>0$,
+存在 $N=N(\epsilon)$, 当 $n>N$ 时 
+\[
+\left|a_{n+1}+a_{n+2}+\cdots+a_{n+p}\right|<\varepsilon,\quad\forall p\geqslant1.
+\]
+(否定表述)
+
+\paragraph{例 8.1.2. }
+
+判断级数 $\sum_{n=1}^{\infty}\frac{1}{n^{2}}$ 的敛散性.
+
+\paragraph{例 8.1.3. }
+
+判断级数 $\sum_{n=1}^{\infty}\frac{1}{n}$ 的敛散性 (调和级数).
+
+\paragraph{例 8.1.4. }
+
+判断级数 $\sum_{n=1}^{\infty}\sin n$ 的敛散性.
+
+pf. 
+\[
+\sin(n+1)=\sin n\cdot\cos1+\cos n\cdot\sin1\Longrightarrow\cos n\to0,\ n\to\infty
+\]
+这与
+\[
+\sin^{2}n+\cos^{2}n=1
+\]
+矛盾.
+
+\paragraph{例 8.1.5. }
+
+设 $q>0$, 则当 $q<1$ 时, $\sum_{n=1}^{\infty}q^{n}$ 收敛; $q\geqslant1$
+时, $\sum_{n=1}^{\infty}q^{n}$ 发散(几何级数).
+
+\paragraph{Thm8.1.1}
+
+(1) 如果 $\sum_{n=1}^{\infty}a_{n}$ 和 $\sum_{n=1}^{\infty}b_{n}$ 均收敛,
+则 $\sum_{n=1}^{\infty}\left(\lambda a_{n}+\mu b_{n}\right)$ 也收敛,
+且 $\sum_{n=1}^{\infty}\left(\lambda a_{n}+\mu b_{n}\right)=\lambda\sum_{n=1}^{\infty}a_{n}+\mu\sum_{n=1}^{\infty}b_{n},\quad(\lambda,\mu\in\mathbb{R})$ 
+
+(2) 级数的敛散性与其有限项的值无关.
+
+3. 设级数 $\sum_{n=1}^{\infty}a_{n}$ 的部分和为 $S_{n}$. 如果 $S_{2n}\rightarrow S$,
+且 $a_{n}\rightarrow0$, 则 $\sum_{n=1}^{\infty}a_{n}$ 收敛. 
+
+条件$a_{n}\to0$不能舍去, 比如$1-1+1-1+1-1+\cdots$.
+
+4. 设级数 $\sum_{n=1}^{\infty}\left|a_{n+1}-a_{n}\right|$ 收敛, 则数列 $\left\{ a_{n}\right\} $
+收敛. (提示: 用 Cauchy 准则.) 
+
+5. 设数列 $na_{n}$ 收敛, 且级数 $\sum_{n=2}^{\infty}n\left(a_{n}-a_{n-1}\right)$
+收敛, 证明级数 $\sum_{n=1}^{\infty}a_{n}$ 也是收敛的. 
+
+6. 证明, 如果级数 $\sum_{n=1}^{\infty}a_{n}^{2}$ 收敛, 则 $\sum_{n=1}^{\infty}\frac{a_{n}}{n}$
+也收敛. (提示: 用平均值不等式.)
+
+8. 设 $\sum_{n=1}^{\infty}a_{n}$ 为发散级数, 则 $\sum_{n=1}^{\infty}\min\left\{ a_{n},1\right\} $
+也发散.
+
+hint: 反证法, 比Cauchy收敛准则的否定表述更好写证明过程.
+
+\subsection{正项级数收敛与发散的判别法}
+
+\paragraph{基本判别法}
+
+$\sum_{n=1}^{\infty}a_{n}$ 收敛 $\Longleftrightarrow\left\{ S_{n}\right\} $
+收敛 $\Longleftrightarrow\left\{ S_{n}\right\} $ 有上界.
+
+\paragraph{定理 8.2.1 (比较判别法). }
+
+设 $\sum_{n=1}^{\infty}a_{n}$ 和 $\sum_{n=1}^{\infty}b_{n}$ 为正项级数,
+如果存在常数 $M>0$, 使得 
+\[
+a_{n}\leqslant Mb_{n},\quad\forall n\geqslant1.
+\]
+则 (1) $\sum_{n=1}^{\infty}b_{n}$ 收敛时 $\sum_{n=1}^{\infty}a_{n}$
+也收敛; (2) $\sum_{n=1}^{\infty}a_{n}$ 发散时 $\sum_{n=1}^{\infty}b_{n}$
+也发散.
+
+\paragraph{例 8.2.3. }
+
+判别 $\sum_{n=1}^{\infty}\left[\frac{1}{n}-\ln\left(1+\frac{1}{n}\right)\right]$
+的敛散性. 
+
+解. 根据 Taylor 展开, 
+\[
+0<\frac{1}{n}-\ln\left(1+\frac{1}{n}\right)=\frac{1}{2}\frac{1}{n^{2}}+o\left(\frac{1}{n^{2}}\right).
+\]
+因此 
+\[
+\lim_{n\rightarrow\infty}\left[\frac{1}{n}-\ln\left(1+\frac{1}{n}\right)\right]/\frac{1}{n^{2}}=\frac{1}{2},
+\]
+而 $\sum_{n=1}^{\infty}\frac{1}{n^{2}}$ 收敛, 故原级数收敛.
+
+\paragraph{Cauchy判别法或根值判别法}
+
+如果$n$充分大时, $\sqrt[n]{a_{n}}\le q<1$, 则$\sum_{n=1}^{\infty}a_{n}$收敛;
+
+\paragraph{例 8.2.4. }
+
+设 $p\in\mathbb{R}$, 判别级数 $\sum_{n=1}^{\infty}\left(1-\frac{p}{n}\right)^{n^{2}}$
+的敛散性. 
+
+解. 因为 
+\[
+\sqrt[n]{a_{n}}=\left(1-\frac{p}{n}\right)^{n}\rightarrow e^{-p},
+\]
+故 $p>0$ 时原级数收敛; $p<0$ 时级数发散. 显然, $p=0$ 时级数也发散.
+
+\paragraph{d'Alembert判别法或比值判别法}
+
+如果$n$充分大时, $\frac{a_{n+1}}{a_{n}}\le q<1$, 则$\sum_{n=1}^{\infty}a_{n}$收敛;
+
+\paragraph{例 8.2.5. }
+
+设 $x>0$, 判别级数 $\sum_{n=1}^{\infty}n!\left(\frac{x}{n}\right)^{n}$
+的敛散性. 
+
+解. 因为 
+\[
+\frac{a_{n+1}}{a_{n}}=\frac{x}{\left(1+\frac{1}{n}\right)^{n}}\rightarrow\frac{x}{e},
+\]
+故 $0<x<e$ 时级数收敛; $x>e$ 时级数发散. $x=e$ 时, 
+\[
+\frac{a_{n+1}}{a_{n}}=e/\left(1+\frac{1}{n}\right)^{n}\geqslant1,
+\]
+故此时级数也发散.
+
+\paragraph{定理 8.2.2 (积分判别法). }
+
+设 $f(x)$ 是定义在 $[1,+\infty)$ 上的非负单调递减函数, 记 $a_{n}=f(n)$, $(n\geqslant1)$.
+则级数 $\sum_{n=1}^{\infty}a_{n}$ 的敛散性与广义积分 $\int_{1}^{+\infty}f(x)dx$
+的敛散性相同.
+
+证明. 令 
+\[
+F(x)=\int_{1}^{x}f(t)dt,\quad\forall x\geqslant1.
+\]
+因为 $f$ 为单调递减函数, 故当 $n\leqslant x\leqslant n+1$ 时 
+\[
+a_{n+1}=f(n+1)\leqslant f(x)\leqslant f(n)=a_{n},
+\]
+这说明 
+\[
+a_{n+1}\leqslant\int_{n}^{n+1}f(t)dt\leqslant a_{n},
+\]
+从而有 
+\[
+S_{n}\leqslant a_{1}+F(n),\quad F(n)\leqslant S_{n-1}.
+\]
+其中 $S_{n}=\sum_{k=1}^{n}a_{k}$ 为级数的部分和. 因为 $S_{n}$ 及 $F(n)$ 关于
+$n$ 都是单调递增的, 二者同时有界或无界, 即 $\sum_{n=1}^{\infty}a_{n}$ 与 $\int_{1}^{+\infty}f(x)dx$
+同敛散.
+
+\paragraph{例 8.2.6. }
+
+设 $s\in\mathbb{R}$, 判断级数 $\sum_{n=1}^{\infty}\frac{1}{n^{s}}$ 的敛散性.
+
+\paragraph{定理 8.2.3 (Kummer). }
+
+设 $\sum_{n=1}^{\infty}a_{n}$, $\sum_{n=1}^{\infty}b_{n}$ 为正项级数,
+如果 $n$ 充分大时 
+
+(1) $\frac{1}{b_{n}}\cdot\frac{a_{n}}{a_{n+1}}-\frac{1}{b_{n+1}}\geqslant\lambda>0$,
+则 $\sum_{n=1}^{\infty}a_{n}$ 收敛; 
+
+(2) $\frac{1}{b_{n}}\cdot\frac{a_{n}}{a_{n+1}}-\frac{1}{b_{n+1}}\leqslant0$
+且 $\sum_{n=1}^{\infty}b_{n}$ 发散, 则 $\sum_{n=1}^{\infty}a_{n}$ 发散.
+
+pf. (1) 条件可改写为 
+\[
+a_{n+1}\leqslant\frac{1}{\lambda}\left(\frac{a_{n}}{b_{n}}-\frac{a_{n+1}}{b_{n+1}}\right),\quad\forall n\geqslant N\text{. }
+\]
+
+这说明当 $n\geqslant N$ 时 
+\[
+\begin{aligned}S_{n+1} & =S_{N}+\sum_{k=N}^{n}a_{k+1}\\
+	& \leqslant S_{N}+\frac{1}{\lambda}\sum_{k=N}^{n}\left(\frac{a_{k}}{b_{k}}-\frac{a_{k+1}}{b_{k+1}}\right)\\
+	& =S_{N}+\frac{1}{\lambda}\left(\frac{a_{N}}{b_{N}}-\frac{a_{n+1}}{b_{n+1}}\right)\\
+	& \leqslant S_{N}+\frac{1}{\lambda}\frac{a_{N}}{b_{N}}
+\end{aligned}
+\]
+即 $\left\{ S_{n}\right\} $ 有上界, 从而 $\sum_{n=1}^{\infty}a_{n}$ 收敛. 
+
+(2) 由 
+\[
+\frac{1}{b_{n}}\cdot\frac{a_{n}}{a_{n+1}}-\frac{1}{b_{n+1}}\leqslant0
+\]
+可知 
+\[
+\frac{a_{n}}{b_{n}}\leqslant\frac{a_{n+1}}{b_{n+1}},
+\]
+即 $\left\{ \frac{a_{n}}{b_{n}}\right\} $ 关于 $n$ 单调递增, 从而 $a_{n}\geqslant\frac{a_{1}}{b_{1}}b_{n}$,
+因此由 $\sum_{n=1}^{\infty}b_{n}$ 发散知 $\sum_{n=1}^{\infty}a_{n}$ 也发散.
+
+\paragraph{Kummer判别法推d'Alembert判别法}
+
+取$b_{n}=1$, 则当$n$充分大, 有$\frac{a_{n+1}}{a_{n}}\le q<1$时, 有
+\[
+\frac{1}{b_{n}}\cdot\frac{a_{n}}{a_{n+1}}-\frac{1}{b_{n+1}}\ge\frac{1}{q}-1>0,
+\]
+所以由Kummer判别法有$\sum a_{n}$收敛. 当$n$充分大满足$\frac{a_{n+1}}{a_{n}}\ge1$时,
+有
+\[
+\frac{1}{b_{n}}\cdot\frac{a_{n}}{a_{n+1}}-\frac{1}{b_{n+1}}\le1-1=0,
+\]
+再由Kummer判别法和$\sum1$发散, 知$\sum a_{n}$发散.
+
+\paragraph{Kummer判别法证明Raabe判别法}
+
+取$b_{n}=\frac{1}{n}$, 当$n$充分大时, 如果有$n\left(\frac{a_{n}}{a_{n+1}}-1\right)\ge\mu>1$,
+则
+\[
+\frac{1}{b_{n}}\cdot\frac{a_{n}}{a_{n+1}}-\frac{1}{b_{n+1}}\ge n\left(1+\frac{\mu}{n}\right)-(n+1)=\mu-1>0,
+\]
+由Kummer判别法, $\sum a_{n}$收敛.
+
+当$n$充分大时, 如果有$n\left(\frac{a_{n}}{a_{n+1}}-1\right)\le1$, 则
+\[
+\frac{1}{b_{n}}\cdot\frac{a_{n}}{a_{n+1}}-\frac{1}{b_{n+1}}\le n\left(1+\frac{1}{n}\right)-(n+1)=0,
+\]
+由Kummer判别法以及$\sum\frac{1}{n}$是发散的, 所以$\sum a_{n}$也发散.
+
+\paragraph{Kummer判别法推出Gauss判别法}
+
+取$b_{n}=\frac{1}{n\ln n}$, 当$n>N$充分大时, 如果有$\theta>1$使得
+\[
+\frac{a_{n}}{a_{n+1}}=1+\frac{\theta}{n}+o\left(\frac{1}{n\ln n}\right).
+\]
+则
+\begin{align*}
+	\frac{1}{b_{n}}\cdot\frac{a_{n}}{a_{n+1}}-\frac{1}{b_{n+1}} & ={\color{magenta}n\ln n\left(1+\frac{\theta}{n}+o\left(\frac{1}{n\ln n}\right)\right)}-(n+1)\ln(n+1)\\
+	& ={\color{magenta}(n+1)\ln n+(\theta-1)\ln n+o(1)}-n\ln(n+1)-\ln(n+1)\\
+	& =(\theta-1)\ln n+o(1)-(n+1)\left(\frac{1}{n}+o\left(\frac{1}{n}\right)\right)\\
+	& \ge(\theta-1)\ln N>0
+\end{align*}
+所以$\sum a_{n}$收敛; 当$n>N$充分大时, 如果有$\theta\le1$使得
+\[
+\frac{a_{n}}{a_{n+1}}=1+\frac{\theta}{n}+o\left(\frac{1}{n\ln n}\right).
+\]
+则
+\begin{align*}
+	\frac{1}{b_{n}}\cdot\frac{a_{n}}{a_{n+1}}-\frac{1}{b_{n+1}} & ={\color{magenta}n\ln n\left(1+\frac{\theta}{n}+o\left(\frac{1}{n\ln n}\right)\right)}-(n+1)\ln(n+1)\\
+	& ={\color{magenta}(n+1)\ln n+(\theta-1)\ln n+o(1)}-n\ln(n+1)-\ln(n+1)\\
+	& =(\theta-1)\ln n+o(1)-(n+1)\left(\frac{1}{n}+o\left(\frac{1}{n}\right)\right)\\
+	& \le0
+\end{align*}
+由Kummer判别法以及$\sum\frac{1}{n\ln n}$发散, 所以$\sum a_{n}$也发散.
+
+\paragraph{例 8.2.8. }
+
+判别下列级数的敛散性: 
+
+(1) $\sum_{n=1}^{\infty}\frac{n!}{(\alpha+1)(\alpha+2)\cdots(\alpha+n)}$,
+$(\alpha>0)$; 
+
+(2) $\sum_{n=1}^{\infty}\left(\frac{(2n-1)!!}{(2n)!!}\right)^{s}\cdot\frac{1}{2n+1}$.
+
+\paragraph{例 8.2.9 (Cauchy 凝聚判别法). }
+
+设 $a_{n}$ 单调递减趋于零. 则 $\sum_{n=1}^{\infty}a_{n}$ 收敛当且仅当 $\sum_{k=0}^{\infty}2^{k}a_{2^{k}}$
+收敛.
+
+6. 设 $a_{n}>0$, $S_{n}=a_{1}+a_{2}+\cdots+a_{n}$, 证明 
+
+(1) 级数 $\sum_{n=1}^{\infty}\frac{a_{n}}{S_{n}^{2}}$ 总是收敛的; 
+
+(2) 级数 $\sum_{n=1}^{\infty}\frac{a_{n}}{\sqrt{S_{n}}}$ 收敛当且仅当 $\sum_{n=1}^{\infty}a_{n}$
+收敛. 
+
+\[
+\sum\frac{S_{n}-S_{n-1}}{S_{n}^{2}}\le\sum\frac{S_{n}-S_{n-1}}{S_{n}S_{n-1}};
+\]
+\[
+\sum\frac{a_{n}}{\sqrt{S_{n}}}\le\frac{1}{\sqrt{a_{1}}}\sum a_{n};
+\]
+\[
+\sum\frac{a_{n}}{\sqrt{S_{n}}}=\sum\left(\sqrt{S_{n}}-\frac{S_{n-1}}{\sqrt{S_{n}}}\right)\ge\sum\left(\sqrt{S_{n}}-\sqrt{S_{n-1}}\right)
+\]
+
+7. 设正项级数 $\sum_{n=1}^{\infty}a_{n}$ 发散, 试用积分判别法证明 $\sum_{n=1}^{\infty}\frac{a_{n+1}}{S_{n}}$
+也发散, 其中 $S_{n}$ 为 $\sum_{n=1}^{\infty}a_{n}$ 的部分和. 
+
+hint1: 取$\epsilon=\frac{1}{2}$, 则对于任何$n$, 存在$m>n$, s.t. $S_{m+1}>2S_{n}$.
+则
+\[
+\sum_{k=n}^{m}\frac{a_{k+1}}{S_{k}}\ge\sum_{k=n}^{m}\frac{a_{k+1}}{S_{k+1}}\ge\frac{\sum_{k=n}^{m}a_{k+1}}{S_{m+1}}=\frac{S_{m+1}-S_{n}}{S_{m+1}}\ge\frac{1}{2}=\epsilon,
+\]
+由Cauchy收敛判别法即得.
+
+hint2: 
+\[
+\frac{a_{n+1}}{S_{n}}=\frac{S_{n+1}-S_{n}}{S_{n}}\ge\int_{S_{n}}^{S_{n+1}}\frac{dx}{x}.
+\]
+
+8. 判断下列级数的敛散性: 
+
+(1) $\sum_{n=1}^{\infty}\frac{n!e^{n}}{n^{n+p}}$; 
+
+(2) $\sum_{n=1}^{\infty}\frac{p(p+1)\cdots(p+n-1)}{n!}\cdot\frac{1}{n^{q}}\quad(p>0,q>0)$; 
+
+(3) $\sum_{n=1}^{\infty}\frac{(2n-1)!!}{(2n)!!}$; 
+
+(4) $\sum_{n=1}^{\infty}\frac{\sqrt{n!}}{(a+\sqrt{1})(a+\sqrt{2})\cdots(a+\sqrt{n})}(a>0)$. 
+
+9. 设 $a_{n}>0,S_{n}=a_{1}+a_{2}+\cdots+a_{n}$, 证明 
+
+(1) 当 $\alpha>1$ 时, 级数 $\sum_{n=1}^{\infty}\frac{a_{n}}{S_{n}^{\alpha}}$
+总是收敛的; 
+
+(2) 当 $\alpha\leqslant1$ 时, 级数 $\sum_{n=1}^{\infty}\frac{a_{n}}{S_{n}^{\alpha}}$
+收敛当且仅当 $\sum_{n=1}^{\infty}a_{n}$ 收敛.
+
+(1) hint: $\frac{a_{n}}{S_{n}^{\alpha}}=\frac{S_{n}-S_{n-1}}{S_{n}^{\alpha}}\le\int_{S_{n-1}}^{S_{n}}\frac{dx}{x^{\alpha}}$,
+($\alpha>1$).
+
+(2) hint: 如果$\sum_{n=1}^{\infty}a_{n}$ 发散, 类似第7题的证明.
+
+10. 设 $a_{n}>0$ 关于 $n$ 单调递增. 证明级数 $\sum_{n=1}^{\infty}\left(1-\frac{a_{n}}{a_{n+1}}\right)$
+收敛当且仅当级数 $\sum_{n=1}^{\infty}\left(\frac{a_{n+1}}{a_{n}}-1\right)$
+收敛. 
+
+\[
+\sum_{n=1}^{\infty}\left(1-\frac{a_{n}}{a_{n+1}}\right)\le\sum_{n=1}^{\infty}\left(\frac{a_{n+1}}{a_{n}}-1\right);
+\]
+
+
+\paragraph{Sapagof 判别法: }
+
+设正数数列 $\left\{ a_{n}\right\} _{n=1}^{\infty}$ 单调递减，则 $\lim_{n\rightarrow\infty}a_{n}=0$
+的充要条件是 $\sum_{n=1}^{\infty}\left(1-\frac{a_{n+1}}{a_{n}}\right)$
+发散。 
+
+上述断言等价于: 单调递增数列 $\left\{ a_{n}\right\} _{n=1}^{\infty}$ 与级数 $\sum_{n=1}^{\infty}\left(1-\frac{a_{n}}{a_{n+1}}\right)$
+同敛散.
+
+由此可以得到: 设正项级数 $\sum_{n=1}^{\infty}a_{n}$ 的前 $n$ 项部分和为 $S_{n}$,
+那么级数 $\sum_{n=1}^{\infty}a_{n}$ 和 $\sum_{n=1}^{\infty}\frac{a_{n}}{S_{n}}$
+同敛散. 
+
+设 $p>1$, 正项级数 $\sum_{n=1}^{\infty}a_{n}$ 的前 $n$ 项部分和为 $S_{n}$,
+那么级数 $\sum_{n=1}^{\infty}\frac{a_{n}}{S_{n}^{p}}$ 始终是收敛的.
+
+11. 设 $\sum_{n=1}^{\infty}a_{n}$ 为正项级数, 且 
+\[
+\frac{a_{n}}{a_{n+1}}=1+\frac{1}{n}+\frac{\alpha_{n}}{n\ln n}.
+\]
+如果 $n$ 充分大时 $\alpha_{n}\geqslant\mu>1$, 则 $\sum_{n=1}^{\infty}a_{n}$
+收玫; 如果 $n$ 充分大时 $\alpha_{n}\leqslant1$, 则 $\sum_{n=1}^{\infty}a_{n}$
+发散. 这个结果称为 Bertrand 判别法.
+
+hint: 取\textbf{$b_{n}=\frac{1}{n\ln n}$}, 则
+\[
+\frac{1}{b_{n}}\cdot\frac{a_{n}}{a_{n+1}}-\frac{1}{b_{n+1}}=\alpha_{n}-1+o(1).
+\]
+然后用Kummer判别法.
+
+17. 设 $a_{n}>0$, $\sum_{n=1}^{\infty}\frac{1}{a_{n}}$ 收敛. 证明级数 $\sum_{n=1}^{\infty}\frac{n}{a_{1}+a_{2}+\cdots+a_{n}}$
+也收敛.
+
+hint: 将$a_{n}$递增重排.
+
+以上收敛判别法列表也可以参考:
+
+\url{https://en.wikipedia.org/wiki/Convergence_tests}
+
+至今, 这些收敛判别法全部失效的正项级数是存在的, 比如Flint Hills级数
+\[
+\sum_{k=1}^{\infty}\frac{1}{n^{3}\sin^{2}n}
+\]
+它的收敛性涉及到$\pi$的无理测度的大小, 见
+
+\url{https://math.stackexchange.com/questions/162573}
+
+\subsection{一般级数收敛与发散判别法}
+
+级数是正负交替出现的称为交错级数
+
+\paragraph{定理 8.3.1 (Leibniz). }
+
+设 $a_{n}$ 单调递减趋于 0 , 则级数 $\sum_{n=1}^{\infty}(-1)^{n-1}a_{n}$ 收敛.
+
+pf. 使用Cauchy收敛准则.
+\[
+\begin{aligned}S_{n+p}-S_{n} & =(-1)^{n}\cdot a_{n+1}+(-1)^{n+1}a_{n+2}+\cdots+(-1)^{n+p-1}a_{n+p}\\
+	& =(-1)^{n}\left[a_{n+1}-a_{n+2}+a_{n+3}-a_{n+4}+\cdots+(-1)^{p-1}a_{n+p}\right].
+\end{aligned}
+\]
+因此当 $p=2k-1$ 时, 
+\[
+\begin{aligned}(-1)^{n}\left(S_{n+p}-S_{n}\right) & =a_{n+1}-\left(a_{n+2}-a_{n+3}\right)-\left(a_{n+4}-a_{n+5}\right)-\cdots\leqslant a_{n+1},\\
+	(-1)^{n}\left(S_{n+p}-S_{n}\right) & =\left(a_{n+1}-a_{n+2}\right)+\left(a_{n+3}-a_{n+4}\right)+\cdots+a_{n+2k-1}\\
+	& \geqslant0
+\end{aligned}
+\]
+这说明 
+\[
+\left|S_{n+p}-S_{n}\right|\leqslant a_{n+1}\rightarrow0,\quad(n\rightarrow\infty).
+\]
+当 $p=2k$ 时, 类似地可证上式仍成立. 因此原级数收敛.
+
+\paragraph{例 8.3.1. }
+
+级数 $\sum_{n=1}^{\infty}(-1)^{n-1}\frac{1}{\sqrt{n}}$ 收敛.
+
+\paragraph{引理 8.3.2 (分部求和). }
+
+设 $\left\{ a_{k}\right\} ,\left\{ b_{k}\right\} $ 为数列, 则 
+\[
+\sum_{k=m}^{n-1}a_{k+1}\left(b_{k+1}-b_{k}\right)+\sum_{k=m}^{n-1}b_{k}\left(a_{k+1}-a_{k}\right)=a_{n}b_{n}-a_{m}b_{m}.
+\]
+
+
+\paragraph{推论 8.3.3 (Abel 变换). }
+
+设 $a_{i},b_{i}(i\geqslant1)$ 为两组实数, 如果约定 $b_{0}=0$, 记 
+\[
+B_{0}=0,B_{k}=b_{1}+b_{2}+\cdots+b_{k}\quad(k\geqslant1),
+\]
+则有 
+\[
+\sum_{i=m+1}^{n}a_{i}b_{i}=\sum_{i=m+1}^{n-1}\left(a_{i}-a_{i+1}\right)B_{i}+a_{n}B_{n}-a_{m+1}B_{m},\quad\forall m\geqslant0.
+\]
+
+
+\paragraph{推论 8.3.4 (Abel 引理). }
+
+设 $a_{1},a_{2},\cdots,a_{n}$ 为单调数列, 且 $\left|B_{i}\right|\leqslant M$,
+$(i\geqslant1)$, 则 
+\[
+\left|\sum_{i=m+1}^{n}a_{i}b_{i}\right|\leqslant2M\left(\left|a_{n}\right|+\left|a_{m+1}\right|\right),\quad\forall m\geqslant0.
+\]
+
+
+\paragraph{定理 8.3.5 (Dirichlet). }
+
+设数列 $\left\{ a_{n}\right\} $ 单调趋于 0 , 级数 $\sum_{n=1}^{\infty}b_{n}$
+的部分和有界, 则级数 $\sum_{n=1}^{\infty}a_{n}b_{n}$ 收敛.
+
+\paragraph{证明. }
+
+由假设, 存在 $M>0$ 使得 
+\[
+\left|\sum_{i=1}^{n}b_{i}\right|\leqslant M,\quad\forall n\geqslant1.
+\]
+由 Abel 变换及其推论, 
+\[
+\left|\sum_{i=n+1}^{n+p}a_{i}b_{i}\right|\leqslant2M\left(\left|a_{n+1}\right|+\left|a_{n+p}\right|\right)\leqslant4M\left|a_{n+1}\right|\rightarrow0.
+\]
+由 Cauchy 准则知级数 $\sum_{n=1}^{\infty}a_{n}b_{n}$ 收敛.
+
+\paragraph{定理 8.3.6 (Abel). }
+
+如果 $\left\{ a_{n}\right\} $ 为单调有界数列, $\sum_{n=1}^{\infty}b_{n}$
+收敛, 则级数 $\sum_{n=1}^{\infty}a_{n}b_{n}$ 收敛.
+
+\paragraph{证明. }
+
+$\left\{ a_{n}\right\} $ 单调有界意味着极限 $\lim_{n\rightarrow\infty}a_{n}=a$
+存在. 于是 $\left\{ a_{n}-a\right\} $ 单调趋于 0 . 由 Dirichlet 判别法, $\sum_{n=1}^{\infty}\left(a_{n}-a\right)b_{n}$
+收敛. 从而级数 
+\[
+\sum_{n=1}^{\infty}a_{n}b_{n}=\sum_{n=1}^{\infty}\left(a_{n}-a\right)b_{n}+\sum_{n=1}^{\infty}a\cdot b_{n}
+\]
+也收敛.
+
+\paragraph{例 8.3.3. }
+
+判断级数 $\sum_{n=1}^{\infty}\frac{1}{n}\sin nx$ 的敛散性.
+
+解. $a_{n}=\frac{1}{n}$ 单调递减趋于 $0,b_{n}=\sin nx$. 利用公式 
+\[
+2\sin\frac{x}{2}\cdot\sin kx=\cos\left(k-\frac{1}{2}\right)x-\cos\left(k+\frac{1}{2}\right)x
+\]
+得 
+\[
+\sum_{k=1}^{n}b_{n}=\begin{cases}
+	0, & x=2k\pi,\\
+	\frac{\cos\frac{x}{2}-\cos\left(n+\frac{1}{2}\right)x}{2\sin\frac{x}{2}}, & x\neq2k\pi.
+\end{cases}
+\]
+即 $b_{n}$ 的部分和总是有界的. 故由 Dirichlet 判别法知, 原级数收敛.
+
+\paragraph{定义 8.3.1 (绝对收敛). }
+
+如果 $\sum_{n=1}^{\infty}\left|a_{n}\right|$ 收敛, 则称 $\sum_{n=1}^{\infty}a_{n}$
+绝对收敛 (此时, 由于 
+\[
+\left|a_{n+1}+\cdots+a_{n+p}\right|\leqslant\left|a_{n+1}\right|+\cdots+\left|a_{n+p}\right|\rightarrow0,
+\]
+故 $\sum_{n=1}^{\infty}a_{n}$ 的确为收敛级数). 如果 $\sum_{n=1}^{\infty}a_{n}$
+收敛而 $\sum_{n=1}^{\infty}\left|a_{n}\right|$ 发散, 则称 $\sum_{n=1}^{\infty}a_{n}$
+条件收敛.
+
+\paragraph{例 8.3.5. }
+
+判断级数 $\sum_{n=1}^{\infty}(-1)^{n-1}\frac{x^{n}}{n}$, $(x\in\mathbb{R})$,
+的敛散性. 
+
+\paragraph{解. }
+
+令 $a_{n}=\frac{|x|^{n}}{n}$, 则 $\sqrt[n]{a_{n}}\rightarrow|x|$.
+故 $|x|<1$ 时原级数绝对收敛; 而 $|x|>1$ 时显然发散. $x=1$ 时级数条件收敛; $x=-1$ 时级数发散.
+
+\subsubsection{作业}
+
+6. 设 $\sum_{n=1}^{\infty}a_{n}$ 绝对收敛, $\left\{ b_{n}\right\} $ 为有界数列,
+则 $\sum_{n=1}^{\infty}a_{n}b_{n}$ 也是绝对收敛的. 
+
+6'. 证明或否定: 设 $\sum_{n=1}^{\infty}a_{n}$ 收敛, $\left\{ b_{n}\right\} $
+为有界数列, 则 $\sum_{n=1}^{\infty}a_{n}b_{n}$ 也是收敛的. 
+
+7. 如果 $\sum_{n=1}^{\infty}a_{n}$ 收敛, 则 $\sum_{n=1}^{\infty}a_{n}^{3}$
+是否也收敛? 证明你的结论. 
+
+比如
+\[
+a_{n}=\frac{\cos\frac{n\pi}{3}}{\sqrt[3]{n}}.
+\]
+
+8. 设级数 $\sum_{n=1}^{\infty}\left|a_{n+1}-a_{n}\right|$ 收敛且 $a_{n}$
+极限为零, 级数 $\sum_{n=1}^{\infty}b_{n}$ 的部分和有界, 则级数 $\sum_{n=1}^{\infty}a_{n}b_{n}$
+收敛. (提示: Abel 求和.)
+
+9. 设级数 $\sum_{n=1}^{\infty}\left|a_{n+1}-a_{n}\right|$ 收敛, 级数 $\sum_{n=1}^{\infty}b_{n}$
+收敛, 则级数 $\sum_{n=1}^{\infty}a_{n}b_{n}$ 也收敛. (用Abel求和)
+
+10. 设 $\left\{ a_{n}\right\} $ 单调递减趋于零. 证明下面的级数是收敛的: 
+\[
+\sum_{n=1}^{\infty}(-1)^{n}\frac{a_{1}+a_{2}+\cdots+a_{n}}{n}.
+\]
+
+用9.
+
+11. 设 $\sum_{n=1}^{\infty}a_{n}$ 收敛, 证明 
+\[
+\lim_{n\rightarrow\infty}\frac{a_{1}+2a_{2}+\cdots+na_{n}}{n}=0.
+\]
+
+考虑把$a_{n}$用部分和$S_{n}$表示的问题. 或者使用$\epsilon-N$法+Abel变换.
+
+本题不能使用Stolz公式, 因为有反例如下:
+\[
+a_{n}=\begin{cases}
+	\frac{1}{m^{2}}, & n=m^{2};\\
+	\frac{1}{n^{3}}, & n\ne m^{2}.
+\end{cases}
+\]
+
+12. 设 $a_{n}>0,na_{n}$ 单调趋于 $0,\sum_{n=1}^{\infty}a_{n}$ 收敛. 证明
+$n\ln n\cdot a_{n}\rightarrow0$.
+
+类比下题:
+
+9. 设 $\int_{a}^{+\infty}f(x)dx$ 收敛, 如果 $x\rightarrow+\infty$ 时 $xf(x)$
+单调递减趋于零, 则 
+\[
+\lim_{x\rightarrow+\infty}xf(x)\ln x=0.
+\]
+
+pf. 对于任意的$\epsilon>0$, 因为$\int_{a}^{+\infty}f(x)dx$收敛, 则存在$M>\max(0,a)$,
+s.t. 对于任意的$x>M$, 有
+\[
+xf(x)\int_{\sqrt{x}}^{x}\frac{1}{t}dt\le\int_{\sqrt{x}}^{x}tf(t)\cdot\frac{1}{t}dt=\int_{\sqrt{x}}^{x}f(t)dt<\frac{\epsilon}{2}.
+\]
+即$xf(x)\ln x<\epsilon$.
+
+\subsection{数项级数的进一步讨论}
+
+\subsubsection{级数求和与求极限的可交换性}
+
+\paragraph{定义 8.4.1 (级数的一致收敛). }
+
+一列收敛级数 $\sum_{j=1}^{\infty}a_{ij}=A_{i}$ 关于 $i$ 一致收敛是指, 任给 $\varepsilon>0$,
+存在 $N$, 当 $n>N$ 时, 
+\[
+\left|\sum_{j=1}^{n}a_{ij}-A_{i}\right|<\varepsilon,\quad\forall i\geqslant1.
+\]
+当且仅当有Cauchy准则: $\forall\epsilon>0$, $\exists N$, 当$m,n>N$时, 
+\[
+\left|\sum_{j=n}^{m}a_{ij}\right|<\varepsilon,\quad\forall i\geqslant1.
+\]
+
+给出级数一致收敛的否定表述.
+
+\paragraph{定理 8.4.1. }
+
+设一列级数 $\sum_{j=1}^{\infty}a_{ij}=A_{i}$ 关于 $i$ 一致收敛, 如果 $\lim_{i\rightarrow\infty}a_{ij}=a_{j}$
+$(j\geqslant1)$, 则极限 $\lim_{i\rightarrow\infty}A_{i}$ 存在, 级数 $\sum_{j=1}^{\infty}a_{j}$
+收敛, 且 
+\[
+\lim_{i\rightarrow\infty}A_{i}=\sum_{j=1}^{\infty}a_{j}
+\]
+或改写为 
+\[
+\lim_{i\rightarrow\infty}\sum_{j=1}^{\infty}a_{ij}=\sum_{j=1}^{\infty}\lim_{i\rightarrow\infty}a_{ij}.
+\]
+
+pf: 1. $\sum_{j\ge1}a_{j}$收敛
+
+证明. 由一致收敛的定义, 任给 $\varepsilon>0$, 存在 $N_{0}$, 当 $n\geqslant N_{0}$
+时, 
+\[
+\left|\sum_{j=1}^{n}a_{ij}-A_{i}\right|<\frac{1}{4}\varepsilon,\quad\forall i\geqslant1.
+\]
+因此, 当 $m>n\geqslant N_{0}$ 时 
+\[
+\left|\sum_{j=n+1}^{m}a_{ij}\right|\leqslant\left|\sum_{j=1}^{m}a_{ij}-A_{i}\right|+\left|\sum_{j=1}^{n}a_{ij}-A_{i}\right|<\frac{1}{2}\varepsilon,\quad\forall i\geqslant1.
+\]
+在上式中令 $i\rightarrow\infty$, 得 
+\[
+\left|\sum_{j=n+1}^{m}a_{j}\right|\leqslant\frac{1}{2}\varepsilon,
+\]
+由 Cauchy 准则即知级数 $\sum_{j=1}^{\infty}a_{j}$ 收敛, 且在上式中令 $m\rightarrow\infty$
+可得 
+\[
+\left|\sum_{j=n+1}^{\infty}a_{j}\right|\leqslant\frac{1}{2}\varepsilon,\quad\forall n\geqslant N_{0}
+\]
+
+2. 证$\lim_{i\to\infty}A_{i}=\sum_{j\ge1}a_{j}$.
+
+对于 $j=1,2,\cdots,N_{0}$, 因为 $a_{ij}\rightarrow a_{j}$, 故存在 $N$,
+当 $i>N$ 时, 
+\[
+\left|a_{ij}-a_{j}\right|<\frac{\varepsilon}{4N_{0}},\quad j=1,2,\cdots,N_{0}.
+\]
+因此, 当 $i>N$ 时, 有 
+\[
+\begin{aligned}\left|A_{i}-\sum_{i=1}^{\infty}a_{j}\right| & \leqslant\left|A_{i}-\sum_{j=1}^{N_{0}}a_{ij}\right|+\left|\sum_{j=1}^{N_{0}}a_{ij}-\sum_{j=1}^{N_{0}}a_{j}\right|+\left|\sum_{j=N_{0}+1}^{\infty}a_{j}\right|\\
+	& <\frac{1}{4}\varepsilon+N_{0}\frac{\varepsilon}{4N_{0}}+\frac{1}{2}\varepsilon=\varepsilon
+\end{aligned}
+\]
+这说明 $\left\{ A_{i}\right\} $ 的极限存在且极限为 $\sum_{j=1}^{\infty}a_{j}$.
+
+\paragraph{推论 8.4.2. (控制收敛定理)}
+
+设 $\lim_{i\rightarrow\infty}a_{ij}=a_{j}(j\geqslant1)$, $\left|a_{ij}\right|\leqslant b_{j}(i\geqslant1)$,
+且 $\sum_{j=1}^{\infty}b_{j}$ 收敛(控制级数), 则级数 $\sum_{j=1}^{\infty}a_{j}$
+收敛, 且 
+\[
+\sum_{j=1}^{\infty}a_{j}=\sum_{j=1}^{\infty}\lim_{i\rightarrow\infty}a_{ij}=\lim_{i\rightarrow\infty}\sum_{j=1}^{\infty}a_{ij}.
+\]
+
+
+\paragraph{证明. }
+
+由 $a_{ij}\rightarrow a_{j}$, 且 $\left|a_{ij}\right|\leqslant b_{j}$
+知 $\left|a_{j}\right|\leqslant b_{j}$, $j=1,2,\cdots$. 因为级数 $\sum_{j=1}^{\infty}b_{j}$
+收敛, 故级数 $\sum_{j=1}^{\infty}a_{j}$ 绝对收敛. 任给 $\varepsilon>0$, 存在
+$N$, 当 $n>N$ 时, 
+\[
+0\leqslant\sum_{j=n+1}^{\infty}b_{j}<\varepsilon.
+\]
+此时, 对任意 $i\geqslant1$, 有 
+\[
+\left|\sum_{j=1}^{n}a_{ij}-\sum_{j=1}^{\infty}a_{ij}\right|=\left|\sum_{j=n+1}^{\infty}a_{ij}\right|\leqslant\sum_{j=n+1}^{\infty}b_{j}<\varepsilon,
+\]
+从而级数 $\sum_{j=1}^{\infty}a_{ij}$ 关于 $i$ 是一致收敛的. 由上一定理知本推论结论成立.
+
+\paragraph{推论 8.4.3. (Fubini)}
+
+设 $\sum_{i=1}^{\infty}\left|a_{ij}\right|\leqslant A_{j}(j\geqslant1)$,
+且 $\sum_{j=1}^{\infty}A_{j}$ 收敛, 则对任意 $i\geqslant1$, 级数 $\sum_{j=1}^{\infty}a_{ij}$
+收敛, 且 
+\[
+\sum_{i=1}^{\infty}\sum_{j=1}^{\infty}a_{ij}=\sum_{j=1}^{\infty}\sum_{i=1}^{\infty}a_{ij}.
+\]
+
+
+\paragraph{证明. }
+
+1. 首先, 由题设知, $\left|a_{ij}\right|\leqslant A_{j}$, $j=1,2,\cdots$.
+这说明, 对任意 $i\geqslant1$, 级数 $\sum_{j=1}^{\infty}a_{ij}$ 是绝对收敛的. 
+
+2. 因为 
+\[
+\left|\sum_{i=1}^{k}a_{ij}\right|\leqslant\sum_{i=1}^{k}\left|a_{ij}\right|\leqslant A_{j},\quad j\geqslant1.
+\]
+故$\left(\sum_{i=1}^{k}a_{ij}\right)_{kj}$满足上一推论, 有 
+\[
+\begin{aligned}\sum_{i=1}^{\infty}\sum_{j=1}^{\infty}a_{ij} & =\lim_{k\rightarrow\infty}\sum_{i=1}^{k}\sum_{j=1}^{\infty}a_{ij}\\
+	& {\color{magenta}=\lim_{k\rightarrow\infty}\sum_{j=1}^{\infty}\sum_{i=1}^{k}a_{ij}}\\
+	& {\color{magenta}=\sum_{j=1}^{\infty}\lim_{k\rightarrow\infty}\sum_{i=1}^{k}a_{ij}}\\
+	& =\sum_{j=1}^{\infty}\sum_{i=1}^{\infty}a_{ij}.
+\end{aligned}
+\]
+这就证明了本推论.
+
+上述推论的条件中$\sum_{i\ge1}\left|a_{ij}\right|$的绝对值不能省去, 比如设
+\[
+a_{ij}=\begin{cases}
+	\frac{1}{2^{j-i}}, & j>i;\\
+	-1, & i=j;\\
+	0, & j<i.
+\end{cases}
+\]
+也即
+\[
+\left(a_{ij}\right)=\begin{pmatrix}-1 & \frac{1}{2} & \frac{1}{4} & \frac{1}{8} & \frac{1}{16} & \cdots\\
+	0 & -1 & \frac{1}{2} & \frac{1}{4} & \frac{1}{8} & \cdots\\
+	0 & 0 & -1 & \frac{1}{2} & \frac{1}{4} & \cdots\\
+	0 & 0 & 0 & -1 & \frac{1}{2} & \cdots\\
+	\vdots & \vdots & \vdots & \vdots & \vdots & \ddots
+\end{pmatrix}.
+\]
+则
+\[
+\sum_{i\ge1}a_{ij}=-\frac{1}{2^{j-1}},\qquad\sum_{j\ge1}a_{ij}\equiv0\ \Longrightarrow\ 0=\sum_{i\ge1}\sum_{j\ge1}a_{ij}\ne\sum_{j\ge1}\sum_{i\ge1}a_{ij}=-2.
+\]
+
+
+\paragraph{例 8.4.1. }
+
+设 $\sum_{n=2}^{\infty}\left|a_{n}\right|$ 收敛, 记 $f(x)=\sum_{n=2}^{\infty}a_{n}x^{n}$,
+$x\in[-1,1]$. 则 
+\[
+\sum_{n=1}^{\infty}f\left(\frac{1}{n}\right)=\sum_{n=2}^{\infty}a_{n}\zeta(n),
+\]
+其中 $\zeta(s)$ 是 Riemann-Zeta 函数.
+
+\paragraph{证明.}
+
+\[
+\sum_{n=2}^{\infty}\frac{\left|a_{n}\right|}{m^{n}}\le\frac{1}{m^{2}}\sum_{n=2}^{\infty}\left|a_{n}\right|\Longrightarrow\sum_{m=1}^{\infty}\sum_{n=2}^{\infty}\frac{\left|a_{n}\right|}{m^{n}}\le\sum_{m=1}^{\infty}\left(\frac{1}{m^{2}}\sum_{n=2}^{\infty}\left|a_{n}\right|\right)<+\infty.
+\]
+由Fubini定理, $\sum_{n=2}^{\infty}\sum_{m=1}^{\infty}\frac{a_{n}}{m^{n}}$收敛,
+且
+\begin{align*}
+	\sum_{n=2}^{\infty}\sum_{m=1}^{\infty}\frac{a_{n}}{m^{n}} & =\sum_{m=1}^{\infty}\sum_{n=2}^{\infty}\frac{a_{n}}{m^{n}}=\sum_{m=1}^{\infty}f\left(\frac{1}{m}\right)\\
+	& =\sum_{n=2}^{\infty}a_{n}\zeta(n).
+\end{align*}
+所以
+\begin{align*}
+	\sum_{n=2}^{\infty}\frac{1}{2^{n}}\zeta(n) & =\sum_{n=2}^{\infty}\sum_{m=1}^{\infty}\frac{1}{2^{n}}\cdot\frac{1}{m^{n}}=\sum_{m=1}^{\infty}\sum_{n=2}^{\infty}\frac{1}{m^{n}}\cdot\frac{1}{2^{n}}=\sum_{m=1}^{\infty}\frac{1}{2^{2}m^{2}}\cdot\frac{1}{1-\frac{1}{2m}}\\
+	& =\sum_{m=1}^{\infty}\left(\frac{1}{2m-1}-\frac{1}{2m}\right)=\ln2.
+\end{align*}
+
+
+\subsubsection{级数的乘积}
+
+设$\sum_{n=0}^{\infty}a_{n}$和$\sum_{n=0}^{\infty}b_{n}$之积为$\sum_{n=0}^{\infty}c_{n}$,
+称为Cauchy乘积
+\[
+c_{n}=\sum_{i+j=n}a_{i}b_{j},\qquad n\ge0.
+\]
+
+
+\paragraph{定理 8.4.4 (Cauchy). }
+
+如果 $\sum_{n=0}^{\infty}a_{n}$ 和 $\sum_{n=0}^{\infty}b_{n}$ 绝对收敛,
+则它们的乘积级数也绝对收敛, 且 
+\[
+\sum_{n=0}^{\infty}c_{n}=\left(\sum_{n=0}^{\infty}a_{n}\right)\left(\sum_{n=0}^{\infty}b_{n}\right).
+\]
+
+
+\paragraph{定理 8.4.5 (Mertens). }
+
+如果 $\sum_{n=0}^{\infty}a_{n}$ 和 $\sum_{n=0}^{\infty}b_{n}$ 收敛, 且至少其中一个级数绝对收敛,
+则它们的乘积级数也收敛, 且 
+\[
+\sum_{n=0}^{\infty}c_{n}=\left(\sum_{n=0}^{\infty}a_{n}\right)\left(\sum_{n=0}^{\infty}b_{n}\right).
+\]
+
+
+\paragraph{证明. }
+
+不妨设 $\sum_{n=0}^{\infty}a_{n}$ 绝对收敛. 分别记 
+\[
+A_{n}=\sum_{k=0}^{n}a_{k},\quad B_{n}=\sum_{k=0}^{n}b_{k},\quad C_{n}=\sum_{k=0}^{n}c_{k}.
+\]
+则 $A_{n}\rightarrow A$, $B_{n}\rightarrow B$, 而 
+\[
+C_{n}=\sum_{i+j\leqslant n}a_{i}b_{j}=a_{0}B_{n}+a_{1}B_{n-1}+\cdots+a_{n}B_{0}=A_{n}B+\delta_{n},
+\]
+其中 
+\[
+\delta_{n}=a_{0}\left(B_{n}-B\right)+a_{1}\left(B_{n-1}-B\right)+\cdots+a_{n}\left(B_{0}-B\right).
+\]
+我们只要证明 $\delta_{n}\rightarrow0$ 即可. 因为 $B_{n}\rightarrow B$, 故 $\left\{ B_{n}\right\} $
+关于 $n$ 有界, 从而存在 $K$, 使得 
+\[
+\left|B_{n}-B\right|\leqslant K,\quad\forall n\geqslant0.
+\]
+由于 $\sum_{n=0}^{\infty}a_{n}$ 绝对收敛, 故任给 $\varepsilon>0$, 存在 $N_{0}$,
+当 $n>N_{0}$ 时 
+\[
+\left|a_{N_{0}+1}\right|+\cdots+\left|a_{n}\right|<\frac{\varepsilon}{2K+1}.
+\]
+记 $L=\left|a_{0}\right|+\left|a_{1}\right|+\cdots+\left|a_{N_{0}}\right|$.
+由于 $B_{n}-B\rightarrow0$, 故存在 $N_{1}$, 当 $n>N_{1}$ 时 
+\[
+\left|B_{n}-B\right|<\frac{\varepsilon}{2L+1}.
+\]
+从而当 $n>N_{0}+N_{1}$ 时, 有 
+\[
+\begin{aligned}\left|\delta_{n}\right| & \leqslant\sum_{k=0}^{N_{0}}\left|a_{k}\right|\left|B_{n-k}-B\right|+\left(\left|a_{N_{0}+1}\right|+\cdots+\left|a_{n}\right|\right)K\\
+	& \leqslant\frac{\varepsilon}{2L+1}\left(\left|a_{0}\right|+\left|a_{1}\right|+\cdots+\left|a_{N_{0}}\right|\right)+\frac{\varepsilon}{2K+1}K\\
+	& =\frac{\varepsilon}{2L+1}L+\frac{\varepsilon}{2K+1}K\\
+	& <\varepsilon
+\end{aligned}
+\]
+这说明 $\delta_{n}\rightarrow0$, 因而 $C_{n}=A_{n}B+\delta_{n}\rightarrow AB$.
+
+注. 定理中的绝对收敛的条件不能去掉, 反例就是将 $a_{n}$ 和 $b_{n}$ 均取为交错级数 $(-1)^{n-1}\frac{1}{\sqrt{n}}$,
+此时所得乘积级数是发散的. 
+
+但是, 如果乘积级数仍然收敛, 则其和等于两个级数和的乘积. 为了说明这一点, 需要下面的引理.
+
+\paragraph{引理 8.4.6 (Abel). }
+
+设级数 $\sum_{n=0}^{\infty}c_{n}=C$ 收敛, 令 
+\[
+f(x)=\sum_{n=0}^{\infty}c_{n}x^{n},\quad x\in[0,1),
+\]
+则 $\lim_{x\rightarrow1^{-}}f(x)=C$.
+
+\paragraph{证明. }
+
+级数收敛表明 $\left\{ c_{n}\right\} $ 有界, 因此当 $x\in[0,1)$ 时, $\sum_{n=0}^{\infty}c_{n}x^{n}$
+绝对收敛. 记 
+\[
+C_{-1}=0,\quad C_{n}=\sum_{k=0}^{n}c_{k},\quad n\geqslant0.
+\]
+则有 
+\[
+\begin{aligned}\sum_{k=0}^{n}c_{k}x^{k} & =\sum_{k=0}^{n}\left(C_{k}-C_{k-1}\right)x^{k}\\
+	& =\sum_{k=0}^{n}C_{k}x^{k}-x\sum_{k=0}^{n-1}C_{k}x^{k}\\
+	& =C_{n}x^{n}+(1-x)\sum_{k=0}^{n-1}C_{k}x^{k}\\
+	& =C_{n}x^{n}+C\left(1-x^{n}\right)+(1-x)\sum_{k=0}^{n-1}\left(C_{k}-C\right)x^{k}.
+\end{aligned}
+\]
+在上式中令 $n\rightarrow\infty$ 就得到 
+\[
+f(x)=C+(1-x)\sum_{k=0}^{\infty}\left(C_{k}-C\right)x^{k}.
+\]
+因为 $C_{k}-C\rightarrow0$, 故任给 $\varepsilon>0$, 存在 $N$, 当 $k>N$
+时 
+\[
+\left|C_{k}-C\right|<\frac{1}{2}\varepsilon.
+\]
+令 $M=\sum_{k=0}^{N}\left|C_{k}-C\right|$, 则有估计 
+\[
+|f(x)-C|\leqslant M(1-x)+(1-x)\sum_{k=N+1}\frac{1}{2}\varepsilon x^{k}\leqslant M(1-x)+\frac{1}{2}\varepsilon.
+\]
+因此, 当 $0<1-x<\frac{\varepsilon}{2M+1}$ 时, 
+\[
+|f(x)-C|\leqslant M\frac{\varepsilon}{2M+1}+\frac{1}{2}\varepsilon<\varepsilon.
+\]
+这说明 $\lim_{x\rightarrow1^{-}}f(x)=C$.
+
+\paragraph{定理 8.4.7 (Abel). }
+
+设级数 $\sum_{n=0}^{\infty}a_{n}$, $\sum_{n=0}^{\infty}b_{n}$ 以及它们的乘积
+$\sum_{n=0}^{\infty}c_{n}$ 均收敛, 则 
+\[
+\sum_{n=0}^{\infty}c_{n}=\left(\sum_{n=0}^{\infty}a_{n}\right)\left(\sum_{n=0}^{\infty}b_{n}\right).
+\]
+证明. 当 $x\in[0,1)$ 时, 级数 $\sum_{n=0}^{\infty}a_{n}x^{n}$ 和 $\sum_{n=0}^{\infty}b_{n}x^{n}$
+绝对收敛, 它们的乘积级数为 $\sum_{n=0}^{\infty}c_{n}x^{n}$. 根据 Cauchy 定理, 有 
+\[
+\sum_{n=0}^{\infty}c_{n}x^{n}=\left(\sum_{n=0}^{\infty}a_{n}x^{n}\right)\left(\sum_{n=0}^{\infty}b_{n}x^{n}\right).
+\]
+令 $x\rightarrow1^{-}$, 由上述 Abel 引理即得欲证结论.
+
+\subsubsection{乘积级数}
+
+将$\prod_{n=1}^{\infty}p_{n}$称为无穷乘积, 记部分乘积$P_{n}=\prod_{k=1}^{n}p_{k}$,
+($n\ge1$). 当$\lim_{n\to\infty}P_{n}$有限且非零时, 称无穷乘积收敛, 否则称它发散.
+
+\paragraph{命题 8.4.8.}
+
+设 $p_{n}>0,\forall n\geqslant1$. 则 
+
+(1) 无穷乘积 $\prod_{n=1}^{\infty}p_{n}$ 收敛当且仅当级数 $\sum_{n=1}^{\infty}\ln p_{n}$
+收敛, 且 
+\[
+\prod_{n=1}^{\infty}p_{n}=e^{\sum_{n=1}^{\infty}\ln p_{n}};
+\]
+
+(2) 记 $p_{n}=1+a_{n}$. 如果 $n$ 充分大时 $a_{n}>0$ (或 $a_{n}<0$ ), 则无穷乘积
+$\prod_{n=1}^{\infty}p_{n}$ 收敛当且仅当级数 $\sum_{n=1}^{\infty}a_{n}$
+收敛; 
+
+(3) 如果级数 $\sum_{n=1}^{\infty}a_{n}$ 和 $\sum_{n=1}^{\infty}a_{n}^{2}$
+均收敛, 则无穷乘积 $\prod_{n=1}^{\infty}\left(1+a_{n}\right)$ 也收敛. 
+
+\paragraph{证明. }
+
+(1) 是显然的. (2) 只要利用 
+\[
+\lim_{n\rightarrow\infty}\frac{\ln\left(1+a_{n}\right)}{a_{n}}=1
+\]
+以及数项级数的比较判别法即可. 
+
+(3) 则是利用 ($a_{n}$ 不为零时) 
+\[
+\lim_{n\rightarrow\infty}\frac{\left[a_{n}-\ln\left(1+a_{n}\right)\right]}{a_{n}^{2}}=\frac{1}{2}
+\]
+以及(1).
+
+\subsubsection{级数重排}
+
+\paragraph{定理 8.4.9 (Riemann). }
+
+如果 $\sum_{n=1}^{\infty}a_{n}$ 为条件收敛的级数, 则可以将它重排为一个收敛级数, 使得重排后的级数和为任意指定的实数.
+
+\paragraph{例.}
+
+求证:
+\[
+\left(1+\frac{1}{3}-\frac{1}{2}\right)+\left(\frac{1}{5}+\frac{1}{7}-\frac{1}{4}\right)+\cdots+\left(\frac{1}{4n-3}+\frac{1}{4n-1}-\frac{1}{2n}\right)+\cdots=\ln\left(2\sqrt{2}\right).
+\]
+这说明
+
+\begin{align*}
+	\ln2 & ={\color{teal}1-\frac{1}{2}+\frac{1}{3}}{\color{purple}-\frac{1}{4}+\frac{1}{5}}-\frac{1}{6}{\color{purple}+\frac{1}{7}}-\cdots{\color{orange}-\frac{1}{2n}}+\frac{1}{2n+1}-\cdots{\color{orange}+\frac{1}{4n-3}}-\frac{1}{4n-2}{\color{orange}+\frac{1}{4n-1}}-\cdots\\
+	& \ \xcancel{=}\left({\color{teal}1+\frac{1}{3}-\frac{1}{2}}\right)+\left({\color{purple}\frac{1}{5}+\frac{1}{7}-\frac{1}{4}}\right)+\cdots+\left({\color{orange}\frac{1}{4n-3}+\frac{1}{4n-1}-\frac{1}{2n}}\right)+\cdots\\
+	& =\ln\left(2\sqrt{2}\right).
+\end{align*}

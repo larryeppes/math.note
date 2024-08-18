@@ -1,0 +1,679 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+\usepackage{multicol}
+
+\usepackage{amsmath, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\curl}{curl}
+
+%\everymath{\color{blue}\everymath{}}
+%\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options 12pt, UTF8
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+\end_modules
+\maintain_unincluded_children false
+\begin_local_layout
+Format 66
+Style Problem
+	Category              QAs
+	LatexType             Environment
+	LatexName             problem
+	LabelString           "Problem \thetheorem."
+	Preamble
+		\let\problem\relax
+	  	\theoremstyle{definition}
+	  	\newtheorem{problem}[thm]{\protect\problemname}
+	EndPreamble
+	LangPreamble
+	  \providecommand{\problemname}{}
+	EndLangPreamble
+	BabelPreamble
+	  \addto\captions$$lang{\renewcommand{\problemname}{_(Problem)}}
+	EndBabelPreamble
+End
+
+Style Solution
+	CopyStyle             Problem
+	LatexName             solution
+	LabelString           "Solution \thetheorem."
+	LangPreamble
+		\providecommand{\solutionname}{_(Solution)}
+	EndLangPreamble
+	BabelPreamble
+		\addto\captions$$lang{\renewcommand{\solutionname}{_(Solution)}}
+	EndBabelPreamble
+End
+
+Style MakePart
+	Category              Sectioning
+	Margin                Dynamic
+	LabelString           "Part \thepart"
+	LabelType             Static
+	TocLevel              -1
+	LabelCounter          part
+	LatexType             Command
+	LatexName             makepart
+	NeedProtect           1
+	NextNoIndent          1
+	ToggleIndent          Never
+	Labelsep              xxx
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             4
+	ParSep                0.8
+	Align                 Left
+	Alignpossible         Left
+	Argument 1
+		LabelString	"题目名称|S"
+		Tooltip		"The part as it appears in the table of contents/running headers"
+		InsertCotext	0
+		IsTocCaption	1
+		MenuString	"test|S"
+		Mandatory	1
+	EndArgument
+	Font
+	  Series              Bold
+	  Size                Huge
+	EndFont
+	HTMLTag               h1
+End
+
+Style ABCD
+	Category              List
+	Margin                Static
+	LatexType             Item_Environment
+	LatexName             abcd
+	NextNoIndent          1
+	ToggleIndent          Never
+	LeftMargin            MMN
+	LabelSep              xx
+	ParSkip               0.0
+	ItemSep               0.2
+	TopSep                0.7
+	BottomSep             0.7
+	ParSep                0.3
+	Align                 Block
+	AlignPossible         Block, Left
+	LabelType             Enumerate
+	LabelCounter          "enum"
+	HTMLTag               ol
+	HTMLItem              li
+	HTMLLabel             NONE
+	RefPrefix             enu
+	Argument item:1
+		LabelString   "Custom Item|s"
+		Tooltip       "A customized item string"
+	EndArgument
+End
+\end_local_layout
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Pi
+\end_layout
+
+\begin_layout Standard
+Most (and perhaps all) mathematicians involved in the teaching of calculus
+ are asking themselves these days about the standard "
+\series bold
+techniques of integration
+\series default
+" chapter: How much should be retained
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+数学家们现在重新考虑哪些传统的积分技巧应保留在课程中
+\end_layout
+
+\end_inset
+
+ now that symbolic antidifferentiation is so readily available on home computers
+? 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Herbert Wilf
+\series default
+ described a more general question in his "
+\series bold
+The disk with the college education
+\series default
+"
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Check
+\end_layout
+
+\end_inset
+
+ [this Monthly, 89 (1982) 4-8], and I would like to suggest a general point
+ of view by giving a particular answer to the "
+\series bold
+techniques of integration
+\series default
+" question
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+关于积分技巧方面的讨论, 给出自己的观点
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The point of view should, it seems to me
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+对于我来说
+\end_layout
+
+\end_inset
+
+, be that 
+\emph on
+the home computer can free the student
+\emph default
+ from tedious drill
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+从枯燥的练习中解放出来
+\end_layout
+
+\end_inset
+
+ and leave the teacher free to discuss the important conceptual aspects
+ of integration
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+积分思想中的主要概念
+\end_layout
+
+\end_inset
+
+.
+ I take the consensus
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+共识
+\end_layout
+
+\end_inset
+
+ to be that change of variable
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+变量替换
+\end_layout
+
+\end_inset
+
+, integration by parts
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+分部积分
+\end_layout
+
+\end_inset
+
+, and the use of partial fractions
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+部分分式分解
+\end_layout
+
+\end_inset
+
+ must be taught: change of variable because of its theoretical importance
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+变量替换被强调为一种重要技巧，因为它具有理论意义并能简化复杂问题
+\end_layout
+
+\end_inset
+
+ and because it gives the student a chance to see how a hard problem becomes
+ easy
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+它让学生意识到复杂问题可以转化为简单问题求解
+\end_layout
+
+\end_inset
+
+ when looked at in the right way; integration by parts because of its constant
+ use in both pure and applied mathematics as a theoretical tool
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+分部积分也必须教, 因为它在纯数学和应用数学中经常被用到
+\end_layout
+
+\end_inset
+
+; and partial fractions because one can show how only two transcendental
+ functions (the logarithm and the arctangent) are necessary for integrating
+ all rational functions
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+部分分式分解也必须教, 用来展示两种超越函数是如何产生的(对数和反正切函数), 并能够用于对所有有理函数求积分
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Having agreed to this, what problems do we discuss to make our points? It
+ seems to me they should be conceptual problems that the student can appreciate.
+ I offer one example that I have found useful.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+有助于更深入地理解积分的基本原理
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The students know how to compute the area
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+学生知道如何计算半径为 
+\begin_inset Formula $r$
+\end_inset
+
+ 的圆的面积和周长
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Formula $\pi r^{2}$
+\end_inset
+
+, and the perimeter, 
+\begin_inset Formula $2\pi r$
+\end_inset
+
+, of a circle of radius 
+\begin_inset Formula $r$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The good students may even have wondered why this same mysterious 
+\begin_inset Formula $\pi$
+\end_inset
+
+ appears in both formulae.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+学习好的学生可能会好奇公式中出现的常数 
+\begin_inset Formula $\pi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For those who have not, this question gets their attention.
+\end_layout
+
+\begin_layout Standard
+Assuming the students know how to use the definite integral to find area
+ and arclength
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+假设学生知道如何通过定积分计算面积和弧长
+\end_layout
+
+\end_inset
+
+, one has 
+\begin_inset Formula 
+\[
+A=4\int_{0}^{r}\sqrt{r^{2}-x^{2}}dx,\ P=4\int_{0}^{r}\frac{r}{\sqrt{r^{2}-x^{2}}}dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, the change of variable, 
+\begin_inset Formula $x=ru$
+\end_inset
+
+, gives immediately that 
+\begin_inset Formula 
+\[
+A=\left\{ 4\int_{0}^{1}\sqrt{1-x^{2}}dx\right\} r^{2}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\[
+P=2\left\{ 2\int_{0}^{1}\frac{1}{\sqrt{1-x^{2}}}dx\right\} r.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, it is a question of relating 
+\begin_inset Formula 
+\[
+\int_{0}^{1}\sqrt{1-x^{2}}dx\text{ to }\int_{0}^{1}\frac{1}{\sqrt{1-x^{2}}}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But the identity 
+\begin_inset Formula $1=\left(1-x^{2}\right)+x^{2}$
+\end_inset
+
+ and integration by parts yield 
+\begin_inset Formula 
+\[
+\int_{0}^{1}\frac{1}{\sqrt{1-x^{2}}}dx=2\int_{0}^{1}\sqrt{1-x^{2}}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We've actually proved the existence of a number, 
+\begin_inset Formula $\pi$
+\end_inset
+
+ say, with 
+\begin_inset Formula $A=\pi r^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $P=2\pi r$
+\end_inset
+
+;
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+这样就证明了面积和周长公式中, 常数 
+\begin_inset Formula $\pi$
+\end_inset
+
+ 的存在性
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+we can calculate its approximate value by numerical integration; 
+\end_layout
+
+\begin_layout Standard
+and we've done so using change of variable and integration by parts.
+ 
+\end_layout
+
+\begin_layout Standard
+Who could ask for anything more?
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+ E.F.
+ Assmus, Jr.
+ Pi, American Mathematical Monthly, vol.
+ 092, 213-214.
+\end_layout
+
+\end_body
+\end_document

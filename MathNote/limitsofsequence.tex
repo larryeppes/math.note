@@ -1,0 +1,390 @@
+\section{数列极限}
+\bd{}{}
+给定序列$\left\{ a_{n}\right\} $, 实数$A\in\RR$, 如果
+$$
+\forall\epsilon>0,\exists N=N(\epsilon),s.t.\forall n>N,\left|a_{n}-A\right|<\epsilon,
+$$
+就称$a_{n}\to A$, $n\to\infty$. 反面表述序列$a_{n}\not\to A$: 
+$$
+\exists\epsilon>0,s.t.\forall N=N(\epsilon),\exists n>N,\left|a_{n}-A\right|\ge\epsilon.
+$$
+如果
+$$
+\forall A>0,\exists N,s.t.\forall n>N,a_{n}>A,
+$$
+则称$a_{n}\to+\infty$. 如果
+$$
+\forall A<0,\exists N,s.t.\forall n>N,a_{n}<A,
+$$
+则称$a_{n}\to-\infty$. 如果
+$$
+\forall A>0,\exists N,s.t.\forall n>N,\left|a_{n}\right|>A,
+$$
+则称$a_{n}\to\infty$.
+\ed
+%
+
+\paragraph{性质 (极限的性质)}
+
+1. 序列极限如果存在, 必然唯一.
+
+2. 序列极限收敛于有限实数, 必然有界. (这个性质可以弱化, 比如允许序列前几项中有$\infty$出现, 这时本条的序列极限性质可以表述为,
+从某项开始序列有界)
+
+3. 保序性, 当$a_{n}\to A$, $b_{n}\to B$, $a_{n}\ge b_{n}$, 则$A\ge B$.
+不等式$a_{n}\ge b_{n}$可以换成$a_{n}>b_{n}$.
+
+\subsection{求极限的方法}
+
+求极限没有通用方法, 不要有能学到通用方法的任何期待. 我们所能做的只有从最简单的方法到最复杂的方法进行逐个尝试.
+
+\subsubsection{$\epsilon-N$法}
+
+也就是定义法, 这个方法要求事先知道所求极限为何, 然后套用这一框架. 方法比较基本, 不再举例.
+
+\subsubsection{夹逼原理}
+
+这也是一个求解框架, 找到满足$a_{n}\le b_{n}\le c_{n}$, 且$a_{n}\to A$, $c_{n}\to A$的上下界来求解$b_{n}$的极限.
+
+\subsubsection{单调有界原理}
+
+主要用于求解抽象型极限问题.
+
+\paragraph{例2.2.3}
+
+设$a_{1}>0$, $a_{n+1}=\frac{1}{2}\left(a_{n}+\frac{1}{a_{n}}\right)$,
+$n\ge1$, 求$a_{n}$的极限.
+
+求解递推公式的极限问题常用不动点法先找到极限是什么. 也就是求解$x=\frac{1}{2}\left(x+\frac{1}{x}\right)$,
+得到$x=\pm1$.
+
+注意到$a_{1}>0$, 所以数列的每一项$a_{n}>0$. 并计算
+$$
+a_{n+1}-1=\frac{1}{2a_{n}}(a_{n}-1)^{2}\ge0\Longrightarrow a_{n+1}\ge1,\quad\forall n\ge1.
+$$
+这表明当$n\ge2$时, $\frac{1}{a_{n}}\le1\le a_{n}$, 所以
+$$
+a_{n+1}=\frac{1}{2}\left(a_{n}+\frac{1}{a_{n}}\right)\le a_{n}.
+$$
+序列$\left\{ a_{n}\right\} $从第二项起单调递减, 有下界$1$. 递推方程的正不动点只有$x=1$,
+所以$a_{n}\to1$.
+
+事实上, 对于递推公式型极限问题也可以尝试求解它的通项公式, 比如
+$$
+\frac{a_{n+1}-1}{a_{n+1}+1}=\left(\frac{a_{n}-1}{a_{n}+1}\right)^{2}.
+$$
+
+
+\subsubsection{重要极限}
+
+\paragraph{$e$相关}
+
+$$
+\left(1+\frac{1}{n}\right)^{n}<\left(1+\frac{1}{n+1}\right)^{n+1}<e<\left(1+\frac{1}{n+1}\right)^{n+2}<\left(1+\frac{1}{n}\right)^{n+1},\quad\forall n\ge1.
+$$
+
+$$
+\left(1+\frac{1}{n}\right)^{n}\cdot1\le\left(\frac{n\left(1+\frac{1}{n}\right)+1}{n+1}\right)^{n+1}=\left(1+\frac{1}{n+1}\right)^{n+1},
+$$
+$$
+\left(\frac{1+\frac{1}{n-1}}{1+\frac{1}{n}}\right)^{n}=\left(\frac{n^{2}}{n^{2}-1}\right)^{n}=\left(1+\frac{1}{n^{2}-1}\right)^{n}>1+\frac{n}{n^{2}-1}>1+\frac{1}{n}\Longrightarrow\left(1+\frac{1}{n-1}\right)^{n}>\left(1+\frac{1}{n}\right)^{n+1}.
+$$
+
+Bernoulli不等式
+$$
+x\ge-1\Longrightarrow(1+x)^{n}\ge1+nx,
+$$
+等号当且仅当$x=0$取到. 推广形式
+$$
+\prod_{k=1}^{n}\left(1+x_{k}\right)\ge1+\sum_{k=1}^{n}x_{k},
+$$
+其中$x_{k}\ge0$. 注意, 这里给出的两种Bernoulli不等式的前提条件不同, 后者不能是$x_{k}\ge-1$,
+因为$(1-x)(1+x)=1-x^{2}\le1$.
+
+\paragraph{Euler常数}
+
+$$
+H_{n}=\ln n+\gamma+o(1).
+$$
+
+
+\paragraph{例2.2.7}
+
+求
+$$
+\lim_{n\to\infty}\left(\frac{1}{n+1}+\cdots+\frac{1}{2n}\right).
+$$
+
+1. 单调上升有上界.
+
+2. $H_{2n}-H_{n}=\ln2n-\ln n+o(1)$.
+
+3. 
+$$
+\lim_{n\to\infty}\frac{1}{n}\sum_{k=1}^{n}\frac{1}{1+\frac{k}{n}}=\int_{0}^{1}\frac{1}{1+x}\ud x.
+$$
+
+4. Euler求和公式
+$$
+\sum_{k=1}^{n}\frac{1}{n+k}=\ln\frac{2n}{n+1}+\frac{1}{2}\left(\frac{1}{n+1}+\frac{1}{2n}\right)-\int_{1}^{n}\frac{\left\langle x\right\rangle }{(n+x)^{2}}\ud x.
+$$
+
+
+\paragraph{Stirling公式}
+
+$$
+n!\sim\sqrt{2\pi n}\left(\frac{n}{e}\right)^{n}e^{\frac{\theta_{n}}{12n}},\quad\theta_{n}\in\left(0,1\right).
+$$
+
+
+\subsubsection{上下极限}
+
+这种方法也常用于求解抽象型序列极限问题. 
+
+序列收敛的一个充要条件是, 序列的上下极限相等.
+
+定义
+$$
+\limsup_{n\to\infty}a_{n}\coloneqq\lim_{n\to\infty}\left(\sup_{k\ge n}a_{k}\right),\quad\liminf_{n\to\infty}a_{n}\coloneqq\lim_{n\to\infty}\left(\inf_{k\ge n}a_{k}\right)
+$$
+
+
+\paragraph{命题2.2.4}
+
+1. 存在$N_{0}$, 当$n>N_{0}$时, $a_{n}\ge b_{n}$, 则
+$$
+\liminf_{n\to\infty}a_{n}\ge\liminf_{n\to\infty}b_{n},\quad\limsup_{n\to\infty}a_{n}\le\limsup_{n\to\infty}b_{n}.
+$$
+
+2. 
+$$
+\limsup_{n\to\infty}\left(a_{n}+b_{n}\right)\le\limsup_{n\to\infty}a_{n}+\limsup_{n\to\infty}b_{n}.
+$$
+
+
+\paragraph{例2.2.12}
+
+设序列$\left(a_{n}\right)$, $a_{n}\ge0$, 满足$a_{m+n}\le a_{m}+a_{n}$,
+$\forall m,n\ge1$. 证明$\left(\frac{a_{n}}{n}\right)$收敛.
+
+证明: 设$n>m$, 则$n=mk+l$, 其中$0\le l\le m-1$. 
+
+对于任意固定的$m$, 有
+$$
+a_{n}=a_{mk+l}\le ka_{m}+a_{l}\Longrightarrow\frac{a_{n}}{n}\le\frac{ka_{m}}{km+l}+\frac{a_{l}}{n}.
+$$
+不等式两边同时取上极限
+$$
+\limsup_{n\to\infty}\frac{a_{n}}{n}\le\frac{a_{m}}{m}.
+$$
+所以
+$$
+\limsup_{n\to\infty}\frac{a_{n}}{n}\le\liminf_{m\to\infty}\frac{a_{m}}{m}.
+$$
+
+
+\subsubsection{Cauchy收敛准则}
+
+\paragraph{定义}
+
+序列$\left(a_{n}\right)$, 如果$\forall\epsilon>0$, $\exists N=N(\epsilon)$,
+s.t. $\forall m,n>N$, $\left|a_{m}-a_{n}\right|<\epsilon$, 则称$\left(a_{n}\right)$为Cauchy列.
+
+其它表述: $\forall\epsilon>0$, $\exists N=N(\epsilon)$, s.t. $\forall n>N$,
+$\forall p>0$, $\left|a_{n+p}-a_{n}\right|<\epsilon$.
+
+反面描述: $\exists\epsilon_{0}>0$, s.t. $\forall N$, $\exists m_{0},n_{0}>N$,
+使得$\left|a_{m_{0}}-a_{n_{0}}\right|\ge\epsilon_{0}$.
+
+Cauchy列均有解. (这里仍然可以允许序列的前几项可以取$\infty$, 此时Cauchy除了开始的有限项外是有界序列).
+
+序列$\left(a_{n}\right)$收敛当且仅当$\left(a_{n}\right)$是Cauchy列.
+
+\paragraph{习题2}
+
+设序列$\left(a_{n}\right)$满足
+$$
+\lim_{n\to\infty}\left|a_{n+p}-a_{n}\right|=0,\quad\forall p\ge1.
+$$
+问$\left(a_{n}\right)$是否是Cauchy列?
+
+$a_{n}=H_{n}$就是反例.
+
+\subsubsection{Stolz公式}
+
+\paragraph{定理2.4.2}
+
+设序列$(x_{n})$, $(y_{n})$, 其中$y_{n}$单调上升趋向$\infty$, 若
+$$
+\lim_{n\to\infty}\frac{x_{n}-x_{n-1}}{y_{n}-y_{n-1}}=A,
+$$
+则
+$$
+\lim_{n\to\infty}\frac{x_{n}}{y_{n}}=A.
+$$
+
+
+\paragraph{注: }
+
+和洛必达法则的情况一样, 当
+$$
+\lim_{n\to\infty}\frac{x_{n}-x_{n-1}}{y_{n}-y_{n-1}}
+$$
+不存在时, 
+$$
+\lim_{n\to\infty}\frac{x_{n}}{y_{n}}
+$$
+仍可能存在.
+
+\paragraph{定理2.4.3}
+
+设$\left(y_{n}\right)$单调下降趋向于0, $\left(x_{n}\right)\to0$, 若
+$$
+\lim_{n\to\infty}\frac{x_{n}-x_{n-1}}{y_{n}-y_{n-1}}=A,
+$$
+则
+$$
+\lim_{n\to\infty}\frac{x_{n}}{y_{n}}=A.
+$$
+
+
+\paragraph{注}
+
+条件$\left(x_{n}\right)\to0$是必要的, 比如$x_{n}\equiv C$是一个矛盾.
+
+\paragraph{例2.1.15}
+
+设$\lim_{n\to\infty}a_{n}=A$, 证明
+$$
+\lim_{n\to\infty}\frac{a_{1}+\cdots+a_{n}}{n}=A.
+$$
+
+这个例子有多种证法, 使用Stolz公式只需一步.
+
+\paragraph{例2.4.3}
+
+设$x_{1}\in\left(0,1\right)$, $x_{n+1}=x_{n}(1-x_{n})$, $\forall n\ge1$.
+证明$nx_{n}\to1$, $n\to\infty$.
+
+\paragraph{证明:}
+
+单调收敛证明$x_{n+1}<x_{n}$. 假设极限为$x$, 则$x=x(1-x)$, 解的$x=0$. 所以$x_{n}\to0$,
+$n\to\infty$.
+
+从递推公式得到
+$$
+\frac{1}{x_{n+1}}-\frac{1}{x_{n}}=\frac{1}{1-x_{n}}\to1,\quad n\to\infty.
+$$
+由Stolz公式
+$$
+\lim_{n\to\infty}nx_{n}=\lim_{n\to\infty}\frac{n}{x_{n}^{-1}}=\lim_{n\to\infty}\frac{n-(n-1)}{x_{n}^{-1}-x_{n-1}^{-1}}=\lim_{n\to\infty}\frac{1}{\frac{1}{1-x_{n-1}}}=1.
+$$
+
+
+\paragraph{不用Stolz公式的证法}
+
+和上面一样, $x_{n}$单调收敛到0, 且有$x_{n+1}^{-1}-x_{n}^{-1}=\frac{1}{1-x_{n}}\to1$,
+$n\to\infty$. 则
+$$
+\frac{1}{nx_{n}}=\frac{x_{n}^{-1}}{n}=\frac{\left(x_{n}^{-1}-x_{n-1}^{-1}\right)+\left(x_{n-1}^{-1}-x_{n-2}^{-1}\right)+\cdots+\left(x_{2}^{-1}-x_{1}^{-1}\right)+x_{1}^{-1}}{n}\to\lim_{n\to\infty}\left(x_{n}^{-1}-x_{n-1}^{-1}\right)=1.
+$$
+上面最后一步用到了例2.1.15.
+
+\paragraph{习题2}
+
+设 $\lim_{n\rightarrow\infty}n\left(a_{n}-A\right)=B,k$ 为正整数, 则 
+$$
+\lim_{n\rightarrow\infty}n\left(\frac{a_{1}+2^{k}a_{2}+\cdots+n^{k}a_{n}}{n^{k+1}}-\frac{A}{k+1}\right)=\frac{B}{k}+\frac{A}{2}.
+$$
+
+pf.
+
+\begin{align*}
+	\lim_{n\to\infty}\frac{(k+1)(a_{1}+\cdots+n^{k}a_{n})-n^{k+1}A}{(k+1)n^{k}} & =\lim_{n\to\infty}\frac{(k+1)\left((n+1)^{k}a_{n+1}\right)-\left((n+1)^{k+1}-n^{k+1}\right)A}{(k+1)\left((n+1)^{k}-n^{k}\right)}\\
+	& =\lim_{n\to\infty}\frac{(k+1)\left[n^{k}+\binom{k}{1}n^{k-1}+o\left(n^{k-1}\right)\right]a_{n+1}-\left(\binom{k+1}{1}n^{k}+\binom{k+1}{2}n^{k-1}+o(n^{k-1})\right)A}{(k+1)\left(\binom{k}{1}n^{k-1}+o(n^{k-1})\right)}\\
+	& =\lim_{n\to\infty}\frac{(k+1)\left[n+\binom{k}{1}+o(1)\right]a_{n+1}-\left(\binom{k+1}{1}n+\binom{k+1}{2}+o(1)\right)A}{(k+1)\left(\binom{k}{1}+o(1)\right)}\\
+	& =\lim_{n\to\infty}\frac{\boldsymbol{(k+1)}\left({\color{teal}n}+\boldsymbol{k}+{\color{lime}o(1)}\right)\boldsymbol{{\color{teal}a_{n+1}}}-\left({\color{teal}(k+1)n}+{\color{magenta}\frac{k(k+1)}{2}}+{\color{lime}o(1)}\right){\color{teal}A}}{(k+1)\left(k+o(1)\right)}\\
+	& =\lim_{n\to\infty}\left(\frac{{\color{teal}n}\left({\color{teal}a_{n+1}-A}\right)}{k+o(1)}-\frac{{\color{magenta}\frac{k(k+1)}{2}A}}{(k+1)(k+o(1))}+\frac{\boldsymbol{k(k+1)a_{n+1}}+{\color{lime}o(1)}\cdot(a_{n+1}-A)}{(k+1)(k+o(1))}\right)\\
+	& =\frac{B}{k}-\frac{A}{2}+A
+\end{align*}
+其中
+$$
+\lim_{n\to\infty}n(a_{n}-A)=B\Longrightarrow\lim_{n\to\infty}a_{n}=A+\lim_{n\to\infty}(a_{n}-A)=A+\lim_{n\to\infty}\frac{n(a_{n}-A)}{n}=A+\lim_{n\to\infty}\frac{B}{n}+\lim_{n\to\infty}\frac{n(a_{n}-A)-B}{n}=A+0+0
+$$
+
+
+\paragraph{习题6}
+
+设 $a_{1}=1,a_{n+1}=a_{n}+\frac{1}{2a_{n}}$, 证明 (1) $\lim_{n\rightarrow\infty}\frac{a_{n}}{\sqrt{n}}=1$,
+(2) $\lim_{n\rightarrow\infty}\frac{a_{n}^{2}-n}{\ln n}=\frac{1}{4}$.
+
+pf. (2) 由Stolz公式
+\begin{align*}
+	\lim_{n\to\infty}\frac{a_{n}^{2}-n}{\ln n} & =\lim_{n\to\infty}\frac{a_{n+1}^{2}-a_{n}^{2}-1}{\ln(n+1)-\ln n}\\
+	& =\lim_{n\to\infty}\frac{a_{n+1}^{2}-a_{n}^{2}-1}{\ln\left(1+\frac{1}{n}\right)}
+\end{align*}
+这启发我们去简化$a_{n+1}^{2}-a_{n}^{2}$项, 由递推公式
+$$
+a_{n+1}-a_{n}=\frac{1}{2a_{n}}\Longrightarrow a_{n+1}^{2}-a_{n}^{2}=\frac{a_{n+1}+a_{n}}{2a_{n}}=\frac{a_{n}+\frac{1}{2a_{n}}+a_{n}}{2a_{n}}=1+\frac{1}{4a_{n}^{2}}\Longrightarrow a_{n+1}^{2}-a_{n}^{2}-1=\frac{1}{4a_{n}^{2}}
+$$
+$$
+\lim_{n\to\infty}\frac{a_{n+1}^{2}-a_{n}^{2}-1}{\ln\left(1+\frac{1}{n}\right)}=\lim_{n\to\infty}\frac{\frac{1}{4a_{n}^{2}}}{\frac{1}{n}}=\frac{1}{4}\lim_{n\to\infty}\frac{n}{a_{n}^{2}}=\frac{1}{4}.
+$$
+
+
+\paragraph{习题8}
+
+设 $\lim_{n\rightarrow\infty}\left(a_{n+2}-a_{n}\right)=A$, 证明 (1)
+$\lim_{n\rightarrow\infty}\frac{a_{n}}{n}=\frac{A}{2}$, (2) $\lim_{n\rightarrow\infty}\frac{a_{n+1}-a_{n}}{n}=0$.
+
+pf. (1) 用stolz公式
+\begin{align*}
+	\lim_{n\to\infty}\frac{a_{n}}{n} & =\lim_{n\to\infty}\frac{a_{n+2}-a_{n}}{(n+2)-n}=\lim_{n\to\infty}\frac{a_{n+2}-a_{n}}{2}=\frac{A}{2}.
+\end{align*}
+
+(2) 用stolz公式
+$$
+\lim_{n\to\infty}\frac{a_{n+1}-a_{n}}{n}=\lim_{n\to\infty}\frac{a_{n+3}-a_{n+1}-(a_{n+2}-a_{n})}{(n+2)-n}=\lim_{n\to\infty}\left(\frac{a_{n+3}-a_{n+1}}{2}-\frac{a_{n+2}-a_{n}}{2}\right)=\frac{A}{2}-\frac{A}{2}=0.
+$$
+
+若$y_{n}$单调上升趋于无穷, 且
+$$
+\lim_{n\to\infty}\frac{x_{n+k}-x_{n}}{y_{n+k}-y_{n}}=A,
+$$
+则
+$$
+\lim_{n\to\infty}\frac{x_{n}}{y_{n}}=A.
+$$
+
+
+\paragraph{习题9}
+
+设$\lim_{n\to\infty}(a_{n+1}-a_{n})=A$, 则
+$$
+\lim_{n\to\infty}\frac{a_{n}}{n}=A.
+$$
+
+Stolz公式不是万能的, 比如
+
+\paragraph{习题15}
+
+设
+$$
+\lim_{n\to\infty}a_{n}=A,\quad\lim_{n\to\infty}b_{n}=B,
+$$
+则
+$$
+\frac{1}{n}\left(a_{1}b_{n}+a_{2}b_{n-1}+\cdots+a_{n}b_{1}\right)=AB.
+$$
+
+
+\paragraph{证明:}
+
+设$a_{n}=A+\alpha_{n}$, $b_{n}=B+\beta_{n}$, 则问题不妨在$A=B=0$时证明即可.
+其实
+\begin{align*}
+	\frac{1}{n}\sum_{k=1}^{n}a_{k}b_{n+1-k} & =\frac{1}{n}\sum_{k=1}^{n}\left(AB+A\beta_{n+1-k}+B\alpha_{k}+\alpha_{k}\beta_{n+1-k}\right)\\
+	& =AB+\frac{A}{n}\sum_{k=1}^{n}\beta_{k}+\frac{B}{n}\sum_{k=1}^{n}\alpha_{k}+\frac{1}{n}\sum_{k=1}^{n}\alpha_{k}\beta_{n+1-k}\\
+	& =AB+A\cdot o(1)+B\cdot o(1)+M\cdot o(1)=AB+o(1).
+\end{align*}
+上式最后用到收敛序列有界的结论.

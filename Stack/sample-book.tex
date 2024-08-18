@@ -334,11 +334,11 @@ end anchor={[yshift=2ex]north east}]
 %
 here is some text\quad\qquad\tikz[remember picture]
 \node[
-color=yellow!10,
-%	circle,
-draw,
-%	label=angle:text,
-fill=blue!20,
+	color=yellow!10,
+	%	circle,
+	draw,
+	%	label=angle:text,
+	fill=blue!20,
 ] (n1) {
 	$\sum_{n=1}^{\infty}$
 };
@@ -454,5 +454,38 @@ here is a node: \tikz[remember picture] \node[fill=blue!50] (n2) {$f(x)=\sin x$}
 %\begin{tcblisting}
 %	
 %\end{tcblisting}
+
+\section{asymptote}
+
+\begin{tcblisting}{title=Asymptote}
+	\begin{asy}
+		include graph;
+		size(1inch);
+		filldraw(circle((0,0),1),yellow,black);
+		fill(circle((-.3,.4),.1),black);
+		fill(circle((.3,.4),.1),black);
+		draw(arc((0,0),.5,-140,-40));
+	\end{asy}
+\end{tcblisting}
+
+\begin{tcblisting}{title=Transform}
+	\begin{center}
+		\begin{tikzpicture}[remember picture]
+			\draw[help lines] (0,0) grid (3,3);
+			\draw[red,fill=red!20] (0,0)--(2,0)--(2,2)--(0,2)--(0,0); 
+			\node (n3) at (1.5,1.5) {$x$};
+		\end{tikzpicture}
+		\hspace{3mm}
+		\begin{tikzpicture}[remember picture]
+			\draw[help lines] (0,0) grid (7.5,3);
+			\draw[red,fill=red!20] (0,0)--(2,0)--(6,2)--(4,2)--(0,0); 
+			\node (n2) at (3,1) {$Ax$};
+		\end{tikzpicture}
+		\begin{tikzpicture}[remember picture,overlay]
+			\draw[overlay,->,very thick] (n3) to[bend left] (n2);
+		\end{tikzpicture}
+	\end{center}
+\end{tcblisting}
+
 \newpage
 

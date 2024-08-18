@@ -1,0 +1,593 @@
+\section{Riemann积分}
+
+\subsection{Riemann可积}
+
+设定义在$[a,b]$区间上的函数$f(x)$, 将$[a,b]$分割为
+\[
+\pi:a=x_{0}<x_{1}<\cdots<x_{n}=b,
+\]
+近似第$i$个小梯形的面积为$f(\xi_{i})\Delta x_{i}$, 其中$\xi_{i}\in[x_{i-1},x_{i}]$,
+$\Delta x_{i}=x_{i}-x_{i-1}$. 用$\sum_{i=1}^{n}f(\xi_{i})\Delta x_{i}$表示曲边梯形ABCD的面积的近似值,
+称为$f$在$[a,b]$上的Riemann和. 若
+\[
+\lim_{\norm{\pi}\to0}\sum_{i=1}^{n}f(\xi_{i})\Delta x_{i}
+\]
+存在, 其中$\norm{\pi}=\max_{1\le i\le n}\left\{ \Delta x_{i}\right\} $为分割的模.
+则记为$\int_{a}^{b}f(x)\ud x$.
+
+\paragraph{定义6.1.1 (Riemann积分)}
+
+设$f$定义在$[a,b]$上, 若存在$I\in\RR$, s.t. $\forall\epsilon>0$, $\exists\delta>0$,
+对任何分割$\pi$, 只要$\norm{\pi}<\delta$, 就有
+\[
+\left|\sum_{i=1}^{n}f(\xi_{i})\Delta x_{i}-I\right|<\epsilon,\quad\forall\xi_{i}\in[x_{i-1},x_{i}],\ i=1,2,\cdots,n,
+\]
+则称$f$在$[a,b]$上Riemann可积或可积, $I$为$f$在$[a,b]$上的(定)积分, 记为
+\[
+I=\int_{a}^{b}f(x)\ud x=\lim_{\norm{\pi}\to0}\sum_{i=1}^{n}f(\xi_{i})\Delta x_{i}.
+\]
+其中$f$称为被积函数, $[a,b]$称为积分区间, $a,b$分别称为积分下限与积分上限.
+
+\paragraph{定理6.1.1 (可积的必要条件)}
+
+若$f$在$[a,b]$上可积, 则$f$在$[a,b]$上有界, 反之不然.
+
+有界函数未必可积: Dirichlet函数$D(x)$, 对于任意的分割$\xi_{i}\in[x_{i-1},x_{i}]\setminus\QQ$,
+积分和为$0$; 当$\xi_{i}\in[x_{i-1},x_{i}]\cap\QQ$时, 积分和为$1$. 所以$D(x)$的积分和没有极限.
+
+对于分割
+\[
+\pi:a=x_{0}<x_{1}<\cdots<x_{n}=b,
+\]
+记
+\[
+M_{i}=\sup_{x\in[x_{i-1},x_{i}]}f(x),\quad m_{i}=\inf_{x\in[x_{i-1},x_{i}]}f(x),
+\]
+令
+\[
+S=\sum_{i=1}^{n}M_{i}\cdot\Delta x_{i},\quad s=\sum_{i=1}^{n}m_{i}\cdot\Delta x_{i},
+\]
+称$S$是$f$关于$\pi$的Darboux上和, 简称上和, 记为$S(\pi)$或$S(\pi,f)$. $s$称为Darboux下和,
+简称下和, 记为$s(\pi)$或$s(\pi,f)$. 
+
+称
+\[
+\omega_{i}=M_{i}-m_{i}=\sup_{x\in\left[x_{i-1},x_{i}\right]}f(x)-\inf_{x\in\left[x_{i-1},x_{i}\right]}f(x)
+\]
+为$f$在$[x_{i-1},x_{i}]$上的振幅. 则
+\[
+S-s=\sum_{i=1}^{n}\omega_{i}\cdot\Delta x_{i}.
+\]
+
+
+\paragraph{引理6.1.2}
+
+设分割$\pi'$是从$\pi$添加$k$个分点得到的, 则
+\[
+\begin{aligned}S(\pi)\geqslant & S\left(\pi^{\prime}\right)\geqslant S(\pi)-(M-m)k\|\pi\|,\\
+	s(\pi)\leqslant & s\left(\pi^{\prime}\right)\leqslant s(\pi)+(M-m)k\|\pi\|.
+\end{aligned}
+\]
+即, 对于给定的分割, 增加分点时下和不减, 上和不增.
+
+\paragraph{证明:}
+
+只需要对$k=1$进行即可.
+
+\paragraph{推论6.1.3}
+
+对于任何两个分割$\pi_{1}$和$\pi_{2}$, 有
+\[
+s(\pi_{1})\le S(\pi_{2}).
+\]
+
+
+\paragraph{定理6.1.4 (Darboux)}
+
+\[
+\lim_{\|\pi\|\rightarrow0}S(\pi)=\inf_{\pi}S(\pi),\quad\lim_{\|\pi\|\rightarrow0}s(\pi)=\sup_{\pi}s(\pi).
+\]
+
+称$\inf_{\pi}S(\pi)$为$f$在$[a,b]$上的上积分, $\sup_{\pi}s(\pi)$为$f$在$[a,b]$上的下积分.
+
+\paragraph{定理6.1.5 (可积的充要条件)}
+
+设$f$在$[a,b]$上有界, 则以下命题等价:
+
+(1) $f$在$[a,b]$上Riemann可积.
+
+(2) $f$在$[a,b]$上的上积分和下积分相等.
+
+(3) 
+\[
+\lim_{\norm{\pi}\to0}\sum_{i=1}^{n}\omega_{i}\cdot\Delta x_{i}=0.
+\]
+
+(4) $\forall\epsilon>0$, 存在$[a,b]$的分割$\pi$, s.t.
+\[
+S(\pi)-s(\pi)=\sum_{i=1}^{n}\omega_{i}\cdot\Delta x_{i}<\epsilon.
+\]
+
+
+\paragraph{推论6.1.6}
+
+(1) 设$[\alpha,\beta]\subseteq[a,b]$, 如果$f$在$[a,b]$上可积, 则$f$在$[\alpha,\beta]$上也可积.
+
+(2) 设$c\in(a,b)$, 若$f$在$[a,c]$及$[c,b]$上都可积, 则$f$在$[a,b]$上可积.
+
+\paragraph{例6.1.1}
+
+设$f,g$在$[a,b]$上均可积, 则$fg$在$[a,b]$上也可积.
+
+注意,
+
+\[
+\begin{aligned}\omega_{i}(fg) & =\sup_{x^{\prime},x^{\prime\prime}\in\left[x_{i-1},x_{i}\right]}\left|f\left(x^{\prime}\right)g\left(x^{\prime}\right)-f\left(x^{\prime\prime}\right)g\left(x^{\prime\prime}\right)\right|\\
+	& =\sup_{x^{\prime},x^{\prime\prime}\in\left[x_{i-1},x_{i}\right]}\left|f\left(x^{\prime}\right)g\left(x^{\prime}\right)-f\left(x^{\prime}\right)g\left(x^{\prime\prime}\right)+f\left(x^{\prime}\right)g\left(x^{\prime\prime}\right)-f\left(x^{\prime\prime}\right)g\left(x^{\prime\prime}\right)\right|\\
+	& \leqslant\sup_{x^{\prime},x^{\prime\prime}\in\left[x_{i-1},x_{i}\right]}\left[\left|f\left(x^{\prime}\right)\right|\left|g\left(x^{\prime}\right)-g\left(x^{\prime\prime}\right)\right|+\left|g\left(x^{\prime\prime}\right)\right|\left|f\left(x^{\prime}\right)-f\left(x^{\prime\prime}\right)\right|\right]\\
+	& \leqslant K\left(\omega_{i}(g)+\omega_{i}(f)\right),
+\end{aligned}
+\]
+并用前面的定理6.1.5 (3).
+
+\paragraph{定理6.1.7 (可积函数类)}
+
+(1) 若$f\in C[a,b]$, 则$f$在$[a,b]$上可积;
+
+(2) 若有界函数$f$只在$[a,b]$上有限个点处不连续, 则$f$可积;
+
+(3) 若$f$在$[a,b]$上单调, 则$f$可积.
+
+\paragraph{证明:}
+
+(2) 主要依赖以下不等式
+\[
+\begin{aligned}S(\pi)-s(\pi) & \leqslant\frac{\varepsilon}{2(b-a)}(b-a)+2M\sum_{i=1}^{N}2\rho\\
+	& \leqslant\frac{\varepsilon}{2}+2M\cdot2N\rho<\varepsilon.
+\end{aligned}
+\]
+
+(3) 主要依赖以下不等式
+\[
+\begin{aligned}\sum_{i=1}^{n}\omega_{i}\cdot\Delta x_{i} & =\sum_{i=1}^{n}\left(f\left(x_{i}\right)-f\left(x_{i-1}\right)\right)\cdot\Delta x_{i}\\
+	& \leqslant\sum_{i=1}^{n}\left(f\left(x_{i}\right)-f\left(x_{i-1}\right)\right)\cdot\norm{\pi}\\
+	& =\left(f\left(x_{n}\right)-f\left(x_{0}\right)\right)\norm{\pi}\\
+	& =(f(b)-f(a))\norm{\pi}<\varepsilon.
+\end{aligned}
+\]
+
+设$f$为$[a,b]$上定义的函数, 若存在$[a,b]$上的分割
+\[
+\pi:a=x_{0}<x_{1}<x_{2}<\cdots<x_{n}=b,
+\]
+使得$f$在每个小区间$(x_{i-1},x_{i})$上均为常数, 则称$f$为阶梯函数.
+
+\paragraph{推论6.1.8}
+
+阶梯函数均为可积函数.
+
+\paragraph{定理6.1.9 (Riemann)}
+
+设$f$在$[a,b]$上有界, 则$f$可积的充要条件是$\forall\epsilon,\eta>0$, 存在$[a,b]$的分割$\pi$,
+s.t.
+\[
+\sum_{\omega_{i}\ge\eta}\Delta x_{i}<\epsilon.
+\]
+
+
+\paragraph{例6.1.3}
+
+设$f\in C[a,b]$, $\phi$在$[\alpha,\beta]$上可积, $\phi([\alpha,\beta])\subseteq[a,b]$.
+则$f\circ\phi$在$[\alpha,\beta]$上仍可积.
+
+\paragraph{证明:}
+
+$f$ 在 $[a,b]$ 上一致连续. $\forall\varepsilon>0$, $\exists\delta>0$,
+当 $x,y\in$ $[a,b]$, $|x-y|<\delta$ 时, $|f(x)-f(y)|<\frac{\varepsilon}{2(\beta-\alpha)}$.
+因为 $\phi$ 在 $[\alpha,\beta]$ 上可积, 则存在 $[\alpha,\beta]$ 的分割 $\pi:\alpha=t_{0}<t_{1}<\cdots<t_{m}=\beta$,
+使得 
+\[
+\sum_{\omega_{i}(\phi)\geqslant\delta}\Delta t_{i}<\frac{\varepsilon}{4K+1},
+\]
+其中 $K=\max_{x\in[a,b]}|f(x)|$. 于是 
+\[
+\begin{aligned}\sum_{i=1}^{m}\omega_{i}(f\circ\varphi)\cdot\Delta t_{i} & =\sum_{\omega_{i}(\phi)\geqslant\delta}\omega_{i}(f\circ\varphi)\cdot\Delta t_{i}+\sum_{\omega_{i}(\phi)<\delta}\omega_{i}(f\circ\varphi)\cdot\Delta t_{i}\\
+	& \leqslant2K\cdot\sum_{\omega_{i}(\phi)\geqslant\delta}\Delta t_{i}+\frac{\varepsilon}{2(\beta-\alpha)}\cdot\sum_{\omega_{i}(\phi)<\delta}\Delta t_{i}\\
+	& \leqslant2K\cdot\frac{\varepsilon}{4K+1}+\frac{\varepsilon}{2(\beta-\alpha)}\cdot(\beta-\alpha)<\varepsilon.
+\end{aligned}
+\]
+
+两个可积函数的复合不可积的例子: 
+\[
+f(x)=\begin{cases}
+	1, & x\ne0,\\
+	0, & x=0.
+\end{cases}\quad g(x)=R(x)\Longrightarrow f\circ g(x)=D(x).
+\]
+
+可积函数复合连续函数不可积的例子:
+
+\[
+f(x)=\begin{cases}
+	0, & 0\le x<1,\\
+	1, & x=1.
+\end{cases}
+\]
+设$A$为$[0,1]$上有正测度的类Cantor集, $(a_{i},b_{i})$, ($i\in\NN_{+}$)为$A$的邻接区间.
+\[
+g(x)=\begin{cases}
+	1, & x\in A,\\
+	1-\frac{1}{2}(b_{i}-c_{i})+\left|x-\frac{1}{2}(a_{i}+b_{i})\right|, & x\in(a_{i},b_{i}),\ i\in\NN_{+}.
+\end{cases}
+\]
+则
+\[
+f\circ g(x)=\begin{cases}
+	1, & x\in A,\\
+	0, & x\in[0,1]\setminus A.
+\end{cases}
+\]
+
+
+\paragraph{定理6.1.10 (Lebsegue)}
+
+有界函数$f$在$[a,b]$上Riemann可积的充要条件是它的不连续点集$D_{f}$为零测集. 其中$D_{f}=\bigcup_{n=1}^{\infty}D_{\frac{1}{n}}$,
+而
+\[
+D_{\delta}=\left\{ x\in[a,b]:\omega(f,x)\ge\delta\right\} ,\quad\omega(f,x)=\lim_{r\rightarrow0^{+}}\sup\left\{ \left|f\left(x_{1}\right)-f\left(x_{2}\right)\right|:x_{1},x_{2}\in(x-r,x+r)\cap[a,b]\right\} .
+\]
+
+
+\subsection{定积分的性质}
+
+线性性质, 积分区间可加性, 保号性, 绝对值不等式.
+
+\paragraph{定理6.2.3 (积分第一中值定理)}
+
+设 $f,g$ 在 $[a,b]$ 上可积, 且 $g(x)$ 不变号, 则存在 $\mu$, $\inf_{x\in[a,b]}f(x)\leqslant\mu\leqslant\sup_{x\in[a,b]}f(x)$,
+使得 
+\[
+\int_{a}^{b}f(x)g(x)dx=\mu\cdot\int_{a}^{b}g(x)dx.
+\]
+
+
+\paragraph{引理 6.2.4. }
+
+如果 $f(x)$ 在 $[a,b]$ 上可积, 令 
+\[
+F(x)=\int_{a}^{x}f(t)dt,\quad x\in[a,b],
+\]
+则 $F$ 是 $[a,b]$ 上的连续函数.
+
+注: 尽管这个变限积分常被用来和Newton-Leibnitz公式混用来求定积分, 但是这并不表示$F$是$f$的原函数. 根据导函数的介值定理,
+如果$F$是$f$的原函数, 则$f$不能有间断点, 这对于可积函数$f$是条件不足的.
+
+\paragraph{定理 6.2.5 (积分第二中值定理). }
+
+设 $f$ 在 $[a,b]$ 上可积. 
+
+(1) 如果 $g$ 在 $[a,b]$ 上单调递减, 且 $g(x)\geqslant0$, $\forall x\in[a,b]$,
+则存在 $\xi\in[a,b]$ 使得 
+\[
+\int_{a}^{b}f(x)g(x)dx=g(a)\cdot\int_{a}^{\xi}f(x)dx.
+\]
+
+(2) 如果 $g$ 在 $[a,b]$ 上单调递增, 且 $g(x)\geqslant0$, $\forall x\in[a,b]$,
+则存在 $\eta\in[a,b]$ 使得 
+\[
+\int_{a}^{b}f(x)g(x)dx=g(b)\cdot\int_{\eta}^{b}f(x)dx.
+\]
+
+(3) 一般地, 如果 $g$ 为 $[a,b]$ 上的单调函数, 则存在 $\zeta\in[a,b]$, 使得 
+\[
+\int_{a}^{b}f(x)g(x)dx=g(a)\cdot\int_{a}^{\zeta}f(x)dx+g(b)\cdot\int_{\zeta}^{b}f(x)dx.
+\]
+
+
+\paragraph{例 6.2.2. }
+
+\paragraph{设 $\beta\geqslant0,b>a>0$, 证明 
+	\[
+	\left|\int_{a}^{b}e^{-\beta x}\frac{\sin x}{x}dx\right|\leqslant\frac{2}{a}.
+	\]
+	证明. }
+
+对 $g(x)=\frac{e^{-\beta x}}{x}$, $f(x)=\sin x$ 用积分第二中值公式, 存在 $\xi\in[a,b]$,
+使得 
+\[
+\int_{a}^{b}e^{-\beta x}\frac{\sin x}{x}dx=\frac{e^{-\beta a}}{a}\cdot\int_{a}^{\xi}\sin xdx=\frac{e^{-\beta a}}{a}(\cos a-\cos\xi)
+\]
+这说明 
+\[
+\left|\int_{a}^{b}e^{-\beta x}\frac{\sin x}{x}dx\right|\leqslant2\frac{e^{-\beta a}}{a}\leqslant\frac{2}{a}.
+\]
+
+
+\paragraph{例 6.2.3. }
+
+证明 $\lim_{A\rightarrow\infty}\int_{0}^{A}\frac{\sin x}{x}dx$ 存在. 
+
+\paragraph{证明. }
+
+在上例中取 $\beta=0$, 则当 $B>A>0$ 时, 有
+\[
+\left|\int_{0}^{B}\frac{\sin x}{x}dx-\int_{0}^{A}\frac{\sin x}{x}dx\right|=\left|\int_{A}^{B}\frac{\sin x}{x}dx\right|\leqslant\frac{2}{A}\rightarrow0\quad(A\rightarrow\infty),
+\]
+
+
+\paragraph{例3.5.15}
+
+设$f\in C[a,b]$, $g$是周期为$T$的连续函数, 则
+\[
+\lim_{n\to\infty}\int_{a}^{b}f(x)g(nx)\ud x=\frac{1}{T}\int_{a}^{b}f(x)\ud x\int_{0}^{T}g(x)\ud x.
+\]
+
+
+\paragraph{例 6.2.6 (Riemann-Lebesgue)}
+
+设 $f(x)$ 为 $[a,b]$ 上的可积函数, 则
+\[
+\lim_{\lambda\rightarrow+\infty}\int_{a}^{b}f(x)\sin\lambda xdx=0,\quad\lim_{\lambda\rightarrow+\infty}\int_{a}^{b}f(x)\cos\lambda xdx=0.
+\]
+
+
+\paragraph{证明. }
+
+以第一个极限为例. 因为 $f$ 可积, 故任给 $\varepsilon>0$, 存在 $[a,b]$ 的分割 
+\[
+\pi:a=x_{0}<x_{1}<x_{2}<\cdots<x_{n}=b,
+\]
+使得 
+\[
+\sum_{i=1}^{n}\omega_{i}(f)\Delta x_{i}<\frac{1}{2}\varepsilon.
+\]
+又因为 $f$ 有界, 故存在 $K$, 使得 $|f(x)|\leqslant K$, $\forall x\in[a,b]$.
+于是当 $\lambda>\frac{4nK}{\varepsilon}$ 时, 有 
+\[
+\begin{aligned}\left|\int_{a}^{b}f(x)\sin\lambda xdx\right| & =\left|\sum_{i=1}^{n}\int_{x_{i-1}}^{x_{i}}f(x)\sin\lambda xdx\right|\\
+	& =\left|\sum_{i=1}^{n}\int_{x_{i-1}}^{x_{i}}\left[f(x)-f\left(x_{i-1}\right)\right]\sin\lambda xdx+\sum_{i=1}^{n}\int_{x_{i-1}}^{x_{i}}f\left(x_{i-1}\right)\sin\lambda xdx\right|\\
+	& \leqslant\sum_{i=1}^{n}\int_{x_{i-1}}^{x_{i}}\left|f(x)-f\left(x_{i-1}\right)\right|dx+\sum_{i=1}^{n}\left|f\left(x_{i-1}\right)\right|\left|\int_{x_{i-1}}^{x_{i}}\sin\lambda xdx\right|\\
+	& \leqslant\sum_{i=1}^{n}\omega_{i}(f)\Delta x_{i}+\sum_{i=1}^{n}K\frac{1}{\lambda}\left|\cos\lambda x_{i-1}-\cos\lambda x_{i}\right|\\
+	& <\frac{1}{2}\varepsilon+\frac{2nK}{\lambda}<\varepsilon.
+\end{aligned}
+\]
+
+
+\subsection{微积分基本公式}
+
+\paragraph{定理 6.3.1 (微积分基本定理). }
+
+设 $f$ 在 $[a,b]$ 上可积, 且在 $x_{0}\in[a,b]$ 处连续, 则 $F(x)=\int_{a}^{x}f(t)dt$
+在 $x_{0}$ 处可导, 且 
+\[
+F^{\prime}\left(x_{0}\right)=f\left(x_{0}\right).
+\]
+
+这个定理说明变限积分是函数$f$的原函数的条件是$f$在$[a,b]$上连续, 而不能有第一类间断点. 但第二类间断点是可以有的.
+
+\paragraph{定理 6.3.3 (Newton-Leibniz 公式). }
+
+设 $F$ 在 $[a,b]$ 上可微, 且 $F^{\prime}=f$ 在 $[a,b]$ 上 Riemann 可积,
+则 
+\[
+\int_{a}^{b}f(x)dx=F(b)-F(a).
+\]
+(此式又写为 $\int_{a}^{b}F^{\prime}(x)dx=F(b)-F(a)=\left.F(x)\right|_{a}^{b}$)
+
+注: 可微函数的导函数不一定是可积的, 如函数 
+\[
+F(x)=\begin{cases}
+	x^{2}\sin\frac{1}{x^{2}}, & x\neq0\\
+	0, & x=0
+\end{cases}
+\]
+在 $[0,1]$ 上可微. 进一步还可以构造导函数有界但不可积的例子.
+
+\paragraph{例 6.3.2. }
+
+设 $f$ 在 $[a,b]$ 上连续可微, $f(a)=0$, 则 
+\[
+\int_{a}^{b}f^{2}(x)dx\leqslant\frac{(b-a)^{2}}{2}\int_{a}^{b}\left[f^{\prime}(x)\right]^{2}dx.
+\]
+
+
+\paragraph{证明:}
+
+\[
+\begin{aligned}f^{2}(x) & =(f(x)-f(a))^{2}=\left[\int_{a}^{x}f^{\prime}(t)dt\right]^{2}\\
+	& \leqslant\int_{a}^{x}\left[f^{\prime}(t)\right]^{2}dt\int_{a}^{x}1^{2}dt\quad(\text{Cauchy}-\text{Schwarz})\\
+	& \leqslant(x-a)\int_{a}^{b}\left[f^{\prime}(t)\right]^{2}dt.
+\end{aligned}
+\]
+
+
+\subsection{定积分的近似计算}
+
+\paragraph{不等式1}
+
+设$f$可微, 且$\left|f'(x)\right|\le M$, 则
+\[
+\left|\int_{a}^{b}f(x)\ud x-f\left(\frac{a+b}{2}\right)(b-a)\right|\le\frac{M}{4}(b-a)^{2}.
+\]
+
+
+\paragraph{证明:}
+
+\[
+\begin{aligned}\left|\int_{a}^{b}f(x)dx-f\left(\frac{a+b}{2}\right)(b-a)\right| & =\left|\int_{a}^{b}\left(f(x)-f\left(\frac{a+b}{2}\right)\right)dx\right|=\left|\int_{a}^{b}f^{\prime}(\xi)\left(x-\frac{a+b}{2}\right)dx\right|\\
+	& \leqslant\int_{a}^{b}\left|f^{\prime}(\xi)\right|\left|x-\frac{a+b}{2}\right|dx\leqslant M\int_{a}^{b}\left|x-\frac{a+b}{2}\right|dx\\
+	& =\frac{M}{4}(b-a)^{2}.
+\end{aligned}
+\]
+
+
+\paragraph{不等式2}
+
+设$f$二阶可微, 且$\left|f''(x)\right|\le M$, $\forall x\in[a,b]$. 则
+\[
+\left|\int_{a}^{b}f(x)\ud x-f\left(\frac{a+b}{2}\right)(b-a)\right|\le\frac{1}{24}M(b-a)^{3}.
+\]
+
+
+\paragraph{证明:}
+
+用Taylor展开
+\[
+f(x)=f\left(\frac{a+b}{2}\right)+f^{\prime}\left(\frac{a+b}{2}\right)\left(x-\frac{a+b}{2}\right)+\frac{1}{2}f^{\prime\prime}(\xi)\left(x-\frac{a+b}{2}\right)^{2},
+\]
+两边积分, 得
+\[
+\int_{a}^{b}f(x)dx=f\left(\frac{a+b}{2}\right)(b-a)+\frac{1}{2}\int_{a}^{b}f^{\prime\prime}(\xi)\left(x-\frac{a+b}{2}\right)^{2}dx,
+\]
+所以
+\[
+\left|\int_{a}^{b}f(x)dx-f\left(\frac{a+b}{2}\right)(b-a)\right|\leqslant\frac{1}{2}M\int_{a}^{b}\left(x-\frac{a+b}{2}\right)^{2}dx=\frac{1}{24}M(b-a)^{3}.
+\]
+
+
+\paragraph{注:}
+
+使用带积分型余项的Taylor公式
+\[
+f(x)=f\left(\frac{a+b}{2}\right)+f'\left(\frac{a+b}{2}\right)\left(x-\frac{a+b}{2}\right)+\int_{\frac{a+b}{2}}^{x}\frac{f''(t)}{1!}\left(t-\frac{a+b}{2}\right)\ud t.
+\]
+两边同时积分得到
+\[
+\int_{a}^{b}f(x)\ud x=f\left(\frac{a+b}{2}\right)(b-a)+\int_{a}^{b}\int_{\frac{a+b}{2}}^{x}f''(t)\left(t-\frac{a+b}{2}\right)\ud t\ud x,
+\]
+后者可以通过交换积分次序化简为
+\begin{align*}
+	\int_{a}^{b}\int_{\frac{a+b}{2}}^{x}f''(t)\left(t-\frac{a+b}{2}\right)\ud t\ud x & =\int_{a}^{b}f''(t)\left(t-\frac{a+b}{2}\right)\min\left\{ t-a,b-t\right\} \ud t\\
+	& =-\int_{a}^{\frac{a+b}{2}}(t-a)\cdot f''(t)\left(t-\frac{a+b}{2}\right)\ud t+\int_{\frac{a+b}{2}}^{b}(b-t)\cdot f''(t)\left(t-\frac{a+b}{2}\right)\ud t\\
+	& =-\int_{a}^{\frac{a+b}{2}}(t-a)\left(t-\frac{a+b}{2}\right)(f''(t)+f''(a+b-t))\ud t.
+\end{align*}
+所以有下面的恒等式
+\[
+\int_{a}^{b}f(x)\ud x=f\left(\frac{a+b}{2}\right)(b-a)-\int_{a}^{\frac{a+b}{2}}(t-a)\left(t-\frac{a+b}{2}\right)(f''(t)+f''(a+b-t))\ud t.
+\]
+而
+\[
+\left|\int_{a}^{\frac{a+b}{2}}(t-a)\left(t-\frac{a+b}{2}\right)(f''(t)+f''(a+b-t))\ud t\right|\le2M\left|\int_{a}^{\frac{a+b}{2}}(t-a)\left(t-\frac{a+b}{2}\right)\ud t\right|=\frac{M}{24}(b-a)^{3}.
+\]
+
+
+\paragraph{不等式3}
+
+设$f\in C[a,b]$, 若$f$二阶可微, 且$\left|f''(x)\right|\le M$, $\forall x\in[a,b]$,
+则
+\[
+\left|\int_{a}^{b}f(x)\ud x-\frac{f(a)+f(b)}{2}(b-a)\right|\le\frac{M}{12}(b-a)^{3}.
+\]
+
+
+\paragraph{证明:}
+
+\begin{align*}
+	\int_{a}^{b}f(x)\ud x & =(x-a)f(x)\mid_{a}^{b}-\int_{a}^{b}(x-a)f'(x)\ud(x-b)\\
+	& =(b-a)f(b)+\int_{a}^{b}(x-b)\left(f'(x)+(x-a)f''(x)\right)\\
+	& =(b-a)f(b)+(x-b)f(x)\mid_{a}^{b}-\int_{a}^{b}f(x)\ud x+\int_{a}^{b}(x-a)(x-b)f''(x)\ud x\\
+	& =(b-a)(f(b)+f(a))-\int_{a}^{b}f(x)\ud x+\int_{a}^{b}(x-a)(x-b)f''(x)\ud x,
+\end{align*}
+所以
+\[
+\left|\int_{a}^{b}f(x)\ud x-\frac{f(a)+f(b)}{2}(b-a)\right|=\frac{1}{2}\left|\int_{a}^{b}(x-a)(x-b)f''(x)\ud x\right|\le\frac{M}{12}(b-a)^{3}.
+\]
+
+上面的等式的一些应用, 取$a=n$, $b=n+1$, 则有
+\[
+\int_{n}^{n+1}f(t)\ud t=\frac{f(n)+f(n+1)}{2}-\frac{1}{2}\int_{0}^{1}x(1-x)f''(x+n)\ud x.
+\]
+对$n$做累和, 
+\[
+\sum_{k=1}^{n}f(k)=\int_{1}^{n}f(t)\ud t+\frac{f(1)+f(n)}{2}+\frac{1}{2}\int_{0}^{1}x(1-x)\sum_{k=1}^{n-1}f''(x+n)\ud x.
+\]
+当取$f(x)=\frac{1}{x}$时, 得到
+\[
+H_{n}=\ln n+\frac{n+1}{2n}+\frac{1}{2}\int_{0}^{1}x(1-x)\sum_{k=1}^{n-1}\frac{2}{(x+n)^{3}}\ud x=\ln n+O(1).
+\]
+当取$f(x)=\ln x$时, 得到
+\[
+\ln n!=\ln\left(\sqrt{n}\left(\frac{n}{e}\right)^{n}\right)+1-\frac{1}{2}\int_{0}^{1}x(1-x)\sum_{k=1}^{n-1}\frac{1}{(x+n)^{2}}\ud x=\ln\left(\sqrt{n}\left(\frac{n}{e}\right)^{n}\right)+O(1),
+\]
+所以极限
+\[
+\lim_{n\to\infty}\frac{n!}{\sqrt{n}\left(\frac{n}{e}\right)^{n}}=C.
+\]
+
+
+\paragraph{注:}
+
+若$f(x)\in C^{4}[a,b]$, 则
+\[
+\int_{a}^{b}f(x)dx-\frac{f(a)+f(b)}{2}(b-a)=\frac{1}{24}\int_{a}^{b}f^{(4)}(x)(x-a)^{2}(x-b)^{2}dx-\frac{1}{12}(b-a)^{2}\left[f^{\prime}(b)-f^{\prime}(a)\right].
+\]
+
+
+\paragraph{关于习题3}
+
+是否存在常数 $C$, 使得对于满足条件 $\left|f^{\prime\prime\prime}(x)\right|\leqslant M$
+的任意函数 $f$ 有如下估计: 
+\[
+\left|\int_{a}^{b}f(x)dx-\frac{f(a)+f(b)}{2}(b-a)\right|\leqslant CM(b-a)^{4}.
+\]
+
+
+\paragraph{解:}
+
+条件存在. 不等式相当于
+\[
+\frac{1}{2}\left|\int_{a}^{b}(x-a)(x-b)f''(x)\ud x\right|\le CM(b-a)^{4}.
+\]
+
+由于$\left|f'''\right|\le M$, 所以$-M(x-a)\le f''(x)-f''(a)\le M(x-a)$.
+所以
+\[
+\int_{a}^{b}(x-a)(x-b)f''(x)\ud x\le\int_{a}^{b}(x-a)(x-b)(f''(a)-M(x-a))\ud x=\frac{M}{12}(b-a)^{4}-\frac{f''(a)}{6}(b-a)^{3},
+\]
+\[
+\int_{a}^{b}(x-a)(x-b)f''(x)\ud x\ge\int_{a}^{b}(x-a)(x-b)(f''(a)+M(x-a))\ud x=-\frac{M}{12}(b-a)^{4}-\frac{f''(a)}{6}(b-a)^{3}.
+\]
+当$f''(a)=0$时, 上面的$C$存在, 而一般情况的$f$, 上面的$C$是不存在的.
+
+当问题加上对于任意的$a,b\in D_{f}$时, 常数$C$也是不存在的. 这相当于对于任意的$a,b$, 
+\[
+\frac{1}{2}\left|\int_{a}^{b}(x-a)(x-b)f''(x)\ud x\right|\le CM(b-a)^{4}.
+\]
+由介值定理, 存在$\xi\in(a,b)$, s.t. 
+\[
+\left|f''(\xi)\right|(b-a)^{3}\le CM(b-a)^{4}.
+\]
+令$b\to a^{+}$, 得到$f''(a)\equiv0$, 也与$f$的任意性矛盾.
+
+\subsection{作业}
+
+6. 设 $f(x)$ 为 $[0,1]$ 上的非负可积函数, 且 $\int_{0}^{1}f(x)dx=0$. 证明, 任给
+$\varepsilon>0$, 均存在子区间 $[\alpha,\beta]$, 使得 $f(x)<\varepsilon$,
+$\forall x\in[\alpha,\beta]$.
+
+8. 设 $f(x)$ 在 $[a,b]$ 上可积, 且存在常数 $C>0$, 使得 $|f(x)|\geqslant C(a\leqslant x\leqslant b)$.
+证 明 $\frac{1}{f}$ 在 $[a,b]$ 上也是可积的.
+
+11. 设 $f(x)>0$ 为 $[a,b]$ 上的可积函数, 证明 $\int_{a}^{b}f(x)dx>0$.
+
+2. 设 $f(x)$ 是 $[a,b]$ 上定义的函数. 如果 $f^{2}(x)$ 可积, 则 $|f(x)|$ 也可积.
+
+6. 设 $f(x)\geqslant0$ 在 $[a,b]$ 上可积, $\lambda\in\mathbb{R}$, 则
+\[
+\left(\int_{a}^{b}f(x)\cos\lambda xdx\right)^{2}+\left(\int_{a}^{b}f(x)\sin\lambda xdx\right)^{2}\leqslant\left[\int_{a}^{b}f(x)dx\right]^{2}.
+\]
+(提示: $f=\sqrt{f}\cdot\sqrt{f}$, 用Cauchy-Schwarz不等式.)
+
+9. 设 $f(x)$ 为 $[0,1]$ 上的连续函数, 则 $\lim_{n\rightarrow+\infty}n\int_{0}^{1}x^{n}f(x)dx=f(1)$.
+(提示: $nx^{n}$ 在 $[0,1]$ 上积分趋于 1 , 在 $[0,\delta]$ 上很小, 如果 $0<\delta<1$.)
+
+11. 设 $f(x)$ 为 $[a,b]$ 上的可积函数, 则任给 $\varepsilon>0$, 存在连续函数 $g(x)$,
+使得 $\inf f\leqslant g(x)\leqslant\sup f$, 且 
+\[
+\int_{a}^{b}|f(x)-g(x)|dx<\varepsilon.
+\]
+
+12. 设 $f(x)$ 在 $[c,d]$ 上可积, 设 $[a,b]\subset(c,d)$, 则 
+\[
+\lim_{h\rightarrow0}\int_{a}^{b}|f(x+h)-f(x)|dx=0.
+\]

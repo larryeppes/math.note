@@ -1,0 +1,969 @@
+\section{微分中值定理和Taylor展开}
+\subsection{函数极值}
+
+\paragraph{定义5.1.1 (极值点)}
+
+设$f$定义在$I$上, $x_{0}\in I$, 若存在$\delta>0$, s.t.
+\[
+f(x)\ge f(x_{0}),\qquad\forall x\in(x_{0}-\delta,x_{0}+\delta)\cap I,
+\]
+则称$x_{0}$是$f$在$I$上的极小值点, $f(x_{0})$称为极小值.
+
+若$x_{0}\in I$, 且$\forall x\in I$, $f(x)\ge f(x_{0})$, 则称$x_{0}$是$f$在区间$I$上的最小值点,
+$f(x_{0})$称为函数$f$在区间$I$上的最小值.
+
+\paragraph{定理5.1.1 (Fermat定理)}
+
+设$x_{0}$是$f$在$I$上的极值点, 且$x_{0}$是内点, 若$f$在$x_{0}$处可导, 则$f'(x_{0})=0$.
+
+\paragraph{注:}
+
+由于极值点定义是在$(x_{0}-\delta,x_{0}+\delta)\cap I$上给出的, 所以以上定理要加上$x_{0}$是内点.
+
+\paragraph{证明:}
+
+使用极限的保号性, 判断
+\[
+f'(x_{0})=\lim_{x\to x_{0}^{-}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\lim_{x\to x_{0}^{+}}\frac{f(x)-f(x_{0})}{x-x_{0}}
+\]
+的符号.
+
+满足$f'(x_{0})=0$的点称为$f$的驻点, 临界点.
+
+若$f'(x_{0})\ge0$, 则$\exists\delta>0$, s.t. $\forall x\in(x_{0}-\delta,x_{0}+\delta)$,
+有$(x-x_{0})(f(x)-f(x_{0}))\ge0$, 但$f$在$x_{0}$附近不单调.
+
+\paragraph{定理5.1.2 (Darboux)}
+
+设$f$为$[a,b]$上的可导函数, 则$f'$可以取到$f'_{+}(a)$和$f'_{-}(b)$之间的任意值.
+
+\paragraph{证明:}
+
+设$k$介于$f'_{+}(a)$与$f'_{-}(b)$之间, 定义$g(x)=f(x)-kx$, 则
+\[
+g'_{+}(a)g'_{-}(b)=(f'_{+}(a)-k)(f'_{-}(b)-k)\le0.
+\]
+若上式等于零, 命题显然. 若上式小于零, 不妨设$g'_{+}(a)>0$, 此时$x=a$不是最大值点; 并有$g'_{-}(b)<0$,
+此时$x=b$不是最大值点.
+
+从而$g(x)$只能在$[a,b]$内取到最大值, 由Fermat定理, 存在$\xi\in(a,b)$, s.t. $g'(\xi)=0$.
+
+\paragraph{注:}
+
+导函数有介值定理, 但导函数可以不连续, 比如$x^{2}\sin\frac{1}{x}$, $x\in[-\pi,\pi]$.
+
+Darboux定理说明, 若$g'$在任何点处不为零, 则$g'$不变号.
+
+Darboux定理的使用条件必须是区间内每点处可导.
+
+\paragraph{例5.3.4}
+
+设$f(x)$在$\RR$上二阶可导, 若$f$有界, 证明: $\exists\xi\in\RR$, s.t. $f''(\xi)=0$.
+
+\paragraph{证明:}
+
+(反证法), $\forall x\in\RR$, $f''(x)\ne0$, 由Darboux定理, $f''$不变号, 从而$f'$单调.
+
+不妨设$f'$单调上升, 取$x_{0}\in\RR$, $f'(x_{0})\ne0$. 因为
+
+\[
+f'(x_{0})>0\Longrightarrow f(x)-f(x_{0})=\int_{x_{0}}^{x}f'(t)\ud t\ge f'(x_{0})(x-x_{0})\to+\infty,\quad x\to+\infty,
+\]
+与$f$有界矛盾; 而且
+\[
+f'(x_{0})<0\Longrightarrow f(x_{0})-f(x)=\int_{x}^{x_{0}}f'(t)\ud t\le f'(x_{0})(x_{0}-x)\to-\infty,\quad x\to-\infty,
+\]
+也与$f$有界矛盾.
+
+\subsection{微分中值定理}
+
+\paragraph{定理5.2.1 (Rolle)}
+
+设$f\in C[a,b]$, 在$(a,b)$上可微, 且$f(a)=f(b)$, 则存在$\xi\in(a,b)$, s.t.
+$f'(\xi)=0$.
+
+\paragraph{定理5.2.2 (Lagrange)}
+
+设$f\in C[a,b]$, 在$(a,b)$上可微, 则存在$\xi\in(a,b)$, s.t.
+\[
+f'(\xi)=\frac{f(b)-f(a)}{b-a}.
+\]
+
+证明是构造性的, 对
+\[
+F(x)=f(x)-\left[f(a)+\frac{f(b)-f(a)}{b-a}(x-a)\right]
+\]
+使用Rolle定理.
+
+\paragraph{定理5.2.3 (Cauchy)}
+
+设$f,g\in C[a,b]$, 在$(a,b)$上可微, 且$\forall x\in(a,b)$, $g'(x)\ne0$,
+则
+\[
+\exists\xi\in(a,b),\ s.t.\ \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}.
+\]
+
+
+\paragraph{证明:}
+
+($g(a)\ne g(b)$), 对
+\[
+F(x)=f(x)-\left[f(a)+\frac{f(b)-f(a)}{g(b)-g(a)}(g(x)-g(a))\right]
+\]
+用Rolle定理.
+
+\paragraph{几何意义:}
+
+定义参数曲线$\overrightarrow{r}(t)=(g(t),f(t))$, $A=\overrightarrow{r}(a)$,
+$B=\overrightarrow{r}(b)$. 则$\frac{f(b)-f(a)}{g(b)-g(a)}$表示直线$\ell_{AB}$的斜率.
+Cauchy定理指出, $\exists\xi$使得$\overrightarrow{r}(\xi)$处的切线方向$\overrightarrow{r}'(\xi)\parallel\ell_{AB}$,
+而$\overrightarrow{r}'(\xi)=(g'(\xi),f'(\xi))$, 有
+\[
+k_{AB}=\frac{f'(\xi)}{g'(\xi)}.
+\]
+
+
+\paragraph{注:}
+
+由于$\forall x\in(a,b)$, $g'(x)\ne0$, 由Darboux介值定理$g'(x)$不变号, $g(x)$其实是单调可逆的,
+这可以给出另一种证法:
+
+取$A=g(a)$, $B=g(b)$, 不妨设$A<B$, 则$f(g^{-1}(y))\in C[A,B]$, 由复合函数求导与反函数求导法则
+\[
+\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f(g^{-1}(B))-f(g^{-1}(A))}{B-A}=\frac{\ud}{\ud x}f(g^{-1}(x))\mid_{x=\zeta}=f'(g^{-1}(\zeta))\cdot\frac{1}{g'(g^{-1}(\zeta))}=\frac{f'(\xi)}{g'(\xi)},
+\]
+其中$g(\xi)=\zeta\in[A,B]$. 
+
+\paragraph{例5.2.4}
+
+设$f(x)\in C[a,b]$, 在$(a,b)$二阶可导, 若$f(a)=f(b)=0$, 则对于任意的$c\in[a,b]$,
+存在$\xi\in(a,b)$, s.t.
+\[
+f(c)=\frac{f''(\xi)}{2}(c-a)(c-b).
+\]
+
+
+\paragraph{证: (K值法)}
+
+设$K$满足$f(c)=K(c-a)(c-b)$. 则$f(x)-K(x-a)(x-b)$有三个零点$a,b,c$. 故存在$\xi\in(a,b)$,
+s.t. $f''(\xi)-2K=0$.
+
+\paragraph{证法二:}
+
+构造
+\[
+F(x)=f(x)-\frac{f(c)}{(c-a)(c-b)}(x-a)(x-b)
+\]
+也有三个零点$a,b,c$.
+
+\paragraph{注: Lagrange插值公式}
+
+经过$\left(x_{i},f(x_{i})\right)_{i=1}^{n}$的$n-1$次多项式有如下形式
+\[
+p_{n-1}(x)=\sum_{i=1}^{n}\prod_{j\ne i}\frac{(x-x_{j})}{(x_{i}-x_{j})}f(x_{i}).
+\]
+用K值法证明:
+\[
+f(x)-p_{n-1}(x)=\frac{1}{n!}f^{(n)}(\xi)\prod_{i=1}^{n}(x-x_{i}),\quad\xi\in(a,b).
+\]
+
+
+\paragraph{例5.2.5}
+
+证明Legendre (勒让德)多项式$\frac{d^{n}}{dx^{n}}\left(x^{2}-1\right)^{n}$在$(-1,1)$上有$n$个不同实根,
+其中$n\ge1$.
+
+\paragraph{证明:}
+
+多项式$\left(x^{2}-1\right)^{n}$的直到$n-1$次导数总有$\pm1$作为其零点, 用Rolle定理,
+在每次求导时会多出现一个零点.
+
+\subsection{单调函数}
+
+\paragraph{命题5.3.2}
+
+设$f\in C[a,b]$, 在$(a,b)$上可微, 则$f$单调当且仅当$f'$不变号.
+
+\paragraph{证明:}
+
+$\Longrightarrow$: 用极限的保号性; $\Longleftarrow$: 用Lagrange中值定理.
+
+\paragraph{命题5.3.3 (反函数定理)}
+
+设$f$为区间$I$上的可微函数, 若$f'\ne0$, $\forall x\in I$. 则$f$可逆且反函数可微.
+
+\paragraph{证明:}
+
+用反证法+Lagrange定理, $f$是单射, 从而可逆, 由$f$连续得到$f$单调. 并且
+\[
+\left(f^{-1}(y)\right)'=\frac{1}{f'(x)}.
+\]
+
+
+\paragraph{命题5.3.4}
+
+设$\delta>0$, $f\in C(x_{0}-\delta,x_{0}+\delta)$, 在$(x_{0}-\delta,x_{0})\cup(x_{0},x_{0}+\delta)$上可微,
+若
+\[
+f'(x)\le0,\ x\in(x_{0}-\delta,x_{0});\quad f'(x)\ge0,\ x\in(x_{0},x_{0}+\delta).
+\]
+则$x_{0}$为$f$的极小值点. 反之为极大值点.
+
+\paragraph{命题5.3.5}
+
+设$f$在内点$x_{0}$处二阶可导, 且$f'(x_{0})=0$, 则若$f''(x_{0})>0$, 则$x_{0}$为$f$的(严格)极小值点.
+
+\paragraph{证明: }
+
+有高阶导数的定义要求$f'(x)$在$x_{0}$附近可计算, 再由极限保号性, $\exists\delta$使得
+\[
+x\in(x_{0}-\delta,x_{0})\text{时, }f'(x)<0,
+\]
+\[
+x\in(x_{0},x_{0}+\delta)\text{时, }f'(x)>0.
+\]
+
+
+\paragraph{例5.3.4}
+
+设$f(x)$在$\RR$上二阶可导, 若$f$有界, 证明: $\exists\xi\in\RR$, s.t. $f''(\xi)=0$.
+
+\paragraph{证明: (反证法)}
+
+对于任意的$x\in\RR$, $f''(x)\ne0$. 由Darboux定理, 有$f''$不变号, 所以$f'$单调,
+不妨设$f'$单调上升, 取$x_{0}\in\RR$, $f'(x_{0})\ne0$.
+
+当$f'(x_{0})>0$时, $f(x)-f(x_{0})=\int_{x_{0}}^{x}f'(t)\ud t\ge f'(x_{0})(x-x_{0})\to+\infty$,
+$x\to+\infty$. 与$f$有界矛盾.
+
+当$f'(x_{0})<0$时, $f(x_{0})-f(x)=\int_{x}^{x_{0}}f'(t)\ud t\le f'(x_{0})(x_{0}-x)\to-\infty$,
+$x\to-\infty$. 与$f$有界矛盾.
+
+\subsection{凸函数}
+
+\paragraph{定义5.4.1 (凸函数)}
+
+设$f$在$I$上有定义, 若$\forall a,b\in I$, $a<b$, 有
+\[
+f(x)\le l(x)=f(a)+\frac{f(b)-f(a)}{b-a}(x-a),\quad\forall x\in[a,b].
+\]
+则称$f$为$I$中的凸函数; 相应的给出凹函数的定义. 若上式取严格不等号, 则对应严格凸函数.
+
+定义中的不等式可以等价地写成
+\[
+f(ta+(1-t)b)\le tf(a)+(1-t)f(b),\qquad\forall t\in(0,1).
+\]
+
+
+\paragraph{例5.4.1}
+
+用凸函数证明Young不等式.
+
+\paragraph{证明:}
+
+$e^{x}$是凸函数, $p>1$, 且$\frac{1}{p}+\frac{1}{q}=1$, 则
+\[
+ab=e^{\ln ab}=e^{\frac{1}{p}\ln a^{p}+\frac{1}{q}\ln b^{q}}\le\frac{1}{p}e^{\ln a^{p}}+\frac{1}{q}e^{\ln b^{q}}=\frac{a^{p}}{p}+\frac{b^{q}}{q}.
+\]
+
+
+\paragraph{定理5.4.1 (Jensen不等式)}
+
+设$f$是定义在$I$上的函数, 则$f$凸当且仅当$\forall x_{i}\in I$, $\lambda_{i}\ge0$,
+($i=1,2,\cdots,n$), 且$\sum_{i=1}^{n}\lambda_{i}=1$, 有
+\[
+f\left(\sum_{i=1}^{n}\lambda_{i}x_{i}\right)\le\sum_{i=1}^{n}\lambda_{i}f(x_{i}).
+\]
+
+对比习题3.3的13题.
+
+13: 若$f$没有第二类间断点, 且$\forall x,y\in(a,b)$均有
+\[
+f\left(\frac{x+y}{2}\right)\le\frac{f(x)+f(y)}{2},
+\]
+则$f\in C(a,b)$, 由此可证$f$在$(a,b)$上是凸的.
+
+这要依赖$f$的连续性和实数的完备性, 比如考虑证明$f\left(\frac{x+y+z}{3}\right)\le\frac{f(x)+f(y)+f(z)}{3}$.
+但下面的证明更精巧.
+
+\paragraph{命题5.4.3}
+
+设$f\in C(I)$, 则$f$凸当且仅当$\forall x_{1}<x_{2}\in I$, 有$f\left(\frac{x_{1}+x_{2}}{2}\right)\le\frac{f(x_{1})+f(x_{2})}{2}$.
+
+\paragraph{证明:}
+
+取$a,b\in I$, 证明$f(x)$在$(a,b)$上位于$l(x)=f(a)+\frac{f(b)-f(a)}{b-a}(x-a)$之下即可.
+
+\[
+g(x)\coloneqq f(x)-l(x)\quad x\in[a,b]\Longrightarrow g(x)\in C[a,b].
+\]
+取$M=\max_{x\in[a,b]}g(x)=g(x_{0})$, 则当$x_{0}$靠近$a$时, $x_{0}\le\frac{a+b}{2}$,
+$2x_{0}-a\in[a,b]$. 所以
+\[
+M=g(x_{0})=g\left(\frac{a+(2x_{0}-a)}{2}\right)\le\frac{g(a)+g(2x_{0}-a)}{2}\le M,
+\]
+等号成立, 故$M=g(a)=0$.
+
+\paragraph{推论5.4.4}
+
+设$f$在$I$上凸, 若$f$在$I$内达到最大值, 则$f$为常数.
+
+\paragraph{证明:}
+
+设$f$在$x_{0}$达到最大值, 则$\forall a,b\in I$, $\exists t\in(0,1)$, s.t.
+\[
+x_{0}=ta+(1-t)b\Longrightarrow f(x_{0})=\max f\le tf(a)+(1-t)f(b)\le\max f.
+\]
+等号成立. $f(x_{0})=f(a)=f(b)$.
+
+\paragraph{命题 5.4.2 (连续性)}
+
+设$f$在$I$中凸, 若$[a,b]\subseteq I$, $a,b\in I^{\circ}$, 则$f\in\mathrm{Lip}[a,b]$,
+从而连续.
+
+\paragraph{证明:}
+
+取$[a,b]\subseteq[a',b']\subseteq I$, $a',b'\in I^{\circ}$. 注意使用
+\[
+\left(\frac{f(a)-f(a')}{a-a'}\le\right)\frac{f(y)-f(x)}{y-x}\le\frac{f(b)-f(y)}{b-y}\le\frac{f(b')-f(b)}{b'-b}.
+\]
+
+
+\paragraph{命题5.4.5 (导数性质)}
+
+设$f$在$I$中凸, $x$为$I$的内点, 则$f$在$x$处左右导数存在, 且
+\[
+f_{-}'(x)\le f_{+}'(x).
+\]
+
+
+\paragraph{证明:}
+
+使用单调有界函数的极限存在. 设$x_{0}<x_{1}<x_{2}$, 证明: $k_{01}\le k_{02}\le k_{12}$.
+
+\paragraph{命题3.3.4}
+
+设$f(x)$是定义在区间$I$上的单调函数, 则$f$的间断点至多可数.
+
+由上面的命题, 凸函数的不可微点至多可数.
+
+\paragraph{命题5.4.6}
+
+设$f$在$I$上可微, 则
+
+(1) $f$凸当且仅当$f'$单调上升.
+
+(2) $f$凸当且仅当, $\forall x_{0},x\in I$, 有$f(x)\ge f'(x_{0})(x-x_{0})+f(x_{0})$. 
+
+\paragraph{证明:}
+
+(1) $\Longrightarrow$: 同前; $\Longleftarrow$: 用中值定理.
+\[
+a<x<b\Longrightarrow\frac{f(x)-f(a)}{x-a}=f'(\xi_{1})\le f'(\xi_{2})=\frac{f(b)-f(x)}{b-x}\Longrightarrow f\text{ 凸.}
+\]
+
+(2) $\Longrightarrow$: 
+\[
+x>x_{0}\Longrightarrow f'(x_{0})\le\frac{f(x)-f(x_{0})}{x-x_{0}};
+\]
+\[
+x<x_{0}\Longrightarrow f'(x_{0})\ge\frac{f(x_{0})-f(x)}{x_{0}-x};
+\]
+
+$\Longleftarrow$: 
+\[
+a<x<b\Longrightarrow\frac{f(x)-f(a)}{x-a}\le f'(x)\le\frac{f(b)-f(x)}{b-x}\Longrightarrow f(x)\le\lambda f(a)+(1-\lambda)f(b)
+\]
+且$x=\lambda a+(1-\lambda)b$.
+
+\paragraph{命题5.4.7}
+
+设$f\in C(I)$, 若$f_{-}'$存在且单调上升, 则$f$是凸函数.
+
+\paragraph{证明:}
+
+设$x_{0}\in I$, 记$L(x)=f_{-}'(x_{0})(x-x_{0})+f(x_{0})$, $g(x)=f(x)-L(x)$.
+
+则$g_{-}'(x)=f_{-}'(x)-f_{-}'(x_{0})$.
+
+\[
+\Longrightarrow\begin{cases}
+	x\le x_{0}\Longrightarrow g_{-}'(x)\le0\Longrightarrow g(x)\ge g(x_{0}),\ x\to x_{0}^{-}\Longrightarrow g(x)\searrow,\ x\to x_{0}^{-}.\\
+	x\ge x_{0}\Longrightarrow g_{-}'(x)\ge0\Longrightarrow g(x)\nearrow,\ x\to x_{0}^{+}.
+\end{cases}
+\]
+所以$\min g=g(x_{0})=0$. 所以$f(x)\ge L(x)=f_{-}'(x_{0})(x-x_{0})+f(x_{0})$,
+$x\in I$.
+
+设$x_{i}\in I$, $\lambda_{i}\ge0$, $\sum_{i=1}^{n}\lambda_{i}=1$,
+记$x_{0}\in\sum_{i=1}^{n}\lambda_{i}x_{i}$, 所以
+\[
+\sum_{i=1}^{n}\lambda_{i}f(x_{i})\ge f_{-}'(x_{0})\sum_{i=1}^{n}\lambda_{i}(x_{i}-x_{0})+f(x_{0})\sum_{i=1}^{n}\lambda_{i}=f(x_{0}).
+\]
+
+
+\paragraph{命题5.4.8}
+
+若$f$在$I$中二阶可导, 则$f$凸当且仅当$f''\ge0$.
+
+\subsection{函数作图}
+
+若$\lim_{x\to x_{0}^{+}}f(x)=\infty$或$\lim_{x\to x_{0}^{-}}f(x)=\infty$,
+则称$x=x_{0}$为$f$的垂直渐近线.
+
+若
+\[
+\lim_{x\to+\infty}\left[f(x)-(ax+b)\right]=0\ \text{或}\ \text{\ensuremath{\lim_{x\to-\infty}\left[f(x)-(ax+b)\right]=0}},
+\]
+则称$y=ax+b$为$f$在无穷远处的渐近线.
+
+\subsection{L'H\^{o}pital法则}
+
+\paragraph{定理5.6.1 (L'H\^{o}pital法则)}
+
+设$f,g$在$(a,b)$中可导, 且$g'(x)\ne0$, $\forall x\in(a,b)$, 又设
+\[
+\lim_{x\to a+}f(x)=0=\lim_{x\to a+}g(x),
+\]
+若极限
+\[
+\lim_{x\to a+}\frac{f'(x)}{g'(x)}\text{ 存在(或为}\infty\text{)}.
+\]
+则
+\[
+\lim_{x\to a+}\frac{f(x)}{g(x)}=\lim_{x\to a+}\frac{f'(x)}{g'(x)}.
+\]
+
+
+\paragraph{定理5.6.2 (L'H\^{o}pital法则)}
+
+设$f,g$在$(a,b)$中可导, 且$g'(x)\ne0$, $\forall x\in(a,b)$, 又设
+\[
+\lim_{x\to a+}g(x)=\infty,
+\]
+若极限
+\[
+\lim_{x\to a+}\frac{f'(x)}{g'(x)}=l
+\]
+存在, (或为$\infty$), 则
+\[
+\lim_{x\to a+}\frac{f(x)}{g(x)}=\lim_{x\to a+}\frac{f'(x)}{g'(x)}=l.
+\]
+
+
+\paragraph{证明:}
+
+只证明$l<\infty$的情况, $\forall\epsilon>0$, $\exists\eta>0$, s.t.
+\[
+l-\frac{\epsilon}{2}<\frac{f'(x)}{g'(x)}<l+\frac{\epsilon}{2},\qquad\forall x\in(a,a+\eta).
+\]
+取$c=a+\eta$, 由Cauchy中值定理, $\exists\xi\in(x,c)$, s.t.
+\[
+\frac{f(x)-f(c)}{g(x)-g(c)}=\frac{f'(\xi)}{g'(\xi)}\Longrightarrow\frac{f(x)}{g(x)}=\frac{f'(\xi)}{g'(\xi)}+\frac{f(c)}{g(x)}-\frac{f'(\xi)}{g'(\xi)}\cdot\frac{g(c)}{g(x)},\quad\xi\in(x,c)\subseteq(a,a+\eta).
+\]
+由$\lim_{x\to a+}g(x)=\infty$, 故存在$\delta<\eta$, s.t.
+\[
+\left|\frac{f(x)}{g(x)}-l\right|<\epsilon,\qquad\forall x\in(a,a+\delta).
+\]
+
+注: 当$\lim_{x\to a+}\frac{f'(x)}{g'(x)}$不存在时, $\lim_{x\to a+}\frac{f(x)}{g(x)}$仍然可能存在.
+比如求
+\[
+\lim_{x\to0+}\int_{0}^{x}\cos\frac{1}{t}\ud t.
+\]
+用L'H\^{o}pital法则有如下过程:
+\[
+f'_{+}(0)=\underset{x\to0+}{\mathop{\lim}}\frac{f(x)-f(0)}{x-0}=\underset{x\to0+}{\mathop{\lim}}\frac{\int_{0}^{x}\cos\frac{1}{t}\ud t}{x}=\underset{x\to0+}{\mathop{\lim}}\cos\frac{1}{x}
+\]
+不存在, 但是做变量替换$s=\frac{1}{t}$, $y=\frac{1}{x}$之后, 
+\[
+\underset{x\to0+}{\mathop{\lim}}\frac{\int_{0}^{x}\cos\frac{1}{t}\ud t}{x}=\lim_{y\to+\infty}y\int_{y}^{\infty}\frac{\cos s}{s^{2}}\ud s=y\cdot\left(\frac{1}{2}\int_{y}^{y+\pi}\frac{\cos s}{s^{2}}\ud s+\frac{1}{2}\int_{y+\pi}^{\infty}\frac{\cos s}{s^{2}}\ud s+\frac{1}{2}\int_{y}^{\infty}\frac{\cos s}{s^{2}}\ud s\right).
+\]
+显然, $\int_{y}^{y+\pi}\frac{\cos s}{s^{2}}\ud s=O\left(\frac{1}{y^{2}}\right)$.
+而
+\[
+\int_{y+\pi}^{\infty}\frac{\cos s}{s^{2}}\ud s+\int_{y}^{\infty}\frac{\cos s}{s^{2}}\ud s=\int_{y}^{\infty}\cos s\left(\frac{1}{s^{2}}-\frac{1}{(s+\pi)^{2}}\right)\ud s=\int_{y}^{\infty}\cos s\left(\frac{2s\pi+\pi^{2}}{s^{2}(s+\pi)^{2}}\right)\ud s=O\left(\frac{1}{y^{2}}\right).
+\]
+所以应当有
+\[
+\lim_{y\to+\infty}y\int_{y}^{\infty}\frac{\cos s}{s^{2}}\ud s=0.
+\]
+或者对上式用分部积分
+\[
+\int_{y}^{\infty}\frac{\cos s}{s^{2}}\ud s=\frac{\sin s}{s^{2}}\mid_{y}^{\infty}+\int_{y}^{\infty}\frac{2\sin s}{s^{3}}\ud s=-\frac{\sin y}{y^{2}}+O\left(\int_{y}^{\infty}\frac{2}{s^{3}}\ud s\right)=O\left(\frac{1}{y^{2}}\right).
+\]
+再或者用Riemann-Lebesgue引理
+\[
+\lim_{y\to+\infty}y\int_{y}^{\infty}\frac{\cos s}{s^{2}}\ud s=\lim_{y\to+\infty}\int_{1}^{\infty}\frac{\cos yt}{t^{2}}\ud t=0.
+\]
+
+再或者在计算导数前按以下过程分部积分将积分改写为
+\[
+\begin{aligned}\int_{\varepsilon}^{x}\cos\left(t^{-1}\right)dt & =-\int_{\varepsilon}^{x}t^{2}d\sin\left(t^{-1}\right)\\
+	& =-x^{2}\sin\left(x^{-1}\right)+\varepsilon^{2}\sin\left(\varepsilon^{-1}\right)+2\int_{\varepsilon}^{x}t\sin\left(t^{-1}\right)dt\\
+	& \stackrel{\varepsilon\rightarrow0}{\longrightarrow}-x^{2}\sin\left(x^{-1}\right)+2\int_{0}^{x}t\sin\left(t^{-1}\right)dt.
+\end{aligned}
+\]
+
+
+\paragraph{例5.6.4}
+
+设$f$在$(a,+\infty)$上可微.
+
+(1). 若$\lim_{x\to+\infty}x\cdot f'(x)=1$, 则$\lim_{x\to+\infty}f(x)=+\infty$.
+
+(2). 若存在$\alpha>0$, s.t.
+\[
+\lim_{x\to+\infty}\left(\alpha\cdot f(x)+x\cdot f'(x)\right)=\beta,
+\]
+则
+\[
+\lim_{x\to+\infty}f(x)=\frac{\beta}{\alpha}.
+\]
+
+
+\paragraph{证明:}
+
+(1). 当$x\to+\infty$, $\ln x\to+\infty$, 则
+\[
+\lim_{x\to+\infty}\frac{f(x)}{\ln x}=\lim_{x\to+\infty}\frac{f'(x)}{\frac{1}{x}}=1\Longrightarrow f(x)\to+\infty,\ (x\to+\infty).
+\]
+
+(2). 当$\alpha>0$时, $x^{\alpha}\to+\infty$, ($x\to+\infty$), 则
+\[
+\lim_{x\to+\infty}f(x)=\lim_{x\to+\infty}\frac{x^{\alpha}f(x)}{x^{\alpha}}=\lim_{x\to+\infty}\frac{\alpha x^{\alpha-1}f(x)+x^{\alpha}f'(x)}{\alpha x^{\alpha-1}}=\frac{\beta}{\alpha}.
+\]
+
+
+\subsection{Taylor展开}
+
+(1). 若$f(x)$在$x_{0}$处连续, 则
+\[
+f(x)-f(x_{0})=o(1).
+\]
+
+(2). 若$f(x)$在$x_{0}$处可微, 则
+\[
+f(x)-\left[f(x_{0})+f'(x_{0})(x-x_{0})\right]=o(x-x_{0}),\quad(x\to x_{0}).
+\]
+注意, 这里$f$在$x_{0}$处可微, 但没说在$x_{0}$附近可微, 不能用L'H\^{o}pital法则.
+
+(3). 若$f(x)$在$x_{0}$处二阶可微, 则
+\[
+f(x)-\left[f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2}f''(x_{0})(x-x_{0})^{2}\right]=o\left((x-x_{0})^{2}\right),\quad(x\to x_{0}).
+\]
+
+
+\paragraph{定理5.7.1 (带Peano余项的Taylor公式)}
+
+设$f$在$x_{0}$处$n$阶可导, 则
+\[
+f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\cdots+\frac{1}{n!}f^{(n)}(x_{0})(x-x_{0})^{n}+o((x-x_{0})^{n}),\quad(x\to x_{0}).
+\]
+
+
+\paragraph{证明: }
+
+(归纳法+中值定理) 记
+\[
+R_{n}(x)=f(x)-\left[f(x_{0})+f'(x_{0})(x-x_{0})+\cdots+\frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n}\right],
+\]
+则
+\[
+\frac{R_{k+1}(x)}{(x-x_{0})^{k+1}}\to\frac{R'_{k+1}(x)}{(k+1)(x-x_{0})^{k}}=\frac{o((x-x_{0})^{k})}{(k+1)(x-x_{0})^{k}}=o(1).
+\]
+
+
+\paragraph{定理5.7.2 (Taylor)}
+
+设$f$在$(a,b)$上$n+1$阶可导, $x_{0},x\in(a,b)$. 则存在$\xi,\zeta\in(x,x_{0})$或$(x_{0},x)$,
+s.t. Taylor展开的余项
+\[
+R_{n}(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_{0})^{n+1},
+\]
+称为Lagrange余项, 以及
+\[
+R_{n}(x)=\frac{1}{n!}f^{(n+1)}(\zeta)(x-\zeta)^{n}(x-x_{0}),
+\]
+称为Cauchy余项.
+
+\paragraph{证明:}
+
+取
+\[
+F(t)=f(t)+\sum_{k=1}^{n}\frac{f^{(k)}(t)}{k!}(x-t)^{k},\quad t\in(a,b).
+\]
+
+对$t$求导, 得到
+\[
+F'(t)=\frac{1}{n!}f^{(n+1)}(t)(x-t)^{n}.
+\]
+所以
+\[
+F(x)-F(x_{0})=R_{n}(x).
+\]
+
+Cauchy余项: 用Lagrange中值定理, $\exists\zeta=x_{0}+\theta(x-x_{0})$, ($0<\theta<1$),
+s.t.
+\[
+R_{n}(x)=F'(\zeta)(x-x_{0}).
+\]
+
+Lagrange余项: 用Cauchy微分中值定理, $\exists\xi=x_{0}+\eta(x-x_{0})$, ($0<\eta<1$),
+s.t.
+\[
+\frac{R_{n}(x)}{(x-x_{0})^{n+1}}=\frac{F(x)-F(x_{0})}{G(x)-G(x_{0})}=\frac{F'(\xi)}{G'(\xi)}.
+\]
+
+上面的证明给出Taylor展开的积分余项公式
+\[
+f(x)=f(x_{0})+\sum_{k=1}^{n}\frac{f^{(k)}(x_{0})}{k!}(x-x_{0})^{k}+\int_{x_{0}}^{x}\frac{f^{(n+1)}(t)}{n!}(x-t)^{n}\ud t.
+\]
+
+
+\paragraph{应用}
+
+证明: 
+\[
+\int_{0}^{1}(1-t^{2})^{n}\ud t=\frac{(2n)!!}{(2n+1)!!}.
+\]
+
+
+\paragraph{证明:}
+
+设$f(x)=(1+x)^{2n+1}$, $f(x)$在$x=0$处Taylor展开:
+\[
+(1+x)^{2n+1}=\sum_{k=0}^{n}\binom{2n+1}{k}x^{k}+\frac{1}{n!}\int_{0}^{x}\frac{(2n+1)!}{n!}(1+t)^{n}(x-t)^{n}\ud t,
+\]
+令$x=1$, 所以
+\[
+\int_{0}^{1}(1-t^{2})^{n}\ud t=\frac{(2n)!!}{(2n+1)!!}.
+\]
+这个积分可以换元法求解:
+\[
+\int_{0}^{1}(1-t^{2})^{n}\ud t=\int_{0}^{\pi/2}\cos^{2n+1}x\ud x=\frac{1}{2}B\left(\frac{1}{2},\frac{2n+2}{2}\right).
+\]
+
+
+\paragraph{定理5.7.4 (Taylor系数的唯一性)}
+
+设$f$在$x_{0}$处$n$阶可导, 且
+\[
+f(x)=\sum_{k=0}^{n}a_{k}(x-x_{0})^{k}+o((x-x_{0})^{n})\quad(x\to x_{0}),
+\]
+则
+\[
+a_{k}=\frac{1}{k!}f^{(k)}(x_{0}),\quad k=0,1,\cdots,n.
+\]
+
+
+\paragraph{证明:}
+
+给出Taylor展开的Peano余项表示, 两者作差比阶.
+
+\paragraph{命题5.7.5}
+
+设$f(x)$在$x=0$处的Taylor展开为$\sum_{n=0}^{\infty}a_{n}x^{n}$, 则
+
+(1). $f(-x)$的Taylor展开为$\sum_{n=0}^{\infty}(-1)^{n}a_{n}x^{n}$;
+
+(2). $f(x^{k})$的Taylor展开为$\sum_{n=0}^{\infty}a_{n}x^{kn}$, 其中$k\in\NN_{+}$;
+
+(3). $x^{k}f(x)$的Taylor展开为$\sum_{n=0}^{\infty}a_{n}x^{k+n}$, 其中$k\in\NN_{+}$;
+
+(4). $f'(x)$的Taylor展开为$\sum_{n=1}^{\infty}na_{n}x^{n-1}=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^{n}$;
+
+(5). $\int_{0}^{x}f(t)\ud t$的Taylor展开为$\sum_{n=0}^{\infty}\frac{a_{n}}{n+1}x^{n+1}$;
+
+(6). 如果$g(x)$在$x=0$处的Taylor展开为$\sum_{n=0}^{\infty}b_{n}x^{n}$,
+则$\lambda f(x)+\mu g(x)$的Taylor展开为$\sum_{n=0}^{\infty}(\lambda a_{n}+\mu b_{n})x^{n}$,
+其中$\lambda,\mu\in\RR$.
+
+\[
+\ln(1-x)=-\left(x+\frac{x^{2}}{2}+\cdots+\frac{x^{n}}{n}\right)-\int_{0}^{x}\frac{t^{n}}{1-t}\ud t.
+\]
+\[
+\arctan x=\left(x-\frac{x^{3}}{3}+\frac{x^{5}}{5}-\cdots+(-1)^{n-1}\frac{x^{2n-1}}{2n-1}\right)+(-1)^{n}\int_{0}^{x}\frac{t^{2n}}{1+t^{2}}\ud t=\frac{\ui}{2}\ln\frac{1-\ui x}{1+\ui x}.
+\]
+
+
+\paragraph{例5.7.5 }
+
+Taylor展开收敛, 但不收敛到函数本身的例子.
+
+定义
+\[
+\phi(x)=\begin{cases}
+	0, & x\le0;\\
+	\ue^{-\frac{1}{x}}, & x>0.
+\end{cases}
+\]
+在$x=0$处展开的Taylor级数恒为$0$.
+
+\subsection{Taylor公式和微分学的应用}
+
+\paragraph{Thm. 5.8.1 (函数极值的判断)}
+
+设$f$在$x_{0}$处$n$阶可导, 且
+\[
+f'(x_{0})=f''(x_{0})=\cdots=f^{(n-1)}(x_{0})=0,\quad f^{(n)}(x_{0})\ne0,
+\]
+则
+
+(1). $n$为偶数, 若$f^{(n)}(x_{0})<0$, 则$x_{0}$为极大值点; 若$f^{(n)}(x_{0})>0$,
+则$x_{0}$为极小值点.
+
+(2). $n$为奇数时, $x_{0}$不是极值点.
+
+\paragraph{Thm. 5.8.2 (Jensen不等式的余项)}
+
+设$f\in C[a,b]$, 在$(a,b)$上二阶可导. 当$x_{i}\in[a,b]$, ($1\le i\le n$)时,
+$\exists\xi\in(a,b)$, s.t.
+\[
+f\left(\sum_{i=1}^{n}\lambda_{i}x_{i}\right)-\sum_{i=1}^{n}\lambda_{i}f(x_{i})=-\frac{1}{2}f''(\xi)\sum_{i<j}\lambda_{i}\lambda_{j}(x_{i}-x_{j})^{2},
+\]
+其中$\lambda_{i}\ge0$, $\sum_{i=1}^{n}\lambda_{i}=1$.
+
+\paragraph{证明: }
+
+记
+\[
+\overline{x}=\sum_{i=1}^{n}\lambda_{i}x_{i}\in[a,b].
+\]
+则
+\[
+f(x_{i})=f(\overline{x})+f'(x)(x_{i}-\overline{x})+\frac{1}{2}f''(\xi_{i})(x_{i}-\overline{x})^{2},\quad\xi_{i}\in(a,b).
+\]
+所以
+\[
+\sum_{i=1}^{n}\lambda_{i}f(x_{i})=f(\overline{x})+\frac{1}{2}\sum_{i=1}^{n}f''(\xi_{i})\lambda_{i}(x_{i}-\overline{x})^{2}.
+\]
+而
+\[
+\sum_{i=1}^{n}\lambda_{i}(x_{i}-\overline{x})^{2}=\frac{1}{2}\sum_{i,j=1}^{n}\lambda_{i}\lambda_{j}(x_{i}-x_{j})^{2}.
+\]
+所以
+\[
+\frac{m}{4}\sum_{i,j=1}^{n}\lambda_{i}\lambda_{j}(x_{i}-x_{j})^{2}\le\sum_{i=1}^{n}\lambda_{i}f(x_{i})-f(\overline{x})\le\frac{M}{4}\sum_{i,j=1}^{n}\lambda_{i}\lambda_{j}(x_{i}-x_{j})^{2}.
+\]
+用Darboux定理.
+
+用于求极限
+
+\paragraph{例5.8.1}
+
+求
+\[
+\lim_{x\rightarrow\infty}\left[x-x^{2}\ln\left(1+\frac{1}{x}\right)\right].
+\]
+
+
+\paragraph{解:}
+
+\[
+\ln\left(1+\frac{1}{x}\right)=\frac{1}{x}-\frac{1}{2x^{2}}+o\left(\frac{1}{x^{2}}\right)\quad(x\rightarrow\infty),
+\]
+所以
+\[
+x-x^{2}\ln\left(1+\frac{1}{x}\right)=\frac{1}{2}+o(1)\rightarrow\frac{1}{2}(x\rightarrow\infty).
+\]
+
+
+\paragraph{例5.8.2}
+
+设$f$在$0$附近二阶可导, 且$\left|f''\right|\le M$, $f(0)=0$, 则
+\[
+\lim_{n\rightarrow\infty}\sum_{k=1}^{n}f\left(\frac{k}{n^{2}}\right)=\frac{1}{2}f^{\prime}(0).
+\]
+
+
+\paragraph{解:}
+
+\[
+f\left(\frac{k}{n^{2}}\right)=f(0)+f^{\prime}(0)\frac{k}{n^{2}}+R_{k,n},
+\]
+其中
+\[
+\left|R_{k,n}\right|=\frac{1}{2}\left|f^{\prime\prime}\left(\xi_{k,n}\right)\right|\left(\frac{k}{n^{2}}\right)^{2}\leqslant\frac{1}{2}M\frac{k^{2}}{n^{4}},
+\]
+所以
+\[
+\begin{aligned}\sum_{k=1}^{n}f\left(\frac{k}{n^{2}}\right) & =f^{\prime}(0)\frac{1}{n^{2}}\sum_{k=1}^{n}k+\sum_{k=1}^{n}R_{k,n}\\
+	& =f^{\prime}(0)\frac{n+1}{2n}+o(1)\quad(n\rightarrow\infty),
+\end{aligned}
+\]
+
+
+\paragraph{Stirling公式}
+
+\[
+n!=\sqrt{2\pi n}\left(\frac{n}{e}\right)^{n}e^{\frac{\theta_{n}}{12n}},\quad0<\theta_{n}<1.
+\]
+
+
+\subsection{作业}
+
+8. 设$f(x)$在$\RR$上可微, 且$\lim_{x\to-\infty}f'(x)=A$, $\lim_{x\to+\infty}f'(x)=B$.
+证明, 如果$A\ne B$, 则任给$\theta\in(0,1)$, 都有$\xi\in\RR$, 使得
+\[
+f'(\xi)=\theta A+(1-\theta)B.
+\]
+
+9. 设$f(x)$在区间$I$中$n$阶可微, $x_{1},x_{2},\cdots,x_{k}$为$I$中的点. 证明存在$\xi\in I$,
+s.t.
+\[
+\frac{1}{k}\left(f^{(n)}(x_{1})+f^{(n)}(x_{2})+\cdots+f^{(n)}(x_{k})\right)=f^{(n)}(\xi).
+\]
+
+10. 设$f(x)$在区间$I$中可微, $x_{0}\in I$. 如果$\lim_{x\to x_{0}}f'(x)$存在,
+则$f'(x)$在$x_{0}$处连续.
+
+11. 设$f(x)$在$(a,b)$中可微, 如果$f'(x)$为单调函数, 则$f'(x)$在$(a,b)$中连续.
+
+3. 设$f(x)$在$[a,b]$上二阶可导, 且$f(a)=f(b)=0$, $f'_{+}(a)f'_{-}(b)>0$.
+证明: 存在$\xi\in(a,b)$, s.t. $f''(\xi)=0$.
+
+6. 设$f(x)$为$[a,b]$上的三阶可导函数, 且$f(a)=f'(a)=f(b)=0$, 证明, 对于任意的$c\in[a,b]$,
+存在$\xi\in(a,b)$, s.t.
+\[
+f(c)=\frac{f'''(\xi)}{6}(c-a)^{2}(c-b).
+\]
+
+8. 设$f(x)$在区间$[a,b]$上可导, 且存在$M>0$, 使得
+\[
+\left|f'(x)\right|\le M,\quad\forall x\in[a,b].
+\]
+证明:
+\[
+\left|f(x)-\frac{f(a)+f(b)}{2}\right|\le\frac{M}{2}(b-a),\quad\forall x\in[a,b].
+\]
+
+10. 设$f$在$(a,b)$上可微, 且$a<x_{i}\le y_{i}<b$, $i=1,2,\cdots,n$.
+证明: 存在$\xi\in(a,b)$, s.t.
+\[
+\sum_{i=1}^{n}[f(y_{i})-f(x_{i})]=f'(\xi)\sum_{i=1}^{n}(y_{i}-x_{i}).
+\]
+
+11. 设$f$在$[a,+\infty)$上可微, 且
+\[
+f(a)=0,\quad\left|f'(x)\right|\le\left|f(x)\right|,\quad\forall x\in[a,+\infty).
+\]
+证明: $f\equiv0$.
+
+提示考虑$A=\left\{ x\in[a,+\infty):f(x)=0\right\} $和$\sup A$.
+
+11. 设$f(x)$在$\RR$上二阶可导, 若
+\[
+\lim_{x\to\infty}\frac{f(x)}{\left|x\right|}=0,
+\]
+则存在$\xi\in\RR$, 使得$f''(\xi)=0$.
+
+用Darboux定理
+
+12. 设$f(0)=0$, $f'(x)$严格单调递增, 则$\frac{f(x)}{x}$在$(0,+\infty)$上也严格单调递增.
+
+11. 证明, 定义在$\RR$上的有界凸函数是常数函数.
+
+12. 设$f(x)\in C(I)$, 若$\forall x_{0}\in I$, $\exists\delta>0$,
+s.t. $f(x)$在$(x_{0}-\delta,x_{0}+\delta)$上凸, 则$f(x)$在$I$中凸.
+
+13. 设$f$为区间$I$上的凸函数, $x_{0}$为$I$的内点. 若$f'_{-}(x_{0})\le k\le f'_{+}(x_{0})$,
+则
+\[
+f(x)\ge k(x-x_{0})+f(x_{0}),\quad\forall x\in I.
+\]
+并证明Jensen不等式.
+
+15. 设$f\in C[a,b]$凸, 证明Hadamard不等式
+\[
+f\left(\frac{a+b}{2}\right)\le\frac{1}{b-a}\int_{a}^{b}f(x)\ud x\le\frac{f(a)+f(b)}{2}.
+\]
+
+16. (Schwarz symmetric derivative, Riemann derivative) 设$f\in C(\RR)$,
+若$\forall x\in\RR$, 均有
+\[
+\lim_{h\to0}\frac{f(x+h)+f(x-h)-2f(x)}{h^{2}}=0,
+\]
+证明$f(x)$为线性函数.
+
+连续性是必要的, 否则考虑符号函数. 这个极限不能被改善成
+\[
+\lim_{h\to0}\frac{f(x+2h)-2f(x+h)+f(x)}{h^{2}}=0,
+\]
+这只需要改变符号函数在0点处的值为1, 使其在0点处右连续.
+
+提示: 证明$\forall\epsilon>0$, $f(x)+\epsilon x^{2}$是凸的, $f(x)-\epsilon x^{2}$是凹的,
+$f(x)$在$[a,b]$上位于直线$[f(a)+\epsilon a^{2},f(b)+\epsilon b^{2}]$与直线$[f(a)-\epsilon a^{2},f(b)-\epsilon b^{2}]$之间.
+
+6. 是否存在$\RR$上的凸函数, 使得$f(0)<0$, 且
+\[
+\lim_{\left|x\right|\to+\infty}(f(x)-\left|x\right|)=0\ ?
+\]
+
+5. 设$f$在点$x_{0}$处2阶可导, 且$f''(x_{0})\ne0$. 由微分中值定理, 当$h$充分小时, 存在$\theta=\theta(h)$,
+($0<\theta<1$), s.t.
+\[
+f(x_{0}+h)-f(x_{0})=f'(x_{0}+\theta h)h,
+\]
+证明:
+\[
+\lim_{h\to0}\theta=\frac{1}{2}.
+\]
+
+7. 设$f(x)$在$(a,+\infty)$中可微, 且
+\[
+\lim_{x\to+\infty}\left[f(x)+f'(x)\right]=l,
+\]
+证明:
+\[
+\lim_{x\to+\infty}f(x)=l.
+\]
+
+9. 设$f''(x_{0})$存在, $f'(x_{0})\ne0$, 求极限
+\[
+\lim_{x\to x_{0}}\left[\frac{1}{f(x)-f(x_{0})}-\frac{1}{f'(x_{0})(x-x_{0})}\right].
+\]
+
+10. 设$a_{1}\in(0,\pi)$, $a_{n+1}=\sin a_{n}$, ($n\ge1$). 证明:
+\[
+\lim_{n\to\infty}\sqrt{n}a_{n}=\sqrt{3}.
+\]
+
+2. 设 $f(x)$ 是 $x$ 的 $n$ 次多项式, 则 $f(x)$ 在 $x=x_{0}$ 处的Taylor展开的
+Peano 余项 $R_{n}(x)$ 恒为零. (提示: 考虑其它余项公式.)
+
+10. 设 $f(x),g(x)$ 在 $(-1,1)$ 中无限次可微, 且 
+\[
+\left|f^{(n)}(x)-g^{(n)}(x)\right|\le n!|x|,\quad\forall x\in(-1,1),n=0,1,2,\cdots.
+\]
+证明 $f(x)=g(x)$.
+
+12. 设 $f$ 在 $x_{0}$ 附近可以表示为 
+\[
+f(x)=\sum_{k=0}^{n}a_{k}\left(x-x_{0}\right)^{k}+o\left(\left(x-x_{0}\right)^{n}\right)\quad\left(x\rightarrow x_{0}\right),
+\]
+则 $f(x)$ 是否在 $x_{0}$ 处 $n$ 阶可导? 
+
+13. 设 $f(x)$ 在 $[a,b]$ 上二阶可导, 且 $f^{\prime}(a)=f^{\prime}(b)=0$.
+证明, 存在 $\xi\in(a,b)$, 使得
+\[
+\left|f^{\prime\prime}(\xi)\right|\ge\frac{4}{(b-a)^{2}}|f(b)-f(a)|.
+\]
+
+4. 设 $f(x)$ 在 $x_{0}$ 的一个开邻域内 $n+1$ 次连续可微, 且 $f^{(n+1)}\left(x_{0}\right)\neq0$,
+其 Taylor 公式为 
+\[
+f\left(x_{0}+h\right)=f\left(x_{0}\right)+f^{\prime}\left(x_{0}\right)h+\cdots+\frac{1}{n!}f^{(n)}\left(x_{0}+\theta h\right)h^{n},
+\]
+其中 $0<\theta<1$. 证明 $\lim_{h\rightarrow0}\theta=\frac{1}{n+1}$.
+
+8. 设 $a_{1}\in\mathbb{R},a_{n+1}=\arctan a_{n}(n\geqslant1)$. 求极限
+$\lim_{n\rightarrow\infty}na_{n}^{2}$.
+
+10. 设 $f$ 在 $\mathbb{R}$ 上二阶可导, 且 
+\[
+M_{0}=\sup_{x\in\mathbb{R}}|f(x)|<\infty,\quad M_{2}=\sup_{x\in\mathbb{R}}\left|f^{\prime\prime}(x)\right|<\infty.
+\]
+证明 $M_{1}=\sup_{x\in\mathbb{R}}\left|f^{\prime}(x)\right|<\infty$,
+且 $M_{1}^{2}\leqslant2M_{0}\cdot M_{2}$. (提示: 考虑 $f(x\pm h)$ 的 Taylor
+展开.)

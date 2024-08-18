@@ -1,0 +1,275 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\curl}{curl}
+
+%\everymath{\color{blue}\everymath{}}
+\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-extended-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+在泛函和偏微分方程等学科中, 为什么要引进``弱''的概念?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+特别注意里面会不会有不正确的观点.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+泛函中所有``弱''的概念, 都源于pde的弱导数的定义, 用积分来表示弱导数.
+\end_layout
+
+\begin_layout Standard
+为什么定义弱导数? 正常导数的定义方式太强, 容易忽略大部分在物理上有实际意义的解, 而这种解并不``经典''意义上满足原方程, 而通常是``几乎处处''满足原
+方程, 可能比实变函数中的几乎处处更弱.
+ 或者满足方程的积分形式.
+ 弱导数通过积分来定义导数, 所以在方程中有实际意义.
+\end_layout
+
+\begin_layout Standard
+弱导数的直观理解可以看成是对任意小的开集定义的导数.
+\end_layout
+
+\begin_layout Standard
+pde的弱解也具有现实意义.
+ 在守恒律pde, 也就是双曲pde中, 会大量出现弱解, 比如理想气体Euler方程, 波方程, kdv方程, 都可以看成是双曲守恒律.
+\end_layout
+
+\begin_layout Standard
+PDE解的存在唯一性很多时候都是期待通过弱解的存在性加上正则性理论得到.
+\end_layout
+
+\begin_layout Standard
+2维的Euler方程如果初始涡量有界, 弱解就一定是唯一的.
+\end_layout
+
+\begin_layout Standard
+弱解还有一个好处, 如果强解存在, 则一定和弱解吻合, 一般被称为弱强唯一性.
+\end_layout
+
+\begin_layout Standard
+由于正则性理论缺失, 现在很多人希望能证明Leray-Hopf弱解的非唯一性.
+\end_layout
+
+\begin_layout Standard
+很多从力学或者经济学等等其他学科中的数学模型提炼出来的方程, 本身就有现实意义, 但这些方程有的不可能有光滑解, 最好的例子就是Burgers方程.
+\end_layout
+
+\begin_layout Standard
+3D可压缩Euler方程的间断面是可以观测到的.
+\end_layout
+
+\begin_layout Standard
+即使在方程确实具有可微解的情况下, 很多时候也是先证明弱解存在, 然后证明弱解足够光滑.
+\end_layout
+
+\begin_layout Standard
+弱是指对应的拓扑比范数拓扑具有更少的开集, 这样就有更多的紧集, 更容易对各种极限操作封闭.
+ 当然, 也不能太弱, 否则描述不够精细.
+\end_layout
+
+\begin_layout Standard
+弱的引入是为了解决某些空间的拓扑下有界闭集没有有限开覆盖的问题, 不能开覆盖会导致很多事情没法从无穷降到有限进行分析.
+ 本质上是因为原来的空间拓扑开集太多了, 因此没有办法有限开覆盖.
+\end_layout
+
+\begin_layout Standard
+引入弱就是为了在保证我们想研究的空间中算子的连续性不被破坏的前提下, 尽量缩小开集的数量, 此时定义新的开集比较少的拓扑, 其上的连续就是弱连续了.
+\end_layout
+
+\begin_layout Standard
+弱收敛是对于任意的有界线性泛函, 这个序列在给出的有界线性泛函下所对应的泛函数列收敛.
+\end_layout
+
+\end_body
+\end_document

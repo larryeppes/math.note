@@ -1,0 +1,597 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass exam-a
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+\usepackage{multicol}
+
+\usepackage{amsmath, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\curl}{curl}
+
+%\everymath{\color{blue}\everymath{}}
+%\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options 12pt, UTF8
+\use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
+\maintain_unincluded_children false
+\begin_local_layout
+Format 66
+Style Problem
+	Category              QAs
+	LatexType             Environment
+	LatexName             problem
+	LabelString           "Problem \thetheorem."
+	Preamble
+		\let\problem\relax
+	  	\theoremstyle{definition}
+	  	\newtheorem{problem}[thm]{\protect\problemname}
+	EndPreamble
+	LangPreamble
+	  \providecommand{\problemname}{}
+	EndLangPreamble
+	BabelPreamble
+	  \addto\captions$$lang{\renewcommand{\problemname}{_(Problem)}}
+	EndBabelPreamble
+End
+
+Style Solution
+	CopyStyle             Problem
+	LatexName             solution
+	LabelString           "Solution \thetheorem."
+	LangPreamble
+		\providecommand{\solutionname}{_(Solution)}
+	EndLangPreamble
+	BabelPreamble
+		\addto\captions$$lang{\renewcommand{\solutionname}{_(Solution)}}
+	EndBabelPreamble
+End
+
+Style MakePart
+	Category              Sectioning
+	Margin                Dynamic
+	LabelString           "Part \thepart"
+	LabelType             Static
+	TocLevel              -1
+	LabelCounter          part
+	LatexType             Command
+	LatexName             makepart
+	NeedProtect           1
+	NextNoIndent          1
+	ToggleIndent          Never
+	Labelsep              xxx
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             4
+	ParSep                0.8
+	Align                 Left
+	Alignpossible         Left
+	Argument 1
+		LabelString	"题目名称|S"
+		Tooltip		"The part as it appears in the table of contents/running headers"
+		InsertCotext	0
+		IsTocCaption	1
+		MenuString	"test|S"
+		Mandatory	1
+	EndArgument
+	Font
+	  Series              Bold
+	  Size                Huge
+	EndFont
+	HTMLTag               h1
+End
+
+Style ABCD
+	Category              List
+	Margin                Static
+	LatexType             Item_Environment
+	LatexName             abcd
+	NextNoIndent          1
+	ToggleIndent          Never
+	LeftMargin            MMN
+	LabelSep              xx
+	ParSkip               0.0
+	ItemSep               0.2
+	TopSep                0.7
+	BottomSep             0.7
+	ParSep                0.3
+	Align                 Block
+	AlignPossible         Block, Left
+	LabelType             Enumerate
+	LabelCounter          "enum"
+	HTMLTag               ol
+	HTMLItem              li
+	HTMLLabel             NONE
+	RefPrefix             enu
+	Argument item:1
+		LabelString   "Custom Item|s"
+		Tooltip       "A customized item string"
+	EndArgument
+End
+\end_local_layout
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+2022 年中国科学技术大学少年班复试
+\end_layout
+
+\begin_layout Problem
+求最小的正整数 
+\begin_inset Formula $n$
+\end_inset
+
+, 使得存在一个实部和虚部都是正数的 
+\begin_inset Formula $z$
+\end_inset
+
+ 满足 
+\begin_inset Formula $z^{n}=z^{-n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(1) 已知 
+\begin_inset Formula $T_{1},T_{2}$
+\end_inset
+
+ 为定义在 
+\begin_inset Formula $\RR$
+\end_inset
+
+ 上的函数 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ 的周期, 
+\begin_inset Formula $a,b$
+\end_inset
+
+ 为正整数, 证明 
+\begin_inset Formula $aT_{1}+bT_{2}$
+\end_inset
+
+ 为 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ 的周期.
+\end_layout
+
+\begin_layout Problem
+(2) 设函数 
+\begin_inset Formula $f(x)=\begin{cases}
+1, & x\in\QQ\\
+0, & x\not\in\QQ
+\end{cases}$
+\end_inset
+
+, 证明任意的正有理数都是 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ 的周期.
+\end_layout
+
+\begin_layout Problem
+(3) 已知函数 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ 以任意的正有理数为周期, 且 
+\begin_inset Formula $\left|f(x)-f(y)\right|\le\left|x-y\right|$
+\end_inset
+
+ 恒成立, 证明: 
+\begin_inset Formula $f$
+\end_inset
+
+ 是常数函数.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+记 
+\begin_inset Formula $g(x)=x^{2}-k$
+\end_inset
+
+, 
+\begin_inset Formula $h(x)=g\left(g(x)\right)$
+\end_inset
+
+, 
+\begin_inset Formula $k$
+\end_inset
+
+ 为整数.
+\end_layout
+
+\begin_layout Problem
+(1) 写出 
+\begin_inset Formula $h(x)$
+\end_inset
+
+ 的表达式;
+\end_layout
+
+\begin_layout Problem
+(2) 求集合 
+\begin_inset Formula $A=\left\{ x\in\RR\mid h(x)=x\right\} $
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Problem
+(3) 已知函数 
+\begin_inset Formula $f:A\to A$
+\end_inset
+
+ 满足 
+\begin_inset Formula $f\left(f(x)\right)=g(x)$
+\end_inset
+
+, 证明: 
+\begin_inset Formula $f$
+\end_inset
+
+ 既是单射也是满射;
+\end_layout
+
+\begin_layout Problem
+(4) 是否存在函数 
+\begin_inset Formula $s(x)$
+\end_inset
+
+ 使得 
+\begin_inset Formula $s\left(s(x)\right)=x^{2}-2$
+\end_inset
+
+? 并证明你的结论.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+记 
+\begin_inset Formula $\omega=-\frac{1}{2}+\frac{\sqrt{3}}{2}\ui$
+\end_inset
+
+ 为三次单位根, 集合 
+\begin_inset Formula $X=\left\{ x+y\omega\mid x,y\in\ZZ\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+设 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ 是实系数多项式, 证明: 存在实数 
+\begin_inset Formula $a,b$
+\end_inset
+
+ 使得 
+\begin_inset Formula $f(\omega)=a+b\omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+第 1 小题中的 
+\begin_inset Formula $a,b$
+\end_inset
+
+ 是否唯一? 为什么?
+\end_layout
+
+\begin_layout Enumerate
+对于 
+\begin_inset Formula $x,y\in\ZZ$
+\end_inset
+
+, 记 
+\begin_inset Formula $N(x+y\omega)=x^{2}-xy+y^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+求所有 
+\begin_inset Formula $\alpha\in X$
+\end_inset
+
+ 使得 
+\begin_inset Formula $N(\alpha)=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+证明: 
+\begin_inset Formula $N(\alpha)\ge0$
+\end_inset
+
+ 对于任意的 
+\begin_inset Formula $\alpha\in X$
+\end_inset
+
+ 成立, 并求所有 
+\begin_inset Formula $\alpha\in X$
+\end_inset
+
+ 使得 
+\begin_inset Formula $N(\alpha)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+对任意的 
+\begin_inset Formula $\alpha,\beta\in X$
+\end_inset
+
+, 
+\begin_inset Formula $\beta\ne0$
+\end_inset
+
+, 证明: 
+\begin_inset Formula $\gamma,\delta\in X$
+\end_inset
+
+ 使得 
+\begin_inset Formula $\alpha=\gamma\beta+\delta$
+\end_inset
+
+, 且 
+\begin_inset Formula $N(\beta)>N(\delta)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+对于任意的 
+\begin_inset Formula $\alpha,\beta\in X$
+\end_inset
+
+, 证明: 存在 
+\begin_inset Formula $\delta\in X$
+\end_inset
+
+ 使得下列两个条件成立:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+存在 
+\begin_inset Formula $u,v\in X$
+\end_inset
+
+ 使得 
+\begin_inset Formula $\delta=\alpha u+\beta v$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Enumerate
+存在 
+\begin_inset Formula $\gamma_{1},\gamma_{2}\in X$
+\end_inset
+
+ 使得 
+\begin_inset Formula $\alpha=\gamma_{1}\delta$
+\end_inset
+
+, 
+\begin_inset Formula $\beta=\gamma_{2}\delta$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_body
+\end_document

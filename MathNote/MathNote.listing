@@ -1,0 +1,16 @@
+	\begin{center}
+		\begin{tikzpicture}[remember picture]
+			\draw[help lines] (0,0) grid (3,3);
+			\draw[red,fill=red!20] (0,0)--(2,0)--(2,2)--(0,2)--(0,0);
+			\node (n3) at (1.5,1.5) {$x$};
+		\end{tikzpicture}
+		\hspace{3mm}
+		\begin{tikzpicture}[remember picture]
+			\draw[help lines] (0,0) grid (7.5,3);
+			\draw[red,fill=red!20] (0,0)--(2,0)--(6,2)--(4,2)--(0,0);
+			\node (n2) at (3,1) {$Ax$};
+		\end{tikzpicture}
+		\begin{tikzpicture}[remember picture,overlay]
+			\draw[overlay,->,very thick] (n3) to[bend left] (n2);
+		\end{tikzpicture}
+	\end{center}

@@ -1,0 +1,859 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+\usepackage{multicol}
+
+\usepackage{amsmath, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\curl}{curl}
+
+%\everymath{\color{blue}\everymath{}}
+%\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options 12pt, UTF8
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+\end_modules
+\maintain_unincluded_children false
+\begin_local_layout
+Format 66
+Style Problem
+	Category              QAs
+	LatexType             Environment
+	LatexName             problem
+	LabelString           "Problem \thetheorem."
+	Preamble
+		\let\problem\relax
+	  	\theoremstyle{definition}
+	  	\newtheorem{problem}[thm]{\protect\problemname}
+	EndPreamble
+	LangPreamble
+	  \providecommand{\problemname}{}
+	EndLangPreamble
+	BabelPreamble
+	  \addto\captions$$lang{\renewcommand{\problemname}{_(Problem)}}
+	EndBabelPreamble
+End
+
+Style Solution
+	CopyStyle             Problem
+	LatexName             solution
+	LabelString           "Solution \thetheorem."
+	LangPreamble
+		\providecommand{\solutionname}{_(Solution)}
+	EndLangPreamble
+	BabelPreamble
+		\addto\captions$$lang{\renewcommand{\solutionname}{_(Solution)}}
+	EndBabelPreamble
+End
+
+Style MakePart
+	Category              Sectioning
+	Margin                Dynamic
+	LabelString           "Part \thepart"
+	LabelType             Static
+	TocLevel              -1
+	LabelCounter          part
+	LatexType             Command
+	LatexName             makepart
+	NeedProtect           1
+	NextNoIndent          1
+	ToggleIndent          Never
+	Labelsep              xxx
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             4
+	ParSep                0.8
+	Align                 Left
+	Alignpossible         Left
+	Argument 1
+		LabelString	"题目名称|S"
+		Tooltip		"The part as it appears in the table of contents/running headers"
+		InsertCotext	0
+		IsTocCaption	1
+		MenuString	"test|S"
+		Mandatory	1
+	EndArgument
+	Font
+	  Series              Bold
+	  Size                Huge
+	EndFont
+	HTMLTag               h1
+End
+
+Style ABCD
+	Category              List
+	Margin                Static
+	LatexType             Item_Environment
+	LatexName             abcd
+	NextNoIndent          1
+	ToggleIndent          Never
+	LeftMargin            MMN
+	LabelSep              xx
+	ParSkip               0.0
+	ItemSep               0.2
+	TopSep                0.7
+	BottomSep             0.7
+	ParSep                0.3
+	Align                 Block
+	AlignPossible         Block, Left
+	LabelType             Enumerate
+	LabelCounter          "enum"
+	HTMLTag               ol
+	HTMLItem              li
+	HTMLLabel             NONE
+	RefPrefix             enu
+	Argument item:1
+		LabelString   "Custom Item|s"
+		Tooltip       "A customized item string"
+	EndArgument
+End
+\end_local_layout
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+奇完全数的形式
+\end_layout
+
+\begin_layout Standard
+Euler证明了: 如果 
+\begin_inset Formula $N$
+\end_inset
+
+ 是奇完全数, 则必有形式 
+\begin_inset Formula $N=p^{a}Q^{2}$
+\end_inset
+
+, 其中 
+\begin_inset Formula $p$
+\end_inset
+
+ 是素数并满足 
+\begin_inset Formula $p\equiv a\equiv1\pmod4$
+\end_inset
+
+, (
+\begin_inset CommandInset citation
+LatexCommand cite
+after "pp.3-33"
+key "key-7"
+literal "false"
+
+\end_inset
+
+).
+ 也就是说, 奇完全数必然有且仅有一个形如 
+\begin_inset Formula $4k+1$
+\end_inset
+
+ 的素因子.
+\end_layout
+
+\begin_layout Standard
+其它更进一步的结果有: 如果 
+\begin_inset Formula $N$
+\end_inset
+
+ 是奇完全数, 则 
+\begin_inset Formula $N\equiv1\pmod{12}$
+\end_inset
+
+ 或者 
+\begin_inset Formula $N\equiv9\pmod{36}$
+\end_inset
+
+, (参考 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-9,key-8,key-20"
+literal "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:Touchard"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Touchard, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-12,key-20"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+若奇完全数存在, 则它是 
+\begin_inset Formula $12m+1$
+\end_inset
+
+ 型整数或 
+\begin_inset Formula $36m+9$
+\end_inset
+
+ 型整数.
+\end_layout
+
+\begin_layout Standard
+先证明一个引理
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:lemma-touchard"
+
+\end_inset
+
+如果 
+\begin_inset Formula $n$
+\end_inset
+
+ 是形如 
+\begin_inset Formula $6k-1$
+\end_inset
+
+ 的奇数, 则 
+\begin_inset Formula $n$
+\end_inset
+
+ 不可能是完全数.
+\end_layout
+
+\begin_layout Proof
+因为 
+\begin_inset Formula $n\equiv-1\pmod3$
+\end_inset
+
+, 而任何平方数模 
+\begin_inset Formula $3$
+\end_inset
+
+ 同余 
+\begin_inset Formula $1$
+\end_inset
+
+, 因此 
+\begin_inset Formula $n$
+\end_inset
+
+ 不是平方数.
+ 因此对于 
+\begin_inset Formula $n$
+\end_inset
+
+ 的任何因子 
+\begin_inset Formula $d$
+\end_inset
+
+, 
+\begin_inset Formula $d\ne\frac{n}{d}$
+\end_inset
+
+, 且由 
+\begin_inset Formula 
+\[
+n=d\cdot\frac{n}{d}\equiv-1\pmod3
+\]
+
+\end_inset
+
+推得 
+\begin_inset Formula $d\equiv-1\pmod3$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{n}{d}\equiv1\pmod3$
+\end_inset
+
+ 或者 
+\begin_inset Formula $d\equiv1\pmod3$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{n}{d}\equiv-1\pmod3$
+\end_inset
+
+.
+ 无论那种情况, 都有
+\begin_inset Formula 
+\[
+d+\frac{n}{d}\equiv0\pmod3.
+\]
+
+\end_inset
+
+从而
+\begin_inset Formula 
+\[
+\sigma(n)=\sum_{{d\mid n\atop d<\sqrt{n}}}\left(d+\frac{n}{d}\right)\equiv0\pmod3.
+\]
+
+\end_inset
+
+然而 
+\begin_inset Formula $2n=2(6k-1)\equiv1\not\equiv\sigma(n)\pmod3$
+\end_inset
+
+, 因此 
+\begin_inset Formula $n$
+\end_inset
+
+ 不可能是完全数.
+\end_layout
+
+\begin_layout Standard
+使用类似的方法, 可以证明如下较弱版本的 Euler 结果:
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:Euler-type"
+
+\end_inset
+
+若 
+\begin_inset Formula $n$
+\end_inset
+
+ 为奇完全数, 则 
+\begin_inset Formula $n\equiv1\pmod4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+用反证法, 设 
+\begin_inset Formula $n=4k+3$
+\end_inset
+
+, 则 
+\begin_inset Formula $n$
+\end_inset
+
+ 不是平方数.
+ 从而对 
+\begin_inset Formula $n$
+\end_inset
+
+ 的因子分组得到
+\begin_inset Formula 
+\[
+\sigma(n)=\sum_{{d\mid n\atop d<\sqrt{n}}}\left(d+\frac{n}{d}\right)\equiv0\pmod4.
+\]
+
+\end_inset
+
+然而 
+\begin_inset Formula $2n\equiv2\pmod4$
+\end_inset
+
+ 与 
+\begin_inset Formula $n$
+\end_inset
+
+ 是完全数矛盾.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:Touchard"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 的证明
+\end_layout
+
+\end_inset
+
+ 设 
+\begin_inset Formula $n$
+\end_inset
+
+ 为奇完全数, 由引理 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lem:lemma-touchard"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 知 
+\begin_inset Formula $n$
+\end_inset
+
+ 必然是 
+\begin_inset Formula $6k+1$
+\end_inset
+
+ 型数 或 
+\begin_inset Formula $6k+3$
+\end_inset
+
+ 型数.
+ 再由引理 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lem:Euler-type"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 于是有 
+\begin_inset Formula 
+\[
+\begin{cases}
+n\equiv1\pmod6\\
+n\equiv1\pmod4
+\end{cases}\text{或\text{者}\ensuremath{\begin{cases}
+n\equiv3\pmod6\\
+n\equiv1\pmod4
+\end{cases}}}
+\]
+
+\end_inset
+
+也即 
+\begin_inset Formula $n\equiv1\pmod{12}$
+\end_inset
+
+ 或 
+\begin_inset Formula $n\equiv9\pmod{12}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+最后, 如果 
+\begin_inset Formula $n=12m+9$
+\end_inset
+
+, 且 
+\begin_inset Formula $3\not\mid m$
+\end_inset
+
+, 则有 
+\begin_inset Formula 
+\[
+\sigma(n)=\sigma\left(3(4m+3)\right)=\sigma(3)\sigma(4m+3)=4\sigma\left(4m+3\right).
+\]
+
+\end_inset
+
+此时 
+\begin_inset Formula $\sigma(n)\equiv0\pmod4$
+\end_inset
+
+, 然而 
+\begin_inset Formula $2n=2(12m+9)\equiv2\not\equiv\sigma(n)\pmod4$
+\end_inset
+
+, 所以在 
+\begin_inset Formula $3\not\mid m$
+\end_inset
+
+ 时, 
+\begin_inset Formula $n$
+\end_inset
+
+ 不可能是完全数.
+ 因此, 如果 
+\begin_inset Formula $n=12m+9$
+\end_inset
+
+ 是完全数, 则必有 
+\begin_inset Formula $3\mid m$
+\end_inset
+
+, 这是 
+\begin_inset Formula $n$
+\end_inset
+
+ 有形式 
+\begin_inset Formula $36m+9$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1963 年, 数学家奥尔证明: 奇完全数如果存在, 则它不小于 
+\begin_inset Formula $1.4\times10^{14}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+1976年
+\end_layout
+
+\end_inset
+
+ 若奇完全数存在, 则它将大于 
+\begin_inset Formula $10^{36}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+1982 年, 人们已经证明: 奇完全数如果存在, 则它不小于 
+\begin_inset Formula $10^{120}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+R.P.
+ Brent, 1989
+\end_layout
+
+\end_inset
+
+若奇完全数存在, 则它大于 
+\begin_inset Formula $10^{160}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Conjecture
+奇完全数是否存在?
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-7"
+
+\end_inset
+
+Dickson, L.E.
+ (2005).
+ History of the Theory of Numbers, Vol.
+ 1, Divisibility and Primality.
+ Dover, New York.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-8"
+
+\end_inset
+
+Holdener, J.A.
+ (2002).
+ A theorem of Touchard and the form of odd perfect numbers.
+ American Mathematical Monthly 109, 661-663.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-9"
+
+\end_inset
+
+Touchard, J.
+ (1953).
+ On prime numbers and perfect numbers.
+ Scripta Mathematica 19, 35-39.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-10"
+
+\end_inset
+
+https://austms.org.au/wp-content/uploads/Gazette/2008/Sep08/CommsRoberts.pdf
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-12"
+
+\end_inset
+
+俞晓群, 自然数中的明珠.
+ 天津: 天津科技出版社, 1990.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-20"
+
+\end_inset
+
+Judy A.
+ Holdener, A Theorem of Touchard on the Form of Odd Perfect Numbers, The
+ American Mathematical Monthly, Vol.
+ 109, No.
+ 7, 2002, 661-663.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-15"
+
+\end_inset
+
+吴振奎, 麦森素数与完全数, 中等数学, 1999, vol.
+ 04
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-18"
+
+\end_inset
+
+吴振奎, 完全数·费尔马数·麦森数, 中等数学, 1996, vol.
+ 03
+\end_layout
+
+\end_body
+\end_document

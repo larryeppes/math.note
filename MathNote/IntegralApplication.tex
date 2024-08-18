@@ -1,0 +1,636 @@
+\section{定积分的应用和推广}
+\subsection{定积分的应用}
+
+\paragraph{曲线的长度}
+
+设$I=[\alpha,\beta]$, 映射$\sigma:I\to\RR^{2}$, $t\mapsto\left(x(t),y(t)\right)$,
+$t\in I$. 
+
+如果$x(t)$, $y(t)$为连续函数, 则称$\sigma$为$\RR^{2}$上的连续曲线. 
+
+如果$x(t)$, $y(t)\in C^{1}$, 则称$\sigma$为$C^{1}$曲线.
+
+定义$\sigma$的长度为
+\[
+L(\sigma)=\int_{\alpha}^{\beta}\left[\left(x'(t)\right)^{2}+\left(y'(t)\right)^{2}\right]^{1/2}\ud t.
+\]
+
+
+\paragraph{例7.1.1. }
+
+求摆线
+\[
+\left(x(t),y(t)\right)=\left(a(t-\sin t),a(1-\cos t)\right),\quad a>0.
+\]
+一拱的长度.
+
+\[
+\begin{aligned}l & =\int_{0}^{2\pi}\left[\left(x^{\prime}(t)\right)^{2}+\left(y^{\prime}(t)\right)^{2}\right]^{\frac{1}{2}}dt\\
+	& =\int_{0}^{2\pi}a\left[(1-\cos t)^{2}+\sin^{2}t\right]^{\frac{1}{2}}dt\\
+	& =2a\int_{0}^{2\pi}\sin\frac{t}{2}dt=8a.
+\end{aligned}
+\]
+
+
+\paragraph{简单图形的面积}
+
+\[
+S=\int_{a}^{b}f(x)dx.
+\]
+当$f$变号时, 上式称为代数面积和.
+
+设平面曲线$\sigma$的极坐标方程为$r=r(\theta)$, $r(\theta)\in C[\alpha,\beta]$,
+\[
+S=\frac{1}{2}\int_{\alpha}^{\beta}r^{2}(\theta)d\theta.
+\]
+
+设曲线$\sigma$上的点满足$\sigma(t)=\left(x(t),y(t)\right)$, $t\in[\alpha,\beta]$.
+则$\sigma$, $x=a$, $x=b$和$y=0$围成的曲边梯形的面积为
+\[
+S=\int_{\alpha}^{\beta}y(t)x'(t)dt.
+\]
+面积公式也可以改写成
+\[
+S=\frac{1}{2}\left|\int_{\alpha}^{\beta}\left[y(t)x'(t)-y'(t)x(t)\right]\right|\ud t.
+\]
+
+
+\paragraph{旋转曲面的面积}
+
+设$\sigma$为平面曲线$\sigma(t)=(x(t),y(t))$, $t\in[\alpha,\beta${]},
+$y(t)\ge0$. $\sigma$绕$x$轴旋转所得曲面的面积为
+\[
+S=\int_{\alpha}^{\beta}2\pi y(t)\left[\left(x^{\prime}(t)\right)^{2}+\left(y^{\prime}(t)\right)^{2}\right]^{\frac{1}{2}}dt.
+\]
+
+
+\paragraph{简单立体的体积}
+
+(1) 平行截面之间的立体体积
+
+设$\Omega$是$\RR^{3}$中的一块立体区域, 夹在平面$x=a$和$x=b$, ($a<b$) 之间. 记$S(x)$为$x\in[a,b]$处垂直于$x$轴的平面截$\Omega$的截面面积函数.
+如果$S(x)\in C[a,b]$, 则$\Omega$的体积为
+\[
+V=\int_{a}^{b}S(x)\ud x.
+\]
+
+(2) 旋转体体积
+
+设$f\in C[a,b]$, 
+\[
+\Omega=\left\{ (x,y,z)\mid x\in[a,b],y\in[-\left|f(x)\right|,\left|f(x)\right|],\left|z\right|\le\sqrt{x^{2}+y^{2}}\right\} .
+\]
+则
+\[
+V(\Omega)=\int_{a}^{b}\pi f^{2}(x)\ud x.
+\]
+
+
+\subsection{广义积分}
+
+\paragraph{定义 7.2.1 (无穷积分). }
+
+设 $a\in\mathbb{R}$, 定义在 $[a,+\infty)$ 中的函数 $f$ 如果在任何有限区间 $[a,A]$
+上都是 Riemann 可积的, 且极限 
+\[
+\lim_{A\rightarrow+\infty}\int_{a}^{A}f(x)dx
+\]
+存在 (且有限), 则称无穷积分 $\int_{a}^{+\infty}f(x)dx$ 存在或收敛, 记为 
+\[
+\int_{a}^{+\infty}f(x)dx=\lim_{A\rightarrow+\infty}\int_{a}^{A}f(x)dx
+\]
+否则就称无穷积分 $\int_{a}^{+\infty}f(x)dx$ 不存在或发散.
+
+类似的，我们可以定义无穷积分$\int_{-\infty}^{a}f(x)\ud x$和$\int_{-\infty}^{\infty}f(x)\ud x$.
+如果极限
+\[
+\lim_{A\to+\infty}\int_{-A}^{A}f(x)\ud x
+\]
+存在, 它和上面定义的无穷积分是不等价的, 称为Cauchy主值积分, 记为
+\[
+(V.P.)\int_{-\infty}^{\infty}f(x)\ud x\coloneqq\lim_{A\to+\infty}\int_{-A}^{A}f(x)\ud x.
+\]
+
+
+\paragraph{无穷积分的Cauchy准则}
+
+$f(x)$在$[a,+\infty)$上的积分收敛, 当且仅当, 对于任意的$\epsilon>0$, 存在$M=M(\epsilon)$,
+使得对于任何$B>A>M$时, 有
+\[
+\left|\int_{A}^{B}f(x)\ud x\right|<\epsilon.
+\]
+
+
+\paragraph{例7.2.1}
+
+无穷积分$\int_{1}^{+\infty}\frac{1}{x^{p}}\ud x$, ($p\in\RR$) 仅在$p>1$时收敛.
+
+\paragraph{例7.2.2}
+
+$\int_{-\infty}^{\infty}\frac{1}{1+x^{2}}\ud x=\arctan x\mid_{-\infty}^{\infty}=\frac{\pi}{2}-\left(-\frac{\pi}{2}\right)=\pi$.
+
+\paragraph{定义7.2.2 (瑕积分)}
+
+设函数$f$在任何区间$[a',b]$, ($a<a'<b$) 上均Riemann可积, 如果极限
+\[
+\lim_{a'\to a+}\int_{a'}^{b}f(x)\ud x
+\]
+存在且有限, 则称瑕积分$\int_{a}^{b}f(x)\ud x$存在或收敛, 记为
+\[
+\int_{a}^{b}f(x)\ud x=\lim_{a'\to a+}\int_{a'}^{b}f(x)\ud x,
+\]
+否则称瑕积分
+\[
+\int_{a}^{b}f(x)\ud x=\lim_{a'\to a+}\int_{a'}^{b}f(x)\ud x,
+\]
+否则称瑕积分$\int_{a}^{b}f(x)\ud x$不存在或发散. 
+
+如果$f$在$a$附近无界, 则$f$在$[a,b]$上不是Riemann可积的, 称$a$为$f$的瑕点.
+
+无穷积分和瑕积分统称为广义积分, 也称为反常积分.
+
+\paragraph{例7.2.3}
+
+瑕积分$\int_{0}^{1}\frac{1}{x^{p}}\ud x$仅在$p<1$时收敛.
+
+运算法则: 分部积分, 变量替换, 积分区间可加性, 线性性质.
+
+\paragraph{例7.2.5}
+
+$\int_{0}^{1}\ln x\ud x=\lim_{\epsilon\to0+}\int_{\epsilon}^{1}\ln x\ud x=\lim_{\epsilon\to0+}\left(x\ln x-x\right)\mid_{\epsilon}^{1}=-1$.
+
+\paragraph{例7.2.6}
+
+求Fresnel积分$\int_{0}^{+\infty}\cos(x^{2})\ud x$.
+
+\[
+\int_{1}^{+\infty}\cos\left(x^{2}\right)dx=\frac{1}{2}\int_{1}^{+\infty}\frac{\cos t}{\sqrt{t}}dt.
+\]
+\[
+\begin{aligned}\left|\int_{A}^{B}\frac{\cos t}{\sqrt{t}}dt\right| & =\left|\frac{\sin t}{\sqrt{t}}\right|_{A}^{B}+\frac{1}{2}\int_{A}^{B}\frac{\sin t}{t^{\frac{3}{2}}}dt\mid\\
+	& \leqslant\frac{1}{\sqrt{A}}+\frac{1}{\sqrt{B}}+\frac{1}{2}\int_{A}^{B}t^{-\frac{3}{2}}dt=\frac{2}{\sqrt{A}}\rightarrow0\quad(B>A\rightarrow+\infty).
+\end{aligned}
+\]
+
+\begin{align*}
+	\int_{0}^{+\infty}\cos(x^{2})\ud x & =\frac{1}{2}\int_{0}^{+\infty}\frac{\cos t}{\sqrt{t}}\ud t\\
+	& =\frac{1}{2}\int_{0}^{+\infty}\cos t\left(\frac{2}{\sqrt{\pi}}\int_{0}^{+\infty}\ue^{-tx^{2}}\ud x\right)\ud t\\
+	& =\frac{1}{\sqrt{\pi}}\int_{0}^{+\infty}\int_{0}^{+\infty}\ue^{-tx^{2}}\cos t\ud t\ud x\\
+	& =\frac{1}{\sqrt{\pi}}\int_{0}^{+\infty}\frac{x^{2}}{1+x^{4}}\ud x=\frac{1}{2\sqrt{\pi}}\int_{0}^{\pi/2}\tan^{1/2}t\ud t\\
+	& =\frac{1}{2\sqrt{\pi}}\cdot\frac{1}{2}B\left(\frac{3/2}{2},\frac{1/2}{2}\right)=\frac{1}{4\sqrt{\pi}}\cdot\frac{\Gamma(1/4)\Gamma(3/4)}{\Gamma(1)}\\
+	& =\frac{1}{4\sqrt{\pi}}\cdot\frac{\pi}{\sin\frac{\pi}{4}}=\frac{\sqrt{2\pi}}{4}.
+\end{align*}
+其中
+\[
+\int\ue^{-tx^{2}}\cos t\ud t=\frac{\ue^{-tx^{2}}\left(-\cos t\cdot x^{2}+\sin t\right)}{1+x^{4}},
+\]
+所以
+\[
+\int_{0}^{+\infty}\ue^{-tx^{2}}\ud x=\frac{1}{\sqrt{t}}\int_{0}^{+\infty}\ue^{-x^{2}}\ud x=\frac{\sqrt{\pi}}{2\sqrt{t}}.
+\]
+综上, 并类似的证明
+\[
+\int_{\RR}\cos(x^{2})\ud x=\sqrt{\frac{\pi}{2}},\qquad\int_{\RR}\sin(x^{2})\ud x=\sqrt{\frac{\pi}{2}}.
+\]
+
+
+\subsubsection{作业}
+
+7. 设 $f(x)>0$, 如果 $f(x)$ 在 $[a,+\infty)$ 上广义可积, 则 $\int_{a}^{+\infty}f(x)dx>0$. 
+
+在$[a,A]$上, $f(x)$的不连续点集是零测集, 存在不连续点集的至多可数个开区间$\left\{ I_{i}\right\} $,
+使得
+\[
+\sum\left|I_{i}\right|\le\epsilon.
+\]
+因$A-a>\epsilon$, 所以存在连续点, 设为$x_{0}$, 则存在$\delta>0$, 使得任何$\left|x-x_{0}\right|<\delta$,
+$f(x)>0$, 与$\int_{a}^{A}f(x)\ud x=0$矛盾.
+
+8. 设 $f(x)$ 在 $[a,+\infty)$ 上广义可积, 如果 $f(x)$ 在 $[a,+\infty)$ 中一致连续,
+则 
+\[
+\lim_{x\rightarrow+\infty}f(x)=0.
+\]
+(提示: 先用 Cauchy 准则和中值定理找收敛子列.) 对于任何$\epsilon>0$, 存在$\delta>0$, 只要$\left|x-y\right|<\delta$,
+就有$\left|f(x)-f(y)\right|<\epsilon$. 又对于这样小的$\epsilon$, 存在$M>0$,
+s.t. 对于任何$A>M$,
+\[
+\left|\int_{A}^{A+\delta}f(x)\ud x\right|<\epsilon.
+\]
+则存在$\xi\in(A,A+\delta)$, 使得
+\[
+\left|f(\xi)\right|<\epsilon.
+\]
+所以对于任何$x\in(A,A+\delta)$, 有
+\[
+\left|f(x)\right|\le\left|f(\xi)\right|+\left|f(x)-f(\xi)\right|\le\epsilon+\epsilon
+\]
+
+9. 设 $f(x)$ 在 $[a,+\infty)$ 上广义可积, 如果 $f(x)$ 在 $[a,+\infty)$ 中可导,
+且导函数 $f^{\prime}(x)$ 有界, 则 $\lim_{x\rightarrow+\infty}f(x)=0$. (提示:
+用上一题.)
+
+11. 举例说明, 当无穷积分 $\int_{a}^{+\infty}f(x)dx$ 收敛, 且 $f(x)$ 为正连续函数时,
+无穷积分 $\int_{a}^{+\infty}f^{2}(x)dx$ 不一定收敛.
+
+磨光函数
+\[
+\sum_{k=1}^{n}n\chi_{[n,n+1/n^{3}]}(x)
+\]
+
+12. 举例说明, 当无穷积分 $\int_{a}^{+\infty}f(x)dx$ 收敛, 且 $f(x)$ 为正连续函数时,
+不一定有 
+\[
+\lim_{x\rightarrow+\infty}f(x)=0.
+\]
+
+比如图形类似于下式的函数
+\[
+\sum_{k=1}^{\infty}n\chi_{[n,n+1/n]}
+\]
+
+
+\subsection{广义积分的收敛判别法}
+
+\paragraph{Thm 7.3.1.}
+
+设 $f\geqslant0$, 则无穷积分 $\int_{a}^{+\infty}f(x)dx$ 收敛当且仅当 
+\[
+F(A)=\int_{a}^{A}f(x)dx
+\]
+是 $A\in[a,+\infty)$ 的有界函数; 对瑕积分有完全类似的结果.
+
+\paragraph{定理 7.3.2. (比较判别法)}
+
+设 $0\leqslant f\leqslant Mg,M>0$ 为常数, 则当无穷积分 $\int_{a}^{+\infty}g(x)dx$
+收敛时, 无穷积分 $\int_{a}^{+\infty}f(x)dx$ 也收敛; 当无穷积分 $\int_{a}^{+\infty}f(x)dx$
+发散时, 无穷积分 $\int_{a}^{+\infty}g(x)dx$ 也发散; 瑕积分有完全类似的结果.
+
+\paragraph{$M$的求法}
+
+求$\lim_{x\to+\infty}\frac{f(x)}{g(x)}=l$.
+
+$0<l<\infty$时, $\int_{a}^{+\infty}f(x)\ud x$与$\int_{a}^{+\infty}g(x)\ud x$同收敛.
+
+$l=0$时, $\int_{a}^{+\infty}g(x)\ud x$收敛可以推出$\int_{a}^{+\infty}f(x)\ud x$收敛.
+注: $0\le f\le Mg$不可省, 否则取$f(x)=\left|\frac{\sin x}{x\ln x}\right|$,
+$g(x)=\frac{\sin x}{x}$.
+
+$l=+\infty$时, $\int_{a}^{+\infty}g(x)\ud x$发散, 则$\int_{a}^{+\infty}f(x)\ud x$发散.
+
+\paragraph{Cauchy判别法}
+
+将$f$与$x^{-p}$比较, (无穷积分) (瑕积分有类似结论)
+
+1. 若$p>1$, 且存在$c>0$, s.t. $0\le f(x)\le\frac{c}{x^{p}}$, ($\forall x\ge x_{0}$),
+则$\int_{a}^{+\infty}f(x)\ud x$收敛.
+
+2. 若$p\le1$, 且存在$c>0$, s.t. $f(x)\ge\frac{c}{x^{p}}$, ($\forall x\ge x_{0}$),
+则$\int_{a}^{+\infty}f(x)\ud x$发散.
+
+设$\lim_{x\to\infty}x^{p}f(x)=l$.
+
+3. 若$p>1$, $0\le l<+\infty$, 则$\int_{a}^{+\infty}f(x)\ud x$收敛.
+
+4. 若$p\le1$, $0<l\le+\infty$, 则$\int_{a}^{+\infty}f(x)\ud x$发散.
+
+\paragraph{例7.3.3}
+
+判断$\int_{1}^{+\infty}\frac{1}{x(1+\ln x)}\ud x$的敛散性.
+
+对于一般函数$f$, 定义
+\[
+f^{+}(x)=\max\{0,f(x)\},\quad f^{-}(x)=\max\{0,-f(x)\}.
+\]
+若$\int f^{\pm}$收敛, 则$f$收敛. (绝对收敛)
+
+若$\int f$收敛, 但$\int\left|f\right|$发散. (条件收敛)
+
+\paragraph{例7.3.5}
+
+判断$\int_{1}^{+\infty}\cos x^{p}\ud x$, ($p>1$), 的敛散性.
+
+\[
+\int_{1}^{\infty}\cos t\cdot t^{\frac{1}{p}-1}\ud t,
+\]
+取$B>A\gg1$, 则
+\[
+\left|\int_{A}^{B}\frac{\cos t}{t^{1-\frac{1}{p}}}\ud t\right|=\left|\frac{1}{A^{1-1/p}}\int_{A}^{\xi}\cos t\ud t+\frac{1}{B^{1-1/p}}\int_{\xi}^{B}\cos t\ud t\right|\le\frac{4}{A^{1-1/p}}\to0,\quad A\to+\infty.
+\]
+但
+\[
+\left|\cos x^{p}\right|\ge\cos^{2}x^{p}=\frac{1}{2}\left(1+\cos2x^{p}\right),
+\]
+反证$\int\left|\cos x^{p}\right|$不收敛.
+
+\paragraph{定理 $7.3.3$ (Dirichlet). }
+
+设 $F(A)=\int_{a}^{A}f(x)dx$ 在 $[a,+\infty)$ 中有界, 函数 $g(x)$ 在 $[a,+\infty)$
+中单调, 且 $\lim_{x\rightarrow+\infty}g(x)=0$, 则积分 $\int_{a}^{+\infty}f(x)g(x)dx$
+收敛.
+
+pf. $\left|F(A)\right|\le C$, $\forall A\ge a$. 所以
+\[
+\left|\int_{A}^{B}f(x)\ud x\right|\le2C,\quad\forall A,B\ge a.
+\]
+$g(x)=o(1)$, $x\to+\infty$. 所以$\forall\epsilon>0$, $\exists M>0$,
+s.t. $\forall x>M$, $\left|g(x)\right|\le\frac{\epsilon}{4C}$.
+\begin{align*}
+	\left|\int_{A}^{B}f(x)g(x)\ud x\right| & =\left|g(A)\int_{A}^{\xi}f(x)\ud x+g(B)\int_{\xi}^{B}f(x)\ud x\right|\\
+	& \le\frac{\epsilon}{4C}\cdot2C\cdot2=\epsilon.
+\end{align*}
+
+
+\paragraph{例7.3.6.}
+
+判断积分$\int_{0}^{+\infty}\frac{\sin x}{x^{p}}\ud x$, ($0<p<2$) 的敛散性.
+
+pf. $\frac{\sin x}{x^{p}}\sim\frac{1}{x^{p-1}}$, ($x\to0+$). 所以$\int_{0}^{1}\frac{\sin x}{x^{p}}\ud x$与$\int_{0}^{1}x^{1-p}\ud x$同敛散,
+($p<2$).
+
+$\int_{1}^{A}\sin x\ud x$有界, $\frac{1}{x^{p}}\searrow0$, 由Dirichlet判别法,
+$\int_{1}^{\infty}\frac{\sin x}{x^{p}}\ud x$收敛.
+
+$0<p\le1$时, $\int_{1}^{\infty}\left|\frac{\sin x}{x^{p}}\right|\ud x$发散.
+
+$1<p<2$时, $\int_{1}^{\infty}\left|\frac{\sin x}{x^{p}}\right|\ud x$收敛.
+
+\paragraph{定理 7.3.4 (Abel). }
+
+如果广义积分 $\int_{a}^{+\infty}f(x)dx$ 收敛, 函数 $g(x)$ 在 $[a,+\infty)$
+中单调有界, 则积分 $\int_{a}^{+\infty}f(x)g(x)dx$ 也收敛.
+
+pf. $g$有界, 所以$\left|g(x)\right|\le c$, $\forall x\in[a,+\infty)$.
+
+$\int f$收敛, 所以$\forall\epsilon$>0, $\exists M>0$, s.t. $\forall B>A>M$,
+$\left|\int_{A}^{B}f(x)dx\right|\le\frac{\epsilon}{2c}$. 
+\[
+\begin{aligned}\left|\int_{A}^{B}f(x)g(x)dx\right| & =\left|g(A)\int_{A}^{\xi}f(x)dx+g(B)\int_{\xi}^{B}f(x)dx\right|\\
+	& \leqslant c\left|\int_{A}^{\xi}f(x)dx\right|+c\left|\int_{\xi}^{B}f(x)dx\right|\\
+	& \leqslant c\frac{\epsilon}{2c}+c\frac{\epsilon}{2c}=\epsilon.
+\end{aligned}
+\]
+
+
+\paragraph{例7.3.7}
+
+设 $a\geqslant0$, 研究积分 $\int_{0}^{+\infty}e^{-ax}\frac{\sin x}{x}dx$
+的敛散性.
+
+pf. $e^{-ax}\searrow0$, $\int_{0}^{A}\frac{\sin x}{x}$有界, 由Dirichlet判别法,
+$\int_{0}^{\infty}e^{-ax}\frac{\sin x}{x}$收敛.
+
+$e^{-ax}\searrow$有界, $\int_{0}^{\infty}\frac{\sin x}{x}$收敛, 由Abel判别法,
+$\int_{0}^{\infty}e^{-ax}\frac{\sin x}{x}$收敛.
+
+\subsubsection{作业}
+
+5. 设 $f(x)$ 在 $[1,+\infty)$ 中连续, 如果 $\int_{1}^{+\infty}f^{2}(x)dx$
+收敛, 则 $\int_{1}^{+\infty}\frac{f(x)}{x}dx$ 绝对收敛. (提示: 用Cauchy不等式.)
+
+6. 设 $f(x)$ 在 $[a,A](A<\infty)$ 上均可积. 如果 $\int_{a}^{+\infty}|f(x)|dx$
+收敛, 且 $\lim_{x\rightarrow+\infty}f(x)=L$, 证明 $L=0$, 且 $\int_{a}^{+\infty}f^{2}(x)dx$
+也收敛.
+
+7. 设 $f(x)$ 在 $[a,+\infty)$ 中单调递减, 且 $\int_{a}^{+\infty}f(x)dx$
+收敛, 证明 $\lim_{x\rightarrow+\infty}xf(x)=0$. (提示: 在区间 $[A/2,A]$ 上估计积分.)
+
+8. 设 $f(x)$ 在 $[a,+\infty)$ 中单调递减趋于零, 且 $\int_{a}^{+\infty}\sqrt{f(x)/x}dx$
+收敛, 则 $\int_{a}^{+\infty}f(x)dx$ 也收敛. (提示: 利用上题, 比较被积函数.)
+
+pf. 取$\epsilon=1/2$, 则存在$X>a$, s.t. $\forall x>X$, 
+\[
+\frac{x}{2}\cdot\sqrt{\frac{f(x)}{x}}<\int_{x/2}^{x}\sqrt{\frac{f(t)}{t}}dt<\epsilon=\frac{1}{2},
+\]
+即$\sqrt{xf(x)}<1$. 所以$f(x)<\sqrt{\frac{f(x)}{x}}$, $\forall x>X$.
+
+9. 设 $\int_{a}^{+\infty}f(x)dx$ 收敛, 如果 $x\rightarrow+\infty$ 时 $xf(x)$
+单调递减趋于零, 则 
+\[
+\lim_{x\rightarrow+\infty}xf(x)\ln x=0.
+\]
+
+pf. 对于任意的$\epsilon>0$, 因为$\int_{a}^{+\infty}f(x)dx$收敛, 则存在$M>\max(0,a)$,
+s.t. 对于任意的$x>M$, 有
+\[
+xf(x)\int_{\sqrt{x}}^{x}\frac{1}{t}dt\le\int_{\sqrt{x}}^{x}tf(t)\cdot\frac{1}{t}dt=\int_{\sqrt{x}}^{x}f(t)dt<\frac{\epsilon}{2}.
+\]
+即$xf(x)\ln x<\epsilon$.
+
+10. 设 $f(x)>0$ 在 $[0,+\infty)$ 中连续, 且 $\int_{0}^{+\infty}\frac{dx}{f(x)}$
+收敛, 证明 
+\[
+\lim_{\lambda\rightarrow+\infty}\frac{1}{\lambda}\int_{0}^{\lambda}f(x)dx=+\infty.
+\]
+
+pf. Cauchy不等式:
+\[
+\int_{0}^{\infty}\frac{dx}{f(x)}\int_{0}^{\lambda}f(x)dx\ge\left(\int_{0}^{\lambda}dx\right)^{2}=\lambda^{2}.
+\]
+
+11. 研究广义积分 
+\[
+\int_{2}^{+\infty}\frac{dx}{x^{p}\ln^{q}x}dx\quad(p,q\in\mathbb{R})
+\]
+的敛散性.
+
+pf. $p>1$收敛, $p<1$发散.
+
+$p=1$, $q>1$时收敛; $p=1$, $q\le1$时发散.
+
+\subsection{广义积分的例子}
+
+\paragraph{例7.4.1}
+
+求
+\[
+I=\int_{0}^{+\infty}e^{-ax}\sin bxdx,\qquad(a>0).
+\]
+
+pf. 原函数可求
+\[
+F(x)=-\frac{a\sin bx+b\cos bx}{a^{2}+b^{2}}e^{-ax},
+\]
+\[
+I=F(\infty)-F(0)=\frac{b}{a^{2}+b^{2}}.
+\]
+
+令$b=n$, $a=1$, 
+\[
+\int_{0}^{\infty}e^{-x}\sin nxdx=\frac{n}{n^{2}+1},
+\]
+所以
+\[
+\int_{0}^{\infty}e^{-x}\frac{\sin nx}{n}dx=\frac{1}{n^{2}+1},
+\]
+所以
+\begin{align*}
+	\sum_{n=1}^{\infty}\frac{1}{n^{2}+1} & =\int_{0}^{\infty}e^{-x}\left\langle \frac{\pi-x}{2}\right\rangle dx\\
+	& =\sum_{k=0}^{\infty}\int_{2k\pi}^{2(k+1)\pi}e^{-x}\frac{\pi-(x-2k\pi)}{2}dx\\
+	& =\sum_{k=0}^{\infty}\int_{0}^{2\pi}e^{-(x+2k\pi)}\frac{\pi-x}{2}dx\\
+	& =\int_{0}^{2\pi}\frac{e^{\pi}}{e^{\pi}-e^{-\pi}}e^{-x}\frac{\pi-x}{2}dx\\
+	& =\frac{1}{2}\frac{e^{\pi}}{e^{\pi}-e^{-\pi}}\cdot\left((\pi-1)+e^{-2\pi}(\pi+1)\right)=\frac{\pi\coth\pi-1}{2}.
+\end{align*}
+
+
+\paragraph{例7.4.2}
+
+求
+\[
+I=\int_{-\pi}^{+\pi}\frac{1-r^{2}}{1-2r\cos x+r^{2}}dx,\qquad(0<r<1).
+\]
+
+pf. 令$t=\tan\frac{x}{2}$, 则
+\[
+I=\int_{\RR}\frac{2(1-r^{2})}{(1-r)^{2}+(1+r)^{2}t^{2}}dt=2\arctan\left(\frac{1+r}{1-r}t\right)\mid_{-\infty}^{\infty}=2\pi.
+\]
+另外注意
+\[
+\sum_{n\in\ZZ}r^{\left|n\right|}e^{inx}=\frac{1-r^{2}}{1-2r\cos x+r^{2}}.
+\]
+
+
+\paragraph{例7.4.3}
+
+求
+\[
+I=\int_{0}^{\infty}\frac{1}{1+x^{4}}dx.
+\]
+
+pf. $\alpha>1$. 取$x^{\alpha/2}=\tan t$, 则$x=\left(\tan t\right)^{2/\alpha}$.
+\[
+I=\int_{0}^{\infty}\frac{1}{1+x^{\alpha}}dx=\int_{0}^{\pi/2}\frac{2}{\alpha}\left(\tan t\right)^{2/\alpha-1}dt=\frac{2}{\alpha}\cdot\frac{1}{2}B\left(\frac{1}{\alpha},1-\frac{1}{\alpha}\right)=\frac{1}{\alpha}\Gamma\left(\frac{1}{\alpha}\right)\Gamma\left(1-\frac{1}{\alpha}\right)=\frac{\pi}{\alpha\sin\frac{\pi}{\alpha}}.
+\]
+
+
+\paragraph{例7.4.5}
+
+求
+\[
+I=\int_{0}^{+\infty}\frac{1}{\left(1+x^{2}\right)^{n}}dx\qquad(n\geqslant1).
+\]
+
+pf. 令$x=\tan t$, 
+\[
+\int_{0}^{\infty}\frac{1}{(1+x^{2})^{\alpha}}dx=\int_{0}^{\pi/2}\cos^{2\alpha-2}tdt=\frac{1}{2}B\left(\frac{1}{2},\frac{2\alpha-1}{2}\right).
+\]
+当$\alpha=n$时, $I=\frac{\pi}{2}\cdot\frac{(2n-3)!!}{(2n-2)!!}$.
+
+\paragraph{例7.4.8}
+
+求
+\[
+\int_{0}^{\infty}\frac{\sin^{2}x}{x^{2}}dx.
+\]
+
+pf. 注意$\sin^{2}nx-\sin^{2}(n-1)x=\sin x\cdot\sin\left[(2n-1)x\right]$,
+则
+\[
+\frac{\sin^{2}nx}{\sin^{2}x}=\sum_{k=1}^{n}\frac{\sin(2k-1)x}{\sin x}.
+\]
+又注意
+\[
+\sin(2n-1)x-\sin(2n-3)x=2\sin x\cos\left[2(n-1)x\right],
+\]
+\[
+\sin(2n-1)x=2\sin x\left(\frac{1}{2}+\sum_{k=1}^{n-1}\cos2kx\right),
+\]
+所以
+\[
+\int_{0}^{\pi/2}\frac{\sin^{2}nx}{\sin^{2}x}=\sum_{k=1}^{n}\int_{0}^{\pi/2}\frac{\sin(2k-1)x}{\sin x}dx=\sum_{k=1}^{n}\int_{0}^{\pi/2}1+2\sum_{j=1}^{k-1}\cos2jxdx=n\cdot\frac{\pi}{2}.
+\]
+最后由Riemann Lebesgue引理
+\begin{align*}
+	\int_{0}^{\infty}\frac{\sin^{2}x}{x^{2}}dx & =\lim_{n\to\infty}\int_{0}^{\frac{n\pi}{2}}\frac{\sin^{2}x}{x^{2}}dx\\
+	& =\lim_{n\to\infty}\int_{0}^{\pi/2}\frac{\sin^{2}nx}{nx^{2}}dx\\
+	& =\lim_{n\to\infty}\left(\int_{0}^{\pi/2}\frac{\sin^{2}nx}{n\sin^{2}x}dx+\int_{0}^{\pi/2}\frac{\sin^{2}nx}{n}\left(\frac{1}{x^{2}}-\frac{1}{\sin^{2}x}\right)dx\right)\\
+	& =\frac{\pi}{2}+O\left(\frac{1}{n}\right).
+\end{align*}
+
+也可以不用Riemann Lebesgue引理, 需要用夹逼原理, 使用不等式
+\[
+x-\frac{x^{3}}{3!}\le\sin x\le x,\qquad\forall x\in\left[0,\frac{\pi}{2}\right].
+\]
+则
+\begin{align*}
+	\frac{1}{n}\int_{0}^{\pi/2}\frac{\sin^{2}nx}{x^{2}}dx & \le\frac{1}{n}\int_{0}^{\pi/2}\frac{\sin^{2}nx}{\sin^{2}x}dx=\frac{\pi}{2}\le\frac{1}{n}\int_{0}^{\pi/2}\frac{\sin^{2}nx}{\left(x-\frac{x^{3}}{3!}\right)^{2}}dx\\
+	& \le\frac{1}{n}\int_{0}^{\delta}\frac{\sin^{2}nx}{x^{2}}\left(1-\frac{\delta^{2}}{6}\right)^{-2}dx+\frac{1}{n}\int_{\delta}^{\pi/2}\frac{1}{x^{2}}\left(1-\frac{(\pi/2)^{2}}{6}\right)^{-2}dx\qquad\forall\delta>0.
+\end{align*}
+由于
+\[
+\frac{\pi}{2}\ge\frac{1}{n}\int_{0}^{\pi/2}\frac{\sin^{2}nx}{x^{2}}dx\ge\left(1-\frac{\delta^{2}}{6}\right)^{2}\left[\frac{\pi}{2}-\frac{1}{n}\int_{\delta}^{\pi/2}\frac{1}{x^{2}}\left(1-\frac{\pi^{2}}{24}\right)^{-2}dx\right],\qquad\forall\delta>0.
+\]
+所以
+\[
+\frac{\pi}{2}\ge I\ge\left(1-\frac{\delta^{2}}{6}\right)^{-2}\frac{\pi}{2},\qquad\forall\delta>0.
+\]
+
+同上面类似的过程有Dirichlet积分
+\begin{align*}
+	\int_{0}^{\infty}\frac{\sin x}{x}dx & =\lim_{n\to\infty}\int_{0}^{\frac{(2n-1)\pi}{2}}\frac{\sin x}{x}dx\\
+	& =\lim_{n\to\infty}\int_{0}^{\pi/2}\frac{\sin(2n-1)x}{x}dx\\
+	& =\lim_{n\to\infty}\left[\int_{0}^{\pi/2}\frac{\sin(2n-1)x}{\sin x}dx+\int_{0}^{\pi/2}\sin(2n-1)x\cdot\left(\frac{1}{x}-\frac{1}{\sin x}\right)dx\right]=\frac{\pi}{2}.
+\end{align*}
+
+
+\paragraph{例7.4.9.}
+
+求Euler积分
+\[
+I=\int_{0}^{\pi/2}\ln\sin xdx.
+\]
+
+pf.
+\begin{align*}
+	I\xlongequal{x=2t}2\int_{0}^{\pi/4}\ln\sin2tdt & =2\int_{0}^{\pi/4}\ln2+\ln\sin t+\ln\cos tdt\\
+	& =2\ln2\cdot\frac{\pi}{4}+2\int_{0}^{\pi/4}\ln\sin tdt+2\int_{0}^{\pi/4}\ln\cos tdt\\
+	& =\frac{\pi}{2}\ln2+2I.
+\end{align*}
+所以$I=-\frac{\pi}{2}\ln2$.
+
+\subsection{作业}
+
+8. (Frullani积分)设 $f(x)$ 在 $[0,+\infty)$ 上连续, 且对任意 $c>0$, 积分 $\int_{c}^{+\infty}\frac{f(x)}{x}$
+收敛, 则 
+\[
+\int_{0}^{+\infty}\frac{f(\alpha x)-f(\beta x)}{x}dx=f(0)\ln\frac{\beta}{\alpha},\quad(\alpha,\beta>0).
+\]
+
+9. (Frullani积分) 设 $f(x)$ 是定义在 $(0,+\infty)$ 上的函数, 如果对于任意 $b>a>0$,
+积分 $\int_{a}^{b}\frac{f(x)}{x}dx$ 收敛, 且 
+\[
+\lim_{x\rightarrow0^{+}}f(x)=L,\quad\lim_{x\rightarrow+\infty}f(x)=M,
+\]
+则 
+\[
+\int_{0}^{+\infty}\frac{f(\alpha x)-f(\beta x)}{x}dx=(L-M)\ln\frac{\beta}{\alpha},\quad(\alpha,\beta>0).
+\]
+
+pf. 
+\begin{align*}
+	\int_{\epsilon}^{M}\frac{f(\alpha x)-f(\beta x)}{x}dx & =\int_{\alpha\epsilon}^{\alpha M}\frac{f(x)}{x}dx-\int_{\beta\epsilon}^{\beta M}\frac{f(x)}{x}dx\\
+	& =\int_{\alpha\epsilon}^{\beta\epsilon}\frac{f(x)}{x}dx-\int_{\alpha M}^{\beta M}\frac{f(x)}{x}dx\qquad(\alpha<\beta)\\
+	& =\int_{\alpha\epsilon}^{\beta\epsilon}\frac{f(0)+o(1)}{x}dx-\int_{\alpha M}^{\beta M}\frac{f(\infty)+o(1)}{x}dx\\
+	& =L\ln\frac{\beta}{\alpha}-M\ln\frac{\beta}{\alpha}.
+\end{align*}
+
+9.5 如果$f$在(0,+$\infty)$上连续, $\lim_{x\to+\infty}f(x)=f(+\infty)$存在,
+且$\int_{0}^{1}\frac{f(x)}{x}\ud x$收敛, 则有
+\[
+\int_{0}^{+\infty}\frac{f(\alpha x)-f(\beta x)}{x}\ud x=-f(+\infty)\ln\frac{\beta}{\alpha}.
+\]
+
+10. 计算下列积分 $(a,b>0)$ : 
+
+(1) $\int_{0}^{+\infty}\left(\frac{x}{e^{x}-e^{-x}}-\frac{1}{2}\right)\frac{dx}{x^{2}}$; 
+
+(2) $\int_{0}^{+\infty}\frac{b\sin ax-a\sin bx}{x^{2}}dx$.
+
+pf. (1) 注意到
+\[
+\frac{1}{x^{2}}\left(\frac{x}{e^{x}-e^{-x}}-\frac{1}{2}\right)=\frac{1}{x}\left(\frac{e^{x}+1-1}{e^{2x}-1}-\frac{1}{2x}\right)=\frac{1}{x}\left(\frac{1}{e^{x}-1}-\frac{1}{e^{2x}-1}-\frac{1}{x}+\frac{1}{2x}\right).
+\]
+如令$f(x)=\frac{1}{e^{x}-1}-\frac{1}{x}$, 则由Frullani积分, 
+\[
+\int_{0}^{+\infty}\left(\frac{x}{e^{x}-e^{-x}}-\frac{1}{2}\right)\frac{dx}{x^{2}}=f(0+)\ln2=-\frac{1}{2}\ln2.
+\]

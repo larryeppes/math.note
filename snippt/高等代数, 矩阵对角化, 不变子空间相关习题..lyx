@@ -1,0 +1,467 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+
+\usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\curl}{curl}
+
+%\everymath{\color{blue}\everymath{}}
+\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options a4paper,UTF8
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-extended-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Problem 3 (40 pts)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $A\in\RR^{n\times n}$
+\end_inset
+
+.
+ Suppose that 
+\begin_inset Formula $u\in\RR^{n}$
+\end_inset
+
+, (
+\begin_inset Formula $v\in\RR^{n}$
+\end_inset
+
+) is nonzero right (left) eigenvector corresponding to the eigenvalue 
+\begin_inset Formula $\alpha\in\mathbb{C}$
+\end_inset
+
+, (
+\begin_inset Formula $\beta\in\mathbb{C}$
+\end_inset
+
+), i.e.
+\begin_inset Formula 
+\[
+Au=\alpha u,\quad v^{T}A=\beta v^{T}.
+\]
+
+\end_inset
+
+Prove that 
+\end_layout
+
+\begin_layout Standard
+1.
+ If 
+\begin_inset Formula $\alpha\ne\beta$
+\end_inset
+
+, then 
+\begin_inset Formula $v^{T}u=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+2.
+ If 
+\begin_inset Formula $\alpha=\beta$
+\end_inset
+
+ and 
+\begin_inset Formula $v^{T}u\ne0$
+\end_inset
+
+, then there exists an invertible matrix 
+\begin_inset Formula $T=[u,T_{1}]$
+\end_inset
+
+ with 
+\begin_inset Formula $(T^{-1})^{T}=[v/(u^{T}v),M_{1}]$
+\end_inset
+
+, where 
+\begin_inset Formula $T_{1},M_{1}\in\RR^{n\times(n-1)}$
+\end_inset
+
+, such that
+\begin_inset Formula 
+\[
+A=T\begin{bmatrix}\alpha & 0\\
+0 & N
+\end{bmatrix}T^{-1},\quad N\in\RR^{(n-1)\times(n-1)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+取
+\begin_inset Formula $v$
+\end_inset
+
+的正交补空间, 记为
+\begin_inset Formula $S_{V}=\mathrm{span}\left\{ v_{1},v_{2},\cdots,v_{n-1}\right\} $
+\end_inset
+
+, 并记矩阵
+\begin_inset Formula 
+\[
+V=\left(v_{1},v_{2},\cdots,v_{n-1}\right),\quad T=(u,V);
+\]
+
+\end_inset
+
+则由
+\begin_inset Formula $Au=\alpha u$
+\end_inset
+
+, 知
+\begin_inset Formula 
+\[
+AT=A(u,V)=(Au,AV)=(\alpha u,AV).
+\]
+
+\end_inset
+
+左乘
+\begin_inset Formula $v^{T}$
+\end_inset
+
+, 有
+\begin_inset Formula $v^{T}AT=v^{T}\cdot(\alpha u,AV)=(\alpha v^{T}u,v^{T}AV)$
+\end_inset
+
+, 由
+\begin_inset Formula $v^{T}A=\alpha v^{T}$
+\end_inset
+
+, 所以
+\begin_inset Formula 
+\[
+(\alpha v^{T}u,0)=(\alpha v^{T}u,\alpha v^{T}V)=\alpha v^{T}\cdot(u,V)=\alpha v^{T}T=v^{T}AT=v^{T}(\alpha u,AV)=(\alpha v^{T}u,v^{T}\cdot AV).
+\]
+
+\end_inset
+
+这表明
+\begin_inset Formula $v^{T}\cdot AV=0$
+\end_inset
+
+, 也即
+\begin_inset Formula $S_{V}$
+\end_inset
+
+为
+\begin_inset Formula $A$
+\end_inset
+
+的不变子空间, 因此矩阵
+\begin_inset Formula $AV$
+\end_inset
+
+的每一列均可由
+\begin_inset Formula $S_{V}$
+\end_inset
+
+中的向量线性组合得到, 即存在
+\begin_inset Formula $(n-1)\times(n-1)$
+\end_inset
+
+矩阵
+\begin_inset Formula $N$
+\end_inset
+
+使得
+\begin_inset Formula 
+\[
+AV=VN.
+\]
+
+\end_inset
+
+所以矩阵
+\begin_inset Formula $T=(u,V)$
+\end_inset
+
+满足
+\begin_inset Formula 
+\[
+AT=(\alpha u,VN)=(u,V)\cdot\begin{pmatrix}\alpha\\
+ & N
+\end{pmatrix}=T\cdot\begin{pmatrix}\alpha\\
+ & N
+\end{pmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+下面证明
+\begin_inset Formula $T$
+\end_inset
+
+可逆, 若
+\begin_inset Formula $T$
+\end_inset
+
+不可逆, 则
+\begin_inset Formula $u\in S_{V}$
+\end_inset
+
+, 所以必有
+\begin_inset Formula $v^{T}u=0$
+\end_inset
+
+, 与前提
+\begin_inset Formula $v^{T}u\ne0$
+\end_inset
+
+矛盾.
+\end_layout
+
+\begin_layout Standard
+下面证明
+\begin_inset Formula $T^{-1}$
+\end_inset
+
+具有形式
+\begin_inset Formula 
+\[
+T^{-1}=\begin{pmatrix}\frac{v^{T}}{u^{T}v}\\
+M_{1}
+\end{pmatrix}.
+\]
+
+\end_inset
+
+设
+\begin_inset Formula $T^{-1}=\begin{pmatrix}a^{T}\\
+B
+\end{pmatrix}$
+\end_inset
+
+, 则有
+\begin_inset Formula 
+\[
+T^{-1}T=\begin{pmatrix}a^{T}u & a^{T}V\\
+Bu & BV
+\end{pmatrix}=E.
+\]
+
+\end_inset
+
+解得
+\begin_inset Formula $a^{T}u=1$
+\end_inset
+
+, 
+\begin_inset Formula $a^{T}V=0$
+\end_inset
+
+, 因此
+\begin_inset Formula $a\perp S_{V}$
+\end_inset
+
+, 从而有
+\begin_inset Formula $a\parallel v$
+\end_inset
+
+, 设
+\begin_inset Formula $a=kv$
+\end_inset
+
+代入
+\begin_inset Formula $a^{T}u=1$
+\end_inset
+
+, 解得
+\begin_inset Formula $k=\frac{1}{u^{T}v}$
+\end_inset
+
+, 即得.
+\end_layout
+
+\end_body
+\end_document

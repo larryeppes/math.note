@@ -20,6 +20,28 @@
 所以$\varphi(1)x<\varphi'(\xi_{1})x=\varphi(x)$.
 \ea
 
+\bq{https://www.zhihu.com/question/636352059}{}
+已知实数列$\left\{ x_{n}\right\} $使得$3x_{n}-x_{n-1}$收敛, 证明$x_{n}$收敛.
+\eq
+\ba
+由问题\ref{q:2018053110}, 设
+\[
+\limsup x_{n}=\overline{X},\quad\liminf x_{n}=\underline{X}.
+\]
+则$+\infty\ge\overline{X}\ge\underline{X}\ge-\infty$. 如果设$\lim(3x_{n}-x_{n-1})=L$.
+取上面的数列$\left(x_{n},y_{n}\right)$对为原问题中的$\left(3x_{n},-x_{n-1}\right)$代入上面的不等式,
+得到
+\[
+3\underline{X}-\overline{X}\le L\le3\underline{X}-\underline{X}\le L\le3\overline{X}-\underline{X},
+\]
+这说明$\underline{X}=\frac{L}{2}$. 当取上面的数列$\left(x_{n},y_{n}\right)$对为原问题中的$\left(-x_{n-1},3x_{n}\right)$时,
+则得到
+\[
+-\overline{X}+3\underline{X}\le L\le-\overline{X}+3\overline{X}\le L\le-\underline{X}+3\overline{X},
+\]
+这说明$\overline{X}=\frac{L}{2}$. 所以问题中的数列$x_{n}$的上下极限相等且有限. 
+\ea
+
 \section{导数}
 
 \bq{}{}
@@ -68,13 +90,13 @@ $4\pi \mathrm{arccot}(\sqrt{\phi}).$
 设函数$f(x)$在$[0,1]$上有二阶连续的导数, 证明:
 \begin{enumerate}
 \item 对任意$\xi\in\paren{0,\frac{1}{4}}$和$\eta\in\paren{\frac{3}{4},1}$有
-\[
+$$
 \abs{f'(x)}<2\abs{f(\xi)-f(\eta)}+\int_{0}^{1}\abs{f''(x)}\mathrm{d}x\quad x\in[0,1]
-\]
+$$
 \item 当$f(0)=f(1)=0$及$f(x)\ne0$, ($x\in(0,1)$)时有
-\[
+$$
 \int_{0}^{1}\abs{\frac{f''(x)}{f(x)}}\mathrm{d}x\ge4.
-\]
+$$
 \end{enumerate}
 \eq
 \ba
@@ -1014,3 +1036,19 @@ f(x)=f(0)+\frac{f'(0)}{1!}x+\frac{f''(0)}{2!}x^2+\cdots.
 \end{align*}
 这导致矛盾, 即所有$f^{(n)}(0)=0$, $f(x)\equiv0$.
 \ea
+
+\chapter{数学分析 - 梅加强}
+
+梅加强的大名在我上本科的时候就已经听说了, 现在去读他写的书到第二章的时候突然感受到他被奉为巨佬的原因, 不同于国内大多数数学分析教科书惯有的教学顺序,
+这本书先讲掉了定积分再引进的导数, 不得不说国内这么干的, 这是我见过的第一本(虽然我也没读过几本国内大学自行出版的教材, 好在北大,
+中科大的等等都大概翻过). 写这一小段文字只是突发感慨, 因为在读此之前确实也见过别的教科书这么干, 比如柯朗的《微积分和数学分析引论》也是先引入的积分再引入的导数,
+这种与原来按部就班的学习形成对比, 微分和积分是实数完备性发展出来的两条支线, 最后在微积分基本定理它们融合了.
+
+\section{NULL}
+\input{limitsofsequence.tex}
+\input{continuousfunction.tex}
+\input{differential.tex}
+\input{intermidiate.tex}
+\input{RiemannIntegral.tex}
+\input{IntegralApplication.tex}
+\input{series.tex}

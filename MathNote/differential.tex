@@ -1,0 +1,328 @@
+\section{微分及其逆运算}
+\subsection{可导与可微}
+
+研究函数的局部性质
+
+\paragraph{定义4.1.1 (导数)}
+
+设$f$在$x_{0}$附近有定义, 如果极限
+\[
+\lim_{x\to x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}
+\]
+存在且有限, 则称$f$在$x_{0}$处可导, 极限称为$f$在$x_{0}$处的导数, 记为$f'(x_{0})$,
+$\frac{\ud f}{\ud x}(x_{0})$.
+
+用$\epsilon-\delta$语言表述.
+
+\paragraph{命题4.1.1}
+
+设$f$在$x_{0}$处可导, 则$f$在$x_{0}$处连续.
+
+\paragraph{命题4.1.2 (导数的运算法则)}
+
+设$f,g$在$x$处可导, 则$fg$也在$x$处可导; 对于任意的常数$\alpha,\beta$, $\alpha f+\beta g$也在$x$处可导.
+且
+
+(1). $(\alpha f+\beta g)'=\alpha f'+\beta g'$, (线性性);
+
+(2). $(fg)'=f'g+fg'$. (导性).
+
+\paragraph{推论4.1.3}
+
+设$f,g$在$x_{0}$处可导, $g(x_{0})\ne0$, 则$\frac{f}{g}$在$x_{0}$处也可导,
+且
+\[
+\left(\frac{f}{g}\right)'=\frac{f'g-fg'}{g^{2}}.
+\]
+
+可以用导数表述曲线在一点处的切线和法线, 事实上仅仅是用导数给出了切线和法线的定义, 属于先有导数的概念才有的切线和法线的概念.
+
+\paragraph{定义4.1.2 (微分)}
+
+设$f$在点$x_{0}$附近有定义, 如果存在常数$A$, 使得
+\[
+f(x)=f(x_{0})+A(x-x_{0})+o(x-x_{0}),
+\]
+则称$f$在$x_{0}$处可微, 线性映射$x\mapsto Ax$称为$f$在$x_{0}$处的微分, 记为$df(x_{0})$.
+
+\paragraph{命题4.1.4}
+
+设$f$在$x_{0}$附近有定义, 则$f$在$x_{0}$处可导当且仅当$f$在$x_{0}$处可微, 且微分的斜率就是导数$f'(x_{0})$.
+
+可导对应函数在一点差商存在极限, 可微对应函数的局部线性化, 产生线性变换的主项. $f$在$x$处的微分是一个斜率为$f'(x)$的线性映射,
+当$x$变化时, 线性映射也变化, 即$x\mapsto df(x)$是一个新的映射, 记为$df$, 称为$f$的外微分或全微分. 
+
+$x$的全微分$dx$把任意点$x$映为$x$处的恒等映射. 
+
+因为$df(x)$和$dx$都是线性变换, 所以有$df=f'(x)dx$.
+
+把形如$fdx$的表达式($f$为函数)称为$1$次微分形式.
+
+可以把微分运算看做升维运算, 把$x$和$dx$看做两个独立的变量, $dx$就是$\Delta x$, 它与$x$的选取无关.
+$df$把单变量函数$f$映射为二元函数$df(x)=f'(x)dx$.
+
+\paragraph{命题4.1.5 (链式法则)}
+
+设$g$在$x_{0}$处可导, $f$在$g(x_{0})$处可导, 则复合函数$f\circ g=f(g)$在$x_{0}$处可导,
+且
+\[
+\left(f(g)\right)'(x_{0})=f'\left(g(x_{0})\right)g'(x_{0}).
+\]
+
+证明依赖于下式
+\[
+\begin{aligned}f(g(x)) & =f\left(g\left(x_{0}\right)\right)+f^{\prime}\left(g\left(x_{0}\right)\right)\left(g(x)-g\left(x_{0}\right)\right)+o\left(g(x)-g\left(x_{0}\right)\right)\\
+	& =f\left(g\left(x_{0}\right)\right)+f^{\prime}\left(g\left(x_{0}\right)\right)g^{\prime}\left(x_{0}\right)\left(x-x_{0}\right)+f^{\prime}\left(g\left(x_{0}\right)\right)o\left(x-x_{0}\right)+o\left(x-x_{0}\right)\\
+	& =f\left(g\left(x_{0}\right)\right)+f^{\prime}\left(g\left(x_{0}\right)\right)g^{\prime}\left(x_{0}\right)\left(x-x_{0}\right)+o\left(x-x_{0}\right)
+\end{aligned}
+\]
+
+
+\paragraph{命题4.1.6 (反函数求导法则)}
+
+设$f$在$x_{0}$附近有定义, 且反函数为$g$. 若$f$在$x_{0}$处可导, 且导数非零, 则$g$在$y_{0}=f(x_{0})$处可导,
+且
+\[
+g'(y_{0})=\frac{1}{f'(x_{0})}.
+\]
+
+这个定理并没有要求$f$在$x_{0}$附近每点上都连续. 导数$f'(x_{0})\ne0$的条件不能省掉, 否则考虑$f(x)=x^{3}$.
+
+\paragraph{命题4.1.8}
+
+设$f,g$可微, 则
+
+(1) $d(\alpha f+\beta g)=\alpha df+\beta dg$, 其中$\alpha,\beta$为常数;
+
+(2) $d(fg)=gdf+fdg$;
+
+(3) $d(f/g)=\frac{gdf-fdg}{g^{2}}$, 其中$g\ne0$.
+
+\paragraph{命题4.1.9}
+
+设$f,g$均可微, 且复合函数$f(g)$有定义, 则
+\[
+d\left(f(g)\right)=f'(g)dg.
+\]
+
+
+\subsection{高阶导数}
+
+本节没有太多复杂的知识点, 仅做一些结论的罗列.
+
+\paragraph{定义4.2.1 (高阶导数)}
+
+设$f$在$x_{0}$附近可导, 如果导数$f'$在$x_{0}$处仍可导, 则称$f$在$x_{0}$处2阶可导.
+记为
+\[
+f''(x_{0})=(f')'(x_{0}),
+\]
+并称为$f$在$x_{0}$处的2阶导数. 
+
+一般地, 如果$f$在$x_{0}$附近$n$ ($n\ge1$) 阶可导, 且$n$阶导函数$f^{(n)}$在$x_{0}$处可导,
+则称$f$在$x_{0}$处$n+1$阶可导, 记为
+\[
+f^{(n+1)}(x_{0})=\left(f^{(n)}\right)'(x_{0}),
+\]
+称为$f$的$n+1$阶导数.
+
+\paragraph{注:}
+
+$f$的2阶导数要求$f'$在$x_{0}$附近有定义, 也就是对于$x_{0}$附近的$x$能够计算$f'(x)$的值.
+另有一种用差分方法定义的二阶导数, 比如
+\[
+\lim_{h\to0}\frac{f(x+h)-2f(x)+f(x-h)}{h^{2}}
+\]
+它避免了计算$f'(x)$, 而且允许一阶导数不存在, 而仅存在二阶导数. 一般用于推广导数的概念.
+
+\paragraph{定义4.2.2}
+
+若$f$在区间$I$上的每点都$n$阶可导, 则称$f$在$I$中$n$阶可导; 如果$f$可导, 且导函数$f'$连续,
+则称$f$(1阶)连续可导, 记为$f\in C^{1}(I)$; 一般$n$阶连续可导记为$f\in C^{n}(I)$.
+如果$f$有任意阶导数, 则称$f$是光滑的, 记为$f\in C^{\infty}(I)$.
+
+\paragraph{例4.2.3}
+
+可微函数的导函数不一定连续.
+
+尽管导函数连续性丧失, 但仍有介值定理成立, 也就是Darboux介值定理.
+
+\paragraph{例4.2.4}
+
+设$k=1,2,\cdots$, 则函数
+\[
+f(x)=\begin{cases}
+	x^{2k+1}\sin\frac{1}{x}, & x\neq0\\
+	0, & x=0
+\end{cases}
+\]
+有$f\in C^{k}\setminus C^{k+1}$.
+
+\paragraph{例4.2.5}
+
+证明函数
+\[
+f(x)=\begin{cases}
+	0, & x\leqslant0\\
+	e^{-\frac{1}{x}}, & x>0
+\end{cases}
+\]
+是光滑函数.
+
+\paragraph{命题4.2.1}
+
+设$f,g$均为$n$阶可导函数, 则
+
+(1) $(\alpha f+\beta g)^{(n)}=\alpha f^{(n)}+\beta g^{(n)}$, $\forall\alpha,\beta\in\RR$;
+
+(2) (Leibniz) 
+\[
+(fg)^{(n)}=\sum_{k=0}^{n}\binom{n}{k}f^{(n-k)}g^{(k)}.
+\]
+
+
+\subsection{不定积分}
+
+\paragraph{命题4.3.1}
+
+设$f$为区间$I$上的可微函数, 则$f'=0$当且仅当$f=C$.
+
+此定理使用中值定理证明最为简洁, 书中使用的方法可以归为极端原理.
+
+\paragraph{定义4.3.1 (原函数)}
+
+方程$F'(x)=f(x)$的一个可微解$F$称为函数$f$的一个原函数.
+
+\paragraph{定义4.3.2 (不定积分)}
+
+设函数$f$在区间$I$上有原函数, 用记号$\int f(x)\ud x$表示$f$的原函数的一般表达式, 则
+\[
+\int f(x)dx=F(x)+C,\quad x\in I,
+\]
+其中$C$为常数.
+
+\paragraph{定理4.3.2 (Newton-Leibniz)}
+
+区间$I$中的连续函数都有原函数. 设$f$连续, $a\in I$, 则
+\[
+F(x)=\int_{a}^{x}f(t)\ud t,\quad x\in I
+\]
+是$f$的一个原函数.
+
+需要注意Darboux介值定理, 将来会遇到有间断点的可积函数, 其变限积分在间断点处不可微, 所以不能形成一般非连续函数的原函数.
+
+此定理称为微积分基本定理, 它有其它形式:
+
+设$f\in C(I)$, $F$为$f$的任一原函数, 则存在常数$C$, 使得, $F(x)=\int_{a}^{x}f(t)dt+C$,
+所以
+\[
+\int_{a}^{b}f(x)dx=F(b)-F(a)=F\mid_{a}^{b}.
+\]
+
+另有一种表述是当$G$连续可微时, 
+\[
+\int_{a}^{b}G'(x)dx=G(b)-G(a)=G\mid_{a}^{b}.
+\]
+上式对于$C^{1}$函数总是对的, 但需要注意Volterra函数, 它在定义的区间上处处可导, 且导函数有界, 但导函数不可定积分.
+
+\paragraph{命题4.3.3 (不定积分的线性性质)}
+
+设$f,g$在区间$I$上均有原函数, 则
+\[
+\int[\alpha f(x)+\beta g(x)]dx=\alpha\int f(x)dx+\beta\int g(x)dx,
+\]
+其中$\alpha,\beta$为常数.
+
+\paragraph{命题4.3.4}
+
+设$f$的原函数为$F$, 若$f$可逆, 且$g=f^{-1}$, 则
+\[
+\int g(x)dx=xg(x)-F(g(x))+C.
+\]
+
+
+\subsection{积分的计算}
+
+\paragraph{命题4.4.1 (换元积分法, 变量替换法)}
+
+设$f(u)$是区间$J$上有定义的函数, $u=\phi(x)$是区间$I$中的可微函数, 且$\phi(I)\subset J$.
+
+(1) 设$f$在$J$上的原函数是$F$, 则$F(\phi)$是$f(\phi)\phi'$在区间$I$上的原函数,
+即
+\[
+\int f(\phi(x))\phi^{\prime}(x)dx=\int f(u)du+C=F(\phi(x))+C;
+\]
+
+(2) 设$\phi$可逆, 且其逆可微, $\phi(I)=J$. 如果$f(\phi(x))\phi'(x)$有原函数$G$,
+则$f$有原函数$G(\phi^{-1}(u))$, 即
+\[
+\int f(u)du=G(\phi^{-1}(u))+C.
+\]
+
+
+\paragraph{命题4.4.2 (分部积分法)}
+
+设$u(x),v(x)$在区间$I$中可微, 若$u'(x)v(x)$有原函数, 则$u(x)v'(x)$也有原函数, 且
+\[
+\int u(x)v'(x)dx=u(x)v(x)-\int u'(x)v(x)dx.
+\]
+
+
+\paragraph{例4.4.10}
+
+设$a\ne0$, 求不定积分$I=\int\ue^{ax}\cos bx\ud x$和$J=\int\ue^{ax}\sin bx\ud x$.
+
+\paragraph{例4.4.18}
+
+求不定积分
+\[
+\int\frac{1-r^{2}}{1-2r\cos x+r^{2}}dx,\qquad0<r<1.
+\]
+
+不能用初等函数表述的不定积分:
+
+\[
+e^{\pm x^{2}},\sin(x^{2}),\cos(x^{2}),\frac{\sin x}{x},\frac{\cos x}{x},\sqrt{1-k^{2}\sin^{2}x},\frac{1}{\sqrt{1-k^{2}\sin^{2}x}},\ (0<k<1).
+\]
+
+
+\subsection{作业}
+
+19. 设$a_{ij}(x)$均为可导函数, 求行列式函数$\mathrm{det}\left(a_{ij}(x)\right)_{n\times n}$的导数.
+
+20. Riemann函数$R(x)$处处不可导.
+
+11. 通过对 $(1-x)^{n}$ 求导并利用二项式定理证明等式 
+\[
+\sum_{k=0}^{n}(-1)^{k}C_{n}^{k}k^{m}=\begin{cases}
+	0, & m=0,1,\cdots,n-1,\\
+	(-1)^{n}n!, & m=n.
+\end{cases}
+\]
+
+10. 求不定积分的递推公式 ($a\ne0$):
+\[
+I_{n}=\int\frac{dx}{(ax^{2}+bx+c)^{n}}.
+\]
+
+11. 设$a,b>0$, 求不定积分的递推公式:
+\[
+I_{mn}=\int\frac{dx}{(x+a)^{m}(x+b)^{n}}.
+\]
+
+7. 设$f$在$(0,+\infty)$上可导, 且
+\[
+2f(x)=f(x^{2}),\quad\forall x>0.
+\]
+证明$f(x)=c\ln x$.
+
+hint: 设$g(x)=f(\ue^{x})$. 题目条件可以弱化为$f$仅在$x=1$处可导. 
+\[
+g(x)=\frac{g\left(\frac{x}{2^{n}}\right)}{x/2^{n}}x=g'(0)x
+\]
+
+可导性不能省去, 否则考虑$\max\left\{ 0,c\ln x\right\} $作为函数的另一个解.
+
+\subsection{简单的微分方程}
+
+例4.5.4 微分方程能够解出通解的表达式通常和朗斯基行列式有关.
