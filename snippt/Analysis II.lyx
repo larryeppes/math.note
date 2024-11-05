@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -70,11 +70,11 @@
 theorems-ams-chap-bytype
 theorems-ams-extended-chap-bytype
 \end_modules
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language chinese-simplified
 \language_package default
 \inputencoding utf8-cjk
-\fontencoding global
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -82,7 +82,9 @@ theorems-ams-extended-chap-bytype
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \font_cjk gbsn
@@ -117,7 +119,9 @@ theorems-ams-extended-chap-bytype
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -136,11 +140,16 @@ theorems-ams-extended-chap-bytype
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -149,12 +158,9 @@ theorems-ams-extended-chap-bytype
 Analysis II
 \end_layout
 
-\begin_layout Author
-冯磊
-\end_layout
-
 \begin_layout Date
-June 22, 2019
+June 22,
+ 2019
 \end_layout
 
 \begin_layout Section
@@ -162,7 +168,9 @@ June 22, 2019
 \end_layout
 
 \begin_layout Solution
-pf1: 用数学分析的方法, 考虑单变量函数
+pf1:
+ 用数学分析的方法,
+ 考虑单变量函数
 \begin_inset Formula 
 \[
 F\left(c\right)\equiv\int_{a}^{b}\sin\left(f\left(x\right)+c\right)\ud x-c
@@ -174,11 +182,13 @@ F\left(c\right)\equiv\int_{a}^{b}\sin\left(f\left(x\right)+c\right)\ud x-c
 \begin_inset Formula $c$
 \end_inset
 
-的连续函数, 因
+的连续函数,
+ 因
 \begin_inset Formula $\lim_{c\to-\infty}F\left(c\right)=+\infty$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $\lim_{c\to+\infty}F\left(c\right)=-\infty$
 \end_inset
 
@@ -199,7 +209,8 @@ F\left(c\right)\equiv\int_{a}^{b}\sin\left(f\left(x\right)+c\right)\ud x-c
 \begin_inset Formula $f\left(x\right)+c_{0}=\int_{a}^{b}\sin\left(f\left(x\right)+c_{0}\right)\ud x+f\left(x\right)$
 \end_inset
 
-, 于是
+,
+ 于是
 \begin_inset Formula $u\left(x\right)=f\left(x\right)+c_{0}\in C\left[a,b\right]$
 \end_inset
 
@@ -219,7 +230,9 @@ F\left(c\right)\equiv\int_{a}^{b}\sin\left(f\left(x\right)+c\right)\ud x-c
 \end_layout
 
 \begin_layout Solution
-pf2: 用Schauder不动点定理, 取
+pf2:
+ 用Schauder不动点定理,
+ 取
 \begin_inset Formula 
 \[
 M=\left\{ g\left(x\right)\in C\left[a,b\right]:\norm{g\left(x\right)-f\left(x\right)}_{C\left[a,b\right]}\le b-a\right\} .
@@ -239,7 +252,8 @@ M=\left\{ g\left(x\right)\in C\left[a,b\right]:\norm{g\left(x\right)-f\left(x\ri
 \end_layout
 
 \begin_layout Solution
-非空: 
+非空:
+ 
 \begin_inset Formula $f\left(x\right)\in M$
 \end_inset
 
@@ -247,11 +261,13 @@ M=\left\{ g\left(x\right)\in C\left[a,b\right]:\norm{g\left(x\right)-f\left(x\ri
 \end_layout
 
 \begin_layout Solution
-有界: 
+有界:
+ 
 \begin_inset Formula $\forall g\in M$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $\norm{g}\le\norm{f}+b-a$
 \end_inset
 
@@ -259,11 +275,13 @@ M=\left\{ g\left(x\right)\in C\left[a,b\right]:\norm{g\left(x\right)-f\left(x\ri
 \end_layout
 
 \begin_layout Solution
-闭: 
+闭:
+ 
 \begin_inset Formula $\left(g_{k}\right)\subset M$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $g_{k}\to g$
 \end_inset
 
@@ -271,7 +289,8 @@ M=\left\{ g\left(x\right)\in C\left[a,b\right]:\norm{g\left(x\right)-f\left(x\ri
 \begin_inset Formula $C\left[a,b\right]$
 \end_inset
 
-, 所以
+,
+ 所以
 \begin_inset Formula $g_{k}\rightrightarrows g$
 \end_inset
 
@@ -287,15 +306,18 @@ M=\left\{ g\left(x\right)\in C\left[a,b\right]:\norm{g\left(x\right)-f\left(x\ri
 \end_layout
 
 \begin_layout Solution
-凸: 
+凸:
+ 
 \begin_inset Formula $g,h\in M$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $\norm{\lambda g+\left(1-\lambda\right)h-f}\le\lambda\norm{g-f}+\left(1-\lambda\right)\norm{h-f}\le b-a$
 \end_inset
 
-, 所以
+,
+ 所以
 \begin_inset Formula $\lambda g+\left(1-\lambda\right)h\in M$
 \end_inset
 
@@ -307,32 +329,40 @@ M=\left\{ g\left(x\right)\in C\left[a,b\right]:\norm{g\left(x\right)-f\left(x\ri
 \begin_inset Formula $A\left(u\right)\equiv f\left(x\right)+\int_{a}^{b}\sin\left(u\left(x\right)\right)\ud x$
 \end_inset
 
-, 则
+,
+ 则
 \begin_inset Formula $\norm{A\left(u\right)-f\left(x\right)}\le b-a$
 \end_inset
 
-, 所以
+,
+ 所以
 \begin_inset Formula $A\left(u\right)\in M$
 \end_inset
 
-, 即
+,
+ 即
 \begin_inset Formula $A:M\to M$
 \end_inset
 
-, 连续性由
+,
+ 连续性由
 \begin_inset Formula $f$
 \end_inset
 
-的连续性保证, 由聚点定理知, 
+的连续性保证,
+ 由聚点定理知,
+ 
 \begin_inset Formula $A$
 \end_inset
 
 是紧算子.
- 故Schauder不动点定理知, 存在
+ 故Schauder不动点定理知,
+ 存在
 \begin_inset Formula $u\in M$
 \end_inset
 
-, 使得
+,
+ 使得
 \begin_inset Formula $A\left(u\right)=u$
 \end_inset
 
@@ -357,11 +387,13 @@ u\left(x\right)=\int_{a}^{b}\sin u\left(x\right)\ud x+f\left(x\right)
 \begin_inset Formula $Tu\equiv1+\int_{a}^{b}K\left(x,y\right)u\left(y\right)\ud y$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $T:C\left[a,b\right]\to C\left[a,b\right]$
 \end_inset
 
-, 则
+,
+ 则
 \begin_inset Formula $u\le v$
 \end_inset
 
@@ -377,7 +409,8 @@ Tv-Tu=\int_{a}^{b}K\left(x,y\right)\left(v-u\right)\ud y\ge0.
 \begin_inset Formula $u_{n+1}=Tu_{n}$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $v_{n+1}=Tv_{n}$
 \end_inset
 
@@ -399,7 +432,8 @@ Tv-Tu=\int_{a}^{b}K\left(x,y\right)\left(v-u\right)\ud y\ge0.
 \begin_inset Formula $T$
 \end_inset
 
-是压缩映射, 故
+是压缩映射,
+ 故
 \begin_inset Formula $T$
 \end_inset
 
@@ -423,7 +457,8 @@ u\left(x\right)=Tu\left(x\right)=1+\int_{a}^{b}K\left(x,y\right)u\left(y\right)\
 \end_layout
 
 \begin_layout Standard
-必要性: 设
+必要性:
+ 设
 \begin_inset Formula $\left(e_{i}\right)\subset B$
 \end_inset
 
@@ -431,15 +466,18 @@ u\left(x\right)=Tu\left(x\right)=1+\int_{a}^{b}K\left(x,y\right)u\left(y\right)\
 \begin_inset Formula $B$
 \end_inset
 
-中逼近恒等元, 则取
+中逼近恒等元,
+ 则取
 \begin_inset Formula $E=\left(e_{i}\right)$
 \end_inset
 
-, 由
+,
+ 由
 \begin_inset Formula $\sup\norm{e_{i}}<+\infty$
 \end_inset
 
-, 有
+,
+ 有
 \begin_inset Formula $E$
 \end_inset
 
@@ -448,11 +486,13 @@ u\left(x\right)=Tu\left(x\right)=1+\int_{a}^{b}K\left(x,y\right)u\left(y\right)\
 \begin_inset Formula $x\in B$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $e_{i}x\to x$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $xe_{i}\to x$
 \end_inset
 
@@ -461,11 +501,13 @@ u\left(x\right)=Tu\left(x\right)=1+\int_{a}^{b}K\left(x,y\right)u\left(y\right)\
 \begin_inset Formula $\norm{e_{i}x-x}\to0$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $\norm{xe_{i}-x}\to0$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $i\to\infty$
 \end_inset
 
@@ -474,19 +516,23 @@ u\left(x\right)=Tu\left(x\right)=1+\int_{a}^{b}K\left(x,y\right)u\left(y\right)\
 \begin_inset Formula $\varepsilon>0$
 \end_inset
 
-, 存在
+,
+ 存在
 \begin_inset Formula $I$
 \end_inset
 
-, 使得
+,
+ 使得
 \begin_inset Formula $\forall i>I$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $\norm{e_{i}x-x}<\frac{\varepsilon}{2}$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $\norm{xe_{i}-x}<\frac{\varepsilon}{2}$
 \end_inset
 
@@ -503,7 +549,8 @@ u\left(x\right)=Tu\left(x\right)=1+\int_{a}^{b}K\left(x,y\right)u\left(y\right)\
 \end_layout
 
 \begin_layout Standard
-充分性: 只需证
+充分性:
+ 只需证
 \begin_inset Formula $E$
 \end_inset
 
@@ -511,11 +558,13 @@ u\left(x\right)=Tu\left(x\right)=1+\int_{a}^{b}K\left(x,y\right)u\left(y\right)\
 \begin_inset Formula $\left(e_{i}\right)$
 \end_inset
 
-符合题意即可, 取
+符合题意即可,
+ 取
 \begin_inset Formula $\varepsilon=\frac{1}{2^{n}}$
 \end_inset
 
-, 则对于任意的
+,
+ 则对于任意的
 \begin_inset Formula $x$
 \end_inset
 
@@ -527,7 +576,8 @@ u\left(x\right)=Tu\left(x\right)=1+\int_{a}^{b}K\left(x,y\right)u\left(y\right)\
 \begin_inset Formula $\norm{e_{x}^{n}x-x}+\norm{xe_{x}^{n}-x}<\varepsilon$
 \end_inset
 
-, 于是取
+,
+ 于是取
 \begin_inset Formula 
 \[
 E=\bigcup_{x\in B}\left\{ e_{x}^{n}:n\in\NN_{+}\right\} 
@@ -564,7 +614,8 @@ o
 
 \end_inset
 
-lder不等式, 
+lder不等式,
+ 
 \begin_inset Formula 
 \[
 \left\Vert Tu\right\Vert _{L^{\infty}}=\left\Vert \int_{\Omega}K\left(x,y\right)u\left(y\right)\ud y\right\Vert _{L^{\infty}}\le\left\Vert \left\Vert K\left(x,y\right)\right\Vert _{L^{p'}}\left\Vert u\right\Vert _{L^{p}}\right\Vert _{L^{\infty}}=\left\Vert u\right\Vert _{L^{p}}\sup_{x\in\Omega}\left\Vert K\left(x,y\right)\right\Vert _{L^{p'}}<\infty.
@@ -604,7 +655,8 @@ lder不等式,
 \begin_inset Formula $r\in\left[1,\infty\right]$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $T$
 \end_inset
 
@@ -628,7 +680,8 @@ lder不等式,
 \begin_inset Formula $L^{p'}\left(\Omega^{2}\right)$
 \end_inset
 
-上稠密, 所以有
+上稠密,
+ 所以有
 \begin_inset Formula $K_{n}\left(x,y\right)\to K\left(x,y\right)$
 \end_inset
 
@@ -636,7 +689,8 @@ lder不等式,
 \begin_inset Formula $L^{p'}$
 \end_inset
 
-, 定义
+,
+ 定义
 \begin_inset Formula 
 \[
 T_{n}:L^{p}\to L^{p},\quad u\mapsto T_{n}u=\int_{\Omega}K_{n}\left(x,y\right)u\left(y\right)\ud y
@@ -648,7 +702,8 @@ T_{n}:L^{p}\to L^{p},\quad u\mapsto T_{n}u=\int_{\Omega}K_{n}\left(x,y\right)u\l
 \begin_inset Formula $K_{n}$
 \end_inset
 
-连续, 所以对于任何
+连续,
+ 所以对于任何
 \begin_inset Formula $L^{p}\left(\Omega\right)$
 \end_inset
 
@@ -656,11 +711,13 @@ T_{n}:L^{p}\to L^{p},\quad u\mapsto T_{n}u=\int_{\Omega}K_{n}\left(x,y\right)u\l
 \begin_inset Formula $\left\{ u_{k}\right\} $
 \end_inset
 
-, 有
+,
+ 有
 \begin_inset Formula $T_{n}u_{k}$
 \end_inset
 
-是等度连续, 
+是等度连续,
+ 
 \begin_inset Formula 
 \[
 \left|T_{n}u_{k}\left(x_{1}\right)-T_{n}u_{k}\left(x_{2}\right)\right|\le\left|\int_{\Omega}\left(K_{n}\left(x_{1},y\right)-K_{n}\left(x_{2},y\right)\right)u_{k}\left(y\right)\ud y\right|\le C_{\Omega}\max_{x,y\in\Omega}\left|K_{n}^{\prime}\left(x,y\right)\right|\norm{u_{k}}_{L^{p}}\left|x_{1}-x_{2}\right|.
@@ -694,7 +751,8 @@ status open
 
 \end_inset
 
--Ascoli定理, 
+-Ascoli定理,
+ 
 \begin_inset Formula $T_{n}$
 \end_inset
 
@@ -702,7 +760,8 @@ status open
 \begin_inset Formula $L\left(L^{p},C\right)$
 \end_inset
 
-的紧算子, 也是
+的紧算子,
+ 也是
 \begin_inset Formula $L\left(L^{p},L^{p}\right)$
 \end_inset
 
@@ -729,7 +788,9 @@ status open
 \begin_inset Formula $T_{n}\to T$
 \end_inset
 
-, 由于紧算子的极限仍然是紧算子, 故
+,
+ 由于紧算子的极限仍然是紧算子,
+ 故
 \begin_inset Formula $T$
 \end_inset
 
@@ -748,11 +809,13 @@ status open
 \begin_inset Formula $u_{n}\left(x\right)=\phi\left(x+n\right)$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $Du_{n}\left(x\right)=\phi'\left(x+n\right)$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula 
 \[
 \norm{u_{n}}_{W^{1,p}\left(\RR\right)}=\norm{u_{n}}_{L^{p}\left(\RR\right)}+\norm{Du_{n}}_{L^{p}\left(\RR\right)}=\norm{\phi\left(x+n\right)}_{L^{p}\left(\RR\right)}+\norm{\phi'\left(x+n\right)}_{L^{p}\left(\RR\right)},
@@ -764,7 +827,8 @@ status open
 \begin_inset Formula $\phi\in C_{c}^{\infty}\left(\RR\right)$
 \end_inset
 
-, 及积分平移不变性知
+,
+ 及积分平移不变性知
 \begin_inset Formula 
 \[
 \norm{u_{n}}_{W^{1,p}\left(\RR\right)}=\norm{\phi\left(x\right)}_{L^{p}\left(\RR\right)}+\norm{\phi'\left(x\right)}_{L^{p}\left(\RR\right)}\le\left|\text{spt}\phi\right|\left(\norm{\phi}_{L^{\infty}}+\norm{\phi'}_{L^{\infty}}\right)<+\infty.
@@ -784,11 +848,13 @@ status open
 \end_layout
 
 \begin_layout Enumerate
-反证法, 假设
+反证法,
+ 假设
 \begin_inset Formula $\phi\not\equiv0$
 \end_inset
 
-, 有子列
+,
+ 有子列
 \begin_inset Formula $\left(u_{n_{k}}\right)$
 \end_inset
 
@@ -796,15 +862,18 @@ status open
 \begin_inset Formula $u\in L^{q}\left(\RR\right)$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $1\le q<\infty$
 \end_inset
 
-, 则由于
+,
+ 则由于
 \begin_inset Formula $\liminf_{k\to\infty}u_{n_{k}}=0$
 \end_inset
 
-, 由Fatou引理有
+,
+ 由Fatou引理有
 \begin_inset Formula 
 \[
 \liminf_{k\to\infty}\norm{u_{n_{k}}-u}_{L^{q}}\ge\norm{\liminf_{k\to\infty}\left(u_{n_{k}}-u\right)}_{L^{q}}\ge\norm{u}_{L^{q}}.
@@ -816,7 +885,8 @@ status open
 \begin_inset Formula $u=0$
 \end_inset
 
-, a.e.
+,
+ a.e.
  然而此时
 \begin_inset Formula $\norm{u_{n_{k}}-u}_{L^{q}}=\norm{u_{n_{k}}}_{L^{q}}=\norm{\phi}_{L^{q}}>0$
 \end_inset
@@ -831,7 +901,8 @@ status open
 \end_inset
 
 .
- 最后, 至于
+ 最后,
+ 至于
 \begin_inset Formula $q=\infty$
 \end_inset
 
@@ -843,7 +914,8 @@ status open
 \begin_inset Formula $\psi\in C_{c}^{\infty}\left(\RR\right)$
 \end_inset
 
-, 则当
+,
+ 则当
 \begin_inset Formula $n$
 \end_inset
 
@@ -883,19 +955,23 @@ status open
 \end_layout
 
 \begin_layout Standard
-由Ehrling-Nirenberg-Gagliardo插值不等式, 
+由Ehrling-Nirenberg-Gagliardo插值不等式,
+ 
 \begin_inset Formula $\Omega\subset\RR^{d}$
 \end_inset
 
-中具有一致锥性质的有界区域, 则对于任意的
+中具有一致锥性质的有界区域,
+ 则对于任意的
 \begin_inset Formula $\varepsilon>0$
 \end_inset
 
-, 恒存在只依赖于
+,
+ 恒存在只依赖于
 \begin_inset Formula $p\ge1$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $m,\varepsilon$
 \end_inset
 
@@ -907,11 +983,13 @@ status open
 \begin_inset Formula $C>0$
 \end_inset
 
-, 使得对于任何
+,
+ 使得对于任何
 \begin_inset Formula $u\in W^{m,p}\left(\Omega\right)$
 \end_inset
 
-, 有
+,
+ 有
 \begin_inset Formula 
 \[
 \sum_{\left|\alpha\right|\le m-1}\int_{\Omega}\left|D^{\alpha}u\right|^{p}\ud x\le\varepsilon\sum_{\left|\alpha\right|=m}\int_{\Omega}\left|D^{\alpha}u\right|^{p}\ud x+C\int_{\Omega}\left|u\right|^{p}\ud x.
@@ -923,11 +1001,15 @@ status open
 \end_layout
 
 \begin_layout Standard
-另外, from WikiPedia, Gagliardo-Nirenberg插值不等式: 考虑函数
+另外,
+ from WikiPedia,
+ Gagliardo-Nirenberg插值不等式:
+ 考虑函数
 \begin_inset Formula $u:\RR^{d}\to\RR$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $1\le q,r\le\infty$
 \end_inset
 
@@ -972,15 +1054,18 @@ status open
 
 \end_inset
 
-特别的, 当
+特别的,
+ 当
 \begin_inset Formula $p=r=q$
 \end_inset
 
-时, 
+时,
+ 
 \begin_inset Formula $\alpha=\frac{j}{m}$
 \end_inset
 
-, 从而
+,
+ 从而
 \begin_inset Formula 
 \[
 \norm{D^{j}u}_{L^{p}}\le C\norm{D^{m}u}_{L^{p}}^{j/m}\norm{u}_{L^{p}}^{1-j/m}\le\varepsilon\norm{D^{m}u}_{L^{p}}+C\left(\varepsilon,\Omega,m,d,p\right)\norm{u}_{L^{p}},
@@ -992,7 +1077,8 @@ status open
 \begin_inset Formula $\varepsilon$
 \end_inset
 
-, 即
+,
+ 即
 \begin_inset Formula 
 \[
 fg=\frac{f}{\varepsilon}\cdot\varepsilon g\le\frac{f^{p}}{\varepsilon^{p}p}+\frac{\varepsilon^{q}g^{q}}{q},\qquad\frac{1}{p}+\frac{1}{q}=1.
@@ -1021,7 +1107,8 @@ fg=\frac{f}{\varepsilon}\cdot\varepsilon g\le\frac{f^{p}}{\varepsilon^{p}p}+\fra
 \begin_inset Formula $\boldsymbol{u}_{n}$
 \end_inset
 
-为稳态不可压Navier-Stokes方程的弱解, 则有
+为稳态不可压Navier-Stokes方程的弱解,
+ 则有
 \begin_inset Formula 
 \[
 \int_{\Omega}\left|\nabla\boldsymbol{u}_{n}\right|^{2}\ud x\le\int_{\Omega}\boldsymbol{f}\cdot\boldsymbol{u}_{n}\ud x.
@@ -1029,7 +1116,8 @@ fg=\frac{f}{\varepsilon}\cdot\varepsilon g\le\frac{f^{p}}{\varepsilon^{p}p}+\fra
 
 \end_inset
 
-由Young不等式, 
+由Young不等式,
+ 
 \begin_inset Formula 
 \[
 \int_{\Omega}\left|\nabla\boldsymbol{u}_{n}\right|^{2}\ud x\le\int_{\Omega}\frac{\boldsymbol{f}}{\varepsilon}\cdot\varepsilon\boldsymbol{u}_{n}\ud x\le\int_{\Omega}\frac{\left|\boldsymbol{f}/\varepsilon\right|^{2}+\left|\varepsilon\boldsymbol{u}_{n}\right|^{2}}{2}\ud x\le\frac{\norm{\boldsymbol{f}}_{L^{2}}^{2}}{2\varepsilon^{2}}+\frac{\varepsilon^{2}}{2}\norm{\boldsymbol{u}_{n}}_{L^{2}}^{2}.
@@ -1050,7 +1138,8 @@ status open
 
 \end_inset
 
-不等式, 及在
+不等式,
+ 及在
 \begin_inset Formula $\partial\Omega$
 \end_inset
 
@@ -1058,11 +1147,13 @@ status open
 \begin_inset Formula $\boldsymbol{u}_{n}=0$
 \end_inset
 
-, 有
+,
+ 有
 \begin_inset Formula $\norm{\boldsymbol{u}_{n}}_{L^{2}}^{2}\le C\norm{\nabla\boldsymbol{u}_{n}}_{L^{2}}^{2}$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $C$
 \end_inset
 
@@ -1070,7 +1161,8 @@ status open
 \begin_inset Formula $\boldsymbol{u}_{n}$
 \end_inset
 
-无关, 所以
+无关,
+ 所以
 \begin_inset Formula 
 \[
 \int_{\Omega}\left|\nabla\boldsymbol{u}_{n}\right|^{2}\ud x\le\frac{\norm{\boldsymbol{f}}_{L^{2}}^{2}}{2\varepsilon^{2}}+\frac{C\varepsilon^{2}}{2}\norm{\nabla\boldsymbol{u}_{n}}_{L^{2}}^{2},
@@ -1082,7 +1174,8 @@ status open
 \begin_inset Formula $C\varepsilon^{2}=1$
 \end_inset
 
-, 即
+,
+ 即
 \begin_inset Formula $\varepsilon=\frac{1}{\sqrt{C}}$
 \end_inset
 
@@ -1115,7 +1208,9 @@ status open
 
 \begin_layout Standard
 2.
- 由1中的一致有界结论, 及Banach-Alaoglu定理, 有子列
+ 由1中的一致有界结论,
+ 及Banach-Alaoglu定理,
+ 有子列
 \begin_inset Formula $\left\{ \boldsymbol{u}_{n_{k}}\right\} $
 \end_inset
 
@@ -1132,7 +1227,8 @@ status open
 \begin_inset Formula $W^{1,2}\hookrightarrow L^{2}$
 \end_inset
 
-, 所以不妨设
+,
+ 所以不妨设
 \begin_inset Formula $\boldsymbol{u}_{n_{k}}\to\boldsymbol{u}$
 \end_inset
 
@@ -1140,7 +1236,9 @@ status open
 \begin_inset Formula $L^{2}$
 \end_inset
 
-, 这里强极限和前面的若极限是同一函数, 这可以由弱极限唯一性得到.
+,
+ 这里强极限和前面的若极限是同一函数,
+ 这可以由弱极限唯一性得到.
 \end_layout
 
 \begin_layout Standard
@@ -1152,7 +1250,8 @@ status open
 \begin_inset Formula $W_{0}^{1,2}\left(\Omega;\RR^{3}\right)$
 \end_inset
 
-, 所以
+,
+ 所以
 \begin_inset Formula $\nabla\boldsymbol{u}_{n_{k}}\wc\nabla\boldsymbol{u}$
 \end_inset
 
@@ -1160,11 +1259,13 @@ status open
 \begin_inset Formula $L^{2}$
 \end_inset
 
-, 所以
+,
+ 所以
 \begin_inset Formula $\int_{\Omega}\nabla\boldsymbol{u}_{n_{k}}:\nabla\boldsymbol{\varphi}\ud x\to\int_{\Omega}\nabla\boldsymbol{u}:\nabla\boldsymbol{\varphi}\ud x$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $\forall\boldsymbol{\varphi}\in C_{c}^{\infty}\left(\Omega;\RR^{3}\right)$
 \end_inset
 
@@ -1180,7 +1281,8 @@ status open
 \begin_inset Formula $L^{2}\left(\Omega;\RR^{3}\right)$
 \end_inset
 
-, 以及
+,
+ 以及
 \begin_inset Formula $\boldsymbol{u}_{n_{k}}\to\boldsymbol{u}$
 \end_inset
 
@@ -1188,7 +1290,8 @@ status open
 \begin_inset Formula $L^{2}\left(\Omega;\RR^{3}\right)$
 \end_inset
 
-, 所以
+,
+ 所以
 \begin_inset Formula 
 \[
 \int_{\Omega}\left(\boldsymbol{u}_{k}\cdot\nabla\boldsymbol{u}_{k}\right)\cdot\boldsymbol{\varphi}\ud x\to\int_{\Omega}\left(\boldsymbol{u}\cdot\nabla\boldsymbol{u}\right)\cdot\boldsymbol{\varphi}\ud x.
@@ -1200,7 +1303,8 @@ status open
 \begin_inset Formula $\boldsymbol{u}_{n_{k}}$
 \end_inset
 
-满足(3.3), 对
+满足(3.3),
+ 对
 \begin_inset Formula $k\to\infty$
 \end_inset
 
@@ -1212,15 +1316,18 @@ status open
 
 \end_inset
 
-最后证明(3.4), 因为
+最后证明(3.4),
+ 因为
 \begin_inset Formula $\boldsymbol{f}\in L^{2}\left(\Omega;\RR^{3}\right)$
 \end_inset
 
-, 所以
+,
+ 所以
 \begin_inset Formula $\int_{\Omega}\boldsymbol{f}\cdot\boldsymbol{u}_{n_{k}}\ud x\to\int_{\Omega}\boldsymbol{f}\cdot\boldsymbol{u}\ud x$
 \end_inset
 
-, 由
+,
+ 由
 \begin_inset Formula $\boldsymbol{u}_{n_{k}}\wc\boldsymbol{u}$
 \end_inset
 
@@ -1228,7 +1335,8 @@ status open
 \begin_inset Formula $L^{2}$
 \end_inset
 
-, 由共鸣定理有下半连续性
+,
+ 由共鸣定理有下半连续性
 \begin_inset Formula 
 \[
 \norm{\nabla\boldsymbol{u}}^{2}\le\liminf_{k\to\infty}\norm{\nabla\boldsymbol{u}_{n_{k}}}^{2}\le\liminf_{k\to\infty}\int_{\Omega}\boldsymbol{f}\cdot\boldsymbol{u}_{n_{k}}\ud x=\int_{\Omega}\boldsymbol{f}\cdot\boldsymbol{u}\ud x
