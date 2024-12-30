@@ -1,0 +1,1219 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+\usepackage{multicol}
+
+\usepackage{amsmath, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\curl}{curl}
+
+%\everymath{\color{blue}\everymath{}}
+%\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options 12pt, UTF8
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+\end_modules
+\maintain_unincluded_children false
+\begin_local_layout
+Format 66
+Style Problem
+	Category              QAs
+	LatexType             Environment
+	LatexName             problem
+	LabelString           "Problem \thetheorem."
+	Preamble
+		\let\problem\relax
+	  	\theoremstyle{definition}
+	  	\newtheorem{problem}[thm]{\protect\problemname}
+	EndPreamble
+	LangPreamble
+	  \providecommand{\problemname}{}
+	EndLangPreamble
+	BabelPreamble
+	  \addto\captions$$lang{\renewcommand{\problemname}{_(Problem)}}
+	EndBabelPreamble
+End
+
+Style Solution
+	CopyStyle             Problem
+	LatexName             solution
+	LabelString           "Solution \thetheorem."
+	LangPreamble
+		\providecommand{\solutionname}{_(Solution)}
+	EndLangPreamble
+	BabelPreamble
+		\addto\captions$$lang{\renewcommand{\solutionname}{_(Solution)}}
+	EndBabelPreamble
+End
+
+Style MakePart
+	Category              Sectioning
+	Margin                Dynamic
+	LabelString           "Part \thepart"
+	LabelType             Static
+	TocLevel              -1
+	LabelCounter          part
+	LatexType             Command
+	LatexName             makepart
+	NeedProtect           1
+	NextNoIndent          1
+	ToggleIndent          Never
+	Labelsep              xxx
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             4
+	ParSep                0.8
+	Align                 Left
+	Alignpossible         Left
+	Argument 1
+		LabelString	"题目名称|S"
+		Tooltip		"The part as it appears in the table of contents/running headers"
+		InsertCotext	0
+		IsTocCaption	1
+		MenuString	"test|S"
+		Mandatory	1
+	EndArgument
+	Font
+	  Series              Bold
+	  Size                Huge
+	EndFont
+	HTMLTag               h1
+End
+
+Style ABCD
+	Category              List
+	Margin                Static
+	LatexType             Item_Environment
+	LatexName             abcd
+	NextNoIndent          1
+	ToggleIndent          Never
+	LeftMargin            MMN
+	LabelSep              xx
+	ParSkip               0.0
+	ItemSep               0.2
+	TopSep                0.7
+	BottomSep             0.7
+	ParSep                0.3
+	Align                 Block
+	AlignPossible         Block, Left
+	LabelType             Enumerate
+	LabelCounter          "enum"
+	HTMLTag               ol
+	HTMLItem              li
+	HTMLLabel             NONE
+	RefPrefix             enu
+	Argument item:1
+		LabelString   "Custom Item|s"
+		Tooltip       "A customized item string"
+	EndArgument
+End
+\end_local_layout
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Thinking about the Space of Irrationals Topologically
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ denote the real number line and 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ denote the set of all irrational numbers.
+ The irrational numbers and the set 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ occupy an important place in mathematics.
+ The set 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ with the Euclidean topology inherited from the full real line is a topological
+ space in its own right.
+ Thus the space 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ has some of the same properties inherited from the Euclidean real line,
+ e.g., just to name a few, it is hereditarily separable, hereditarily Lindelof,
+ paracompact and metrizable.
+ The space of the irrational numbers 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ has many properties apart from the full real line (e.g.
+ 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ is totally disconnected).
+ In this post, we look at a topological description of the space 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+将无理数集记为 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+, 无理数拓扑继承自实数集 
+\begin_inset Formula $\RR$
+\end_inset
+
+ 的通常拓扑, 仍用符号 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ 来记这个拓扑空间.
+ 无理数空间 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ 有一些性质继承于实拓扑空间, 比如它有遗传可分性, 遗传 Lindelof 性质, 仿紧性和可度量化的, 也有一些性质是实拓扑空间不具有的,
+ 比如全不连通性.
+ 下面对无理数空间 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ 进行一些拓扑方面的论述.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\omega$
+\end_inset
+
+ be the set of all nonnegative integers.
+ Then the space 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ of irrational numbers is topologically equivalent (i.e.
+ homeomorphic to) the product space 
+\begin_inset Formula $\prod\limits _{i=0}^{\infty}X_{i}$
+\end_inset
+
+ where each 
+\begin_inset Formula $X_{i}=\omega$
+\end_inset
+
+ has the discrete topology.
+ We will also denote the product space 
+\begin_inset Formula $\prod\limits _{i=0}^{\infty}X_{i}$
+\end_inset
+
+ by 
+\begin_inset Formula $\omega^{\omega}$
+\end_inset
+
+.
+ We have the following theorem.
+\end_layout
+
+\begin_layout Standard
+设 
+\begin_inset Formula $\omega$
+\end_inset
+
+ 是非负整数集.
+ 则无理数空间 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ 拓扑等价于乘积空间 
+\begin_inset Formula $\prod\limits _{i=0}^{\infty}X_{i}$
+\end_inset
+
+, 其中 
+\begin_inset Formula $X_{i}=\omega$
+\end_inset
+
+ 并配有离散拓扑.
+ 为方便起见, 将 
+\begin_inset Formula $\prod\limits _{i=0}^{\infty}X_{i}$
+\end_inset
+
+ 简记为 
+\begin_inset Formula $\omega^{\omega}$
+\end_inset
+
+.
+ 则有如下定理
+\end_layout
+
+\begin_layout Theorem
+The space 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ of irrational numbers is homeomorphic to the product space 
+\begin_inset Formula $\omega^{\omega}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Because of this theorem, we can look at irrational numbers as sequences
+ of nonnegative integers.
+ Specifically each irrational number can be identified by a unique sequence
+ of nonnegative integers.
+ We can think of each such unique sequence as an address to locate an irrational
+ number.
+ In the remainder of the post, we describe at a high level how to define
+ the unique addresses, which will also give us a homeomorphic map between
+ the space 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ and the product space 
+\begin_inset Formula $\omega^{\omega}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+这个定理告诉我们, 可以将无理数集看成非负整数集中的序列.
+ 实际上, 每个无理数可以唯一地对应一个非负整数序列, 下面将给出这种一一对应的构造, 并且证明这个映射实际上是同胚映射.
+\end_layout
+
+\begin_layout Section
+Step 0
+\end_layout
+
+\begin_layout Standard
+Put the rational numbers in a sequence 
+\begin_inset Formula $r_{0},r_{1},r_{2},r_{3},\cdots$
+\end_inset
+
+ such that 
+\begin_inset Formula $r_{0}=0$
+\end_inset
+
+.
+ We divide the real line into countably many non-overlapping intervals.
+ Specifically, let 
+\begin_inset Formula $A_{0}=[0,1]$
+\end_inset
+
+, 
+\begin_inset Formula $A_{1}=[-1,0]$
+\end_inset
+
+, 
+\begin_inset Formula $A_{2}=[1,2]$
+\end_inset
+
+, etc (see the following figure).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/2024090401.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To facilitate the remaining construction, we denote the left endpoint of
+ the interval 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ by 
+\begin_inset Formula $L_{i}$
+\end_inset
+
+ and denote the right endpoint by 
+\begin_inset Formula $R_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+记所有有理数序列为 
+\begin_inset Formula $r_{0},r_{1},r_{2},r_{3},\cdots$
+\end_inset
+
+, 其中 
+\begin_inset Formula $r_{0}=0$
+\end_inset
+
+.
+ 将实直线分成可数个互不交叠的区间, 并记为 
+\begin_inset Formula $A_{0}=[0,1]$
+\end_inset
+
+, 
+\begin_inset Formula $A_{1}=[-1,0]$
+\end_inset
+
+, 
+\begin_inset Formula $A_{2}=[1,2]$
+\end_inset
+
+, ...
+ 如上图所示.
+ 将每个区间简单地记为 
+\begin_inset Formula $A_{i}=[L_{i},R_{i}]$
+\end_inset
+
+, 其中 
+\begin_inset Formula $L_{i},R_{i}$
+\end_inset
+
+ 分别为区间 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ 的左右端点.
+\end_layout
+
+\begin_layout Section
+Step 1
+\end_layout
+
+\begin_layout Standard
+In each of the interval 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+, we further divide it into non-overlapping intervals.
+ The left endpoint and the right endpoint of the interval 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ are 
+\begin_inset Formula $L_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $R_{i}$
+\end_inset
+
+, respectively.
+ We choose a sequence 
+\begin_inset Formula $x_{i,0},x_{i,1},x_{i,2},\cdots$
+\end_inset
+
+ of rational numbers converging to the right endpoint 
+\begin_inset Formula $R_{i}$
+\end_inset
+
+.
+ Then let 
+\begin_inset Formula $A_{i,0}=[L_{i},x_{i,0}]$
+\end_inset
+
+, 
+\begin_inset Formula $A_{i,1}=[x_{i,0},x_{i,1}]$
+\end_inset
+
+, 
+\begin_inset Formula $A_{i,2}=[x_{i,1},x_{i,2}]$
+\end_inset
+
+, etc (see the following figure).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/2024090402.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Two important points to consider in Step 1.
+ One is that we make sure the rational number 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+ is chosen as an endpoint of some interval in Step 1.
+ The second is that the length of each 
+\begin_inset Formula $A_{i,j}$
+\end_inset
+
+ is less than 
+\begin_inset Formula ${\displaystyle \frac{1}{2^{1}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+进一步将每个区间划分为不交叠的子区间, 如区间 
+\begin_inset Formula $A_{i}=[L_{i},R_{i}]$
+\end_inset
+
+ , 取 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ 中收敛于 
+\begin_inset Formula $R_{i}$
+\end_inset
+
+ 的有理数序列 
+\begin_inset Formula $x_{i,0},x_{i,1},x_{i,2},\cdots$
+\end_inset
+
+, 并将 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ 划分为区间 
+\begin_inset Formula $A_{i,0}=[L_{i},x_{i,0}]$
+\end_inset
+
+, 
+\begin_inset Formula $A_{i,1}=[x_{i,0},x_{i,1}]$
+\end_inset
+
+, 
+\begin_inset Formula $A_{i,2}=[x_{i,1},x_{i,2}]$
+\end_inset
+
+, ...
+ 如上图所示.
+ 需要注意是, 在上面的区间划分中, 有理数 
+\begin_inset Formula $r_{1}$
+\end_inset
+
+ 必须被所在的某个区间 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ 的有理数序列选中, 并且每一个有理数序列的选择都必须保证 
+\begin_inset Formula $\left|A_{i,j}\right|<\frac{1}{2^{1}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Step 2 
+\end_layout
+
+\begin_layout Standard
+In each of the interval 
+\begin_inset Formula $A_{i,j}$
+\end_inset
+
+, we further divide it into non-overlapping intervals.
+ The left endpoint and the right endpoint of the interval 
+\begin_inset Formula $A_{i,j}$
+\end_inset
+
+ are 
+\begin_inset Formula $L_{i,j}$
+\end_inset
+
+ and 
+\begin_inset Formula $R_{i,j}$
+\end_inset
+
+, respectively.
+ We choose a sequence 
+\begin_inset Formula $x_{i,j,0},x_{i,j,1},x_{i,j,2},\cdots$
+\end_inset
+
+ of rational numbers converging to the left endpoint 
+\begin_inset Formula $L_{i,j}$
+\end_inset
+
+.
+ Then let 
+\begin_inset Formula $A_{i,j,0}=[x_{i,j,0},R_{i,j}]$
+\end_inset
+
+, 
+\begin_inset Formula $A_{i,j,1}=[x_{i,j,1},x_{i,j,0}]$
+\end_inset
+
+, 
+\begin_inset Formula $A_{i,j,2}=[x_{i,j,2},x_{i,j,1}]$
+\end_inset
+
+, etc (see the following figure).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/2024090403.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As in the previous step, two important points to consider in Step 2.
+ One is that we make sure the rational number 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ is chosen as an endpoint of some interval in Step 2.
+ The second is that the length of each 
+\begin_inset Formula $A_{i,j,k}$
+\end_inset
+
+ is less than 
+\begin_inset Formula ${\displaystyle \frac{1}{2^{2}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+对于区间 
+\begin_inset Formula $A_{i,j}=[L_{i,j},R_{i,j}]$
+\end_inset
+
+, 在区间 
+\begin_inset Formula $A_{i,j}$
+\end_inset
+
+ 中取收敛于 
+\begin_inset Formula $L_{i,j}$
+\end_inset
+
+ 的有理数序列 
+\begin_inset Formula $x_{i,j,0},x_{i,j,1},x_{i,j,2},\cdots$
+\end_inset
+
+, 并记 
+\begin_inset Formula $A_{i,j,0}=[x_{i,j,0},R_{i,j}]$
+\end_inset
+
+, 
+\begin_inset Formula $A_{i,j,1}=[x_{i,j,1},x_{i,j,0}]$
+\end_inset
+
+, 
+\begin_inset Formula $A_{i,j,2}=[x_{i,j,2},x_{i,j,1}]$
+\end_inset
+
+, ....
+ 在选择有理数序列的过程中, 有理数 
+\begin_inset Formula $r_{2}$
+\end_inset
+
+ 必须在其所在的区间 
+\begin_inset Formula $A_{i,j}$
+\end_inset
+
+ 中被选中, 且所选的有理数序列使划分的子区间 
+\begin_inset Formula $A_{i,j,k}$
+\end_inset
+
+ 长度都小于 
+\begin_inset Formula $\frac{1}{2^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Remark
+\end_layout
+
+\begin_layout Standard
+In the process described above, the endpoints of the intervals 
+\begin_inset Formula $A_{f(0),\cdots,f(n)}$
+\end_inset
+
+ are rational numbers and we make sure that all the rational numbers are
+ used as endpoints.
+ We also make sure that the intervals from the successive steps are nested
+ closed intervals with lengths 
+\begin_inset Formula $\rightarrow0$
+\end_inset
+
+.
+ The consequence of this point is that the nested decreasing closed intervals
+ will collapse to one single point (since the real line is a complete metric
+ space) and this single point must be an irrational number (since all the
+ rational numbers are used up as endpoints of the nested closed intervals).
+\end_layout
+
+\begin_layout Standard
+如此继续划分下去, 将得到以有理数为端点的区间 
+\begin_inset Formula $A_{f(0),\cdots,f(n)}$
+\end_inset
+
+, 并且在构造过程中, 所有的有理数都被用于某个区间的端点.
+ 随着序列 
+\begin_inset Formula $f(0),\cdots,f(n),\cdots$
+\end_inset
+
+ 的延伸, 区间 
+\begin_inset Formula $A_{f(0),\cdots,f(n)}$
+\end_inset
+
+ 形成一个闭区间套, 这个闭区间套收敛于一点, 这个点是一个无理数.
+ (证明如下)
+\end_layout
+
+\begin_layout Standard
+In Step 
+\begin_inset Formula $i$
+\end_inset
+
+ where 
+\begin_inset Formula $i$
+\end_inset
+
+ is an odd integer, we make the endpoints of the new intervals converge
+ to the right.
+ In Step 
+\begin_inset Formula $i$
+\end_inset
+
+ where 
+\begin_inset Formula $i>1$
+\end_inset
+
+ is an even integer, we make the endpoints of the new intervals converge
+ to the left.
+ This manipulation is to ensure that the nested closed intervals will never
+ share the same endpoint from one step all the way to the end of the process.
+\end_layout
+
+\begin_layout Standard
+实际上, 在第 
+\begin_inset Formula $i$
+\end_inset
+
+ 步, 当 
+\begin_inset Formula $i$
+\end_inset
+
+ 是奇数时, 所构造的区间端点都收敛于右端点; 当 
+\begin_inset Formula $i$
+\end_inset
+
+ 是偶数时, 区间端点都收敛于左端点.
+ 由于区间端点在收敛过程中的极限总是不可达的, 所以任何区间套不可能收敛到某个子区间的端点.
+\end_layout
+
+\begin_layout Standard
+Thus if we have 
+\begin_inset Formula $f\in\omega^{\omega}$
+\end_inset
+
+, then 
+\begin_inset Formula $\bigcap\limits _{n=0}^{\infty}A_{f(0),\cdots,f(n)}\ne\varnothing$
+\end_inset
+
+ and in fact has only one point that is an irrational number.
+\end_layout
+
+\begin_layout Standard
+因此, 如果 
+\begin_inset Formula $f\in\omega^{\omega}$
+\end_inset
+
+, 则 
+\begin_inset Formula $\bigcap\limits _{n=0}^{\infty}A_{f(0),\cdots,f(n)}\ne\varnothing$
+\end_inset
+
+ 且恰好包含一个无理数作为元素.
+\end_layout
+
+\begin_layout Standard
+On the other hand, for each point 
+\begin_inset Formula $x\in\mathbb{P}$
+\end_inset
+
+, we can locate inductively a sequence of intervals, 
+\begin_inset Formula $A_{f(0)}$
+\end_inset
+
+, 
+\begin_inset Formula $A_{f(0),f(1)}$
+\end_inset
+
+, 
+\begin_inset Formula $A_{f(0),f(1),f(2)}$
+\end_inset
+
+, 
+\begin_inset Formula $\cdots$
+\end_inset
+
+, containing the point 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ This sequence of nested closed intervals must collapse to a single point
+ and the single point must be the irrational number 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+另一方面, 对于任意的点 
+\begin_inset Formula $x\in\mathbb{P}$
+\end_inset
+
+, 可以递归的定位出一个区间序列 
+\begin_inset Formula $A_{f(0)}$
+\end_inset
+
+, 
+\begin_inset Formula $A_{f(0),f(1)}$
+\end_inset
+
+, 
+\begin_inset Formula $A_{f(0),f(1),f(2)}$
+\end_inset
+
+, 
+\begin_inset Formula $\cdots$
+\end_inset
+
+ 包含点 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 这个区间列恰是收敛于 
+\begin_inset Formula $x$
+\end_inset
+
+ 的区间套.
+\end_layout
+
+\begin_layout Standard
+The process described above gives us a one-to-one mapping from 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ onto the product space 
+\begin_inset Formula $\omega^{\omega}$
+\end_inset
+
+.
+ This mapping is also continuous in both directions, making it a homeomorphism.
+ the nested intervals defined above form a base for the Euclidean topology
+ on 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+.
+ These basic open sets have a natural correspondance with basic open sets
+ in the product space 
+\begin_inset Formula $\omega^{\omega}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+以上构造过程给出了从 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ 到乘积空间 
+\begin_inset Formula $\omega^{\omega}$
+\end_inset
+
+ 的一个双射.
+ 这个映射是连续的, 且是一个同胚映射.
+ 上面构造的闭区间全体组成的集合给出了 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ 上的一个拓扑基.
+ 这些开集对应于乘积拓扑 
+\begin_inset Formula $\omega^{\omega}$
+\end_inset
+
+ 上的开集.
+\end_layout
+
+\begin_layout Standard
+For example, for 
+\begin_inset Formula $f\in\omega^{\omega}$
+\end_inset
+
+, 
+\begin_inset Formula $\left\{ A_{f(0),\cdots,f(n)}\cap\mathbb{P}:n\in\omega\right\} $
+\end_inset
+
+ is a local base at the point 
+\begin_inset Formula $x\in\bigcap\limits _{n=0}^{\infty}A_{f(0),\cdots,f(n)}$
+\end_inset
+
+.
+ On the other hand, each 
+\begin_inset Formula $A_{f(0),\cdots,f(n)}\cap\mathbb{P}$
+\end_inset
+
+ has a natural counterpart in a basic open set in the product space, namely
+ the following set:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left\{ g\in\omega^{\omega}:g\restriction n=f\restriction n\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The above process establishes that the countable product of the integers,
+ 
+\begin_inset Formula $\omega^{\omega}$
+\end_inset
+
+, is equivalent topologically to the Euclidean space 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+例如, 对于 
+\begin_inset Formula $f\in\omega^{\omega}$
+\end_inset
+
+, 
+\begin_inset Formula $\left\{ A_{f(0),\cdots,f(n)}\cap\mathbb{P}:n\in\omega\right\} $
+\end_inset
+
+ 是点 
+\begin_inset Formula $x\in\bigcap\limits _{n=0}^{\infty}A_{f(0),\cdots,f(n)}$
+\end_inset
+
+ 处的一个局部基.
+ 另一方面, 每个点集 
+\begin_inset Formula $A_{f(0),\cdots,f(n)}\cap\mathbb{P}$
+\end_inset
+
+ 与乘积空间 
+\begin_inset Formula $\omega^{\omega}$
+\end_inset
+
+ 中的基本开集对应, 也就是 
+\begin_inset Formula $\omega^{\omega}$
+\end_inset
+
+ 中的如下开集:
+\begin_inset Formula 
+\[
+\left\{ g\in\omega^{\omega}:g\restriction n=f\restriction n\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+即得 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ 与 
+\begin_inset Formula $\omega^{\omega}$
+\end_inset
+
+ 之间的拓扑等价关系.
+\end_layout
+
+\begin_layout Theorem
+设 
+\begin_inset Formula $\mathbb{P}=\RR\setminus\QQ$
+\end_inset
+
+ 是继承了 
+\begin_inset Formula $\RR$
+\end_inset
+
+ 的通常拓扑的子拓扑空间, 
+\begin_inset Formula $\NN$
+\end_inset
+
+ 是配有离散拓扑的空间, 则 
+\begin_inset Formula $\mathbb{P}$
+\end_inset
+
+ 与乘积拓扑 
+\begin_inset Formula $\NN^{\NN}\coloneqq\prod_{i\in\NN}\NN$
+\end_inset
+
+ 同胚.
+\end_layout
+
+\end_body
+\end_document
