@@ -1,0 +1,494 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+\usepackage{multicol}
+
+\usepackage{amsmath, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\curl}{curl}
+
+%\everymath{\color{blue}\everymath{}}
+%\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+\def\kong{\underline{\phantom{asdfasdf}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options 12pt, UTF8
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Format 66
+Style Problem
+	Category              QAs
+	LatexType             Environment
+	LatexName             problem
+	LabelString           "Problem \thetheorem."
+	Preamble
+		\let\problem\relax
+	  	\theoremstyle{definition}
+	  	\newtheorem{problem}[thm]{\protect\problemname}
+	EndPreamble
+	LangPreamble
+	  \providecommand{\problemname}{}
+	EndLangPreamble
+	BabelPreamble
+	  \addto\captions$$lang{\renewcommand{\problemname}{_(Problem)}}
+	EndBabelPreamble
+End
+Style Solution
+	CopyStyle             Problem
+	LatexName             solution
+	LabelString           "Solution \thetheorem."
+	LangPreamble
+		\providecommand{\solutionname}{_(Solution)}
+	EndLangPreamble
+	BabelPreamble
+		\addto\captions$$lang{\renewcommand{\solutionname}{_(Solution)}}
+	EndBabelPreamble
+End
+Style MakePart
+	Category              Sectioning
+	Margin                Dynamic
+	LabelString           "Part \thepart"
+	LabelType             Static
+	TocLevel              -1
+	LabelCounter          part
+	LatexType             Command
+	LatexName             makepart
+	NeedProtect           1
+	NextNoIndent          1
+	ToggleIndent          Never
+	Labelsep              xxx
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             4
+	ParSep                0.8
+	Align                 Left
+	Alignpossible         Left
+	Argument 1
+		LabelString	"题目名称|S"
+		Tooltip		"The part as it appears in the table of contents/running headers"
+		InsertCotext	0
+		IsTocCaption	1
+		MenuString	"test|S"
+		Mandatory	1
+	EndArgument
+	Font
+	  Series              Bold
+	  Size                Huge
+	EndFont
+	HTMLTag               h1
+End
+Style ABCD
+	Category              List
+	Margin                Static
+	LatexType             Item_Environment
+	LatexName             abcd
+	NextNoIndent          1
+	ToggleIndent          Never
+	LeftMargin            MMN
+	LabelSep              xx
+	ParSkip               0.0
+	ItemSep               0.2
+	TopSep                0.7
+	BottomSep             0.7
+	ParSep                0.3
+	Align                 Block
+	AlignPossible         Block, Left
+	LabelType             Enumerate
+	LabelCounter          "enum"
+	HTMLTag               ol
+	HTMLItem              li
+	HTMLLabel             NONE
+	RefPrefix             enu
+	Argument item:1
+		LabelString   "Custom Item|s"
+		Tooltip       "A customized item string"
+	EndArgument
+End
+\end_local_layout
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+一个因为算错导致的不必要麻烦
+\end_layout
+
+\begin_layout Abstract
+本来以为有什么计算问题,
+ 但仔细 check 了一下后发现,
+ 是第一种方法某处算错了个符号,
+ 实际上并没有两种解法的不一致性问题.
+ 如果我将来翻到这个文档,
+ 就不用继续看下去了,
+ 特此在摘要出提醒自己.
+\end_layout
+
+\begin_layout Standard
+已知 
+\begin_inset Formula $y''+(x+\ue^{2y})\left(y'\right)^{3}=0$
+\end_inset
+
+,
+ 则方程的通解为
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+kong.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+解.
+ 解出 
+\begin_inset Formula $x$
+\end_inset
+
+ 为
+\begin_inset Formula 
+\[
+x=-\ue^{2y}-\frac{y''}{\left(y'\right)^{3}}.
+\]
+
+\end_inset
+
+将 
+\begin_inset Formula $x$
+\end_inset
+
+ 看成 
+\begin_inset Formula $y$
+\end_inset
+
+ 的函数,
+ 对上式两边同时取 
+\begin_inset Formula $y$
+\end_inset
+
+ 的导数,
+ 有
+\begin_inset Formula 
+\begin{align*}
+\frac{\ud x}{\ud y} & =-2\ue^{2y}-\frac{\ud}{\ud y}\left(\frac{y''}{\left(y'\right)^{3}}\right)\\
+ & =-2\ue^{2y}-\frac{\ud x}{\ud y}\cdot\frac{\ud}{\ud x}\left(\frac{y''}{\left(y'\right)^{3}}\right)\\
+ & =-2\ue^{2y}-\frac{\ud x}{\ud y}\cdot\frac{y'''\cancelto{\left(y'\right)}{\left(y'\right)^{3}}-y''\cdot3\cancelto{1}{\left(y'\right)^{2}}\cdot y''}{\cancelto{\left(y'\right)^{4}}{\left(y'\right)^{6}}}\\
+ & =-2\ue^{2y}-\frac{\ud x}{\ud y}\cdot\frac{y'\cdot y'''-3\left(y''\right)^{2}}{\left(y'\right)^{4}}
+\end{align*}
+
+\end_inset
+
+回到方程,
+ 对 
+\begin_inset Formula $x$
+\end_inset
+
+ 求导可得
+\begin_inset Formula 
+\begin{align*}
+y''' & =-\frac{\ud}{\ud x}\left[(x+\ue^{2y})\left(y'\right)^{3}\right]\\
+ & =-(1+2y'\cdot\ue^{2y})\left(y'\right)^{3}-3(x+\ue^{2y})\left(y'\right)^{2}y''\\
+ & =-(1+2y'\cdot\ue^{2y})\left(y'\right)^{3}+3(x+\ue^{2y})^{2}\left(y'\right)^{5},
+\end{align*}
+
+\end_inset
+
+代入上式,
+ 化简得
+\begin_inset Formula 
+\begin{align*}
+\frac{\ud x}{\ud y} & =-2\ue^{2y}-\frac{\ud x}{\ud y}\cdot\frac{y'\cdot\left(-(1+2y'\cdot\ue^{2y})\left(y'\right)^{3}+3(x+\ue^{2y})^{2}\left(y'\right)^{5}\right)+3\left({\color{red}(x+\ue^{2y})\left(y'\right)^{3}}\right)^{2}}{\left(y'\right)^{4}}\\
+ & =-2\ue^{2y}-\frac{\ud x}{\ud y}\cdot\frac{\left(-(1+2y'\cdot\ue^{2y})\left(y'\right)^{4}+3(x+\ue^{2y})^{2}\left(y'\right)^{6}\right)+3(x+\ue^{2y})^{2}\left(y'\right)^{6}}{\left(y'\right)^{4}}\\
+ & =-2\ue^{2y}-\frac{\ud x}{\ud y}\cdot\left(-(1+2y'\cdot\ue^{2y})+3(x+\ue^{2y})^{2}\left(y'\right)^{2}+3(x+\ue^{2y})^{2}\left(y'\right)^{2}\right)\\
+ & =\cancel{-2\ue^{2y}}+\frac{\ud x}{\ud y}\cdot(1\cancel{+2y'\cdot\ue^{2y}})-6\frac{\ud x}{\ud y}\cdot(x+\ue^{2y})^{2}\left(y'\right)^{2},
+\end{align*}
+
+\end_inset
+
+注意到,
+ 
+\begin_inset Formula $\frac{\ud x}{\ud y}\cdot y'=1$
+\end_inset
+
+,
+ 所以上式左右两边可以化简为
+\begin_inset Formula 
+\[
+(x+\ue^{2y})^{2}y'=0.
+\]
+
+\end_inset
+
+最后这个方程已经非常好解了,
+ 可以预见到方程的解有一个任意常数,
+ 当然也可以考虑上分母为零(
+\begin_inset Formula $y'=0$
+\end_inset
+
+)的特殊情况.
+ 
+\end_layout
+
+\begin_layout Standard
+现在略去进一步的求解转向另一种解法:
+\end_layout
+
+\begin_layout Standard
+仍然将 
+\begin_inset Formula $x$
+\end_inset
+
+ 看成 
+\begin_inset Formula $y$
+\end_inset
+
+ 的函数,
+ 则有 
+\begin_inset Formula 
+\[
+y'=\frac{1}{\ud x/\ud y},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+y''=\frac{\ud}{\ud x}\left(\frac{1}{x_{y}'}\right)=y'\cdot\frac{\ud}{\ud y}\left(\frac{1}{x_{y}'}\right)=\frac{1}{x_{y}'}\cdot\left(\frac{-x_{y}''}{\left(x_{y}'\right)^{2}}\right)=-\frac{x_{y}''}{\left(x_{y}'\right)^{3}},
+\]
+
+\end_inset
+
+代入原微分方程有
+\begin_inset Formula 
+\[
+-\frac{x_{y}''}{\left(x_{y}'\right)^{3}}+(x+\ue^{2y})\left(\frac{1}{x_{y}'}\right)^{3}=0.
+\]
+
+\end_inset
+
+化简为 
+\begin_inset Formula 
+\[
+x_{y}''=x+\ue^{2y},
+\]
+
+\end_inset
+
+其对应的齐次方程通解为 
+\begin_inset Formula $\widetilde{x}=\widetilde{x}(y)=C_{1}\ue^{y}+C_{2}\ue^{-y}$
+\end_inset
+
+,
+ 其特解为 
+\begin_inset Formula $x_{0}=x_{0}(y)=\frac{1}{3}\ue^{2y}$
+\end_inset
+
+,
+ 因此上面微分方程的所有解为
+\begin_inset Formula 
+\[
+x=\widetilde{x}+x_{0}=C_{1}\ue^{y}+C_{2}\ue^{-y}+\frac{1}{3}\ue^{2y}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+可以看到这后一种解才是正确的,
+ 但为什么前面的解法会出现漏解现象?
+\end_layout
+
+\end_body
+\end_document

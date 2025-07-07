@@ -1,0 +1,1128 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
+\usepackage{multicol}
+
+\usepackage{amsmath, amsfonts, amssymb, mathtools, yhmath, mathrsfs}
+% http://ctan.org/pkg/extarrows
+% long equal sign
+\usepackage{extarrows}
+
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\curl}{curl}
+
+%\everymath{\color{blue}\everymath{}}
+%\everymath\expandafter{\color{blue}\displaystyle}
+%\everydisplay\expandafter{\the\everydisplay \color{red}}
+
+\def\degree{^\circ}
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+\def\bc{\begin{corrolary}}
+\def\ec{\end{corrolary}}
+\def\ba{\begin{proof}[解]}
+\def\ea{\end{proof}}
+\def\ue{\mathrm{e}}
+\def\ud{\,\mathrm{d}}
+\def\GF{\mathrm{GF}}
+\def\ui{\mathrm{i}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\uRes{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\i{\infty}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\l{\lambda}
+\def\m{\mu}
+\def\t{\theta}
+\def\p{\partial}
+\def\wc{\rightharpoonup}
+\def\udiv{\mathrm{div}}
+\def\diam{\mathrm{diam}}
+\def\dist{\mathrm{dist}}
+\def\uloc{\mathrm{loc}}
+\def\uLip{\mathrm{Lip}}
+\def\ucurl{\mathrm{curl}}
+\def\usupp{\mathrm{supp}}
+\def\uspt{\mathrm{spt}}
+\def\kong{\underline{\phantom{asdfasdf}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\paren}[1]{\left(#1\right)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\pNN}{\mathbb{N}_{+}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\eqdef}{\xlongequal{\text{def}}}%
+\newcommand{\eqexdef}{\xlongequal[\text{存在}]{\text{记为}}}%
+\end_preamble
+\options 12pt, UTF8
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Format 66
+Style Problem
+	Category              QAs
+	LatexType             Environment
+	LatexName             problem
+	LabelString           "Problem \thetheorem."
+	Preamble
+		\let\problem\relax
+	  	\theoremstyle{definition}
+	  	\newtheorem{problem}[thm]{\protect\problemname}
+	EndPreamble
+	LangPreamble
+	  \providecommand{\problemname}{}
+	EndLangPreamble
+	BabelPreamble
+	  \addto\captions$$lang{\renewcommand{\problemname}{_(Problem)}}
+	EndBabelPreamble
+End
+Style Solution
+	CopyStyle             Problem
+	LatexName             solution
+	LabelString           "Solution \thetheorem."
+	LangPreamble
+		\providecommand{\solutionname}{_(Solution)}
+	EndLangPreamble
+	BabelPreamble
+		\addto\captions$$lang{\renewcommand{\solutionname}{_(Solution)}}
+	EndBabelPreamble
+End
+Style MakePart
+	Category              Sectioning
+	Margin                Dynamic
+	LabelString           "Part \thepart"
+	LabelType             Static
+	TocLevel              -1
+	LabelCounter          part
+	LatexType             Command
+	LatexName             makepart
+	NeedProtect           1
+	NextNoIndent          1
+	ToggleIndent          Never
+	Labelsep              xxx
+	ParSkip               0.4
+	TopSep                4
+	BottomSep             4
+	ParSep                0.8
+	Align                 Left
+	Alignpossible         Left
+	Argument 1
+		LabelString	"题目名称|S"
+		Tooltip		"The part as it appears in the table of contents/running headers"
+		InsertCotext	0
+		IsTocCaption	1
+		MenuString	"test|S"
+		Mandatory	1
+	EndArgument
+	Font
+	  Series              Bold
+	  Size                Huge
+	EndFont
+	HTMLTag               h1
+End
+Style ABCD
+	Category              List
+	Margin                Static
+	LatexType             Item_Environment
+	LatexName             abcd
+	NextNoIndent          1
+	ToggleIndent          Never
+	LeftMargin            MMN
+	LabelSep              xx
+	ParSkip               0.0
+	ItemSep               0.2
+	TopSep                0.7
+	BottomSep             0.7
+	ParSep                0.3
+	Align                 Block
+	AlignPossible         Block, Left
+	LabelType             Enumerate
+	LabelCounter          "enum"
+	HTMLTag               ol
+	HTMLItem              li
+	HTMLLabel             NONE
+	RefPrefix             enu
+	Argument item:1
+		LabelString   "Custom Item|s"
+		Tooltip       "A customized item string"
+	EndArgument
+End
+\end_local_layout
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk gbsn
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+2002 年哈尔滨理工大学高等数学竞赛试题
+\end_layout
+
+\begin_layout Standard
+一.
+ 填空 (每小题 4 分,
+ 共计 32 分)
+\end_layout
+
+\begin_layout Standard
+1.
+ 已知 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ 在 
+\begin_inset Formula $\left(-\infty,+\infty\right)$
+\end_inset
+
+ 内可导,
+ 且 
+\begin_inset Formula $\lim\limits_{x\to\infty}f'(x)=\ue^{2}$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\lim_{x\to\infty}\left(\frac{x+a}{x-a}\right)^{x}=\lim_{x\to\infty}\left(f(x)-f(x-1)\right),
+\]
+
+\end_inset
+
+则 
+\begin_inset Formula $a=\kong$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ans.
+ 
+\begin_inset Formula $1$
+\end_inset
+
+,
+ 用中值定理.
+\end_layout
+
+\begin_layout Standard
+2.
+ 设函数 
+\begin_inset Formula $y=y(x)$
+\end_inset
+
+ 是由 
+\begin_inset Formula $x^{3}+y^{3}-3axy=0$
+\end_inset
+
+,
+ (
+\begin_inset Formula $a>0$
+\end_inset
+
+),
+ 确定,
+ 则
+\begin_inset Formula 
+\[
+\lim_{x\to+\infty}\frac{y}{x}=\kong.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ans.
+ 
+\begin_inset Formula $-1$
+\end_inset
+
+,
+ 当 
+\begin_inset Formula $x$
+\end_inset
+
+ 充分大时,
+ 验证 
+\begin_inset Formula $-x^{1+\epsilon}<y<-x$
+\end_inset
+
+,
+ 对于任意的 
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+ 成立.
+\end_layout
+
+\begin_layout Standard
+3.
+ 设圆锥面的顶点在原点,
+ 且三个坐标轴的正半轴都在其上,
+ 则圆锥面的方程为
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+kong.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ans.
+ 
+\begin_inset Formula $xy+yz+zx=0$
+\end_inset
+
+,
+ 如何推广本题的结论?
+ 如何求出``过一点的三条直线所确定的圆锥方程'',
+ 以方程的形式或者参数方程的形式给出结果?
+\end_layout
+
+\begin_layout Standard
+4.
+ 已知 
+\begin_inset Formula $y''+(x+\ue^{2y})\left(y'\right)^{3}=0$
+\end_inset
+
+,
+ 则方程的通解为
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+kong.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ans.
+ 
+\begin_inset Formula $x=C_{1}\ue^{y}+C_{2}\ue^{-y}+\frac{1}{3}\ue^{2y}$
+\end_inset
+
+ 或 
+\begin_inset Formula $y=C$
+\end_inset
+
+.
+ 将方程化成 
+\begin_inset Formula $x$
+\end_inset
+
+ 关于 
+\begin_inset Formula $y$
+\end_inset
+
+ 的微分方程.
+\end_layout
+
+\begin_layout Standard
+5.
+ 已知级数 
+\begin_inset Formula $\sum\limits_{n=1}^{\infty}u_{n}$
+\end_inset
+
+ 的一般项 
+\begin_inset Formula $u_{n}$
+\end_inset
+
+ 与前 
+\begin_inset Formula $n$
+\end_inset
+
+ 项的和 
+\begin_inset Formula $s_{n}$
+\end_inset
+
+ 有如下关系:
+\begin_inset Formula 
+\[
+2s_{n}^{2}=2u_{n}s_{n}-u_{n},\quad(n\ge2),\ u_{1}=2,
+\]
+
+\end_inset
+
+则级数 
+\begin_inset Formula $\sum\limits_{n=1}^{\infty}u_{n}=\kong$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ans.
+ 
+\begin_inset Formula $0$
+\end_inset
+
+,
+ 验证 
+\begin_inset Formula $\frac{1}{s_{n}}$
+\end_inset
+
+ 是等差数列.
+\end_layout
+
+\begin_layout Standard
+6.
+ 设 
+\begin_inset Formula $f(x)=\sum\limits_{n=1}^{\infty}\frac{x^{n}}{n^{2}}$
+\end_inset
+
+,
+ (
+\begin_inset Formula $0\le x\le1$
+\end_inset
+
+),
+ 则 
+\begin_inset Formula $f(x)+f(1-x)+\ln x\cdot\ln(1-x)=\kong$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ans.
+ 
+\begin_inset Formula $\frac{\pi^{2}}{6}$
+\end_inset
+
+,
+ 需要用到 
+\begin_inset Formula $\zeta(2)=\frac{\pi^{2}}{6}$
+\end_inset
+
+ 的结论,
+ 如何避开?
+\end_layout
+
+\begin_layout Standard
+7.
+ 
+\begin_inset Formula 
+\[
+z=\sqrt{x^{2}+y^{2}-2x-4y+9}+\sqrt{x^{2}+y^{2}-6x+2y+11}
+\]
+
+\end_inset
+
+的最小值为
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+kong.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ans.
+ 
+\begin_inset Formula $\sqrt{22}$
+\end_inset
+
+,
+ 三维距离公式.
+\end_layout
+
+\begin_layout Standard
+8.
+ 设 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ 是由 
+\begin_inset Formula $z=xy$
+\end_inset
+
+,
+ 
+\begin_inset Formula $x+y+z=1$
+\end_inset
+
+ 与 
+\begin_inset Formula $z=0$
+\end_inset
+
+ 围成的区域,
+ 则
+\begin_inset Formula 
+\[
+\iiint_{\Omega}x\ud V=\kong.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ans.
+ 
+\begin_inset Formula $2\ln2-\frac{11}{8}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+二.
+ (7')设函数 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ 满足 
+\begin_inset Formula $f(1)=1$
+\end_inset
+
+,
+ 且对 
+\begin_inset Formula $x\ge1$
+\end_inset
+
+ 时,
+ 有 
+\begin_inset Formula $f'(x)=\frac{1}{x^{2}+f^{2}(x)}$
+\end_inset
+
+,
+ 证明:
+ 
+\end_layout
+
+\begin_layout Standard
+(1).
+ 
+\begin_inset Formula $\lim\limits_{x\to\infty}f(x)$
+\end_inset
+
+ 存在;
+\end_layout
+
+\begin_layout Standard
+(2).
+ 
+\begin_inset Formula $\lim\limits_{x\to\infty}f(x)\le1+\frac{\pi}{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+三.
+ (8')设 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ 在 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ 上连续,
+ 且
+\begin_inset Formula 
+\[
+\int_{0}^{1}f(x)\ud x=0,\ \int_{0}^{1}xf(x)\ud x=0,\cdots,\int_{0}^{1}x^{n-1}f(x)\ud x=0,\ \int_{0}^{1}x^{n}f(x)\ud x=1,
+\]
+
+\end_inset
+
+证明:
+ 存在 
+\begin_inset Formula $\xi\in[0,1]$
+\end_inset
+
+,
+ 使
+\begin_inset Formula 
+\[
+\left|f(\xi)\right|\ge2^{n}(n+1).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hint:
+ 考虑积分
+\begin_inset Formula 
+\[
+\int_{0}^{1}\left(x-\frac{1}{2}\right)^{n}f(x)\ud x=1,
+\]
+
+\end_inset
+
+用积分中值定理.
+\end_layout
+
+\begin_layout Standard
+四.
+ (8')证明:
+ 内切于一给定正方形的所有椭圆中,
+ 以圆的周长为最大.
+\end_layout
+
+\begin_layout Standard
+Hint:
+ 考虑椭圆切点处的切线方程为
+\begin_inset Formula 
+\[
+\frac{x_{0}x}{a^{2}}+\frac{y_{0}y}{b^{2}}=\pm1,\quad\frac{x_{1}x}{a^{2}}+\frac{y_{1}y}{b^{2}}=\pm1,
+\]
+
+\end_inset
+
+四条切线构成正方形,
+ 根据平行线间距公式推出 
+\begin_inset Formula $x_{0}^{2}=x_{1}^{2}$
+\end_inset
+
+ 较为容易.
+ 所以内切于正方形的椭圆长短轴在其对角线内,
+ 转换坐标系,
+ 考虑椭圆的四组切线方程
+\begin_inset Formula 
+\[
+\frac{x_{0}x}{a^{2}}+\frac{y_{0}y}{b^{2}}=\pm1,\quad\frac{x_{0}x}{a^{2}}-\frac{y_{0}y}{b^{2}}=\pm1,
+\]
+
+\end_inset
+
+两切线垂直得到 
+\begin_inset Formula $b^{4}x_{0}^{2}=a^{4}y_{0}^{2}$
+\end_inset
+
+,
+ 从而切线间距
+\begin_inset Formula 
+\[
+d=\sqrt{2\left(a^{2}+b^{2}\right)}
+\]
+
+\end_inset
+
+应为正方形固定边长.
+ 椭圆周长
+\begin_inset Formula 
+\begin{align*}
+l=4\int_{0}^{\pi/2}\sqrt{a^{2}\sin^{2}t+b^{2}\cos^{2}t}\ud t & \xlongequal{t\to\pi/2-t}4\int_{0}^{\pi/2}\sqrt{a^{2}\cos^{2}t+b^{2}\sin^{2}t}\ud t\\
+ & \xlongequal{\text{合并两个积分}}4\int_{0}^{\pi/2}\frac{\sqrt{a^{2}\sin^{2}t+b^{2}\cos^{2}t}+\sqrt{a^{2}\cos^{2}t+b^{2}\sin^{2}t}}{2}\ud t\\
+ & \le4\int_{0}^{\pi/2}\sqrt{\frac{\left(a^{2}\sin^{2}t+b^{2}\cos^{2}t\right)+\left(a^{2}\cos^{2}t+b^{2}\sin^{2}t\right)}{2}}\ud t=\pi,
+\end{align*}
+
+\end_inset
+
+其中不等式为幂平均不等式,
+ 等号当且仅当 
+\begin_inset Formula $a=b$
+\end_inset
+
+ 时,
+ 即为圆时周长达到最大.
+\end_layout
+
+\begin_layout Standard
+五.
+ (7')设 
+\begin_inset Formula $f(x,y)$
+\end_inset
+
+ 有二阶连续偏导数,
+ 
+\begin_inset Formula 
+\[
+u=\int_{0}^{2\pi}f(r\cos\theta,r\sin\theta)\ud\theta,
+\]
+
+\end_inset
+
+且
+\begin_inset Formula 
+\begin{align*}
+\frac{\ud u}{\ud r} & =\int_{0}^{2\pi}\frac{\partial}{\partial r}f(r\cos\theta,r\sin\theta)\ud\theta,\\
+\frac{\ud^{2}u}{\ud r^{2}} & =\int_{0}^{2\pi}\frac{\partial^{2}}{\partial r^{2}}f(r\cos\theta,r\sin\theta)\ud\theta,\\
+f_{11}''+f_{12}'' & =\frac{1}{r},
+\end{align*}
+
+\end_inset
+
+求 
+\begin_inset Formula $r\frac{\ud^{2}u}{\ud r^{2}}+\frac{\ud u}{\ud r}$
+\end_inset
+
+ 的值.
+\end_layout
+
+\begin_layout Standard
+ans.
+ 
+\begin_inset Formula $2\pi$
+\end_inset
+
+,
+ 简单的分部积分.
+\end_layout
+
+\begin_layout Standard
+六.
+ (8')设 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ 在 
+\begin_inset Formula $[1,+\infty)$
+\end_inset
+
+ 上有连续的二阶导数,
+ 
+\begin_inset Formula $f(1)=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $f'(1)=1$
+\end_inset
+
+,
+ 且二元函数 
+\begin_inset Formula $z=(x^{2}+y^{2})f(x^{2}+y^{2})$
+\end_inset
+
+ 满足 
+\begin_inset Formula $\frac{\partial^{2}z}{\partial x^{2}}+\frac{\partial^{2}z}{\partial y^{2}}=0$
+\end_inset
+
+,
+ 求 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ 在 
+\begin_inset Formula $[1,+\infty)$
+\end_inset
+
+ 的最大值.
+\end_layout
+
+\begin_layout Standard
+ans.
+ 
+\begin_inset Formula $\frac{1}{\ue}$
+\end_inset
+
+,
+ 直接代入 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ 满足 Euler 方程
+\begin_inset Formula 
+\[
+f(r^{2})+3r^{2}f'(r^{2})+r^{4}f''(r^{2})=0,
+\]
+
+\end_inset
+
+解出 
+\begin_inset Formula $f(x)=\frac{\ln x}{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+七.
+ (7')计算曲面积分
+\begin_inset Formula 
+\[
+\iint_{\sum}yz(y-z)\ud y\ud z+xz(z-x)\ud z\ud x+xy(x-y)\ud x\ud y,
+\]
+
+\end_inset
+
+其中 
+\begin_inset Formula $\sum$
+\end_inset
+
+ 是曲面 
+\begin_inset Formula $z=\sqrt{4Rx-x^{2}-y^{2}}$
+\end_inset
+
+,
+ (
+\begin_inset Formula $R\ge1$
+\end_inset
+
+),
+ 在柱面 
+\begin_inset Formula $\left(x-\frac{3}{2}\right)^{2}+y^{2}=1$
+\end_inset
+
+ 之内部分的上侧.
+\end_layout
+
+\begin_layout Standard
+ans.
+ 
+\begin_inset Formula $-\frac{\pi}{4}$
+\end_inset
+
+,
+ 根据第二型曲面积分化为第一型曲面积分的公式
+\begin_inset Formula 
+\[
+\iint_{\Sigma}P\ud y\ud z+Q\ud z\ud x+R\ud x\ud y=\iint_{\Sigma}\left(P,Q,R\right)\cdot\vec{n}\ud S,
+\]
+
+\end_inset
+
+其中 
+\begin_inset Formula $\vec{n}=\left(n_{x},n_{y},n_{z}\right)$
+\end_inset
+
+ 为曲面微元 
+\begin_inset Formula $\ud S$
+\end_inset
+
+ 的单位法向量,
+ 这里即是使 
+\begin_inset Formula $n_{z}>0$
+\end_inset
+
+ 的那个单位外法向量.
+ 曲面方程为 
+\begin_inset Formula $\left(x-2R\right)^{2}+y^{2}+z^{2}-\left(2R\right)^{2}=0$
+\end_inset
+
+,
+ 所以
+\begin_inset Formula 
+\[
+\vec{n}=\frac{1}{2R}\left(x-2R,y,z\right).
+\]
+
+\end_inset
+
+原曲面积分化为
+\begin_inset Formula 
+\begin{align*}
+\iint_{\sum} & yz(y-z)\ud y\ud z+xz(z-x)\ud z\ud x+xy(x-y)\ud x\ud y\\
+ & \qquad=\frac{1}{2R}\iint_{\Sigma}yz(y-z)(x-2R)+xz(z-x)y+xy(x-y)z\ud S\\
+ & \qquad=-\iint_{\Sigma}yz(y-z)\ud S=-\iint_{\Sigma}y^{2}z\ud S-\iint_{\Sigma}yz^{2}\ud S.
+\end{align*}
+
+\end_inset
+
+上面两个积分中后者的曲面 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ 关于变量 
+\begin_inset Formula $y$
+\end_inset
+
+ 对称,
+ 所以积分值为零.
+ 对于前者
+\begin_inset Formula 
+\[
+-\iint_{\Sigma}y^{2}z\ud S=-\iint_{\Sigma}y^{2}\ud x\ud y=-\int_{0}^{1}\rho\ud\rho\int_{0}^{2\pi}\rho^{2}\sin^{2}t\ud t=-\frac{\pi}{4}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+八.
+ (7')设区域 
+\begin_inset Formula $D$
+\end_inset
+
+ 为 
+\begin_inset Formula $x^{2}+y^{2}\le1$
+\end_inset
+
+,
+ 证明:
+\begin_inset Formula 
+\[
+\frac{61}{165}\pi\le\iint_{D}\sin\sqrt{\left(x^{2}+y^{2}\right)^{3}}\ud x\ud y\le\frac{2}{5}\pi.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+hint.
+ 用极坐标及不等式
+\begin_inset Formula 
+\[
+x-\frac{x^{3}}{6}\le\sin x\le x
+\]
+
+\end_inset
+
+硬算.
+\end_layout
+
+\begin_layout Standard
+九.
+ (8')设 
+\begin_inset Formula $f(x)=\frac{1}{1-x-x^{2}}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $a_{n}=\frac{1}{n!}f^{(n)}(0)$
+\end_inset
+
+,
+ 证明级数
+\begin_inset Formula 
+\[
+\sum_{n=0}^{\infty}\frac{a_{n+1}}{a_{n}a_{n+2}}
+\]
+
+\end_inset
+
+收敛,
+ 并求其和.
+\end_layout
+
+\begin_layout Standard
+hint.
+ 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+ 是 Fibonacci 数列,
+ 级数的和为 
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+十.
+ (8')计算曲线积分
+\begin_inset Formula 
+\[
+\int_{L}\sqrt{x^{2}+y^{2}}\ud x+y\left(xy+\ln(x+\sqrt{x^{2}+y^{2}})\right)\ud y,
+\]
+
+\end_inset
+
+其中 
+\begin_inset Formula $L$
+\end_inset
+
+ 是曲线 
+\begin_inset Formula $y=\sqrt{x}+1$
+\end_inset
+
+ 从点 
+\begin_inset Formula $A(1,2)$
+\end_inset
+
+ 到点 
+\begin_inset Formula $C(0,1)$
+\end_inset
+
+ 的部分.
+\end_layout
+
+\begin_layout Standard
+hint.
+ 分别计算 
+\begin_inset Formula $\int_{L}xy^{2}\ud y$
+\end_inset
+
+ 部分和用 Green 公式计算
+\begin_inset Formula 
+\[
+\int_{L}\sqrt{x^{2}+y^{2}}\ud x+y\ln\left(x+\sqrt{x^{2}+y^{2}}\right)\ud y
+\]
+
+\end_inset
+
+部分,
+ 曲线积分的结果为 
+\begin_inset Formula $-2\ln\left(1+\sqrt{5}\right)-\frac{\sqrt{5}}{2}-\frac{17}{60}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_body
+\end_document
