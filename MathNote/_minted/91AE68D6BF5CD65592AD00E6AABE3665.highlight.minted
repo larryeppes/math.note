@@ -1,0 +1,18 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+ \PYG{k}{\PYGZbs{}draw}\PYG{n+na}{[gray, thick]} (\PYGZhy{}1,2) \PYGZhy{}\PYGZhy{} (1,\PYGZhy{}2);
+ \PYG{k}{\PYGZbs{}draw}\PYG{n+na}{[gray, thick]} (\PYGZhy{}1,\PYGZhy{}1) \PYGZhy{}\PYGZhy{} (2,2);
+ \PYG{k}{\PYGZbs{}filldraw}\PYG{n+na}{[black]} (0,0) circle (2pt) node[anchor=west] \PYG{n+nb}{\PYGZob{}}Intersection point\PYG{n+nb}{\PYGZcb{}};
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}draw} (\PYGZhy{}2,0) \PYGZhy{}\PYGZhy{} (2,0);
+  \PYG{k}{\PYGZbs{}filldraw} [gray] (0,0) circle (2pt);
+  \PYG{k}{\PYGZbs{}draw} (\PYGZhy{}2,\PYGZhy{}2) .. controls (0,0) .. (2,\PYGZhy{}2);
+  \PYG{k}{\PYGZbs{}draw} (\PYGZhy{}2,2) .. controls (\PYGZhy{}1,0) and (1,0) .. (2,2);
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}filldraw}\PYG{n+na}{[color=red!60, fill=red!5, very thick]}(\PYGZhy{}1,0) circle (1.5);
+  \PYG{k}{\PYGZbs{}fill}\PYG{n+na}{[blue!50]} (2.5,0) ellipse (1.5 and 0.5);
+  \PYG{k}{\PYGZbs{}draw}\PYG{n+na}{[ultra thick, \PYGZhy{}\PYGZgt{}]} (6.5,0) arc (0:220:1);
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

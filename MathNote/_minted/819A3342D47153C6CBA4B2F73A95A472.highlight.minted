@@ -1,0 +1,19 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+ \PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}center\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tabular\PYG{n+nb}{\PYGZcb{}\PYGZob{}}|c|c|c|c|c|\PYG{n+nb}{\PYGZcb{}}
+    \PYG{k}{\PYGZbs{}hline}
+    \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}hbar}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}imath}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}jmath}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}ell}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}Im}\PYG{l+s}{\PYGZdl{}}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+    \PYG{k}{\PYGZbs{}hline}
+    \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}wp}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}mho}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}prime}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}Box}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}Diamond}\PYG{l+s}{\PYGZdl{}}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+    \PYG{k}{\PYGZbs{}hline}
+    \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}bot}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}top}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}surd}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}diamondsuit}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}heartsuit}\PYG{l+s}{\PYGZdl{}}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+    \PYG{k}{\PYGZbs{}hline}
+    \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}clubsuit}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}spadesuit}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}neg}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}lnot}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}flat}\PYG{l+s}{\PYGZdl{}}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+    \PYG{k}{\PYGZbs{}hline}
+    \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}natural}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}sharp}\PYG{l+s}{\PYGZdl{}} \PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}dag} \PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}ddag} \PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}S\PYGZbs{}\PYGZbs{}}
+    \PYG{k}{\PYGZbs{}hline}
+    \PYG{k}{\PYGZbs{}P} \PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}copyright} \PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}pounds} \PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}textregistered} \PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}\PYGZbs{}}
+    \PYG{k}{\PYGZbs{}hline}
+  \PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tabular\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}center\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

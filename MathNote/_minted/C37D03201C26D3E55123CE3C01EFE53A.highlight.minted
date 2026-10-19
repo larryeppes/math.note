@@ -1,0 +1,27 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}enumerate\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}item} This is an example of \PYG{k}{\PYGZbs{}ldots}
+\PYG{k}{\PYGZbs{}item} \PYG{k}{\PYGZbs{}ldots} the usual enumeration.
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}enumerate\PYG{n+nb}{\PYGZcb{}}[a)]
+  \PYG{k}{\PYGZbs{}item} And this is a \PYG{k}{\PYGZbs{}ldots}
+  \PYG{k}{\PYGZbs{}item} \PYG{k}{\PYGZbs{}ldots} couple of \PYG{k}{\PYGZbs{}ldots}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}enumerate\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}item}
+  \PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}enumerate\PYG{n+nb}{\PYGZcb{}}[\PYGZhy{}\PYGZhy{} i \PYGZhy{}\PYGZhy{}]
+  \PYG{k}{\PYGZbs{}item} \PYG{k}{\PYGZbs{}ldots} examples of \PYG{k}{\PYGZbs{}ldots}
+  \PYG{k}{\PYGZbs{}item} \PYG{k}{\PYGZbs{}ldots} custom\PYGZhy{}tailored \PYG{k}{\PYGZbs{}ldots}
+  \PYG{k}{\PYGZbs{}item} \PYG{k}{\PYGZbs{}ldots} enumerations.
+  \PYG{k}{\PYGZbs{}newcounter}\PYG{n+nb}{\PYGZob{}}enumii\PYG{n+nb}{\PYGZus{}}saved\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}setcounter}\PYG{n+nb}{\PYGZob{}}enumii\PYG{n+nb}{\PYGZus{}}saved\PYG{n+nb}{\PYGZcb{}\PYGZob{}}\PYG{k}{\PYGZbs{}value}\PYG{n+nb}{\PYGZob{}}enumii\PYG{n+nb}{\PYGZcb{}\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}enumerate\PYG{n+nb}{\PYGZcb{}}
+  Some general comments
+  \PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}enumerate\PYG{n+nb}{\PYGZcb{}}[\PYGZhy{}\PYGZhy{} i \PYGZhy{}\PYGZhy{}]
+  \PYG{k}{\PYGZbs{}setcounter}\PYG{n+nb}{\PYGZob{}}enumii\PYG{n+nb}{\PYGZcb{}\PYGZob{}}\PYG{k}{\PYGZbs{}value}\PYG{n+nb}{\PYGZob{}}enumii\PYG{n+nb}{\PYGZus{}}saved\PYG{n+nb}{\PYGZcb{}\PYGZcb{}}
+  \PYG{c}{\PYGZpc{} 如果要换另一个条列式项目, 但编号接续, 使用\PYGZbs{}newcounter\PYGZob{}enumii\PYGZus{}saved\PYGZcb{}来操作}
+  \PYG{k}{\PYGZbs{}item} My next point.
+  \PYG{k}{\PYGZbs{}setcounter}\PYG{n+nb}{\PYGZob{}}enumii\PYG{n+nb}{\PYGZcb{}\PYGZob{}}7\PYG{n+nb}{\PYGZcb{}}
+  \PYG{c}{\PYGZpc{} 使用setcounter\PYGZob{}enumii\PYGZcb{}\PYGZob{}数字\PYGZcb{}来指定编号号码}
+  \PYG{k}{\PYGZbs{}item} My eighth point.
+  \PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}enumerate\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}enumerate\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

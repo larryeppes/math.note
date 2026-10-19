@@ -1,0 +1,54 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}definecolor}\PYG{n+nb}{\PYGZob{}}myred\PYG{n+nb}{\PYGZcb{}\PYGZob{}}RGB\PYG{n+nb}{\PYGZcb{}\PYGZob{}}183,18,52\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}definecolor}\PYG{n+nb}{\PYGZob{}}myyellow\PYG{n+nb}{\PYGZcb{}\PYGZob{}}RGB\PYG{n+nb}{\PYGZcb{}\PYGZob{}}254,213,1\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}definecolor}\PYG{n+nb}{\PYGZob{}}myblue\PYG{n+nb}{\PYGZcb{}\PYGZob{}}RGB\PYG{n+nb}{\PYGZcb{}\PYGZob{}}0,80,198\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}definecolor}\PYG{n+nb}{\PYGZob{}}mygreen\PYG{n+nb}{\PYGZcb{}\PYGZob{}}RGB\PYG{n+nb}{\PYGZcb{}\PYGZob{}}0,155,72\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}[
+  line join=round,
+  y=\PYG{n+nb}{\PYGZob{}}(\PYGZhy{}0.86cm,0.36cm)\PYG{n+nb}{\PYGZcb{}},x=\PYG{n+nb}{\PYGZob{}}(1cm,0.36cm)\PYG{n+nb}{\PYGZcb{}}, z=\PYG{n+nb}{\PYGZob{}}(0cm,1cm)\PYG{n+nb}{\PYGZcb{}},
+  arr/.style=\PYG{n+nb}{\PYGZob{}}\PYGZhy{}latex,ultra thick,line cap=round,shorten \PYGZlt{}= 1.5pt\PYG{n+nb}{\PYGZcb{}}
+]
+\PYG{k}{\PYGZbs{}def\PYGZbs{}Side}\PYG{n+nb}{\PYGZob{}}2\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}coordinate} (A1) at (0,0,0);
+\PYG{k}{\PYGZbs{}coordinate} (A2) at (0,\PYG{k}{\PYGZbs{}Side},0);
+\PYG{k}{\PYGZbs{}coordinate} (A3) at (\PYG{k}{\PYGZbs{}Side},\PYG{k}{\PYGZbs{}Side},0);
+\PYG{k}{\PYGZbs{}coordinate} (A4) at (\PYG{k}{\PYGZbs{}Side},0,0);
+\PYG{k}{\PYGZbs{}coordinate} (B1) at (0,0,\PYG{k}{\PYGZbs{}Side});
+\PYG{k}{\PYGZbs{}coordinate} (B2) at (0,\PYG{k}{\PYGZbs{}Side},\PYG{k}{\PYGZbs{}Side});
+\PYG{k}{\PYGZbs{}coordinate} (B3) at (\PYG{k}{\PYGZbs{}Side},\PYG{k}{\PYGZbs{}Side},\PYG{k}{\PYGZbs{}Side});
+\PYG{k}{\PYGZbs{}coordinate} (B4) at (\PYG{k}{\PYGZbs{}Side},0,\PYG{k}{\PYGZbs{}Side});
+
+\PYG{k}{\PYGZbs{}fill}\PYG{n+na}{[myyellow]} (A2) \PYGZhy{}\PYGZhy{} (A3) \PYGZhy{}\PYGZhy{} (B3) \PYGZhy{}\PYGZhy{} (B2) \PYGZhy{}\PYGZhy{} cycle;
+\PYG{k}{\PYGZbs{}fill}\PYG{n+na}{[mygreen]}  (A2) \PYGZhy{}\PYGZhy{} (A3) \PYGZhy{}\PYGZhy{} (A4) \PYGZhy{}\PYGZhy{} (A1) \PYGZhy{}\PYGZhy{} cycle;
+\PYG{k}{\PYGZbs{}fill}\PYG{n+na}{[myred]}(A3) \PYGZhy{}\PYGZhy{} (B3) \PYGZhy{}\PYGZhy{} (B4) \PYGZhy{}\PYGZhy{} (A4) \PYGZhy{}\PYGZhy{} cycle;
+\PYG{k}{\PYGZbs{}fill}\PYG{n+na}{[myblue]}   (A1) \PYGZhy{}\PYGZhy{} (A2) \PYGZhy{}\PYGZhy{} (B2) \PYGZhy{}\PYGZhy{} (B1) \PYGZhy{}\PYGZhy{} cycle;
+
+\PYG{k}{\PYGZbs{}draw} (A2) \PYGZhy{}\PYGZhy{} (A1) \PYGZhy{}\PYGZhy{} (A4);
+\PYG{k}{\PYGZbs{}draw} (B2) \PYGZhy{}\PYGZhy{} (B1) \PYGZhy{}\PYGZhy{} (B4) \PYGZhy{}\PYGZhy{} (B3) \PYGZhy{}\PYGZhy{} cycle;
+\PYG{k}{\PYGZbs{}draw} (A1) \PYGZhy{}\PYGZhy{} (B1);
+\PYG{k}{\PYGZbs{}draw} (A2) \PYGZhy{}\PYGZhy{} (B2);
+\PYG{k}{\PYGZbs{}draw} (A4) \PYGZhy{}\PYGZhy{} (B4);
+
+\PYG{k}{\PYGZbs{}draw}\PYG{n+na}{[thin]} (A3) \PYGZhy{}\PYGZhy{} (B3);
+\PYG{k}{\PYGZbs{}draw}\PYG{n+na}{[thin]} (A3) \PYGZhy{}\PYGZhy{} (A4);
+
+\PYG{k}{\PYGZbs{}path}\PYG{n+na}{[arr]}
+  (A1) edge (A2)
+  (B2) edge (A2)
+  (B1) edge (B2)
+  (B1) edge (A1)
+  (B4) edge (A4)
+  (B3) edge (A3)
+  (B4) edge (B3)
+  (A4) edge (A3);
+
+\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[below]} at (A1) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{A}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[below]} at (A2) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{B}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[below]} at (A3) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{C}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[below]} at (A4) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{D}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[above]} at (B1) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{E}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[above]} at (B2) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{F}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[above]} at (B3) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{G}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+\PYG{k}{\PYGZbs{}node}\PYG{n+na}{[above]} at (B4) \PYG{n+nb}{\PYGZob{}}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{H}\PYG{l+s}{\PYGZdl{}}\PYG{n+nb}{\PYGZcb{}};
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

@@ -1,0 +1,46 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+	A \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[to=Z, red]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[to=2\PYGZhy{}2, blue]}
+	\PYG{n+nb}{\PYGZam{}} B \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	|[alias=Z]| C
+	\PYG{n+nb}{\PYGZam{}} D
+	\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[from=ul, to=1\PYGZhy{}2, purple]}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}[column sep=scriptsize]
+	A \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[dr]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[rr, \PYGZdq{}\PYGZdq{}\PYGZob{}name=U, below, draw=red\PYGZcb{}]}\PYG{n+nb}{\PYGZob{}\PYGZcb{}}
+	\PYG{n+nb}{\PYGZam{}} \PYG{n+nb}{\PYGZam{}} B \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[dl]} \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	\PYG{n+nb}{\PYGZam{}} C \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[Rightarrow, from=U, \PYGZdq{}\PYGZbs{}psi\PYGZdq{}]}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+	A \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, bend left=50, \PYGZdq{}\PYGZdq{}\PYGZob{}name=U, below, draw=red\PYGZcb{}]}
+	\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, bend right=50, \PYGZdq{}\PYGZdq{}\PYGZob{}name=D, draw=red\PYGZcb{}]}
+	\PYG{n+nb}{\PYGZam{}} B
+	\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[Rightarrow, from=U, to=D]}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+	A \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[d]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[dr, phantom, \PYGZdq{}\PYGZbs{}ulcorner\PYGZdq{}, very near start]}
+	\PYG{n+nb}{\PYGZam{}} B \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[d]} \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	C \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r]}
+	\PYG{n+nb}{\PYGZam{}} D
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+	A \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, red, shift left=1.5ex]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r]}
+	\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[dr, blue, shift right=1.5ex]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[dr]}
+	\PYG{n+nb}{\PYGZam{}} B \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[d, purple, shift left=1.5ex]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[d]}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+	\PYG{n+nb}{\PYGZam{}} C
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+	A \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r]}
+	\PYG{n+nb}{\PYGZam{}} B \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, shift left]}
+	\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, shift right]}
+	\PYG{n+nb}{\PYGZam{}} C \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r]}
+	\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, shift left=2]}
+	\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, shift right=2]}
+	\PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}cdots}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+	A \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, yshift=0.7ex]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, yshift=\PYGZhy{}0.7ex]}
+	\PYG{n+nb}{\PYGZam{}} B \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[d, xshift=0.7ex]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[d, xshift=\PYGZhy{}0.7ex]} \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	\PYG{n+nb}{\PYGZam{}} C
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

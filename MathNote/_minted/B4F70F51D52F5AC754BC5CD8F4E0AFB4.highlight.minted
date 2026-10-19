@@ -1,0 +1,42 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+	A \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[rd]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, \PYGZdq{}\PYGZbs{}phi\PYGZdq{}]} \PYG{n+nb}{\PYGZam{}} B \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	\PYG{n+nb}{\PYGZam{}} C
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+	A \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, \PYGZdq{}\PYGZbs{}phi\PYGZdq{}]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[d, red]}
+	\PYG{n+nb}{\PYGZam{}} B \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[d, \PYGZdq{}\PYGZbs{}psi\PYGZdq{} red]} \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	C \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, red, \PYGZdq{}\PYGZbs{}eta\PYGZdq{} blue]}
+	\PYG{n+nb}{\PYGZam{}} D
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+	A \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, \PYGZdq{}\PYGZbs{}phi\PYGZdq{} near start, \PYGZdq{}\PYGZbs{}psi\PYGZdq{}\PYGZsq{}, \PYGZdq{}\PYGZbs{}eta\PYGZdq{} near end]} \PYG{n+nb}{\PYGZam{}} B
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+	T
+	\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[drr, bend left, \PYGZdq{}x\PYGZdq{}]}
+	\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[ddr, bend right, \PYGZdq{}y\PYGZdq{}]}
+	\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[dr, dotted, \PYGZdq{}\PYGZob{}(x,y)\PYGZcb{}\PYGZdq{} description]} \PYG{n+nb}{\PYGZam{}} \PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	\PYG{n+nb}{\PYGZam{}} X \PYG{k}{\PYGZbs{}times\PYGZus{}Z} Y \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, \PYGZdq{}p\PYGZdq{}]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[d, \PYGZdq{}q\PYGZdq{}]}
+	\PYG{n+nb}{\PYGZam{}} X \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[d, \PYGZdq{}f\PYGZdq{}]} \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	\PYG{n+nb}{\PYGZam{}} Y \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, \PYGZdq{}g\PYGZdq{}]}
+	\PYG{n+nb}{\PYGZam{}} Z
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}[column sep=tiny]
+	\PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}pi\PYGZus{}}1(U\PYG{n+nb}{\PYGZus{}}1) \PYG{k}{\PYGZbs{}ar}\PYG{n+na}{[dr]} \PYG{k}{\PYGZbs{}ar}\PYG{n+na}{[drr, \PYGZdq{}j\PYGZus{}1\PYGZdq{}, bend left=20]}
+	\PYG{n+nb}{\PYGZam{}}
+	\PYG{n+nb}{\PYGZam{}}[1.5em] \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	\PYG{k}{\PYGZbs{}pi\PYGZus{}}1(U\PYG{n+nb}{\PYGZus{}}1\PYG{k}{\PYGZbs{}cap} U\PYG{n+nb}{\PYGZus{}}2) \PYG{k}{\PYGZbs{}ar}\PYG{n+na}{[ur, \PYGZdq{}i\PYGZus{}1\PYGZdq{}]} \PYG{k}{\PYGZbs{}ar}\PYG{n+na}{[dr, \PYGZdq{}i\PYGZus{}2\PYGZdq{}\PYGZsq{}]}
+	\PYG{n+nb}{\PYGZam{}}
+	\PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}pi\PYGZus{}}1(U\PYG{n+nb}{\PYGZus{}}1) \PYG{k}{\PYGZbs{}ast\PYGZus{}}\PYG{n+nb}{\PYGZob{}} \PYG{k}{\PYGZbs{}pi\PYGZus{}}1(U\PYG{n+nb}{\PYGZus{}}1\PYG{k}{\PYGZbs{}cap} U\PYG{n+nb}{\PYGZus{}}2)\PYG{n+nb}{\PYGZcb{}} \PYG{k}{\PYGZbs{}pi\PYGZus{}}1(U\PYG{n+nb}{\PYGZus{}}2) \PYG{k}{\PYGZbs{}ar}\PYG{n+na}{[r, dashed, \PYGZdq{}\PYGZbs{}simeq\PYGZdq{}]}
+	\PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}pi\PYGZus{}}1(X) \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	\PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}pi\PYGZus{}}1(U\PYG{n+nb}{\PYGZus{}}2) \PYG{k}{\PYGZbs{}ar}\PYG{n+na}{[ur]}\PYG{k}{\PYGZbs{}ar}\PYG{n+na}{[urr, \PYGZdq{}j\PYGZus{}2\PYGZdq{}\PYGZsq{}, bend right=20]}
+	\PYG{n+nb}{\PYGZam{}}
+	\PYG{n+nb}{\PYGZam{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+	X \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, hook]} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[dr, dashrightarrow]}
+	\PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}bar}\PYG{n+nb}{\PYGZob{}}X\PYG{n+nb}{\PYGZcb{}} \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[d]}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+	\PYG{n+nb}{\PYGZam{}} Y
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

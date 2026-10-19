@@ -12,20 +12,20 @@ Prove that lines $DE$ and $FG$ are either parallel or they are the same line.
 \tkzDefPoint(5,-2){B}
 \tkzDefPoint(1,-2){C}
 \tkzDefPointWith[linear,K=0.6](A,C) \tkzGetPoint{E}
-\tkzDefCircle[radius](A,E) \tkzGetLength{rADpt}
+\tkzCalcLength(A,E) \tkzGetLength{rADpt}
 \tkzDrawCircle[style=dashed](A,E)
 \tkzInterLC(A,B)(A,E) \tkzGetSecondPoint{D}
 \tkzDefCircle[circum](A,B,C)
 \tkzGetPoint{O} \tkzGetLength{rOA}
 \tkzDefLine[mediator](D,B) \tkzGetPoints{K}{L}
 \tkzDrawLines[style=dashed](K,L)
-\tkzInterLC(K,L)(O,B) \tkzGetPoints{F}{F'}
+\tkzInterLC(K,L)(O,B) \tkzGetPoints{F'}{F}
 \tkzDefLine[mediator](C,E) \tkzGetPoints{M}{N}
 \tkzDrawLines[style=dashed](M,N)
-\tkzInterLC(M,N)(O,A) \tkzGetSecondPoint{G}
+\tkzInterLC(M,N)(O,A) \tkzGetPoints{G}{G'}
 \tkzDrawLines[color=red](F,G E,D)
 
-\tkzDrawCircle[R,color=blue,style=thick](O,\rOA pt)
+\tkzDrawCircle[color=blue,style=thick](O,A)
 \tkzDrawPolygon(A,B,C)
 \tkzDrawPoints(A,B,C,O,D,E,F,G)
 \tkzLabelPoints[below](B,C,O,D,E,F,G)

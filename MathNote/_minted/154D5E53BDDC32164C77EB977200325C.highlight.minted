@@ -1,0 +1,30 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}dependency\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}deptext\PYG{n+nb}{\PYGZcb{}}
+		My \PYG{k}{\PYGZbs{}\PYGZam{}} dog \PYG{k}{\PYGZbs{}\PYGZam{}} also \PYG{k}{\PYGZbs{}\PYGZam{}} likes \PYG{k}{\PYGZbs{}\PYGZam{}} eating \PYG{k}{\PYGZbs{}\PYGZam{}} sausage \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}deptext\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}depedge}\PYG{n+nb}{\PYGZob{}}5\PYG{n+nb}{\PYGZcb{}\PYGZob{}}6\PYG{n+nb}{\PYGZcb{}\PYGZob{}}dobj\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}dependency\PYG{n+nb}{\PYGZcb{}}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}dependency\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}deptext\PYG{n+nb}{\PYGZcb{}}
+		My \PYG{k}{\PYGZbs{}\PYGZam{}} dog \PYG{k}{\PYGZbs{}\PYGZam{}} also \PYG{k}{\PYGZbs{}\PYGZam{}} likes \PYG{k}{\PYGZbs{}\PYGZam{}} eating \PYG{k}{\PYGZbs{}\PYGZam{}} sausage \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}deptext\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}depedge}\PYG{n+nb}{\PYGZob{}}2\PYG{n+nb}{\PYGZcb{}\PYGZob{}}1\PYG{n+nb}{\PYGZcb{}\PYGZob{}}poss\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}depedge}\PYG{n+nb}{\PYGZob{}}4\PYG{n+nb}{\PYGZcb{}\PYGZob{}}2\PYG{n+nb}{\PYGZcb{}\PYGZob{}}nsubj\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}depedge}\PYG{n+nb}{\PYGZob{}}4\PYG{n+nb}{\PYGZcb{}\PYGZob{}}3\PYG{n+nb}{\PYGZcb{}\PYGZob{}}advmod\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}depedge}\PYG{n+nb}{\PYGZob{}}4\PYG{n+nb}{\PYGZcb{}\PYGZob{}}5\PYG{n+nb}{\PYGZcb{}\PYGZob{}}xcomp\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}depedge}\PYG{n+nb}{\PYGZob{}}5\PYG{n+nb}{\PYGZcb{}\PYGZob{}}6\PYG{n+nb}{\PYGZcb{}\PYGZob{}}dobj\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}dependency\PYG{n+nb}{\PYGZcb{}}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}dependency\PYG{n+nb}{\PYGZcb{}}[theme=night]
+	\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}deptext\PYG{n+nb}{\PYGZcb{}}[column sep=.5cm, row sep=.1ex]
+		PRP\PYG{k}{\PYGZbs{}\PYGZdl{}} \PYG{k}{\PYGZbs{}\PYGZam{}} NN \PYG{k}{\PYGZbs{}\PYGZam{}} RB \PYG{k}{\PYGZbs{}\PYGZam{}}\PYG{n+na}{[.5cm]} VBZ \PYG{k}{\PYGZbs{}\PYGZam{}} VBG \PYG{k}{\PYGZbs{}\PYGZam{}} NN \PYG{k}{\PYGZbs{}\PYGZbs{}}
+		My \PYG{k}{\PYGZbs{}\PYGZam{}} dog \PYG{k}{\PYGZbs{}\PYGZam{}} also \PYG{k}{\PYGZbs{}\PYGZam{}} likes \PYG{k}{\PYGZbs{}\PYGZam{}} eating \PYG{k}{\PYGZbs{}\PYGZam{}} sausage \PYG{k}{\PYGZbs{}\PYGZbs{}}
+	\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}deptext\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}deproot}\PYG{n+nb}{\PYGZob{}}4\PYG{n+nb}{\PYGZcb{}\PYGZob{}}root\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}depedge}\PYG{n+nb}{\PYGZob{}}2\PYG{n+nb}{\PYGZcb{}\PYGZob{}}1\PYG{n+nb}{\PYGZcb{}\PYGZob{}}poss\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}depedge}\PYG{n+nb}{\PYGZob{}}4\PYG{n+nb}{\PYGZcb{}\PYGZob{}}2\PYG{n+nb}{\PYGZcb{}\PYGZob{}}nsubj\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}depedge}\PYG{n+nb}{\PYGZob{}}4\PYG{n+nb}{\PYGZcb{}\PYGZob{}}3\PYG{n+nb}{\PYGZcb{}\PYGZob{}}advmod\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}depedge}\PYG{n+nb}{\PYGZob{}}4\PYG{n+nb}{\PYGZcb{}\PYGZob{}}5\PYG{n+nb}{\PYGZcb{}\PYGZob{}}xcomp\PYG{n+nb}{\PYGZcb{}}
+	\PYG{k}{\PYGZbs{}depedge}\PYG{n+nb}{\PYGZob{}}5\PYG{n+nb}{\PYGZcb{}\PYGZob{}}6\PYG{n+nb}{\PYGZcb{}\PYGZob{}}dobj\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}dependency\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}
