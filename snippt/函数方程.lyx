@@ -767,7 +767,7 @@ Hint:
 \begin_inset Formula $m,n$
 \end_inset
 
-, 求满足 
+, 能否求出满足 
 \begin_inset Formula 
 \[
 f\left(\sum_{k=1}^{n}x_{k}^{m}\right)=\sum_{k=1}^{n}f^{m}\left(x_{k}\right),\qquad\forall x_{1},x_{2},\cdots,x_{n}\in\ZZ,

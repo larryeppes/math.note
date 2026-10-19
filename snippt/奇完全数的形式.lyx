@@ -289,6 +289,18 @@ End
 \end_layout
 
 \begin_layout Standard
+一个自然数 
+\begin_inset Formula $n$
+\end_inset
+
+ 的两倍若恰好等于它的所有因子之和, 则称自然数 
+\begin_inset Formula $n$
+\end_inset
+
+ 为完全数 (perfect number).
+\end_layout
+
+\begin_layout Standard
 Euler证明了: 如果 
 \begin_inset Formula $N$
 \end_inset
@@ -781,7 +793,7 @@ key "key-8"
 
 Holdener, J.A.
  (2002).
- A theorem of Touchard and the form of odd perfect numbers.
+ A theorem of Touchard on the form of odd perfect numbers.
  American Mathematical Monthly 109, 661-663.
 \end_layout
 
@@ -831,6 +843,24 @@ Judy A.
  American Mathematical Monthly, Vol.
  109, No.
  7, 2002, 661-663.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+这篇文章有一段引用文献 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-9"
+literal "false"
+
+\end_inset
+
+ 的说明, 暂时还没有找到原始文献.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography

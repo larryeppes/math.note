@@ -1,0 +1,122 @@
+\chapter{二叉树的极限}
+\section{相关定义}
+当二叉树的高度 $n$ 时, 记二叉树为 $T_n$, 也即 $T_n$ 是下面的对象:
+
+% 绘制无穷二叉树（示例：有限部分展示，实际无穷二叉树无法完全绘制）
+\begin{center}
+\begin{tikzpicture}[level distance=1.5cm,
+	level 1/.style={sibling distance=6.5cm},
+	level 2/.style={sibling distance=3.5cm},
+	level 3/.style={sibling distance=1.5cm}]
+	\node {root}
+	child {node {$a_1$}
+		child {node {...}
+			child {node {$a_{2^{n}-1}$}}
+			child {node {$a_{2^{n}}$}}
+		}
+		child {node {...}
+			child {node {$a_{2^{n}+1}$}}
+			child {node {$a_{2^{n}+2}$}}
+		}
+	}
+	child {node {$a_2$}
+		child {node {...}
+			child {node {...}}
+			child {node {...}}
+		}
+		child {node {...}
+			child {node {$a_{2^{n+1}-3}$}} % 无穷部分用省略号表示
+			child {node {$a_{2^{n+1}-2}$}} % 无穷部分用省略号表示
+		}
+	};
+\end{tikzpicture}
+\end{center}
+
+对于有(可数)无穷层的二叉树, 用符号 $T_{\infty}$ 来记.
+
+记 $T_n$ 的节点集(除根节点)为 $V(T_n)$, 它是集合
+\[V(T_n)=\{a_1,\cdots,a_{2^{n+1}-2}\}.\]
+
+任意给定的集合 $A$ 的势记为 $|A|$, 或写成集函数 $\mathrm{card(A)}$ 的形式. 
+
+有限高度的二叉树节点的定义是常识, {\color{red}{\bf{暂时先不给出无穷深度二叉树节点的定义}}}.
+
+有限高度的二叉树可以用 $0-1$ 编码, 例如
+
+\begin{center}
+\begin{tikzpicture}
+	\Tree [.root [.0 [.00 ] [.01 ] ] [.1 [.10 ] [.11 ] ] ]
+\end{tikzpicture}
+\end{center}
+
+对于有限高度的二叉树, 从中任意取一个``节点'', 都有一个整数 $N$ 使这个结点与 $a_N$ 对应, 并且有唯一的 $0-1$ 编码与之对应. 
+
+\bm{}{}
+	对于 $T_3$, 有 $V(T_3)=\{a_1,\cdots,a_{14}\}$, $\mathrm{card}(V(T_3))=14$.
+	$T_3$ 中的节点可以用 $0-1$ 编码, 这些编码组成的集合为
+	\[\{0,1,00,01,10,11\}.\]
+\em
+
+\section{问题重述}
+
+当二叉树 $T_n$ 的高度 $n$ 趋于无穷大, 有
+\[\lim_{n\to \infty}T_n=T_{\infty}.\]
+
+\bm{问题重述}{}
+(1). 当 $n\to\infty$ 时, $T_n$ 的极限为 $T_{\infty}$, 节点集 $V(T_n)$ 的极限是 $V(T_\infty)$, 所以 $V(T_{\infty})$ 也是可数集. 
+
+(2). 从 $T_n$ 的根节点出发通过 $0-1$ 分支定位的所有方式组成的集合为
+\be\label{eq:1}
+A_n\coloneqq\{0,1,00,01,10,11,000,001,\cdots, \underbrace{00\cdots0}_{n\text{项}},\cdots,\underbrace{11\cdots10}_{n\text{项}},\underbrace{11\cdots1}_{n\text{项}}\},
+\ee
+当 $n\to\infty$ 时, 集合 $A_n$ 的极限集合记为
+\[A_{\infty}\coloneqq\{0,1,00,01,10,11,000,001,\cdots\},\]
+由于它与 $(0,1)$ 中的实数一一对应, 因此它是不可数集.
+\em
+
+\section{两方面错误}
+
+目前, 我更倾向于下面一节中的第一个, 而不应当认为具有无穷高度的``节点''是一个节点, 因为它既没有整数对应, 通过分支定位也不会停在一个确定的对象上, 因此不能称为``节点''. 另外, 这种差异是微妙的, 应该致力于这种差异所得到的后续结论.
+
+\subsection{重新认识 $T_{\infty}$ 中的节点}
+1. 从定义出发, 只承认从 $T_{\infty}$ 中任意取到的节点有有限层高度. 
+
+\bm{}{}
+此时问题重述中的 (2) 是错误的, 记 $\lim_{n\to\infty}A_n=A_{\infty}$, 则
+\[A_{\infty}=\bigcup_{n=1}^{\infty}A_n.\]
+这意味着 $A_{\infty}$ 中任取一个元素 $a$, 都必然存在自然数 $n\in\NN$, 使得 $a\in A_n$, 从而 $a$ 是一个具有有限高度的分支, 并唯一对应一个节点. 同时, 这也意味着无限延伸的分支 $010101\cdots\notin A_{\infty}$, 所以 $A_{\infty}$ 并没有能与实数一一对应的足够元素存在.
+所以, 当 $n\to\infty$ 时, $T_n$ 的极限为 $T_{\infty}$, 节点集 $V(T_n)$ 的极限, (对应 $A_n$ 的极限是 $A_{\infty}$), 是 $V(T_\infty)$, 所以 $V(T_{\infty})$ 也是可数集. 
+
+实际上, 在 1. 的前提下分支方式不在 $A_{\infty}$ 中的例子非常多, 例如 $\sqrt{2}-1$ 的二进小数表示的 $011010100\cdots\notin A_{\infty}$, 因为并不存在任何一个自然数 $n\in\NN$, 使得 $011010100\cdots\in A_n$. 此处可能还需对比下一节中的集合 $V_{\infty}$ 中的元素成分加以区分.
+\em
+
+{\color{red}{\bf{以下观点是我和沈老师最初认为正确的推导}}}
+
+2. 若认为具有无穷长度的分支, 比如 $01101010000010011110\cdots$, 确实对应一个``节点''. 这种节点一旦取出便具有无穷的高度. 它只存在于 $T_{\infty}$ 这种二叉树中.
+\bm{}{}
+此时问题重述中的 (1) 是错误的. 
+因为 $T_{\infty}$ 中不仅含有有限高度的节点, 而且还含有无穷高度的节点, 这节点一旦取出便一定不在任何 $T_n$ 中. 因此
+\bee
+V(T_{\infty})\setminus\bigcup_{n=1}^{\infty}V(T_n)\ne\varnothing.
+\eee
+多出来的节点高度均没有有限自然数与之对应, 这也导致 $V(T_{\infty})$ 有不可数势, 这是因为:
+\bm{}{}
+注意, 节点在 $V(T_{\infty})$ 中通过 $0-1$ 分支定位的所有方式组成的集合并不是 $A_{\infty}$, 在问题重述中 $A_{\infty}$ 是集合列 $A_n$ 在 $n\to\infty$ 时的极限集合, 其中的 $0-1$ 编码只有有限长度, 只是集合 $A_{\infty}$ 具有无穷多个这样的有限长编码元素罢了. 由于 $T_{\infty}$ 中存在无穷高度的节点, 这种节点一定不能用整数从根节点数到, 而只能通过 $0-1$ 分支方式定位, 而且这种编码长度是无限长的, 所有这些编码所组成的集合应该区别 $A_{\infty}$ 的记号记为
+\[V_{\infty}\coloneqq A_{\infty}\cup\left\{\overline{r_1r_2\cdots r_n\cdots}: r_i\in\{0,1\}\right\},\]
+这是一个不可数集主要是因为上式后一个集合有不可数势, 所以 $T_{\infty}$ 有不可数个节点.
+\em
+\em
+
+\subsection{其它反驳}
+一般地, 对于任意的函数 $f(x)$, 公式
+\[\lim_{n\to\infty}f(a_n)\ne f\left(\lim_{n\to\infty}a_n\right),\]
+是熟知的. 比如 $a_n=(-1)^n$, 而 $f(x)\equiv 1$ 为常数函数.
+
+问题重述中的极限求势, 可以写成
+\[\lim_{n\to\infty}\mathrm{card}(V(T_n))=\mathrm{card}\left(V(\lim_{n\to\infty }T_n)\right)\]
+而对于一般的集合序列 $\{A_n\}$, 有
+\[\lim_{n\to\infty}\mathrm{card}(A_n)\ne\mathrm{card}\left(\lim_{n\to\infty}A_n\right).\]
+比如取 $A_n$ 为单元素集 $A_n=\{n\}$, $n\in\NN$. 
+又如, 取 $A_n=\{n,n+1,\cdots\}$, 则 $\lim_{n\to \infty}A_n=\varnothing$, 从而
+\[\infty=\lim_{n\to\infty}\mathrm{card}(A_n)\ne\mathrm{card}\left(\lim_{n\to\infty}A_n\right)=0,\]
+所以取极限和取势不可随意交换.

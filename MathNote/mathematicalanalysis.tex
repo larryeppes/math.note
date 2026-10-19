@@ -215,7 +215,37 @@ $\int_0^{2\pi}\frac{\ud \t}{3-\sin 2\t}
 \int_{0}^{\i}u^{p-1}\ln(u+1)\ud u
 =\int_{0}^{\i}u^{p-1}\int_{1}^{1+u}\frac1y\ud y\ud u
 \eee
-交换积分次序, 用Beta函数
+交换积分次序, 用 Beta 函数.
+\ea
+
+\bq{}{}
+求反常积分
+\[
+I=\int_{0}^{\infty}\frac{\ue^{-2x}\tanh\frac{x}{2}}{x\cosh x}\ud x.
+\]
+\eq
+\ba
+令 $x=2t$, 则 
+\[
+I=\int_{0}^{\infty}\frac{2\ue^{-2t}\left(\ue^{2t}-1\right)^{2}}{t\left(\ue^{8t}-1\right)}\ud t.
+\]
+引入含参积分
+\[
+F(a)=\int_{0}^{\infty}\frac{2\ue^{at}\left(\ue^{2t}-1\right)^{2}}{t\left(\ue^{8t}-1\right)}\ud t,
+\]
+则有
+\begin{align*}
+	F'(a) & =\int_{0}^{\infty}\frac{2\ue^{(a-4)t}\left(1-\ue^{-2t}\right)^{2}}{1-\ue^{-8t}}\ud t\\
+	& =\int_{0}^{\infty}2\ue^{(a-4)t}\left(1-\ue^{-2t}\right)^{2}\cdot\sum_{n=0}^{\infty}\ue^{-8nt}\ud t\\
+	& =\frac{1}{4}\sum_{n=0}^{\infty}\left(\frac{1}{n+\frac{-a+4}{8}}-\frac{2}{n+\frac{-a+6}{8}}+\frac{1}{n+\frac{-a+8}{8}}\right)\\
+	& =\frac{1}{4}\left(2\psi\left(\frac{-a+6}{8}\right)-\psi\left(\frac{-a+4}{8}\right)-\psi\left(\frac{-a+8}{8}\right)\right),
+\end{align*}
+其中, $\psi(z)=\frac{\ud}{\ud z}\ln\Gamma(z)$ 为 digamma 函数. 因此
+\begin{align*}
+	I & =F(-2)=F(-2)-F(-\infty)\\
+	& =\int_{-\infty}^{-2}F'(a)\ud a=\left.2\ln\left(\frac{\Gamma\left(\frac{-a+4}{8}\right)\Gamma\left(\frac{-a+8}{8}\right)}{\Gamma^{2}\left(\frac{-a+6}{8}\right)}\right)\right|_{-\infty}^{-2}\\
+	& =2\ln\left(\Gamma\left(\frac{3}{4}\right)\Gamma\left(\frac{5}{4}\right)\right)=2\ln\frac{\pi}{2\sqrt{2}}.
+\end{align*}
 \ea
 
 \section{级数}
