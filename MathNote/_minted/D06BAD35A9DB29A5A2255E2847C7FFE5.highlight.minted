@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}asy\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}Iinclude graph;
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}Isize(1inch);
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}Ifilldraw(circle((0,0),1),yellow,black);
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}Ifill(circle((\PYGZhy{}.3,.4),.1),black);
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}Ifill(circle((.3,.4),.1),black);
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}Idraw(arc((0,0),.5,\PYGZhy{}140,\PYGZhy{}40));
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}asy\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

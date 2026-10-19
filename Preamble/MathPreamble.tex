@@ -1,7 +1,49 @@
 \usepackage{amsmath, amsthm, amsfonts, amssymb, mathtools, mathrsfs}
 
+\usepackage{iftex}
 \usepackage[T1]{fontenc}
-\usepackage{CJKutf8}
+% 中文支持: 两个引擎, 两个平台都能直接编译
+\ifPDFTeX
+  % pdfLaTeX: CJK 宏包 + CJK 环境 (不支持自动中英文间距)
+  \usepackage{CJKutf8}
+\fi
+\ifXeTeX
+  % XeLaTeX: xeCJK 提供自动中英文间距
+  \usepackage{xeCJK}
+  \xeCJKsetup{CJKecglue={\hskip 0.3em plus 0.1em minus 0.1em}}
+  % 正文中的 CJK 环境在 xeCJK 下多余, 这里定义为空以免改正文
+  \newenvironment{CJK}[2]{}{}
+  % 中文字体: 按当前系统已安装的字体自动选择 (Linux / Windows / macOS)
+  \IfFontExistsTF{FandolSong-Regular}
+    {% TeX Live 自带 Fandol, 各平台均可用
+      \setCJKmainfont{FandolSong-Regular}[BoldFont=FandolSong-Bold,ItalicFont=FandolKai-Regular,AutoFakeSlant=0.2]
+      \setCJKsansfont{FandolHei-Regular}[BoldFont=FandolHei-Bold]
+      \setCJKmonofont{FandolFang-Regular}[AutoFakeSlant=0.2]}
+    {%
+      \IfFontExistsTF{SimSun}
+        {% Windows: 宋体 / 黑体 / 楷体 / 仿宋
+          \setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi,AutoFakeSlant=0.2]
+          \setCJKsansfont{SimHei}[AutoFakeBold=2.5]
+          \setCJKmonofont{FangSong}[AutoFakeSlant=0.2]}
+        {%
+          \IfFontExistsTF{Source Han Serif SC}
+            {% Linux: 思源宋体 / 思源黑体
+              \setCJKmainfont{Source Han Serif SC}[BoldFont={Source Han Serif SC Bold},ItalicFont={Source Han Serif SC},AutoFakeSlant=0.2]
+              \setCJKsansfont{Source Han Sans SC}[BoldFont={Source Han Sans SC Bold},AutoFakeBold=2.5]
+              \setCJKmonofont{Source Han Serif SC}[AutoFakeSlant=0.2]}
+            {% Linux: Noto CJK / 文鼎
+              \IfFontExistsTF{Noto Serif CJK SC}
+                {\setCJKmainfont{Noto Serif CJK SC}[AutoFakeBold=2.5,AutoFakeSlant=0.2]
+                 \setCJKsansfont{Noto Sans CJK SC}[AutoFakeBold=2.5]
+                 \setCJKmonofont{Noto Sans Mono CJK SC}[AutoFakeSlant=0.2]}
+                {\setCJKmainfont{AR PL UMing CN}[AutoFakeBold=2.5,AutoFakeSlant=0.2]
+                 \setCJKsansfont{AR PL UKai CN}[AutoFakeBold=2.5]
+                 \setCJKmonofont{AR PL UKai CN}[AutoFakeSlant=0.2]}}}
+    }
+\fi
+\ifPDFTeX\else\ifXeTeX\else
+  \PackageWarningNoLine{MathPreamble}{Only pdfLaTeX and XeLaTeX are supported}
+\fi\fi
 %\usepackage[utf8]{inputenc}
 \usepackage[usenames,dvipsnames,svgnames]{xcolor}
 %\usepackage{zhspacing}
@@ -14,6 +56,7 @@
 \usepackage{pgfplots}
 %\usepackage{yhmath}
 \usepackage{fourier}
+% zhspacing 只支持 XeTeX, pdfLaTeX 下会报错, 已由上面的 xeCJK 取代
 %\usepackage{zhspacing}
 \usepackage{tkz-euclide}
 %\usetkzobj{all} % for new version of tkz-euclide, this line not needed.

@@ -1,4 +1,6 @@
-TEX=pdflatex --synctex=1 -shell-escape -interaction=nonstopmode
+# 引擎可切换: make ENGINE=pdflatex 或不加参数 (默认 xelatex, 有自动中英文间距)
+ENGINE ?= xelatex
+TEX=$(ENGINE) --synctex=1 -shell-escape -interaction=nonstopmode
 ASY=asy
 
 .PHONY: all view
