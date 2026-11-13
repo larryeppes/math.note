@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}filldraw}\PYG{n+na}{[color=red!60, fill=red!50, very thick]}(1,1) rectangle (0.5,1.5);
+  \PYG{k}{\PYGZbs{}draw}\PYG{n+na}{[blue, very thick]} (0,0)rectangle (3,2);
+  \PYG{k}{\PYGZbs{}draw}\PYG{n+na}{[orange, ultra thick]} (4,0) \PYGZhy{}\PYGZhy{} (6,0) \PYGZhy{}\PYGZhy{} (5.7,2) \PYGZhy{}\PYGZhy{} cycle;
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

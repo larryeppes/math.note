@@ -1,0 +1,94 @@
+\documentclass[a4paper,UTF8]{article}
+\usepackage[T1]{fontenc}
+\usepackage{CJKutf8}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2cm}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\makeatletter
+%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+% amsthdoc.pdf manual
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}
+\newtheorem{corrolary}{Corrolary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+%%%%%%%%%%%%%%% User specified LaTeX commands.
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\usepackage{tkz-euclide}
+%\usetkzobj{all}
+
+\def\degree{^\\circ}
+\def\GF{\mathrm{GF}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\Res{\mathrm{Res}}
+\def\diag{\,\mathrm{diag}\,}
+\def\sumcyc{\sum\limits_{cyc}}
+\def\prodcyc{\prod\limits_{cyc}}
+\def\\i{\\infty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 放在导言区
+\newif\ifshowanswers
+%\showanswersfalse % 默认不显示答案；改成 \showanswerstrue 则显示答案
+\showanswerstrue % 默认不显示答案；改成 \showanswerstrue 则显示答案
+
+% \blank[横线宽度]{答案}
+% 不显示答案时：画固定宽度横线
+% 显示答案时：在横线上居中显示答案
+\newcommand{\blank}[2][2cm]{%
+	\ifshowanswers
+	\underline{\makebox[#1][c]{#2}}%
+	\else
+	\underline{\hspace*{#1}}%
+	\fi
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatother
+\title{全国高中数学联赛模拟试题精选}
+
+\begin{document}
+\begin{CJK}{UTF8}{gbsn}
+	
+	\maketitle
+	
+	\section{模拟试题 1}
+	\subsection{第一试}
+	\subsubsection*{一、填空题（本题满分 64 分，每小题 8 分）}
+	
+	1．在金属丝制作的 $3 \times 4 \times 7$ 的长方体框架中放置着一个球，则该球的半径的最大值为\blank{$5/2$}．
+	
+	2．双曲线的左、右两焦点分别为 $F_1, F_2$ ，一条过 $F_2$ 的直线与双曲线的右支交于 $A, B$两点．若 $\triangle F_1 A B$ 是正三角形，则双曲线的离心率是 \blank{$\sqrt{3}$}．
+	
+	3．已知正实数 $a, b, c$ 满足 $a+b+c=1$ ，则 $a+\sqrt{b}+\sqrt[3]{c}$ 的最大值是 \blank{$\frac54+\frac{2\sqrt{3}}{9}$}．
+	
+	4．从 9 位同学中选出 5 位组成班委会，要求甲、乙二人或者同时入选，或者同时不入选，丙、丁二人不同时入选，则符合要求的选法共有 \blank{$41$} 种（用数字作答）。
+	
+	5．已知在等腰 $\triangle A B C$ 中，$A C=B C=\sqrt{5}$ ，点 $D, E, F$ 分别在边 $A B, B C, C A$ 上，且 $A D=D B=E F=1$ ．若 $\overrightarrow{D E} \cdot \overrightarrow{D F} \leqslant \frac{25}{16}$ ，则 $\overrightarrow{E F} \cdot \overrightarrow{B A}$ 的取值范围是 \blank{$\left[\frac43,2\right]$}．
+	
+	6．圆周上每个点都被染为红、黄、蓝三色之一，并且三种颜色的点都有。现从圆周上任取 $n$ 个点，若其中总存在三个点构成三个顶点同色的钝角三角形，则 $n$ 的最小可能值为
+	\blank{13}．
+	
+	7．已知 $\alpha, \beta \in[0, \pi]$ ，则 $(\sin \alpha+\sin (\alpha+\beta)) \cdot \sin \beta$ 的最大值是 \blank{$\frac{8\sqrt{3}}{9}$}．
+	
+	8．设 $\frac{1}{1-x-x^2-x^3}=\sum_{n=0}^{\infty} a_n x^n$ ，若 $a_{n-1}=n^2$ ，则 $n$ 的取值集合为 \blank{$\{1,9\}$}．
+	
+	
+	
+\end{CJK}
+\end{document}

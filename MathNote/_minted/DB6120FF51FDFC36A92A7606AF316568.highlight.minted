@@ -1,0 +1,6 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}mathscr}\PYG{n+nb}{\PYGZob{}ABCDEFGHIJKLMNOPQRSTUVWXYZ\PYGZcb{}}\PYG{l+s}{\PYGZdl{}}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+\PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}mathbb}\PYG{n+nb}{\PYGZob{}ABCDEFGHIJKLMNOPQRSTUVWXYZ\PYGZcb{}}\PYG{l+s}{\PYGZdl{}}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+\PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}mathcal}\PYG{n+nb}{\PYGZob{}ABCDEFGHIJKLMNOPQRSTUVWXYZ\PYGZcb{}}\PYG{l+s}{\PYGZdl{}}\PYG{k}{\PYGZbs{}\PYGZbs{}}
+\PYG{l+s}{\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}mathfrak}\PYG{n+nb}{\PYGZob{}ABCDEFGHIJKLMNOPQRSTUVWXYZ\PYGZcb{}}\PYG{l+s}{\PYGZdl{}}
+\end{MintedVerbatim}

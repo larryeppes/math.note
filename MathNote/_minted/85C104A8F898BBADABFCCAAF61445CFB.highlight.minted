@@ -1,0 +1,50 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}[cells=\PYG{n+nb}{\PYGZob{}}nodes=\PYG{n+nb}{\PYGZob{}}draw=gray\PYG{n+nb}{\PYGZcb{}\PYGZcb{}}]
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}IA \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, black]}
+\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, blue, end anchor=north east]}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}arrow}[r,
+red, start anchor=\PYG{n+nb}{\PYGZob{}}[xshift=\PYGZhy{}1ex]\PYG{n+nb}{\PYGZcb{}},
+end anchor=\PYG{n+nb}{\PYGZob{}}[yshift=2ex]north east\PYG{n+nb}{\PYGZcb{}}]
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZam{}} B
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}IA \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, shift left]}
+\PYG{k}{\PYGZbs{}ar}\PYG{n+na}{[r, shorten=2mm, shift right]}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZam{}} B
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}IA \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[dr]} \PYG{n+nb}{\PYGZam{}} B \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[dl, crossing over]} \PYG{k}{\PYGZbs{}\PYGZbs{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}IC
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZam{}} D
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}IA \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, \PYGZdq{}/\PYGZdq{} marking]}
+\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[rd, \PYGZdq{}\PYGZbs{}circ\PYGZdq{} marking]}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZam{}} B \PYG{k}{\PYGZbs{}\PYGZbs{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZam{}} C
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}IA \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r, \PYGZdq{}\PYGZbs{}phi\PYGZdq{} description]} \PYG{n+nb}{\PYGZam{}} B
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}IA \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[dr, controls=\PYGZob{}+(1.5,0.5) and +(\PYGZhy{}1,0.8)\PYGZcb{}]}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[dr, dashed, to path=|\PYGZhy{} (\PYGZbs{}tikztotarget)]}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZam{}} \PYG{k}{\PYGZbs{}\PYGZbs{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZam{}} B \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[loop right]}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}IA \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r]}
+\PYG{n+nb}{\PYGZam{}} B \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r]}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[d, phantom, \PYGZdq{}\PYGZdq{}\PYGZob{}coordinate, name=Z\PYGZcb{}]}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZam{}} C \PYG{k}{\PYGZbs{}arrow}[dll,
+\PYGZdq{}\PYG{k}{\PYGZbs{}delta}\PYGZdq{},
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}Irounded corners,
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}Ito path=\PYG{n+nb}{\PYGZob{}} \PYGZhy{}\PYGZhy{} ([xshift=2ex]\PYG{k}{\PYGZbs{}tikztostart}.east)
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I|\PYGZhy{} (Z) [near end]\PYG{k}{\PYGZbs{}tikztonodes}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYGZhy{}| ([xshift=\PYGZhy{}2ex]\PYG{k}{\PYGZbs{}tikztotarget}.west)
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYGZhy{}\PYGZhy{} (\PYG{k}{\PYGZbs{}tikztotarget})\PYG{n+nb}{\PYGZcb{}}] \PYG{k}{\PYGZbs{}\PYGZbs{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}ID \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r]}
+\PYG{n+nb}{\PYGZam{}} E \PYG{k}{\PYGZbs{}arrow}\PYG{n+na}{[r]}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZam{}} F
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzcd\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

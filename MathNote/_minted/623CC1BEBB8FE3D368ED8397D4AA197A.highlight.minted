@@ -1,0 +1,9 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}tkzDefPoint}(1,2)\PYG{n+nb}{\PYGZob{}}A\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}tkzDefPoint}(3,4)\PYG{n+nb}{\PYGZob{}}B\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}tkzDefPoint}(2,4)\PYG{n+nb}{\PYGZob{}}C\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}tkzCircumCenter}(A,B,C)\PYG{k}{\PYGZbs{}tkzGetPoint}\PYG{n+nb}{\PYGZob{}}O\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}tkzDrawArc}(O,C)(A)
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tikzpicture\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}
